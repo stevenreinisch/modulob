@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    
+    <package 
+       uri = "http://modulob.dubmas.de/1.0" 
+       class = "de.dubmas.modulob.ModulobPackage"
+       genModel = "model/Modulob.genmodel">  
+	</package>
+	
+	<package
+	   uri = "http://behaviour.modulob.dubmas.de/1.0"
+       class="de.dubmas.modulob.behaviour.BehaviourPackage"
+       genModel = "model/ModulobBehaviour.genmodel">
+	</package>
+	
+	<package
+	   uri = "http://migration.modulob.dubmas.de/0.1"
+       class="de.dubmas.modulob.migration.MigrationPackage"
+       genModel = "model/ModulobMigration.genmodel">
+	</package>
+	
+	<package
+	   uri = "http://system.modulob.dubmas.de/1.0"
+       class="de.dubmas.modulob.system.SystemPackage"
+       genModel = "model/ModulobSystem.genmodel">
+	</package>
+	
+	<package
+	   uri = "http://types.modulob.dubmas.de/1.0"
+       class="de.dubmas.modulob.types.TypesPackage"
+       genModel = "model/ModulobTypes.genmodel">
+	</package>
+	
+  </extension>
+
+</plugin>

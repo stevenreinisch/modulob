@@ -1,0 +1,38 @@
+grammar de.dubmas.modulob.DataDsl with de.dubmas.modulob.common.Dsl
+
+import 'platform:/resource/de.dubmas.modulob.metamodels/model/Modulob.ecore' as modulob
+import 'platform:/resource/de.dubmas.modulob.metamodels/model/ModulobSystem.ecore' as system
+
+EntityModel returns system::EntityModel:
+	'entities for module' 
+	module = [system::Module | QualifiedName]
+	'version' version = STRING 
+	(entities += Entity)+
+;
+
+Entity returns modulob::Entity:
+	(annotations+=Annotation)*
+	(isAbstract?='abstract')? 'entity' name=ID (':' super=[modulob::Entity])?'{'
+		(features+=Feature)*
+	'}'
+;
+	
+Annotation returns modulob::Annotation:
+	'@' option=ConfigOption (':' value=ConfigValue)?
+;	
+	
+enum ConfigOption returns modulob::ConfigOption:
+	persistency = 'persistency'
+;	
+	
+enum ConfigValue returns modulob::ConfigValue:
+	CoreData = 'CoreData' 
+;	
+	
+Feature returns modulob::Feature:
+	(isIndexed?='indexed')?
+	(isContainment?='-[')?
+	type=TypeRef name=ID ('=' defaultValue=ValueObject)? 
+	('<->' inverse=[modulob::Feature])?
+	(';')?
+;

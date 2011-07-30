@@ -1,0 +1,39 @@
+grammar de.dubmas.modulob.InterfaceDsl with de.dubmas.modulob.common.Dsl
+
+import 'platform:/resource/de.dubmas.modulob.metamodels/model/Modulob.ecore' as modulob
+import 'platform:/resource/de.dubmas.modulob.metamodels/model/ModulobSystem.ecore' as system
+
+
+InterfaceModel returns system::InterfaceModel: 
+	'interfaces for module' 
+	module = [system::Module | QualifiedName]
+	'version' version = STRING 
+	(interfaces += Interface)+
+;
+
+Interface returns modulob::Interface:
+	'interface' name = ID 
+	(
+		'requires' requiredInterfaces += [modulob::Interface | QualifiedName]
+				   (',' requiredInterfaces += [modulob::Interface | QualifiedName])*
+	)?
+	'{'
+		(methods += Method)* 
+	'}'
+;
+
+Method returns modulob::Method:
+	(isStatic?='static')?
+	type = TypeRef
+	name=ID 
+	(parameters+=Parameter)*
+	(';')?
+;
+
+Parameter returns modulob::Parameter:
+	(signaturePart=ID)? ':' type=TypeRef name=ID
+;
+
+
+
+

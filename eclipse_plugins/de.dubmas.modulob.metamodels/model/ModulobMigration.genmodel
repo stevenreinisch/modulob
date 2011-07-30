@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.dubmas.modulob.metamodels/src"
+    modelPluginID="de.dubmas.modulob.metamodels" modelName="ModulobMigration" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" usedGenPackages="Modulob.genmodel#//modulob ModulobTypes.genmodel#//types">
+  <foreignModel>ModulobMigration.ecore</foreignModel>
+  <genPackages prefix="Migration" basePackage="de.dubmas.modulob" disposableProviderFactory="true"
+      ecorePackage="ModulobMigration.ecore#/">
+    <genClasses image="false" ecoreClass="ModulobMigration.ecore#//Change">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModulobMigration.ecore#//Change/sourceName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModulobMigration.ecore#//Change/destinationName"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ModulobMigration.ecore#//EntityChange">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModulobMigration.ecore#//EntityChange/attributeChanges"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModulobMigration.ecore#//EntityChange/relationChanges"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ModulobMigration.ecore#//EntityChange/sourceEntity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ModulobMigration.ecore#//EntityChange/destinationEntity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ModulobMigration.ecore#//EntityChange/sourceFeature"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ModulobMigration.ecore#//EntityChange/destinationFeature"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ModulobMigration.ecore#//AttributeChange"/>
+    <genClasses image="false" ecoreClass="ModulobMigration.ecore#//RelationChange"/>
+    <genClasses ecoreClass="ModulobMigration.ecore#//EntityCopied"/>
+    <genClasses ecoreClass="ModulobMigration.ecore#//EntityAdded"/>
+    <genClasses ecoreClass="ModulobMigration.ecore#//EntityRemoved"/>
+    <genClasses ecoreClass="ModulobMigration.ecore#//EntityRenamed"/>
+    <genClasses ecoreClass="ModulobMigration.ecore#//AttributeCopied"/>
+    <genClasses ecoreClass="ModulobMigration.ecore#//AttributeRenamed"/>
+    <genClasses ecoreClass="ModulobMigration.ecore#//AttributeAdded"/>
+    <genClasses ecoreClass="ModulobMigration.ecore#//AttributeRemoved"/>
+    <genClasses ecoreClass="ModulobMigration.ecore#//RelationCopied"/>
+    <genClasses ecoreClass="ModulobMigration.ecore#//RelationRenamed"/>
+    <genClasses ecoreClass="ModulobMigration.ecore#//RelationAdded"/>
+    <genClasses ecoreClass="ModulobMigration.ecore#//RelationRemoved"/>
+    <genClasses image="false" ecoreClass="ModulobMigration.ecore#//FeatureChange">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModulobMigration.ecore#//FeatureChange/sourceExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="ModulobMigration.ecore#//Migration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModulobMigration.ecore#//Migration/entityChanges"/>
+    </genClasses>
+    <genClasses ecoreClass="ModulobMigration.ecore#//EntityChangedFeatures"/>
+  </genPackages>
+</genmodel:GenModel>

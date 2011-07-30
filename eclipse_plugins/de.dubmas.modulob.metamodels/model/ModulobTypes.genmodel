@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.dubmas.modulob.metamodels/src"
+    modelPluginID="de.dubmas.modulob.metamodels" modelName="ModulobTypes" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>ModulobTypes.ecore</foreignModel>
+  <genPackages prefix="Types" basePackage="de.dubmas.modulob" disposableProviderFactory="true"
+      ecorePackage="ModulobTypes.ecore#/">
+    <genClasses image="false" ecoreClass="ModulobTypes.ecore#//Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModulobTypes.ecore#//Type/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ModulobTypes.ecore#//UserDefined"/>
+    <genClasses ecoreClass="ModulobTypes.ecore#//Primitive"/>
+    <genClasses ecoreClass="ModulobTypes.ecore#//Any"/>
+    <genClasses ecoreClass="ModulobTypes.ecore#//TypeRef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModulobTypes.ecore#//TypeRef/isMulti"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ModulobTypes.ecore#//TypeRef/referenced"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

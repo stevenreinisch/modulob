@@ -1,0 +1,17 @@
+grammar de.dubmas.modulob.NotificationDsl with de.dubmas.modulob.common.Dsl
+
+import 'platform:/resource/de.dubmas.modulob.metamodels/model/Modulob.ecore' as modulob
+import 'platform:/resource/de.dubmas.modulob.metamodels/model/ModulobSystem.ecore' as system
+
+NotificationModel returns system::NotificationModel:
+	'notifications for module' 
+	module = [system::Module | QualifiedName]
+	'version' version = STRING 
+	(notifications += Notification)+
+;
+
+Notification returns modulob::Notification:
+	'notification' name=ID '{'
+		(features+=Feature)*
+	'}'
+;

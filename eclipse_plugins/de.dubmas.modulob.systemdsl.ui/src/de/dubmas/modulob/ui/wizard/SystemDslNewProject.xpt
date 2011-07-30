@@ -1,0 +1,28 @@
+«IMPORT de::dubmas::modulob::ui::wizard»
+
+«DEFINE main FOR SystemDslProjectInfo»
+«EXPAND model FOR this»
+«EXPAND workflow FOR this»
+«ENDDEFINE»
+
+«DEFINE model FOR SystemDslProjectInfo»
+«FILE "src/model/Model.mosys"-»
+/*
+ * This is an example model
+ */
+Hello Xtext!
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE workflow FOR SystemDslProjectInfo»
+«FILE "src/Generator.mwe2"-»
+module Generator
+
+var targetDir = "src-gen"
+var modelPath = "src/model"
+
+Workflow {
+	component = @workflow.SystemDslGenerator auto-inject {}
+}
+«ENDFILE»
+«ENDDEFINE»

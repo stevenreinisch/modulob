@@ -1,0 +1,47 @@
+grammar de.dubmas.modulob.common.Dsl with org.eclipse.xtext.common.Terminals
+
+import 'platform:/resource/de.dubmas.modulob.metamodels/model/Modulob.ecore' as modulob
+import 'platform:/resource/de.dubmas.modulob.metamodels/model/ModulobTypes.ecore' as types
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+Feature returns modulob::Feature:
+	(isIndexed?='indexed')?
+	(isContainment?='-[')?
+	type=TypeRef name=ID ('=' defaultValue=ValueObject)? 
+	('<->' inverse=[modulob::Feature])?
+	(';')?
+;
+
+TypeRef returns types::TypeRef:
+	referenced=[types::Type | QualifiedName] (isMulti?='[]')?
+;
+
+ValueObject returns modulob::ValueObject:
+	StringValue | IntegerValue | FloatValue
+;
+
+StringValue returns modulob::StringValue:
+	value=EStringObject
+;	
+
+EStringObject returns ecore::EString:
+	STRING
+;
+
+IntegerValue returns modulob::IntegerValue:
+	value=EIntegerObject
+;	
+
+EIntegerObject returns ecore::EIntegerObject:
+	INT
+;
+
+FloatValue returns modulob::FloatValue:
+	value=EFloatObject;
+	
+EFloatObject returns ecore::EFloatObject:
+	'-'? INT? '.' INT;
+
+QualifiedName :
+  ID ('.' ID)*
+;

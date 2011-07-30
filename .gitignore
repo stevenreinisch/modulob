@@ -1,0 +1,7 @@
+*.settings
+*.project
+*.metadata
+*.class
+bin
+target
+Servers

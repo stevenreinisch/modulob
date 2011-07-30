@@ -1,0 +1,11 @@
+grammar de.dubmas.modulob.SystemDsl with org.eclipse.xtext.common.Terminals
+
+import 'platform:/resource/de.dubmas.modulob.metamodels/model/ModulobSystem.ecore' as modulobSystem
+
+System returns modulobSystem::System:
+	'system' name=ID 'consistsOf' modules += Module (',' modules += Module)* 
+;
+
+Module returns modulobSystem::Module:
+	'module' name=ID
+;
