@@ -1,0 +1,17 @@
+
+migration + ui
+--------------
+
+- overall concept: 
+	- how is migration created
+	- how are related models created/updated
+		- how is migration model stored? as xmi? as xtext dsl?
+
+- action for creation of new entity model version
+- wizard for creation of new version (new version must be specified)
+- model cloning
+
+- how to handle diff model?
+- supply EntityModelsSelectionPage with paths of selected files
+- read entity models from these paths and supply EntityMappingWizard with these models
+- EntityMappingWizard re-adds pages if entity models are set
