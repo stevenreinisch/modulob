@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="de.dubmas.modulob.migration.popupMenu"
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="de.dubmas.modulob.migration.ui.objectContribution1"
+            nameFilter="*.modat"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               class="de.dubmas.modulob.migration.ui.actions.StartMigrationAction"
+               enablesFor="2"
+               id="de.dubmas.modulob.migration.ui.action1"
+               label="Specify Migration"
+               menubarPath="additions">
+         </action>
+      </objectContribution>
+   </extension>
+</plugin>
