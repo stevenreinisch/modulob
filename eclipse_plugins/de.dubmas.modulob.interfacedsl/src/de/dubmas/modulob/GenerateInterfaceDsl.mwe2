@@ -13,6 +13,10 @@ Workflow {
     bean = StandaloneSetup {
 	    scanClassPath = true
 		platformUri = "${runtimeProject}/.."
+		
+		registerGenModelFile = "platform:/resource/de.dubmas.modulob.metamodels/model/Modulob.genmodel"
+		registerGenModelFile = "platform:/resource/de.dubmas.modulob.metamodels/model/ModulobSystem.genmodel"
+		registerGenModelFile = "platform:/resource/de.dubmas.modulob.metamodels/model/ModulobTypes.genmodel"
 	}
 
 	component = DirectoryCleaner {
@@ -37,12 +41,12 @@ Workflow {
 			fragment = grammarAccess.GrammarAccessFragment {}
 
 			// generates Java API for the generated EPackages 
-			fragment = ecore.EcoreGeneratorFragment {
-			 referencedGenModels = "
-			 	platform:/resource/de.dubmas.modulob.metamodels/model/Modulob.genmodel,
-				platform:/resource/de.dubmas.modulob.metamodels/model/ModulobSystem.genmodel
-			 "
-			}
+//			fragment = ecore.EcoreGeneratorFragment {
+//			 referencedGenModels = "
+//			 	platform:/resource/de.dubmas.modulob.metamodels/model/Modulob.genmodel,
+//				platform:/resource/de.dubmas.modulob.metamodels/model/ModulobSystem.genmodel
+//			 "
+//			}
 
 			// the serialization component
 			fragment = parseTreeConstructor.ParseTreeConstructorFragment {}
