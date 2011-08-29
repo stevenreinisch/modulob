@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="migration"
-    nsURI="http://migration.modulob.dubmas.de/0.1" nsPrefix="de.dubmas.modulob.migration">
+    nsURI="http://migration.modulob.dubmas.de/0.1" nsPrefix="modulob">
   <eClassifiers xsi:type="ecore:EClass" name="Change" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="destinationName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

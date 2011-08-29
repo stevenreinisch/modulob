@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="modulob"
-    nsURI="http://modulob.dubmas.de/1.0" nsPrefix="de.dubmas">
+    nsURI="http://modulob.dubmas.de/1.0" nsPrefix="modulob">
   <eClassifiers xsi:type="ecore:EClass" name="Delegate" eSuperTypes="ModulobTypes.ecore#//UserDefined">
     <eStructuralFeatures xsi:type="ecore:EReference" name="methods" upperBound="-1"
         eType="#//Method" containment="true"/>

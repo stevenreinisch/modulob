@@ -49,7 +49,7 @@ public interface TypesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "de.dubmas.modulob";
+	String eNS_PREFIX = "modulob";
 
 	/**
 	 * The singleton instance of the package.

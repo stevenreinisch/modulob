@@ -10,3 +10,6 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.resources;bundle-version="3.7.100"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: de.dubmas.modulob.migration.ui,
+ de.dubmas.modulob.migration.ui.actions,
+ de.dubmas.modulob.migration.ui.wizard

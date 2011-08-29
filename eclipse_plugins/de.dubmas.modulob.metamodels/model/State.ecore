@@ -2,14 +2,14 @@
 <ecore:EPackage xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="state"
-    nsURI="http://www.dubmas.de/modulob/State" nsPrefix="state">
+    nsURI="http://www.dubmas.de/modulob/State" nsPrefix="modulob">
   <eClassifiers xsi:type="ecore:EClass" name="SystemStateModel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceStates" upperBound="-1"
         eType="#//InterfaceStateModel" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InterfaceStateModel">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interface" eType="ecore:EClass ../../../../../de.dubmas.modulob/src-gen/de/dubmas/Modulob.ecore#//Interface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interface" eType="ecore:EClass platform:/../../de.dubmas.modulob/src-gen/de/dubmas/Modulob.ecore#//Interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
         eType="#//State" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" upperBound="-1"
@@ -22,7 +22,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="AbstractTransition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//State"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="triggerNotification" eType="ecore:EClass ../../../../../de.dubmas.modulob/src-gen/de/dubmas/Modulob.ecore#//Notification"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="triggerNotification" eType="ecore:EClass platform:/../../de.dubmas.modulob/src-gen/de/dubmas/Modulob.ecore#//Notification"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="trueTarget" eType="#//State"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="#//AbstractTransition"/>
