@@ -2,7 +2,23 @@
 <?eclipse version="3.0"?>
 
 <plugin>
-
+	
+	<extension point = "org.eclipse.ui.newWizards">
+		<category
+	   		id = "de.dubmas.modulob.ui"
+	   		name="modulob">
+		</category>
+ 		<wizard
+	   		id = "de.dubmas.modulob.common.ui.wizard.new.module"
+      	   	name = "New modulob module"
+	   		class="de.dubmas.modulob.common.ui.wizard.NewModuleWizard"
+	   		category="de.dubmas.modulob.ui"
+	   		>
+    	    <description>Create a new modulob module. A module consists of the following models: data model, interface model ...</description>
+	   		<selection class="org.eclipse.core.resources.IFolder"/>
+		</wizard>
+	</extension>
+	
     <extension
             point="org.eclipse.ui.editors">
         <editor
