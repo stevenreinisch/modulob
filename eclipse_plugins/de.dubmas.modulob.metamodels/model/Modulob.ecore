@@ -12,6 +12,8 @@
         upperBound="-1" eType="#//Interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="methods" upperBound="-1"
         eType="#//Method" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="delegates" upperBound="-1"
+        eType="#//Delegate" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Method">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isStatic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -19,6 +21,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
         eType="#//Parameter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ModulobTypes.ecore#//TypeRef"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="advice" eType="#//Advice"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Notification">
@@ -69,5 +73,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FloatValue" eSuperTypes="#//ValueObject">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Advice">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interceptors" upperBound="-1"
+        eType="#//Method"/>
   </eClassifiers>
 </ecore:EPackage>
