@@ -30,7 +30,7 @@ class ModuleFileGenerator {
 	
 	def interfaceFile ()
 	'''
-	interfaces for module ÇmoduleNameÈ version "1.0"
+	interfaces for module Â«moduleNameÂ» version "1.0"
 	
 	interface AnInterface {
 		
@@ -39,7 +39,7 @@ class ModuleFileGenerator {
 	
 	def dataFile ()
 	'''
-	entities for module ÇmoduleNameÈ version "1.0"
+	entities for module Â«moduleNameÂ» version "1.0"
 	
 	entity AnEntity {
 		
