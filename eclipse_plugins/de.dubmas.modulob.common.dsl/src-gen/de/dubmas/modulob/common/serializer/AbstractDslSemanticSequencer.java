@@ -8,6 +8,9 @@ import de.dubmas.modulob.IntegerValue;
 import de.dubmas.modulob.ModulobPackage;
 import de.dubmas.modulob.StringValue;
 import de.dubmas.modulob.common.services.DslGrammarAccess;
+import de.dubmas.modulob.types.Any;
+import de.dubmas.modulob.types.Lib;
+import de.dubmas.modulob.types.Primitive;
 import de.dubmas.modulob.types.TypeRef;
 import de.dubmas.modulob.types.TypesPackage;
 import org.eclipse.emf.ecore.EObject;
@@ -52,42 +55,79 @@ public class AbstractDslSemanticSequencer extends AbstractSemanticSequencer {
 		if(semanticObject.eClass().getEPackage() == ModulobPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case ModulobPackage.FEATURE:
 				if(context == grammarAccess.getFeatureRule()) {
-					sequence_Feature_Feature(context, (Feature) semanticObject); 
+					sequence_Feature(context, (Feature) semanticObject); 
 					return; 
 				}
 				else break;
 			case ModulobPackage.FLOAT_VALUE:
-				if(context == grammarAccess.getValueObjectRule() ||
-				   context == grammarAccess.getFloatValueRule()) {
-					sequence_FloatValue_FloatValue(context, (FloatValue) semanticObject); 
+				if(context == grammarAccess.getFloatValueRule() ||
+				   context == grammarAccess.getValueObjectRule()) {
+					sequence_FloatValue(context, (FloatValue) semanticObject); 
 					return; 
 				}
 				else break;
 			case ModulobPackage.INTEGER_VALUE:
-				if(context == grammarAccess.getValueObjectRule() ||
-				   context == grammarAccess.getIntegerValueRule()) {
-					sequence_IntegerValue_IntegerValue(context, (IntegerValue) semanticObject); 
+				if(context == grammarAccess.getIntegerValueRule() ||
+				   context == grammarAccess.getValueObjectRule()) {
+					sequence_IntegerValue(context, (IntegerValue) semanticObject); 
 					return; 
 				}
 				else break;
 			case ModulobPackage.STRING_VALUE:
-				if(context == grammarAccess.getValueObjectRule() ||
-				   context == grammarAccess.getStringValueRule()) {
-					sequence_StringValue_StringValue(context, (StringValue) semanticObject); 
+				if(context == grammarAccess.getStringValueRule() ||
+				   context == grammarAccess.getValueObjectRule()) {
+					sequence_StringValue(context, (StringValue) semanticObject); 
 					return; 
 				}
 				else break;
 			}
 		else if(semanticObject.eClass().getEPackage() == TypesPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case TypesPackage.ANY:
+				if(context == grammarAccess.getAnyRule()) {
+					sequence_Any(context, (Any) semanticObject); 
+					return; 
+				}
+				else break;
+			case TypesPackage.LIB:
+				if(context == grammarAccess.getTypeLibRule()) {
+					sequence_TypeLib(context, (Lib) semanticObject); 
+					return; 
+				}
+				else break;
+			case TypesPackage.PRIMITIVE:
+				if(context == grammarAccess.getPrimitiveRule()) {
+					sequence_Primitive(context, (Primitive) semanticObject); 
+					return; 
+				}
+				else break;
 			case TypesPackage.TYPE_REF:
 				if(context == grammarAccess.getTypeRefRule()) {
-					sequence_TypeRef_TypeRef(context, (TypeRef) semanticObject); 
+					sequence_TypeRef(context, (TypeRef) semanticObject); 
 					return; 
 				}
 				else break;
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Constraint:
+	 *     name=ID
+	 *
+	 * Features:
+	 *    name[1, 1]
+	 */
+	protected void sequence_Any(EObject context, Any semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, TypesPackage.Literals.TYPE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TypesPackage.Literals.TYPE__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getAnyAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
 	
 	/**
 	 * Constraint:
@@ -108,7 +148,7 @@ public class AbstractDslSemanticSequencer extends AbstractSemanticSequencer {
 	 *    type[1, 1]
 	 *    defaultValue[0, 1]
 	 */
-	protected void sequence_Feature_Feature(EObject context, Feature semanticObject) {
+	protected void sequence_Feature(EObject context, Feature semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -120,7 +160,7 @@ public class AbstractDslSemanticSequencer extends AbstractSemanticSequencer {
 	 * Features:
 	 *    value[1, 1]
 	 */
-	protected void sequence_FloatValue_FloatValue(EObject context, FloatValue semanticObject) {
+	protected void sequence_FloatValue(EObject context, FloatValue semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, ModulobPackage.Literals.FLOAT_VALUE__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ModulobPackage.Literals.FLOAT_VALUE__VALUE));
@@ -139,7 +179,7 @@ public class AbstractDslSemanticSequencer extends AbstractSemanticSequencer {
 	 * Features:
 	 *    value[1, 1]
 	 */
-	protected void sequence_IntegerValue_IntegerValue(EObject context, IntegerValue semanticObject) {
+	protected void sequence_IntegerValue(EObject context, IntegerValue semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, ModulobPackage.Literals.INTEGER_VALUE__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ModulobPackage.Literals.INTEGER_VALUE__VALUE));
@@ -153,12 +193,31 @@ public class AbstractDslSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     name=ID
+	 *
+	 * Features:
+	 *    name[1, 1]
+	 */
+	protected void sequence_Primitive(EObject context, Primitive semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, TypesPackage.Literals.TYPE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TypesPackage.Literals.TYPE__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getPrimitiveAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     value=EStringObject
 	 *
 	 * Features:
 	 *    value[1, 1]
 	 */
-	protected void sequence_StringValue_StringValue(EObject context, StringValue semanticObject) {
+	protected void sequence_StringValue(EObject context, StringValue semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, ModulobPackage.Literals.STRING_VALUE__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ModulobPackage.Literals.STRING_VALUE__VALUE));
@@ -172,13 +231,26 @@ public class AbstractDslSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     (primitiveTypes+=Primitive+ anyType=Any)
+	 *
+	 * Features:
+	 *    primitiveTypes[1, *]
+	 *    anyType[1, 1]
+	 */
+	protected void sequence_TypeLib(EObject context, Lib semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (referenced=[Type|QualifiedName] isMulti?='[]'?)
 	 *
 	 * Features:
 	 *    isMulti[0, 1]
 	 *    referenced[1, 1]
 	 */
-	protected void sequence_TypeRef_TypeRef(EObject context, TypeRef semanticObject) {
+	protected void sequence_TypeRef(EObject context, TypeRef semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 }

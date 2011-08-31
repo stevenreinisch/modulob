@@ -17,6 +17,82 @@ import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
 public class DslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
+	public class TypeLibElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TypeLib");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cPrimitiveTypesAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cPrimitiveTypesPrimitiveParserRuleCall_0_0 = (RuleCall)cPrimitiveTypesAssignment_0.eContents().get(0);
+		private final Assignment cAnyTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cAnyTypeAnyParserRuleCall_1_0 = (RuleCall)cAnyTypeAssignment_1.eContents().get(0);
+		
+		//TypeLib returns types::Lib:
+		//	primitiveTypes+=Primitive+ anyType=Any;
+		public ParserRule getRule() { return rule; }
+
+		//primitiveTypes+=Primitive+ anyType=Any
+		public Group getGroup() { return cGroup; }
+
+		//primitiveTypes+=Primitive+
+		public Assignment getPrimitiveTypesAssignment_0() { return cPrimitiveTypesAssignment_0; }
+
+		//Primitive
+		public RuleCall getPrimitiveTypesPrimitiveParserRuleCall_0_0() { return cPrimitiveTypesPrimitiveParserRuleCall_0_0; }
+
+		//anyType=Any
+		public Assignment getAnyTypeAssignment_1() { return cAnyTypeAssignment_1; }
+
+		//Any
+		public RuleCall getAnyTypeAnyParserRuleCall_1_0() { return cAnyTypeAnyParserRuleCall_1_0; }
+	}
+
+	public class PrimitiveElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Primitive");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cPrimitiveTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//Primitive returns types::Primitive:
+		//	"primitive type" name=ID;
+		public ParserRule getRule() { return rule; }
+
+		//"primitive type" name=ID
+		public Group getGroup() { return cGroup; }
+
+		//"primitive type"
+		public Keyword getPrimitiveTypeKeyword_0() { return cPrimitiveTypeKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+	}
+
+	public class AnyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Any");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cAnyTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//Any returns types::Any:
+		//	"any type" name=ID;
+		public ParserRule getRule() { return rule; }
+
+		//"any type" name=ID
+		public Group getGroup() { return cGroup; }
+
+		//"any type"
+		public Keyword getAnyTypeKeyword_0() { return cAnyTypeKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+	}
+
 	public class FeatureElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Feature");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -288,6 +364,9 @@ public class DslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	
+	private TypeLibElements pTypeLib;
+	private PrimitiveElements pPrimitive;
+	private AnyElements pAny;
 	private FeatureElements pFeature;
 	private TypeRefElements pTypeRef;
 	private ValueObjectElements pValueObject;
@@ -320,6 +399,36 @@ public class DslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
+	//TypeLib returns types::Lib:
+	//	primitiveTypes+=Primitive+ anyType=Any;
+	public TypeLibElements getTypeLibAccess() {
+		return (pTypeLib != null) ? pTypeLib : (pTypeLib = new TypeLibElements());
+	}
+	
+	public ParserRule getTypeLibRule() {
+		return getTypeLibAccess().getRule();
+	}
+
+	//Primitive returns types::Primitive:
+	//	"primitive type" name=ID;
+	public PrimitiveElements getPrimitiveAccess() {
+		return (pPrimitive != null) ? pPrimitive : (pPrimitive = new PrimitiveElements());
+	}
+	
+	public ParserRule getPrimitiveRule() {
+		return getPrimitiveAccess().getRule();
+	}
+
+	//Any returns types::Any:
+	//	"any type" name=ID;
+	public AnyElements getAnyAccess() {
+		return (pAny != null) ? pAny : (pAny = new AnyElements());
+	}
+	
+	public ParserRule getAnyRule() {
+		return getAnyAccess().getRule();
+	}
+
 	//Feature returns modulob::Feature:
 	//	isIndexed?="indexed"? isContainment?="-["? type=TypeRef name=ID ("=" defaultValue=ValueObject)? ("<->"
 	//	inverse=[modulob::Feature])? ";"?;

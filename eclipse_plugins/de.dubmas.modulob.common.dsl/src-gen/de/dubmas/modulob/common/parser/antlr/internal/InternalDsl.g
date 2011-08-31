@@ -44,7 +44,7 @@ import de.dubmas.modulob.common.services.DslGrammarAccess;
     
     @Override
     protected String getFirstRuleName() {
-    	return "Feature";	
+    	return "TypeLib";	
    	}
    	
    	@Override
@@ -63,131 +63,146 @@ import de.dubmas.modulob.common.services.DslGrammarAccess;
 
 
 
-// Entry rule entryRuleFeature
-entryRuleFeature returns [EObject current=null] 
+// Entry rule entryRuleTypeLib
+entryRuleTypeLib returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getFeatureRule()); }
-	 iv_ruleFeature=ruleFeature 
-	 { $current=$iv_ruleFeature.current; } 
+	{ newCompositeNode(grammarAccess.getTypeLibRule()); }
+	 iv_ruleTypeLib=ruleTypeLib 
+	 { $current=$iv_ruleTypeLib.current; } 
 	 EOF 
 ;
 
-// Rule Feature
-ruleFeature returns [EObject current=null] 
+// Rule TypeLib
+ruleTypeLib returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 ((
 (
-		lv_isIndexed_0_0=	'indexed' 
-    {
-        newLeafNode(lv_isIndexed_0_0, grammarAccess.getFeatureAccess().getIsIndexedIndexedKeyword_0_0());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFeatureRule());
-	        }
-       		setWithLastConsumed($current, "isIndexed", true, "indexed");
-	    }
-
-)
-)?(
-(
-		lv_isContainment_1_0=	'-[' 
-    {
-        newLeafNode(lv_isContainment_1_0, grammarAccess.getFeatureAccess().getIsContainmentHyphenMinusLeftSquareBracketKeyword_1_0());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFeatureRule());
-	        }
-       		setWithLastConsumed($current, "isContainment", true, "-[");
-	    }
-
-)
-)?(
-(
 		{ 
-	        newCompositeNode(grammarAccess.getFeatureAccess().getTypeTypeRefParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getTypeLibAccess().getPrimitiveTypesPrimitiveParserRuleCall_0_0()); 
 	    }
-		lv_type_2_0=ruleTypeRef		{
+		lv_primitiveTypes_0_0=rulePrimitive		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getFeatureRule());
+	            $current = createModelElementForParent(grammarAccess.getTypeLibRule());
 	        }
-       		set(
+       		add(
        			$current, 
-       			"type",
-        		lv_type_2_0, 
-        		"TypeRef");
+       			"primitiveTypes",
+        		lv_primitiveTypes_0_0, 
+        		"Primitive");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)(
+)+(
 (
-		lv_name_3_0=RULE_ID
+		{ 
+	        newCompositeNode(grammarAccess.getTypeLibAccess().getAnyTypeAnyParserRuleCall_1_0()); 
+	    }
+		lv_anyType_1_0=ruleAny		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getTypeLibRule());
+	        }
+       		set(
+       			$current, 
+       			"anyType",
+        		lv_anyType_1_0, 
+        		"Any");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+;
+
+
+
+
+
+// Entry rule entryRulePrimitive
+entryRulePrimitive returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getPrimitiveRule()); }
+	 iv_rulePrimitive=rulePrimitive 
+	 { $current=$iv_rulePrimitive.current; } 
+	 EOF 
+;
+
+// Rule Primitive
+rulePrimitive returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='primitive type' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getPrimitiveAccess().getPrimitiveTypeKeyword_0());
+    }
+(
+(
+		lv_name_1_0=RULE_ID
 		{
-			newLeafNode(lv_name_3_0, grammarAccess.getFeatureAccess().getNameIDTerminalRuleCall_3_0()); 
+			newLeafNode(lv_name_1_0, grammarAccess.getPrimitiveAccess().getNameIDTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFeatureRule());
+	            $current = createModelElement(grammarAccess.getPrimitiveRule());
 	        }
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_3_0, 
+        		lv_name_1_0, 
         		"ID");
 	    }
 
 )
-)(	otherlv_4='=' 
-    {
-    	newLeafNode(otherlv_4, grammarAccess.getFeatureAccess().getEqualsSignKeyword_4_0());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getFeatureAccess().getDefaultValueValueObjectParserRuleCall_4_1_0()); 
-	    }
-		lv_defaultValue_5_0=ruleValueObject		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getFeatureRule());
-	        }
-       		set(
-       			$current, 
-       			"defaultValue",
-        		lv_defaultValue_5_0, 
-        		"ValueObject");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))?(	otherlv_6='<->' 
-    {
-    	newLeafNode(otherlv_6, grammarAccess.getFeatureAccess().getLessThanSignHyphenMinusGreaterThanSignKeyword_5_0());
-    }
-(
-(
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFeatureRule());
-	        }
-        }
-	otherlv_7=RULE_ID
-	{
-		newLeafNode(otherlv_7, grammarAccess.getFeatureAccess().getInverseFeatureCrossReference_5_1_0()); 
-	}
-
-)
-))?(	otherlv_8=';' 
-    {
-    	newLeafNode(otherlv_8, grammarAccess.getFeatureAccess().getSemicolonKeyword_6());
-    }
-)?)
+))
 ;
+
+
+
+
+
+// Entry rule entryRuleAny
+entryRuleAny returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getAnyRule()); }
+	 iv_ruleAny=ruleAny 
+	 { $current=$iv_ruleAny.current; } 
+	 EOF 
+;
+
+// Rule Any
+ruleAny returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='any type' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getAnyAccess().getAnyTypeKeyword_0());
+    }
+(
+(
+		lv_name_1_0=RULE_ID
+		{
+			newLeafNode(lv_name_1_0, grammarAccess.getAnyAccess().getNameIDTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getAnyRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_1_0, 
+        		"ID");
+	    }
+
+)
+))
+;
+
+
 
 
 

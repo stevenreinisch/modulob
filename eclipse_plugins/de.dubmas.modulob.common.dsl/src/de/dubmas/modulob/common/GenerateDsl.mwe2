@@ -5,7 +5,7 @@ import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
 var grammarURI = "classpath:/de/dubmas/modulob/common/Dsl.xtext"
-var file.extensions = "moco"
+var file.extensions = "modulob"
 var projectName = "de.dubmas.modulob.common.dsl"
 var runtimeProject = "../${projectName}"
 
@@ -13,6 +13,9 @@ Workflow {
     bean = StandaloneSetup {
         scanClassPath = true
         platformUri = "${runtimeProject}/.."
+        
+        registerGenModelFile = "platform:/resource/de.dubmas.modulob.metamodels/model/Modulob.genmodel"
+		registerGenModelFile = "platform:/resource/de.dubmas.modulob.metamodels/model/ModulobTypes.genmodel"
     }
 
     component = DirectoryCleaner {
@@ -37,12 +40,7 @@ Workflow {
             fragment = grammarAccess.GrammarAccessFragment {}
 
             // generates Java API for the generated EPackages
-            fragment = ecore.EcoreGeneratorFragment {
-			 referencedGenModels = "
-			 	platform:/resource/de.dubmas.modulob.metamodels/model/Modulob.genmodel,
-			 	platform:/resource/de.dubmas.modulob.metamodels/model/ModulobTypes.genmodel
-			 "
-			}
+            fragment = ecore.EcoreGeneratorFragment {}
 
             // Serializer 2.0
             fragment = serializer.SerializerFragment {}

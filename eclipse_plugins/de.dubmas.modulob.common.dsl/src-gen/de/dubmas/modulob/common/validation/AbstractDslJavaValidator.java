@@ -13,8 +13,8 @@ public class AbstractDslJavaValidator extends AbstractDeclarativeValidator {
 	@Override
 	protected List<EPackage> getEPackages() {
 	    List<EPackage> result = new ArrayList<EPackage>();
-	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://modulob.dubmas.de/1.0"));
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://types.modulob.dubmas.de/1.0"));
+	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://modulob.dubmas.de/1.0"));
 		return result;
 	}
 

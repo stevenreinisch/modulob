@@ -21,14 +21,11 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'indexed'", "'-['", "'='", "'<->'", "';'", "'[]'", "'-'", "'.'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'primitive type'", "'any type'", "'[]'", "'-'", "'.'"
     };
     public static final int RULE_ID=4;
     public static final int RULE_STRING=5;
-    public static final int T__16=16;
     public static final int T__15=15;
-    public static final int T__18=18;
-    public static final int T__17=17;
     public static final int T__12=12;
     public static final int T__11=11;
     public static final int T__14=14;
@@ -68,7 +65,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
         
         @Override
         protected String getFirstRuleName() {
-        	return "Feature";	
+        	return "TypeLib";	
        	}
        	
        	@Override
@@ -78,26 +75,26 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
 
-    // $ANTLR start "entryRuleFeature"
-    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:67:1: entryRuleFeature returns [EObject current=null] : iv_ruleFeature= ruleFeature EOF ;
-    public final EObject entryRuleFeature() throws RecognitionException {
+    // $ANTLR start "entryRuleTypeLib"
+    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:67:1: entryRuleTypeLib returns [EObject current=null] : iv_ruleTypeLib= ruleTypeLib EOF ;
+    public final EObject entryRuleTypeLib() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleFeature = null;
+        EObject iv_ruleTypeLib = null;
 
 
         try {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:68:2: (iv_ruleFeature= ruleFeature EOF )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:69:2: iv_ruleFeature= ruleFeature EOF
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:68:2: (iv_ruleTypeLib= ruleTypeLib EOF )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:69:2: iv_ruleTypeLib= ruleTypeLib EOF
             {
-             newCompositeNode(grammarAccess.getFeatureRule()); 
-            pushFollow(FOLLOW_ruleFeature_in_entryRuleFeature75);
-            iv_ruleFeature=ruleFeature();
+             newCompositeNode(grammarAccess.getTypeLibRule()); 
+            pushFollow(FOLLOW_ruleTypeLib_in_entryRuleTypeLib75);
+            iv_ruleTypeLib=ruleTypeLib();
 
             state._fsp--;
 
-             current =iv_ruleFeature; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFeature85); 
+             current =iv_ruleTypeLib; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTypeLib85); 
 
             }
 
@@ -111,270 +108,110 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleFeature"
+    // $ANTLR end "entryRuleTypeLib"
 
 
-    // $ANTLR start "ruleFeature"
-    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:76:1: ruleFeature returns [EObject current=null] : ( ( (lv_isIndexed_0_0= 'indexed' ) )? ( (lv_isContainment_1_0= '-[' ) )? ( (lv_type_2_0= ruleTypeRef ) ) ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleValueObject ) ) )? (otherlv_6= '<->' ( (otherlv_7= RULE_ID ) ) )? (otherlv_8= ';' )? ) ;
-    public final EObject ruleFeature() throws RecognitionException {
+    // $ANTLR start "ruleTypeLib"
+    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:76:1: ruleTypeLib returns [EObject current=null] : ( ( (lv_primitiveTypes_0_0= rulePrimitive ) )+ ( (lv_anyType_1_0= ruleAny ) ) ) ;
+    public final EObject ruleTypeLib() throws RecognitionException {
         EObject current = null;
 
-        Token lv_isIndexed_0_0=null;
-        Token lv_isContainment_1_0=null;
-        Token lv_name_3_0=null;
-        Token otherlv_4=null;
-        Token otherlv_6=null;
-        Token otherlv_7=null;
-        Token otherlv_8=null;
-        EObject lv_type_2_0 = null;
+        EObject lv_primitiveTypes_0_0 = null;
 
-        EObject lv_defaultValue_5_0 = null;
+        EObject lv_anyType_1_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:79:28: ( ( ( (lv_isIndexed_0_0= 'indexed' ) )? ( (lv_isContainment_1_0= '-[' ) )? ( (lv_type_2_0= ruleTypeRef ) ) ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleValueObject ) ) )? (otherlv_6= '<->' ( (otherlv_7= RULE_ID ) ) )? (otherlv_8= ';' )? ) )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:80:1: ( ( (lv_isIndexed_0_0= 'indexed' ) )? ( (lv_isContainment_1_0= '-[' ) )? ( (lv_type_2_0= ruleTypeRef ) ) ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleValueObject ) ) )? (otherlv_6= '<->' ( (otherlv_7= RULE_ID ) ) )? (otherlv_8= ';' )? )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:79:28: ( ( ( (lv_primitiveTypes_0_0= rulePrimitive ) )+ ( (lv_anyType_1_0= ruleAny ) ) ) )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:80:1: ( ( (lv_primitiveTypes_0_0= rulePrimitive ) )+ ( (lv_anyType_1_0= ruleAny ) ) )
             {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:80:1: ( ( (lv_isIndexed_0_0= 'indexed' ) )? ( (lv_isContainment_1_0= '-[' ) )? ( (lv_type_2_0= ruleTypeRef ) ) ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleValueObject ) ) )? (otherlv_6= '<->' ( (otherlv_7= RULE_ID ) ) )? (otherlv_8= ';' )? )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:80:2: ( (lv_isIndexed_0_0= 'indexed' ) )? ( (lv_isContainment_1_0= '-[' ) )? ( (lv_type_2_0= ruleTypeRef ) ) ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleValueObject ) ) )? (otherlv_6= '<->' ( (otherlv_7= RULE_ID ) ) )? (otherlv_8= ';' )?
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:80:1: ( ( (lv_primitiveTypes_0_0= rulePrimitive ) )+ ( (lv_anyType_1_0= ruleAny ) ) )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:80:2: ( (lv_primitiveTypes_0_0= rulePrimitive ) )+ ( (lv_anyType_1_0= ruleAny ) )
             {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:80:2: ( (lv_isIndexed_0_0= 'indexed' ) )?
-            int alt1=2;
-            int LA1_0 = input.LA(1);
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:80:2: ( (lv_primitiveTypes_0_0= rulePrimitive ) )+
+            int cnt1=0;
+            loop1:
+            do {
+                int alt1=2;
+                int LA1_0 = input.LA(1);
 
-            if ( (LA1_0==11) ) {
-                alt1=1;
-            }
-            switch (alt1) {
-                case 1 :
-                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:81:1: (lv_isIndexed_0_0= 'indexed' )
-                    {
-                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:81:1: (lv_isIndexed_0_0= 'indexed' )
-                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:82:3: lv_isIndexed_0_0= 'indexed'
-                    {
-                    lv_isIndexed_0_0=(Token)match(input,11,FOLLOW_11_in_ruleFeature128); 
-
-                            newLeafNode(lv_isIndexed_0_0, grammarAccess.getFeatureAccess().getIsIndexedIndexedKeyword_0_0());
-                        
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getFeatureRule());
-                    	        }
-                           		setWithLastConsumed(current, "isIndexed", true, "indexed");
-                    	    
-
-                    }
+                if ( (LA1_0==11) ) {
+                    alt1=1;
+                }
 
 
-                    }
-                    break;
+                switch (alt1) {
+            	case 1 :
+            	    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:81:1: (lv_primitiveTypes_0_0= rulePrimitive )
+            	    {
+            	    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:81:1: (lv_primitiveTypes_0_0= rulePrimitive )
+            	    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:82:3: lv_primitiveTypes_0_0= rulePrimitive
+            	    {
+            	     
+            	    	        newCompositeNode(grammarAccess.getTypeLibAccess().getPrimitiveTypesPrimitiveParserRuleCall_0_0()); 
+            	    	    
+            	    pushFollow(FOLLOW_rulePrimitive_in_ruleTypeLib131);
+            	    lv_primitiveTypes_0_0=rulePrimitive();
 
-            }
-
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:95:3: ( (lv_isContainment_1_0= '-[' ) )?
-            int alt2=2;
-            int LA2_0 = input.LA(1);
-
-            if ( (LA2_0==12) ) {
-                alt2=1;
-            }
-            switch (alt2) {
-                case 1 :
-                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:96:1: (lv_isContainment_1_0= '-[' )
-                    {
-                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:96:1: (lv_isContainment_1_0= '-[' )
-                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:97:3: lv_isContainment_1_0= '-['
-                    {
-                    lv_isContainment_1_0=(Token)match(input,12,FOLLOW_12_in_ruleFeature160); 
-
-                            newLeafNode(lv_isContainment_1_0, grammarAccess.getFeatureAccess().getIsContainmentHyphenMinusLeftSquareBracketKeyword_1_0());
-                        
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getFeatureRule());
-                    	        }
-                           		setWithLastConsumed(current, "isContainment", true, "-[");
-                    	    
-
-                    }
+            	    state._fsp--;
 
 
-                    }
-                    break;
+            	    	        if (current==null) {
+            	    	            current = createModelElementForParent(grammarAccess.getTypeLibRule());
+            	    	        }
+            	           		add(
+            	           			current, 
+            	           			"primitiveTypes",
+            	            		lv_primitiveTypes_0_0, 
+            	            		"Primitive");
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
 
-            }
+            	    }
 
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:110:3: ( (lv_type_2_0= ruleTypeRef ) )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:111:1: (lv_type_2_0= ruleTypeRef )
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt1 >= 1 ) break loop1;
+                        EarlyExitException eee =
+                            new EarlyExitException(1, input);
+                        throw eee;
+                }
+                cnt1++;
+            } while (true);
+
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:98:3: ( (lv_anyType_1_0= ruleAny ) )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:99:1: (lv_anyType_1_0= ruleAny )
             {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:111:1: (lv_type_2_0= ruleTypeRef )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:112:3: lv_type_2_0= ruleTypeRef
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:99:1: (lv_anyType_1_0= ruleAny )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:100:3: lv_anyType_1_0= ruleAny
             {
              
-            	        newCompositeNode(grammarAccess.getFeatureAccess().getTypeTypeRefParserRuleCall_2_0()); 
+            	        newCompositeNode(grammarAccess.getTypeLibAccess().getAnyTypeAnyParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleTypeRef_in_ruleFeature195);
-            lv_type_2_0=ruleTypeRef();
+            pushFollow(FOLLOW_ruleAny_in_ruleTypeLib153);
+            lv_anyType_1_0=ruleAny();
 
             state._fsp--;
 
 
             	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getFeatureRule());
+            	            current = createModelElementForParent(grammarAccess.getTypeLibRule());
             	        }
                    		set(
                    			current, 
-                   			"type",
-                    		lv_type_2_0, 
-                    		"TypeRef");
+                   			"anyType",
+                    		lv_anyType_1_0, 
+                    		"Any");
             	        afterParserOrEnumRuleCall();
             	    
 
             }
 
-
-            }
-
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:128:2: ( (lv_name_3_0= RULE_ID ) )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:129:1: (lv_name_3_0= RULE_ID )
-            {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:129:1: (lv_name_3_0= RULE_ID )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:130:3: lv_name_3_0= RULE_ID
-            {
-            lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFeature212); 
-
-            			newLeafNode(lv_name_3_0, grammarAccess.getFeatureAccess().getNameIDTerminalRuleCall_3_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getFeatureRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"name",
-                    		lv_name_3_0, 
-                    		"ID");
-            	    
-
-            }
-
-
-            }
-
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:146:2: (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleValueObject ) ) )?
-            int alt3=2;
-            int LA3_0 = input.LA(1);
-
-            if ( (LA3_0==13) ) {
-                alt3=1;
-            }
-            switch (alt3) {
-                case 1 :
-                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:146:4: otherlv_4= '=' ( (lv_defaultValue_5_0= ruleValueObject ) )
-                    {
-                    otherlv_4=(Token)match(input,13,FOLLOW_13_in_ruleFeature230); 
-
-                        	newLeafNode(otherlv_4, grammarAccess.getFeatureAccess().getEqualsSignKeyword_4_0());
-                        
-                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:150:1: ( (lv_defaultValue_5_0= ruleValueObject ) )
-                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:151:1: (lv_defaultValue_5_0= ruleValueObject )
-                    {
-                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:151:1: (lv_defaultValue_5_0= ruleValueObject )
-                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:152:3: lv_defaultValue_5_0= ruleValueObject
-                    {
-                     
-                    	        newCompositeNode(grammarAccess.getFeatureAccess().getDefaultValueValueObjectParserRuleCall_4_1_0()); 
-                    	    
-                    pushFollow(FOLLOW_ruleValueObject_in_ruleFeature251);
-                    lv_defaultValue_5_0=ruleValueObject();
-
-                    state._fsp--;
-
-
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getFeatureRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"defaultValue",
-                            		lv_defaultValue_5_0, 
-                            		"ValueObject");
-                    	        afterParserOrEnumRuleCall();
-                    	    
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:168:4: (otherlv_6= '<->' ( (otherlv_7= RULE_ID ) ) )?
-            int alt4=2;
-            int LA4_0 = input.LA(1);
-
-            if ( (LA4_0==14) ) {
-                alt4=1;
-            }
-            switch (alt4) {
-                case 1 :
-                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:168:6: otherlv_6= '<->' ( (otherlv_7= RULE_ID ) )
-                    {
-                    otherlv_6=(Token)match(input,14,FOLLOW_14_in_ruleFeature266); 
-
-                        	newLeafNode(otherlv_6, grammarAccess.getFeatureAccess().getLessThanSignHyphenMinusGreaterThanSignKeyword_5_0());
-                        
-                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:172:1: ( (otherlv_7= RULE_ID ) )
-                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:173:1: (otherlv_7= RULE_ID )
-                    {
-                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:173:1: (otherlv_7= RULE_ID )
-                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:174:3: otherlv_7= RULE_ID
-                    {
-
-                    			if (current==null) {
-                    	            current = createModelElement(grammarAccess.getFeatureRule());
-                    	        }
-                            
-                    otherlv_7=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFeature286); 
-
-                    		newLeafNode(otherlv_7, grammarAccess.getFeatureAccess().getInverseFeatureCrossReference_5_1_0()); 
-                    	
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:185:4: (otherlv_8= ';' )?
-            int alt5=2;
-            int LA5_0 = input.LA(1);
-
-            if ( (LA5_0==15) ) {
-                alt5=1;
-            }
-            switch (alt5) {
-                case 1 :
-                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:185:6: otherlv_8= ';'
-                    {
-                    otherlv_8=(Token)match(input,15,FOLLOW_15_in_ruleFeature301); 
-
-                        	newLeafNode(otherlv_8, grammarAccess.getFeatureAccess().getSemicolonKeyword_6());
-                        
-
-                    }
-                    break;
 
             }
 
@@ -395,11 +232,217 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleFeature"
+    // $ANTLR end "ruleTypeLib"
+
+
+    // $ANTLR start "entryRulePrimitive"
+    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:124:1: entryRulePrimitive returns [EObject current=null] : iv_rulePrimitive= rulePrimitive EOF ;
+    public final EObject entryRulePrimitive() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_rulePrimitive = null;
+
+
+        try {
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:125:2: (iv_rulePrimitive= rulePrimitive EOF )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:126:2: iv_rulePrimitive= rulePrimitive EOF
+            {
+             newCompositeNode(grammarAccess.getPrimitiveRule()); 
+            pushFollow(FOLLOW_rulePrimitive_in_entryRulePrimitive189);
+            iv_rulePrimitive=rulePrimitive();
+
+            state._fsp--;
+
+             current =iv_rulePrimitive; 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePrimitive199); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRulePrimitive"
+
+
+    // $ANTLR start "rulePrimitive"
+    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:133:1: rulePrimitive returns [EObject current=null] : (otherlv_0= 'primitive type' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    public final EObject rulePrimitive() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_name_1_0=null;
+
+         enterRule(); 
+            
+        try {
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:136:28: ( (otherlv_0= 'primitive type' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:137:1: (otherlv_0= 'primitive type' ( (lv_name_1_0= RULE_ID ) ) )
+            {
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:137:1: (otherlv_0= 'primitive type' ( (lv_name_1_0= RULE_ID ) ) )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:137:3: otherlv_0= 'primitive type' ( (lv_name_1_0= RULE_ID ) )
+            {
+            otherlv_0=(Token)match(input,11,FOLLOW_11_in_rulePrimitive236); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getPrimitiveAccess().getPrimitiveTypeKeyword_0());
+                
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:141:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:142:1: (lv_name_1_0= RULE_ID )
+            {
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:142:1: (lv_name_1_0= RULE_ID )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:143:3: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_rulePrimitive253); 
+
+            			newLeafNode(lv_name_1_0, grammarAccess.getPrimitiveAccess().getNameIDTerminalRuleCall_1_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getPrimitiveRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"name",
+                    		lv_name_1_0, 
+                    		"ID");
+            	    
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulePrimitive"
+
+
+    // $ANTLR start "entryRuleAny"
+    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:167:1: entryRuleAny returns [EObject current=null] : iv_ruleAny= ruleAny EOF ;
+    public final EObject entryRuleAny() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleAny = null;
+
+
+        try {
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:168:2: (iv_ruleAny= ruleAny EOF )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:169:2: iv_ruleAny= ruleAny EOF
+            {
+             newCompositeNode(grammarAccess.getAnyRule()); 
+            pushFollow(FOLLOW_ruleAny_in_entryRuleAny294);
+            iv_ruleAny=ruleAny();
+
+            state._fsp--;
+
+             current =iv_ruleAny; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAny304); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleAny"
+
+
+    // $ANTLR start "ruleAny"
+    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:176:1: ruleAny returns [EObject current=null] : (otherlv_0= 'any type' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    public final EObject ruleAny() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_name_1_0=null;
+
+         enterRule(); 
+            
+        try {
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:179:28: ( (otherlv_0= 'any type' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:180:1: (otherlv_0= 'any type' ( (lv_name_1_0= RULE_ID ) ) )
+            {
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:180:1: (otherlv_0= 'any type' ( (lv_name_1_0= RULE_ID ) ) )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:180:3: otherlv_0= 'any type' ( (lv_name_1_0= RULE_ID ) )
+            {
+            otherlv_0=(Token)match(input,12,FOLLOW_12_in_ruleAny341); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getAnyAccess().getAnyTypeKeyword_0());
+                
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:184:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:185:1: (lv_name_1_0= RULE_ID )
+            {
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:185:1: (lv_name_1_0= RULE_ID )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:186:3: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAny358); 
+
+            			newLeafNode(lv_name_1_0, grammarAccess.getAnyAccess().getNameIDTerminalRuleCall_1_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getAnyRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"name",
+                    		lv_name_1_0, 
+                    		"ID");
+            	    
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleAny"
 
 
     // $ANTLR start "entryRuleTypeRef"
-    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:197:1: entryRuleTypeRef returns [EObject current=null] : iv_ruleTypeRef= ruleTypeRef EOF ;
+    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:212:1: entryRuleTypeRef returns [EObject current=null] : iv_ruleTypeRef= ruleTypeRef EOF ;
     public final EObject entryRuleTypeRef() throws RecognitionException {
         EObject current = null;
 
@@ -407,17 +450,17 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:198:2: (iv_ruleTypeRef= ruleTypeRef EOF )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:199:2: iv_ruleTypeRef= ruleTypeRef EOF
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:213:2: (iv_ruleTypeRef= ruleTypeRef EOF )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:214:2: iv_ruleTypeRef= ruleTypeRef EOF
             {
              newCompositeNode(grammarAccess.getTypeRefRule()); 
-            pushFollow(FOLLOW_ruleTypeRef_in_entryRuleTypeRef339);
+            pushFollow(FOLLOW_ruleTypeRef_in_entryRuleTypeRef401);
             iv_ruleTypeRef=ruleTypeRef();
 
             state._fsp--;
 
              current =iv_ruleTypeRef; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTypeRef349); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTypeRef411); 
 
             }
 
@@ -435,7 +478,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTypeRef"
-    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:206:1: ruleTypeRef returns [EObject current=null] : ( ( ( ruleQualifiedName ) ) ( (lv_isMulti_1_0= '[]' ) )? ) ;
+    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:221:1: ruleTypeRef returns [EObject current=null] : ( ( ( ruleQualifiedName ) ) ( (lv_isMulti_1_0= '[]' ) )? ) ;
     public final EObject ruleTypeRef() throws RecognitionException {
         EObject current = null;
 
@@ -444,17 +487,17 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:209:28: ( ( ( ( ruleQualifiedName ) ) ( (lv_isMulti_1_0= '[]' ) )? ) )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:210:1: ( ( ( ruleQualifiedName ) ) ( (lv_isMulti_1_0= '[]' ) )? )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:224:28: ( ( ( ( ruleQualifiedName ) ) ( (lv_isMulti_1_0= '[]' ) )? ) )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:225:1: ( ( ( ruleQualifiedName ) ) ( (lv_isMulti_1_0= '[]' ) )? )
             {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:210:1: ( ( ( ruleQualifiedName ) ) ( (lv_isMulti_1_0= '[]' ) )? )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:210:2: ( ( ruleQualifiedName ) ) ( (lv_isMulti_1_0= '[]' ) )?
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:225:1: ( ( ( ruleQualifiedName ) ) ( (lv_isMulti_1_0= '[]' ) )? )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:225:2: ( ( ruleQualifiedName ) ) ( (lv_isMulti_1_0= '[]' ) )?
             {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:210:2: ( ( ruleQualifiedName ) )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:211:1: ( ruleQualifiedName )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:225:2: ( ( ruleQualifiedName ) )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:226:1: ( ruleQualifiedName )
             {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:211:1: ( ruleQualifiedName )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:212:3: ruleQualifiedName
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:226:1: ( ruleQualifiedName )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:227:3: ruleQualifiedName
             {
 
             			if (current==null) {
@@ -464,7 +507,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getTypeRefAccess().getReferencedTypeCrossReference_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleQualifiedName_in_ruleTypeRef397);
+            pushFollow(FOLLOW_ruleQualifiedName_in_ruleTypeRef459);
             ruleQualifiedName();
 
             state._fsp--;
@@ -478,21 +521,21 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:225:2: ( (lv_isMulti_1_0= '[]' ) )?
-            int alt6=2;
-            int LA6_0 = input.LA(1);
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:240:2: ( (lv_isMulti_1_0= '[]' ) )?
+            int alt2=2;
+            int LA2_0 = input.LA(1);
 
-            if ( (LA6_0==16) ) {
-                alt6=1;
+            if ( (LA2_0==13) ) {
+                alt2=1;
             }
-            switch (alt6) {
+            switch (alt2) {
                 case 1 :
-                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:226:1: (lv_isMulti_1_0= '[]' )
+                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:241:1: (lv_isMulti_1_0= '[]' )
                     {
-                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:226:1: (lv_isMulti_1_0= '[]' )
-                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:227:3: lv_isMulti_1_0= '[]'
+                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:241:1: (lv_isMulti_1_0= '[]' )
+                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:242:3: lv_isMulti_1_0= '[]'
                     {
-                    lv_isMulti_1_0=(Token)match(input,16,FOLLOW_16_in_ruleTypeRef415); 
+                    lv_isMulti_1_0=(Token)match(input,13,FOLLOW_13_in_ruleTypeRef477); 
 
                             newLeafNode(lv_isMulti_1_0, grammarAccess.getTypeRefAccess().getIsMultiLeftSquareBracketRightSquareBracketKeyword_1_0());
                         
@@ -532,7 +575,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleValueObject"
-    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:248:1: entryRuleValueObject returns [EObject current=null] : iv_ruleValueObject= ruleValueObject EOF ;
+    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:263:1: entryRuleValueObject returns [EObject current=null] : iv_ruleValueObject= ruleValueObject EOF ;
     public final EObject entryRuleValueObject() throws RecognitionException {
         EObject current = null;
 
@@ -540,17 +583,17 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:249:2: (iv_ruleValueObject= ruleValueObject EOF )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:250:2: iv_ruleValueObject= ruleValueObject EOF
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:264:2: (iv_ruleValueObject= ruleValueObject EOF )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:265:2: iv_ruleValueObject= ruleValueObject EOF
             {
              newCompositeNode(grammarAccess.getValueObjectRule()); 
-            pushFollow(FOLLOW_ruleValueObject_in_entryRuleValueObject465);
+            pushFollow(FOLLOW_ruleValueObject_in_entryRuleValueObject527);
             iv_ruleValueObject=ruleValueObject();
 
             state._fsp--;
 
              current =iv_ruleValueObject; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleValueObject475); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleValueObject537); 
 
             }
 
@@ -568,7 +611,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleValueObject"
-    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:257:1: ruleValueObject returns [EObject current=null] : (this_StringValue_0= ruleStringValue | this_IntegerValue_1= ruleIntegerValue | this_FloatValue_2= ruleFloatValue ) ;
+    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:272:1: ruleValueObject returns [EObject current=null] : (this_StringValue_0= ruleStringValue | this_IntegerValue_1= ruleIntegerValue | this_FloatValue_2= ruleFloatValue ) ;
     public final EObject ruleValueObject() throws RecognitionException {
         EObject current = null;
 
@@ -582,56 +625,56 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:260:28: ( (this_StringValue_0= ruleStringValue | this_IntegerValue_1= ruleIntegerValue | this_FloatValue_2= ruleFloatValue ) )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:261:1: (this_StringValue_0= ruleStringValue | this_IntegerValue_1= ruleIntegerValue | this_FloatValue_2= ruleFloatValue )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:275:28: ( (this_StringValue_0= ruleStringValue | this_IntegerValue_1= ruleIntegerValue | this_FloatValue_2= ruleFloatValue ) )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:276:1: (this_StringValue_0= ruleStringValue | this_IntegerValue_1= ruleIntegerValue | this_FloatValue_2= ruleFloatValue )
             {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:261:1: (this_StringValue_0= ruleStringValue | this_IntegerValue_1= ruleIntegerValue | this_FloatValue_2= ruleFloatValue )
-            int alt7=3;
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:276:1: (this_StringValue_0= ruleStringValue | this_IntegerValue_1= ruleIntegerValue | this_FloatValue_2= ruleFloatValue )
+            int alt3=3;
             switch ( input.LA(1) ) {
             case RULE_STRING:
                 {
-                alt7=1;
+                alt3=1;
                 }
                 break;
             case RULE_INT:
                 {
-                int LA7_2 = input.LA(2);
+                int LA3_2 = input.LA(2);
 
-                if ( (LA7_2==EOF||(LA7_2>=14 && LA7_2<=15)) ) {
-                    alt7=2;
+                if ( (LA3_2==15) ) {
+                    alt3=3;
                 }
-                else if ( (LA7_2==18) ) {
-                    alt7=3;
+                else if ( (LA3_2==EOF) ) {
+                    alt3=2;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 7, 2, input);
+                        new NoViableAltException("", 3, 2, input);
 
                     throw nvae;
                 }
                 }
                 break;
-            case 17:
-            case 18:
+            case 14:
+            case 15:
                 {
-                alt7=3;
+                alt3=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 7, 0, input);
+                    new NoViableAltException("", 3, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt7) {
+            switch (alt3) {
                 case 1 :
-                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:262:5: this_StringValue_0= ruleStringValue
+                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:277:5: this_StringValue_0= ruleStringValue
                     {
                      
                             newCompositeNode(grammarAccess.getValueObjectAccess().getStringValueParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleStringValue_in_ruleValueObject522);
+                    pushFollow(FOLLOW_ruleStringValue_in_ruleValueObject584);
                     this_StringValue_0=ruleStringValue();
 
                     state._fsp--;
@@ -644,12 +687,12 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:272:5: this_IntegerValue_1= ruleIntegerValue
+                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:287:5: this_IntegerValue_1= ruleIntegerValue
                     {
                      
                             newCompositeNode(grammarAccess.getValueObjectAccess().getIntegerValueParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleIntegerValue_in_ruleValueObject549);
+                    pushFollow(FOLLOW_ruleIntegerValue_in_ruleValueObject611);
                     this_IntegerValue_1=ruleIntegerValue();
 
                     state._fsp--;
@@ -662,12 +705,12 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:282:5: this_FloatValue_2= ruleFloatValue
+                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:297:5: this_FloatValue_2= ruleFloatValue
                     {
                      
                             newCompositeNode(grammarAccess.getValueObjectAccess().getFloatValueParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleFloatValue_in_ruleValueObject576);
+                    pushFollow(FOLLOW_ruleFloatValue_in_ruleValueObject638);
                     this_FloatValue_2=ruleFloatValue();
 
                     state._fsp--;
@@ -700,7 +743,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStringValue"
-    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:298:1: entryRuleStringValue returns [EObject current=null] : iv_ruleStringValue= ruleStringValue EOF ;
+    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:313:1: entryRuleStringValue returns [EObject current=null] : iv_ruleStringValue= ruleStringValue EOF ;
     public final EObject entryRuleStringValue() throws RecognitionException {
         EObject current = null;
 
@@ -708,17 +751,17 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:299:2: (iv_ruleStringValue= ruleStringValue EOF )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:300:2: iv_ruleStringValue= ruleStringValue EOF
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:314:2: (iv_ruleStringValue= ruleStringValue EOF )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:315:2: iv_ruleStringValue= ruleStringValue EOF
             {
              newCompositeNode(grammarAccess.getStringValueRule()); 
-            pushFollow(FOLLOW_ruleStringValue_in_entryRuleStringValue611);
+            pushFollow(FOLLOW_ruleStringValue_in_entryRuleStringValue673);
             iv_ruleStringValue=ruleStringValue();
 
             state._fsp--;
 
              current =iv_ruleStringValue; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStringValue621); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStringValue683); 
 
             }
 
@@ -736,7 +779,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStringValue"
-    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:307:1: ruleStringValue returns [EObject current=null] : ( (lv_value_0_0= ruleEStringObject ) ) ;
+    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:322:1: ruleStringValue returns [EObject current=null] : ( (lv_value_0_0= ruleEStringObject ) ) ;
     public final EObject ruleStringValue() throws RecognitionException {
         EObject current = null;
 
@@ -746,19 +789,19 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:310:28: ( ( (lv_value_0_0= ruleEStringObject ) ) )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:311:1: ( (lv_value_0_0= ruleEStringObject ) )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:325:28: ( ( (lv_value_0_0= ruleEStringObject ) ) )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:326:1: ( (lv_value_0_0= ruleEStringObject ) )
             {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:311:1: ( (lv_value_0_0= ruleEStringObject ) )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:312:1: (lv_value_0_0= ruleEStringObject )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:326:1: ( (lv_value_0_0= ruleEStringObject ) )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:327:1: (lv_value_0_0= ruleEStringObject )
             {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:312:1: (lv_value_0_0= ruleEStringObject )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:313:3: lv_value_0_0= ruleEStringObject
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:327:1: (lv_value_0_0= ruleEStringObject )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:328:3: lv_value_0_0= ruleEStringObject
             {
              
             	        newCompositeNode(grammarAccess.getStringValueAccess().getValueEStringObjectParserRuleCall_0()); 
             	    
-            pushFollow(FOLLOW_ruleEStringObject_in_ruleStringValue666);
+            pushFollow(FOLLOW_ruleEStringObject_in_ruleStringValue728);
             lv_value_0_0=ruleEStringObject();
 
             state._fsp--;
@@ -798,7 +841,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEStringObject"
-    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:337:1: entryRuleEStringObject returns [String current=null] : iv_ruleEStringObject= ruleEStringObject EOF ;
+    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:352:1: entryRuleEStringObject returns [String current=null] : iv_ruleEStringObject= ruleEStringObject EOF ;
     public final String entryRuleEStringObject() throws RecognitionException {
         String current = null;
 
@@ -806,17 +849,17 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:338:2: (iv_ruleEStringObject= ruleEStringObject EOF )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:339:2: iv_ruleEStringObject= ruleEStringObject EOF
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:353:2: (iv_ruleEStringObject= ruleEStringObject EOF )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:354:2: iv_ruleEStringObject= ruleEStringObject EOF
             {
              newCompositeNode(grammarAccess.getEStringObjectRule()); 
-            pushFollow(FOLLOW_ruleEStringObject_in_entryRuleEStringObject702);
+            pushFollow(FOLLOW_ruleEStringObject_in_entryRuleEStringObject764);
             iv_ruleEStringObject=ruleEStringObject();
 
             state._fsp--;
 
              current =iv_ruleEStringObject.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEStringObject713); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEStringObject775); 
 
             }
 
@@ -834,7 +877,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEStringObject"
-    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:346:1: ruleEStringObject returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
+    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:361:1: ruleEStringObject returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
     public final AntlrDatatypeRuleToken ruleEStringObject() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -843,10 +886,10 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:349:28: (this_STRING_0= RULE_STRING )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:350:5: this_STRING_0= RULE_STRING
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:364:28: (this_STRING_0= RULE_STRING )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:365:5: this_STRING_0= RULE_STRING
             {
-            this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEStringObject752); 
+            this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEStringObject814); 
 
             		current.merge(this_STRING_0);
                 
@@ -871,7 +914,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIntegerValue"
-    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:365:1: entryRuleIntegerValue returns [EObject current=null] : iv_ruleIntegerValue= ruleIntegerValue EOF ;
+    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:380:1: entryRuleIntegerValue returns [EObject current=null] : iv_ruleIntegerValue= ruleIntegerValue EOF ;
     public final EObject entryRuleIntegerValue() throws RecognitionException {
         EObject current = null;
 
@@ -879,17 +922,17 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:366:2: (iv_ruleIntegerValue= ruleIntegerValue EOF )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:367:2: iv_ruleIntegerValue= ruleIntegerValue EOF
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:381:2: (iv_ruleIntegerValue= ruleIntegerValue EOF )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:382:2: iv_ruleIntegerValue= ruleIntegerValue EOF
             {
              newCompositeNode(grammarAccess.getIntegerValueRule()); 
-            pushFollow(FOLLOW_ruleIntegerValue_in_entryRuleIntegerValue796);
+            pushFollow(FOLLOW_ruleIntegerValue_in_entryRuleIntegerValue858);
             iv_ruleIntegerValue=ruleIntegerValue();
 
             state._fsp--;
 
              current =iv_ruleIntegerValue; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleIntegerValue806); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleIntegerValue868); 
 
             }
 
@@ -907,7 +950,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIntegerValue"
-    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:374:1: ruleIntegerValue returns [EObject current=null] : ( (lv_value_0_0= ruleEIntegerObject ) ) ;
+    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:389:1: ruleIntegerValue returns [EObject current=null] : ( (lv_value_0_0= ruleEIntegerObject ) ) ;
     public final EObject ruleIntegerValue() throws RecognitionException {
         EObject current = null;
 
@@ -917,19 +960,19 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:377:28: ( ( (lv_value_0_0= ruleEIntegerObject ) ) )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:378:1: ( (lv_value_0_0= ruleEIntegerObject ) )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:392:28: ( ( (lv_value_0_0= ruleEIntegerObject ) ) )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:393:1: ( (lv_value_0_0= ruleEIntegerObject ) )
             {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:378:1: ( (lv_value_0_0= ruleEIntegerObject ) )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:379:1: (lv_value_0_0= ruleEIntegerObject )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:393:1: ( (lv_value_0_0= ruleEIntegerObject ) )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:394:1: (lv_value_0_0= ruleEIntegerObject )
             {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:379:1: (lv_value_0_0= ruleEIntegerObject )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:380:3: lv_value_0_0= ruleEIntegerObject
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:394:1: (lv_value_0_0= ruleEIntegerObject )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:395:3: lv_value_0_0= ruleEIntegerObject
             {
              
             	        newCompositeNode(grammarAccess.getIntegerValueAccess().getValueEIntegerObjectParserRuleCall_0()); 
             	    
-            pushFollow(FOLLOW_ruleEIntegerObject_in_ruleIntegerValue851);
+            pushFollow(FOLLOW_ruleEIntegerObject_in_ruleIntegerValue913);
             lv_value_0_0=ruleEIntegerObject();
 
             state._fsp--;
@@ -969,7 +1012,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEIntegerObject"
-    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:404:1: entryRuleEIntegerObject returns [String current=null] : iv_ruleEIntegerObject= ruleEIntegerObject EOF ;
+    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:419:1: entryRuleEIntegerObject returns [String current=null] : iv_ruleEIntegerObject= ruleEIntegerObject EOF ;
     public final String entryRuleEIntegerObject() throws RecognitionException {
         String current = null;
 
@@ -977,17 +1020,17 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:405:2: (iv_ruleEIntegerObject= ruleEIntegerObject EOF )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:406:2: iv_ruleEIntegerObject= ruleEIntegerObject EOF
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:420:2: (iv_ruleEIntegerObject= ruleEIntegerObject EOF )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:421:2: iv_ruleEIntegerObject= ruleEIntegerObject EOF
             {
              newCompositeNode(grammarAccess.getEIntegerObjectRule()); 
-            pushFollow(FOLLOW_ruleEIntegerObject_in_entryRuleEIntegerObject887);
+            pushFollow(FOLLOW_ruleEIntegerObject_in_entryRuleEIntegerObject949);
             iv_ruleEIntegerObject=ruleEIntegerObject();
 
             state._fsp--;
 
              current =iv_ruleEIntegerObject.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEIntegerObject898); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEIntegerObject960); 
 
             }
 
@@ -1005,7 +1048,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEIntegerObject"
-    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:413:1: ruleEIntegerObject returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
+    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:428:1: ruleEIntegerObject returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
     public final AntlrDatatypeRuleToken ruleEIntegerObject() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1014,10 +1057,10 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:416:28: (this_INT_0= RULE_INT )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:417:5: this_INT_0= RULE_INT
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:431:28: (this_INT_0= RULE_INT )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:432:5: this_INT_0= RULE_INT
             {
-            this_INT_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleEIntegerObject937); 
+            this_INT_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleEIntegerObject999); 
 
             		current.merge(this_INT_0);
                 
@@ -1042,7 +1085,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFloatValue"
-    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:432:1: entryRuleFloatValue returns [EObject current=null] : iv_ruleFloatValue= ruleFloatValue EOF ;
+    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:447:1: entryRuleFloatValue returns [EObject current=null] : iv_ruleFloatValue= ruleFloatValue EOF ;
     public final EObject entryRuleFloatValue() throws RecognitionException {
         EObject current = null;
 
@@ -1050,17 +1093,17 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:433:2: (iv_ruleFloatValue= ruleFloatValue EOF )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:434:2: iv_ruleFloatValue= ruleFloatValue EOF
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:448:2: (iv_ruleFloatValue= ruleFloatValue EOF )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:449:2: iv_ruleFloatValue= ruleFloatValue EOF
             {
              newCompositeNode(grammarAccess.getFloatValueRule()); 
-            pushFollow(FOLLOW_ruleFloatValue_in_entryRuleFloatValue981);
+            pushFollow(FOLLOW_ruleFloatValue_in_entryRuleFloatValue1043);
             iv_ruleFloatValue=ruleFloatValue();
 
             state._fsp--;
 
              current =iv_ruleFloatValue; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFloatValue991); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFloatValue1053); 
 
             }
 
@@ -1078,7 +1121,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFloatValue"
-    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:441:1: ruleFloatValue returns [EObject current=null] : ( (lv_value_0_0= ruleEFloatObject ) ) ;
+    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:456:1: ruleFloatValue returns [EObject current=null] : ( (lv_value_0_0= ruleEFloatObject ) ) ;
     public final EObject ruleFloatValue() throws RecognitionException {
         EObject current = null;
 
@@ -1088,19 +1131,19 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:444:28: ( ( (lv_value_0_0= ruleEFloatObject ) ) )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:445:1: ( (lv_value_0_0= ruleEFloatObject ) )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:459:28: ( ( (lv_value_0_0= ruleEFloatObject ) ) )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:460:1: ( (lv_value_0_0= ruleEFloatObject ) )
             {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:445:1: ( (lv_value_0_0= ruleEFloatObject ) )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:446:1: (lv_value_0_0= ruleEFloatObject )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:460:1: ( (lv_value_0_0= ruleEFloatObject ) )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:461:1: (lv_value_0_0= ruleEFloatObject )
             {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:446:1: (lv_value_0_0= ruleEFloatObject )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:447:3: lv_value_0_0= ruleEFloatObject
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:461:1: (lv_value_0_0= ruleEFloatObject )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:462:3: lv_value_0_0= ruleEFloatObject
             {
              
             	        newCompositeNode(grammarAccess.getFloatValueAccess().getValueEFloatObjectParserRuleCall_0()); 
             	    
-            pushFollow(FOLLOW_ruleEFloatObject_in_ruleFloatValue1036);
+            pushFollow(FOLLOW_ruleEFloatObject_in_ruleFloatValue1098);
             lv_value_0_0=ruleEFloatObject();
 
             state._fsp--;
@@ -1140,7 +1183,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEFloatObject"
-    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:471:1: entryRuleEFloatObject returns [String current=null] : iv_ruleEFloatObject= ruleEFloatObject EOF ;
+    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:486:1: entryRuleEFloatObject returns [String current=null] : iv_ruleEFloatObject= ruleEFloatObject EOF ;
     public final String entryRuleEFloatObject() throws RecognitionException {
         String current = null;
 
@@ -1148,17 +1191,17 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:472:2: (iv_ruleEFloatObject= ruleEFloatObject EOF )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:473:2: iv_ruleEFloatObject= ruleEFloatObject EOF
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:487:2: (iv_ruleEFloatObject= ruleEFloatObject EOF )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:488:2: iv_ruleEFloatObject= ruleEFloatObject EOF
             {
              newCompositeNode(grammarAccess.getEFloatObjectRule()); 
-            pushFollow(FOLLOW_ruleEFloatObject_in_entryRuleEFloatObject1072);
+            pushFollow(FOLLOW_ruleEFloatObject_in_entryRuleEFloatObject1134);
             iv_ruleEFloatObject=ruleEFloatObject();
 
             state._fsp--;
 
              current =iv_ruleEFloatObject.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEFloatObject1083); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEFloatObject1145); 
 
             }
 
@@ -1176,7 +1219,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEFloatObject"
-    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:480:1: ruleEFloatObject returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? (this_INT_1= RULE_INT )? kw= '.' this_INT_3= RULE_INT ) ;
+    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:495:1: ruleEFloatObject returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? (this_INT_1= RULE_INT )? kw= '.' this_INT_3= RULE_INT ) ;
     public final AntlrDatatypeRuleToken ruleEFloatObject() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1187,24 +1230,24 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:483:28: ( ( (kw= '-' )? (this_INT_1= RULE_INT )? kw= '.' this_INT_3= RULE_INT ) )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:484:1: ( (kw= '-' )? (this_INT_1= RULE_INT )? kw= '.' this_INT_3= RULE_INT )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:498:28: ( ( (kw= '-' )? (this_INT_1= RULE_INT )? kw= '.' this_INT_3= RULE_INT ) )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:499:1: ( (kw= '-' )? (this_INT_1= RULE_INT )? kw= '.' this_INT_3= RULE_INT )
             {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:484:1: ( (kw= '-' )? (this_INT_1= RULE_INT )? kw= '.' this_INT_3= RULE_INT )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:484:2: (kw= '-' )? (this_INT_1= RULE_INT )? kw= '.' this_INT_3= RULE_INT
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:499:1: ( (kw= '-' )? (this_INT_1= RULE_INT )? kw= '.' this_INT_3= RULE_INT )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:499:2: (kw= '-' )? (this_INT_1= RULE_INT )? kw= '.' this_INT_3= RULE_INT
             {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:484:2: (kw= '-' )?
-            int alt8=2;
-            int LA8_0 = input.LA(1);
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:499:2: (kw= '-' )?
+            int alt4=2;
+            int LA4_0 = input.LA(1);
 
-            if ( (LA8_0==17) ) {
-                alt8=1;
+            if ( (LA4_0==14) ) {
+                alt4=1;
             }
-            switch (alt8) {
+            switch (alt4) {
                 case 1 :
-                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:485:2: kw= '-'
+                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:500:2: kw= '-'
                     {
-                    kw=(Token)match(input,17,FOLLOW_17_in_ruleEFloatObject1122); 
+                    kw=(Token)match(input,14,FOLLOW_14_in_ruleEFloatObject1184); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEFloatObjectAccess().getHyphenMinusKeyword_0()); 
@@ -1215,18 +1258,18 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:490:3: (this_INT_1= RULE_INT )?
-            int alt9=2;
-            int LA9_0 = input.LA(1);
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:505:3: (this_INT_1= RULE_INT )?
+            int alt5=2;
+            int LA5_0 = input.LA(1);
 
-            if ( (LA9_0==RULE_INT) ) {
-                alt9=1;
+            if ( (LA5_0==RULE_INT) ) {
+                alt5=1;
             }
-            switch (alt9) {
+            switch (alt5) {
                 case 1 :
-                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:490:8: this_INT_1= RULE_INT
+                    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:505:8: this_INT_1= RULE_INT
                     {
-                    this_INT_1=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleEFloatObject1140); 
+                    this_INT_1=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleEFloatObject1202); 
 
                     		current.merge(this_INT_1);
                         
@@ -1239,12 +1282,12 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            kw=(Token)match(input,18,FOLLOW_18_in_ruleEFloatObject1160); 
+            kw=(Token)match(input,15,FOLLOW_15_in_ruleEFloatObject1222); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getEFloatObjectAccess().getFullStopKeyword_2()); 
                 
-            this_INT_3=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleEFloatObject1175); 
+            this_INT_3=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleEFloatObject1237); 
 
             		current.merge(this_INT_3);
                 
@@ -1272,7 +1315,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualifiedName"
-    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:518:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
+    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:533:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
     public final String entryRuleQualifiedName() throws RecognitionException {
         String current = null;
 
@@ -1280,17 +1323,17 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:519:2: (iv_ruleQualifiedName= ruleQualifiedName EOF )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:520:2: iv_ruleQualifiedName= ruleQualifiedName EOF
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:534:2: (iv_ruleQualifiedName= ruleQualifiedName EOF )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:535:2: iv_ruleQualifiedName= ruleQualifiedName EOF
             {
              newCompositeNode(grammarAccess.getQualifiedNameRule()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName1221);
+            pushFollow(FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName1283);
             iv_ruleQualifiedName=ruleQualifiedName();
 
             state._fsp--;
 
              current =iv_ruleQualifiedName.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedName1232); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedName1294); 
 
             }
 
@@ -1308,7 +1351,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualifiedName"
-    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:527:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
+    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:542:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
     public final AntlrDatatypeRuleToken ruleQualifiedName() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1319,40 +1362,40 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:530:28: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:531:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:545:28: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:546:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
             {
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:531:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:531:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:546:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:546:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
             {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQualifiedName1272); 
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQualifiedName1334); 
 
             		current.merge(this_ID_0);
                 
              
                 newLeafNode(this_ID_0, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
                 
-            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:538:1: (kw= '.' this_ID_2= RULE_ID )*
-            loop10:
+            // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:553:1: (kw= '.' this_ID_2= RULE_ID )*
+            loop6:
             do {
-                int alt10=2;
-                int LA10_0 = input.LA(1);
+                int alt6=2;
+                int LA6_0 = input.LA(1);
 
-                if ( (LA10_0==18) ) {
-                    alt10=1;
+                if ( (LA6_0==15) ) {
+                    alt6=1;
                 }
 
 
-                switch (alt10) {
+                switch (alt6) {
             	case 1 :
-            	    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:539:2: kw= '.' this_ID_2= RULE_ID
+            	    // ../de.dubmas.modulob.common.dsl/src-gen/de/dubmas/modulob/common/parser/antlr/internal/InternalDsl.g:554:2: kw= '.' this_ID_2= RULE_ID
             	    {
-            	    kw=(Token)match(input,18,FOLLOW_18_in_ruleQualifiedName1291); 
+            	    kw=(Token)match(input,15,FOLLOW_15_in_ruleQualifiedName1353); 
 
             	            current.merge(kw);
             	            newLeafNode(kw, grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
             	        
-            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQualifiedName1306); 
+            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQualifiedName1368); 
 
             	    		current.merge(this_ID_2);
             	        
@@ -1364,7 +1407,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop10;
+            	    break loop6;
                 }
             } while (true);
 
@@ -1392,51 +1435,52 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
  
 
-    public static final BitSet FOLLOW_ruleFeature_in_entryRuleFeature75 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFeature85 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_ruleFeature128 = new BitSet(new long[]{0x0000000000001010L});
-    public static final BitSet FOLLOW_12_in_ruleFeature160 = new BitSet(new long[]{0x0000000000001010L});
-    public static final BitSet FOLLOW_ruleTypeRef_in_ruleFeature195 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleFeature212 = new BitSet(new long[]{0x000000000000E002L});
-    public static final BitSet FOLLOW_13_in_ruleFeature230 = new BitSet(new long[]{0x0000000000060060L});
-    public static final BitSet FOLLOW_ruleValueObject_in_ruleFeature251 = new BitSet(new long[]{0x000000000000C002L});
-    public static final BitSet FOLLOW_14_in_ruleFeature266 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleFeature286 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_15_in_ruleFeature301 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeRef_in_entryRuleTypeRef339 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTypeRef349 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleTypeRef397 = new BitSet(new long[]{0x0000000000010002L});
-    public static final BitSet FOLLOW_16_in_ruleTypeRef415 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValueObject_in_entryRuleValueObject465 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleValueObject475 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringValue_in_ruleValueObject522 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIntegerValue_in_ruleValueObject549 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFloatValue_in_ruleValueObject576 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringValue_in_entryRuleStringValue611 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStringValue621 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEStringObject_in_ruleStringValue666 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEStringObject_in_entryRuleEStringObject702 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEStringObject713 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleEStringObject752 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIntegerValue_in_entryRuleIntegerValue796 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleIntegerValue806 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEIntegerObject_in_ruleIntegerValue851 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEIntegerObject_in_entryRuleEIntegerObject887 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEIntegerObject898 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleEIntegerObject937 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFloatValue_in_entryRuleFloatValue981 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFloatValue991 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEFloatObject_in_ruleFloatValue1036 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEFloatObject_in_entryRuleEFloatObject1072 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEFloatObject1083 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_ruleEFloatObject1122 = new BitSet(new long[]{0x0000000000040040L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleEFloatObject1140 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleEFloatObject1160 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleEFloatObject1175 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName1221 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName1232 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName1272 = new BitSet(new long[]{0x0000000000040002L});
-    public static final BitSet FOLLOW_18_in_ruleQualifiedName1291 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName1306 = new BitSet(new long[]{0x0000000000040002L});
+    public static final BitSet FOLLOW_ruleTypeLib_in_entryRuleTypeLib75 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTypeLib85 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePrimitive_in_ruleTypeLib131 = new BitSet(new long[]{0x0000000000001800L});
+    public static final BitSet FOLLOW_ruleAny_in_ruleTypeLib153 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePrimitive_in_entryRulePrimitive189 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePrimitive199 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_rulePrimitive236 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_rulePrimitive253 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAny_in_entryRuleAny294 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAny304 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_ruleAny341 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAny358 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeRef_in_entryRuleTypeRef401 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTypeRef411 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleTypeRef459 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_13_in_ruleTypeRef477 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValueObject_in_entryRuleValueObject527 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleValueObject537 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringValue_in_ruleValueObject584 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIntegerValue_in_ruleValueObject611 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFloatValue_in_ruleValueObject638 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringValue_in_entryRuleStringValue673 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStringValue683 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEStringObject_in_ruleStringValue728 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEStringObject_in_entryRuleEStringObject764 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEStringObject775 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleEStringObject814 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIntegerValue_in_entryRuleIntegerValue858 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleIntegerValue868 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEIntegerObject_in_ruleIntegerValue913 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEIntegerObject_in_entryRuleEIntegerObject949 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEIntegerObject960 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleEIntegerObject999 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFloatValue_in_entryRuleFloatValue1043 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFloatValue1053 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEFloatObject_in_ruleFloatValue1098 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEFloatObject_in_entryRuleEFloatObject1134 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEFloatObject1145 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_ruleEFloatObject1184 = new BitSet(new long[]{0x0000000000008040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleEFloatObject1202 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleEFloatObject1222 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleEFloatObject1237 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName1283 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName1294 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName1334 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_15_in_ruleQualifiedName1353 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName1368 = new BitSet(new long[]{0x0000000000008002L});
 
 }

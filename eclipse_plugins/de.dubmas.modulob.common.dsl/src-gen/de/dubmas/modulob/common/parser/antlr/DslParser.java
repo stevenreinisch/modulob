@@ -25,7 +25,7 @@ public class DslParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrParse
 	
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Feature";
+		return "TypeLib";
 	}
 	
 	public DslGrammarAccess getGrammarAccess() {
