@@ -9,7 +9,7 @@
             class="de.dubmas.modulob.common.ui.DslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
             contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
             default="true"
-            extensions="moco"
+            extensions="modulob"
             id="de.dubmas.modulob.common.Dsl"
             name="Dsl Editor">
         </editor>
@@ -127,13 +127,13 @@
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
 			class="de.dubmas.modulob.common.ui.DslExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
-			type="moco">
+			type="modulob">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
         <resourceServiceProvider
             class="de.dubmas.modulob.common.ui.DslExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
-            uriExtension="moco">
+            uriExtension="modulob">
         </resourceServiceProvider>
     </extension>
 
@@ -216,19 +216,19 @@
   <extension point="org.eclipse.compare.contentViewers">
     <viewer id="de.dubmas.modulob.common.Dsl.compare.contentViewers"
             class="de.dubmas.modulob.common.ui.DslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="moco">
+            extensions="modulob">
     </viewer>
   </extension>
   <extension point="org.eclipse.compare.contentMergeViewers">
     <viewer id="de.dubmas.modulob.common.Dsl.compare.contentMergeViewers"
             class="de.dubmas.modulob.common.ui.DslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="moco" label="Dsl Compare">
+            extensions="modulob" label="Dsl Compare">
      </viewer>
   </extension>
   <extension point="org.eclipse.ui.editors.documentProviders">
     <provider id="de.dubmas.modulob.common.Dsl.editors.documentProviders"
             class="de.dubmas.modulob.common.ui.DslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
-            extensions="moco">
+            extensions="modulob">
     </provider>
   </extension>
 
