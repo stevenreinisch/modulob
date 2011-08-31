@@ -1,50 +1,46 @@
 package de.dubmas.modulob.ui.wizard;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.xtend.type.impl.java.JavaBeansMetaModel;
 import org.eclipse.xpand2.XpandExecutionContextImpl;
 import org.eclipse.xpand2.XpandFacade;
 import org.eclipse.xpand2.output.Outlet;
 import org.eclipse.xpand2.output.OutputImpl;
-import org.eclipse.xtext.ui.wizard.AbstractPluginProjectCreator;
+import org.eclipse.xtend.type.impl.java.JavaBeansMetaModel;
 
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Lists;
-
-public class SystemDslProjectCreator extends AbstractPluginProjectCreator {
-
-	protected static final String DSL_GENERATOR_PROJECT_NAME = "de.dubmas.modulob.systemdsl.generator";
-
-	protected static final String SRC_ROOT = "src";
-	protected static final String SRC_GEN_ROOT = "src-gen";
-	protected final List<String> SRC_FOLDER_LIST = ImmutableList.of(SRC_ROOT, SRC_GEN_ROOT);
-
-	@Override
-	protected SystemDslProjectInfo getProjectInfo() {
-		return (SystemDslProjectInfo) super.getProjectInfo();
-	}
-	
-	protected String getModelFolderName() {
-		return SRC_ROOT;
-	}
+public class TheProjectCreator extends SystemDslProjectCreator{
 	
 	@Override
-	protected List<String> getAllFolders() {
-        return SRC_FOLDER_LIST;
-    }
-
-    @Override
 	protected List<String> getRequiredBundles() {
-		List<String> result = Lists.newArrayList(super.getRequiredBundles());
-		result.add(DSL_GENERATOR_PROJECT_NAME);
+		
+		List<String> result = new ArrayList<String>(10);
+		
+		result.add("de.dubmas.modulob.metamodels");
+		result.add("de.dubmas.modulob.common.dsl");
+		result.add("de.dubmas.modulob.systemdsl");
+		result.add("de.dubmas.modulob.datadsl");
+		result.add("de.dubmas.modulob.interfacedsl");
+		result.add("de.dubmas.modulob.notificationdsl");
+		result.add("de.dubmas.modulob.generator");
+		result.add("de.dubmas.modulob.generator.common");
+		
+		result.add("org.eclipse.xpand");
+		result.add("org.eclipse.xtend");
+		result.add("org.eclipse.xtext");
+		result.add("org.eclipse.emf.mwe2.launch");
+		result.add("org.eclipse.emf.mwe.utils");
+		result.add("org.eclipse.xtend.typesystem.emf");
+		result.add("org.eclipse.xtend.util.stdlib");
+		
 		return result;
 	}
-
+	
+	@Override
 	protected void enhanceProject(final IProject project, final IProgressMonitor monitor) throws CoreException {
 		OutputImpl output = new OutputImpl();
 		output.addOutlet(new Outlet(false, getEncoding(), null, true, project.getLocation().makeAbsolute().toOSString()));
@@ -58,5 +54,4 @@ public class SystemDslProjectCreator extends AbstractPluginProjectCreator {
 
 		project.refreshLocal(IResource.DEPTH_INFINITE, monitor);
 	}
-
 }

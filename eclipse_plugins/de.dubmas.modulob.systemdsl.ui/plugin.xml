@@ -209,11 +209,11 @@
    <extension
          point="org.eclipse.ui.newWizards">
       <wizard
-            category="org.eclipse.xtext.projectwiz"
+            category="de.dubmas.modulob.ui"
             class="de.dubmas.modulob.ui.SystemDslExecutableExtensionFactory:de.dubmas.modulob.ui.wizard.SystemDslNewProjectWizard"
             icon="icons/editor.gif"
             id="de.dubmas.modulob.ui.wizard.SystemDslNewProjectWizard"
-            name="SystemDsl Project"
+            name="New modulob system"
             project="true">
       </wizard>
    </extension>

@@ -1,28 +1,69 @@
-ÇIMPORT de::dubmas::modulob::ui::wizardÈ
+Â«IMPORT de::dubmas::modulob::ui::wizardÂ»
 
-ÇDEFINE main FOR SystemDslProjectInfoÈ
-ÇEXPAND model FOR thisÈ
-ÇEXPAND workflow FOR thisÈ
-ÇENDDEFINEÈ
+Â«DEFINE main FOR SystemDslProjectInfoÂ»
+Â«EXPAND model    FOR thisÂ»
+Â«EXPAND workflow FOR thisÂ»
+Â«EXPAND typeLib  FOR thisÂ»
+Â«ENDDEFINEÂ»
 
-ÇDEFINE model FOR SystemDslProjectInfoÈ
-ÇFILE "src/model/Model.mosys"-È
-/*
- * This is an example model
- */
-Hello Xtext!
-ÇENDFILEÈ
-ÇENDDEFINEÈ
+Â«DEFINE model FOR SystemDslProjectInfoÂ»
+Â«FILE "src/" + this.projectName + "/" + this.projectName + ".mosys"-Â»
+system Â«this.projectNameÂ» consistsOf
+	module <aModuleName>,
+	module <anotherModuleName>
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»
 
-ÇDEFINE workflow FOR SystemDslProjectInfoÈ
-ÇFILE "src/Generator.mwe2"-È
+Â«DEFINE typeLib FOR SystemDslProjectInfoÂ»
+Â«FILE "src/" + this.projectName + "/lib.modulob"-Â»
+primitive type Void
+primitive type Timestamp
+primitive type Decimal
+primitive type String
+primitive type Integer16
+primitive type Integer32
+primitive type Integer64
+primitive type Bool
+primitive type Binary
+
+any type id
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»
+
+Â«DEFINE workflow FOR SystemDslProjectInfoÂ»
+Â«FILE "src/Generator.mwe2"-Â»
 module Generator
 
-var targetDir = "src-gen"
-var modelPath = "src/model"
+var modelPath = 'src/Â«this.projectNameÂ»'
+var targetDir = 'src-gen'
+
+var modulesSlot = 'modulesSlot'
+var primitiveTypesSlot = 'primitiveTypesSlot'
 
 Workflow {
-	component = @workflow.SystemDslGenerator auto-inject {}
+	
+	component = org.eclipse.xtext.mwe.Reader{
+		path = modelPath
+		
+		register = de.dubmas.modulob.common.DslStandaloneSetup {}
+		register = de.dubmas.modulob.DataDslStandaloneSetup {}
+		register = de.dubmas.modulob.InterfaceDslStandaloneSetup {}
+		register = de.dubmas.modulob.NotificationDslStandaloneSetup {}
+		register = de.dubmas.modulob.SystemDslStandaloneSetup {}
+		
+		
+		load = {
+			slot = modulesSlot
+			type = 'Module'
+		}
+		
+		load = {
+			slot = primitiveTypesSlot
+			type = 'Primitive'
+		}
+	}
+	
+	component = @de.dubmas.modulob.generator.workflow.ModulobGenerator auto-inject {}
 }
-ÇENDFILEÈ
-ÇENDDEFINEÈ
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

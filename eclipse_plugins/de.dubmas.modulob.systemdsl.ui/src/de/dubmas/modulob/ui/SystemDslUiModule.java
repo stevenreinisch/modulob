@@ -12,4 +12,8 @@ public class SystemDslUiModule extends de.dubmas.modulob.ui.AbstractSystemDslUiM
 	public SystemDslUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
 	}
+	
+	public Class<? extends org.eclipse.xtext.ui.wizard.IProjectCreator> bindIProjectCreator() {
+		return de.dubmas.modulob.ui.wizard.TheProjectCreator.class;
+	}
 }
