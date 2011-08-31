@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Generator
+Bundle-SymbolicName: de.dubmas.modulob.generator
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.xpand;bundle-version="1.1.0",
+ org.eclipse.xtend;bundle-version="1.1.0",
+ org.eclipse.xtend.typesystem.emf;bundle-version="1.0.1",
+ de.dubmas.modulob.metamodels;bundle-version="1.0.0",
+ org.eclipse.xtend.util.stdlib;bundle-version="1.0.1",
+ de.dubmas.modulob.generator.common;bundle-version="1.0.0"
+Export-Package: de.dubmas.modulob.generator.templates,
+ de.dubmas.modulob.generator.templates.coredata,
+ de.dubmas.modulob.generator.templates.json,
+ de.dubmas.modulob.generator.workflow

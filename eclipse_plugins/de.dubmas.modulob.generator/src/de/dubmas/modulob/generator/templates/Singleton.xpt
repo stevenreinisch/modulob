@@ -1,0 +1,55 @@
+«IMPORT modulob»
+
+«EXTENSION de::dubmas::modulob::generator::templates::Types»
+«EXTENSION de::dubmas::modulob::generator::templates::BaseClasses»
+
+«AROUND de::dubmas::modulob::generator::templates::BaseClasses::Method FOR Method»
+	«IF this.isSharedInstanceMethod()»
+		
+		static «((Interface)this.eContainer).protocolTypeRef()» 
+			«((Interface)this.eContainer).singletonName()» = nil;
+	
+		«EXPAND de::dubmas::modulob::generator::templates::Protocols::MethodSignature FOR this»
+		{
+			@synchronized(self) {
+				if («((Interface)this.eContainer).singletonName()» == nil) {
+					[[self alloc] init]; // assignment not done here
+				}
+			}
+			return «((Interface)this.eContainer).singletonName()»;
+		}
+		
+		+ (id)allocWithZone:(NSZone *)zone
+		{
+			@synchronized(self) {
+				if («((Interface)this.eContainer).singletonName()» == nil) {
+					«((Interface)this.eContainer).singletonName()» = [super allocWithZone:zone];
+					return «((Interface)this.eContainer).singletonName()»;  // assignment and return on first allocation
+				}
+			}
+			return nil; //on subsequent allocation attempts return nil
+		}
+
+		- (id)copyWithZone:(NSZone *)zone
+		{
+			return self;
+		}
+
+		- (id)retain
+		{
+			return self;
+		}
+
+		- (unsigned)retainCount
+		{
+			return UINT_MAX;  //denotes an object that cannot be released
+		} 
+
+		- (void)release
+		{
+			//do nothing
+		}
+	«ELSE»
+		«targetDef.proceed()»
+	«ENDIF»
+«ENDAROUND»

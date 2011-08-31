@@ -1,0 +1,206 @@
+import modulob;
+import types;
+import system;
+import ecore;
+
+extension de::dubmas::modulob::generator::templates::DataContainer;
+extension org::eclipse::xtend::util::stdlib::io;
+
+accessIndicator(modulob::Method m):
+	m.isStatic ? "+" : "-"
+;
+
+List[types::Type] dependentTypes(types::Type type): 
+	switch(type.metaType.name)
+	{
+		case Interface.name : 
+			((Interface)type).methods.parameters.type.referenced
+				.addAll(((Interface)type).methods.type.referenced)
+					.select(t | !Primitive.isInstance(t))
+						.addAll(((Interface)type).requiredInterfaces).toSet()//toSet() to remove duplicates
+					
+		case Delegate.name  : 
+			((Delegate)type).methods.parameters.type.referenced.
+					select(t | !Primitive.isInstance(t)).toSet()
+					
+		case Entity.name    : 
+			((Entity)type).entityFeatures().type.referenced.
+					select(t | !Primitive.isInstance(t)).toSet()
+		default: {}
+	}	
+;
+
+requiredInterfacePropertyName(Interface requiredInterface):
+	requiredInterface.name.toFirstLower()
+;
+
+cached namespaceSeparator(): "" ;
+
+isPrimitive(types::Type type):
+	Primitive.isInstance(type)
+;
+
+protocolFilePath(types::Type type):
+	type.headerFilePathPrefix() + protocolTypeName(type) + ".h" 
+;
+
+protocolTypeName(types::Type type): 
+	switch(type.metaType.name){
+		case Interface.name    : "P_I_"  + namespace(type) + type.name
+		case Delegate.name     : "P_D_"  + namespace(type) + type.name
+		case Entity.name       : "P_E_"  + namespace(type) + type.name
+		default                : null
+	}	
+;
+
+protocolTypeRef(types::Type type):
+	Any.isInstance(type) ? "id"
+	:
+	"id<" + type.protocolTypeName() + ">"
+;
+
+typeRef(types::Type type):
+	(Primitive.isInstance(type))?
+	  type.typeName()
+	  :
+	   (
+	 	(Entity.isInstance(type))?
+	 	type.typeName() + '*'
+	 	:
+	 	type.protocolTypeRef()
+	   )
+;
+
+importTypeString(types::Type t):
+	"#import " + t.typeName() + ".h"
+;
+
+typeRef(TypeRef tr):
+	tr.isMulti ? 
+	"NSSet *" 
+	: 
+	(
+	  (Primitive.isInstance(tr.referenced))?
+	  tr.referenced.typeName()
+	  :
+	   (
+	 	(Entity.isInstance(tr.referenced))?
+	 	tr.referenced.typeName() + '*'
+	 	:
+	 	tr.referenced.protocolTypeRef()
+	   )
+	 )
+;
+
+system::Module module(types::Type type):
+	UserDefined.isInstance(type) 
+	?
+	(
+		switch(type.metaType.name){
+			case Interface.name    : ((Module) type.eContainer.eContainer)
+			case Entity.name       : ((Module) type.eContainer.eContainer)
+			case Delegate.name     : module((Interface)type.eContainer)
+			default: null
+		}
+	)
+	:
+	null
+;
+
+/*
+publicTypeHeaderFilePath(types::Type type):
+	type.typeHeaderFilePath()
+;
+
+privateTypeHeaderFilePath(types::Type type):
+	type.typeHeaderFilePath().replaceFirst("public", "private")
+;
+
+privateTypeImplFilePath(types::Type type):
+	type.typeImplFilePath().replaceFirst("public", "private")
+;
+*/
+
+headerFilePathPrefix(types::Type type):
+	type.module().name + "/public/"
+;
+
+implFilePathPrefix(types::Type type):
+	type.module().name + "/private/"
+;
+
+typeHeaderFilePath(types::Type type):
+	type.headerFilePathPrefix() + type.typeName() + ".h"
+;
+
+typeImplFilePath(types::Type type):
+	type.implFilePathPrefix() + type.typeName() + ".m"
+;
+
+typeName(types::Type type):
+	Primitive.isInstance(type) ? 
+		type.name.objectiveCType()
+		:
+		type.namespace() + type.name
+;
+ 
+isTimestamp(Primitive pt):
+	switch(pt.name){
+		case "Timestamp": true
+		default: false
+	}
+; 
+ 
+objectiveCType(String primitiveTypeName):
+	switch(primitiveTypeName){
+		case "String"   : "NSString *"
+		case "Integer16": "NSNumber *"
+		case "Integer32": "NSNumber *"
+		case "Integer64": "NSNumber *"
+		case "Decimal"  : "NSDecimalNumber *"
+		case "Bool"     : "NSNumber *"
+		case "Timestamp": "NSDate *"
+		case "Void"     : "void"
+		default         : "id"
+	}
+;
+ 
+boolType(List[types::Primitive] primitiveTypes):
+	primitiveTypes.select(p | p.name == 'Bool').first()
+; 
+ 
+voidType(List[types::Primitive] primitiveTypes):
+	primitiveTypes.select(p | p.name == 'Void').first()
+;  
+ 
+String namespace(types::Type type):
+	type.module().name
+;
+
+/*
+String filePath(Object contextNode):
+	let contextParent = ((EObject)contextNode).eContainer:
+		//Model.isInstance(contextParent) ? //at root node?
+		contextParent == null ?
+		("XXX filePath() at root".info() -> "") 
+		:
+		(Section.isInstance(contextParent) ?
+			filePath((EObject)contextParent) + ((Section)contextParent).visibility + "/"
+			:
+			(Module.isInstance(contextParent) ? 
+				filePath((EObject)contextParent) + ((Module)contextParent).name + "/"
+				: 
+				//just navigate further upwards the tree
+				filePath(contextNode)
+			)
+		)
+;
+*/
+
+singletonName(Interface i):
+	"shared" + i.typeName()
+;
+
+delegateName(Interface i):
+	"P_D_" + i.typeName() + "Delegate"
+;

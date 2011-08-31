@@ -1,0 +1,9 @@
+«IMPORT modulob»
+«IMPORT system»
+
+«EXTENSION org::eclipse::xtend::util::stdlib::io»
+
+«DEFINE main FOR List[Module]»
+	«EXPAND de::dubmas::modulob::generator::templates::InterfaceProxy::main FOREACH this.interfaceModel.interfaces»
+	«EXPAND de::dubmas::modulob::generator::templates::DIModule::main FOR this»
+«ENDDEFINE»

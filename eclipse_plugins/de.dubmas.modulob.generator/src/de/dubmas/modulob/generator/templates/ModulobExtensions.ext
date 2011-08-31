@@ -1,0 +1,42 @@
+import modulob;
+import system;
+
+extension de::dubmas::modulob::generator::templates::Types;
+extension org::eclipse::xtend::util::stdlib::io;
+
+printContainers(Entity e):
+	e.containerEntities().asString().info()
+;
+
+String asString(List[Entity] entities):
+	entities.isEmpty ?
+	""
+	:
+	entities.first().name + (entities.size > 1 ? ", " : "") + entities.withoutFirst().asString()
+;
+
+cached containerEntitesWithDifferentPeristency(Entity e):
+	e.containerEntities().select(ce | e.persistencyValue() != ce.persistencyValue())
+;
+
+persistencyValue(Entity e):
+	e.annotations.selectFirst(a|a.option == ConfigOption::persistency).value
+;
+
+List[Entity] containerEntities(Entity e):
+	e.eRootContainer.eAllContents.
+		typeSelect(Entity).
+			select(container | container.entityFeatures().exists(f | f.type.referenced == e))
+;
+
+multiEntityFeatures(Entity e):e.annotations.selectFirst(a|a.option == ConfigOption::persistency) ->
+	e.entityFeatures().select(f | f.type.isMulti)
+;
+
+entityFeatures(Entity e):
+	e.features.select(f | Entity.isInstance(f.type.referenced))
+;
+
+module(Method m):
+	((Interface)m.eContainer).module()
+;

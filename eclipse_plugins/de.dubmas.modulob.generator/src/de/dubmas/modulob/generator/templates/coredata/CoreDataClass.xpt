@@ -1,0 +1,86 @@
+«IMPORT modulob»
+
+«EXTENSION de::dubmas::modulob::generator::templates::Types»
+«EXTENSION de::dubmas::modulob::generator::templates::coredata::CoreDataExtensions»
+
+«DEFINE main FOR Entity»
+
+	«EXPAND header FOR this»
+	«EXPAND impl   FOR this»
+
+«ENDDEFINE»
+
+«DEFINE header FOR Entity-»
+«FILE this.coreDataTypeHeaderFilePath()»
+	#import <CoreData/CoreData.h>
+	
+	«IF this.super != null»
+		#import "«this.super.coreDataTypeName()».h"
+	«ENDIF»
+	
+	«FOREACH this.dependentTypes() AS type»
+		@class «type.coreDataTypeName()»;
+	«ENDFOREACH»
+	
+	«REM»
+	/*
+	 * protcol declaration "<«this.protocolTypeName()»>"
+	 * is not added, since objc compiler would give a 
+	 * warning that methods for multi entity features
+	 * are not implemented. These implementations are
+	 * declared in a category to this class and the
+	 * implementation is provided by CoreData at runtime.
+	 */
+	 «ENDREM»
+	@interface «this.coreDataTypeName()»: 
+	«IF this.super != null»
+		«this.super.coreDataTypeName()»
+	«ELSE»
+		NSManagedObject
+	«ENDIF» 
+	{}
+	«FOREACH this.features AS f»
+		«IF f.type.referenced.isPrimitive()»
+			@property (nonatomic, retain) «f.type.typeRef()» «f.name»;
+		«ELSE»
+			@property (nonatomic, retain) «f.type.typeRef()» «f.name»;
+		«ENDIF»
+	«ENDFOREACH»
+	
+	+(NSString*)getName;
+	
+	@end
+
+	«IF this.hasMultiEntityFeatures()»
+		@interface «this.coreDataTypeName()» (CoreDataGeneratedAccessors)
+		«FOREACH this.entityFeatures() AS f»
+			«IF f.type.isMulti»
+				-(void)add«f.name.toFirstUpper()»Object:(«f.type.referenced.coreDataTypeName()»*)value;
+				-(void)remove«f.name.toFirstUpper()»Object:(«f.type.referenced.coreDataTypeName()»*)value;
+				-(void)add«f.name.toFirstUpper()»:(NSSet *)value;
+				-(void)remove«f.name.toFirstUpper()»:(NSSet *)value;
+			«ENDIF»
+		«ENDFOREACH»
+		@end	
+«ENDIF»
+
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE impl FOR Entity»
+«FILE this.coreDataTypeImplFilePath()»
+	#import "«this.coreDataTypeHeaderFileName()»"
+
+	@implementation «this.coreDataTypeName()» 
+	«FOREACH features AS f»
+		@dynamic «f.name»;
+	«ENDFOREACH»
+	
+	+(NSString*)getName
+	{
+		return @"«this.entityName()»";
+	}
+	
+	@end
+«ENDFILE»
+«ENDDEFINE»

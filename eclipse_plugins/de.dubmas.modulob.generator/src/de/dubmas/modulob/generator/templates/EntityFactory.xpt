@@ -1,0 +1,71 @@
+«IMPORT modulob»
+«IMPORT system»
+
+«EXTENSION de::dubmas::modulob::generator::templates::Factories»
+«EXTENSION de::dubmas::modulob::generator::templates::coredata::CoreDataExtensions»
+«EXTENSION de::dubmas::modulob::generator::templates::Types»
+
+«DEFINE main FOR Module»
+	«EXPAND Header FOR this»
+	«EXPAND Impl   FOR this»
+«ENDDEFINE»
+
+«DEFINE Header FOR Module»
+«FILE this.factoryHeaderFilePath("Entity")»
+	#import <Foundation/Foundation.h>
+
+	«FOREACH this.entityModel.entities AS e»
+		@class «e.typeName()»;
+	«ENDFOREACH»
+
+	@interface «this.factoryName("Entity")»: NSObject{}
+	«FOREACH this.entityModel.entities AS e»
+		+(«e.typeRef()»)«e.factoryMethodName()»;
+	«ENDFOREACH»
+	@end
+
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE Impl FOR Module»
+«FILE this.factoryImplFilePath("Entity")»
+
+	#import "«this.factoryName("Entity")».h"
+	
+	«IF this.entityModel.entities.select(e|e.isPersistent()).size > 0»
+		#import "«this.name.daoName()».h"
+	«ENDIF»
+	
+	«FOREACH this.entityModel.entities AS e»
+		«IF e.isPersistent()»
+			#import "«e.coreDataTypeName() + ".h"»";
+		«ELSE»
+			#import "«e.typeName() + ".h"»";
+		«ENDIF»
+	«ENDFOREACH»
+	
+	@implementation «this.factoryName("Entity")»
+
+	«FOREACH this.entityModel.entities AS e»
+		+(«e.typeRef()»)«e.factoryMethodName()»
+		{
+			«IF e.isPersistent()»
+				«e.typeRef()» object = [[«this.name.daoName()» sharedDAO] createEntity:@"«e.entityName()»"];
+				@try {
+					NSString *uuid = [[«this.name.daoName()» sharedDAO] uuid];
+					[(NSManagedObject*)object setValue:uuid forKey:@"uuid"];
+				}
+				@catch (NSException * e) {
+					NSLog(@"ERROR: managedObject has no property named uuid!!");
+					exit(-1);
+				}
+				return object;
+			«ELSE»
+				return [[«e.typeName()» new]autorelease];
+			«ENDIF»
+		}
+	«ENDFOREACH»
+
+	@end
+«ENDFILE»
+«ENDDEFINE»

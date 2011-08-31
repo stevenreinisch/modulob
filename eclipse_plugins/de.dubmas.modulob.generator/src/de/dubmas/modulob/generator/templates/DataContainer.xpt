@@ -1,0 +1,148 @@
+«IMPORT modulob»
+
+«EXTENSION de::dubmas::modulob::generator::templates::Types»
+«EXTENSION de::dubmas::modulob::generator::templates::Factories»
+«EXTENSION de::dubmas::modulob::generator::templates::DataContainer»
+
+
+«DEFINE main FOR List[Entity]»
+	«EXPAND Header FOREACH this»
+	«EXPAND Impl   FOREACH this»
+«ENDDEFINE»
+
+«DEFINE Header FOR Entity»
+«FILE this.typeHeaderFilePath()»
+	#import <Foundation/Foundation.h>
+	
+	«EXPAND additionalImports FOR this»
+	
+	«FOREACH this.dependentTypes() AS type»
+		@class «type.typeName()»;
+	«ENDFOREACH»
+
+	@interface «this.typeName()»: 
+	 
+	«EXPAND superClass FOR this»
+	{
+		«FOREACH this.features AS f»
+			«f.type.typeRef().replaceFirst("NSSet", "NSMutableSet")» «f.name»;
+		«ENDFOREACH»
+	}
+	
+	«FOREACH this.features AS f»
+		«EXPAND de::dubmas::modulob::generator::templates::Protocols::Property(f) FOR this»
+	«ENDFOREACH»
+	
+	«FOREACH this.entityFeatures() AS f»
+		«IF f.type.isMulti»
+			-(void)add«f.name.toFirstUpper()»Object:(«f.type.referenced.typeRef()»)value;
+			-(void)remove«f.name.toFirstUpper()»Object:(«f.type.referenced.typeRef()»)value;
+			-(void)add«f.name.toFirstUpper()»:(NSSet *)value;
+			-(void)remove«f.name.toFirstUpper()»:(NSSet *)value;
+		«ENDIF»
+	«ENDFOREACH»
+@end
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE additionalImports FOR Entity»
+	«IF this.super != null»
+		#import "«this.super.typeName()».h"
+	«ENDIF»
+«ENDDEFINE»
+
+«DEFINE superClass FOR Entity»
+	«IF this.super != null»
+		«this.super.typeName()»
+	«ELSE»
+		NSObject
+	«ENDIF»
+«ENDDEFINE»
+
+«DEFINE Impl FOR Entity»
+«FILE this.typeImplFilePath()»
+	#import "«this.typeName()».h"
+	
+	«FOREACH this.dependentTypes() AS type»
+		#import "«type.typeName()».h"
+	«ENDFOREACH»
+	
+	@implementation «this.typeName()» 
+	
+	-(id)init
+	{
+		if(self = [super init]){
+			«FOREACH this.multiEntityFeatures() AS f-»
+				«f.name» = [NSMutableSet new]; 
+			«ENDFOREACH»
+		}
+		return self;
+	}
+
+	-(void)dealloc
+	{
+		«FOREACH this.features AS f-»
+			[«f.name» release]; 
+		«ENDFOREACH»
+		[super dealloc];
+	}
+	
+	«EXPAND PropertyAccessors FOR this»
+
+@end
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE PropertyAccessors FOR Entity»
+	«IF this.superHierarchy().size > 0»
+		/*
+	 	 * Accessors for inherited members have to be 
+	 	 * implemented since the compiler does not accept 
+	 	 * that the accessors have been synthesized in the
+	 	 * super class (it gives a warning).
+	 	 */
+		«FOREACH this.superHierarchy() AS hierarchyMember»
+			«FOREACH hierarchyMember.features AS f»
+				-(«f.type.typeRef()»)«f.name»
+				{
+					return super.«f.name»;
+				}
+
+				-(void)set«f.name.toFirstUpper()»:(«f.type.typeRef()»)«f.name»_
+				{
+					super.«f.name» = «f.name»_;
+				}
+			«ENDFOREACH»
+		«ENDFOREACH»
+	«ENDIF»
+	
+	«FOREACH this.features AS f»
+		@synthesize «f.name»;
+	«ENDFOREACH»
+	
+	«FOREACH this.multiEntityFeatures() AS f-»
+	-(void)add«f.name.toFirstUpper()»Object:(«f.type.referenced.typeRef()»)object
+	{
+		[«f.name» addObject:object];
+	}
+
+	-(void)remove«f.name.toFirstUpper()»Object:(«f.type.referenced.typeRef()»)object
+	{
+		[«f.name» removeObject:object];
+	}
+
+	-(void)add«f.name.toFirstUpper()»:(NSSet *)«f.name»_
+	{
+		for(id object in «f.name»_){
+			[«f.name» addObject:object];
+		}
+	}
+
+	-(void)remove«f.name.toFirstUpper()»:(NSSet *)«f.name»_
+	{
+		for(id object in «f.name»_){
+			[«f.name» removeObject:object];
+		}
+	}
+	«ENDFOREACH»
+«ENDDEFINE»

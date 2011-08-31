@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Composite
+Bundle-SymbolicName: de.dubmas.modulob.generator.composite
+Bundle-Version: 1.0.0
+Require-Bundle: de.dubmas.modulob.generator;bundle-version="1.0.0",
+ org.eclipse.emf.mwe2.runtime;bundle-version="2.0.0",
+ org.eclipse.emf.ecore;bundle-version="2.7.0"
+Export-Package: de.dubmas.modulob.generator.composite
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

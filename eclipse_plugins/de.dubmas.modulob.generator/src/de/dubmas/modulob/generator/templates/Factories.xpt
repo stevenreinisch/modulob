@@ -1,0 +1,12 @@
+«IMPORT modulob»
+«IMPORT system»
+
+«DEFINE main FOR Module»
+	«IF this.entityModel.entities.size > 0»
+		«EXPAND de::dubmas::modulob::generator::templates::EntityFactory::main FOR this»
+	«ENDIF»
+«ENDDEFINE»
+
+
+
+

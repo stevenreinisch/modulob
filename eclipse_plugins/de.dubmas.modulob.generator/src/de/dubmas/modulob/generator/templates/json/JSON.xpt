@@ -1,0 +1,52 @@
+«IMPORT modulob»
+«IMPORT system»
+
+«EXTENSION de::dubmas::modulob::generator::templates::Factories»
+«EXTENSION de::dubmas::modulob::generator::templates::Types»
+
+«DEFINE de_serializer_config FOR List[Module]»
+«FILE "JSON_De_Serializer+FactoryConfig.m"»
+	#import "JSON_De_Serializer.h"
+	
+	/*
+	 * This is a category on JSON_De_Serializer that
+	 * configures this class to use the information
+	 * returned from newEntityFactoryConfig to create
+	 * entity instances during deserialization.
+	 *
+	 * Simply add this file to the xcode target that
+	 * builds your applications. If properly built and linked,
+	 * instances of JSON_De_Serializer will use the
+	 * specified factory respectively factory method.
+	 */
+	
+	@interface JSON_De_Serializer (FactoryMap)
+	@end
+
+	#pragma mark -
+
+	@implementation JSON_De_Serializer (FactoryMap)
+	
+	/*
+	 * key:   entity name
+	 * value: array[0] := name of factory that creates the entity specified by the key
+	 *        array[1] := name of the method that must be called on the factory to actually
+	 *                    create an instance of the specified entity
+	 */
+	-(NSDictionary*)newEntityFactoryConfig
+	{
+		NSMutableDictionary *factoryMap = [NSMutableDictionary new];
+		
+		«FOREACH this.entityModel.entities AS entity»
+			[factoryMap setObject:[NSArray arrayWithObjects:@"«entity.factoryName()»",
+															@"«entity.factoryMethodName()»",
+															nil] 
+				   forKey:@"«entity.typeName()»"];
+		«ENDFOREACH»
+	
+		return [factoryMap autorelease];
+	}
+
+	@end
+«ENDFILE»
+«ENDDEFINE»

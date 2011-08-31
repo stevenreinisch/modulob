@@ -1,0 +1,76 @@
+import modulob;
+import types;
+
+extension de::dubmas::modulob::generator::templates::Types;
+extension de::dubmas::modulob::generator::templates::DataContainer reexport;
+extension org::eclipse::xtend::util::stdlib::io;
+
+persistentEntities(List[Entity] entities):
+	entities.select(e|e.isPersistent())
+;
+
+coreDataPrimitiveType(String ptName):
+	switch(ptName){
+		case "String"   : "NSStringAttributeType"
+		case "Integer16": "NSInteger16AttributeType"
+		case "Integer32": "NSInteger32AttributeType"
+		case "Integer64": "NSInteger64AttributeType"
+		case "Decimal"  : "NSDecimalAttributeType"
+		case "Bool"     : "NSBooleanAttributeType"
+		case "Timestamp": "NSDateAttributeType"
+		default         : "NSUndefinedAttributeType"
+	}
+;	
+
+coreDataTypeName(types::Type type):
+	type.typeName()
+;
+
+coreDataTypeHeaderFileName(types::Type type):
+	type.typeName() + ".h"
+;
+
+/*
+publicCoreDataTypeHeaderFilePath(types::Type type):
+	type.coreDataTypeHeaderFilePath()
+;
+
+privateCoreDataTypeHeaderFilePath(types::Type type):
+	type.coreDataTypeHeaderFilePath().replaceFirst("public", "private")
+;
+
+privateCoreDataTypeImplFilePath(types::Type type):
+	type.coreDataTypeImplFilePath().replaceFirst("public", "private")
+;
+*/
+coreDataTypeHeaderFilePath(Entity e):
+	e.headerFilePathPrefix() + e.coreDataTypeHeaderFileName()
+;
+
+coreDataTypeImplFilePath(Entity e):
+	e.headerFilePathPrefix() + e.coreDataTypeName() + ".m"
+;
+
+entityDescription(Entity e):
+	e.entityName() + "Desc"
+;
+
+cached subEntities(Entity super):
+	super.module().entityModel.entities.select(e|e.super == super)
+;
+
+featureName(Feature f):
+	f.isEntity() ? f.releationshipName() : f.propertyName()
+;
+
+releationshipName(Feature f):
+	((Entity)f.eContainer).entityName().toFirstLower() + f.name.toFirstUpper()
+;
+
+propertyName(Feature f):
+	((Entity)f.eContainer).entityName().toFirstLower() + f.name.toFirstUpper()
+;
+
+daoName(String namespace):
+	namespace + 'DAO'
+;

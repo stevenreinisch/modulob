@@ -1,0 +1,76 @@
+«IMPORT modulob»
+«IMPORT system»
+
+«EXTENSION de::dubmas::modulob::generator::templates::DIModule»
+«EXTENSION de::dubmas::modulob::generator::templates::InterfaceProxy»
+«EXTENSION de::dubmas::modulob::generator::templates::Types»
+«EXTENSION de::dubmas::modulob::generator::common::Util»
+«EXTENSION de::dubmas::modulob::generator::templates::coredata::CoreDataExtensions»
+
+«DEFINE main FOR List[Module]»
+	«EXPAND diModuleHeader("AppDIModule", null) FOR this»
+	«EXPAND diModuleImpl("AppDIModule", null)   FOR this»
+	
+	«FOREACH this AS module»
+		«EXPAND diModuleHeader(module.name + "TestDIModule", module) FOR {module}»
+		«EXPAND diModuleImpl(module.name + "TestDIModule", module)   FOR {module}»
+	«ENDFOREACH»
+«ENDDEFINE»
+
+«DEFINE diModuleHeader(String diModuleName, Module m) FOR List[Module]»
+«FILE diModuleName.diModuleHeaderFilePath(m)»
+#import <Foundation/Foundation.h>
+
+#import "OBDIAbstractModule.h"
+
+@interface «diModuleName»: OBDIAbstractModule {
+
+}
+
+@end
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE diModuleImpl(String diModuleName, Module module) FOR List[Module]»
+«FILE diModuleName.diModuleImplFilePath(module)»
+	#import "«diModuleName».h"
+		
+	«FOREACH this.interfaceModel.interfaces.select(i | i.name == notificationsDispatcherInterfaceName()).toSet() AS i-»
+		#import "«i.typeName()».h"
+	«ENDFOREACH»
+	
+	@implementation «diModuleName»
+
+	-(id) init
+	{
+		if(self = [super init])
+		{
+			managedInterfacesConfig = [NSMutableDictionary new];
+			
+			«FOREACH this.interfaceModel.interfaces.select(i | i.name != notificationsDispatcherInterfaceName()) AS i-»
+				[managedInterfacesConfig setObject: 					        
+				«IF module == null && i.hasAdvicedMethods()-»
+					[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:
+													  @"«i.proxyClassName()»",
+													  @"«i.proxyStateClassName()»",
+													  nil]
+											 forKeys:[NSArray arrayWithObjects:
+													  KEY_PROXY_CLASS_NAME,
+													  KEY_PROXYSTATE_CLASS_NAME,
+													  nil]]
+				«ELSE-»
+					[NSDictionary dictionary]
+				«ENDIF»	
+				forKey:@"«i.protocolTypeName()»"		
+				];
+			«ENDFOREACH»
+						
+			«FOREACH this.interfaceModel.interfaces.toSet().select(i | i.name == notificationsDispatcherInterfaceName()) AS i-»
+				[«i.typeName()» start];
+			«ENDFOREACH»
+		}
+		return self;
+	}
+@end
+«ENDFILE»
+«ENDDEFINE»

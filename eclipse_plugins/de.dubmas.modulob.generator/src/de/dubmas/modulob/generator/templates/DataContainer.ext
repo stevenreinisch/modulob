@@ -1,0 +1,86 @@
+import modulob;
+import system;
+import types;
+
+extension de::dubmas::modulob::generator::templates::Types;
+
+isPersistent(Entity e):
+	e.annotations.exists(a | a.option == ConfigOption::persistency)
+;
+
+/*
+isSerializable(Entity e):
+	e.annotations.exists(a | a.option == ConfigOption::serialization)
+;
+*/
+
+moduleName(Entity e):
+	e.module().name
+;
+
+/*
+module(Entity e):
+	((Module)e.eContainer.eContainer)
+;
+*/
+
+cached List[Entity] superHierarchy(Entity e):
+	e.addSuperToList({})
+;
+
+private List[Entity] addSuperToList(Entity e, List[Entity] supers):
+	e.super == null
+	?
+	supers
+	:
+	(
+		supers.add(e.super) ->
+		e.super.addSuperToList(supers) //walk up the super-hierarchy
+	)
+;
+
+/*
+sharedMemoryName(SharedMemory sm):
+	namespace(sm.eContainer) + sm.name
+;
+*/
+
+entityName(Entity e):
+	e.namespace() + e.name
+;
+
+entityFeatures(Entity e):
+	e.features.select(f | Entity.isInstance(f.type.referenced))
+;
+
+nonMultiFeatures(Entity e):
+	e.features.select(f | !f.type.isMulti)
+;
+
+multiFeatures(Entity e):
+	e.features.select(f | f.type.isMulti)
+;
+
+nonMultiEntityFeatures(Entity e):
+	e.entityFeatures().select(f | !f.type.isMulti)
+;
+
+multiEntityFeatures(Entity e):
+	e.entityFeatures().select(f | f.type.isMulti)
+;
+
+primitiveTypeFeatures(Entity e):
+	e.features.select(f | Primitive.isInstance(f.type.referenced))
+;
+
+hasMultiEntityFeatures(Entity e):
+	e.entityFeatures().exists(f | f.type.isMulti)
+;
+
+isEntity(Feature f):
+	Entity.isInstance(f.type.referenced)
+;
+
+isPrimitive(Feature f):
+	Primitive.isInstance(f.type.referenced)
+;

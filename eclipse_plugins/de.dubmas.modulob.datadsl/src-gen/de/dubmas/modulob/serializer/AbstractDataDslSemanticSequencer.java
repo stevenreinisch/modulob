@@ -60,40 +60,40 @@ public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer 
 		if(semanticObject.eClass().getEPackage() == ModulobPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case ModulobPackage.ANNOTATION:
 				if(context == grammarAccess.getAnnotationRule()) {
-					sequence_Annotation_Annotation(context, (Annotation) semanticObject); 
+					sequence_Annotation(context, (Annotation) semanticObject); 
 					return; 
 				}
 				else break;
 			case ModulobPackage.ENTITY:
 				if(context == grammarAccess.getEntityRule()) {
-					sequence_Entity_Entity(context, (Entity) semanticObject); 
+					sequence_Entity(context, (Entity) semanticObject); 
 					return; 
 				}
 				else break;
 			case ModulobPackage.FEATURE:
 				if(context == grammarAccess.getFeatureRule()) {
-					sequence_Feature_Feature(context, (Feature) semanticObject); 
+					sequence_Feature(context, (Feature) semanticObject); 
 					return; 
 				}
 				else break;
 			case ModulobPackage.FLOAT_VALUE:
-				if(context == grammarAccess.getValueObjectRule() ||
-				   context == grammarAccess.getFloatValueRule()) {
-					sequence_FloatValue_FloatValue(context, (FloatValue) semanticObject); 
+				if(context == grammarAccess.getFloatValueRule() ||
+				   context == grammarAccess.getValueObjectRule()) {
+					sequence_FloatValue(context, (FloatValue) semanticObject); 
 					return; 
 				}
 				else break;
 			case ModulobPackage.INTEGER_VALUE:
-				if(context == grammarAccess.getValueObjectRule() ||
-				   context == grammarAccess.getIntegerValueRule()) {
-					sequence_IntegerValue_IntegerValue(context, (IntegerValue) semanticObject); 
+				if(context == grammarAccess.getIntegerValueRule() ||
+				   context == grammarAccess.getValueObjectRule()) {
+					sequence_IntegerValue(context, (IntegerValue) semanticObject); 
 					return; 
 				}
 				else break;
 			case ModulobPackage.STRING_VALUE:
-				if(context == grammarAccess.getValueObjectRule() ||
-				   context == grammarAccess.getStringValueRule()) {
-					sequence_StringValue_StringValue(context, (StringValue) semanticObject); 
+				if(context == grammarAccess.getStringValueRule() ||
+				   context == grammarAccess.getValueObjectRule()) {
+					sequence_StringValue(context, (StringValue) semanticObject); 
 					return; 
 				}
 				else break;
@@ -101,7 +101,7 @@ public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer 
 		else if(semanticObject.eClass().getEPackage() == SystemPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case SystemPackage.ENTITY_MODEL:
 				if(context == grammarAccess.getEntityModelRule()) {
-					sequence_EntityModel_EntityModel(context, (EntityModel) semanticObject); 
+					sequence_EntityModel(context, (EntityModel) semanticObject); 
 					return; 
 				}
 				else break;
@@ -109,7 +109,7 @@ public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer 
 		else if(semanticObject.eClass().getEPackage() == TypesPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case TypesPackage.TYPE_REF:
 				if(context == grammarAccess.getTypeRefRule()) {
-					sequence_TypeRef_TypeRef(context, (TypeRef) semanticObject); 
+					sequence_TypeRef(context, (TypeRef) semanticObject); 
 					return; 
 				}
 				else break;
@@ -125,7 +125,7 @@ public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer 
 	 *    option[1, 1]
 	 *    value[0, 1]
 	 */
-	protected void sequence_Annotation_Annotation(EObject context, Annotation semanticObject) {
+	protected void sequence_Annotation(EObject context, Annotation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -139,7 +139,7 @@ public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer 
 	 *    entities[1, *]
 	 *    module[1, 1]
 	 */
-	protected void sequence_EntityModel_EntityModel(EObject context, EntityModel semanticObject) {
+	protected void sequence_EntityModel(EObject context, EntityModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -155,7 +155,7 @@ public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer 
 	 *    super[0, 1]
 	 *    features[0, *]
 	 */
-	protected void sequence_Entity_Entity(EObject context, Entity semanticObject) {
+	protected void sequence_Entity(EObject context, Entity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -179,7 +179,7 @@ public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer 
 	 *    type[1, 1]
 	 *    defaultValue[0, 1]
 	 */
-	protected void sequence_Feature_Feature(EObject context, Feature semanticObject) {
+	protected void sequence_Feature(EObject context, Feature semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -191,7 +191,7 @@ public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer 
 	 * Features:
 	 *    value[1, 1]
 	 */
-	protected void sequence_FloatValue_FloatValue(EObject context, FloatValue semanticObject) {
+	protected void sequence_FloatValue(EObject context, FloatValue semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -203,7 +203,7 @@ public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer 
 	 * Features:
 	 *    value[1, 1]
 	 */
-	protected void sequence_IntegerValue_IntegerValue(EObject context, IntegerValue semanticObject) {
+	protected void sequence_IntegerValue(EObject context, IntegerValue semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -215,7 +215,7 @@ public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer 
 	 * Features:
 	 *    value[1, 1]
 	 */
-	protected void sequence_StringValue_StringValue(EObject context, StringValue semanticObject) {
+	protected void sequence_StringValue(EObject context, StringValue semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -228,7 +228,7 @@ public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer 
 	 *    isMulti[0, 1]
 	 *    referenced[1, 1]
 	 */
-	protected void sequence_TypeRef_TypeRef(EObject context, TypeRef semanticObject) {
+	protected void sequence_TypeRef(EObject context, TypeRef semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
 	}
 }

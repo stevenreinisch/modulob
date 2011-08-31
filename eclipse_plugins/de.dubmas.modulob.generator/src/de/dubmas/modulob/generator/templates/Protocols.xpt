@@ -1,0 +1,116 @@
+«IMPORT modulob»
+«IMPORT types»
+«IMPORT system»
+
+«EXTENSION de::dubmas::modulob::generator::templates::Types»
+«EXTENSION org::eclipse::xtend::util::stdlib::io»
+
+«DEFINE main FOR Module»
+	«EXPAND Protocol FOREACH this.interfaceModel.interfaces»
+	«EXPAND Protocol FOREACH this.interfaceModel.interfaces.delegates»
+«ENDDEFINE»
+
+«DEFINE Protocol FOR Type»
+«FILE this.protocolFilePath()»
+	#import <Foundation/Foundation.h>
+	
+	«EXPAND preheaderImports FOR this»
+	
+	«FOREACH this.dependentTypes() AS type»
+		«EXPAND typeForwardDecl FOR type»
+	«ENDFOREACH»
+		
+	«EXPAND protocolDef FOR this»
+	
+	«EXPAND ProtocolBody FOR this»
+
+	@end
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE preheaderImports FOR Type»
+«ENDDEFINE»
+
+«DEFINE preheaderImports FOR Interface»
+«ENDDEFINE»
+
+«DEFINE typeForwardDecl FOR Type»
+«ENDDEFINE»
+
+«DEFINE typeForwardDecl FOR Entity»
+	@class «this.typeName()»;
+«ENDDEFINE»
+
+«DEFINE typeForwardDecl FOR Interface»
+	@protocol «this.protocolTypeName()»;
+«ENDDEFINE»
+
+«DEFINE typeForwardDecl FOR Delegate»
+	@protocol «this.protocolTypeName()»;
+«ENDDEFINE»
+
+«DEFINE protocolDef FOR Type»
+«ENDDEFINE»
+
+«DEFINE protocolDef FOR Entity»
+	@protocol «this.protocolTypeName()» <NSObject>
+«ENDDEFINE»
+
+«DEFINE protocolDef FOR Interface»
+	@protocol «this.protocolTypeName()» <NSObject>
+«ENDDEFINE»
+
+«DEFINE protocolDef FOR Delegate»
+	@protocol «this.protocolTypeName()» <NSObject>
+«ENDDEFINE»
+
+«DEFINE ProtocolBody FOR Type»
+«ENDDEFINE»
+
+«DEFINE ProtocolBody FOR Entity»
+	«EXPAND Property(this) FOREACH this.features»
+«ENDDEFINE»
+
+«DEFINE ProtocolBody FOR Interface»
+	«EXPAND Method FOREACH this.methods»
+	
+	«FOREACH this.requiredInterfaces AS ri»
+		@property (nonatomic, retain) «ri.protocolTypeRef()» «ri.requiredInterfacePropertyName()»;
+	«ENDFOREACH»
+	
+«ENDDEFINE»
+
+«DEFINE ProtocolBody FOR Delegate»
+	«EXPAND Method FOREACH this.methods»
+«ENDDEFINE»
+
+«DEFINE Property(Entity parent) FOR Feature»
+	«EXPAND Property(this) FOR parent»
+
+	«IF this.type.isMulti»
+		-(void)add«this.name.toFirstUpper()»Object:(«this.type.referenced.typeRef()»)object;
+		-(void)remove«this.name.toFirstUpper()»Object:(«this.type.referenced.typeRef()»)object;
+		-(void)add«this.name.toFirstUpper()»:(NSSet *)«this.name»_;
+		-(void)remove«this.name.toFirstUpper()»:(NSSet *)«this.name»_;
+	«ENDIF»
+«ENDDEFINE»
+
+«DEFINE Property(Feature f) FOR Entity»
+	«IF f.type.referenced.isPrimitive()»
+		@property (retain) «f.type.typeRef()» «f.name»;
+	«ELSE»
+		@property (retain) «f.type.typeRef()» «f.name»;
+	«ENDIF»
+«ENDDEFINE»
+
+«DEFINE Method FOR Method-»
+«EXPAND MethodSignature FOR this»;
+«ENDDEFINE»
+
+«DEFINE MethodSignature FOR Method-»
+	«this.accessIndicator()»(«this.type.typeRef()»)«this.name-»
+	«FOREACH this.parameters AS p»
+		«REM» only the first parameter has no signature part «ENDREM»
+		«(p.signaturePart != null ? p.signaturePart : "") + ":(" + p.type.typeRef() + ")" + p.name-»
+	«ENDFOREACH»
+«ENDDEFINE»

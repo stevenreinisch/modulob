@@ -1,0 +1,104 @@
+module de.dubmas.modulob.generator.composite.CompositeGenerator
+
+var genPath      = 'src-gen'
+var fileEncoding = 'UTF-8'
+var modelPath    = 'src/model'
+var modulesSlot  = 'modules'
+var interfaceStateModels = 'interfaceStateModels'
+
+//slots for models supplied by readers	
+var primitiveTypesSlot        = 'primitiveTypesSlot'
+var behavioursSlot            = 'behavioursSlot'
+//internally used slot
+var transformedBehavioursSlot = 'transformedBehavioursSlot'
+
+Workflow {
+	
+	/*
+	component = org.eclipse.xtend.XtendComponent{
+		metaModel = org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel{}
+		invoke = 'de::dubmas::modulob::reaction::generator::templates::Util::setGlobalVar(${behavioursSlot}, \'Behaviours\')'
+	}
+	
+	component = org.eclipse.xtend.XtendComponent{
+		metaModel = org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel{}
+		invoke = 'de::dubmas::modulob::reaction::generator::templates::Util::setGlobalVar(${modulesSlot}, \'Modules\')'
+	}
+	
+	component = org.eclipse.xtend.XtendComponent{
+		metaModel = org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel{}
+		invoke = 'de::dubmas::modulob::reaction::generator::templates::Util::setGlobalVar(${interfaceStateModels}, \'InterfaceStateModels\')'
+	}
+	*/
+	/*
+	 * weave behaviours 
+	 *
+	 *	weaving is done directly on ${behavioursSlot} that is globally available
+	 *	=> this weaving has global side effects .. in case you might wonder
+	 */
+//	component = org.eclipse.xtend.XtendComponent{
+//		metaModel = org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel{}
+//		invoke = 'de::dubmas::modulob::reaction::generator::templates::BehaviourWeaver::weaveBeforeAdvicesIntoReactions(${behavioursSlot})'
+//	}
+	
+	/*
+		injects an interface that dispatches events that trigger multiple reactions ("multi-events")
+		into each module containing such multi-events.
+		
+		the dispatcher-interfaces are injected into the modules that are referenced
+		by the reactions stored in the globally available ${behavioursSlot}
+	*/
+//	component = org.eclipse.xtend.XtendComponent{
+//		metaModel = org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel{}
+//		invoke = 'de::dubmas::modulob::reaction::generator::templates::DispatcherInterfaceInjector::injectDispatcherInterfaces(${primitiveTypesSlot})'
+//	}
+	
+	/*
+		transform:
+		
+		- each multi-event E_m is divided into multiple events E_i (i := order of reaction)
+		- each reaction to E_m then reacts to one of E_i
+		- for E_m a "dispatcher-reaction" is created
+		- each dispatcher-reaction is associated with a method in a dispatcher-interface
+	*/
+//	component = org.eclipse.xtend.XtendComponent{
+//		metaModel = org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel{}
+//		invoke = 'de::dubmas::modulob::reaction::generator::templates::NotificationOrderTransfo::transform(${behavioursSlot})'
+//		outputSlot = '${transformedBehavioursSlot}'
+//	}
+//	
+//	component = org.eclipse.xtend.XtendComponent{
+//		metaModel = org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel{}
+//		invoke = 'de::dubmas::modulob::reaction::generator::templates::Util::setGlobalVar(${transformedBehavioursSlot}, \'TransformedBehaviours\')'
+//	}
+//	
+//	component = org.eclipse.xtend.XtendComponent{
+//		metaModel = org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel{}
+//		invoke = 'de::dubmas::modulob::reaction::generator::templates::ModuleInjector::inject(${modulesSlot})'
+//	}
+	
+//	component = org.eclipse.xtend.XtendComponent{
+//		metaModel  = org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel{}
+//		//invoke     = 'de::dubmas::modulob::state::generator::transfo::StateMethodsInjector::injectStateMethods(${modulesSlot}, ${interfaceStateModels}, ${primitiveTypesSlot})'
+//		invoke     = 'de::dubmas::modulob::state::generator::transfo::StateMachineDelegateInjector::injectStateMachineDelegates(${modulesSlot}, ${interfaceStateModels}, ${primitiveTypesSlot})'
+//	}
+//
+//	component = org.eclipse.xtend.XtendComponent{
+//		metaModel  = org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel{}
+//		invoke     = 'de::dubmas::modulob::state::generator::transfo::StateMachineInjector::injectStateMachines(${modulesSlot} ,${interfaceStateModels}, ${primitiveTypesSlot})'
+//	}
+	
+//	component = @de.dubmas.modulob.generator.workflow.ModulobGenerator auto-inject{
+//		//externalAdvices = 'de::dubmas::modulob::reaction::generator::templates::Advices, de::dubmas::modulob::state::generator::templates::Advices'
+//	}
+
+//	component = org.eclipse.xpand2.Generator {
+//		metaModel = org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel{}
+//		expand = 'de::dubmas::modulob::reaction::generator::templates::Notifications::main(${transformedBehavioursSlot}) FOR ${modulesSlot}'
+//		
+//		outlet = {
+//			path = genPath
+//		}
+//		fileEncoding = fileEncoding
+//	}
+}

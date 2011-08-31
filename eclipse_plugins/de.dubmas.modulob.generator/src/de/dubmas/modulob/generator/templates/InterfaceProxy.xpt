@@ -1,0 +1,164 @@
+«IMPORT modulob»
+
+«EXTENSION de::dubmas::modulob::generator::templates::InterfaceProxy»
+«EXTENSION de::dubmas::modulob::generator::templates::Types»
+
+«DEFINE main FOR Interface»
+	«IF this.hasAdvicedMethods()»
+		«EXPAND header FOR this»
+		«EXPAND impl FOR this»
+	«ENDIF»
+«ENDDEFINE»
+
+«DEFINE header FOR Interface»
+«FILE this.proxyHeaderFilePath()»
+	#import <Foundation/Foundation.h>
+
+	#import "OBDIAbstractProxy.h"
+
+	@class «this.proxyStateClassName()»;
+
+	@interface «this.proxyClassName()» : OBDIAbstractProxy {
+
+	}
+
+	@property (nonatomic, retain) «this.proxyStateClassName()» *state;
+
+	@end
+
+	#pragma mark -
+	#pragma mark proxy state
+
+	«FOREACH this.interceptorInterfaces() AS ii»
+		@protocol «ii.protocolTypeName()»;
+	«ENDFOREACH»
+
+	/*
+ 	 * Instances of this class represent the state of the proxy.
+ 	 * This is neccessary because the proxy's class does not inherit
+ 	 * from NSObject and can for instance not be put into collections.
+ 	 * Thus, the proxy has to forward calls to NSObject methods to its
+ 	 * state instance.
+ 	 */
+	@interface «this.proxyStateClassName()» : NSObject
+	{}
+
+	«FOREACH this.interceptorInterfaces() AS ii»
+		@property (nonatomic, retain) «ii.protocolTypeRef()» «ii.interceptorInterfacePropertyName()»;
+	«ENDFOREACH»
+
+	@end
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE impl FOR Interface»
+«FILE this.proxyImplFilePath()»
+
+	#import "«this.proxyClassName()».h"
+
+	#import "Objection.h"
+	
+	«FOREACH this.interceptorInterfaces() AS ii»
+		#import "«ii.protocolTypeName()».h"
+	«ENDFOREACH»
+	
+	@implementation «this.proxyClassName()»
+
+	//state is injected via Dependency Injection (DI)
+	objection_requires(@"state")
+	@synthesize state;
+
+	-(id) init
+	{
+		/*
+	 	 * although state is injected we initialize it here
+	 	 * to guarantee a proper invocation forwarding.
+	 	 *
+	 	 * this dummy instance will be replaced by the proper
+	 	 * instance later in the lifecycle of this proxy
+	 	 * instance.
+	 	 */
+		self.state = [[«this.proxyStateClassName()» new] autorelease];
+	
+		return self;
+	}
+
+	-(void) dealloc
+	{
+		self.state = nil;
+		[super dealloc];
+	}
+
+	-(NSMethodSignature*)methodSignatureForSelector:(SEL)aSelector;
+	{
+		if ([self.state respondsToSelector:aSelector]) {
+			NSMethodSignature *sig = [(NSObject*)self.state methodSignatureForSelector:aSelector];
+			return sig;
+		}else {
+			return [super methodSignatureForSelector:aSelector];
+		}
+	}
+
+	-(void)forwardInvocation:(NSInvocation*)anInvocation;
+	{
+		if ([anInvocation selector] == @selector(setValuesForKeysWithDictionary:)) {
+			[anInvocation setTarget:self];
+			[anInvocation invoke];
+		}
+		else if ([self.state respondsToSelector:[anInvocation selector]]) {
+			[anInvocation setTarget:self.state];
+			[anInvocation invoke];
+		}
+		else if ([self.target respondsToSelector:[anInvocation selector]]) {
+			
+			/*
+			 * check for intercepted methods
+			 */
+			«FOREACH this.advicedMethods() AS am ITERATOR iter»
+				«IF iter.counter0 > 0»else«ENDIF»
+				if([anInvocation selector] == @selector(«am.selector()»)){
+					«FOREACH am.advice.interceptors AS interceptor ITERATOR interceptorIter»
+						«IF interceptorIter.counter0 > 0»else«ENDIF»
+						if(![[state.«((Interface)interceptor.eContainer).interceptorInterfacePropertyName()» «interceptor.name»] boolValue]){
+							//interceptor failed
+							return;
+						}
+					«ENDFOREACH»
+				}
+			«ENDFOREACH»
+			
+			[anInvocation setTarget:self.target];
+			[anInvocation invoke];
+		}
+	}
+
+	/*
+ 	 * This method is neccessary because it is called by the DI framework
+ 	 * if the state instance is injected into the proxy instance or if the 
+ 	 * state's dependencies are injected.
+	 */
+	-(void)setValuesForKeysWithDictionary:(NSDictionary *)keyedValues{
+		if (([keyedValues count] == 1 && [[keyedValues allKeys] containsObject:@"state"])) {
+			self.state = [keyedValues objectForKey:@"state"];
+		} else {
+			[self.state setValuesForKeysWithDictionary:keyedValues];
+		}
+	}
+
+	@end
+
+	#pragma mark -
+	#pragma mark proxy state
+
+	@implementation «this.proxyStateClassName()»
+
+	//interceptor instances are injected via Dependency Injection (DI)
+	«FOREACH this.interceptorInterfaces() AS ii»
+		objection_requires(@"«ii.interceptorInterfacePropertyName()»")
+		@synthesize «ii.interceptorInterfacePropertyName()»;
+	«ENDFOREACH»
+
+	@end
+	
+«ENDFILE»
+«ENDDEFINE»

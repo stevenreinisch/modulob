@@ -1,0 +1,141 @@
+«IMPORT modulob»
+«IMPORT system»
+«IMPORT types»
+
+«EXTENSION de::dubmas::modulob::generator::templates::Types»
+«EXTENSION de::dubmas::modulob::generator::templates::BaseClasses»
+
+«EXTENSION org::eclipse::xtend::util::stdlib::io»
+
+«DEFINE main FOR Module»
+	«EXPAND Header FOREACH this.interfaceModel.interfaces»
+	«EXPAND Impl   FOREACH this.interfaceModel.interfaces»
+«ENDDEFINE»
+
+«DEFINE Header FOR Interface»
+«FILE this.baseClassHeaderFilePath()»
+	#import <Foundation/Foundation.h>
+	
+	#import "«this.protocolTypeName()».h"
+
+	«FOREACH this.dependentTypes() AS type»
+		«EXPAND dependentTypeImport FOR type»
+	«ENDFOREACH»
+	
+	«EXPAND additionalHeaderImportsOrForwardDecls FOR this»
+	
+	@interface «this.baseClassName()»: NSObject
+	
+	<«this.protocolTypeName()»>
+	{
+	«FOREACH this.requiredInterfaces AS ri»
+		«ri.protocolTypeRef()» «ri.requiredInterfacePropertyName()»;
+	«ENDFOREACH»
+	
+	«EXPAND additionalIVarDecls FOR this»
+	}
+	«FOREACH this.requiredInterfaces AS ri»
+		@property (nonatomic, retain) «ri.protocolTypeRef()» «ri.requiredInterfacePropertyName()»;
+	«ENDFOREACH»
+	
+	«EXPAND additionalProperties FOR this»
+	
+	@end
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE dependentTypeImport FOR Type»
+«ENDDEFINE»
+
+«DEFINE dependentTypeImport FOR Entity»
+	#import "«this.typeName()».h"
+«ENDDEFINE»
+
+«DEFINE dependentTypeImport FOR Interface»
+	#import "«this.protocolTypeName()».h"
+«ENDDEFINE»
+
+«DEFINE additionalHeaderImportsOrForwardDecls FOR Interface»
+«ENDDEFINE»
+
+«DEFINE additionalIVarDecls FOR Interface»
+«ENDDEFINE»
+
+«DEFINE additionalProperties FOR Interface»
+«ENDDEFINE»
+
+«DEFINE Impl FOR Interface»
+«FILE this.baseClassImplFilePath()»
+	#import "«this.baseClassName()».h"
+	
+	#import "Objection.h"
+	
+	«EXPAND Imports FOR this»
+	
+	@implementation «this.baseClassName()»
+	
+	«IF this.requiredInterfaces.size > 0-»
+		objection_requires(
+		«FOREACH this.requiredInterfaces AS ri SEPARATOR ','-»
+			@"«ri.requiredInterfacePropertyName()»"
+		«ENDFOREACH»
+		)
+	
+		«FOREACH this.requiredInterfaces AS ri-»
+			@synthesize «ri.requiredInterfacePropertyName()»;
+		«ENDFOREACH»
+	«ENDIF»
+	
+	«EXPAND additionalSynthesizes FOR this»
+	
+	-(id)init
+	{
+		if(self = [super init])
+		{
+			«EXPAND InitBody FOR this»
+		}
+		return self;
+	}
+	
+	-(void)dealloc
+	{
+		«EXPAND DeallocBody FOR this»
+	}
+	
+	«EXPAND Methods FOR this»
+	
+	@end
+	
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE Imports FOR Interface»
+«ENDDEFINE»
+
+«DEFINE InitBody FOR Interface»
+«ENDDEFINE»
+
+«DEFINE DeallocBody FOR Interface»
+	[super dealloc];
+«ENDDEFINE»
+
+«DEFINE additionalSynthesizes FOR Interface»
+«ENDDEFINE»
+
+«DEFINE Methods FOR Interface»
+	«EXPAND Method FOREACH this.methods»
+«ENDDEFINE»
+
+«DEFINE Method FOR Method»
+	«EXPAND de::dubmas::modulob::generator::templates::Protocols::MethodSignature FOR this»
+	{
+		«EXPAND MethodBody FOR this»
+	}
+«ENDDEFINE»
+
+«DEFINE MethodBody FOR Method»
+	[NSException raise:@"Abstract Method" format:@"«this.name» must be implemented"];
+	«IF !(this.type.referenced.name == "Void")»
+		return nil;
+	«ENDIF»
+«ENDDEFINE»

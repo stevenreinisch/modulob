@@ -1,0 +1,18 @@
+import modulob;
+import system;
+
+diModuleHeaderFilePath(String diModuleName, Module module):
+	headerPathPrefix(module) + diModuleName + ".h"
+;
+
+diModuleImplFilePath(String diModuleName, Module module):
+	implPathPrefix(module) + diModuleName + ".m"
+;
+
+private headerPathPrefix(Module m):
+	m != null ? (m.name + "/public/") : ""
+;
+
+private implPathPrefix(Module m):
+	m != null ? (m.name + "/private/") : ""
+;

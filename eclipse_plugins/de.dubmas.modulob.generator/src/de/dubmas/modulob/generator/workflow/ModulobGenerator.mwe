@@ -1,0 +1,42 @@
+<workflow abstract='true'> 
+	<property name='genPath' value='src-gen'/> 
+	<property name='modelPath' value='src/model'/>
+	<property name='fileEncoding' value='UTF-8'/> 
+	
+	<property name='modulesSlot' value='modules'/>
+	
+	<!--
+	<component class='org.eclipse.xtext.mwe.Reader'>
+		<path value='${modelPath}'/>
+		<register class='de.dubmas.ModulobStandaloneSetup'/>
+		<load>
+			<slot value='${modulesSlot}'/>
+			<type value='Module'/>
+		</load> 
+	</component> 
+	-->
+	
+	<!--
+	<component id="ModulobModelPreprocessor" class="org.eclipse.xtend.XtendComponent">
+		<metaModel class='org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel'/>
+		<invoke value='de.dubmas.modulob.generator.templates::ModelProcessor::preprocess(${modulesSlot})'/>
+		<outputSlot value="${modulesSlot}"/>
+	</component>
+	-->
+	
+	<!-- weave into existing generator -->
+	<component adviceTarget="ModulobGenerator"
+              id="SingletonAdvice"
+              class="org.eclipse.xpand2.GeneratorAdvice">
+      <advices value="de.dubmas.modulob.generator.templates::Singleton"/>
+   </component>
+	
+	<component id='ModulobGenerator' class='org.eclipse.xpand2.Generator'> 
+		<metaModel class='org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel'/>
+		<expand value='de.dubmas.modulob.generator.templates::Template::main FOREACH ${modulesSlot}'/>
+		<outlet> 
+			<path value='${genPath}'/>
+		</outlet>
+		<fileEncoding value='${fileEncoding}'/>
+	</component>
+</workflow>

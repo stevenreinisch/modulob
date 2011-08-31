@@ -1,0 +1,45 @@
+import modulob;
+import system;
+
+extension de::dubmas::modulob::generator::templates::DataContainer;
+extension de::dubmas::modulob::generator::templates::Types;
+extension org::eclipse::xtend::util::stdlib::io;
+
+factoryMethodName(Entity e):
+	"create" + e.entityName().toFirstUpper()
+;
+
+factoryName(Entity e):
+	factoryName(e.module(), "Entity")
+;
+
+factoryHeaderFilePath(Module m, String prefix):
+	m.name + "/public/" + m.factoryName(prefix) + ".h"
+;
+
+factoryImplFilePath(Module m, String prefix):
+	m.name + "/private/" + m.factoryName(prefix) + ".m"
+;
+
+/*
+factoryProtocolName(Module m, String prefix):
+	"P_" + m.factoryName(prefix)
+;
+*/
+
+factoryName(Module m, String prefix):
+	m.name + "Public" + prefix + "Factory"
+;
+
+/*
+factoryProtocolPath(Module m, Section s, String prefix):
+	m.factoryPath(s) + m.factoryProtocolName(s, prefix) + ".h"
+;
+*/
+
+/*
+private factoryPath(Module m, Section section):
+	m.name + "/" + section.visibility + "/"
+;
+*/
+

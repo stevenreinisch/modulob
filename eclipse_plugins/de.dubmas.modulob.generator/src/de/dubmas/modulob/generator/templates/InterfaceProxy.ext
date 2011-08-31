@@ -1,0 +1,62 @@
+import modulob;
+import system;
+
+extension de::dubmas::modulob::generator::templates::Types;
+extension org::eclipse::xtend::util::stdlib::io;
+
+hasAdvicedMethods(Interface i):
+	i.advicedMethods().size > 0
+;
+
+List[Method] advicedMethods(Interface i):
+	i.methods.select(m | m.advice != null)
+;
+
+List[Method] allInterceptors(Interface i):
+	i.methods.advice.interceptors
+;
+
+List[Interface] allAdviceInterfaces(Interface i):
+	i.methods.advice.interceptors.eContainer
+;
+
+proxyStateClassName(Interface i):
+	i.proxyClassName() + "State"
+;
+
+List[Interface] interceptorInterfaces(Interface interceptedInterface):
+	interceptedInterface.advicedMethods().advice.interceptors
+		.collect(m | m.eContainer).toSet()
+;
+
+String selector(Method m):
+	JAVA de.dubmas.modulob.generator.templates.Util.selector(de.dubmas.modulob.Method)
+;
+
+interceptorInterfaceTypeName(Method advicedMethod):
+	((Interface)advicedMethod.advice.interceptors.first().eContainer).protocolTypeName()
+;
+
+interceptorInterfacePropertyName(Interface interceptorInterface):
+	interceptorInterface.name.toFirstLower() + "InProxyState"
+;
+
+proxyClassName(Interface i):
+	i.typeName() + "Proxy"
+;
+
+proxyHeaderFileName(Interface i):
+	i.proxyClassName() + ".h"
+;
+
+proxyImplFileName(Interface i):
+	i.proxyClassName() + ".m"
+;
+
+proxyHeaderFilePath(Interface i):
+	((Module)i.eContainer.eContainer).name + "/private/" + i.proxyHeaderFileName()
+;
+
+proxyImplFilePath(Interface i):
+	((Module)i.eContainer.eContainer).name + "/private/" + i.proxyImplFileName()
+;

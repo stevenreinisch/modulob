@@ -1,0 +1,24 @@
+«IMPORT modulob»
+«IMPORT system»
+
+«EXTENSION de::dubmas::modulob::generator::templates::Factories»
+«EXTENSION de::dubmas::modulob::generator::templates::Types»
+
+«DEFINE main FOR Module»
+	«EXPAND allEntitiesHeader(this.name, "public") FOR this.entityModel.entities»
+	«REM»
+	«EXPAND allEntitiesHeader(this.name, "private") FOR this.sections.select(s | s.visibility == Visibility::private).elements.typeSelect(Entity)»
+	«ENDREM»
+«ENDDEFINE»
+
+«DEFINE allEntitiesHeader(String moduleName, String sectionName) FOR List[Entity]»
+«FILE moduleName + "/" + sectionName + "/" + moduleName + "All" + sectionName.toFirstUpper() + "Entities.h"»
+	«FOREACH this AS entity»
+		#import "«entity.typeName()».h"
+	«ENDFOREACH»
+	
+	«IF this.size >0 »
+		#import "«this.first().factoryName()».h"
+	«ENDIF»
+«ENDFILE»
+«ENDDEFINE»

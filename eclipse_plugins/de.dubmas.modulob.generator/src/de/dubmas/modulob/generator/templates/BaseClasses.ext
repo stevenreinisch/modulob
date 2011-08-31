@@ -1,0 +1,24 @@
+import modulob;
+
+extension de::dubmas::modulob::generator::templates::Types;
+
+
+baseClassName(Interface i):
+	"Abstract" + i.typeName()
+;
+
+baseClassHeaderFilePath(Interface i):
+	i.headerFilePathPrefix() + i.baseClassName() + ".h"
+;
+
+baseClassImplFilePath(Interface i):
+	i.implFilePathPrefix() + i.baseClassName() + ".m"
+;
+
+isSharedInstanceMethod(Method m):
+	m.isStatic && 
+	m.parameters.isEmpty &&
+	Interface.isInstance(m.type.referenced) &&
+	((Interface)m.type.referenced).name == ((Interface)m.eContainer).name &&
+	m.name == "sharedInstance"
+;

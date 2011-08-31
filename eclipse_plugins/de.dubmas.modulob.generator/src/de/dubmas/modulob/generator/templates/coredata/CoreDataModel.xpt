@@ -1,0 +1,242 @@
+«IMPORT modulob»
+«IMPORT types»
+
+«EXTENSION de::dubmas::modulob::generator::templates::coredata::CoreDataExtensions»
+«EXTENSION org::eclipse::xtend::util::stdlib::io»
+
+«DEFINE main (String namespace) FOR List[Entity]»
+
+	«EXPAND DAOHeader(namespace) FOR this»
+	«EXPAND DAOImpl(namespace)   FOR this»
+
+«ENDDEFINE»
+
+«DEFINE DAOHeader (String namespace) FOR List[Entity]»
+«FILE namespace + "/public/" + namespace.daoName() + ".h"»
+#import <CoreData/CoreData.h>
+
+#import "CoreDataDAO.h"
+
+/**
+ * subclass this class to implement the functionality.
+ *
+ * !!!! DO NOT WRITE CODE INTO THIS CLASS !!!!
+ *
+ * .. it will be regenerated after the next code generator
+ *    run and all changes made to the header and implementation
+ *    file will be lost!
+ */
+@interface «namespace.daoName()»: CoreDataDAO
+{}
+@end
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE DAOImpl (String namespace) FOR List[Entity]»
+«FILE namespace + "/private/" + namespace.daoName() + ".m"»
+#import "«namespace.daoName() + ".h"»"
+#import "CoreDataStoreWrapper.h" 
+
+@interface «namespace.daoName()» ()
+-(NSManagedObjectModel*)createManagedObjectModel;
+@end
+
+static «namespace.daoName()» *«namespace.daoName().toFirstLower()» = nil;
+
+@implementation «namespace.daoName()»
+
+-(id)initWith:(NSString*)nameOfStoreFile_
+{
+	if(self = [super initWithMOM:[self createManagedObjectModel] 
+				 nameOfStoreFile:nameOfStoreFile_])
+	{
+		
+	}
+	return self;
+}
+
+«EXPAND momGetter FOR this-»
+#pragma mark singleton methods
+//for singleton implementation see:
+//http://stackoverflow.com/questions/145154/what-does-your-objective-c-singleton-look-like
+
++ (CoreDataDAO*)sharedDAO
+{
+	@synchronized(self) {
+		if («namespace.daoName().toFirstLower()» == nil) {
+			[[self alloc] initWith:@"«namespace»Store"]; // assignment not done here
+		}
+	}
+	return «namespace.daoName().toFirstLower()»;
+}
+
++ (id)allocWithZone:(NSZone *)zone
+{
+	@synchronized(self) {
+		if («namespace.daoName().toFirstLower()» == nil) {
+			«namespace.daoName().toFirstLower()» = [super allocWithZone:zone];
+			return «namespace.daoName().toFirstLower()»;  // assignment and return on first allocation
+		}
+	}
+	return nil; //on subsequent allocation attempts return nil
+}
+
+- (id)copyWithZone:(NSZone *)zone
+{
+	return self;
+}
+
+- (id)retain
+{
+	return self;
+}
+
+- (unsigned)retainCount
+{
+	return UINT_MAX;  //denotes an object that cannot be released
+} 
+
+- (void)release
+{
+	//do nothing
+}
+
+@end
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE momGetter FOR List[Entity]-»
+-(NSManagedObjectModel*)createManagedObjectModel
+{
+	NSManagedObjectModel *mom = [[NSManagedObjectModel alloc] init];
+	
+	«REM»forward declarations«ENDREM»
+	//begin: forward declarations
+	//entities
+	«FOREACH this AS e»
+		NSEntityDescription *«e.entityDescription()» = [NSEntityDescription new];
+	«ENDFOREACH»
+	
+	//relationships
+	«FOREACH this.entityFeatures() AS f»
+		NSRelationshipDescription *«f.featureName()» = [NSRelationshipDescription new];
+	«ENDFOREACH»
+	
+	//end: forward declarations
+	
+	«EXPAND entity FOREACH this»
+	
+	«EXPAND inheritanceHierarchy FOR this»
+	
+	NSMutableArray *allEntities = [NSMutableArray new];
+	«FOREACH this AS e»
+		[allEntities addObject:«e.entityDescription()»];
+	«ENDFOREACH»
+	
+	//[allEntities addObjectsFromArray:[self predefinedEntities]];
+	
+	[mom setEntities:allEntities];
+	[allEntities release];
+	
+	//begin: release
+	«FOREACH this AS e»
+		[«e.entityDescription()» release];
+	«ENDFOREACH»
+	//end: release
+	
+	return [mom autorelease];
+}
+«ENDDEFINE»
+
+«DEFINE inheritanceHierarchy FOR List[Entity]»
+	«FOREACH this AS e»
+	«IF e.subEntities().size > 0»
+		NSMutableArray *«e.entityDescription()»SubEntities = [NSMutableArray new];
+		
+		«FOREACH e.subEntities() AS subEntity»
+			[«e.entityDescription()»SubEntities addObject:«subEntity.entityDescription()»];	
+		«ENDFOREACH»
+		
+		[«e.entityDescription()» setSubentities:«e.entityDescription()»SubEntities];
+		[«e.entityDescription()»SubEntities release];
+	«ENDIF»
+	«ENDFOREACH»
+«ENDDEFINE»
+
+«DEFINE entity FOR Entity»
+	//begin: «this.entityDescription()» 
+	[«this.entityDescription()» setName:@"«this.entityName()»"]; 
+	[«this.entityDescription()» setManagedObjectClassName:@"«this.coreDataTypeName()»"]; 
+	
+	«IF isAbstract»
+		[«this.entityDescription()» setAbstract:YES];
+	«ENDIF»	
+	
+	«EXPAND relationship FOREACH this.entityFeatures()»
+	«EXPAND property     FOREACH this.primitiveTypeFeatures()» 
+	 	
+	NSMutableArray *«this.entityDescription()»Properties = [NSMutableArray new];
+	«FOREACH this.features AS f-»
+		[«this.entityDescription()»Properties addObject:«f.featureName()»];
+	«ENDFOREACH»
+
+	«FOREACH this.features AS f»
+		[«f.featureName()» release];
+	«ENDFOREACH»
+
+	[«this.entityDescription()» setProperties:«this.entityDescription()»Properties];
+	[«this.entityDescription()»Properties release];
+	//end: «this.entityDescription()»
+«ENDDEFINE»
+
+«DEFINE relationship FOR Feature»
+	«REM»
+	NSRelationshipDescription *«this.featureName()» = [NSRelationshipDescription new];
+	«ENDREM»
+	[«this.featureName()» setName:@"«this.name»"];
+	[«this.featureName()» setOptional:YES];
+	[«this.featureName()» setDestinationEntity:«((Entity)this.type.referenced).entityDescription()»];
+	
+	«IF this.isIndexed»
+		[«this.featureName()» setIndexed:YES];
+	«ENDIF»
+	
+	«IF this.inverse != null»
+		[«this.featureName()» setInverseRelationship:«this.inverse.featureName()»];
+	«ENDIF»
+	[«this.featureName()» setDeleteRule:NSNullifyDeleteRule];
+	«IF this.type.isMulti»
+		[«this.featureName()» setMaxCount:UINT_MAX];
+	«ELSE»
+		[«this.featureName()» setMaxCount:1];
+	«ENDIF»
+«ENDDEFINE»
+
+«DEFINE property FOR Feature»
+	NSAttributeDescription *«this.propertyName()» = [[NSAttributeDescription alloc] init];
+	«IF this.defaultValue != null»
+		«EXPAND DefaultValue(this.propertyName()) FOR this.defaultValue»
+	«ENDIF»
+	
+	«IF this.isIndexed»
+		[«this.propertyName()» setIndexed:YES];
+	«ENDIF»
+	[«this.propertyName()» setName:@"«this.name»"]; 
+	[«this.propertyName()» setAttributeType:«((Primitive)this.type.referenced).name.coreDataPrimitiveType()»]; 
+	[«this.propertyName()» setOptional:YES];
+«ENDDEFINE»
+
+«DEFINE DefaultValue(String propertyName) FOR ValueObject»
+«ENDDEFINE»
+
+«DEFINE DefaultValue(String propertyName) FOR StringValue»
+	[«propertyName» setDefaultValue:@"«this.value»"];
+«ENDDEFINE»
+
+«DEFINE DefaultValue(String propertyName) FOR IntegerValue»
+	[«propertyName» setDefaultValue:[NSNumber numberWithInt: «this.value»]];
+«ENDDEFINE»
+
+«DEFINE DefaultValue(String propertyName) FOR FloatValue»
+	[«propertyName» setDefaultValue:[NSDecimalNumber decimalNumberWithString:@"«this.value»"]];
+«ENDDEFINE»

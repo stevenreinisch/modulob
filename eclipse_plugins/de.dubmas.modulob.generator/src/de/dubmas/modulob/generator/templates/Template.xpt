@@ -1,0 +1,30 @@
+«IMPORT modulob»
+«IMPORT system»
+
+«EXTENSION de::dubmas::modulob::generator::templates::DataContainer»
+«EXTENSION de::dubmas::modulob::generator::templates::ModulobExtensions»
+
+«EXTENSION org::eclipse::xtend::util::stdlib::io»
+
+«DEFINE main FOR List[Module]»
+	«EXPAND main FOREACH this»
+	«EXPAND de::dubmas::modulob::generator::templates::DependencyInjection::main FOR this»
+	«EXPAND de::dubmas::modulob::generator::templates::json::JSON::de_serializer_config FOR this»
+«ENDDEFINE»
+
+«DEFINE main FOR Module-»
+	«EXPAND de::dubmas::modulob::generator::templates::Protocols::main FOR this»
+	«EXPAND de::dubmas::modulob::generator::templates::AllEntitiesHeader::main FOR this»
+	
+	«EXPAND de::dubmas::modulob::generator::templates::BaseClasses::main FOR this»
+	«EXPAND de::dubmas::modulob::generator::templates::Factories::main FOR this»
+
+	«EXPAND de::dubmas::modulob::generator::templates::DataContainer::main FOR this.entityModel.entities.select(e | !e.isPersistent())»
+	
+	«LET this.entityModel.entities.select(e | e.isPersistent()) AS persistentEntites»
+		«IF persistentEntites.size > 0»
+			«EXPAND de::dubmas::modulob::generator::templates::coredata::CoreDataModel::main(this.name) FOR persistentEntites»
+			«EXPAND de::dubmas::modulob::generator::templates::coredata::CoreDataClass::main FOREACH persistentEntites»
+		«ENDIF»
+	«ENDLET»
+«ENDDEFINE»
