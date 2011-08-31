@@ -20,6 +20,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link de.dubmas.modulob.Interface#getRequiredInterfaces <em>Required Interfaces</em>}</li>
  *   <li>{@link de.dubmas.modulob.Interface#getMethods <em>Methods</em>}</li>
+ *   <li>{@link de.dubmas.modulob.Interface#getDelegates <em>Delegates</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,5 +60,21 @@ public interface Interface extends UserDefined {
 	 * @generated
 	 */
 	EList<Method> getMethods();
+
+	/**
+	 * Returns the value of the '<em><b>Delegates</b></em>' containment reference list.
+	 * The list contents are of type {@link de.dubmas.modulob.Delegate}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Delegates</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Delegates</em>' containment reference list.
+	 * @see de.dubmas.modulob.ModulobPackage#getInterface_Delegates()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Delegate> getDelegates();
 
 } // Interface

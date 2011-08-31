@@ -7,6 +7,7 @@
 package de.dubmas.modulob.types.impl;
 
 import de.dubmas.modulob.types.Any;
+import de.dubmas.modulob.types.Lib;
 import de.dubmas.modulob.types.Primitive;
 import de.dubmas.modulob.types.Type;
 import de.dubmas.modulob.types.TypeRef;
@@ -62,6 +63,13 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * @generated
 	 */
 	private EClass typeRefEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass libEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -201,6 +209,33 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getLib() {
+		return libEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLib_PrimitiveTypes() {
+		return (EReference)libEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLib_AnyType() {
+		return (EReference)libEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public TypesFactory getTypesFactory() {
 		return (TypesFactory)getEFactoryInstance();
 	}
@@ -236,6 +271,10 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		typeRefEClass = createEClass(TYPE_REF);
 		createEAttribute(typeRefEClass, TYPE_REF__IS_MULTI);
 		createEReference(typeRefEClass, TYPE_REF__REFERENCED);
+
+		libEClass = createEClass(LIB);
+		createEReference(libEClass, LIB__PRIMITIVE_TYPES);
+		createEReference(libEClass, LIB__ANY_TYPE);
 	}
 
 	/**
@@ -283,6 +322,10 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		initEClass(typeRefEClass, TypeRef.class, "TypeRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTypeRef_IsMulti(), ecorePackage.getEBoolean(), "isMulti", null, 0, 1, TypeRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTypeRef_Referenced(), this.getType(), null, "referenced", null, 1, 1, TypeRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(libEClass, Lib.class, "Lib", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLib_PrimitiveTypes(), this.getPrimitive(), null, "primitiveTypes", null, 1, -1, Lib.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLib_AnyType(), this.getAny(), null, "anyType", null, 1, 1, Lib.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

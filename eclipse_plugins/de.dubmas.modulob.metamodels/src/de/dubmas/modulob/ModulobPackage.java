@@ -137,13 +137,22 @@ public interface ModulobPackage extends EPackage {
 	int INTERFACE__METHODS = TypesPackage.USER_DEFINED_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Delegates</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE__DELEGATES = TypesPackage.USER_DEFINED_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Interface</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FEATURE_COUNT = TypesPackage.USER_DEFINED_FEATURE_COUNT + 2;
+	int INTERFACE_FEATURE_COUNT = TypesPackage.USER_DEFINED_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link de.dubmas.modulob.impl.MethodImpl <em>Method</em>}' class.
@@ -192,13 +201,22 @@ public interface ModulobPackage extends EPackage {
 	int METHOD__TYPE = 3;
 
 	/**
+	 * The feature id for the '<em><b>Advice</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METHOD__ADVICE = 4;
+
+	/**
 	 * The number of structural features of the '<em>Method</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int METHOD_FEATURE_COUNT = 4;
+	int METHOD_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link de.dubmas.modulob.impl.NotificationImpl <em>Notification</em>}' class.
@@ -561,6 +579,34 @@ public interface ModulobPackage extends EPackage {
 	int FLOAT_VALUE_FEATURE_COUNT = VALUE_OBJECT_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link de.dubmas.modulob.impl.AdviceImpl <em>Advice</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dubmas.modulob.impl.AdviceImpl
+	 * @see de.dubmas.modulob.impl.ModulobPackageImpl#getAdvice()
+	 * @generated
+	 */
+	int ADVICE = 12;
+
+	/**
+	 * The feature id for the '<em><b>Interceptors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADVICE__INTERCEPTORS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Advice</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADVICE_FEATURE_COUNT = 1;
+
+	/**
 	 * The meta object id for the '{@link de.dubmas.modulob.ConfigOption <em>Config Option</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -568,7 +614,7 @@ public interface ModulobPackage extends EPackage {
 	 * @see de.dubmas.modulob.impl.ModulobPackageImpl#getConfigOption()
 	 * @generated
 	 */
-	int CONFIG_OPTION = 12;
+	int CONFIG_OPTION = 13;
 
 	/**
 	 * The meta object id for the '{@link de.dubmas.modulob.ConfigValue <em>Config Value</em>}' enum.
@@ -578,7 +624,7 @@ public interface ModulobPackage extends EPackage {
 	 * @see de.dubmas.modulob.impl.ModulobPackageImpl#getConfigValue()
 	 * @generated
 	 */
-	int CONFIG_VALUE = 13;
+	int CONFIG_VALUE = 14;
 
 
 	/**
@@ -635,6 +681,17 @@ public interface ModulobPackage extends EPackage {
 	EReference getInterface_Methods();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link de.dubmas.modulob.Interface#getDelegates <em>Delegates</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Delegates</em>'.
+	 * @see de.dubmas.modulob.Interface#getDelegates()
+	 * @see #getInterface()
+	 * @generated
+	 */
+	EReference getInterface_Delegates();
+
+	/**
 	 * Returns the meta object for class '{@link de.dubmas.modulob.Method <em>Method</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -687,6 +744,17 @@ public interface ModulobPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMethod_Type();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.dubmas.modulob.Method#getAdvice <em>Advice</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Advice</em>'.
+	 * @see de.dubmas.modulob.Method#getAdvice()
+	 * @see #getMethod()
+	 * @generated
+	 */
+	EReference getMethod_Advice();
 
 	/**
 	 * Returns the meta object for class '{@link de.dubmas.modulob.Notification <em>Notification</em>}'.
@@ -999,6 +1067,27 @@ public interface ModulobPackage extends EPackage {
 	EAttribute getFloatValue_Value();
 
 	/**
+	 * Returns the meta object for class '{@link de.dubmas.modulob.Advice <em>Advice</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Advice</em>'.
+	 * @see de.dubmas.modulob.Advice
+	 * @generated
+	 */
+	EClass getAdvice();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.dubmas.modulob.Advice#getInterceptors <em>Interceptors</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Interceptors</em>'.
+	 * @see de.dubmas.modulob.Advice#getInterceptors()
+	 * @see #getAdvice()
+	 * @generated
+	 */
+	EReference getAdvice_Interceptors();
+
+	/**
 	 * Returns the meta object for enum '{@link de.dubmas.modulob.ConfigOption <em>Config Option</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1085,6 +1174,14 @@ public interface ModulobPackage extends EPackage {
 		EReference INTERFACE__METHODS = eINSTANCE.getInterface_Methods();
 
 		/**
+		 * The meta object literal for the '<em><b>Delegates</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTERFACE__DELEGATES = eINSTANCE.getInterface_Delegates();
+
+		/**
 		 * The meta object literal for the '{@link de.dubmas.modulob.impl.MethodImpl <em>Method</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1125,6 +1222,14 @@ public interface ModulobPackage extends EPackage {
 		 * @generated
 		 */
 		EReference METHOD__TYPE = eINSTANCE.getMethod_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Advice</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference METHOD__ADVICE = eINSTANCE.getMethod_Advice();
 
 		/**
 		 * The meta object literal for the '{@link de.dubmas.modulob.impl.NotificationImpl <em>Notification</em>}' class.
@@ -1375,6 +1480,24 @@ public interface ModulobPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FLOAT_VALUE__VALUE = eINSTANCE.getFloatValue_Value();
+
+		/**
+		 * The meta object literal for the '{@link de.dubmas.modulob.impl.AdviceImpl <em>Advice</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dubmas.modulob.impl.AdviceImpl
+		 * @see de.dubmas.modulob.impl.ModulobPackageImpl#getAdvice()
+		 * @generated
+		 */
+		EClass ADVICE = eINSTANCE.getAdvice();
+
+		/**
+		 * The meta object literal for the '<em><b>Interceptors</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ADVICE__INTERCEPTORS = eINSTANCE.getAdvice_Interceptors();
 
 		/**
 		 * The meta object literal for the '{@link de.dubmas.modulob.ConfigOption <em>Config Option</em>}' enum.

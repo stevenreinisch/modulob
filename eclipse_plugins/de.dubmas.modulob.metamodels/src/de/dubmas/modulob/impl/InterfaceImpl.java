@@ -6,6 +6,7 @@
  */
 package de.dubmas.modulob.impl;
 
+import de.dubmas.modulob.Delegate;
 import de.dubmas.modulob.Interface;
 import de.dubmas.modulob.Method;
 import de.dubmas.modulob.ModulobPackage;
@@ -34,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link de.dubmas.modulob.impl.InterfaceImpl#getRequiredInterfaces <em>Required Interfaces</em>}</li>
  *   <li>{@link de.dubmas.modulob.impl.InterfaceImpl#getMethods <em>Methods</em>}</li>
+ *   <li>{@link de.dubmas.modulob.impl.InterfaceImpl#getDelegates <em>Delegates</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,6 +61,16 @@ public class InterfaceImpl extends UserDefinedImpl implements Interface {
 	 * @ordered
 	 */
 	protected EList<Method> methods;
+
+	/**
+	 * The cached value of the '{@link #getDelegates() <em>Delegates</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDelegates()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Delegate> delegates;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -108,11 +120,25 @@ public class InterfaceImpl extends UserDefinedImpl implements Interface {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Delegate> getDelegates() {
+		if (delegates == null) {
+			delegates = new EObjectContainmentEList<Delegate>(Delegate.class, this, ModulobPackage.INTERFACE__DELEGATES);
+		}
+		return delegates;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ModulobPackage.INTERFACE__METHODS:
 				return ((InternalEList<?>)getMethods()).basicRemove(otherEnd, msgs);
+			case ModulobPackage.INTERFACE__DELEGATES:
+				return ((InternalEList<?>)getDelegates()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -129,6 +155,8 @@ public class InterfaceImpl extends UserDefinedImpl implements Interface {
 				return getRequiredInterfaces();
 			case ModulobPackage.INTERFACE__METHODS:
 				return getMethods();
+			case ModulobPackage.INTERFACE__DELEGATES:
+				return getDelegates();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -150,6 +178,10 @@ public class InterfaceImpl extends UserDefinedImpl implements Interface {
 				getMethods().clear();
 				getMethods().addAll((Collection<? extends Method>)newValue);
 				return;
+			case ModulobPackage.INTERFACE__DELEGATES:
+				getDelegates().clear();
+				getDelegates().addAll((Collection<? extends Delegate>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -168,6 +200,9 @@ public class InterfaceImpl extends UserDefinedImpl implements Interface {
 			case ModulobPackage.INTERFACE__METHODS:
 				getMethods().clear();
 				return;
+			case ModulobPackage.INTERFACE__DELEGATES:
+				getDelegates().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -184,6 +219,8 @@ public class InterfaceImpl extends UserDefinedImpl implements Interface {
 				return requiredInterfaces != null && !requiredInterfaces.isEmpty();
 			case ModulobPackage.INTERFACE__METHODS:
 				return methods != null && !methods.isEmpty();
+			case ModulobPackage.INTERFACE__DELEGATES:
+				return delegates != null && !delegates.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

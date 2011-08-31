@@ -123,6 +123,10 @@ public class ModulobAdapterFactory extends AdapterFactoryImpl {
 				return createFloatValueAdapter();
 			}
 			@Override
+			public Adapter caseAdvice(Advice object) {
+				return createAdviceAdapter();
+			}
+			@Override
 			public Adapter caseType(Type object) {
 				return createTypeAdapter();
 			}
@@ -315,6 +319,20 @@ public class ModulobAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createFloatValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.dubmas.modulob.Advice <em>Advice</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.dubmas.modulob.Advice
+	 * @generated
+	 */
+	public Adapter createAdviceAdapter() {
 		return null;
 	}
 

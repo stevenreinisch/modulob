@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.dubmas.modulob.Method#getName <em>Name</em>}</li>
  *   <li>{@link de.dubmas.modulob.Method#getParameters <em>Parameters</em>}</li>
  *   <li>{@link de.dubmas.modulob.Method#getType <em>Type</em>}</li>
+ *   <li>{@link de.dubmas.modulob.Method#getAdvice <em>Advice</em>}</li>
  * </ul>
  * </p>
  *
@@ -124,5 +125,31 @@ public interface Method extends EObject {
 	 * @generated
 	 */
 	void setType(TypeRef value);
+
+	/**
+	 * Returns the value of the '<em><b>Advice</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Advice</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Advice</em>' containment reference.
+	 * @see #setAdvice(Advice)
+	 * @see de.dubmas.modulob.ModulobPackage#getMethod_Advice()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Advice getAdvice();
+
+	/**
+	 * Sets the value of the '{@link de.dubmas.modulob.Method#getAdvice <em>Advice</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Advice</em>' containment reference.
+	 * @see #getAdvice()
+	 * @generated
+	 */
+	void setAdvice(Advice value);
 
 } // Method

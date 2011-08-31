@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -50,16 +51,6 @@ public class InterfaceModelImpl extends VersionedElementImpl implements Interfac
 	 * @ordered
 	 */
 	protected EList<Interface> interfaces;
-
-	/**
-	 * The cached value of the '{@link #getModule() <em>Module</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getModule()
-	 * @generated
-	 * @ordered
-	 */
-	protected Module module;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,15 +89,8 @@ public class InterfaceModelImpl extends VersionedElementImpl implements Interfac
 	 * @generated
 	 */
 	public Module getModule() {
-		if (module != null && module.eIsProxy()) {
-			InternalEObject oldModule = (InternalEObject)module;
-			module = (Module)eResolveProxy(oldModule);
-			if (module != oldModule) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SystemPackage.INTERFACE_MODEL__MODULE, oldModule, module));
-			}
-		}
-		return module;
+		if (eContainerFeatureID() != SystemPackage.INTERFACE_MODEL__MODULE) return null;
+		return (Module)eContainer();
 	}
 
 	/**
@@ -114,8 +98,9 @@ public class InterfaceModelImpl extends VersionedElementImpl implements Interfac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Module basicGetModule() {
-		return module;
+	public NotificationChain basicSetModule(Module newModule, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newModule, SystemPackage.INTERFACE_MODEL__MODULE, msgs);
+		return msgs;
 	}
 
 	/**
@@ -124,10 +109,35 @@ public class InterfaceModelImpl extends VersionedElementImpl implements Interfac
 	 * @generated
 	 */
 	public void setModule(Module newModule) {
-		Module oldModule = module;
-		module = newModule;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SystemPackage.INTERFACE_MODEL__MODULE, oldModule, module));
+		if (newModule != eInternalContainer() || (eContainerFeatureID() != SystemPackage.INTERFACE_MODEL__MODULE && newModule != null)) {
+			if (EcoreUtil.isAncestor(this, newModule))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newModule != null)
+				msgs = ((InternalEObject)newModule).eInverseAdd(this, SystemPackage.MODULE__INTERFACE_MODEL, Module.class, msgs);
+			msgs = basicSetModule(newModule, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SystemPackage.INTERFACE_MODEL__MODULE, newModule, newModule));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SystemPackage.INTERFACE_MODEL__MODULE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetModule((Module)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -140,8 +150,24 @@ public class InterfaceModelImpl extends VersionedElementImpl implements Interfac
 		switch (featureID) {
 			case SystemPackage.INTERFACE_MODEL__INTERFACES:
 				return ((InternalEList<?>)getInterfaces()).basicRemove(otherEnd, msgs);
+			case SystemPackage.INTERFACE_MODEL__MODULE:
+				return basicSetModule(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case SystemPackage.INTERFACE_MODEL__MODULE:
+				return eInternalContainer().eInverseRemove(this, SystemPackage.MODULE__INTERFACE_MODEL, Module.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -155,8 +181,7 @@ public class InterfaceModelImpl extends VersionedElementImpl implements Interfac
 			case SystemPackage.INTERFACE_MODEL__INTERFACES:
 				return getInterfaces();
 			case SystemPackage.INTERFACE_MODEL__MODULE:
-				if (resolve) return getModule();
-				return basicGetModule();
+				return getModule();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -210,7 +235,7 @@ public class InterfaceModelImpl extends VersionedElementImpl implements Interfac
 			case SystemPackage.INTERFACE_MODEL__INTERFACES:
 				return interfaces != null && !interfaces.isEmpty();
 			case SystemPackage.INTERFACE_MODEL__MODULE:
-				return module != null;
+				return getModule() != null;
 		}
 		return super.eIsSet(featureID);
 	}

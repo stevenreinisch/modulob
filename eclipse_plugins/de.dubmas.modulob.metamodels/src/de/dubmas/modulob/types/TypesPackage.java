@@ -210,6 +210,44 @@ public interface TypesPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link de.dubmas.modulob.types.impl.LibImpl <em>Lib</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dubmas.modulob.types.impl.LibImpl
+	 * @see de.dubmas.modulob.types.impl.TypesPackageImpl#getLib()
+	 * @generated
+	 */
+	int LIB = 5;
+
+	/**
+	 * The feature id for the '<em><b>Primitive Types</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LIB__PRIMITIVE_TYPES = 0;
+
+	/**
+	 * The feature id for the '<em><b>Any Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LIB__ANY_TYPE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Lib</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LIB_FEATURE_COUNT = 2;
+
+
+	/**
 	 * Returns the meta object for class '{@link de.dubmas.modulob.types.Type <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -291,6 +329,38 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTypeRef_Referenced();
+
+	/**
+	 * Returns the meta object for class '{@link de.dubmas.modulob.types.Lib <em>Lib</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Lib</em>'.
+	 * @see de.dubmas.modulob.types.Lib
+	 * @generated
+	 */
+	EClass getLib();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.dubmas.modulob.types.Lib#getPrimitiveTypes <em>Primitive Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Primitive Types</em>'.
+	 * @see de.dubmas.modulob.types.Lib#getPrimitiveTypes()
+	 * @see #getLib()
+	 * @generated
+	 */
+	EReference getLib_PrimitiveTypes();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.dubmas.modulob.types.Lib#getAnyType <em>Any Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Any Type</em>'.
+	 * @see de.dubmas.modulob.types.Lib#getAnyType()
+	 * @see #getLib()
+	 * @generated
+	 */
+	EReference getLib_AnyType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -387,6 +457,32 @@ public interface TypesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TYPE_REF__REFERENCED = eINSTANCE.getTypeRef_Referenced();
+
+		/**
+		 * The meta object literal for the '{@link de.dubmas.modulob.types.impl.LibImpl <em>Lib</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dubmas.modulob.types.impl.LibImpl
+		 * @see de.dubmas.modulob.types.impl.TypesPackageImpl#getLib()
+		 * @generated
+		 */
+		EClass LIB = eINSTANCE.getLib();
+
+		/**
+		 * The meta object literal for the '<em><b>Primitive Types</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LIB__PRIMITIVE_TYPES = eINSTANCE.getLib_PrimitiveTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Any Type</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LIB__ANY_TYPE = eINSTANCE.getLib_AnyType();
 
 	}
 

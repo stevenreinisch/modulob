@@ -14,4 +14,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="referenced" lowerBound="1"
         eType="#//Type"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Lib">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="primitiveTypes" lowerBound="1"
+        upperBound="-1" eType="#//Primitive" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="anyType" lowerBound="1"
+        eType="#//Any" containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>

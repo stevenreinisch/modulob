@@ -6,6 +6,7 @@
  */
 package de.dubmas.modulob.impl;
 
+import de.dubmas.modulob.Advice;
 import de.dubmas.modulob.Annotation;
 import de.dubmas.modulob.ConfigOption;
 import de.dubmas.modulob.ConfigValue;
@@ -123,6 +124,13 @@ public class ModulobPackageImpl extends EPackageImpl implements ModulobPackage {
 	 * @generated
 	 */
 	private EClass floatValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass adviceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,6 +260,15 @@ public class ModulobPackageImpl extends EPackageImpl implements ModulobPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getInterface_Delegates() {
+		return (EReference)interfaceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getMethod() {
 		return methodEClass;
 	}
@@ -290,6 +307,15 @@ public class ModulobPackageImpl extends EPackageImpl implements ModulobPackage {
 	 */
 	public EReference getMethod_Type() {
 		return (EReference)methodEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMethod_Advice() {
+		return (EReference)methodEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -558,6 +584,24 @@ public class ModulobPackageImpl extends EPackageImpl implements ModulobPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getAdvice() {
+		return adviceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAdvice_Interceptors() {
+		return (EReference)adviceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getConfigOption() {
 		return configOptionEEnum;
 	}
@@ -605,12 +649,14 @@ public class ModulobPackageImpl extends EPackageImpl implements ModulobPackage {
 		interfaceEClass = createEClass(INTERFACE);
 		createEReference(interfaceEClass, INTERFACE__REQUIRED_INTERFACES);
 		createEReference(interfaceEClass, INTERFACE__METHODS);
+		createEReference(interfaceEClass, INTERFACE__DELEGATES);
 
 		methodEClass = createEClass(METHOD);
 		createEAttribute(methodEClass, METHOD__IS_STATIC);
 		createEAttribute(methodEClass, METHOD__NAME);
 		createEReference(methodEClass, METHOD__PARAMETERS);
 		createEReference(methodEClass, METHOD__TYPE);
+		createEReference(methodEClass, METHOD__ADVICE);
 
 		notificationEClass = createEClass(NOTIFICATION);
 		createEAttribute(notificationEClass, NOTIFICATION__NAME);
@@ -649,6 +695,9 @@ public class ModulobPackageImpl extends EPackageImpl implements ModulobPackage {
 
 		floatValueEClass = createEClass(FLOAT_VALUE);
 		createEAttribute(floatValueEClass, FLOAT_VALUE__VALUE);
+
+		adviceEClass = createEClass(ADVICE);
+		createEReference(adviceEClass, ADVICE__INTERCEPTORS);
 
 		// Create enums
 		configOptionEEnum = createEEnum(CONFIG_OPTION);
@@ -700,12 +749,14 @@ public class ModulobPackageImpl extends EPackageImpl implements ModulobPackage {
 		initEClass(interfaceEClass, Interface.class, "Interface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInterface_RequiredInterfaces(), this.getInterface(), null, "requiredInterfaces", null, 0, -1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInterface_Methods(), this.getMethod(), null, "methods", null, 0, -1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInterface_Delegates(), this.getDelegate(), null, "delegates", null, 0, -1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(methodEClass, Method.class, "Method", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMethod_IsStatic(), ecorePackage.getEBoolean(), "isStatic", null, 0, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMethod_Name(), ecorePackage.getEString(), "name", null, 0, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMethod_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMethod_Type(), theTypesPackage.getTypeRef(), null, "type", null, 1, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMethod_Advice(), this.getAdvice(), null, "advice", null, 0, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(notificationEClass, Notification.class, "Notification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNotification_Name(), ecorePackage.getEString(), "name", null, 0, 1, Notification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -744,6 +795,9 @@ public class ModulobPackageImpl extends EPackageImpl implements ModulobPackage {
 
 		initEClass(floatValueEClass, FloatValue.class, "FloatValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFloatValue_Value(), ecorePackage.getEFloatObject(), "value", null, 0, 1, FloatValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(adviceEClass, Advice.class, "Advice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAdvice_Interceptors(), this.getMethod(), null, "interceptors", null, 0, -1, Advice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(configOptionEEnum, ConfigOption.class, "ConfigOption");

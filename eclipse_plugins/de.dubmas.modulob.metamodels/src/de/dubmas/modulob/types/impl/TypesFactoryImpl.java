@@ -63,6 +63,7 @@ public class TypesFactoryImpl extends EFactoryImpl implements TypesFactory {
 			case TypesPackage.PRIMITIVE: return createPrimitive();
 			case TypesPackage.ANY: return createAny();
 			case TypesPackage.TYPE_REF: return createTypeRef();
+			case TypesPackage.LIB: return createLib();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -96,6 +97,16 @@ public class TypesFactoryImpl extends EFactoryImpl implements TypesFactory {
 	public TypeRef createTypeRef() {
 		TypeRefImpl typeRef = new TypeRefImpl();
 		return typeRef;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Lib createLib() {
+		LibImpl lib = new LibImpl();
+		return lib;
 	}
 
 	/**

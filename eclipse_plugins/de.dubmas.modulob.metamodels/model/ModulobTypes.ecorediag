@@ -88,6 +88,22 @@
     <element xmi:type="ecore:EClass" href="ModulobTypes.ecore#//TypeRef"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aJjwAreNEeCIFKGYgtb4Sw" x="594" y="72"/>
   </children>
+  <children xmi:type="notation:Node" xmi:id="_6Da4kNLsEeC18JtN0utGsw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_6Da4k9LsEeC18JtN0utGsw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_6Da4lNLsEeC18JtN0utGsw" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_6Da4ldLsEeC18JtN0utGsw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_6Da4ltLsEeC18JtN0utGsw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_6Da4l9LsEeC18JtN0utGsw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_6DbfoNLsEeC18JtN0utGsw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_6DbfodLsEeC18JtN0utGsw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_6DbfotLsEeC18JtN0utGsw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_6Dbfo9LsEeC18JtN0utGsw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_6Da4kdLsEeC18JtN0utGsw" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="ModulobTypes.ecore#//Lib"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6Da4ktLsEeC18JtN0utGsw" x="330" y="399"/>
+  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_OpEIUbeNEeCIFKGYgtb4Sw"/>
   <element xmi:type="ecore:EPackage" href="ModulobTypes.ecore#/"/>
   <edges xmi:type="notation:Edge" xmi:id="_dcJiILeNEeCIFKGYgtb4Sw" type="3003" source="_Ru0YULeNEeCIFKGYgtb4Sw" target="_QePhQLeNEeCIFKGYgtb4Sw">
@@ -124,5 +140,31 @@
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_hA9ss7eNEeCIFKGYgtb4Sw" points="[-14, 0, 252, 13]$[-264, -28, 2, -15]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hBAI8LeNEeCIFKGYgtb4Sw" id="(0.1282051282051282,0.6122448979591837)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hBAI8beNEeCIFKGYgtb4Sw" id="(0.8137254901960784,0.38095238095238093)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_9UH0UNLsEeC18JtN0utGsw" type="3002" source="_6Da4kNLsEeC18JtN0utGsw" target="_TGRTcLeNEeCIFKGYgtb4Sw">
+    <children xmi:type="notation:Node" xmi:id="_9UIbYNLsEeC18JtN0utGsw" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_9UIbYdLsEeC18JtN0utGsw" x="22" y="40"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_9UIbYtLsEeC18JtN0utGsw" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_9UIbY9LsEeC18JtN0utGsw" x="22" y="-14"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_9UH0UdLsEeC18JtN0utGsw" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_9UH0UtLsEeC18JtN0utGsw" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="ModulobTypes.ecore#//Lib/primitiveTypes"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9UH0U9LsEeC18JtN0utGsw" points="[16, 0, -142, 155]$[158, 0, 0, 155]$[158, -135, 0, 20]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9UKQkNLsEeC18JtN0utGsw" id="(0.8431372549019608,0.2619047619047619)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_GdxgcNLtEeC18JtN0utGsw" type="3002" source="_6Da4kNLsEeC18JtN0utGsw" target="_VhjqILeNEeCIFKGYgtb4Sw">
+    <children xmi:type="notation:Node" xmi:id="_GdxgdNLtEeC18JtN0utGsw" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_GdxgddLtEeC18JtN0utGsw" x="8" y="24"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_GdxgdtLtEeC18JtN0utGsw" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_GdyHgNLtEeC18JtN0utGsw" x="8" y="-11"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_GdxgcdLtEeC18JtN0utGsw" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_GdxgctLtEeC18JtN0utGsw" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="ModulobTypes.ecore#//Lib/anyType"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Gdxgc9LtEeC18JtN0utGsw" points="[1, -20, -11, 145]$[-38, -167, -50, -2]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KExcUNLtEeC18JtN0utGsw" id="(0.6078431372549019,0.09523809523809523)"/>
   </edges>
 </notation:Diagram>

@@ -73,6 +73,7 @@ public class ModulobFactoryImpl extends EFactoryImpl implements ModulobFactory {
 			case ModulobPackage.STRING_VALUE: return createStringValue();
 			case ModulobPackage.INTEGER_VALUE: return createIntegerValue();
 			case ModulobPackage.FLOAT_VALUE: return createFloatValue();
+			case ModulobPackage.ADVICE: return createAdvice();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -230,6 +231,16 @@ public class ModulobFactoryImpl extends EFactoryImpl implements ModulobFactory {
 	public FloatValue createFloatValue() {
 		FloatValueImpl floatValue = new FloatValueImpl();
 		return floatValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Advice createAdvice() {
+		AdviceImpl advice = new AdviceImpl();
+		return advice;
 	}
 
 	/**

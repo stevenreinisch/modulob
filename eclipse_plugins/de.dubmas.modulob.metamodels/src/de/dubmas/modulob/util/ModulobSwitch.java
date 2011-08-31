@@ -156,6 +156,12 @@ public class ModulobSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ModulobPackage.ADVICE: {
+				Advice advice = (Advice)theEObject;
+				T result = caseAdvice(advice);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -337,6 +343,21 @@ public class ModulobSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseFloatValue(FloatValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Advice</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Advice</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAdvice(Advice object) {
 		return null;
 	}
 

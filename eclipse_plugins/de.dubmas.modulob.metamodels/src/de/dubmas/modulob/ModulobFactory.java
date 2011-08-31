@@ -134,6 +134,15 @@ public interface ModulobFactory extends EFactory {
 	FloatValue createFloatValue();
 
 	/**
+	 * Returns a new object of class '<em>Advice</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Advice</em>'.
+	 * @generated
+	 */
+	Advice createAdvice();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

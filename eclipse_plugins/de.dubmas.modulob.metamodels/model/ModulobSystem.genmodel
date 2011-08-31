@@ -19,12 +19,15 @@
     </genClasses>
     <genClasses ecoreClass="ModulobSystem.ecore#//InterfaceModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModulobSystem.ecore#//InterfaceModel/interfaces"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ModulobSystem.ecore#//InterfaceModel/module"/>
     </genClasses>
     <genClasses ecoreClass="ModulobSystem.ecore#//EntityModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModulobSystem.ecore#//EntityModel/entities"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ModulobSystem.ecore#//EntityModel/module"/>
     </genClasses>
     <genClasses ecoreClass="ModulobSystem.ecore#//NotificationModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModulobSystem.ecore#//NotificationModel/notifications"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ModulobSystem.ecore#//NotificationModel/module"/>
     </genClasses>
     <genClasses ecoreClass="ModulobSystem.ecore#//BehaviouralModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModulobSystem.ecore#//BehaviouralModel/behaviours"/>

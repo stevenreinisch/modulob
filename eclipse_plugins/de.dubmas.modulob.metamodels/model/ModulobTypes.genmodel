@@ -17,5 +17,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModulobTypes.ecore#//TypeRef/isMulti"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ModulobTypes.ecore#//TypeRef/referenced"/>
     </genClasses>
+    <genClasses ecoreClass="ModulobTypes.ecore#//Lib">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModulobTypes.ecore#//Lib/primitiveTypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModulobTypes.ecore#//Lib/anyType"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

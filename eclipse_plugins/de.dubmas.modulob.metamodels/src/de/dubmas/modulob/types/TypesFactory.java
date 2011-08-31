@@ -53,6 +53,15 @@ public interface TypesFactory extends EFactory {
 	TypeRef createTypeRef();
 
 	/**
+	 * Returns a new object of class '<em>Lib</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Lib</em>'.
+	 * @generated
+	 */
+	Lib createLib();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

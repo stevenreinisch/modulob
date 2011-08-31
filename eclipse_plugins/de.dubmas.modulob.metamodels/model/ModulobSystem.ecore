@@ -13,29 +13,29 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Module" eSuperTypes="#//Element">
     <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceModel" eType="#//InterfaceModel"
-        containment="true"/>
+        containment="true" eOpposite="#//InterfaceModel/module"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="entityModel" eType="#//EntityModel"
-        containment="true"/>
+        containment="true" eOpposite="#//EntityModel/module"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="notificationModel" eType="#//NotificationModel"
-        containment="true"/>
+        containment="true" eOpposite="#//NotificationModel/module"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InterfaceModel" eSuperTypes="#//VersionedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="interfaces" upperBound="-1"
         eType="ecore:EClass Modulob.ecore#//Interface" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="module" lowerBound="1"
-        eType="#//Module"/>
+        eType="#//Module" eOpposite="#//Module/interfaceModel"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EntityModel" eSuperTypes="#//VersionedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entities" upperBound="-1"
         eType="ecore:EClass Modulob.ecore#//Entity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="module" lowerBound="1"
-        eType="#//Module"/>
+        eType="#//Module" eOpposite="#//Module/entityModel"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NotificationModel" eSuperTypes="#//VersionedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="notifications" upperBound="-1"
         eType="ecore:EClass Modulob.ecore#//Notification" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="module" lowerBound="1"
-        eType="#//Module"/>
+        eType="#//Module" eOpposite="#//Module/notificationModel"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BehaviouralModel" eSuperTypes="#//VersionedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="behaviours" upperBound="-1"

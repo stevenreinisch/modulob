@@ -6,6 +6,7 @@
  */
 package de.dubmas.modulob.impl;
 
+import de.dubmas.modulob.Advice;
 import de.dubmas.modulob.Method;
 import de.dubmas.modulob.ModulobPackage;
 import de.dubmas.modulob.Parameter;
@@ -38,6 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.dubmas.modulob.impl.MethodImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.dubmas.modulob.impl.MethodImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link de.dubmas.modulob.impl.MethodImpl#getType <em>Type</em>}</li>
+ *   <li>{@link de.dubmas.modulob.impl.MethodImpl#getAdvice <em>Advice</em>}</li>
  * </ul>
  * </p>
  *
@@ -103,6 +105,16 @@ public class MethodImpl extends EObjectImpl implements Method {
 	 * @ordered
 	 */
 	protected TypeRef type;
+
+	/**
+	 * The cached value of the '{@link #getAdvice() <em>Advice</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAdvice()
+	 * @generated
+	 * @ordered
+	 */
+	protected Advice advice;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -225,6 +237,49 @@ public class MethodImpl extends EObjectImpl implements Method {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Advice getAdvice() {
+		return advice;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetAdvice(Advice newAdvice, NotificationChain msgs) {
+		Advice oldAdvice = advice;
+		advice = newAdvice;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModulobPackage.METHOD__ADVICE, oldAdvice, newAdvice);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAdvice(Advice newAdvice) {
+		if (newAdvice != advice) {
+			NotificationChain msgs = null;
+			if (advice != null)
+				msgs = ((InternalEObject)advice).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModulobPackage.METHOD__ADVICE, null, msgs);
+			if (newAdvice != null)
+				msgs = ((InternalEObject)newAdvice).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModulobPackage.METHOD__ADVICE, null, msgs);
+			msgs = basicSetAdvice(newAdvice, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModulobPackage.METHOD__ADVICE, newAdvice, newAdvice));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -232,6 +287,8 @@ public class MethodImpl extends EObjectImpl implements Method {
 				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 			case ModulobPackage.METHOD__TYPE:
 				return basicSetType(null, msgs);
+			case ModulobPackage.METHOD__ADVICE:
+				return basicSetAdvice(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -252,6 +309,8 @@ public class MethodImpl extends EObjectImpl implements Method {
 				return getParameters();
 			case ModulobPackage.METHOD__TYPE:
 				return getType();
+			case ModulobPackage.METHOD__ADVICE:
+				return getAdvice();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -278,6 +337,9 @@ public class MethodImpl extends EObjectImpl implements Method {
 			case ModulobPackage.METHOD__TYPE:
 				setType((TypeRef)newValue);
 				return;
+			case ModulobPackage.METHOD__ADVICE:
+				setAdvice((Advice)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -302,6 +364,9 @@ public class MethodImpl extends EObjectImpl implements Method {
 			case ModulobPackage.METHOD__TYPE:
 				setType((TypeRef)null);
 				return;
+			case ModulobPackage.METHOD__ADVICE:
+				setAdvice((Advice)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -322,6 +387,8 @@ public class MethodImpl extends EObjectImpl implements Method {
 				return parameters != null && !parameters.isEmpty();
 			case ModulobPackage.METHOD__TYPE:
 				return type != null;
+			case ModulobPackage.METHOD__ADVICE:
+				return advice != null;
 		}
 		return super.eIsSet(featureID);
 	}
