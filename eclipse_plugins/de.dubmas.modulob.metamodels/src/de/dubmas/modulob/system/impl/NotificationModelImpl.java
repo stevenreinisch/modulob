@@ -52,6 +52,16 @@ public class NotificationModelImpl extends VersionedElementImpl implements Notif
 	protected EList<Notification> notifications;
 
 	/**
+	 * The cached value of the '{@link #getModule() <em>Module</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getModule()
+	 * @generated
+	 * @ordered
+	 */
+	protected Module module;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -88,8 +98,15 @@ public class NotificationModelImpl extends VersionedElementImpl implements Notif
 	 * @generated
 	 */
 	public Module getModule() {
-		if (eContainerFeatureID() != SystemPackage.NOTIFICATION_MODEL__MODULE) return null;
-		return (Module)eContainer();
+		if (module != null && module.eIsProxy()) {
+			InternalEObject oldModule = (InternalEObject)module;
+			module = (Module)eResolveProxy(oldModule);
+			if (module != oldModule) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, org.eclipse.emf.common.notify.Notification.RESOLVE, SystemPackage.NOTIFICATION_MODEL__MODULE, oldModule, module));
+			}
+		}
+		return module;
 	}
 
 	/**
@@ -97,9 +114,8 @@ public class NotificationModelImpl extends VersionedElementImpl implements Notif
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetModule(Module newModule, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newModule, SystemPackage.NOTIFICATION_MODEL__MODULE, msgs);
-		return msgs;
+	public Module basicGetModule() {
+		return module;
 	}
 
 	/**
@@ -108,35 +124,10 @@ public class NotificationModelImpl extends VersionedElementImpl implements Notif
 	 * @generated
 	 */
 	public void setModule(Module newModule) {
-		if (newModule != eInternalContainer() || (eContainerFeatureID() != SystemPackage.NOTIFICATION_MODEL__MODULE && newModule != null)) {
-			if (EcoreUtil.isAncestor(this, newModule))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newModule != null)
-				msgs = ((InternalEObject)newModule).eInverseAdd(this, SystemPackage.MODULE__NOTIFICATION_MODEL, Module.class, msgs);
-			msgs = basicSetModule(newModule, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, org.eclipse.emf.common.notify.Notification.SET, SystemPackage.NOTIFICATION_MODEL__MODULE, newModule, newModule));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case SystemPackage.NOTIFICATION_MODEL__MODULE:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetModule((Module)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
+		Module oldModule = module;
+		module = newModule;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, org.eclipse.emf.common.notify.Notification.SET, SystemPackage.NOTIFICATION_MODEL__MODULE, oldModule, module));
 	}
 
 	/**
@@ -149,24 +140,8 @@ public class NotificationModelImpl extends VersionedElementImpl implements Notif
 		switch (featureID) {
 			case SystemPackage.NOTIFICATION_MODEL__NOTIFICATIONS:
 				return ((InternalEList<?>)getNotifications()).basicRemove(otherEnd, msgs);
-			case SystemPackage.NOTIFICATION_MODEL__MODULE:
-				return basicSetModule(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case SystemPackage.NOTIFICATION_MODEL__MODULE:
-				return eInternalContainer().eInverseRemove(this, SystemPackage.MODULE__NOTIFICATION_MODEL, Module.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -180,7 +155,8 @@ public class NotificationModelImpl extends VersionedElementImpl implements Notif
 			case SystemPackage.NOTIFICATION_MODEL__NOTIFICATIONS:
 				return getNotifications();
 			case SystemPackage.NOTIFICATION_MODEL__MODULE:
-				return getModule();
+				if (resolve) return getModule();
+				return basicGetModule();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -234,7 +210,7 @@ public class NotificationModelImpl extends VersionedElementImpl implements Notif
 			case SystemPackage.NOTIFICATION_MODEL__NOTIFICATIONS:
 				return notifications != null && !notifications.isEmpty();
 			case SystemPackage.NOTIFICATION_MODEL__MODULE:
-				return getModule() != null;
+				return module != null;
 		}
 		return super.eIsSet(featureID);
 	}

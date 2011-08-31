@@ -13,6 +13,9 @@ import de.dubmas.modulob.common.serializer.DslSemanticSequencer;
 import de.dubmas.modulob.services.DataDslGrammarAccess;
 import de.dubmas.modulob.system.EntityModel;
 import de.dubmas.modulob.system.SystemPackage;
+import de.dubmas.modulob.types.Any;
+import de.dubmas.modulob.types.Lib;
+import de.dubmas.modulob.types.Primitive;
 import de.dubmas.modulob.types.TypeRef;
 import de.dubmas.modulob.types.TypesPackage;
 import org.eclipse.emf.ecore.EObject;
@@ -107,6 +110,24 @@ public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer 
 				else break;
 			}
 		else if(semanticObject.eClass().getEPackage() == TypesPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case TypesPackage.ANY:
+				if(context == grammarAccess.getAnyRule()) {
+					sequence_Any(context, (Any) semanticObject); 
+					return; 
+				}
+				else break;
+			case TypesPackage.LIB:
+				if(context == grammarAccess.getTypeLibRule()) {
+					sequence_TypeLib(context, (Lib) semanticObject); 
+					return; 
+				}
+				else break;
+			case TypesPackage.PRIMITIVE:
+				if(context == grammarAccess.getPrimitiveRule()) {
+					sequence_Primitive(context, (Primitive) semanticObject); 
+					return; 
+				}
+				else break;
 			case TypesPackage.TYPE_REF:
 				if(context == grammarAccess.getTypeRefRule()) {
 					sequence_TypeRef(context, (TypeRef) semanticObject); 
@@ -127,6 +148,18 @@ public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer 
 	 */
 	protected void sequence_Annotation(EObject context, Annotation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     name=ID
+	 *
+	 * Features:
+	 *    name[1, 1]
+	 */
+	protected void sequence_Any(EObject context, Any semanticObject) {
+		superSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -210,12 +243,37 @@ public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
+	 *     name=ID
+	 *
+	 * Features:
+	 *    name[1, 1]
+	 */
+	protected void sequence_Primitive(EObject context, Primitive semanticObject) {
+		superSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     value=EStringObject
 	 *
 	 * Features:
 	 *    value[1, 1]
 	 */
 	protected void sequence_StringValue(EObject context, StringValue semanticObject) {
+		superSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (primitiveTypes+=Primitive+ anyType=Any)
+	 *
+	 * Features:
+	 *    primitiveTypes[1, *]
+	 *    anyType[1, 1]
+	 */
+	protected void sequence_TypeLib(EObject context, Lib semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
 	}
 	

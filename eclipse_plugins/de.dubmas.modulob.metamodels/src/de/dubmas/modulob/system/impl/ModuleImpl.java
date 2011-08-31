@@ -118,9 +118,9 @@ public class ModuleImpl extends ElementImpl implements Module {
 		if (newInterfaceModel != interfaceModel) {
 			NotificationChain msgs = null;
 			if (interfaceModel != null)
-				msgs = ((InternalEObject)interfaceModel).eInverseRemove(this, SystemPackage.INTERFACE_MODEL__MODULE, InterfaceModel.class, msgs);
+				msgs = ((InternalEObject)interfaceModel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SystemPackage.MODULE__INTERFACE_MODEL, null, msgs);
 			if (newInterfaceModel != null)
-				msgs = ((InternalEObject)newInterfaceModel).eInverseAdd(this, SystemPackage.INTERFACE_MODEL__MODULE, InterfaceModel.class, msgs);
+				msgs = ((InternalEObject)newInterfaceModel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SystemPackage.MODULE__INTERFACE_MODEL, null, msgs);
 			msgs = basicSetInterfaceModel(newInterfaceModel, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -161,9 +161,9 @@ public class ModuleImpl extends ElementImpl implements Module {
 		if (newEntityModel != entityModel) {
 			NotificationChain msgs = null;
 			if (entityModel != null)
-				msgs = ((InternalEObject)entityModel).eInverseRemove(this, SystemPackage.ENTITY_MODEL__MODULE, EntityModel.class, msgs);
+				msgs = ((InternalEObject)entityModel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SystemPackage.MODULE__ENTITY_MODEL, null, msgs);
 			if (newEntityModel != null)
-				msgs = ((InternalEObject)newEntityModel).eInverseAdd(this, SystemPackage.ENTITY_MODEL__MODULE, EntityModel.class, msgs);
+				msgs = ((InternalEObject)newEntityModel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SystemPackage.MODULE__ENTITY_MODEL, null, msgs);
 			msgs = basicSetEntityModel(newEntityModel, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -204,38 +204,14 @@ public class ModuleImpl extends ElementImpl implements Module {
 		if (newNotificationModel != notificationModel) {
 			NotificationChain msgs = null;
 			if (notificationModel != null)
-				msgs = ((InternalEObject)notificationModel).eInverseRemove(this, SystemPackage.NOTIFICATION_MODEL__MODULE, NotificationModel.class, msgs);
+				msgs = ((InternalEObject)notificationModel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SystemPackage.MODULE__NOTIFICATION_MODEL, null, msgs);
 			if (newNotificationModel != null)
-				msgs = ((InternalEObject)newNotificationModel).eInverseAdd(this, SystemPackage.NOTIFICATION_MODEL__MODULE, NotificationModel.class, msgs);
+				msgs = ((InternalEObject)newNotificationModel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SystemPackage.MODULE__NOTIFICATION_MODEL, null, msgs);
 			msgs = basicSetNotificationModel(newNotificationModel, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SystemPackage.MODULE__NOTIFICATION_MODEL, newNotificationModel, newNotificationModel));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case SystemPackage.MODULE__INTERFACE_MODEL:
-				if (interfaceModel != null)
-					msgs = ((InternalEObject)interfaceModel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SystemPackage.MODULE__INTERFACE_MODEL, null, msgs);
-				return basicSetInterfaceModel((InterfaceModel)otherEnd, msgs);
-			case SystemPackage.MODULE__ENTITY_MODEL:
-				if (entityModel != null)
-					msgs = ((InternalEObject)entityModel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SystemPackage.MODULE__ENTITY_MODEL, null, msgs);
-				return basicSetEntityModel((EntityModel)otherEnd, msgs);
-			case SystemPackage.MODULE__NOTIFICATION_MODEL:
-				if (notificationModel != null)
-					msgs = ((InternalEObject)notificationModel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SystemPackage.MODULE__NOTIFICATION_MODEL, null, msgs);
-				return basicSetNotificationModel((NotificationModel)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

@@ -272,7 +272,7 @@ public interface SystemPackage extends EPackage {
 	int INTERFACE_MODEL__INTERFACES = VERSIONED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Module</b></em>' container reference.
+	 * The feature id for the '<em><b>Module</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -327,7 +327,7 @@ public interface SystemPackage extends EPackage {
 	int ENTITY_MODEL__ENTITIES = VERSIONED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Module</b></em>' container reference.
+	 * The feature id for the '<em><b>Module</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -382,7 +382,7 @@ public interface SystemPackage extends EPackage {
 	int NOTIFICATION_MODEL__NOTIFICATIONS = VERSIONED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Module</b></em>' container reference.
+	 * The feature id for the '<em><b>Module</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -554,10 +554,10 @@ public interface SystemPackage extends EPackage {
 	EReference getInterfaceModel_Interfaces();
 
 	/**
-	 * Returns the meta object for the container reference '{@link de.dubmas.modulob.system.InterfaceModel#getModule <em>Module</em>}'.
+	 * Returns the meta object for the reference '{@link de.dubmas.modulob.system.InterfaceModel#getModule <em>Module</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Module</em>'.
+	 * @return the meta object for the reference '<em>Module</em>'.
 	 * @see de.dubmas.modulob.system.InterfaceModel#getModule()
 	 * @see #getInterfaceModel()
 	 * @generated
@@ -586,10 +586,10 @@ public interface SystemPackage extends EPackage {
 	EReference getEntityModel_Entities();
 
 	/**
-	 * Returns the meta object for the container reference '{@link de.dubmas.modulob.system.EntityModel#getModule <em>Module</em>}'.
+	 * Returns the meta object for the reference '{@link de.dubmas.modulob.system.EntityModel#getModule <em>Module</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Module</em>'.
+	 * @return the meta object for the reference '<em>Module</em>'.
 	 * @see de.dubmas.modulob.system.EntityModel#getModule()
 	 * @see #getEntityModel()
 	 * @generated
@@ -618,10 +618,10 @@ public interface SystemPackage extends EPackage {
 	EReference getNotificationModel_Notifications();
 
 	/**
-	 * Returns the meta object for the container reference '{@link de.dubmas.modulob.system.NotificationModel#getModule <em>Module</em>}'.
+	 * Returns the meta object for the reference '{@link de.dubmas.modulob.system.NotificationModel#getModule <em>Module</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Module</em>'.
+	 * @return the meta object for the reference '<em>Module</em>'.
 	 * @see de.dubmas.modulob.system.NotificationModel#getModule()
 	 * @see #getNotificationModel()
 	 * @generated
@@ -800,7 +800,7 @@ public interface SystemPackage extends EPackage {
 		EReference INTERFACE_MODEL__INTERFACES = eINSTANCE.getInterfaceModel_Interfaces();
 
 		/**
-		 * The meta object literal for the '<em><b>Module</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Module</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -826,7 +826,7 @@ public interface SystemPackage extends EPackage {
 		EReference ENTITY_MODEL__ENTITIES = eINSTANCE.getEntityModel_Entities();
 
 		/**
-		 * The meta object literal for the '<em><b>Module</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Module</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -852,7 +852,7 @@ public interface SystemPackage extends EPackage {
 		EReference NOTIFICATION_MODEL__NOTIFICATIONS = eINSTANCE.getNotificationModel_Notifications();
 
 		/**
-		 * The meta object literal for the '<em><b>Module</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Module</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

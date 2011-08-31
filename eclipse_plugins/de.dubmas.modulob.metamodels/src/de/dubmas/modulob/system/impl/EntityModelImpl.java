@@ -53,6 +53,16 @@ public class EntityModelImpl extends VersionedElementImpl implements EntityModel
 	protected EList<Entity> entities;
 
 	/**
+	 * The cached value of the '{@link #getModule() <em>Module</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getModule()
+	 * @generated
+	 * @ordered
+	 */
+	protected Module module;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -89,18 +99,7 @@ public class EntityModelImpl extends VersionedElementImpl implements EntityModel
 	 * @generated
 	 */
 	public Module getModule() {
-		if (eContainerFeatureID() != SystemPackage.ENTITY_MODEL__MODULE) return null;
-		return (Module)eContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetModule(Module newModule, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newModule, SystemPackage.ENTITY_MODEL__MODULE, msgs);
-		return msgs;
+		return module;
 	}
 
 	/**
@@ -109,35 +108,10 @@ public class EntityModelImpl extends VersionedElementImpl implements EntityModel
 	 * @generated
 	 */
 	public void setModule(Module newModule) {
-		if (newModule != eInternalContainer() || (eContainerFeatureID() != SystemPackage.ENTITY_MODEL__MODULE && newModule != null)) {
-			if (EcoreUtil.isAncestor(this, newModule))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newModule != null)
-				msgs = ((InternalEObject)newModule).eInverseAdd(this, SystemPackage.MODULE__ENTITY_MODEL, Module.class, msgs);
-			msgs = basicSetModule(newModule, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SystemPackage.ENTITY_MODEL__MODULE, newModule, newModule));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case SystemPackage.ENTITY_MODEL__MODULE:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetModule((Module)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
+		Module oldModule = module;
+		module = newModule;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SystemPackage.ENTITY_MODEL__MODULE, oldModule, module));
 	}
 
 	/**
@@ -150,24 +124,8 @@ public class EntityModelImpl extends VersionedElementImpl implements EntityModel
 		switch (featureID) {
 			case SystemPackage.ENTITY_MODEL__ENTITIES:
 				return ((InternalEList<?>)getEntities()).basicRemove(otherEnd, msgs);
-			case SystemPackage.ENTITY_MODEL__MODULE:
-				return basicSetModule(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case SystemPackage.ENTITY_MODEL__MODULE:
-				return eInternalContainer().eInverseRemove(this, SystemPackage.MODULE__ENTITY_MODEL, Module.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -235,7 +193,7 @@ public class EntityModelImpl extends VersionedElementImpl implements EntityModel
 			case SystemPackage.ENTITY_MODEL__ENTITIES:
 				return entities != null && !entities.isEmpty();
 			case SystemPackage.ENTITY_MODEL__MODULE:
-				return getModule() != null;
+				return module != null;
 		}
 		return super.eIsSet(featureID);
 	}

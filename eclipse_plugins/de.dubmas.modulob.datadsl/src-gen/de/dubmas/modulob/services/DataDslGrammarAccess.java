@@ -392,6 +392,36 @@ public class DataDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getFeatureAccess().getRule();
 	}
 
+	//TypeLib returns types::Lib:
+	//	primitiveTypes+=Primitive+ anyType=Any;
+	public DslGrammarAccess.TypeLibElements getTypeLibAccess() {
+		return gaDsl.getTypeLibAccess();
+	}
+	
+	public ParserRule getTypeLibRule() {
+		return getTypeLibAccess().getRule();
+	}
+
+	//Primitive returns types::Primitive:
+	//	"primitive type" name=ID;
+	public DslGrammarAccess.PrimitiveElements getPrimitiveAccess() {
+		return gaDsl.getPrimitiveAccess();
+	}
+	
+	public ParserRule getPrimitiveRule() {
+		return getPrimitiveAccess().getRule();
+	}
+
+	//Any returns types::Any:
+	//	"any type" name=ID;
+	public DslGrammarAccess.AnyElements getAnyAccess() {
+		return gaDsl.getAnyAccess();
+	}
+	
+	public ParserRule getAnyRule() {
+		return getAnyAccess().getRule();
+	}
+
 	//TypeRef returns types::TypeRef:
 	//	referenced=[types::Type|QualifiedName] isMulti?="[]"?;
 	public DslGrammarAccess.TypeRefElements getTypeRefAccess() {

@@ -45,28 +45,26 @@ public interface EntityModel extends VersionedElement {
 	EList<Entity> getEntities();
 
 	/**
-	 * Returns the value of the '<em><b>Module</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.dubmas.modulob.system.Module#getEntityModel <em>Entity Model</em>}'.
+	 * Returns the value of the '<em><b>Module</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Module</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Module</em>' container reference.
+	 * @return the value of the '<em>Module</em>' reference.
 	 * @see #setModule(Module)
 	 * @see de.dubmas.modulob.system.SystemPackage#getEntityModel_Module()
-	 * @see de.dubmas.modulob.system.Module#getEntityModel
-	 * @model opposite="entityModel" required="true" transient="false"
+	 * @model resolveProxies="false" required="true" transient="true"
 	 * @generated
 	 */
 	Module getModule();
 
 	/**
-	 * Sets the value of the '{@link de.dubmas.modulob.system.EntityModel#getModule <em>Module</em>}' container reference.
+	 * Sets the value of the '{@link de.dubmas.modulob.system.EntityModel#getModule <em>Module</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Module</em>' container reference.
+	 * @param value the new value of the '<em>Module</em>' reference.
 	 * @see #getModule()
 	 * @generated
 	 */

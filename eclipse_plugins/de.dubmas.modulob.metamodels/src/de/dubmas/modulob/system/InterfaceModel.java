@@ -45,28 +45,26 @@ public interface InterfaceModel extends VersionedElement {
 	EList<Interface> getInterfaces();
 
 	/**
-	 * Returns the value of the '<em><b>Module</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.dubmas.modulob.system.Module#getInterfaceModel <em>Interface Model</em>}'.
+	 * Returns the value of the '<em><b>Module</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Module</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Module</em>' container reference.
+	 * @return the value of the '<em>Module</em>' reference.
 	 * @see #setModule(Module)
 	 * @see de.dubmas.modulob.system.SystemPackage#getInterfaceModel_Module()
-	 * @see de.dubmas.modulob.system.Module#getInterfaceModel
-	 * @model opposite="interfaceModel" required="true" transient="false"
+	 * @model required="true"
 	 * @generated
 	 */
 	Module getModule();
 
 	/**
-	 * Sets the value of the '{@link de.dubmas.modulob.system.InterfaceModel#getModule <em>Module</em>}' container reference.
+	 * Sets the value of the '{@link de.dubmas.modulob.system.InterfaceModel#getModule <em>Module</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Module</em>' container reference.
+	 * @param value the new value of the '<em>Module</em>' reference.
 	 * @see #getModule()
 	 * @generated
 	 */

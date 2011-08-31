@@ -28,7 +28,6 @@ package de.dubmas.modulob.system;
 public interface Module extends Element {
 	/**
 	 * Returns the value of the '<em><b>Interface Model</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link de.dubmas.modulob.system.InterfaceModel#getModule <em>Module</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Interface Model</em>' containment reference isn't clear,
@@ -38,8 +37,7 @@ public interface Module extends Element {
 	 * @return the value of the '<em>Interface Model</em>' containment reference.
 	 * @see #setInterfaceModel(InterfaceModel)
 	 * @see de.dubmas.modulob.system.SystemPackage#getModule_InterfaceModel()
-	 * @see de.dubmas.modulob.system.InterfaceModel#getModule
-	 * @model opposite="module" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	InterfaceModel getInterfaceModel();
@@ -56,7 +54,6 @@ public interface Module extends Element {
 
 	/**
 	 * Returns the value of the '<em><b>Entity Model</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link de.dubmas.modulob.system.EntityModel#getModule <em>Module</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Entity Model</em>' containment reference isn't clear,
@@ -66,8 +63,7 @@ public interface Module extends Element {
 	 * @return the value of the '<em>Entity Model</em>' containment reference.
 	 * @see #setEntityModel(EntityModel)
 	 * @see de.dubmas.modulob.system.SystemPackage#getModule_EntityModel()
-	 * @see de.dubmas.modulob.system.EntityModel#getModule
-	 * @model opposite="module" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EntityModel getEntityModel();
@@ -84,7 +80,6 @@ public interface Module extends Element {
 
 	/**
 	 * Returns the value of the '<em><b>Notification Model</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link de.dubmas.modulob.system.NotificationModel#getModule <em>Module</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Notification Model</em>' containment reference isn't clear,
@@ -94,8 +89,7 @@ public interface Module extends Element {
 	 * @return the value of the '<em>Notification Model</em>' containment reference.
 	 * @see #setNotificationModel(NotificationModel)
 	 * @see de.dubmas.modulob.system.SystemPackage#getModule_NotificationModel()
-	 * @see de.dubmas.modulob.system.NotificationModel#getModule
-	 * @model opposite="module" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	NotificationModel getNotificationModel();
