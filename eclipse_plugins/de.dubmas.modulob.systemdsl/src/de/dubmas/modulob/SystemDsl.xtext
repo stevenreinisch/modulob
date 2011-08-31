@@ -7,5 +7,5 @@ System returns modulobSystem::System:
 ;
 
 Module returns modulobSystem::Module:
-	'module' name=ID
+	'module' name=ID 
 ;

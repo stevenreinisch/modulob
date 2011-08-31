@@ -1,9 +1,8 @@
-
 module de.dubmas.modulob.generator.SystemDslGeneratorMWE
 
 import org.eclipse.emf.mwe.utils.*
 
-var targetDir
+var genPath
 var modelPath
 
 Workflow {
@@ -26,7 +25,7 @@ Workflow {
 		register = de.dubmas.modulob.SystemDslStandaloneSetup {}
 		slot = 'model'
 		outlet = {
-			path = targetDir
+			path = genPath
 		}
 	}
 }

@@ -23,8 +23,9 @@ Import-Package: org.eclipse.xtext.xbase.lib,
  org.apache.log4j
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: de.dubmas.modulob,
- de.dubmas.modulob.services,
+ de.dubmas.modulob.generator,
  de.dubmas.modulob.parseTreeConstruction,
  de.dubmas.modulob.parser.antlr,
  de.dubmas.modulob.parser.antlr.internal,
+ de.dubmas.modulob.services,
  de.dubmas.modulob.validation
