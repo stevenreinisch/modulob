@@ -37,8 +37,11 @@ module Generator
 var modelPath = 'src/«this.projectName»'
 var targetDir = 'src-gen'
 
-var modulesSlot = 'modulesSlot'
-var primitiveTypesSlot = 'primitiveTypesSlot'
+var modulesSlot           = 'modulesSlot'
+var primitiveTypesSlot    = 'primitiveTypesSlot'
+var entityModelSlot       = 'entityModelSlot'
+var interfaceModelSlot    = 'interfaceModelSlot'
+var notificationModelSlot = 'notificationModelSlot'
 
 Workflow {
 	
@@ -52,15 +55,37 @@ Workflow {
 		register = de.dubmas.modulob.SystemDslStandaloneSetup {}
 		
 		
-		load = {
+		loadFromResourceSet = {
 			slot = modulesSlot
 			type = 'Module'
 		}
 		
-		load = {
+		loadFromResourceSet = {
 			slot = primitiveTypesSlot
 			type = 'Primitive'
 		}
+		
+		loadFromResourceSet = {
+			slot = entityModelSlot
+			type = 'EntityModel'
+		}
+		
+		loadFromResourceSet = {
+			slot = interfaceModelSlot
+			type = 'InterfaceModel'
+		}
+		
+		loadFromResourceSet = {
+			slot = notificationModelSlot
+			type = 'NotificationModel'
+		}
+	}
+	
+	component = de.dubmas.modulob.generator.transformation.ModuleTransformation {
+		entityModelSlotName       = entityModelSlot
+		interfaceModelSlotName    = interfaceModelSlot
+		notificationModelSlotName = notificationModelSlot
+		moduleModelSlotName       = modulesSlot
 	}
 	
 	component = @de.dubmas.modulob.generator.workflow.ModulobGenerator auto-inject {}

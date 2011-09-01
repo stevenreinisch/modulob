@@ -4,7 +4,6 @@ import java.io.InputStream;
 import org.eclipse.xtext.*;
 import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
-import org.eclipse.xtext.parsetree.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
@@ -76,11 +75,11 @@ public class InternalSystemDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "entryRuleSystem"
-    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:61:1: entryRuleSystem : ruleSystem EOF ;
+    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:60:1: entryRuleSystem : ruleSystem EOF ;
     public final void entryRuleSystem() throws RecognitionException {
         try {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:62:1: ( ruleSystem EOF )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:63:1: ruleSystem EOF
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:61:1: ( ruleSystem EOF )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:62:1: ruleSystem EOF
             {
              before(grammarAccess.getSystemRule()); 
             pushFollow(FOLLOW_ruleSystem_in_entryRuleSystem61);
@@ -106,21 +105,21 @@ public class InternalSystemDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "ruleSystem"
-    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:70:1: ruleSystem : ( ( rule__System__Group__0 ) ) ;
+    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:69:1: ruleSystem : ( ( rule__System__Group__0 ) ) ;
     public final void ruleSystem() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:74:2: ( ( ( rule__System__Group__0 ) ) )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:75:1: ( ( rule__System__Group__0 ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:73:2: ( ( ( rule__System__Group__0 ) ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:74:1: ( ( rule__System__Group__0 ) )
             {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:75:1: ( ( rule__System__Group__0 ) )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:76:1: ( rule__System__Group__0 )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:74:1: ( ( rule__System__Group__0 ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:75:1: ( rule__System__Group__0 )
             {
              before(grammarAccess.getSystemAccess().getGroup()); 
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:77:1: ( rule__System__Group__0 )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:77:2: rule__System__Group__0
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:76:1: ( rule__System__Group__0 )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:76:2: rule__System__Group__0
             {
             pushFollow(FOLLOW_rule__System__Group__0_in_ruleSystem94);
             rule__System__Group__0();
@@ -153,11 +152,11 @@ public class InternalSystemDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "entryRuleModule"
-    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:89:1: entryRuleModule : ruleModule EOF ;
+    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:88:1: entryRuleModule : ruleModule EOF ;
     public final void entryRuleModule() throws RecognitionException {
         try {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:90:1: ( ruleModule EOF )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:91:1: ruleModule EOF
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:89:1: ( ruleModule EOF )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:90:1: ruleModule EOF
             {
              before(grammarAccess.getModuleRule()); 
             pushFollow(FOLLOW_ruleModule_in_entryRuleModule121);
@@ -183,21 +182,21 @@ public class InternalSystemDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "ruleModule"
-    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:98:1: ruleModule : ( ( rule__Module__Group__0 ) ) ;
+    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:97:1: ruleModule : ( ( rule__Module__Group__0 ) ) ;
     public final void ruleModule() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:102:2: ( ( ( rule__Module__Group__0 ) ) )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:103:1: ( ( rule__Module__Group__0 ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:101:2: ( ( ( rule__Module__Group__0 ) ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:102:1: ( ( rule__Module__Group__0 ) )
             {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:103:1: ( ( rule__Module__Group__0 ) )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:104:1: ( rule__Module__Group__0 )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:102:1: ( ( rule__Module__Group__0 ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:103:1: ( rule__Module__Group__0 )
             {
              before(grammarAccess.getModuleAccess().getGroup()); 
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:105:1: ( rule__Module__Group__0 )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:105:2: rule__Module__Group__0
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:104:1: ( rule__Module__Group__0 )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:104:2: rule__Module__Group__0
             {
             pushFollow(FOLLOW_rule__Module__Group__0_in_ruleModule154);
             rule__Module__Group__0();
@@ -230,14 +229,14 @@ public class InternalSystemDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__System__Group__0"
-    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:119:1: rule__System__Group__0 : rule__System__Group__0__Impl rule__System__Group__1 ;
+    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:118:1: rule__System__Group__0 : rule__System__Group__0__Impl rule__System__Group__1 ;
     public final void rule__System__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:123:1: ( rule__System__Group__0__Impl rule__System__Group__1 )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:124:2: rule__System__Group__0__Impl rule__System__Group__1
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:122:1: ( rule__System__Group__0__Impl rule__System__Group__1 )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:123:2: rule__System__Group__0__Impl rule__System__Group__1
             {
             pushFollow(FOLLOW_rule__System__Group__0__Impl_in_rule__System__Group__0188);
             rule__System__Group__0__Impl();
@@ -268,17 +267,17 @@ public class InternalSystemDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__System__Group__0__Impl"
-    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:131:1: rule__System__Group__0__Impl : ( 'system' ) ;
+    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:130:1: rule__System__Group__0__Impl : ( 'system' ) ;
     public final void rule__System__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:135:1: ( ( 'system' ) )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:136:1: ( 'system' )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:134:1: ( ( 'system' ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:135:1: ( 'system' )
             {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:136:1: ( 'system' )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:137:1: 'system'
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:135:1: ( 'system' )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:136:1: 'system'
             {
              before(grammarAccess.getSystemAccess().getSystemKeyword_0()); 
             match(input,11,FOLLOW_11_in_rule__System__Group__0__Impl219); 
@@ -305,14 +304,14 @@ public class InternalSystemDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__System__Group__1"
-    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:150:1: rule__System__Group__1 : rule__System__Group__1__Impl rule__System__Group__2 ;
+    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:149:1: rule__System__Group__1 : rule__System__Group__1__Impl rule__System__Group__2 ;
     public final void rule__System__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:154:1: ( rule__System__Group__1__Impl rule__System__Group__2 )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:155:2: rule__System__Group__1__Impl rule__System__Group__2
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:153:1: ( rule__System__Group__1__Impl rule__System__Group__2 )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:154:2: rule__System__Group__1__Impl rule__System__Group__2
             {
             pushFollow(FOLLOW_rule__System__Group__1__Impl_in_rule__System__Group__1250);
             rule__System__Group__1__Impl();
@@ -343,21 +342,21 @@ public class InternalSystemDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__System__Group__1__Impl"
-    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:162:1: rule__System__Group__1__Impl : ( ( rule__System__NameAssignment_1 ) ) ;
+    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:161:1: rule__System__Group__1__Impl : ( ( rule__System__NameAssignment_1 ) ) ;
     public final void rule__System__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:166:1: ( ( ( rule__System__NameAssignment_1 ) ) )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:167:1: ( ( rule__System__NameAssignment_1 ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:165:1: ( ( ( rule__System__NameAssignment_1 ) ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:166:1: ( ( rule__System__NameAssignment_1 ) )
             {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:167:1: ( ( rule__System__NameAssignment_1 ) )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:168:1: ( rule__System__NameAssignment_1 )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:166:1: ( ( rule__System__NameAssignment_1 ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:167:1: ( rule__System__NameAssignment_1 )
             {
              before(grammarAccess.getSystemAccess().getNameAssignment_1()); 
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:169:1: ( rule__System__NameAssignment_1 )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:169:2: rule__System__NameAssignment_1
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:168:1: ( rule__System__NameAssignment_1 )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:168:2: rule__System__NameAssignment_1
             {
             pushFollow(FOLLOW_rule__System__NameAssignment_1_in_rule__System__Group__1__Impl280);
             rule__System__NameAssignment_1();
@@ -390,14 +389,14 @@ public class InternalSystemDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__System__Group__2"
-    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:179:1: rule__System__Group__2 : rule__System__Group__2__Impl rule__System__Group__3 ;
+    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:178:1: rule__System__Group__2 : rule__System__Group__2__Impl rule__System__Group__3 ;
     public final void rule__System__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:183:1: ( rule__System__Group__2__Impl rule__System__Group__3 )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:184:2: rule__System__Group__2__Impl rule__System__Group__3
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:182:1: ( rule__System__Group__2__Impl rule__System__Group__3 )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:183:2: rule__System__Group__2__Impl rule__System__Group__3
             {
             pushFollow(FOLLOW_rule__System__Group__2__Impl_in_rule__System__Group__2310);
             rule__System__Group__2__Impl();
@@ -428,17 +427,17 @@ public class InternalSystemDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__System__Group__2__Impl"
-    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:191:1: rule__System__Group__2__Impl : ( 'consistsOf' ) ;
+    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:190:1: rule__System__Group__2__Impl : ( 'consistsOf' ) ;
     public final void rule__System__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:195:1: ( ( 'consistsOf' ) )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:196:1: ( 'consistsOf' )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:194:1: ( ( 'consistsOf' ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:195:1: ( 'consistsOf' )
             {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:196:1: ( 'consistsOf' )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:197:1: 'consistsOf'
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:195:1: ( 'consistsOf' )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:196:1: 'consistsOf'
             {
              before(grammarAccess.getSystemAccess().getConsistsOfKeyword_2()); 
             match(input,12,FOLLOW_12_in_rule__System__Group__2__Impl341); 
@@ -465,14 +464,14 @@ public class InternalSystemDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__System__Group__3"
-    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:210:1: rule__System__Group__3 : rule__System__Group__3__Impl rule__System__Group__4 ;
+    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:209:1: rule__System__Group__3 : rule__System__Group__3__Impl rule__System__Group__4 ;
     public final void rule__System__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:214:1: ( rule__System__Group__3__Impl rule__System__Group__4 )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:215:2: rule__System__Group__3__Impl rule__System__Group__4
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:213:1: ( rule__System__Group__3__Impl rule__System__Group__4 )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:214:2: rule__System__Group__3__Impl rule__System__Group__4
             {
             pushFollow(FOLLOW_rule__System__Group__3__Impl_in_rule__System__Group__3372);
             rule__System__Group__3__Impl();
@@ -503,21 +502,21 @@ public class InternalSystemDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__System__Group__3__Impl"
-    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:222:1: rule__System__Group__3__Impl : ( ( rule__System__ModulesAssignment_3 ) ) ;
+    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:221:1: rule__System__Group__3__Impl : ( ( rule__System__ModulesAssignment_3 ) ) ;
     public final void rule__System__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:226:1: ( ( ( rule__System__ModulesAssignment_3 ) ) )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:227:1: ( ( rule__System__ModulesAssignment_3 ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:225:1: ( ( ( rule__System__ModulesAssignment_3 ) ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:226:1: ( ( rule__System__ModulesAssignment_3 ) )
             {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:227:1: ( ( rule__System__ModulesAssignment_3 ) )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:228:1: ( rule__System__ModulesAssignment_3 )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:226:1: ( ( rule__System__ModulesAssignment_3 ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:227:1: ( rule__System__ModulesAssignment_3 )
             {
              before(grammarAccess.getSystemAccess().getModulesAssignment_3()); 
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:229:1: ( rule__System__ModulesAssignment_3 )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:229:2: rule__System__ModulesAssignment_3
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:228:1: ( rule__System__ModulesAssignment_3 )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:228:2: rule__System__ModulesAssignment_3
             {
             pushFollow(FOLLOW_rule__System__ModulesAssignment_3_in_rule__System__Group__3__Impl402);
             rule__System__ModulesAssignment_3();
@@ -550,14 +549,14 @@ public class InternalSystemDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__System__Group__4"
-    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:239:1: rule__System__Group__4 : rule__System__Group__4__Impl ;
+    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:238:1: rule__System__Group__4 : rule__System__Group__4__Impl ;
     public final void rule__System__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:243:1: ( rule__System__Group__4__Impl )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:244:2: rule__System__Group__4__Impl
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:242:1: ( rule__System__Group__4__Impl )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:243:2: rule__System__Group__4__Impl
             {
             pushFollow(FOLLOW_rule__System__Group__4__Impl_in_rule__System__Group__4432);
             rule__System__Group__4__Impl();
@@ -583,20 +582,20 @@ public class InternalSystemDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__System__Group__4__Impl"
-    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:250:1: rule__System__Group__4__Impl : ( ( rule__System__Group_4__0 )* ) ;
+    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:249:1: rule__System__Group__4__Impl : ( ( rule__System__Group_4__0 )* ) ;
     public final void rule__System__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:254:1: ( ( ( rule__System__Group_4__0 )* ) )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:255:1: ( ( rule__System__Group_4__0 )* )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:253:1: ( ( ( rule__System__Group_4__0 )* ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:254:1: ( ( rule__System__Group_4__0 )* )
             {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:255:1: ( ( rule__System__Group_4__0 )* )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:256:1: ( rule__System__Group_4__0 )*
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:254:1: ( ( rule__System__Group_4__0 )* )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:255:1: ( rule__System__Group_4__0 )*
             {
              before(grammarAccess.getSystemAccess().getGroup_4()); 
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:257:1: ( rule__System__Group_4__0 )*
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:256:1: ( rule__System__Group_4__0 )*
             loop1:
             do {
                 int alt1=2;
@@ -609,7 +608,7 @@ public class InternalSystemDslParser extends AbstractInternalContentAssistParser
 
                 switch (alt1) {
             	case 1 :
-            	    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:257:2: rule__System__Group_4__0
+            	    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:256:2: rule__System__Group_4__0
             	    {
             	    pushFollow(FOLLOW_rule__System__Group_4__0_in_rule__System__Group__4__Impl459);
             	    rule__System__Group_4__0();
@@ -648,14 +647,14 @@ public class InternalSystemDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__System__Group_4__0"
-    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:277:1: rule__System__Group_4__0 : rule__System__Group_4__0__Impl rule__System__Group_4__1 ;
+    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:276:1: rule__System__Group_4__0 : rule__System__Group_4__0__Impl rule__System__Group_4__1 ;
     public final void rule__System__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:281:1: ( rule__System__Group_4__0__Impl rule__System__Group_4__1 )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:282:2: rule__System__Group_4__0__Impl rule__System__Group_4__1
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:280:1: ( rule__System__Group_4__0__Impl rule__System__Group_4__1 )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:281:2: rule__System__Group_4__0__Impl rule__System__Group_4__1
             {
             pushFollow(FOLLOW_rule__System__Group_4__0__Impl_in_rule__System__Group_4__0500);
             rule__System__Group_4__0__Impl();
@@ -686,17 +685,17 @@ public class InternalSystemDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__System__Group_4__0__Impl"
-    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:289:1: rule__System__Group_4__0__Impl : ( ',' ) ;
+    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:288:1: rule__System__Group_4__0__Impl : ( ',' ) ;
     public final void rule__System__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:293:1: ( ( ',' ) )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:294:1: ( ',' )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:292:1: ( ( ',' ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:293:1: ( ',' )
             {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:294:1: ( ',' )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:295:1: ','
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:293:1: ( ',' )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:294:1: ','
             {
              before(grammarAccess.getSystemAccess().getCommaKeyword_4_0()); 
             match(input,13,FOLLOW_13_in_rule__System__Group_4__0__Impl531); 
@@ -723,14 +722,14 @@ public class InternalSystemDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__System__Group_4__1"
-    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:308:1: rule__System__Group_4__1 : rule__System__Group_4__1__Impl ;
+    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:307:1: rule__System__Group_4__1 : rule__System__Group_4__1__Impl ;
     public final void rule__System__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:312:1: ( rule__System__Group_4__1__Impl )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:313:2: rule__System__Group_4__1__Impl
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:311:1: ( rule__System__Group_4__1__Impl )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:312:2: rule__System__Group_4__1__Impl
             {
             pushFollow(FOLLOW_rule__System__Group_4__1__Impl_in_rule__System__Group_4__1562);
             rule__System__Group_4__1__Impl();
@@ -756,21 +755,21 @@ public class InternalSystemDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__System__Group_4__1__Impl"
-    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:319:1: rule__System__Group_4__1__Impl : ( ( rule__System__ModulesAssignment_4_1 ) ) ;
+    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:318:1: rule__System__Group_4__1__Impl : ( ( rule__System__ModulesAssignment_4_1 ) ) ;
     public final void rule__System__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:323:1: ( ( ( rule__System__ModulesAssignment_4_1 ) ) )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:324:1: ( ( rule__System__ModulesAssignment_4_1 ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:322:1: ( ( ( rule__System__ModulesAssignment_4_1 ) ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:323:1: ( ( rule__System__ModulesAssignment_4_1 ) )
             {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:324:1: ( ( rule__System__ModulesAssignment_4_1 ) )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:325:1: ( rule__System__ModulesAssignment_4_1 )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:323:1: ( ( rule__System__ModulesAssignment_4_1 ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:324:1: ( rule__System__ModulesAssignment_4_1 )
             {
              before(grammarAccess.getSystemAccess().getModulesAssignment_4_1()); 
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:326:1: ( rule__System__ModulesAssignment_4_1 )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:326:2: rule__System__ModulesAssignment_4_1
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:325:1: ( rule__System__ModulesAssignment_4_1 )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:325:2: rule__System__ModulesAssignment_4_1
             {
             pushFollow(FOLLOW_rule__System__ModulesAssignment_4_1_in_rule__System__Group_4__1__Impl589);
             rule__System__ModulesAssignment_4_1();
@@ -803,14 +802,14 @@ public class InternalSystemDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Module__Group__0"
-    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:340:1: rule__Module__Group__0 : rule__Module__Group__0__Impl rule__Module__Group__1 ;
+    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:339:1: rule__Module__Group__0 : rule__Module__Group__0__Impl rule__Module__Group__1 ;
     public final void rule__Module__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:344:1: ( rule__Module__Group__0__Impl rule__Module__Group__1 )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:345:2: rule__Module__Group__0__Impl rule__Module__Group__1
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:343:1: ( rule__Module__Group__0__Impl rule__Module__Group__1 )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:344:2: rule__Module__Group__0__Impl rule__Module__Group__1
             {
             pushFollow(FOLLOW_rule__Module__Group__0__Impl_in_rule__Module__Group__0623);
             rule__Module__Group__0__Impl();
@@ -841,17 +840,17 @@ public class InternalSystemDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Module__Group__0__Impl"
-    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:352:1: rule__Module__Group__0__Impl : ( 'module' ) ;
+    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:351:1: rule__Module__Group__0__Impl : ( 'module' ) ;
     public final void rule__Module__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:356:1: ( ( 'module' ) )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:357:1: ( 'module' )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:355:1: ( ( 'module' ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:356:1: ( 'module' )
             {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:357:1: ( 'module' )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:358:1: 'module'
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:356:1: ( 'module' )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:357:1: 'module'
             {
              before(grammarAccess.getModuleAccess().getModuleKeyword_0()); 
             match(input,14,FOLLOW_14_in_rule__Module__Group__0__Impl654); 
@@ -878,14 +877,14 @@ public class InternalSystemDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Module__Group__1"
-    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:371:1: rule__Module__Group__1 : rule__Module__Group__1__Impl ;
+    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:370:1: rule__Module__Group__1 : rule__Module__Group__1__Impl ;
     public final void rule__Module__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:375:1: ( rule__Module__Group__1__Impl )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:376:2: rule__Module__Group__1__Impl
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:374:1: ( rule__Module__Group__1__Impl )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:375:2: rule__Module__Group__1__Impl
             {
             pushFollow(FOLLOW_rule__Module__Group__1__Impl_in_rule__Module__Group__1685);
             rule__Module__Group__1__Impl();
@@ -911,21 +910,21 @@ public class InternalSystemDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Module__Group__1__Impl"
-    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:382:1: rule__Module__Group__1__Impl : ( ( rule__Module__NameAssignment_1 ) ) ;
+    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:381:1: rule__Module__Group__1__Impl : ( ( rule__Module__NameAssignment_1 ) ) ;
     public final void rule__Module__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:386:1: ( ( ( rule__Module__NameAssignment_1 ) ) )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:387:1: ( ( rule__Module__NameAssignment_1 ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:385:1: ( ( ( rule__Module__NameAssignment_1 ) ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:386:1: ( ( rule__Module__NameAssignment_1 ) )
             {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:387:1: ( ( rule__Module__NameAssignment_1 ) )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:388:1: ( rule__Module__NameAssignment_1 )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:386:1: ( ( rule__Module__NameAssignment_1 ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:387:1: ( rule__Module__NameAssignment_1 )
             {
              before(grammarAccess.getModuleAccess().getNameAssignment_1()); 
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:389:1: ( rule__Module__NameAssignment_1 )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:389:2: rule__Module__NameAssignment_1
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:388:1: ( rule__Module__NameAssignment_1 )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:388:2: rule__Module__NameAssignment_1
             {
             pushFollow(FOLLOW_rule__Module__NameAssignment_1_in_rule__Module__Group__1__Impl712);
             rule__Module__NameAssignment_1();
@@ -958,17 +957,17 @@ public class InternalSystemDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__System__NameAssignment_1"
-    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:404:1: rule__System__NameAssignment_1 : ( RULE_ID ) ;
+    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:403:1: rule__System__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__System__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:408:1: ( ( RULE_ID ) )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:409:1: ( RULE_ID )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:407:1: ( ( RULE_ID ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:408:1: ( RULE_ID )
             {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:409:1: ( RULE_ID )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:410:1: RULE_ID
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:408:1: ( RULE_ID )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:409:1: RULE_ID
             {
              before(grammarAccess.getSystemAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__System__NameAssignment_1751); 
@@ -995,17 +994,17 @@ public class InternalSystemDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__System__ModulesAssignment_3"
-    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:419:1: rule__System__ModulesAssignment_3 : ( ruleModule ) ;
+    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:418:1: rule__System__ModulesAssignment_3 : ( ruleModule ) ;
     public final void rule__System__ModulesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:423:1: ( ( ruleModule ) )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:424:1: ( ruleModule )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:422:1: ( ( ruleModule ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:423:1: ( ruleModule )
             {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:424:1: ( ruleModule )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:425:1: ruleModule
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:423:1: ( ruleModule )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:424:1: ruleModule
             {
              before(grammarAccess.getSystemAccess().getModulesModuleParserRuleCall_3_0()); 
             pushFollow(FOLLOW_ruleModule_in_rule__System__ModulesAssignment_3782);
@@ -1036,17 +1035,17 @@ public class InternalSystemDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__System__ModulesAssignment_4_1"
-    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:434:1: rule__System__ModulesAssignment_4_1 : ( ruleModule ) ;
+    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:433:1: rule__System__ModulesAssignment_4_1 : ( ruleModule ) ;
     public final void rule__System__ModulesAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:438:1: ( ( ruleModule ) )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:439:1: ( ruleModule )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:437:1: ( ( ruleModule ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:438:1: ( ruleModule )
             {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:439:1: ( ruleModule )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:440:1: ruleModule
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:438:1: ( ruleModule )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:439:1: ruleModule
             {
              before(grammarAccess.getSystemAccess().getModulesModuleParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_ruleModule_in_rule__System__ModulesAssignment_4_1813);
@@ -1077,17 +1076,17 @@ public class InternalSystemDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Module__NameAssignment_1"
-    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:449:1: rule__Module__NameAssignment_1 : ( RULE_ID ) ;
+    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:448:1: rule__Module__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Module__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:453:1: ( ( RULE_ID ) )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:454:1: ( RULE_ID )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:452:1: ( ( RULE_ID ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:453:1: ( RULE_ID )
             {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:454:1: ( RULE_ID )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:455:1: RULE_ID
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:453:1: ( RULE_ID )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:454:1: RULE_ID
             {
              before(grammarAccess.getModuleAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Module__NameAssignment_1844); 

@@ -36,6 +36,7 @@ public class TheProjectCreator extends SystemDslProjectCreator{
 		result.add("org.eclipse.emf.mwe.utils");
 		result.add("org.eclipse.xtend.typesystem.emf");
 		result.add("org.eclipse.xtend.util.stdlib");
+		result.add("org.eclipse.xtext.xbase.lib");
 		
 		return result;
 	}
