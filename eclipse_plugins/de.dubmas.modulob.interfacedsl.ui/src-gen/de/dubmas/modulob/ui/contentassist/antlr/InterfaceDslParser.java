@@ -44,6 +44,9 @@ public class InterfaceDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInterfaceAccess().getGroup_2_2(), "rule__Interface__Group_2_2__0");
 					put(grammarAccess.getMethodAccess().getGroup(), "rule__Method__Group__0");
 					put(grammarAccess.getParameterAccess().getGroup(), "rule__Parameter__Group__0");
+					put(grammarAccess.getTypeLibAccess().getGroup(), "rule__TypeLib__Group__0");
+					put(grammarAccess.getPrimitiveAccess().getGroup(), "rule__Primitive__Group__0");
+					put(grammarAccess.getAnyAccess().getGroup(), "rule__Any__Group__0");
 					put(grammarAccess.getFeatureAccess().getGroup(), "rule__Feature__Group__0");
 					put(grammarAccess.getFeatureAccess().getGroup_4(), "rule__Feature__Group_4__0");
 					put(grammarAccess.getFeatureAccess().getGroup_5(), "rule__Feature__Group_5__0");
@@ -65,6 +68,10 @@ public class InterfaceDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getParameterAccess().getSignaturePartAssignment_0(), "rule__Parameter__SignaturePartAssignment_0");
 					put(grammarAccess.getParameterAccess().getTypeAssignment_2(), "rule__Parameter__TypeAssignment_2");
 					put(grammarAccess.getParameterAccess().getNameAssignment_3(), "rule__Parameter__NameAssignment_3");
+					put(grammarAccess.getTypeLibAccess().getPrimitiveTypesAssignment_0(), "rule__TypeLib__PrimitiveTypesAssignment_0");
+					put(grammarAccess.getTypeLibAccess().getAnyTypeAssignment_1(), "rule__TypeLib__AnyTypeAssignment_1");
+					put(grammarAccess.getPrimitiveAccess().getNameAssignment_1(), "rule__Primitive__NameAssignment_1");
+					put(grammarAccess.getAnyAccess().getNameAssignment_1(), "rule__Any__NameAssignment_1");
 					put(grammarAccess.getFeatureAccess().getIsIndexedAssignment_0(), "rule__Feature__IsIndexedAssignment_0");
 					put(grammarAccess.getFeatureAccess().getIsContainmentAssignment_1(), "rule__Feature__IsContainmentAssignment_1");
 					put(grammarAccess.getFeatureAccess().getTypeAssignment_2(), "rule__Feature__TypeAssignment_2");

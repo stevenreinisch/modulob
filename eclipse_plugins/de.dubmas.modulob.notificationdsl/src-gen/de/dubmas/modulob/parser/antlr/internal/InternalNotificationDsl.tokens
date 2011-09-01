@@ -1,4 +1,6 @@
 RULE_ID=5
+T__25=25
+T__24=24
 T__23=23
 T__22=22
 RULE_ANY_OTHER=10
@@ -19,15 +21,17 @@ T__13=13
 RULE_INT=6
 RULE_WS=9
 '}'=15
+'primitive type'=16
 'version'=12
-'indexed'=16
+'indexed'=18
 'notifications for module'=11
 'notification'=13
 '{'=14
-'-['=17
-';'=20
-'='=18
-'-'=22
-'<->'=19
-'.'=23
-'[]'=21
+'-['=19
+';'=22
+'='=20
+'-'=24
+'<->'=21
+'.'=25
+'any type'=17
+'[]'=23

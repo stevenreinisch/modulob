@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="de.dubmas.modulob.migration.popupMenu"
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="de.dubmas.modulob.migration.ui.objectContribution1"
+            nameFilter="*"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               class="de.dubmas.modulob.psee.ui.TestAction"
+               enablesFor="1"
+               id="de.dubmas.modulob.migration.ui.action1"
+               label="Test da WizWizWizard"
+               menubarPath="additions">
+         </action>
+      </objectContribution>
+   </extension>
+</plugin>

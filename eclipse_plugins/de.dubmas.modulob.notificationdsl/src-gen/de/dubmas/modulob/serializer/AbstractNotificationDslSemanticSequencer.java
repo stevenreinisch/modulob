@@ -12,6 +12,9 @@ import de.dubmas.modulob.common.serializer.DslSemanticSequencer;
 import de.dubmas.modulob.services.NotificationDslGrammarAccess;
 import de.dubmas.modulob.system.NotificationModel;
 import de.dubmas.modulob.system.SystemPackage;
+import de.dubmas.modulob.types.Any;
+import de.dubmas.modulob.types.Lib;
+import de.dubmas.modulob.types.Primitive;
 import de.dubmas.modulob.types.TypeRef;
 import de.dubmas.modulob.types.TypesPackage;
 import org.eclipse.emf.ecore.EObject;
@@ -59,34 +62,34 @@ public class AbstractNotificationDslSemanticSequencer extends AbstractSemanticSe
 		if(semanticObject.eClass().getEPackage() == ModulobPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case ModulobPackage.FEATURE:
 				if(context == grammarAccess.getFeatureRule()) {
-					sequence_Feature_Feature(context, (Feature) semanticObject); 
+					sequence_Feature(context, (Feature) semanticObject); 
 					return; 
 				}
 				else break;
 			case ModulobPackage.FLOAT_VALUE:
-				if(context == grammarAccess.getValueObjectRule() ||
-				   context == grammarAccess.getFloatValueRule()) {
-					sequence_FloatValue_FloatValue(context, (FloatValue) semanticObject); 
+				if(context == grammarAccess.getFloatValueRule() ||
+				   context == grammarAccess.getValueObjectRule()) {
+					sequence_FloatValue(context, (FloatValue) semanticObject); 
 					return; 
 				}
 				else break;
 			case ModulobPackage.INTEGER_VALUE:
-				if(context == grammarAccess.getValueObjectRule() ||
-				   context == grammarAccess.getIntegerValueRule()) {
-					sequence_IntegerValue_IntegerValue(context, (IntegerValue) semanticObject); 
+				if(context == grammarAccess.getIntegerValueRule() ||
+				   context == grammarAccess.getValueObjectRule()) {
+					sequence_IntegerValue(context, (IntegerValue) semanticObject); 
 					return; 
 				}
 				else break;
 			case ModulobPackage.NOTIFICATION:
 				if(context == grammarAccess.getNotificationRule()) {
-					sequence_Notification_Notification(context, (Notification) semanticObject); 
+					sequence_Notification(context, (Notification) semanticObject); 
 					return; 
 				}
 				else break;
 			case ModulobPackage.STRING_VALUE:
-				if(context == grammarAccess.getValueObjectRule() ||
-				   context == grammarAccess.getStringValueRule()) {
-					sequence_StringValue_StringValue(context, (StringValue) semanticObject); 
+				if(context == grammarAccess.getStringValueRule() ||
+				   context == grammarAccess.getValueObjectRule()) {
+					sequence_StringValue(context, (StringValue) semanticObject); 
 					return; 
 				}
 				else break;
@@ -94,21 +97,51 @@ public class AbstractNotificationDslSemanticSequencer extends AbstractSemanticSe
 		else if(semanticObject.eClass().getEPackage() == SystemPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case SystemPackage.NOTIFICATION_MODEL:
 				if(context == grammarAccess.getNotificationModelRule()) {
-					sequence_NotificationModel_NotificationModel(context, (NotificationModel) semanticObject); 
+					sequence_NotificationModel(context, (NotificationModel) semanticObject); 
 					return; 
 				}
 				else break;
 			}
 		else if(semanticObject.eClass().getEPackage() == TypesPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case TypesPackage.ANY:
+				if(context == grammarAccess.getAnyRule()) {
+					sequence_Any(context, (Any) semanticObject); 
+					return; 
+				}
+				else break;
+			case TypesPackage.LIB:
+				if(context == grammarAccess.getTypeLibRule()) {
+					sequence_TypeLib(context, (Lib) semanticObject); 
+					return; 
+				}
+				else break;
+			case TypesPackage.PRIMITIVE:
+				if(context == grammarAccess.getPrimitiveRule()) {
+					sequence_Primitive(context, (Primitive) semanticObject); 
+					return; 
+				}
+				else break;
 			case TypesPackage.TYPE_REF:
 				if(context == grammarAccess.getTypeRefRule()) {
-					sequence_TypeRef_TypeRef(context, (TypeRef) semanticObject); 
+					sequence_TypeRef(context, (TypeRef) semanticObject); 
 					return; 
 				}
 				else break;
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Constraint:
+	 *     name=ID
+	 *
+	 * Features:
+	 *    name[1, 1]
+	 */
+	protected void sequence_Any(EObject context, Any semanticObject) {
+		superSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Constraint:
@@ -129,7 +162,7 @@ public class AbstractNotificationDslSemanticSequencer extends AbstractSemanticSe
 	 *    type[1, 1]
 	 *    defaultValue[0, 1]
 	 */
-	protected void sequence_Feature_Feature(EObject context, Feature semanticObject) {
+	protected void sequence_Feature(EObject context, Feature semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -141,7 +174,7 @@ public class AbstractNotificationDslSemanticSequencer extends AbstractSemanticSe
 	 * Features:
 	 *    value[1, 1]
 	 */
-	protected void sequence_FloatValue_FloatValue(EObject context, FloatValue semanticObject) {
+	protected void sequence_FloatValue(EObject context, FloatValue semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -153,7 +186,7 @@ public class AbstractNotificationDslSemanticSequencer extends AbstractSemanticSe
 	 * Features:
 	 *    value[1, 1]
 	 */
-	protected void sequence_IntegerValue_IntegerValue(EObject context, IntegerValue semanticObject) {
+	protected void sequence_IntegerValue(EObject context, IntegerValue semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -167,7 +200,7 @@ public class AbstractNotificationDslSemanticSequencer extends AbstractSemanticSe
 	 *    notifications[1, *]
 	 *    module[1, 1]
 	 */
-	protected void sequence_NotificationModel_NotificationModel(EObject context, NotificationModel semanticObject) {
+	protected void sequence_NotificationModel(EObject context, NotificationModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -180,8 +213,20 @@ public class AbstractNotificationDslSemanticSequencer extends AbstractSemanticSe
 	 *    name[1, 1]
 	 *    features[0, *]
 	 */
-	protected void sequence_Notification_Notification(EObject context, Notification semanticObject) {
+	protected void sequence_Notification(EObject context, Notification semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     name=ID
+	 *
+	 * Features:
+	 *    name[1, 1]
+	 */
+	protected void sequence_Primitive(EObject context, Primitive semanticObject) {
+		superSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -192,7 +237,20 @@ public class AbstractNotificationDslSemanticSequencer extends AbstractSemanticSe
 	 * Features:
 	 *    value[1, 1]
 	 */
-	protected void sequence_StringValue_StringValue(EObject context, StringValue semanticObject) {
+	protected void sequence_StringValue(EObject context, StringValue semanticObject) {
+		superSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (primitiveTypes+=Primitive+ anyType=Any)
+	 *
+	 * Features:
+	 *    primitiveTypes[1, *]
+	 *    anyType[1, 1]
+	 */
+	protected void sequence_TypeLib(EObject context, Lib semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -205,7 +263,7 @@ public class AbstractNotificationDslSemanticSequencer extends AbstractSemanticSe
 	 *    isMulti[0, 1]
 	 *    referenced[1, 1]
 	 */
-	protected void sequence_TypeRef_TypeRef(EObject context, TypeRef semanticObject) {
+	protected void sequence_TypeRef(EObject context, TypeRef semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
 	}
 }

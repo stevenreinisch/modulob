@@ -23,7 +23,6 @@ import java.io.InputStream;
 import org.eclipse.xtext.*;
 import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
-import org.eclipse.xtext.parsetree.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
@@ -104,6 +103,64 @@ ruleNotification
 { before(grammarAccess.getNotificationAccess().getGroup()); }
 (rule__Notification__Group__0)
 { after(grammarAccess.getNotificationAccess().getGroup()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+// Entry rule entryRulePrimitive
+entryRulePrimitive 
+:
+{ before(grammarAccess.getPrimitiveRule()); }
+	 rulePrimitive
+{ after(grammarAccess.getPrimitiveRule()); } 
+	 EOF 
+;
+
+// Rule Primitive
+rulePrimitive
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getPrimitiveAccess().getGroup()); }
+(rule__Primitive__Group__0)
+{ after(grammarAccess.getPrimitiveAccess().getGroup()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+// Entry rule entryRuleAny
+entryRuleAny 
+:
+{ before(grammarAccess.getAnyRule()); }
+	 ruleAny
+{ after(grammarAccess.getAnyRule()); } 
+	 EOF 
+;
+
+// Rule Any
+ruleAny
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getAnyAccess().getGroup()); }
+(rule__Any__Group__0)
+{ after(grammarAccess.getAnyAccess().getGroup()); }
 )
 
 ;
@@ -743,6 +800,133 @@ finally {
 
 
 
+
+
+
+
+
+
+
+rule__Primitive__Group__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Primitive__Group__0__Impl
+	rule__Primitive__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Primitive__Group__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getPrimitiveAccess().getPrimitiveTypeKeyword_0()); }
+
+	'primitive type' 
+
+{ after(grammarAccess.getPrimitiveAccess().getPrimitiveTypeKeyword_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__Primitive__Group__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Primitive__Group__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Primitive__Group__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getPrimitiveAccess().getNameAssignment_1()); }
+(rule__Primitive__NameAssignment_1)
+{ after(grammarAccess.getPrimitiveAccess().getNameAssignment_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
+rule__Any__Group__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Any__Group__0__Impl
+	rule__Any__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Any__Group__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getAnyAccess().getAnyTypeKeyword_0()); }
+
+	'any type' 
+
+{ after(grammarAccess.getAnyAccess().getAnyTypeKeyword_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__Any__Group__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Any__Group__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Any__Group__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getAnyAccess().getNameAssignment_1()); }
+(rule__Any__NameAssignment_1)
+{ after(grammarAccess.getAnyAccess().getNameAssignment_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
 
 
 
@@ -1478,6 +1662,38 @@ rule__Notification__FeaturesAssignment_3
 (
 { before(grammarAccess.getNotificationAccess().getFeaturesFeatureParserRuleCall_3_0()); }
 	ruleFeature{ after(grammarAccess.getNotificationAccess().getFeaturesFeatureParserRuleCall_3_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+rule__Primitive__NameAssignment_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getPrimitiveAccess().getNameIDTerminalRuleCall_1_0()); }
+	RULE_ID{ after(grammarAccess.getPrimitiveAccess().getNameIDTerminalRuleCall_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Any__NameAssignment_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getAnyAccess().getNameIDTerminalRuleCall_1_0()); }
+	RULE_ID{ after(grammarAccess.getAnyAccess().getNameIDTerminalRuleCall_1_0()); }
 )
 
 ;
