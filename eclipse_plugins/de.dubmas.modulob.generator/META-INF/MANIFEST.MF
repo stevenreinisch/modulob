@@ -9,8 +9,12 @@ Require-Bundle: org.eclipse.xpand;bundle-version="1.1.0",
  org.eclipse.xtend.typesystem.emf;bundle-version="1.0.1",
  de.dubmas.modulob.metamodels;bundle-version="1.0.0",
  org.eclipse.xtend.util.stdlib;bundle-version="1.0.1",
- de.dubmas.modulob.generator.common;bundle-version="1.0.0"
+ de.dubmas.modulob.generator.common;bundle-version="1.0.0",
+ org.eclipse.xtext.xtend2.lib;bundle-version="2.0.1",
+ org.eclipse.emf.mwe2.runtime,
+ org.eclipse.xtext.xbase.lib
 Export-Package: de.dubmas.modulob.generator.templates,
  de.dubmas.modulob.generator.templates.coredata,
  de.dubmas.modulob.generator.templates.json,
+ de.dubmas.modulob.generator.transformation,
  de.dubmas.modulob.generator.workflow
