@@ -6,6 +6,8 @@ package de.dubmas.modulob.formatting;
 import org.eclipse.xtext.formatting.impl.AbstractDeclarativeFormatter;
 import org.eclipse.xtext.formatting.impl.FormattingConfig;
 
+import de.dubmas.modulob.services.DataDslGrammarAccess;
+
 /**
  * This class contains custom formatting description.
  * 
@@ -18,10 +20,15 @@ public class DataDslFormatter extends AbstractDeclarativeFormatter {
 	
 	@Override
 	protected void configureFormatting(FormattingConfig c) {
-// It's usually a good idea to activate the following three statements.
-// They will add and preserve newlines around comments
-//		c.setLinewrap(0, 1, 2).before(getGrammarAccess().getSL_COMMENTRule());
-//		c.setLinewrap(0, 1, 2).before(getGrammarAccess().getML_COMMENTRule());
-//		c.setLinewrap(0, 1, 1).after(getGrammarAccess().getML_COMMENTRule());
+		/*
+		 * It's usually a good idea to activate the following three statements.
+ 		 * They will add and preserve newlines around comments
+ 		 * */
+		c.setLinewrap(0, 1, 2).before(((DataDslGrammarAccess)getGrammarAccess()).getSL_COMMENTRule());
+		c.setLinewrap(0, 1, 2).before(((DataDslGrammarAccess)getGrammarAccess()).getML_COMMENTRule());
+		c.setLinewrap(0, 1, 1).after(((DataDslGrammarAccess)getGrammarAccess()).getML_COMMENTRule());
+		
+		c.setLinewrap(2).after(((DataDslGrammarAccess)getGrammarAccess()).getEntityModelAccess().getVersionSTRINGTerminalRuleCall_3_0());
+		c.setLinewrap().after(((DataDslGrammarAccess)getGrammarAccess()).getEntityRule());
 	}
 }
