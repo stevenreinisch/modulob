@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ASCII"?>
+<diff:DiffModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diff="http://www.eclipse.org/emf/compare/diff/1.1" xsi:schemaLocation="http://www.eclipse.org/emf/compare/diff/1.1 java://org.eclipse.emf.compare.diff.metamodel.DiffPackage">
+  <ownedElements xsi:type="diff:DiffGroup">
+    <subDiffElements xsi:type="diff:DiffGroup">
+      <subDiffElements xsi:type="diff:DiffGroup">
+        <subDiffElements xsi:type="diff:DiffGroup">
+          <subDiffElements xsi:type="diff:DiffGroup">
+            <subDiffElements xsi:type="diff:DiffGroup">
+              <subDiffElements xsi:type="diff:UpdateAttribute">
+                <attribute href="http://www.dubmas.de/Modulob#//Feature/name"/>
+                <leftElement href="file:/Users/steffen/ok/orderbord/git/workspace/de.dubmas.modulob.migration/src/de/dubmas/modulob/migration/test/newModel/New.mob#//@elements.0/@sections.0/@elements.0/@features.2"/>
+                <rightElement href="file:/Users/steffen/ok/orderbord/git/workspace/de.dubmas.modulob.migration/src/de/dubmas/modulob/migration/test/oldModel/Old.mob#//@elements.0/@sections.0/@elements.0/@features.2"/>
+              </subDiffElements>
+              <rightParent href="file:/Users/steffen/ok/orderbord/git/workspace/de.dubmas.modulob.migration/src/de/dubmas/modulob/migration/test/oldModel/Old.mob#//@elements.0/@sections.0/@elements.0/@features.2"/>
+            </subDiffElements>
+            <subDiffElements xsi:type="diff:DiffGroup">
+              <subDiffElements xsi:type="diff:UpdateAttribute">
+                <attribute href="http://www.dubmas.de/Modulob#//Feature/name"/>
+                <leftElement href="file:/Users/steffen/ok/orderbord/git/workspace/de.dubmas.modulob.migration/src/de/dubmas/modulob/migration/test/newModel/New.mob#//@elements.0/@sections.0/@elements.0/@features.0"/>
+                <rightElement href="file:/Users/steffen/ok/orderbord/git/workspace/de.dubmas.modulob.migration/src/de/dubmas/modulob/migration/test/oldModel/Old.mob#//@elements.0/@sections.0/@elements.0/@features.0"/>
+              </subDiffElements>
+              <rightParent href="file:/Users/steffen/ok/orderbord/git/workspace/de.dubmas.modulob.migration/src/de/dubmas/modulob/migration/test/oldModel/Old.mob#//@elements.0/@sections.0/@elements.0/@features.0"/>
+            </subDiffElements>
+            <rightParent href="file:/Users/steffen/ok/orderbord/git/workspace/de.dubmas.modulob.migration/src/de/dubmas/modulob/migration/test/oldModel/Old.mob#//@elements.0/@sections.0/@elements.0"/>
+          </subDiffElements>
+          <subDiffElements xsi:type="diff:ModelElementChangeLeftTarget">
+            <rightParent href="file:/Users/steffen/ok/orderbord/git/workspace/de.dubmas.modulob.migration/src/de/dubmas/modulob/migration/test/oldModel/Old.mob#//@elements.0/@sections.0"/>
+            <leftElement href="file:/Users/steffen/ok/orderbord/git/workspace/de.dubmas.modulob.migration/src/de/dubmas/modulob/migration/test/newModel/New.mob#//@elements.0/@sections.0/@elements.3"/>
+          </subDiffElements>
+          <rightParent href="file:/Users/steffen/ok/orderbord/git/workspace/de.dubmas.modulob.migration/src/de/dubmas/modulob/migration/test/oldModel/Old.mob#//@elements.0/@sections.0"/>
+        </subDiffElements>
+        <rightParent href="file:/Users/steffen/ok/orderbord/git/workspace/de.dubmas.modulob.migration/src/de/dubmas/modulob/migration/test/oldModel/Old.mob#//@elements.0"/>
+      </subDiffElements>
+      <rightParent href="file:/Users/steffen/ok/orderbord/git/workspace/de.dubmas.modulob.migration/src/de/dubmas/modulob/migration/test/oldModel/Old.mob#/"/>
+    </subDiffElements>
+  </ownedElements>
+  <leftRoots href="file:/Users/steffen/ok/orderbord/git/workspace/de.dubmas.modulob.migration/src/de/dubmas/modulob/migration/test/newModel/New.mob#/"/>
+  <rightRoots href="file:/Users/steffen/ok/orderbord/git/workspace/de.dubmas.modulob.migration/src/de/dubmas/modulob/migration/test/oldModel/Old.mob#/"/>
+</diff:DiffModel>

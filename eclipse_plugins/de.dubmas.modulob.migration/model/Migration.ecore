@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="migration"
+    nsURI="http://migration.modulob.dubmas.de/0.1" nsPrefix="de.dubmas.modulob.migration">
+  <eClassifiers xsi:type="ecore:EClass" name="Change" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="destinationName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityChange" abstract="true" eSuperTypes="#//Change">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributeChanges" upperBound="-1"
+        eType="#//AttributeChange" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relationChanges" upperBound="-1"
+        eType="#//RelationChange" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceEntity" eType="ecore:EClass ../../de.dubmas.modulob/src-gen/de/dubmas/Modulob.ecore#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destinationEntity" eType="ecore:EClass ../../de.dubmas.modulob/src-gen/de/dubmas/Modulob.ecore#//Entity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeChange" abstract="true" eSuperTypes="#//Change #//FeatureChange"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RelationChange" abstract="true" eSuperTypes="#//Change #//FeatureChange"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityCopied" eSuperTypes="#//EntityChange"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityAdded" eSuperTypes="#//EntityChange"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityRemoved" eSuperTypes="#//EntityChange"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityRenamed" eSuperTypes="#//EntityChange"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeCopied" eSuperTypes="#//AttributeChange"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeRenamed" eSuperTypes="#//AttributeChange"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeAdded" eSuperTypes="#//AttributeChange"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeRemoved" eSuperTypes="#//AttributeChange"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RelationCopied" eSuperTypes="#//RelationChange"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RelationRenamed" eSuperTypes="#//RelationChange"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RelationAdded" eSuperTypes="#//RelationChange"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RelationRemoved" eSuperTypes="#//RelationChange"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureChange" abstract="true" eSuperTypes="#//Change">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceFeature" eType="ecore:EClass ../../de.dubmas.modulob/src-gen/de/dubmas/Modulob.ecore#//Feature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destinationFeature" eType="ecore:EClass ../../de.dubmas.modulob/src-gen/de/dubmas/Modulob.ecore#//Feature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Migration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entityChanges" upperBound="-1"
+        eType="#//EntityChange" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityChangedFeatures" eSuperTypes="#//EntityChange"/>
+</ecore:EPackage>

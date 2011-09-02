@@ -1,0 +1,34 @@
+beginModule MigrationTest
+
+	public
+		
+		entity User {
+			
+			Integer16 isAdmin;
+			UserInfo anotherInfo;
+			String pin;
+			UserInfo userInfoNN;
+			
+			Integer64 addedAttr;
+			
+			Adress addedRelation;
+		}
+		
+		entity UserInfo{
+			String name;
+			Adress adress;
+		}
+		
+		entity Adress{
+			Integer32 zipCode;
+		}
+		
+		entity ToBeRenamedXXX{
+			String zoopp;
+		}
+		
+		entity AnAddedEntity{
+		
+		}
+		
+endModule	

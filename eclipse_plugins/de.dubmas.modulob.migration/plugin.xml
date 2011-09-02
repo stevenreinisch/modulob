@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+<extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="de.dubmas.modulob.migration.contribution1"
+            objectClass="java.lang.Object">
+         <menu
+               id="de.dubmas.modulob.migration.menu1"
+               label="modulob Migration"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="de.dubmas.modulob.migration.ui.actions.NewModelVersion"
+               enablesFor="*"
+               id="de.dubmas.modulob.migration.NewModelVersionAction"
+               label="New Model Version"
+               menubarPath="de.dubmas.modulob.migration.menu1/group1">
+         </action>
+         <action
+               class="de.dubmas.modulob.migration.ui.actions.CreateEntityMigration"
+               enablesFor="*"
+               id="de.dubmas.modulob.migration.ui.actions.CreateEntityMigration"
+               label="Migrate"
+               menubarPath="de.dubmas.modulob.migration.menu1/group1">
+         </action>
+      </objectContribution>
+   </extension>
+	
+	<extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://modelmanagement.migration.modulob.dubmas.de/0.1"
+            class="de.dubmas.modulob.migration.modelmanagement.ModelmanagementPackage"
+            genModel="model/MigrationModelManagement.genmodel"/>
+   </extension>
+	
+	<extension point="de.mdelab.modelmanagement.core.model.mom.MOMExtension">
+      <MOMExtension 
+      	packageURI="http://modelmanagement.migration.modulob.dubmas.de/0.1">
+      </MOMExtension>
+   </extension>
+   
+   <extension
+         point="de.mdelab.modelmanagement.core.ArtifactInstantiationAdapter">
+      <ArtifactInstantiationAdapter
+            class="de.dubmas.modulob.migration.modelmanagement.MOMAdapter">
+      </ArtifactInstantiationAdapter>
+   </extension>
+   
+   <extension
+         point="de.mdelab.modelmanagement.core.RelationAdapter">
+      <RelationAdapter
+            class="de.dubmas.modulob.migration.modelmanagement.MOMAdapter">
+      </RelationAdapter>
+   </extension>
+</plugin>

@@ -1,0 +1,84 @@
+module de.dubmas.modulob.migration.test.MigrationTransfoTest
+
+var basePath = 'src/de/dubmas/modulob/migration/test/baseTypes'
+
+var oldModelPath = 'src/de/dubmas/modulob/migration/test/oldModel'
+var newModelPath = 'src/de/dubmas/modulob/migration/test/newModel'
+
+var oldModelSlot = 'oldModel'
+var newModelSlot = 'newModel'
+
+var diffModelSlot = 'diffModel'
+var matchModelSlot = 'matchModel'
+
+var migrationSlot = 'migration'
+
+Workflow {
+	component = EPackageRegistration{}
+	
+	component = org.eclipse.xtext.mwe.Reader{ 
+		path = oldModelPath
+		path = basePath
+		
+		register = de.dubmas.ModulobStandaloneSetup {}
+		load = {
+			slot = oldModelSlot
+			type = 'Module'
+			firstOnly = true
+		}
+		
+	}
+	
+	component = org.eclipse.xtext.mwe.Reader{ 
+		path = newModelPath
+		path = basePath
+		
+		register = de.dubmas.ModulobStandaloneSetup {}
+		load = {
+			slot = newModelSlot
+			type = 'Module'
+			firstOnly = true
+		}
+	}
+
+	component = de.dubmas.modulob.migration.transformation.DiffWFComponent{
+		oldModelSlotName = oldModelSlot
+		newModelSlotName = newModelSlot
+		
+		diffModelSlotName  = diffModelSlot
+		matchModelSlotName = matchModelSlot
+	}
+	
+	component = org.eclipse.xtend.XtendComponent{
+		metaModel  = org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel{}
+		invoke     = 'de::dubmas::modulob::migration::transformation::DiffToMigration::transform(${diffModelSlot}, ${oldModelSlot})'
+		outputSlot = migrationSlot
+	}
+	
+//	component = org.eclipse.xtend.check.CheckComponent{
+//		metaModel = org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel{}
+//		emfAllChildrenSlot = migrationSlot 
+//		checkFile = 'de::dubmas::modulob::migration::test::DiffToMigrationTest'
+//	}
+
+	component = org.eclipse.xtend.typesystem.emf.XmiWriter{
+		inputSlot = diffModelSlot
+		modelFile = '/Users/steffen/tmp/diff1.xmi'
+	}
+
+	component = org.eclipse.xtend.typesystem.emf.XmiWriter{
+		inputSlot = matchModelSlot
+		modelFile = '/Users/steffen/tmp/match1.xmi'
+	}
+	
+	/*
+	component = MigrationPrinter{
+		migrationSlotName = migrationSlot
+	}
+	*/
+	
+	component = de.dubmas.modulob.generator.common.CheckBasedTest{
+		checkFileName = 'de::dubmas::modulob::migration::test::DiffToMigrationTest'
+		modelToBeCheckedSlotName = migrationSlot
+	}
+}

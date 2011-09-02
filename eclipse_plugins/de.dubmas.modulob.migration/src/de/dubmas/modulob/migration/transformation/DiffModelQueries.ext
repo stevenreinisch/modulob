@@ -1,0 +1,166 @@
+import diff;
+import modulob;
+
+extension de::dubmas::modulob::migration::transformation::Helper;
+
+/*
+ * attribute queries
+ */
+ //add
+ List[Feature] addedAttributes(DiffModel diffModel, String sourceEntityName):
+	diffModel.attributeAddedChanges(sourceEntityName).leftElement
+;
+
+List[ModelElementChangeLeftTarget] attributeAddedChanges(DiffModel diffModel, String sourceEntityName):
+	diffModel.eAllContents.typeSelect(ModelElementChangeLeftTarget).
+				select(change | Entity.isInstance(change.rightParent)
+								&&
+								Feature.isInstance(change.leftElement)
+								&&
+								((Entity)change.rightParent).name == sourceEntityName
+								&&
+								((Feature)change.leftElement).isPrimitiveTypeFeature()
+				)
+;
+
+//remove
+
+ List[Feature] removedAttributes(DiffModel diffModel, String sourceEntityName):
+	diffModel.attributeRemovedChanges(sourceEntityName).rightElement
+;
+
+ List[ModelElementChangeRightTarget] attributeRemovedChanges(DiffModel diffModel, String sourceEntityName):
+	diffModel.eAllContents.typeSelect(ModelElementChangeRightTarget).
+		select(change | Entity.isInstance(change.leftParent)
+						&&
+						Feature.isInstance(change.rightElement)
+						&&
+						((Entity)change.leftParent).name == sourceEntityName
+						&&
+						((Feature)change.rightElement).isPrimitiveTypeFeature()
+		)
+;
+
+//rename
+ List[Feature] renamedAttributes(DiffModel diffModel, String sourceEntityName):
+	diffModel.attributeRenamedUpdates(sourceEntityName).rightElement
+;
+
+ 
+List[UpdateAttribute] attributeRenamedUpdates(DiffModel diffModel, String sourceEntityName):
+	diffModel.eAllContents.typeSelect(UpdateAttribute).
+			select(ua | Entity.isInstance(((DiffGroup)ua.eContainer.eContainer).rightParent)
+						&&
+						((Entity)((DiffGroup)ua.eContainer.eContainer).rightParent).name == sourceEntityName
+						&&
+						((Feature)((DiffGroup)ua.eContainer).rightParent).isPrimitiveTypeFeature()
+						&&
+						Feature.isInstance(ua.rightElement) 
+						&& 
+						Feature.isInstance(ua.leftElement)
+						&&
+						((Feature)ua.rightElement).type.referenced.name == ((Feature)ua.leftElement).type.referenced.name 
+						&&
+						ua.attribute.name == 'name'
+				  )
+;				  
+
+
+/*
+ * Entity queries
+ */
+ //rename
+ List[Entity] renamedEntities(DiffModel diffModel):
+	diffModel.diffGroupsForRenamedEntities().rightParent
+;
+
+ List[DiffGroup] diffGroupsForRenamedEntities(DiffModel diffModel):
+	diffModel.eAllContents.typeSelect(DiffGroup).
+		select(group | Entity.isInstance(group.rightParent)
+					   &&
+					   group.subDiffElements.exists(sde | UpdateAttribute.isInstance(sde)
+					   									  &&
+					   									  Entity.isInstance(((UpdateAttribute)sde).rightElement)
+														  &&
+														  Entity.isInstance(((UpdateAttribute)sde).leftElement)
+														  &&
+														  ((UpdateAttribute)sde).attribute.name == 'name'))
+;
+
+//remove
+ List[Entity] removedEntities(DiffModel diffModel):
+	diffModel.eAllContents.typeSelect(ModelElementChangeRightTarget).
+		select(changeInOldModel | Entity.isInstance(changeInOldModel.rightElement)).rightElement
+;
+
+//change
+ List[Entity] changedEntities(DiffModel diffModel):
+	diffModel.diffGroupsForChangedEntities().collect(dg | dg.rightParent)
+;
+
+ List[DiffGroup] diffGroupsForChangedEntities(DiffModel diffModel):
+	diffModel.eAllContents.typeSelect(DiffGroup).
+		select(group | Entity.isInstance(group.rightParent)).
+			without(diffModel.diffGroupsForRenamedEntities())
+;
+
+/*
+ * relation queries
+ */
+ //rename
+List[Feature] renamedRelations(DiffModel diffModel, String sourceEntityName):
+	diffModel.relationRenamedUpdates(sourceEntityName).rightElement
+;
+
+List[UpdateAttribute] relationRenamedUpdates(DiffModel diffModel, String sourceEntityName):
+	diffModel.eAllContents.typeSelect(UpdateAttribute).
+			select(ua | Entity.isInstance(((DiffGroup)ua.eContainer.eContainer).rightParent)
+						&&
+						((Entity)((DiffGroup)ua.eContainer.eContainer).rightParent).name == sourceEntityName
+						&&
+						((Feature)((DiffGroup)ua.eContainer).rightParent).isRelationTypeFeature()
+						&&
+						Feature.isInstance(ua.rightElement) 
+						&& 
+						Feature.isInstance(ua.leftElement)
+						&&
+						((Feature)ua.rightElement).type.referenced.name == ((Feature)ua.leftElement).type.referenced.name 
+						&&
+						ua.attribute.name == 'name'
+				  )
+;
+
+//add
+List[Feature] addedRelations(DiffModel diffModel, String sourceEntityName):
+	diffModel.relationAddedChanges(sourceEntityName).leftElement
+;
+
+List[ModelElementChangeLeftTarget] relationAddedChanges(DiffModel diffModel, String sourceEntityName):
+	diffModel.eAllContents.typeSelect(ModelElementChangeLeftTarget).
+				select(change | Entity.isInstance(change.rightParent)
+								&&
+								Feature.isInstance(change.leftElement)
+								&&
+								((Entity)change.rightParent).name == sourceEntityName
+								&&
+								((Feature)change.leftElement).isRelationTypeFeature()
+				)
+;
+
+
+//remove
+ List[Feature] removedRelations(DiffModel diffModel, String sourceEntityName):
+	diffModel.relationRemovedChanges(sourceEntityName).rightElement
+;
+
+ List[ModelElementChangeRightTarget] relationRemovedChanges(DiffModel diffModel, String sourceEntityName):
+	diffModel.eAllContents.typeSelect(ModelElementChangeRightTarget).
+		select(change | Entity.isInstance(change.leftParent)
+						&&
+						Feature.isInstance(change.rightElement)
+						&&
+						((Entity)change.leftParent).name == sourceEntityName
+						&&
+						((Feature)change.rightElement).isRelationTypeFeature()
+		)
+;

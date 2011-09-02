@@ -1,0 +1,17 @@
+import modulob;
+
+primitiveTypeFeatures(Entity e):
+	e.features.select(f | f.isPrimitiveTypeFeature())
+;
+
+relationTypeFeatures(Entity e):
+	e.features.select(f | !f.isPrimitiveTypeFeature())
+;
+
+isPrimitiveTypeFeature(Feature f):
+	PrimitiveType.isInstance(f.type.referenced)
+;
+
+isRelationTypeFeature(Feature f):
+	!PrimitiveType.isInstance(f.type.referenced)
+;

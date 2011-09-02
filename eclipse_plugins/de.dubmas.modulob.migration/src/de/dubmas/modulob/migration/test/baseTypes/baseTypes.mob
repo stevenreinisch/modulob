@@ -1,0 +1,11 @@
+
+primitiveType Void
+primitiveType Timestamp
+primitiveType Decimal
+primitiveType String
+primitiveType Integer16
+primitiveType Integer32
+primitiveType Integer64
+primitiveType Bool
+
+anyType id

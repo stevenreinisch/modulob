@@ -1,0 +1,100 @@
+import migration;
+import modulob;
+
+extension org::eclipse::xtend::util::stdlib::io;
+
+context Migration ERROR "Unexpected number of EntityRenamed instances":
+	this.entityChanges.typeSelect(EntityRenamed).size == 1
+;
+
+context Migration ERROR "Unexpected number of EntityAdded instances":
+	this.entityChanges.typeSelect(EntityAdded).size == 1
+;
+
+context Migration ERROR "Unexpected number of EntityRemoved instances":
+	this.entityChanges.typeSelect(EntityRemoved).size == 1
+;
+
+context Migration ERROR "Unexpected number of EntityCopied instances":
+	this.entityChanges.typeSelect(EntityCopied).size == 2
+;
+
+context Migration ERROR "Unexpected number of EntityChangedFeatures instances":
+	this.entityChanges.typeSelect(EntityChangedFeatures).size == 1
+;
+
+context EntityChange ERROR "reference to sourceEntity must be set":
+	EntityAdded.isInstance(this) 
+	? 
+	true //EntityAdded cannot have a sourceEntity
+	:
+	this.sourceEntity != null
+;
+
+context EntityChange ERROR "reference to destinationEntity must be set":
+	EntityRemoved.isInstance(this) 
+	? 
+	true //EntityRemoved cannot have a destinationEntity
+	:
+	this.destinationEntity != null
+;
+
+/*
+ * tests for EntityChangedFeatures
+ */
+context EntityChangedFeatures ERROR "unexpected number of AttributeRenamed instances":
+	this.attributeChanges.typeSelect(AttributeRenamed).size == 1
+;
+
+context EntityChangedFeatures ERROR "unexpected number of AttributeCopied instances":
+	this.attributeChanges.typeSelect(AttributeCopied).size == 1
+;
+
+context EntityChangedFeatures ERROR "unexpected number of AttributeAdded instances":
+	this.attributeChanges.typeSelect(AttributeAdded).size == 1
+;
+
+context EntityChangedFeatures ERROR "unexpected number of AttributeRemoved instances":
+	this.attributeChanges.typeSelect(AttributeRemoved).size == 1
+;
+
+context EntityChangedFeatures ERROR "unexpected number of RelationRenamed instances":
+	this.relationChanges.typeSelect(RelationRenamed).size == 1
+;
+
+context EntityChangedFeatures ERROR "unexpected number of RelationCopied instances":
+	this.relationChanges.typeSelect(RelationCopied).size == 1
+;
+
+context EntityChangedFeatures ERROR "unexpected number of RelationAdded instances":
+	this.relationChanges.typeSelect(RelationAdded).size == 1
+;
+
+context EntityChangedFeatures ERROR "unexpected number of RelationRemoved instances":
+	this.relationChanges.typeSelect(RelationRemoved).size == 1
+;
+
+/*
+ * tests for EntityCopied
+ */
+context EntityCopied ERROR "sourceName and destinationName must be equal":
+	this.sourceName == this.destinationName
+;
+
+context EntityCopied ERROR "attributeChanges for EntityCopied must all be instances of AttributeCopied":
+	this.attributeChanges.forAll(ac | AttributeCopied.isInstance(ac))
+;
+
+context EntityCopied ERROR "For every primitiveType feature in the referenced sourceEntity there must be an attributeChange":
+	this.attributeChanges.size == 
+	this.sourceEntity.features.select(f | PrimitiveType.isInstance(f.type.referenced)).size
+;
+
+context EntityCopied ERROR "relationChanges for EntityCopied must all be instances of RelationCopied":
+	this.relationChanges.forAll(rc | RelationCopied.isInstance(rc))
+;
+
+context EntityCopied ERROR "For every non primitiveType feature in the referenced sourceEntity there must be an relationChange":
+	this.relationChanges.size == 
+	this.sourceEntity.features.select(f | !PrimitiveType.isInstance(f.type.referenced)).size
+;

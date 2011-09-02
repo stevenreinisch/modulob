@@ -1,0 +1,35 @@
+beginModule MigrationTest
+
+	public
+		
+		
+		entity User {
+			Integer16 isSuperUser;
+			String pin;
+			UserInfo userInfo;
+			UserInfo anotherInfo;
+			
+			String removedAttr;
+			
+			UserInfo removedRelation;
+		}	
+		
+		entity UserInfo{
+			String name;
+			Adress adress;
+		}
+		
+		entity Adress{
+			Integer32 zipCode;
+		}
+		
+		entity ToBeRenamed{
+			String zoopp;
+		}
+		
+		entity WillBeRemoved{
+			String orppss;
+		}
+		
+		
+endModule
