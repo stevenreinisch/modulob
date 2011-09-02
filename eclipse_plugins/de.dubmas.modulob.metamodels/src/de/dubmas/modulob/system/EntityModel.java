@@ -55,7 +55,7 @@ public interface EntityModel extends VersionedElement {
 	 * @return the value of the '<em>Module</em>' reference.
 	 * @see #setModule(Module)
 	 * @see de.dubmas.modulob.system.SystemPackage#getEntityModel_Module()
-	 * @model resolveProxies="false" required="true" transient="true"
+	 * @model resolveProxies="false" required="true"
 	 * @generated
 	 */
 	Module getModule();
