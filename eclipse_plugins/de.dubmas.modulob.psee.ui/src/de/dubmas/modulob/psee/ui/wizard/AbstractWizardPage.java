@@ -10,8 +10,7 @@ import org.eclipse.swt.widgets.Label;
 
 /**
  * This is the base class for all wizard pages that 
- * are used to invoke a tool resp. an operation provided
- * by a tool. <br/><br/>
+ * are used to collect user input.<br/><br/>
  * A subclass has to provide the widgets that are required
  * to collect the necessary input from a user.<br/><br/> 
  * Example:<br/>
@@ -29,35 +28,26 @@ import org.eclipse.swt.widgets.Label;
 	}<br/>
  * </code>
  * 
+ * Sequential pages communicate via {@link AbstractWizardPage#slots}.<br> 
+ * Each pages can put objects into {@link AbstractWizardPage#slots} that can be retrieved by its successors.<br>
+ * It is common practice to declare the keys by which the objects can be retrieved form {@link AbstractWizardPage#slots}
+ * as static public Strings in the page class that puts these objects. For instance:<br><br>
+ * 
+ * <code>public static final String SELECTED_FILE_KEY = "selectedFile";</code>
+ * 
  * @author steffen
  *
  */
-public class AbstractToolInvocationPage extends WizardPage {
+abstract public class AbstractWizardPage extends WizardPage {
 
 	protected Map<String, Object> slots;
-	protected Composite mainComposite;
 	
-	protected AbstractToolInvocationPage(String pageName) {
+	protected AbstractWizardPage(String pageName) {
 		super(pageName);
-		
 		this.setTitle(pageName);
 	}
-
-	@Override
+	
 	public void createControl(Composite parent) {
-		
 		this.slots = ((AbstractInteractiveActivityWizard)this.getWizard()).slots;
-		
-		mainComposite = new Composite(parent, SWT.NONE);
-		GridLayout gl = new GridLayout();
-	    int ncol = 2;
-	    gl.numColumns = ncol;
-	    mainComposite.setLayout(gl);
-	    setControl(mainComposite);
-	    
-	    new Label (mainComposite, SWT.NONE).setText("Parameters:");
-	    new Label (mainComposite, SWT.NONE).setText("Parameters slot:");
-	    
 	}
-
 }
