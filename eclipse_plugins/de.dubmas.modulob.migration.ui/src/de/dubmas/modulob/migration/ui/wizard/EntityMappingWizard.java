@@ -1,40 +1,25 @@
 package de.dubmas.modulob.migration.ui.wizard;
 
-import org.eclipse.jface.wizard.Wizard;
+import java.util.HashMap;
+import java.util.Map;
 
-import de.dubmas.modulob.system.EntityModel;
+import de.dubmas.modulob.psee.ui.wizard.AbstractInteractiveActivityWizard;
 
-public class EntityMappingWizard extends Wizard{
-
-	private String[] entityNames = new String[]{"AnEntity", "AnotherEntity", "DifferentEntity"};
-	
-	/*
-	 * Extracted from model files that are
-	 * specified by the user 
-	 */
-	private EntityModel sourceEntityModel;
-	private EntityModel destinationEntityModel;
+public class EntityMappingWizard extends AbstractInteractiveActivityWizard{
 	
 	public EntityMappingWizard() {
-		this.setWindowTitle("How to map entity \"AnEntity\" (2/12)?");
+		Map<String, String> pageMap = new HashMap<String, String>();
+		
+		pageMap.put("1. Select source and destination", "de.dubmas.modulob.migration.ui.wizard.EntityModelsSelectionPage");
+		pageMap.put("2. Compare source and destination, \n and transform diff model into migration model", "de.dubmas.modulob.migration.ui.wizard.InvokeCompareAndTransform");
+//		pageMap.put("3. Invoke ...", "de.dubmas.modulob.migration.ui.newversion.InvokeNewFileCreation");
+		
+		super.setPageMap(pageMap);
+		super.setSlots(new HashMap<String, Object>());
 	}
 	
 	@Override
-	public boolean performFinish() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void addPages() {
-		
-		EntityModelsSelectionPage selectionPage = new EntityModelsSelectionPage("Select Source and Destination");
-		this.addPage(selectionPage);
-		
-		for (String entityName : entityNames) {
-			EntityMappingPage emp = new EntityMappingPage("How to map " + entityName);
-			this.addPage(emp);
-		}
-		
+	public boolean canFinish() {
+		return true;
 	}
 }

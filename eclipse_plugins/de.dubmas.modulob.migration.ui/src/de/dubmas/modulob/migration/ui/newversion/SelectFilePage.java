@@ -1,19 +1,12 @@
 package de.dubmas.modulob.migration.ui.newversion;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IFolder;
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IResource;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
@@ -22,8 +15,10 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.xtext.ui.XtextProjectHelper;
 
+import de.dubmas.modulob.migration.services.IModelFileLister;
+import de.dubmas.modulob.migration.services.impl.Util;
+import de.dubmas.modulob.migration.services.impl.XtextWorkspaceFileLister;
 import de.dubmas.modulob.psee.ui.wizard.AbstractInteractiveActivityWizard;
 
 public class SelectFilePage extends WizardPage implements SelectionListener{
@@ -31,6 +26,8 @@ public class SelectFilePage extends WizardPage implements SelectionListener{
 	public static final String SELECTED_FILE_KEY           = "selectedFile";
 	private static final String FILE_EXTENSION_OF_INTEREST = "modat";
 	private static final Set<String> EXCLUDED_FOLDER_NAMES = new HashSet<String>();
+	
+	private IModelFileLister fileLister = new XtextWorkspaceFileLister();
 	
 	static{
 		EXCLUDED_FOLDER_NAMES.add("bin");
@@ -62,8 +59,8 @@ public class SelectFilePage extends WizardPage implements SelectionListener{
 		 * 1. scan workspace for *.modat files
 		 */
 		try {
-			collectFilesFromWorkspace(FILE_EXTENSION_OF_INTEREST, EXCLUDED_FOLDER_NAMES, files);
-			List<String> fileNames = fileNamesFromFiles(files);
+			files = fileLister.listAllFiles(FILE_EXTENSION_OF_INTEREST, EXCLUDED_FOLDER_NAMES);
+			List<String> fileNames = Util.fileNamesFromFiles(files);
 		    
 		    new Label (mainComposite, SWT.NONE).setText("File name:");
 		    
@@ -104,35 +101,6 @@ public class SelectFilePage extends WizardPage implements SelectionListener{
 				slots.put(SELECTED_FILE_KEY, files.get(index));
 				
 				getWizard().getContainer().updateButtons();
-			}
-		}
-	}
-	
-	private List<String> fileNamesFromFiles(List<IFile> files){
-		List<String> names = new ArrayList<String>(files.size());
-		for(IFile file: files){
-			names.add(file.getName());
-		}
-		return names;
-	}
-	
-	private void collectFilesFromWorkspace(String interestedFileExtension, Set<String> excludedFolderNames, Collection<IFile> collection) throws Exception{
-		for(IProject project: ResourcesPlugin.getWorkspace().getRoot().getProjects()){
-			if(project.getNature(XtextProjectHelper.NATURE_ID) != null){
-				addAllFilesWithExtension(project, interestedFileExtension, excludedFolderNames, collection);
-			}
-		}
-	}
-	
-	private void addAllFilesWithExtension(IContainer container, String extension, Set<String> excludedFolderNames, Collection<IFile> collection) throws Exception{
-		for(IResource res: container.members()){
-			if (res instanceof IFile) {
-				IFile file = (IFile) res;
-				if(file.getFileExtension().equals(extension)){
-					collection.add(file);
-				}
-			} else if ((res instanceof IFolder) && !excludedFolderNames.contains(res.getName())) {
-				addAllFilesWithExtension((IFolder)res, extension, excludedFolderNames, collection);
 			}
 		}
 	}

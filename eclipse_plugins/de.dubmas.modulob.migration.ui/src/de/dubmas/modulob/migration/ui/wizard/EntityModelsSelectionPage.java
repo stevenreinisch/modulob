@@ -1,60 +1,147 @@
 package de.dubmas.modulob.migration.ui.wizard;
 
-import org.eclipse.jface.wizard.WizardPage;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import org.eclipse.core.resources.IFile;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.RowLayout;
-import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 
-public class EntityModelsSelectionPage extends WizardPage{
+import de.dubmas.modulob.migration.services.IModelFileLister;
+import de.dubmas.modulob.migration.services.impl.Util;
+import de.dubmas.modulob.migration.services.impl.XtextWorkspaceFileLister;
+import de.dubmas.modulob.psee.ui.wizard.AbstractWizardPage;
 
-	protected EntityModelsSelectionPage(String pageName) {
+public class EntityModelsSelectionPage extends AbstractWizardPage implements SelectionListener{
+
+	/*
+	 * begin class variables
+	 */
+	
+	public static final String SOURCE_FILE_KEY       = "sourceFile";
+	public static final String DESTINATION_FILE_KEY  = "destinationFile";
+	
+	private static final Set<String> EXCLUDED_FOLDER_NAMES = new HashSet<String>();
+	
+	static{
+		EXCLUDED_FOLDER_NAMES.add("bin");
+	}
+	
+	/*
+	 * begin instance variables
+	 */
+	
+	private IModelFileLister fileLister = new XtextWorkspaceFileLister();
+	
+	private List<IFile> sourceEntityModelFiles;
+	private List<IFile> destinationEntityModelFiles;
+	
+	private Combo sourceFilesDropDown;
+	private Combo destinationFilesDropDown;
+	
+	/*
+	 * begin ctors
+	 */
+	
+	public EntityModelsSelectionPage(String pageName) {
 		super(pageName);
 		// TODO Auto-generated constructor stub
 	}
 
+	/*
+	 * begin methods
+	 */
+	
 	@Override
 	public void createControl(Composite parent) {
-		Composite composite = new Composite(parent, SWT.NONE);
+		
+		super.createControl(parent);
+		
+		Composite mainComposite = new Composite(parent, SWT.NONE);
 		GridLayout gl = new GridLayout();
-	    int ncol = 1;
+	    int ncol = 2;
 	    gl.numColumns = ncol;
-	    composite.setLayout(gl);
+	    mainComposite.setLayout(gl);
 	   
-	    /*
-	     * 1. model
-	     */
-	    
-	    Composite model1Composite = new Composite(composite, SWT.NONE);
-	    model1Composite.setLayout(new RowLayout());
-	    
-	    new Label (model1Composite, SWT.NONE).setText("Model1");
-	    
-	    Button srcButton1 = new Button(model1Composite, SWT.RADIO);
-	    srcButton1.setText("Source Model");
-	    
-	    Button destButton1 = new Button(model1Composite, SWT.RADIO);
-	    destButton1.setText("Destination Model");
+	    setControl(mainComposite);
 	    
 	    /*
-	     * 2. model
+	     * source model
 	     */
 	    
-	    Composite model2Composite = new Composite(composite, SWT.NONE);
-	    model2Composite.setLayout(new RowLayout());
-	    
-	    new Label (model2Composite, SWT.NONE).setText("Model2");
-	    
-	    Button srcButton2 = new Button(model2Composite, SWT.RADIO);
-	    srcButton2.setText("Source Model");
-	    
-	    Button destButton2 = new Button(model2Composite, SWT.RADIO);
-	    destButton2.setText("Destination Model");
-	    
+	    Composite sourceModelComposite = new Composite(mainComposite, SWT.NONE);
+	    sourceModelComposite.setLayout(new RowLayout());
 	
+	    new Label (sourceModelComposite, SWT.NONE).setText("Source:");
 	    
-	    setControl(composite);
+	    sourceFilesDropDown          = new Combo(sourceModelComposite, SWT.DROP_DOWN);
+	    sourceEntityModelFiles       = fileLister.listAllFiles("modat_v\\S+", EXCLUDED_FOLDER_NAMES);
+		List<String> sourceFileNames = Util.fileNamesFromFiles(sourceEntityModelFiles);
+	    String[] sourceItems         = sourceFileNames.toArray(new String[sourceFileNames.size()]);
+	    
+	    sourceFilesDropDown.setItems (sourceItems);
+	    
+	    sourceFilesDropDown.addSelectionListener(this);
+	    
+	    /*
+	     * destination model
+	     */
+	    
+	    Composite destModelComposite = new Composite(mainComposite, SWT.NONE);
+	    destModelComposite.setLayout(new RowLayout());
+	    
+	    new Label (destModelComposite, SWT.NONE).setText("Destination:");
+	    
+	    destinationEntityModelFiles = fileLister.listAllFiles("modat", EXCLUDED_FOLDER_NAMES);
+		List<String> fileNames      = Util.fileNamesFromFiles(destinationEntityModelFiles);
+	    destinationFilesDropDown    = new Combo(destModelComposite, SWT.DROP_DOWN);
+	    String[] destinationItems   = fileNames.toArray(new String[fileNames.size()]);
+	    
+	    destinationFilesDropDown.setItems (destinationItems);
+	    
+	    destinationFilesDropDown.addSelectionListener(this);
+	}
+	
+	public boolean isPageComplete() {
+		return slots.containsKey(SOURCE_FILE_KEY) && 
+			   slots.containsKey(DESTINATION_FILE_KEY);
+	}
+	
+	@Override
+	public boolean canFlipToNextPage(){
+		return slots.containsKey(SOURCE_FILE_KEY) && 
+			   slots.containsKey(DESTINATION_FILE_KEY);
+	}
+
+	@Override
+	public void widgetSelected(SelectionEvent e) {
+		onSelection(e);
+	}
+
+	@Override
+	public void widgetDefaultSelected(SelectionEvent e) {
+		onSelection(e);
+	}
+	
+	private void onSelection(SelectionEvent e){
+		if(e.getSource() == sourceFilesDropDown) {
+			int index = ((Combo)e.getSource()).getSelectionIndex();
+			if(index > -1){
+				slots.put(SOURCE_FILE_KEY, sourceEntityModelFiles.get(index));
+			}
+		} else if(e.getSource() == destinationFilesDropDown) {
+			int index = ((Combo)e.getSource()).getSelectionIndex();
+			if(index > -1){
+				slots.put(DESTINATION_FILE_KEY, destinationEntityModelFiles.get(index));
+			}
+		}
+		getWizard().getContainer().updateButtons();
 	}
 }

@@ -8,11 +8,11 @@
       <objectContribution
             adaptable="false"
             id="de.dubmas.modulob.migration.ui.objectContribution1"
-            nameFilter="*.modat"
+            nameFilter="*"
             objectClass="org.eclipse.core.resources.IFile">
          <action
                class="de.dubmas.modulob.migration.ui.actions.StartMigrationAction"
-               enablesFor="2"
+               enablesFor="1"
                id="de.dubmas.modulob.migration.ui.action1"
                label="Specify Migration"
                menubarPath="additions">
