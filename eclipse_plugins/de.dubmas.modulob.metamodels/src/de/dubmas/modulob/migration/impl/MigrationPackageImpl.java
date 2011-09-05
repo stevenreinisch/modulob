@@ -13,7 +13,6 @@ import de.dubmas.modulob.migration.AttributeChange;
 import de.dubmas.modulob.migration.AttributeCopied;
 import de.dubmas.modulob.migration.AttributeRemoved;
 import de.dubmas.modulob.migration.AttributeRenamed;
-import de.dubmas.modulob.migration.Change;
 import de.dubmas.modulob.migration.EntityAdded;
 import de.dubmas.modulob.migration.EntityChange;
 import de.dubmas.modulob.migration.EntityChangedFeatures;
@@ -49,7 +48,7 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass changeEClass = null;
+	private EClass migrationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,7 +62,7 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass attributeChangeEClass = null;
+	private EClass featureChangeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,7 +76,28 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass attributeChangeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass entityCopiedEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass entityRenamedEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass entityChangedFeaturesEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,13 +112,6 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 	 * @generated
 	 */
 	private EClass entityRemovedEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass entityRenamedEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -155,27 +168,6 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 	 * @generated
 	 */
 	private EClass relationRemovedEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass featureChangeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass migrationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass entityChangedFeaturesEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -246,8 +238,8 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getChange() {
-		return changeEClass;
+	public EClass getMigration() {
+		return migrationEClass;
 	}
 
 	/**
@@ -255,17 +247,8 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getChange_SourceName() {
-		return (EAttribute)changeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getChange_DestinationName() {
-		return (EAttribute)changeEClass.getEStructuralFeatures().get(1);
+	public EReference getMigration_EntityChanges() {
+		return (EReference)migrationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -282,7 +265,7 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntityChange_AttributeChanges() {
+	public EReference getEntityChange_SourceEntity() {
 		return (EReference)entityChangeEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -291,7 +274,7 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntityChange_RelationChanges() {
+	public EReference getEntityChange_DestinationEntity() {
 		return (EReference)entityChangeEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -300,7 +283,7 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntityChange_SourceEntity() {
+	public EReference getEntityChange_AttributeChanges() {
 		return (EReference)entityChangeEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -309,7 +292,7 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntityChange_DestinationEntity() {
+	public EReference getEntityChange_RelationChanges() {
 		return (EReference)entityChangeEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -318,8 +301,8 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntityChange_SourceFeature() {
-		return (EReference)entityChangeEClass.getEStructuralFeatures().get(4);
+	public EClass getFeatureChange() {
+		return featureChangeEClass;
 	}
 
 	/**
@@ -327,8 +310,8 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntityChange_DestinationFeature() {
-		return (EReference)entityChangeEClass.getEStructuralFeatures().get(5);
+	public EAttribute getFeatureChange_SourceExpression() {
+		return (EAttribute)featureChangeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -336,8 +319,17 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAttributeChange() {
-		return attributeChangeEClass;
+	public EReference getFeatureChange_SourceFeature() {
+		return (EReference)featureChangeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFeatureChange_DestinationFeature() {
+		return (EReference)featureChangeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -354,8 +346,35 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getAttributeChange() {
+		return attributeChangeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEntityCopied() {
 		return entityCopiedEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEntityRenamed() {
+		return entityRenamedEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEntityChangedFeatures() {
+		return entityChangedFeaturesEClass;
 	}
 
 	/**
@@ -374,15 +393,6 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 	 */
 	public EClass getEntityRemoved() {
 		return entityRemovedEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getEntityRenamed() {
-		return entityRenamedEClass;
 	}
 
 	/**
@@ -462,51 +472,6 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getFeatureChange() {
-		return featureChangeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFeatureChange_SourceExpression() {
-		return (EAttribute)featureChangeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getMigration() {
-		return migrationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMigration_EntityChanges() {
-		return (EReference)migrationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getEntityChangedFeatures() {
-		return entityChangedFeaturesEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public MigrationFactory getMigrationFactory() {
 		return (MigrationFactory)getEFactoryInstance();
 	}
@@ -530,29 +495,33 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 		isCreated = true;
 
 		// Create classes and their features
-		changeEClass = createEClass(CHANGE);
-		createEAttribute(changeEClass, CHANGE__SOURCE_NAME);
-		createEAttribute(changeEClass, CHANGE__DESTINATION_NAME);
+		migrationEClass = createEClass(MIGRATION);
+		createEReference(migrationEClass, MIGRATION__ENTITY_CHANGES);
 
 		entityChangeEClass = createEClass(ENTITY_CHANGE);
-		createEReference(entityChangeEClass, ENTITY_CHANGE__ATTRIBUTE_CHANGES);
-		createEReference(entityChangeEClass, ENTITY_CHANGE__RELATION_CHANGES);
 		createEReference(entityChangeEClass, ENTITY_CHANGE__SOURCE_ENTITY);
 		createEReference(entityChangeEClass, ENTITY_CHANGE__DESTINATION_ENTITY);
-		createEReference(entityChangeEClass, ENTITY_CHANGE__SOURCE_FEATURE);
-		createEReference(entityChangeEClass, ENTITY_CHANGE__DESTINATION_FEATURE);
+		createEReference(entityChangeEClass, ENTITY_CHANGE__ATTRIBUTE_CHANGES);
+		createEReference(entityChangeEClass, ENTITY_CHANGE__RELATION_CHANGES);
 
-		attributeChangeEClass = createEClass(ATTRIBUTE_CHANGE);
+		featureChangeEClass = createEClass(FEATURE_CHANGE);
+		createEAttribute(featureChangeEClass, FEATURE_CHANGE__SOURCE_EXPRESSION);
+		createEReference(featureChangeEClass, FEATURE_CHANGE__SOURCE_FEATURE);
+		createEReference(featureChangeEClass, FEATURE_CHANGE__DESTINATION_FEATURE);
 
 		relationChangeEClass = createEClass(RELATION_CHANGE);
 
+		attributeChangeEClass = createEClass(ATTRIBUTE_CHANGE);
+
 		entityCopiedEClass = createEClass(ENTITY_COPIED);
+
+		entityRenamedEClass = createEClass(ENTITY_RENAMED);
+
+		entityChangedFeaturesEClass = createEClass(ENTITY_CHANGED_FEATURES);
 
 		entityAddedEClass = createEClass(ENTITY_ADDED);
 
 		entityRemovedEClass = createEClass(ENTITY_REMOVED);
-
-		entityRenamedEClass = createEClass(ENTITY_RENAMED);
 
 		attributeCopiedEClass = createEClass(ATTRIBUTE_COPIED);
 
@@ -569,14 +538,6 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 		relationAddedEClass = createEClass(RELATION_ADDED);
 
 		relationRemovedEClass = createEClass(RELATION_REMOVED);
-
-		featureChangeEClass = createEClass(FEATURE_CHANGE);
-		createEAttribute(featureChangeEClass, FEATURE_CHANGE__SOURCE_EXPRESSION);
-
-		migrationEClass = createEClass(MIGRATION);
-		createEReference(migrationEClass, MIGRATION__ENTITY_CHANGES);
-
-		entityChangedFeaturesEClass = createEClass(ENTITY_CHANGED_FEATURES);
 	}
 
 	/**
@@ -610,15 +571,13 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		entityChangeEClass.getESuperTypes().add(this.getChange());
-		attributeChangeEClass.getESuperTypes().add(this.getChange());
-		attributeChangeEClass.getESuperTypes().add(this.getFeatureChange());
-		relationChangeEClass.getESuperTypes().add(this.getChange());
 		relationChangeEClass.getESuperTypes().add(this.getFeatureChange());
+		attributeChangeEClass.getESuperTypes().add(this.getFeatureChange());
 		entityCopiedEClass.getESuperTypes().add(this.getEntityChange());
+		entityRenamedEClass.getESuperTypes().add(this.getEntityChange());
+		entityChangedFeaturesEClass.getESuperTypes().add(this.getEntityChange());
 		entityAddedEClass.getESuperTypes().add(this.getEntityChange());
 		entityRemovedEClass.getESuperTypes().add(this.getEntityChange());
-		entityRenamedEClass.getESuperTypes().add(this.getEntityChange());
 		attributeCopiedEClass.getESuperTypes().add(this.getAttributeChange());
 		attributeRenamedEClass.getESuperTypes().add(this.getAttributeChange());
 		attributeAddedEClass.getESuperTypes().add(this.getAttributeChange());
@@ -627,33 +586,35 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 		relationRenamedEClass.getESuperTypes().add(this.getRelationChange());
 		relationAddedEClass.getESuperTypes().add(this.getRelationChange());
 		relationRemovedEClass.getESuperTypes().add(this.getRelationChange());
-		featureChangeEClass.getESuperTypes().add(this.getChange());
-		entityChangedFeaturesEClass.getESuperTypes().add(this.getEntityChange());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(changeEClass, Change.class, "Change", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getChange_SourceName(), ecorePackage.getEString(), "sourceName", null, 0, 1, Change.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getChange_DestinationName(), ecorePackage.getEString(), "destinationName", null, 0, 1, Change.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(migrationEClass, Migration.class, "Migration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMigration_EntityChanges(), this.getEntityChange(), null, "entityChanges", null, 0, -1, Migration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entityChangeEClass, EntityChange.class, "EntityChange", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEntityChange_AttributeChanges(), this.getAttributeChange(), null, "attributeChanges", null, 0, -1, EntityChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntityChange_RelationChanges(), this.getRelationChange(), null, "relationChanges", null, 0, -1, EntityChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityChange_SourceEntity(), theModulobPackage.getEntity(), null, "sourceEntity", null, 0, 1, EntityChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityChange_DestinationEntity(), theModulobPackage.getEntity(), null, "destinationEntity", null, 0, 1, EntityChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntityChange_SourceFeature(), theModulobPackage.getFeature(), null, "sourceFeature", null, 0, 1, EntityChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntityChange_DestinationFeature(), theModulobPackage.getFeature(), null, "destinationFeature", null, 0, 1, EntityChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntityChange_AttributeChanges(), this.getAttributeChange(), null, "attributeChanges", null, 0, -1, EntityChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntityChange_RelationChanges(), this.getRelationChange(), null, "relationChanges", null, 0, -1, EntityChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(attributeChangeEClass, AttributeChange.class, "AttributeChange", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(featureChangeEClass, FeatureChange.class, "FeatureChange", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFeatureChange_SourceExpression(), ecorePackage.getEString(), "sourceExpression", null, 0, 1, FeatureChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeatureChange_SourceFeature(), theModulobPackage.getFeature(), null, "sourceFeature", null, 0, 1, FeatureChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeatureChange_DestinationFeature(), theModulobPackage.getFeature(), null, "destinationFeature", null, 0, 1, FeatureChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(relationChangeEClass, RelationChange.class, "RelationChange", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(attributeChangeEClass, AttributeChange.class, "AttributeChange", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(entityCopiedEClass, EntityCopied.class, "EntityCopied", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(entityRenamedEClass, EntityRenamed.class, "EntityRenamed", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(entityChangedFeaturesEClass, EntityChangedFeatures.class, "EntityChangedFeatures", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(entityAddedEClass, EntityAdded.class, "EntityAdded", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(entityRemovedEClass, EntityRemoved.class, "EntityRemoved", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(entityRenamedEClass, EntityRenamed.class, "EntityRenamed", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(attributeCopiedEClass, AttributeCopied.class, "AttributeCopied", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -670,14 +631,6 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 		initEClass(relationAddedEClass, RelationAdded.class, "RelationAdded", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(relationRemovedEClass, RelationRemoved.class, "RelationRemoved", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(featureChangeEClass, FeatureChange.class, "FeatureChange", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFeatureChange_SourceExpression(), ecorePackage.getEString(), "sourceExpression", null, 0, 1, FeatureChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(migrationEClass, Migration.class, "Migration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMigration_EntityChanges(), this.getEntityChange(), null, "entityChanges", null, 0, -1, Migration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(entityChangedFeaturesEClass, EntityChangedFeatures.class, "EntityChangedFeatures", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

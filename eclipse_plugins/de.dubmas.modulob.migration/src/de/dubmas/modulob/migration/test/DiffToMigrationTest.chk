@@ -1,5 +1,6 @@
 import migration;
 import modulob;
+import types;
 
 extension org::eclipse::xtend::util::stdlib::io;
 
@@ -77,8 +78,8 @@ context EntityChangedFeatures ERROR "unexpected number of RelationRemoved instan
 /*
  * tests for EntityCopied
  */
-context EntityCopied ERROR "sourceName and destinationName must be equal":
-	this.sourceName == this.destinationName
+context EntityCopied ERROR "source and destination entity must be equal":
+	this.sourceEntity == this.destinationEntity
 ;
 
 context EntityCopied ERROR "attributeChanges for EntityCopied must all be instances of AttributeCopied":
@@ -87,7 +88,7 @@ context EntityCopied ERROR "attributeChanges for EntityCopied must all be instan
 
 context EntityCopied ERROR "For every primitiveType feature in the referenced sourceEntity there must be an attributeChange":
 	this.attributeChanges.size == 
-	this.sourceEntity.features.select(f | PrimitiveType.isInstance(f.type.referenced)).size
+	this.sourceEntity.features.select(f | Primitive.isInstance(f.type.referenced)).size
 ;
 
 context EntityCopied ERROR "relationChanges for EntityCopied must all be instances of RelationCopied":
@@ -96,5 +97,5 @@ context EntityCopied ERROR "relationChanges for EntityCopied must all be instanc
 
 context EntityCopied ERROR "For every non primitiveType feature in the referenced sourceEntity there must be an relationChange":
 	this.relationChanges.size == 
-	this.sourceEntity.features.select(f | !PrimitiveType.isInstance(f.type.referenced)).size
+	this.sourceEntity.features.select(f | !Primitive.isInstance(f.type.referenced)).size
 ;

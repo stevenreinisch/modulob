@@ -7,9 +7,10 @@
 package de.dubmas.modulob.migration;
 
 import de.dubmas.modulob.Entity;
-import de.dubmas.modulob.Feature;
 
 import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,12 +20,10 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.dubmas.modulob.migration.EntityChange#getAttributeChanges <em>Attribute Changes</em>}</li>
- *   <li>{@link de.dubmas.modulob.migration.EntityChange#getRelationChanges <em>Relation Changes</em>}</li>
  *   <li>{@link de.dubmas.modulob.migration.EntityChange#getSourceEntity <em>Source Entity</em>}</li>
  *   <li>{@link de.dubmas.modulob.migration.EntityChange#getDestinationEntity <em>Destination Entity</em>}</li>
- *   <li>{@link de.dubmas.modulob.migration.EntityChange#getSourceFeature <em>Source Feature</em>}</li>
- *   <li>{@link de.dubmas.modulob.migration.EntityChange#getDestinationFeature <em>Destination Feature</em>}</li>
+ *   <li>{@link de.dubmas.modulob.migration.EntityChange#getAttributeChanges <em>Attribute Changes</em>}</li>
+ *   <li>{@link de.dubmas.modulob.migration.EntityChange#getRelationChanges <em>Relation Changes</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,39 +31,7 @@ import org.eclipse.emf.common.util.EList;
  * @model abstract="true"
  * @generated
  */
-public interface EntityChange extends Change {
-	/**
-	 * Returns the value of the '<em><b>Attribute Changes</b></em>' containment reference list.
-	 * The list contents are of type {@link de.dubmas.modulob.migration.AttributeChange}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Attribute Changes</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attribute Changes</em>' containment reference list.
-	 * @see de.dubmas.modulob.migration.MigrationPackage#getEntityChange_AttributeChanges()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<AttributeChange> getAttributeChanges();
-
-	/**
-	 * Returns the value of the '<em><b>Relation Changes</b></em>' containment reference list.
-	 * The list contents are of type {@link de.dubmas.modulob.migration.RelationChange}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Relation Changes</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Relation Changes</em>' containment reference list.
-	 * @see de.dubmas.modulob.migration.MigrationPackage#getEntityChange_RelationChanges()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<RelationChange> getRelationChanges();
-
+public interface EntityChange extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Source Entity</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -118,55 +85,35 @@ public interface EntityChange extends Change {
 	void setDestinationEntity(Entity value);
 
 	/**
-	 * Returns the value of the '<em><b>Source Feature</b></em>' reference.
+	 * Returns the value of the '<em><b>Attribute Changes</b></em>' containment reference list.
+	 * The list contents are of type {@link de.dubmas.modulob.migration.AttributeChange}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Source Feature</em>' reference isn't clear,
+	 * If the meaning of the '<em>Attribute Changes</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Source Feature</em>' reference.
-	 * @see #setSourceFeature(Feature)
-	 * @see de.dubmas.modulob.migration.MigrationPackage#getEntityChange_SourceFeature()
-	 * @model
+	 * @return the value of the '<em>Attribute Changes</em>' containment reference list.
+	 * @see de.dubmas.modulob.migration.MigrationPackage#getEntityChange_AttributeChanges()
+	 * @model containment="true"
 	 * @generated
 	 */
-	Feature getSourceFeature();
+	EList<AttributeChange> getAttributeChanges();
 
 	/**
-	 * Sets the value of the '{@link de.dubmas.modulob.migration.EntityChange#getSourceFeature <em>Source Feature</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source Feature</em>' reference.
-	 * @see #getSourceFeature()
-	 * @generated
-	 */
-	void setSourceFeature(Feature value);
-
-	/**
-	 * Returns the value of the '<em><b>Destination Feature</b></em>' reference.
+	 * Returns the value of the '<em><b>Relation Changes</b></em>' containment reference list.
+	 * The list contents are of type {@link de.dubmas.modulob.migration.RelationChange}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Destination Feature</em>' reference isn't clear,
+	 * If the meaning of the '<em>Relation Changes</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Destination Feature</em>' reference.
-	 * @see #setDestinationFeature(Feature)
-	 * @see de.dubmas.modulob.migration.MigrationPackage#getEntityChange_DestinationFeature()
-	 * @model
+	 * @return the value of the '<em>Relation Changes</em>' containment reference list.
+	 * @see de.dubmas.modulob.migration.MigrationPackage#getEntityChange_RelationChanges()
+	 * @model containment="true"
 	 * @generated
 	 */
-	Feature getDestinationFeature();
-
-	/**
-	 * Sets the value of the '{@link de.dubmas.modulob.migration.EntityChange#getDestinationFeature <em>Destination Feature</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Destination Feature</em>' reference.
-	 * @see #getDestinationFeature()
-	 * @generated
-	 */
-	void setDestinationFeature(Feature value);
+	EList<RelationChange> getRelationChanges();
 
 } // EntityChange

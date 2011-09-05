@@ -7,7 +7,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.ActionDelegate;
 
-import de.dubmas.modulob.migration.ui.wizard.EntityMappingWizard;
+import de.dubmas.modulob.migration.ui.mapping.EntityMappingWizard;
 
 public class StartMigrationAction extends ActionDelegate {
 	

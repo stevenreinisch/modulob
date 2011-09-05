@@ -1,4 +1,5 @@
 import modulob;
+import types;
 
 primitiveTypeFeatures(Entity e):
 	e.features.select(f | f.isPrimitiveTypeFeature())
@@ -9,9 +10,9 @@ relationTypeFeatures(Entity e):
 ;
 
 isPrimitiveTypeFeature(Feature f):
-	PrimitiveType.isInstance(f.type.referenced)
+	Primitive.isInstance(f.type.referenced)
 ;
 
 isRelationTypeFeature(Feature f):
-	!PrimitiveType.isInstance(f.type.referenced)
+	!Primitive.isInstance(f.type.referenced)
 ;

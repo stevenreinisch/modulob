@@ -2,6 +2,7 @@ import diff;
 import match;
 import modulob;
 import migration;
+import system;
 import ecore;
 
 extension org::eclipse::xtend::util::stdlib::io;
@@ -31,10 +32,10 @@ Migration transform(DiffModel diffModel, Module sourceModule):
 ;
 
 List[EntityCopied] entityCopies(DiffModel diffModel, Module sourceModule):
-	sourceModule.sections.elements.typeSelect(Entity).
+	sourceModule.entityModel.entities.info().
 		without(diffModel.changedEntities()).
 			without(diffModel.removedEntities()).
-				without(diffModel.renamedEntities()).toEntityCopied()
+				without(diffModel.renamedEntities()).toEntityCopied().info()
 ;
 
 List[EntityAdded] entityAdds(DiffModel diffModel):
@@ -71,10 +72,6 @@ create EntityCopied this toEntityCopied(Entity sourceEntity):
 		->
 		this.setDestinationEntity(sourceEntity) 
 		->
-		this.setSourceName(sourceEntity.name) 
-		->
-		this.setDestinationName(sourceEntity.name) 
-		->
 		this.attributeChanges.addAll(sourceEntity.features.
 			select(f | f.isPrimitiveTypeFeature()).toAttributeCopied())
 		->
@@ -96,7 +93,7 @@ create EntityRemoved this toEntityRemoved(Entity removedEntity):
 
 create EntityChangedFeatures this toEntityChangedFeatures(DiffGroup diffGroup, DiffModel diffModel, Module sourceModule):
 	let sourceEntity = (Entity)diffGroup.rightParent:
-	let destinationEntity = sourceModule.sections.elements.typeSelect(Entity).select(e|e.name == sourceEntity.name).first():
+	let destinationEntity = sourceModule.entityModel.entities.select(e|e.name == sourceEntity.name).first():
 		this.configure(diffModel, sourceEntity, destinationEntity)
 ;
 
@@ -104,10 +101,6 @@ private configure(EntityChange ec, DiffModel  diffModel, Entity sourceEntity, En
 	ec.setSourceEntity(sourceEntity)
 	->
 	ec.setDestinationEntity(destinationEntity)
-	->
-	ec.setSourceName(sourceEntity.name)
-	->
-	ec.setDestinationName(destinationEntity.name)
 	->	
 	
 	/*
@@ -159,19 +152,13 @@ create AttributeRenamed this toAttributeRenamed(UpdateAttribute ua):
 			->
 			this.setSourceFeature(sourceFeature) 
 			->
-			this.setSourceName(sourceFeature.name) 
-			->
-			this.setDestinationFeature(destinationFeature) 
-			->
-			this.setDestinationName(destinationFeature.name)
+			this.setDestinationFeature(destinationFeature)
 ;
 
 create AttributeCopied this toAttributeCopied(Feature attrFeature):
-	this.setSourceName(attrFeature.name) 
-	->
-	this.setDestinationName(attrFeature.name) 
-	->
 	this.setSourceFeature(attrFeature)
+	->
+	this.setDestinationFeature(attrFeature)
 	->
 	this.setSourceExpression(attrFeature.name)
 ;
@@ -179,15 +166,11 @@ create AttributeCopied this toAttributeCopied(Feature attrFeature):
 create AttributeAdded this toAttributeAdded(ModelElementChangeLeftTarget change):
 	let destinationFeature = (Feature)change.leftElement:
 		this.setDestinationFeature(destinationFeature)
-		->
-		this.setDestinationName(destinationFeature.name)
 ;
 
 create AttributeRemoved this toAttributeRemoved(ModelElementChangeRightTarget change):
 	let sourceFeature = (Feature)change.rightElement:
 		this.setSourceFeature(sourceFeature)
-		->
-		this.setSourceName(sourceFeature.name)
 ;
 
 
@@ -198,19 +181,13 @@ create RelationRenamed this toRelationRenamed(UpdateAttribute ua):
 			->
 			this.setSourceFeature(sourceFeature) 
 			->
-			this.setSourceName(sourceFeature.name) 
-			->
-			this.setDestinationFeature(destinationFeature) 
-			->
-			this.setDestinationName(destinationFeature.name)
+			this.setDestinationFeature(destinationFeature)
 ;
 
 create RelationCopied this toRelationCopied(Feature relFeature):
-	this.setSourceName(relFeature.name) 
-	->
-	this.setDestinationName(relFeature.name) 
-	->
 	this.setSourceFeature(relFeature)
+	->
+	this.setDestinationFeature(relFeature)
 	->
 	this.setSourceExpression(relFeature.name)
 ;
@@ -218,41 +195,10 @@ create RelationCopied this toRelationCopied(Feature relFeature):
 create RelationAdded this toRelationAdded(ModelElementChangeLeftTarget change):
 	let destinationFeature = (Feature)change.leftElement:
 		this.setDestinationFeature(destinationFeature)
-		->
-		this.setDestinationName(destinationFeature.name)
 ;
 
 create RelationRemoved this toRelationRemoved(ModelElementChangeRightTarget change):
 	let sourceFeature = (Feature)change.rightElement:
 		this.setSourceFeature(sourceFeature)
-		->
-		this.setSourceName(sourceFeature.name)
 ;
-
-/*
-private renamedAttributes(Entity entity, DiffModel diffModel):
-	diffModel.eAllContents.typeSelect(UpdateAttribute).
-		select(ua | entity == ((DiffGroup)ua.eContainer.eContainer).rightParent
-			        &&
-					((Feature)ua.rightElement).isPrimitiveTypeFeature()
-					&&
-					Feature.isInstance(ua.rightElement) 
-					&& 
-					Feature.isInstance(ua.leftElement)
-					&&
-					ua.attribute.name == 'name'
-			  ).rightElement
-;
-*/
-
-/////////////////////////
-
-
- 
-///////////////
-
-/*
- * helper
- */
-
 

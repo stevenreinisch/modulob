@@ -17,5 +17,5 @@ package de.dubmas.modulob.migration;
  * @model abstract="true"
  * @generated
  */
-public interface RelationChange extends Change, FeatureChange {
+public interface RelationChange extends FeatureChange {
 } // RelationChange

@@ -6,6 +6,9 @@
  */
 package de.dubmas.modulob.migration;
 
+import de.dubmas.modulob.Feature;
+
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,6 +19,8 @@ package de.dubmas.modulob.migration;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.dubmas.modulob.migration.FeatureChange#getSourceExpression <em>Source Expression</em>}</li>
+ *   <li>{@link de.dubmas.modulob.migration.FeatureChange#getSourceFeature <em>Source Feature</em>}</li>
+ *   <li>{@link de.dubmas.modulob.migration.FeatureChange#getDestinationFeature <em>Destination Feature</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,7 +28,7 @@ package de.dubmas.modulob.migration;
  * @model abstract="true"
  * @generated
  */
-public interface FeatureChange extends Change {
+public interface FeatureChange extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Source Expression</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -49,5 +54,57 @@ public interface FeatureChange extends Change {
 	 * @generated
 	 */
 	void setSourceExpression(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Source Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Source Feature</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Source Feature</em>' reference.
+	 * @see #setSourceFeature(Feature)
+	 * @see de.dubmas.modulob.migration.MigrationPackage#getFeatureChange_SourceFeature()
+	 * @model
+	 * @generated
+	 */
+	Feature getSourceFeature();
+
+	/**
+	 * Sets the value of the '{@link de.dubmas.modulob.migration.FeatureChange#getSourceFeature <em>Source Feature</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Source Feature</em>' reference.
+	 * @see #getSourceFeature()
+	 * @generated
+	 */
+	void setSourceFeature(Feature value);
+
+	/**
+	 * Returns the value of the '<em><b>Destination Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Destination Feature</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Destination Feature</em>' reference.
+	 * @see #setDestinationFeature(Feature)
+	 * @see de.dubmas.modulob.migration.MigrationPackage#getFeatureChange_DestinationFeature()
+	 * @model
+	 * @generated
+	 */
+	Feature getDestinationFeature();
+
+	/**
+	 * Sets the value of the '{@link de.dubmas.modulob.migration.FeatureChange#getDestinationFeature <em>Destination Feature</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Destination Feature</em>' reference.
+	 * @see #getDestinationFeature()
+	 * @generated
+	 */
+	void setDestinationFeature(Feature value);
 
 } // FeatureChange

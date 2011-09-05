@@ -31,7 +31,7 @@ public class MigrationFactoryImpl extends EFactoryImpl implements MigrationFacto
 	 */
 	public static MigrationFactory init() {
 		try {
-			MigrationFactory theMigrationFactory = (MigrationFactory)EPackage.Registry.INSTANCE.getEFactory("http://migration.modulob.dubmas.de/0.1"); 
+			MigrationFactory theMigrationFactory = (MigrationFactory)EPackage.Registry.INSTANCE.getEFactory("http://migration.modulob.dubmas.de/1.0"); 
 			if (theMigrationFactory != null) {
 				return theMigrationFactory;
 			}
@@ -60,10 +60,12 @@ public class MigrationFactoryImpl extends EFactoryImpl implements MigrationFacto
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case MigrationPackage.MIGRATION: return createMigration();
 			case MigrationPackage.ENTITY_COPIED: return createEntityCopied();
+			case MigrationPackage.ENTITY_RENAMED: return createEntityRenamed();
+			case MigrationPackage.ENTITY_CHANGED_FEATURES: return createEntityChangedFeatures();
 			case MigrationPackage.ENTITY_ADDED: return createEntityAdded();
 			case MigrationPackage.ENTITY_REMOVED: return createEntityRemoved();
-			case MigrationPackage.ENTITY_RENAMED: return createEntityRenamed();
 			case MigrationPackage.ATTRIBUTE_COPIED: return createAttributeCopied();
 			case MigrationPackage.ATTRIBUTE_RENAMED: return createAttributeRenamed();
 			case MigrationPackage.ATTRIBUTE_ADDED: return createAttributeAdded();
@@ -72,8 +74,6 @@ public class MigrationFactoryImpl extends EFactoryImpl implements MigrationFacto
 			case MigrationPackage.RELATION_RENAMED: return createRelationRenamed();
 			case MigrationPackage.RELATION_ADDED: return createRelationAdded();
 			case MigrationPackage.RELATION_REMOVED: return createRelationRemoved();
-			case MigrationPackage.MIGRATION: return createMigration();
-			case MigrationPackage.ENTITY_CHANGED_FEATURES: return createEntityChangedFeatures();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -84,9 +84,39 @@ public class MigrationFactoryImpl extends EFactoryImpl implements MigrationFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Migration createMigration() {
+		MigrationImpl migration = new MigrationImpl();
+		return migration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EntityCopied createEntityCopied() {
 		EntityCopiedImpl entityCopied = new EntityCopiedImpl();
 		return entityCopied;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityRenamed createEntityRenamed() {
+		EntityRenamedImpl entityRenamed = new EntityRenamedImpl();
+		return entityRenamed;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityChangedFeatures createEntityChangedFeatures() {
+		EntityChangedFeaturesImpl entityChangedFeatures = new EntityChangedFeaturesImpl();
+		return entityChangedFeatures;
 	}
 
 	/**
@@ -107,16 +137,6 @@ public class MigrationFactoryImpl extends EFactoryImpl implements MigrationFacto
 	public EntityRemoved createEntityRemoved() {
 		EntityRemovedImpl entityRemoved = new EntityRemovedImpl();
 		return entityRemoved;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EntityRenamed createEntityRenamed() {
-		EntityRenamedImpl entityRenamed = new EntityRenamedImpl();
-		return entityRenamed;
 	}
 
 	/**
@@ -197,26 +217,6 @@ public class MigrationFactoryImpl extends EFactoryImpl implements MigrationFacto
 	public RelationRemoved createRelationRemoved() {
 		RelationRemovedImpl relationRemoved = new RelationRemovedImpl();
 		return relationRemoved;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Migration createMigration() {
-		MigrationImpl migration = new MigrationImpl();
-		return migration;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EntityChangedFeatures createEntityChangedFeatures() {
-		EntityChangedFeaturesImpl entityChangedFeatures = new EntityChangedFeaturesImpl();
-		return entityChangedFeatures;
 	}
 
 	/**

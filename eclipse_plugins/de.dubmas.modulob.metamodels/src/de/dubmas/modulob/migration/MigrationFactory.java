@@ -26,6 +26,15 @@ public interface MigrationFactory extends EFactory {
 	MigrationFactory eINSTANCE = de.dubmas.modulob.migration.impl.MigrationFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Migration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Migration</em>'.
+	 * @generated
+	 */
+	Migration createMigration();
+
+	/**
 	 * Returns a new object of class '<em>Entity Copied</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -33,6 +42,24 @@ public interface MigrationFactory extends EFactory {
 	 * @generated
 	 */
 	EntityCopied createEntityCopied();
+
+	/**
+	 * Returns a new object of class '<em>Entity Renamed</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Entity Renamed</em>'.
+	 * @generated
+	 */
+	EntityRenamed createEntityRenamed();
+
+	/**
+	 * Returns a new object of class '<em>Entity Changed Features</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Entity Changed Features</em>'.
+	 * @generated
+	 */
+	EntityChangedFeatures createEntityChangedFeatures();
 
 	/**
 	 * Returns a new object of class '<em>Entity Added</em>'.
@@ -51,15 +78,6 @@ public interface MigrationFactory extends EFactory {
 	 * @generated
 	 */
 	EntityRemoved createEntityRemoved();
-
-	/**
-	 * Returns a new object of class '<em>Entity Renamed</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Entity Renamed</em>'.
-	 * @generated
-	 */
-	EntityRenamed createEntityRenamed();
 
 	/**
 	 * Returns a new object of class '<em>Attribute Copied</em>'.
@@ -132,24 +150,6 @@ public interface MigrationFactory extends EFactory {
 	 * @generated
 	 */
 	RelationRemoved createRelationRemoved();
-
-	/**
-	 * Returns a new object of class '<em>Migration</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Migration</em>'.
-	 * @generated
-	 */
-	Migration createMigration();
-
-	/**
-	 * Returns a new object of class '<em>Entity Changed Features</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Entity Changed Features</em>'.
-	 * @generated
-	 */
-	EntityChangedFeatures createEntityChangedFeatures();
 
 	/**
 	 * Returns the package supported by this factory.

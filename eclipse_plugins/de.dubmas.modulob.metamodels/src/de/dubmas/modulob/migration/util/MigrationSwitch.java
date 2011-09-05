@@ -8,11 +8,9 @@ package de.dubmas.modulob.migration.util;
 
 import de.dubmas.modulob.migration.*;
 
-import java.util.List;
-
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.util.Switch;
 
 /**
@@ -72,24 +70,21 @@ public class MigrationSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case MigrationPackage.CHANGE: {
-				Change change = (Change)theEObject;
-				T result = caseChange(change);
+			case MigrationPackage.MIGRATION: {
+				Migration migration = (Migration)theEObject;
+				T result = caseMigration(migration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MigrationPackage.ENTITY_CHANGE: {
 				EntityChange entityChange = (EntityChange)theEObject;
 				T result = caseEntityChange(entityChange);
-				if (result == null) result = caseChange(entityChange);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case MigrationPackage.ATTRIBUTE_CHANGE: {
-				AttributeChange attributeChange = (AttributeChange)theEObject;
-				T result = caseAttributeChange(attributeChange);
-				if (result == null) result = caseFeatureChange(attributeChange);
-				if (result == null) result = caseChange(attributeChange);
+			case MigrationPackage.FEATURE_CHANGE: {
+				FeatureChange featureChange = (FeatureChange)theEObject;
+				T result = caseFeatureChange(featureChange);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -97,7 +92,13 @@ public class MigrationSwitch<T> extends Switch<T> {
 				RelationChange relationChange = (RelationChange)theEObject;
 				T result = caseRelationChange(relationChange);
 				if (result == null) result = caseFeatureChange(relationChange);
-				if (result == null) result = caseChange(relationChange);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MigrationPackage.ATTRIBUTE_CHANGE: {
+				AttributeChange attributeChange = (AttributeChange)theEObject;
+				T result = caseAttributeChange(attributeChange);
+				if (result == null) result = caseFeatureChange(attributeChange);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -105,23 +106,6 @@ public class MigrationSwitch<T> extends Switch<T> {
 				EntityCopied entityCopied = (EntityCopied)theEObject;
 				T result = caseEntityCopied(entityCopied);
 				if (result == null) result = caseEntityChange(entityCopied);
-				if (result == null) result = caseChange(entityCopied);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case MigrationPackage.ENTITY_ADDED: {
-				EntityAdded entityAdded = (EntityAdded)theEObject;
-				T result = caseEntityAdded(entityAdded);
-				if (result == null) result = caseEntityChange(entityAdded);
-				if (result == null) result = caseChange(entityAdded);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case MigrationPackage.ENTITY_REMOVED: {
-				EntityRemoved entityRemoved = (EntityRemoved)theEObject;
-				T result = caseEntityRemoved(entityRemoved);
-				if (result == null) result = caseEntityChange(entityRemoved);
-				if (result == null) result = caseChange(entityRemoved);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -129,7 +113,27 @@ public class MigrationSwitch<T> extends Switch<T> {
 				EntityRenamed entityRenamed = (EntityRenamed)theEObject;
 				T result = caseEntityRenamed(entityRenamed);
 				if (result == null) result = caseEntityChange(entityRenamed);
-				if (result == null) result = caseChange(entityRenamed);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MigrationPackage.ENTITY_CHANGED_FEATURES: {
+				EntityChangedFeatures entityChangedFeatures = (EntityChangedFeatures)theEObject;
+				T result = caseEntityChangedFeatures(entityChangedFeatures);
+				if (result == null) result = caseEntityChange(entityChangedFeatures);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MigrationPackage.ENTITY_ADDED: {
+				EntityAdded entityAdded = (EntityAdded)theEObject;
+				T result = caseEntityAdded(entityAdded);
+				if (result == null) result = caseEntityChange(entityAdded);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MigrationPackage.ENTITY_REMOVED: {
+				EntityRemoved entityRemoved = (EntityRemoved)theEObject;
+				T result = caseEntityRemoved(entityRemoved);
+				if (result == null) result = caseEntityChange(entityRemoved);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -138,7 +142,6 @@ public class MigrationSwitch<T> extends Switch<T> {
 				T result = caseAttributeCopied(attributeCopied);
 				if (result == null) result = caseAttributeChange(attributeCopied);
 				if (result == null) result = caseFeatureChange(attributeCopied);
-				if (result == null) result = caseChange(attributeCopied);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -147,7 +150,6 @@ public class MigrationSwitch<T> extends Switch<T> {
 				T result = caseAttributeRenamed(attributeRenamed);
 				if (result == null) result = caseAttributeChange(attributeRenamed);
 				if (result == null) result = caseFeatureChange(attributeRenamed);
-				if (result == null) result = caseChange(attributeRenamed);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -156,7 +158,6 @@ public class MigrationSwitch<T> extends Switch<T> {
 				T result = caseAttributeAdded(attributeAdded);
 				if (result == null) result = caseAttributeChange(attributeAdded);
 				if (result == null) result = caseFeatureChange(attributeAdded);
-				if (result == null) result = caseChange(attributeAdded);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -165,7 +166,6 @@ public class MigrationSwitch<T> extends Switch<T> {
 				T result = caseAttributeRemoved(attributeRemoved);
 				if (result == null) result = caseAttributeChange(attributeRemoved);
 				if (result == null) result = caseFeatureChange(attributeRemoved);
-				if (result == null) result = caseChange(attributeRemoved);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -174,7 +174,6 @@ public class MigrationSwitch<T> extends Switch<T> {
 				T result = caseRelationCopied(relationCopied);
 				if (result == null) result = caseRelationChange(relationCopied);
 				if (result == null) result = caseFeatureChange(relationCopied);
-				if (result == null) result = caseChange(relationCopied);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -183,7 +182,6 @@ public class MigrationSwitch<T> extends Switch<T> {
 				T result = caseRelationRenamed(relationRenamed);
 				if (result == null) result = caseRelationChange(relationRenamed);
 				if (result == null) result = caseFeatureChange(relationRenamed);
-				if (result == null) result = caseChange(relationRenamed);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -192,7 +190,6 @@ public class MigrationSwitch<T> extends Switch<T> {
 				T result = caseRelationAdded(relationAdded);
 				if (result == null) result = caseRelationChange(relationAdded);
 				if (result == null) result = caseFeatureChange(relationAdded);
-				if (result == null) result = caseChange(relationAdded);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -201,28 +198,6 @@ public class MigrationSwitch<T> extends Switch<T> {
 				T result = caseRelationRemoved(relationRemoved);
 				if (result == null) result = caseRelationChange(relationRemoved);
 				if (result == null) result = caseFeatureChange(relationRemoved);
-				if (result == null) result = caseChange(relationRemoved);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case MigrationPackage.FEATURE_CHANGE: {
-				FeatureChange featureChange = (FeatureChange)theEObject;
-				T result = caseFeatureChange(featureChange);
-				if (result == null) result = caseChange(featureChange);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case MigrationPackage.MIGRATION: {
-				Migration migration = (Migration)theEObject;
-				T result = caseMigration(migration);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case MigrationPackage.ENTITY_CHANGED_FEATURES: {
-				EntityChangedFeatures entityChangedFeatures = (EntityChangedFeatures)theEObject;
-				T result = caseEntityChangedFeatures(entityChangedFeatures);
-				if (result == null) result = caseEntityChange(entityChangedFeatures);
-				if (result == null) result = caseChange(entityChangedFeatures);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -231,17 +206,17 @@ public class MigrationSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Change</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Migration</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Change</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Migration</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseChange(Change object) {
+	public T caseMigration(Migration object) {
 		return null;
 	}
 
@@ -261,17 +236,17 @@ public class MigrationSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Attribute Change</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Feature Change</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Attribute Change</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Feature Change</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAttributeChange(AttributeChange object) {
+	public T caseFeatureChange(FeatureChange object) {
 		return null;
 	}
 
@@ -291,6 +266,21 @@ public class MigrationSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Attribute Change</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Attribute Change</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAttributeChange(AttributeChange object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Entity Copied</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -302,6 +292,36 @@ public class MigrationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEntityCopied(EntityCopied object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Entity Renamed</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Entity Renamed</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEntityRenamed(EntityRenamed object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Entity Changed Features</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Entity Changed Features</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEntityChangedFeatures(EntityChangedFeatures object) {
 		return null;
 	}
 
@@ -332,21 +352,6 @@ public class MigrationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEntityRemoved(EntityRemoved object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Entity Renamed</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Entity Renamed</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEntityRenamed(EntityRenamed object) {
 		return null;
 	}
 
@@ -467,51 +472,6 @@ public class MigrationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRelationRemoved(RelationRemoved object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Feature Change</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Feature Change</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFeatureChange(FeatureChange object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Migration</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Migration</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMigration(Migration object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Entity Changed Features</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Entity Changed Features</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEntityChangedFeatures(EntityChangedFeatures object) {
 		return null;
 	}
 

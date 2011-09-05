@@ -72,24 +72,36 @@ public class MigrationAdapterFactory extends AdapterFactoryImpl {
 	protected MigrationSwitch<Adapter> modelSwitch =
 		new MigrationSwitch<Adapter>() {
 			@Override
-			public Adapter caseChange(Change object) {
-				return createChangeAdapter();
+			public Adapter caseMigration(Migration object) {
+				return createMigrationAdapter();
 			}
 			@Override
 			public Adapter caseEntityChange(EntityChange object) {
 				return createEntityChangeAdapter();
 			}
 			@Override
-			public Adapter caseAttributeChange(AttributeChange object) {
-				return createAttributeChangeAdapter();
+			public Adapter caseFeatureChange(FeatureChange object) {
+				return createFeatureChangeAdapter();
 			}
 			@Override
 			public Adapter caseRelationChange(RelationChange object) {
 				return createRelationChangeAdapter();
 			}
 			@Override
+			public Adapter caseAttributeChange(AttributeChange object) {
+				return createAttributeChangeAdapter();
+			}
+			@Override
 			public Adapter caseEntityCopied(EntityCopied object) {
 				return createEntityCopiedAdapter();
+			}
+			@Override
+			public Adapter caseEntityRenamed(EntityRenamed object) {
+				return createEntityRenamedAdapter();
+			}
+			@Override
+			public Adapter caseEntityChangedFeatures(EntityChangedFeatures object) {
+				return createEntityChangedFeaturesAdapter();
 			}
 			@Override
 			public Adapter caseEntityAdded(EntityAdded object) {
@@ -98,10 +110,6 @@ public class MigrationAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseEntityRemoved(EntityRemoved object) {
 				return createEntityRemovedAdapter();
-			}
-			@Override
-			public Adapter caseEntityRenamed(EntityRenamed object) {
-				return createEntityRenamedAdapter();
 			}
 			@Override
 			public Adapter caseAttributeCopied(AttributeCopied object) {
@@ -136,18 +144,6 @@ public class MigrationAdapterFactory extends AdapterFactoryImpl {
 				return createRelationRemovedAdapter();
 			}
 			@Override
-			public Adapter caseFeatureChange(FeatureChange object) {
-				return createFeatureChangeAdapter();
-			}
-			@Override
-			public Adapter caseMigration(Migration object) {
-				return createMigrationAdapter();
-			}
-			@Override
-			public Adapter caseEntityChangedFeatures(EntityChangedFeatures object) {
-				return createEntityChangedFeaturesAdapter();
-			}
-			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -168,16 +164,16 @@ public class MigrationAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.dubmas.modulob.migration.Change <em>Change</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.dubmas.modulob.migration.Migration <em>Migration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.dubmas.modulob.migration.Change
+	 * @see de.dubmas.modulob.migration.Migration
 	 * @generated
 	 */
-	public Adapter createChangeAdapter() {
+	public Adapter createMigrationAdapter() {
 		return null;
 	}
 
@@ -196,16 +192,16 @@ public class MigrationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.dubmas.modulob.migration.AttributeChange <em>Attribute Change</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.dubmas.modulob.migration.FeatureChange <em>Feature Change</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.dubmas.modulob.migration.AttributeChange
+	 * @see de.dubmas.modulob.migration.FeatureChange
 	 * @generated
 	 */
-	public Adapter createAttributeChangeAdapter() {
+	public Adapter createFeatureChangeAdapter() {
 		return null;
 	}
 
@@ -224,6 +220,20 @@ public class MigrationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link de.dubmas.modulob.migration.AttributeChange <em>Attribute Change</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.dubmas.modulob.migration.AttributeChange
+	 * @generated
+	 */
+	public Adapter createAttributeChangeAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link de.dubmas.modulob.migration.EntityCopied <em>Entity Copied</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -234,6 +244,34 @@ public class MigrationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEntityCopiedAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.dubmas.modulob.migration.EntityRenamed <em>Entity Renamed</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.dubmas.modulob.migration.EntityRenamed
+	 * @generated
+	 */
+	public Adapter createEntityRenamedAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.dubmas.modulob.migration.EntityChangedFeatures <em>Entity Changed Features</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.dubmas.modulob.migration.EntityChangedFeatures
+	 * @generated
+	 */
+	public Adapter createEntityChangedFeaturesAdapter() {
 		return null;
 	}
 
@@ -262,20 +300,6 @@ public class MigrationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEntityRemovedAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.dubmas.modulob.migration.EntityRenamed <em>Entity Renamed</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.dubmas.modulob.migration.EntityRenamed
-	 * @generated
-	 */
-	public Adapter createEntityRenamedAdapter() {
 		return null;
 	}
 
@@ -388,48 +412,6 @@ public class MigrationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRelationRemovedAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.dubmas.modulob.migration.FeatureChange <em>Feature Change</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.dubmas.modulob.migration.FeatureChange
-	 * @generated
-	 */
-	public Adapter createFeatureChangeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.dubmas.modulob.migration.Migration <em>Migration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.dubmas.modulob.migration.Migration
-	 * @generated
-	 */
-	public Adapter createMigrationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.dubmas.modulob.migration.EntityChangedFeatures <em>Entity Changed Features</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.dubmas.modulob.migration.EntityChangedFeatures
-	 * @generated
-	 */
-	public Adapter createEntityChangedFeaturesAdapter() {
 		return null;
 	}
 

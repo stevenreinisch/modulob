@@ -1,8 +1,7 @@
 package de.dubmas.modulob.migration.test;
 
 import org.eclipse.emf.mwe2.runtime.workflow.AbstractCompositeWorkflowComponent;
-
-import de.dubmas.modulob.migration.model.migration.MigrationPackage;
+import de.dubmas.modulob.migration.MigrationPackage;
 
 public class EPackageRegistration extends AbstractCompositeWorkflowComponent{
 	

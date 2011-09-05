@@ -7,7 +7,6 @@
 package de.dubmas.modulob.migration.impl;
 
 import de.dubmas.modulob.Entity;
-import de.dubmas.modulob.Feature;
 
 import de.dubmas.modulob.migration.AttributeChange;
 import de.dubmas.modulob.migration.EntityChange;
@@ -25,6 +24,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -36,38 +36,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.dubmas.modulob.migration.impl.EntityChangeImpl#getAttributeChanges <em>Attribute Changes</em>}</li>
- *   <li>{@link de.dubmas.modulob.migration.impl.EntityChangeImpl#getRelationChanges <em>Relation Changes</em>}</li>
  *   <li>{@link de.dubmas.modulob.migration.impl.EntityChangeImpl#getSourceEntity <em>Source Entity</em>}</li>
  *   <li>{@link de.dubmas.modulob.migration.impl.EntityChangeImpl#getDestinationEntity <em>Destination Entity</em>}</li>
- *   <li>{@link de.dubmas.modulob.migration.impl.EntityChangeImpl#getSourceFeature <em>Source Feature</em>}</li>
- *   <li>{@link de.dubmas.modulob.migration.impl.EntityChangeImpl#getDestinationFeature <em>Destination Feature</em>}</li>
+ *   <li>{@link de.dubmas.modulob.migration.impl.EntityChangeImpl#getAttributeChanges <em>Attribute Changes</em>}</li>
+ *   <li>{@link de.dubmas.modulob.migration.impl.EntityChangeImpl#getRelationChanges <em>Relation Changes</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class EntityChangeImpl extends ChangeImpl implements EntityChange {
-	/**
-	 * The cached value of the '{@link #getAttributeChanges() <em>Attribute Changes</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAttributeChanges()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<AttributeChange> attributeChanges;
-
-	/**
-	 * The cached value of the '{@link #getRelationChanges() <em>Relation Changes</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRelationChanges()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<RelationChange> relationChanges;
-
+public abstract class EntityChangeImpl extends EObjectImpl implements EntityChange {
 	/**
 	 * The cached value of the '{@link #getSourceEntity() <em>Source Entity</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -89,24 +67,24 @@ public abstract class EntityChangeImpl extends ChangeImpl implements EntityChang
 	protected Entity destinationEntity;
 
 	/**
-	 * The cached value of the '{@link #getSourceFeature() <em>Source Feature</em>}' reference.
+	 * The cached value of the '{@link #getAttributeChanges() <em>Attribute Changes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSourceFeature()
+	 * @see #getAttributeChanges()
 	 * @generated
 	 * @ordered
 	 */
-	protected Feature sourceFeature;
+	protected EList<AttributeChange> attributeChanges;
 
 	/**
-	 * The cached value of the '{@link #getDestinationFeature() <em>Destination Feature</em>}' reference.
+	 * The cached value of the '{@link #getRelationChanges() <em>Relation Changes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDestinationFeature()
+	 * @see #getRelationChanges()
 	 * @generated
 	 * @ordered
 	 */
-	protected Feature destinationFeature;
+	protected EList<RelationChange> relationChanges;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -125,30 +103,6 @@ public abstract class EntityChangeImpl extends ChangeImpl implements EntityChang
 	@Override
 	protected EClass eStaticClass() {
 		return MigrationPackage.Literals.ENTITY_CHANGE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<AttributeChange> getAttributeChanges() {
-		if (attributeChanges == null) {
-			attributeChanges = new EObjectContainmentEList<AttributeChange>(AttributeChange.class, this, MigrationPackage.ENTITY_CHANGE__ATTRIBUTE_CHANGES);
-		}
-		return attributeChanges;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<RelationChange> getRelationChanges() {
-		if (relationChanges == null) {
-			relationChanges = new EObjectContainmentEList<RelationChange>(RelationChange.class, this, MigrationPackage.ENTITY_CHANGE__RELATION_CHANGES);
-		}
-		return relationChanges;
 	}
 
 	/**
@@ -232,16 +186,11 @@ public abstract class EntityChangeImpl extends ChangeImpl implements EntityChang
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Feature getSourceFeature() {
-		if (sourceFeature != null && sourceFeature.eIsProxy()) {
-			InternalEObject oldSourceFeature = (InternalEObject)sourceFeature;
-			sourceFeature = (Feature)eResolveProxy(oldSourceFeature);
-			if (sourceFeature != oldSourceFeature) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MigrationPackage.ENTITY_CHANGE__SOURCE_FEATURE, oldSourceFeature, sourceFeature));
-			}
+	public EList<AttributeChange> getAttributeChanges() {
+		if (attributeChanges == null) {
+			attributeChanges = new EObjectContainmentEList<AttributeChange>(AttributeChange.class, this, MigrationPackage.ENTITY_CHANGE__ATTRIBUTE_CHANGES);
 		}
-		return sourceFeature;
+		return attributeChanges;
 	}
 
 	/**
@@ -249,58 +198,11 @@ public abstract class EntityChangeImpl extends ChangeImpl implements EntityChang
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Feature basicGetSourceFeature() {
-		return sourceFeature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSourceFeature(Feature newSourceFeature) {
-		Feature oldSourceFeature = sourceFeature;
-		sourceFeature = newSourceFeature;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MigrationPackage.ENTITY_CHANGE__SOURCE_FEATURE, oldSourceFeature, sourceFeature));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Feature getDestinationFeature() {
-		if (destinationFeature != null && destinationFeature.eIsProxy()) {
-			InternalEObject oldDestinationFeature = (InternalEObject)destinationFeature;
-			destinationFeature = (Feature)eResolveProxy(oldDestinationFeature);
-			if (destinationFeature != oldDestinationFeature) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MigrationPackage.ENTITY_CHANGE__DESTINATION_FEATURE, oldDestinationFeature, destinationFeature));
-			}
+	public EList<RelationChange> getRelationChanges() {
+		if (relationChanges == null) {
+			relationChanges = new EObjectContainmentEList<RelationChange>(RelationChange.class, this, MigrationPackage.ENTITY_CHANGE__RELATION_CHANGES);
 		}
-		return destinationFeature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Feature basicGetDestinationFeature() {
-		return destinationFeature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDestinationFeature(Feature newDestinationFeature) {
-		Feature oldDestinationFeature = destinationFeature;
-		destinationFeature = newDestinationFeature;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MigrationPackage.ENTITY_CHANGE__DESTINATION_FEATURE, oldDestinationFeature, destinationFeature));
+		return relationChanges;
 	}
 
 	/**
@@ -327,22 +229,16 @@ public abstract class EntityChangeImpl extends ChangeImpl implements EntityChang
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MigrationPackage.ENTITY_CHANGE__ATTRIBUTE_CHANGES:
-				return getAttributeChanges();
-			case MigrationPackage.ENTITY_CHANGE__RELATION_CHANGES:
-				return getRelationChanges();
 			case MigrationPackage.ENTITY_CHANGE__SOURCE_ENTITY:
 				if (resolve) return getSourceEntity();
 				return basicGetSourceEntity();
 			case MigrationPackage.ENTITY_CHANGE__DESTINATION_ENTITY:
 				if (resolve) return getDestinationEntity();
 				return basicGetDestinationEntity();
-			case MigrationPackage.ENTITY_CHANGE__SOURCE_FEATURE:
-				if (resolve) return getSourceFeature();
-				return basicGetSourceFeature();
-			case MigrationPackage.ENTITY_CHANGE__DESTINATION_FEATURE:
-				if (resolve) return getDestinationFeature();
-				return basicGetDestinationFeature();
+			case MigrationPackage.ENTITY_CHANGE__ATTRIBUTE_CHANGES:
+				return getAttributeChanges();
+			case MigrationPackage.ENTITY_CHANGE__RELATION_CHANGES:
+				return getRelationChanges();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -356,6 +252,12 @@ public abstract class EntityChangeImpl extends ChangeImpl implements EntityChang
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case MigrationPackage.ENTITY_CHANGE__SOURCE_ENTITY:
+				setSourceEntity((Entity)newValue);
+				return;
+			case MigrationPackage.ENTITY_CHANGE__DESTINATION_ENTITY:
+				setDestinationEntity((Entity)newValue);
+				return;
 			case MigrationPackage.ENTITY_CHANGE__ATTRIBUTE_CHANGES:
 				getAttributeChanges().clear();
 				getAttributeChanges().addAll((Collection<? extends AttributeChange>)newValue);
@@ -363,18 +265,6 @@ public abstract class EntityChangeImpl extends ChangeImpl implements EntityChang
 			case MigrationPackage.ENTITY_CHANGE__RELATION_CHANGES:
 				getRelationChanges().clear();
 				getRelationChanges().addAll((Collection<? extends RelationChange>)newValue);
-				return;
-			case MigrationPackage.ENTITY_CHANGE__SOURCE_ENTITY:
-				setSourceEntity((Entity)newValue);
-				return;
-			case MigrationPackage.ENTITY_CHANGE__DESTINATION_ENTITY:
-				setDestinationEntity((Entity)newValue);
-				return;
-			case MigrationPackage.ENTITY_CHANGE__SOURCE_FEATURE:
-				setSourceFeature((Feature)newValue);
-				return;
-			case MigrationPackage.ENTITY_CHANGE__DESTINATION_FEATURE:
-				setDestinationFeature((Feature)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -388,23 +278,17 @@ public abstract class EntityChangeImpl extends ChangeImpl implements EntityChang
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MigrationPackage.ENTITY_CHANGE__ATTRIBUTE_CHANGES:
-				getAttributeChanges().clear();
-				return;
-			case MigrationPackage.ENTITY_CHANGE__RELATION_CHANGES:
-				getRelationChanges().clear();
-				return;
 			case MigrationPackage.ENTITY_CHANGE__SOURCE_ENTITY:
 				setSourceEntity((Entity)null);
 				return;
 			case MigrationPackage.ENTITY_CHANGE__DESTINATION_ENTITY:
 				setDestinationEntity((Entity)null);
 				return;
-			case MigrationPackage.ENTITY_CHANGE__SOURCE_FEATURE:
-				setSourceFeature((Feature)null);
+			case MigrationPackage.ENTITY_CHANGE__ATTRIBUTE_CHANGES:
+				getAttributeChanges().clear();
 				return;
-			case MigrationPackage.ENTITY_CHANGE__DESTINATION_FEATURE:
-				setDestinationFeature((Feature)null);
+			case MigrationPackage.ENTITY_CHANGE__RELATION_CHANGES:
+				getRelationChanges().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -418,18 +302,14 @@ public abstract class EntityChangeImpl extends ChangeImpl implements EntityChang
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MigrationPackage.ENTITY_CHANGE__ATTRIBUTE_CHANGES:
-				return attributeChanges != null && !attributeChanges.isEmpty();
-			case MigrationPackage.ENTITY_CHANGE__RELATION_CHANGES:
-				return relationChanges != null && !relationChanges.isEmpty();
 			case MigrationPackage.ENTITY_CHANGE__SOURCE_ENTITY:
 				return sourceEntity != null;
 			case MigrationPackage.ENTITY_CHANGE__DESTINATION_ENTITY:
 				return destinationEntity != null;
-			case MigrationPackage.ENTITY_CHANGE__SOURCE_FEATURE:
-				return sourceFeature != null;
-			case MigrationPackage.ENTITY_CHANGE__DESTINATION_FEATURE:
-				return destinationFeature != null;
+			case MigrationPackage.ENTITY_CHANGE__ATTRIBUTE_CHANGES:
+				return attributeChanges != null && !attributeChanges.isEmpty();
+			case MigrationPackage.ENTITY_CHANGE__RELATION_CHANGES:
+				return relationChanges != null && !relationChanges.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

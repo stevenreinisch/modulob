@@ -41,7 +41,7 @@ public interface MigrationPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://migration.modulob.dubmas.de/0.1";
+	String eNS_URI = "http://migration.modulob.dubmas.de/1.0";
 
 	/**
 	 * The package namespace name.
@@ -49,7 +49,7 @@ public interface MigrationPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "modulob";
+	String eNS_PREFIX = "de.dubmas.modulob";
 
 	/**
 	 * The singleton instance of the package.
@@ -60,1004 +60,6 @@ public interface MigrationPackage extends EPackage {
 	MigrationPackage eINSTANCE = de.dubmas.modulob.migration.impl.MigrationPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.ChangeImpl <em>Change</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.dubmas.modulob.migration.impl.ChangeImpl
-	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getChange()
-	 * @generated
-	 */
-	int CHANGE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Source Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHANGE__SOURCE_NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Destination Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHANGE__DESTINATION_NAME = 1;
-
-	/**
-	 * The number of structural features of the '<em>Change</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHANGE_FEATURE_COUNT = 2;
-
-	/**
-	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.EntityChangeImpl <em>Entity Change</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.dubmas.modulob.migration.impl.EntityChangeImpl
-	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getEntityChange()
-	 * @generated
-	 */
-	int ENTITY_CHANGE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Source Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_CHANGE__SOURCE_NAME = CHANGE__SOURCE_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Destination Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_CHANGE__DESTINATION_NAME = CHANGE__DESTINATION_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Attribute Changes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_CHANGE__ATTRIBUTE_CHANGES = CHANGE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Relation Changes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_CHANGE__RELATION_CHANGES = CHANGE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Source Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_CHANGE__SOURCE_ENTITY = CHANGE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Destination Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_CHANGE__DESTINATION_ENTITY = CHANGE_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Source Feature</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_CHANGE__SOURCE_FEATURE = CHANGE_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Destination Feature</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_CHANGE__DESTINATION_FEATURE = CHANGE_FEATURE_COUNT + 5;
-
-	/**
-	 * The number of structural features of the '<em>Entity Change</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_CHANGE_FEATURE_COUNT = CHANGE_FEATURE_COUNT + 6;
-
-	/**
-	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.AttributeChangeImpl <em>Attribute Change</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.dubmas.modulob.migration.impl.AttributeChangeImpl
-	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getAttributeChange()
-	 * @generated
-	 */
-	int ATTRIBUTE_CHANGE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Source Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_CHANGE__SOURCE_NAME = CHANGE__SOURCE_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Destination Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_CHANGE__DESTINATION_NAME = CHANGE__DESTINATION_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Source Expression</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_CHANGE__SOURCE_EXPRESSION = CHANGE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Attribute Change</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_CHANGE_FEATURE_COUNT = CHANGE_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.RelationChangeImpl <em>Relation Change</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.dubmas.modulob.migration.impl.RelationChangeImpl
-	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getRelationChange()
-	 * @generated
-	 */
-	int RELATION_CHANGE = 3;
-
-	/**
-	 * The feature id for the '<em><b>Source Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATION_CHANGE__SOURCE_NAME = CHANGE__SOURCE_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Destination Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATION_CHANGE__DESTINATION_NAME = CHANGE__DESTINATION_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Source Expression</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATION_CHANGE__SOURCE_EXPRESSION = CHANGE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Relation Change</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATION_CHANGE_FEATURE_COUNT = CHANGE_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.EntityCopiedImpl <em>Entity Copied</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.dubmas.modulob.migration.impl.EntityCopiedImpl
-	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getEntityCopied()
-	 * @generated
-	 */
-	int ENTITY_COPIED = 4;
-
-	/**
-	 * The feature id for the '<em><b>Source Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_COPIED__SOURCE_NAME = ENTITY_CHANGE__SOURCE_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Destination Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_COPIED__DESTINATION_NAME = ENTITY_CHANGE__DESTINATION_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Attribute Changes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_COPIED__ATTRIBUTE_CHANGES = ENTITY_CHANGE__ATTRIBUTE_CHANGES;
-
-	/**
-	 * The feature id for the '<em><b>Relation Changes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_COPIED__RELATION_CHANGES = ENTITY_CHANGE__RELATION_CHANGES;
-
-	/**
-	 * The feature id for the '<em><b>Source Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_COPIED__SOURCE_ENTITY = ENTITY_CHANGE__SOURCE_ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Destination Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_COPIED__DESTINATION_ENTITY = ENTITY_CHANGE__DESTINATION_ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Source Feature</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_COPIED__SOURCE_FEATURE = ENTITY_CHANGE__SOURCE_FEATURE;
-
-	/**
-	 * The feature id for the '<em><b>Destination Feature</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_COPIED__DESTINATION_FEATURE = ENTITY_CHANGE__DESTINATION_FEATURE;
-
-	/**
-	 * The number of structural features of the '<em>Entity Copied</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_COPIED_FEATURE_COUNT = ENTITY_CHANGE_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.EntityAddedImpl <em>Entity Added</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.dubmas.modulob.migration.impl.EntityAddedImpl
-	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getEntityAdded()
-	 * @generated
-	 */
-	int ENTITY_ADDED = 5;
-
-	/**
-	 * The feature id for the '<em><b>Source Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ADDED__SOURCE_NAME = ENTITY_CHANGE__SOURCE_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Destination Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ADDED__DESTINATION_NAME = ENTITY_CHANGE__DESTINATION_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Attribute Changes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ADDED__ATTRIBUTE_CHANGES = ENTITY_CHANGE__ATTRIBUTE_CHANGES;
-
-	/**
-	 * The feature id for the '<em><b>Relation Changes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ADDED__RELATION_CHANGES = ENTITY_CHANGE__RELATION_CHANGES;
-
-	/**
-	 * The feature id for the '<em><b>Source Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ADDED__SOURCE_ENTITY = ENTITY_CHANGE__SOURCE_ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Destination Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ADDED__DESTINATION_ENTITY = ENTITY_CHANGE__DESTINATION_ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Source Feature</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ADDED__SOURCE_FEATURE = ENTITY_CHANGE__SOURCE_FEATURE;
-
-	/**
-	 * The feature id for the '<em><b>Destination Feature</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ADDED__DESTINATION_FEATURE = ENTITY_CHANGE__DESTINATION_FEATURE;
-
-	/**
-	 * The number of structural features of the '<em>Entity Added</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ADDED_FEATURE_COUNT = ENTITY_CHANGE_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.EntityRemovedImpl <em>Entity Removed</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.dubmas.modulob.migration.impl.EntityRemovedImpl
-	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getEntityRemoved()
-	 * @generated
-	 */
-	int ENTITY_REMOVED = 6;
-
-	/**
-	 * The feature id for the '<em><b>Source Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_REMOVED__SOURCE_NAME = ENTITY_CHANGE__SOURCE_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Destination Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_REMOVED__DESTINATION_NAME = ENTITY_CHANGE__DESTINATION_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Attribute Changes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_REMOVED__ATTRIBUTE_CHANGES = ENTITY_CHANGE__ATTRIBUTE_CHANGES;
-
-	/**
-	 * The feature id for the '<em><b>Relation Changes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_REMOVED__RELATION_CHANGES = ENTITY_CHANGE__RELATION_CHANGES;
-
-	/**
-	 * The feature id for the '<em><b>Source Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_REMOVED__SOURCE_ENTITY = ENTITY_CHANGE__SOURCE_ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Destination Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_REMOVED__DESTINATION_ENTITY = ENTITY_CHANGE__DESTINATION_ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Source Feature</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_REMOVED__SOURCE_FEATURE = ENTITY_CHANGE__SOURCE_FEATURE;
-
-	/**
-	 * The feature id for the '<em><b>Destination Feature</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_REMOVED__DESTINATION_FEATURE = ENTITY_CHANGE__DESTINATION_FEATURE;
-
-	/**
-	 * The number of structural features of the '<em>Entity Removed</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_REMOVED_FEATURE_COUNT = ENTITY_CHANGE_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.EntityRenamedImpl <em>Entity Renamed</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.dubmas.modulob.migration.impl.EntityRenamedImpl
-	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getEntityRenamed()
-	 * @generated
-	 */
-	int ENTITY_RENAMED = 7;
-
-	/**
-	 * The feature id for the '<em><b>Source Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_RENAMED__SOURCE_NAME = ENTITY_CHANGE__SOURCE_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Destination Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_RENAMED__DESTINATION_NAME = ENTITY_CHANGE__DESTINATION_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Attribute Changes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_RENAMED__ATTRIBUTE_CHANGES = ENTITY_CHANGE__ATTRIBUTE_CHANGES;
-
-	/**
-	 * The feature id for the '<em><b>Relation Changes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_RENAMED__RELATION_CHANGES = ENTITY_CHANGE__RELATION_CHANGES;
-
-	/**
-	 * The feature id for the '<em><b>Source Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_RENAMED__SOURCE_ENTITY = ENTITY_CHANGE__SOURCE_ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Destination Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_RENAMED__DESTINATION_ENTITY = ENTITY_CHANGE__DESTINATION_ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Source Feature</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_RENAMED__SOURCE_FEATURE = ENTITY_CHANGE__SOURCE_FEATURE;
-
-	/**
-	 * The feature id for the '<em><b>Destination Feature</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_RENAMED__DESTINATION_FEATURE = ENTITY_CHANGE__DESTINATION_FEATURE;
-
-	/**
-	 * The number of structural features of the '<em>Entity Renamed</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_RENAMED_FEATURE_COUNT = ENTITY_CHANGE_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.AttributeCopiedImpl <em>Attribute Copied</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.dubmas.modulob.migration.impl.AttributeCopiedImpl
-	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getAttributeCopied()
-	 * @generated
-	 */
-	int ATTRIBUTE_COPIED = 8;
-
-	/**
-	 * The feature id for the '<em><b>Source Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_COPIED__SOURCE_NAME = ATTRIBUTE_CHANGE__SOURCE_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Destination Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_COPIED__DESTINATION_NAME = ATTRIBUTE_CHANGE__DESTINATION_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Source Expression</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_COPIED__SOURCE_EXPRESSION = ATTRIBUTE_CHANGE__SOURCE_EXPRESSION;
-
-	/**
-	 * The number of structural features of the '<em>Attribute Copied</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_COPIED_FEATURE_COUNT = ATTRIBUTE_CHANGE_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.AttributeRenamedImpl <em>Attribute Renamed</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.dubmas.modulob.migration.impl.AttributeRenamedImpl
-	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getAttributeRenamed()
-	 * @generated
-	 */
-	int ATTRIBUTE_RENAMED = 9;
-
-	/**
-	 * The feature id for the '<em><b>Source Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_RENAMED__SOURCE_NAME = ATTRIBUTE_CHANGE__SOURCE_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Destination Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_RENAMED__DESTINATION_NAME = ATTRIBUTE_CHANGE__DESTINATION_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Source Expression</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_RENAMED__SOURCE_EXPRESSION = ATTRIBUTE_CHANGE__SOURCE_EXPRESSION;
-
-	/**
-	 * The number of structural features of the '<em>Attribute Renamed</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_RENAMED_FEATURE_COUNT = ATTRIBUTE_CHANGE_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.AttributeAddedImpl <em>Attribute Added</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.dubmas.modulob.migration.impl.AttributeAddedImpl
-	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getAttributeAdded()
-	 * @generated
-	 */
-	int ATTRIBUTE_ADDED = 10;
-
-	/**
-	 * The feature id for the '<em><b>Source Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_ADDED__SOURCE_NAME = ATTRIBUTE_CHANGE__SOURCE_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Destination Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_ADDED__DESTINATION_NAME = ATTRIBUTE_CHANGE__DESTINATION_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Source Expression</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_ADDED__SOURCE_EXPRESSION = ATTRIBUTE_CHANGE__SOURCE_EXPRESSION;
-
-	/**
-	 * The number of structural features of the '<em>Attribute Added</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_ADDED_FEATURE_COUNT = ATTRIBUTE_CHANGE_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.AttributeRemovedImpl <em>Attribute Removed</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.dubmas.modulob.migration.impl.AttributeRemovedImpl
-	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getAttributeRemoved()
-	 * @generated
-	 */
-	int ATTRIBUTE_REMOVED = 11;
-
-	/**
-	 * The feature id for the '<em><b>Source Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_REMOVED__SOURCE_NAME = ATTRIBUTE_CHANGE__SOURCE_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Destination Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_REMOVED__DESTINATION_NAME = ATTRIBUTE_CHANGE__DESTINATION_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Source Expression</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_REMOVED__SOURCE_EXPRESSION = ATTRIBUTE_CHANGE__SOURCE_EXPRESSION;
-
-	/**
-	 * The number of structural features of the '<em>Attribute Removed</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_REMOVED_FEATURE_COUNT = ATTRIBUTE_CHANGE_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.RelationCopiedImpl <em>Relation Copied</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.dubmas.modulob.migration.impl.RelationCopiedImpl
-	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getRelationCopied()
-	 * @generated
-	 */
-	int RELATION_COPIED = 12;
-
-	/**
-	 * The feature id for the '<em><b>Source Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATION_COPIED__SOURCE_NAME = RELATION_CHANGE__SOURCE_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Destination Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATION_COPIED__DESTINATION_NAME = RELATION_CHANGE__DESTINATION_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Source Expression</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATION_COPIED__SOURCE_EXPRESSION = RELATION_CHANGE__SOURCE_EXPRESSION;
-
-	/**
-	 * The number of structural features of the '<em>Relation Copied</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATION_COPIED_FEATURE_COUNT = RELATION_CHANGE_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.RelationRenamedImpl <em>Relation Renamed</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.dubmas.modulob.migration.impl.RelationRenamedImpl
-	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getRelationRenamed()
-	 * @generated
-	 */
-	int RELATION_RENAMED = 13;
-
-	/**
-	 * The feature id for the '<em><b>Source Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATION_RENAMED__SOURCE_NAME = RELATION_CHANGE__SOURCE_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Destination Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATION_RENAMED__DESTINATION_NAME = RELATION_CHANGE__DESTINATION_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Source Expression</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATION_RENAMED__SOURCE_EXPRESSION = RELATION_CHANGE__SOURCE_EXPRESSION;
-
-	/**
-	 * The number of structural features of the '<em>Relation Renamed</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATION_RENAMED_FEATURE_COUNT = RELATION_CHANGE_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.RelationAddedImpl <em>Relation Added</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.dubmas.modulob.migration.impl.RelationAddedImpl
-	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getRelationAdded()
-	 * @generated
-	 */
-	int RELATION_ADDED = 14;
-
-	/**
-	 * The feature id for the '<em><b>Source Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATION_ADDED__SOURCE_NAME = RELATION_CHANGE__SOURCE_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Destination Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATION_ADDED__DESTINATION_NAME = RELATION_CHANGE__DESTINATION_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Source Expression</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATION_ADDED__SOURCE_EXPRESSION = RELATION_CHANGE__SOURCE_EXPRESSION;
-
-	/**
-	 * The number of structural features of the '<em>Relation Added</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATION_ADDED_FEATURE_COUNT = RELATION_CHANGE_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.RelationRemovedImpl <em>Relation Removed</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.dubmas.modulob.migration.impl.RelationRemovedImpl
-	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getRelationRemoved()
-	 * @generated
-	 */
-	int RELATION_REMOVED = 15;
-
-	/**
-	 * The feature id for the '<em><b>Source Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATION_REMOVED__SOURCE_NAME = RELATION_CHANGE__SOURCE_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Destination Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATION_REMOVED__DESTINATION_NAME = RELATION_CHANGE__DESTINATION_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Source Expression</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATION_REMOVED__SOURCE_EXPRESSION = RELATION_CHANGE__SOURCE_EXPRESSION;
-
-	/**
-	 * The number of structural features of the '<em>Relation Removed</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATION_REMOVED_FEATURE_COUNT = RELATION_CHANGE_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.FeatureChangeImpl <em>Feature Change</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.dubmas.modulob.migration.impl.FeatureChangeImpl
-	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getFeatureChange()
-	 * @generated
-	 */
-	int FEATURE_CHANGE = 16;
-
-	/**
-	 * The feature id for the '<em><b>Source Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_CHANGE__SOURCE_NAME = CHANGE__SOURCE_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Destination Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_CHANGE__DESTINATION_NAME = CHANGE__DESTINATION_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Source Expression</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_CHANGE__SOURCE_EXPRESSION = CHANGE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Feature Change</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_CHANGE_FEATURE_COUNT = CHANGE_FEATURE_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.MigrationImpl <em>Migration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1065,7 +67,7 @@ public interface MigrationPackage extends EPackage {
 	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getMigration()
 	 * @generated
 	 */
-	int MIGRATION = 17;
+	int MIGRATION = 0;
 
 	/**
 	 * The feature id for the '<em><b>Entity Changes</b></em>' containment reference list.
@@ -1086,32 +88,32 @@ public interface MigrationPackage extends EPackage {
 	int MIGRATION_FEATURE_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.EntityChangedFeaturesImpl <em>Entity Changed Features</em>}' class.
+	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.EntityChangeImpl <em>Entity Change</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.dubmas.modulob.migration.impl.EntityChangedFeaturesImpl
-	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getEntityChangedFeatures()
+	 * @see de.dubmas.modulob.migration.impl.EntityChangeImpl
+	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getEntityChange()
 	 * @generated
 	 */
-	int ENTITY_CHANGED_FEATURES = 18;
+	int ENTITY_CHANGE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Source Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Source Entity</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_CHANGED_FEATURES__SOURCE_NAME = ENTITY_CHANGE__SOURCE_NAME;
+	int ENTITY_CHANGE__SOURCE_ENTITY = 0;
 
 	/**
-	 * The feature id for the '<em><b>Destination Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Destination Entity</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_CHANGED_FEATURES__DESTINATION_NAME = ENTITY_CHANGE__DESTINATION_NAME;
+	int ENTITY_CHANGE__DESTINATION_ENTITY = 1;
 
 	/**
 	 * The feature id for the '<em><b>Attribute Changes</b></em>' containment reference list.
@@ -1120,7 +122,7 @@ public interface MigrationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_CHANGED_FEATURES__ATTRIBUTE_CHANGES = ENTITY_CHANGE__ATTRIBUTE_CHANGES;
+	int ENTITY_CHANGE__ATTRIBUTE_CHANGES = 2;
 
 	/**
 	 * The feature id for the '<em><b>Relation Changes</b></em>' containment reference list.
@@ -1129,7 +131,274 @@ public interface MigrationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_CHANGED_FEATURES__RELATION_CHANGES = ENTITY_CHANGE__RELATION_CHANGES;
+	int ENTITY_CHANGE__RELATION_CHANGES = 3;
+
+	/**
+	 * The number of structural features of the '<em>Entity Change</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_CHANGE_FEATURE_COUNT = 4;
+
+	/**
+	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.FeatureChangeImpl <em>Feature Change</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dubmas.modulob.migration.impl.FeatureChangeImpl
+	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getFeatureChange()
+	 * @generated
+	 */
+	int FEATURE_CHANGE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Source Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_CHANGE__SOURCE_EXPRESSION = 0;
+
+	/**
+	 * The feature id for the '<em><b>Source Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_CHANGE__SOURCE_FEATURE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Destination Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_CHANGE__DESTINATION_FEATURE = 2;
+
+	/**
+	 * The number of structural features of the '<em>Feature Change</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_CHANGE_FEATURE_COUNT = 3;
+
+	/**
+	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.RelationChangeImpl <em>Relation Change</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dubmas.modulob.migration.impl.RelationChangeImpl
+	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getRelationChange()
+	 * @generated
+	 */
+	int RELATION_CHANGE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Source Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATION_CHANGE__SOURCE_EXPRESSION = FEATURE_CHANGE__SOURCE_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Source Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATION_CHANGE__SOURCE_FEATURE = FEATURE_CHANGE__SOURCE_FEATURE;
+
+	/**
+	 * The feature id for the '<em><b>Destination Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATION_CHANGE__DESTINATION_FEATURE = FEATURE_CHANGE__DESTINATION_FEATURE;
+
+	/**
+	 * The number of structural features of the '<em>Relation Change</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATION_CHANGE_FEATURE_COUNT = FEATURE_CHANGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.AttributeChangeImpl <em>Attribute Change</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dubmas.modulob.migration.impl.AttributeChangeImpl
+	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getAttributeChange()
+	 * @generated
+	 */
+	int ATTRIBUTE_CHANGE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Source Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_CHANGE__SOURCE_EXPRESSION = FEATURE_CHANGE__SOURCE_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Source Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_CHANGE__SOURCE_FEATURE = FEATURE_CHANGE__SOURCE_FEATURE;
+
+	/**
+	 * The feature id for the '<em><b>Destination Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_CHANGE__DESTINATION_FEATURE = FEATURE_CHANGE__DESTINATION_FEATURE;
+
+	/**
+	 * The number of structural features of the '<em>Attribute Change</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_CHANGE_FEATURE_COUNT = FEATURE_CHANGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.EntityCopiedImpl <em>Entity Copied</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dubmas.modulob.migration.impl.EntityCopiedImpl
+	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getEntityCopied()
+	 * @generated
+	 */
+	int ENTITY_COPIED = 5;
+
+	/**
+	 * The feature id for the '<em><b>Source Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_COPIED__SOURCE_ENTITY = ENTITY_CHANGE__SOURCE_ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Destination Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_COPIED__DESTINATION_ENTITY = ENTITY_CHANGE__DESTINATION_ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attribute Changes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_COPIED__ATTRIBUTE_CHANGES = ENTITY_CHANGE__ATTRIBUTE_CHANGES;
+
+	/**
+	 * The feature id for the '<em><b>Relation Changes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_COPIED__RELATION_CHANGES = ENTITY_CHANGE__RELATION_CHANGES;
+
+	/**
+	 * The number of structural features of the '<em>Entity Copied</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_COPIED_FEATURE_COUNT = ENTITY_CHANGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.EntityRenamedImpl <em>Entity Renamed</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dubmas.modulob.migration.impl.EntityRenamedImpl
+	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getEntityRenamed()
+	 * @generated
+	 */
+	int ENTITY_RENAMED = 6;
+
+	/**
+	 * The feature id for the '<em><b>Source Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_RENAMED__SOURCE_ENTITY = ENTITY_CHANGE__SOURCE_ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Destination Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_RENAMED__DESTINATION_ENTITY = ENTITY_CHANGE__DESTINATION_ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attribute Changes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_RENAMED__ATTRIBUTE_CHANGES = ENTITY_CHANGE__ATTRIBUTE_CHANGES;
+
+	/**
+	 * The feature id for the '<em><b>Relation Changes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_RENAMED__RELATION_CHANGES = ENTITY_CHANGE__RELATION_CHANGES;
+
+	/**
+	 * The number of structural features of the '<em>Entity Renamed</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_RENAMED_FEATURE_COUNT = ENTITY_CHANGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.EntityChangedFeaturesImpl <em>Entity Changed Features</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dubmas.modulob.migration.impl.EntityChangedFeaturesImpl
+	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getEntityChangedFeatures()
+	 * @generated
+	 */
+	int ENTITY_CHANGED_FEATURES = 7;
 
 	/**
 	 * The feature id for the '<em><b>Source Entity</b></em>' reference.
@@ -1150,22 +419,22 @@ public interface MigrationPackage extends EPackage {
 	int ENTITY_CHANGED_FEATURES__DESTINATION_ENTITY = ENTITY_CHANGE__DESTINATION_ENTITY;
 
 	/**
-	 * The feature id for the '<em><b>Source Feature</b></em>' reference.
+	 * The feature id for the '<em><b>Attribute Changes</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_CHANGED_FEATURES__SOURCE_FEATURE = ENTITY_CHANGE__SOURCE_FEATURE;
+	int ENTITY_CHANGED_FEATURES__ATTRIBUTE_CHANGES = ENTITY_CHANGE__ATTRIBUTE_CHANGES;
 
 	/**
-	 * The feature id for the '<em><b>Destination Feature</b></em>' reference.
+	 * The feature id for the '<em><b>Relation Changes</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_CHANGED_FEATURES__DESTINATION_FEATURE = ENTITY_CHANGE__DESTINATION_FEATURE;
+	int ENTITY_CHANGED_FEATURES__RELATION_CHANGES = ENTITY_CHANGE__RELATION_CHANGES;
 
 	/**
 	 * The number of structural features of the '<em>Entity Changed Features</em>' class.
@@ -1176,38 +445,505 @@ public interface MigrationPackage extends EPackage {
 	 */
 	int ENTITY_CHANGED_FEATURES_FEATURE_COUNT = ENTITY_CHANGE_FEATURE_COUNT + 0;
 
-
 	/**
-	 * Returns the meta object for class '{@link de.dubmas.modulob.migration.Change <em>Change</em>}'.
+	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.EntityAddedImpl <em>Entity Added</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Change</em>'.
-	 * @see de.dubmas.modulob.migration.Change
+	 * @see de.dubmas.modulob.migration.impl.EntityAddedImpl
+	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getEntityAdded()
 	 * @generated
 	 */
-	EClass getChange();
+	int ENTITY_ADDED = 8;
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.dubmas.modulob.migration.Change#getSourceName <em>Source Name</em>}'.
+	 * The feature id for the '<em><b>Source Entity</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Source Name</em>'.
-	 * @see de.dubmas.modulob.migration.Change#getSourceName()
-	 * @see #getChange()
 	 * @generated
+	 * @ordered
 	 */
-	EAttribute getChange_SourceName();
+	int ENTITY_ADDED__SOURCE_ENTITY = ENTITY_CHANGE__SOURCE_ENTITY;
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.dubmas.modulob.migration.Change#getDestinationName <em>Destination Name</em>}'.
+	 * The feature id for the '<em><b>Destination Entity</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Destination Name</em>'.
-	 * @see de.dubmas.modulob.migration.Change#getDestinationName()
-	 * @see #getChange()
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ADDED__DESTINATION_ENTITY = ENTITY_CHANGE__DESTINATION_ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attribute Changes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ADDED__ATTRIBUTE_CHANGES = ENTITY_CHANGE__ATTRIBUTE_CHANGES;
+
+	/**
+	 * The feature id for the '<em><b>Relation Changes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ADDED__RELATION_CHANGES = ENTITY_CHANGE__RELATION_CHANGES;
+
+	/**
+	 * The number of structural features of the '<em>Entity Added</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ADDED_FEATURE_COUNT = ENTITY_CHANGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.EntityRemovedImpl <em>Entity Removed</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dubmas.modulob.migration.impl.EntityRemovedImpl
+	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getEntityRemoved()
 	 * @generated
 	 */
-	EAttribute getChange_DestinationName();
+	int ENTITY_REMOVED = 9;
+
+	/**
+	 * The feature id for the '<em><b>Source Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_REMOVED__SOURCE_ENTITY = ENTITY_CHANGE__SOURCE_ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Destination Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_REMOVED__DESTINATION_ENTITY = ENTITY_CHANGE__DESTINATION_ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attribute Changes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_REMOVED__ATTRIBUTE_CHANGES = ENTITY_CHANGE__ATTRIBUTE_CHANGES;
+
+	/**
+	 * The feature id for the '<em><b>Relation Changes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_REMOVED__RELATION_CHANGES = ENTITY_CHANGE__RELATION_CHANGES;
+
+	/**
+	 * The number of structural features of the '<em>Entity Removed</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_REMOVED_FEATURE_COUNT = ENTITY_CHANGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.AttributeCopiedImpl <em>Attribute Copied</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dubmas.modulob.migration.impl.AttributeCopiedImpl
+	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getAttributeCopied()
+	 * @generated
+	 */
+	int ATTRIBUTE_COPIED = 10;
+
+	/**
+	 * The feature id for the '<em><b>Source Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_COPIED__SOURCE_EXPRESSION = ATTRIBUTE_CHANGE__SOURCE_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Source Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_COPIED__SOURCE_FEATURE = ATTRIBUTE_CHANGE__SOURCE_FEATURE;
+
+	/**
+	 * The feature id for the '<em><b>Destination Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_COPIED__DESTINATION_FEATURE = ATTRIBUTE_CHANGE__DESTINATION_FEATURE;
+
+	/**
+	 * The number of structural features of the '<em>Attribute Copied</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_COPIED_FEATURE_COUNT = ATTRIBUTE_CHANGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.AttributeRenamedImpl <em>Attribute Renamed</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dubmas.modulob.migration.impl.AttributeRenamedImpl
+	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getAttributeRenamed()
+	 * @generated
+	 */
+	int ATTRIBUTE_RENAMED = 11;
+
+	/**
+	 * The feature id for the '<em><b>Source Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_RENAMED__SOURCE_EXPRESSION = ATTRIBUTE_CHANGE__SOURCE_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Source Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_RENAMED__SOURCE_FEATURE = ATTRIBUTE_CHANGE__SOURCE_FEATURE;
+
+	/**
+	 * The feature id for the '<em><b>Destination Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_RENAMED__DESTINATION_FEATURE = ATTRIBUTE_CHANGE__DESTINATION_FEATURE;
+
+	/**
+	 * The number of structural features of the '<em>Attribute Renamed</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_RENAMED_FEATURE_COUNT = ATTRIBUTE_CHANGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.AttributeAddedImpl <em>Attribute Added</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dubmas.modulob.migration.impl.AttributeAddedImpl
+	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getAttributeAdded()
+	 * @generated
+	 */
+	int ATTRIBUTE_ADDED = 12;
+
+	/**
+	 * The feature id for the '<em><b>Source Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_ADDED__SOURCE_EXPRESSION = ATTRIBUTE_CHANGE__SOURCE_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Source Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_ADDED__SOURCE_FEATURE = ATTRIBUTE_CHANGE__SOURCE_FEATURE;
+
+	/**
+	 * The feature id for the '<em><b>Destination Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_ADDED__DESTINATION_FEATURE = ATTRIBUTE_CHANGE__DESTINATION_FEATURE;
+
+	/**
+	 * The number of structural features of the '<em>Attribute Added</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_ADDED_FEATURE_COUNT = ATTRIBUTE_CHANGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.AttributeRemovedImpl <em>Attribute Removed</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dubmas.modulob.migration.impl.AttributeRemovedImpl
+	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getAttributeRemoved()
+	 * @generated
+	 */
+	int ATTRIBUTE_REMOVED = 13;
+
+	/**
+	 * The feature id for the '<em><b>Source Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_REMOVED__SOURCE_EXPRESSION = ATTRIBUTE_CHANGE__SOURCE_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Source Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_REMOVED__SOURCE_FEATURE = ATTRIBUTE_CHANGE__SOURCE_FEATURE;
+
+	/**
+	 * The feature id for the '<em><b>Destination Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_REMOVED__DESTINATION_FEATURE = ATTRIBUTE_CHANGE__DESTINATION_FEATURE;
+
+	/**
+	 * The number of structural features of the '<em>Attribute Removed</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_REMOVED_FEATURE_COUNT = ATTRIBUTE_CHANGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.RelationCopiedImpl <em>Relation Copied</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dubmas.modulob.migration.impl.RelationCopiedImpl
+	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getRelationCopied()
+	 * @generated
+	 */
+	int RELATION_COPIED = 14;
+
+	/**
+	 * The feature id for the '<em><b>Source Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATION_COPIED__SOURCE_EXPRESSION = RELATION_CHANGE__SOURCE_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Source Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATION_COPIED__SOURCE_FEATURE = RELATION_CHANGE__SOURCE_FEATURE;
+
+	/**
+	 * The feature id for the '<em><b>Destination Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATION_COPIED__DESTINATION_FEATURE = RELATION_CHANGE__DESTINATION_FEATURE;
+
+	/**
+	 * The number of structural features of the '<em>Relation Copied</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATION_COPIED_FEATURE_COUNT = RELATION_CHANGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.RelationRenamedImpl <em>Relation Renamed</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dubmas.modulob.migration.impl.RelationRenamedImpl
+	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getRelationRenamed()
+	 * @generated
+	 */
+	int RELATION_RENAMED = 15;
+
+	/**
+	 * The feature id for the '<em><b>Source Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATION_RENAMED__SOURCE_EXPRESSION = RELATION_CHANGE__SOURCE_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Source Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATION_RENAMED__SOURCE_FEATURE = RELATION_CHANGE__SOURCE_FEATURE;
+
+	/**
+	 * The feature id for the '<em><b>Destination Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATION_RENAMED__DESTINATION_FEATURE = RELATION_CHANGE__DESTINATION_FEATURE;
+
+	/**
+	 * The number of structural features of the '<em>Relation Renamed</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATION_RENAMED_FEATURE_COUNT = RELATION_CHANGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.RelationAddedImpl <em>Relation Added</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dubmas.modulob.migration.impl.RelationAddedImpl
+	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getRelationAdded()
+	 * @generated
+	 */
+	int RELATION_ADDED = 16;
+
+	/**
+	 * The feature id for the '<em><b>Source Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATION_ADDED__SOURCE_EXPRESSION = RELATION_CHANGE__SOURCE_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Source Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATION_ADDED__SOURCE_FEATURE = RELATION_CHANGE__SOURCE_FEATURE;
+
+	/**
+	 * The feature id for the '<em><b>Destination Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATION_ADDED__DESTINATION_FEATURE = RELATION_CHANGE__DESTINATION_FEATURE;
+
+	/**
+	 * The number of structural features of the '<em>Relation Added</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATION_ADDED_FEATURE_COUNT = RELATION_CHANGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.RelationRemovedImpl <em>Relation Removed</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dubmas.modulob.migration.impl.RelationRemovedImpl
+	 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getRelationRemoved()
+	 * @generated
+	 */
+	int RELATION_REMOVED = 17;
+
+	/**
+	 * The feature id for the '<em><b>Source Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATION_REMOVED__SOURCE_EXPRESSION = RELATION_CHANGE__SOURCE_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Source Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATION_REMOVED__SOURCE_FEATURE = RELATION_CHANGE__SOURCE_FEATURE;
+
+	/**
+	 * The feature id for the '<em><b>Destination Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATION_REMOVED__DESTINATION_FEATURE = RELATION_CHANGE__DESTINATION_FEATURE;
+
+	/**
+	 * The number of structural features of the '<em>Relation Removed</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATION_REMOVED_FEATURE_COUNT = RELATION_CHANGE_FEATURE_COUNT + 0;
+
+
+	/**
+	 * Returns the meta object for class '{@link de.dubmas.modulob.migration.Migration <em>Migration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Migration</em>'.
+	 * @see de.dubmas.modulob.migration.Migration
+	 * @generated
+	 */
+	EClass getMigration();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.dubmas.modulob.migration.Migration#getEntityChanges <em>Entity Changes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Entity Changes</em>'.
+	 * @see de.dubmas.modulob.migration.Migration#getEntityChanges()
+	 * @see #getMigration()
+	 * @generated
+	 */
+	EReference getMigration_EntityChanges();
 
 	/**
 	 * Returns the meta object for class '{@link de.dubmas.modulob.migration.EntityChange <em>Entity Change</em>}'.
@@ -1218,28 +954,6 @@ public interface MigrationPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEntityChange();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.dubmas.modulob.migration.EntityChange#getAttributeChanges <em>Attribute Changes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Attribute Changes</em>'.
-	 * @see de.dubmas.modulob.migration.EntityChange#getAttributeChanges()
-	 * @see #getEntityChange()
-	 * @generated
-	 */
-	EReference getEntityChange_AttributeChanges();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.dubmas.modulob.migration.EntityChange#getRelationChanges <em>Relation Changes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Relation Changes</em>'.
-	 * @see de.dubmas.modulob.migration.EntityChange#getRelationChanges()
-	 * @see #getEntityChange()
-	 * @generated
-	 */
-	EReference getEntityChange_RelationChanges();
 
 	/**
 	 * Returns the meta object for the reference '{@link de.dubmas.modulob.migration.EntityChange#getSourceEntity <em>Source Entity</em>}'.
@@ -1264,36 +978,69 @@ public interface MigrationPackage extends EPackage {
 	EReference getEntityChange_DestinationEntity();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.dubmas.modulob.migration.EntityChange#getSourceFeature <em>Source Feature</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.dubmas.modulob.migration.EntityChange#getAttributeChanges <em>Attribute Changes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Attribute Changes</em>'.
+	 * @see de.dubmas.modulob.migration.EntityChange#getAttributeChanges()
+	 * @see #getEntityChange()
+	 * @generated
+	 */
+	EReference getEntityChange_AttributeChanges();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.dubmas.modulob.migration.EntityChange#getRelationChanges <em>Relation Changes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Relation Changes</em>'.
+	 * @see de.dubmas.modulob.migration.EntityChange#getRelationChanges()
+	 * @see #getEntityChange()
+	 * @generated
+	 */
+	EReference getEntityChange_RelationChanges();
+
+	/**
+	 * Returns the meta object for class '{@link de.dubmas.modulob.migration.FeatureChange <em>Feature Change</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Feature Change</em>'.
+	 * @see de.dubmas.modulob.migration.FeatureChange
+	 * @generated
+	 */
+	EClass getFeatureChange();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dubmas.modulob.migration.FeatureChange#getSourceExpression <em>Source Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Source Expression</em>'.
+	 * @see de.dubmas.modulob.migration.FeatureChange#getSourceExpression()
+	 * @see #getFeatureChange()
+	 * @generated
+	 */
+	EAttribute getFeatureChange_SourceExpression();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.dubmas.modulob.migration.FeatureChange#getSourceFeature <em>Source Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Source Feature</em>'.
-	 * @see de.dubmas.modulob.migration.EntityChange#getSourceFeature()
-	 * @see #getEntityChange()
+	 * @see de.dubmas.modulob.migration.FeatureChange#getSourceFeature()
+	 * @see #getFeatureChange()
 	 * @generated
 	 */
-	EReference getEntityChange_SourceFeature();
+	EReference getFeatureChange_SourceFeature();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.dubmas.modulob.migration.EntityChange#getDestinationFeature <em>Destination Feature</em>}'.
+	 * Returns the meta object for the reference '{@link de.dubmas.modulob.migration.FeatureChange#getDestinationFeature <em>Destination Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Destination Feature</em>'.
-	 * @see de.dubmas.modulob.migration.EntityChange#getDestinationFeature()
-	 * @see #getEntityChange()
+	 * @see de.dubmas.modulob.migration.FeatureChange#getDestinationFeature()
+	 * @see #getFeatureChange()
 	 * @generated
 	 */
-	EReference getEntityChange_DestinationFeature();
-
-	/**
-	 * Returns the meta object for class '{@link de.dubmas.modulob.migration.AttributeChange <em>Attribute Change</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Attribute Change</em>'.
-	 * @see de.dubmas.modulob.migration.AttributeChange
-	 * @generated
-	 */
-	EClass getAttributeChange();
+	EReference getFeatureChange_DestinationFeature();
 
 	/**
 	 * Returns the meta object for class '{@link de.dubmas.modulob.migration.RelationChange <em>Relation Change</em>}'.
@@ -1306,6 +1053,16 @@ public interface MigrationPackage extends EPackage {
 	EClass getRelationChange();
 
 	/**
+	 * Returns the meta object for class '{@link de.dubmas.modulob.migration.AttributeChange <em>Attribute Change</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Attribute Change</em>'.
+	 * @see de.dubmas.modulob.migration.AttributeChange
+	 * @generated
+	 */
+	EClass getAttributeChange();
+
+	/**
 	 * Returns the meta object for class '{@link de.dubmas.modulob.migration.EntityCopied <em>Entity Copied</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1314,6 +1071,26 @@ public interface MigrationPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEntityCopied();
+
+	/**
+	 * Returns the meta object for class '{@link de.dubmas.modulob.migration.EntityRenamed <em>Entity Renamed</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Entity Renamed</em>'.
+	 * @see de.dubmas.modulob.migration.EntityRenamed
+	 * @generated
+	 */
+	EClass getEntityRenamed();
+
+	/**
+	 * Returns the meta object for class '{@link de.dubmas.modulob.migration.EntityChangedFeatures <em>Entity Changed Features</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Entity Changed Features</em>'.
+	 * @see de.dubmas.modulob.migration.EntityChangedFeatures
+	 * @generated
+	 */
+	EClass getEntityChangedFeatures();
 
 	/**
 	 * Returns the meta object for class '{@link de.dubmas.modulob.migration.EntityAdded <em>Entity Added</em>}'.
@@ -1334,16 +1111,6 @@ public interface MigrationPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEntityRemoved();
-
-	/**
-	 * Returns the meta object for class '{@link de.dubmas.modulob.migration.EntityRenamed <em>Entity Renamed</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Entity Renamed</em>'.
-	 * @see de.dubmas.modulob.migration.EntityRenamed
-	 * @generated
-	 */
-	EClass getEntityRenamed();
 
 	/**
 	 * Returns the meta object for class '{@link de.dubmas.modulob.migration.AttributeCopied <em>Attribute Copied</em>}'.
@@ -1426,58 +1193,6 @@ public interface MigrationPackage extends EPackage {
 	EClass getRelationRemoved();
 
 	/**
-	 * Returns the meta object for class '{@link de.dubmas.modulob.migration.FeatureChange <em>Feature Change</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Feature Change</em>'.
-	 * @see de.dubmas.modulob.migration.FeatureChange
-	 * @generated
-	 */
-	EClass getFeatureChange();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.dubmas.modulob.migration.FeatureChange#getSourceExpression <em>Source Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Source Expression</em>'.
-	 * @see de.dubmas.modulob.migration.FeatureChange#getSourceExpression()
-	 * @see #getFeatureChange()
-	 * @generated
-	 */
-	EAttribute getFeatureChange_SourceExpression();
-
-	/**
-	 * Returns the meta object for class '{@link de.dubmas.modulob.migration.Migration <em>Migration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Migration</em>'.
-	 * @see de.dubmas.modulob.migration.Migration
-	 * @generated
-	 */
-	EClass getMigration();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.dubmas.modulob.migration.Migration#getEntityChanges <em>Entity Changes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Entity Changes</em>'.
-	 * @see de.dubmas.modulob.migration.Migration#getEntityChanges()
-	 * @see #getMigration()
-	 * @generated
-	 */
-	EReference getMigration_EntityChanges();
-
-	/**
-	 * Returns the meta object for class '{@link de.dubmas.modulob.migration.EntityChangedFeatures <em>Entity Changed Features</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Entity Changed Features</em>'.
-	 * @see de.dubmas.modulob.migration.EntityChangedFeatures
-	 * @generated
-	 */
-	EClass getEntityChangedFeatures();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1500,30 +1215,22 @@ public interface MigrationPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link de.dubmas.modulob.migration.impl.ChangeImpl <em>Change</em>}' class.
+		 * The meta object literal for the '{@link de.dubmas.modulob.migration.impl.MigrationImpl <em>Migration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.dubmas.modulob.migration.impl.ChangeImpl
-		 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getChange()
+		 * @see de.dubmas.modulob.migration.impl.MigrationImpl
+		 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getMigration()
 		 * @generated
 		 */
-		EClass CHANGE = eINSTANCE.getChange();
+		EClass MIGRATION = eINSTANCE.getMigration();
 
 		/**
-		 * The meta object literal for the '<em><b>Source Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Entity Changes</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CHANGE__SOURCE_NAME = eINSTANCE.getChange_SourceName();
-
-		/**
-		 * The meta object literal for the '<em><b>Destination Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CHANGE__DESTINATION_NAME = eINSTANCE.getChange_DestinationName();
+		EReference MIGRATION__ENTITY_CHANGES = eINSTANCE.getMigration_EntityChanges();
 
 		/**
 		 * The meta object literal for the '{@link de.dubmas.modulob.migration.impl.EntityChangeImpl <em>Entity Change</em>}' class.
@@ -1534,22 +1241,6 @@ public interface MigrationPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ENTITY_CHANGE = eINSTANCE.getEntityChange();
-
-		/**
-		 * The meta object literal for the '<em><b>Attribute Changes</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ENTITY_CHANGE__ATTRIBUTE_CHANGES = eINSTANCE.getEntityChange_AttributeChanges();
-
-		/**
-		 * The meta object literal for the '<em><b>Relation Changes</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ENTITY_CHANGE__RELATION_CHANGES = eINSTANCE.getEntityChange_RelationChanges();
 
 		/**
 		 * The meta object literal for the '<em><b>Source Entity</b></em>' reference feature.
@@ -1568,12 +1259,46 @@ public interface MigrationPackage extends EPackage {
 		EReference ENTITY_CHANGE__DESTINATION_ENTITY = eINSTANCE.getEntityChange_DestinationEntity();
 
 		/**
+		 * The meta object literal for the '<em><b>Attribute Changes</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY_CHANGE__ATTRIBUTE_CHANGES = eINSTANCE.getEntityChange_AttributeChanges();
+
+		/**
+		 * The meta object literal for the '<em><b>Relation Changes</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY_CHANGE__RELATION_CHANGES = eINSTANCE.getEntityChange_RelationChanges();
+
+		/**
+		 * The meta object literal for the '{@link de.dubmas.modulob.migration.impl.FeatureChangeImpl <em>Feature Change</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dubmas.modulob.migration.impl.FeatureChangeImpl
+		 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getFeatureChange()
+		 * @generated
+		 */
+		EClass FEATURE_CHANGE = eINSTANCE.getFeatureChange();
+
+		/**
+		 * The meta object literal for the '<em><b>Source Expression</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FEATURE_CHANGE__SOURCE_EXPRESSION = eINSTANCE.getFeatureChange_SourceExpression();
+
+		/**
 		 * The meta object literal for the '<em><b>Source Feature</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ENTITY_CHANGE__SOURCE_FEATURE = eINSTANCE.getEntityChange_SourceFeature();
+		EReference FEATURE_CHANGE__SOURCE_FEATURE = eINSTANCE.getFeatureChange_SourceFeature();
 
 		/**
 		 * The meta object literal for the '<em><b>Destination Feature</b></em>' reference feature.
@@ -1581,17 +1306,7 @@ public interface MigrationPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ENTITY_CHANGE__DESTINATION_FEATURE = eINSTANCE.getEntityChange_DestinationFeature();
-
-		/**
-		 * The meta object literal for the '{@link de.dubmas.modulob.migration.impl.AttributeChangeImpl <em>Attribute Change</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.dubmas.modulob.migration.impl.AttributeChangeImpl
-		 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getAttributeChange()
-		 * @generated
-		 */
-		EClass ATTRIBUTE_CHANGE = eINSTANCE.getAttributeChange();
+		EReference FEATURE_CHANGE__DESTINATION_FEATURE = eINSTANCE.getFeatureChange_DestinationFeature();
 
 		/**
 		 * The meta object literal for the '{@link de.dubmas.modulob.migration.impl.RelationChangeImpl <em>Relation Change</em>}' class.
@@ -1604,6 +1319,16 @@ public interface MigrationPackage extends EPackage {
 		EClass RELATION_CHANGE = eINSTANCE.getRelationChange();
 
 		/**
+		 * The meta object literal for the '{@link de.dubmas.modulob.migration.impl.AttributeChangeImpl <em>Attribute Change</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dubmas.modulob.migration.impl.AttributeChangeImpl
+		 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getAttributeChange()
+		 * @generated
+		 */
+		EClass ATTRIBUTE_CHANGE = eINSTANCE.getAttributeChange();
+
+		/**
 		 * The meta object literal for the '{@link de.dubmas.modulob.migration.impl.EntityCopiedImpl <em>Entity Copied</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1612,6 +1337,26 @@ public interface MigrationPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ENTITY_COPIED = eINSTANCE.getEntityCopied();
+
+		/**
+		 * The meta object literal for the '{@link de.dubmas.modulob.migration.impl.EntityRenamedImpl <em>Entity Renamed</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dubmas.modulob.migration.impl.EntityRenamedImpl
+		 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getEntityRenamed()
+		 * @generated
+		 */
+		EClass ENTITY_RENAMED = eINSTANCE.getEntityRenamed();
+
+		/**
+		 * The meta object literal for the '{@link de.dubmas.modulob.migration.impl.EntityChangedFeaturesImpl <em>Entity Changed Features</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dubmas.modulob.migration.impl.EntityChangedFeaturesImpl
+		 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getEntityChangedFeatures()
+		 * @generated
+		 */
+		EClass ENTITY_CHANGED_FEATURES = eINSTANCE.getEntityChangedFeatures();
 
 		/**
 		 * The meta object literal for the '{@link de.dubmas.modulob.migration.impl.EntityAddedImpl <em>Entity Added</em>}' class.
@@ -1632,16 +1377,6 @@ public interface MigrationPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ENTITY_REMOVED = eINSTANCE.getEntityRemoved();
-
-		/**
-		 * The meta object literal for the '{@link de.dubmas.modulob.migration.impl.EntityRenamedImpl <em>Entity Renamed</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.dubmas.modulob.migration.impl.EntityRenamedImpl
-		 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getEntityRenamed()
-		 * @generated
-		 */
-		EClass ENTITY_RENAMED = eINSTANCE.getEntityRenamed();
 
 		/**
 		 * The meta object literal for the '{@link de.dubmas.modulob.migration.impl.AttributeCopiedImpl <em>Attribute Copied</em>}' class.
@@ -1722,52 +1457,6 @@ public interface MigrationPackage extends EPackage {
 		 * @generated
 		 */
 		EClass RELATION_REMOVED = eINSTANCE.getRelationRemoved();
-
-		/**
-		 * The meta object literal for the '{@link de.dubmas.modulob.migration.impl.FeatureChangeImpl <em>Feature Change</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.dubmas.modulob.migration.impl.FeatureChangeImpl
-		 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getFeatureChange()
-		 * @generated
-		 */
-		EClass FEATURE_CHANGE = eINSTANCE.getFeatureChange();
-
-		/**
-		 * The meta object literal for the '<em><b>Source Expression</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FEATURE_CHANGE__SOURCE_EXPRESSION = eINSTANCE.getFeatureChange_SourceExpression();
-
-		/**
-		 * The meta object literal for the '{@link de.dubmas.modulob.migration.impl.MigrationImpl <em>Migration</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.dubmas.modulob.migration.impl.MigrationImpl
-		 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getMigration()
-		 * @generated
-		 */
-		EClass MIGRATION = eINSTANCE.getMigration();
-
-		/**
-		 * The meta object literal for the '<em><b>Entity Changes</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MIGRATION__ENTITY_CHANGES = eINSTANCE.getMigration_EntityChanges();
-
-		/**
-		 * The meta object literal for the '{@link de.dubmas.modulob.migration.impl.EntityChangedFeaturesImpl <em>Entity Changed Features</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.dubmas.modulob.migration.impl.EntityChangedFeaturesImpl
-		 * @see de.dubmas.modulob.migration.impl.MigrationPackageImpl#getEntityChangedFeatures()
-		 * @generated
-		 */
-		EClass ENTITY_CHANGED_FEATURES = eINSTANCE.getEntityChangedFeatures();
 
 	}
 

@@ -3,12 +3,10 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Ui
 Bundle-SymbolicName: de.dubmas.modulob.migration;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: de.dubmas.modulob.migration.ui.Activator
 Bundle-Vendor: dubmas
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.emf.ecore;bundle-version="2.6.0",
- de.dubmas.modulob;bundle-version="1.0.0",
  org.eclipse.emf.compare;bundle-version="1.1.1",
  org.eclipse.emf.compare.diff;bundle-version="1.1.1",
  org.eclipse.emf.compare.match;bundle-version="1.1.1",
@@ -19,7 +17,11 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.xtend.typesystem.emf;bundle-version="1.0.1",
  org.eclipse.xtext;bundle-version="1.0.1",
  org.eclipse.emf.mwe2.launch;bundle-version="1.0.1",
- de.dubmas.modulob.generator.common;bundle-version="1.0.0"
+ de.dubmas.modulob.generator.common;bundle-version="1.0.0",
+ de.dubmas.modulob.metamodels;bundle-version="1.0.0",
+ de.dubmas.modulob.datadsl.ui;bundle-version="1.0.0",
+ org.eclipse.xtext.ui;bundle-version="2.0.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Bundle-ActivationPolicy: lazy
-Export-Package: de.dubmas.modulob.migration.transformation
+Export-Package: de.dubmas.modulob.migration.services,
+ de.dubmas.modulob.migration.services.impl,
+ de.dubmas.modulob.migration.transformation

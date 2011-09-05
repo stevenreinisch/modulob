@@ -3,11 +3,11 @@ package de.dubmas.modulob.migration.test;
 import org.eclipse.emf.mwe2.runtime.workflow.AbstractCompositeWorkflowComponent;
 import org.eclipse.emf.mwe2.runtime.workflow.IWorkflowContext;
 
-import de.dubmas.modulob.migration.model.migration.AttributeChange;
-import de.dubmas.modulob.migration.model.migration.EntityChange;
-import de.dubmas.modulob.migration.model.migration.FeatureChange;
-import de.dubmas.modulob.migration.model.migration.Migration;
-import de.dubmas.modulob.migration.model.migration.RelationChange;
+import de.dubmas.modulob.migration.AttributeChange;
+import de.dubmas.modulob.migration.EntityChange;
+import de.dubmas.modulob.migration.FeatureChange;
+import de.dubmas.modulob.migration.Migration;
+import de.dubmas.modulob.migration.RelationChange;
 
 public class MigrationPrinter extends AbstractCompositeWorkflowComponent{
 	

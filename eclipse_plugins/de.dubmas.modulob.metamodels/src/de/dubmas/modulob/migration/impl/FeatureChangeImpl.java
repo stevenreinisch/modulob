@@ -6,14 +6,18 @@
  */
 package de.dubmas.modulob.migration.impl;
 
+import de.dubmas.modulob.Feature;
+
 import de.dubmas.modulob.migration.FeatureChange;
 import de.dubmas.modulob.migration.MigrationPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,12 +27,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.dubmas.modulob.migration.impl.FeatureChangeImpl#getSourceExpression <em>Source Expression</em>}</li>
+ *   <li>{@link de.dubmas.modulob.migration.impl.FeatureChangeImpl#getSourceFeature <em>Source Feature</em>}</li>
+ *   <li>{@link de.dubmas.modulob.migration.impl.FeatureChangeImpl#getDestinationFeature <em>Destination Feature</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class FeatureChangeImpl extends ChangeImpl implements FeatureChange {
+public abstract class FeatureChangeImpl extends EObjectImpl implements FeatureChange {
 	/**
 	 * The default value of the '{@link #getSourceExpression() <em>Source Expression</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -48,6 +54,26 @@ public abstract class FeatureChangeImpl extends ChangeImpl implements FeatureCha
 	 * @ordered
 	 */
 	protected String sourceExpression = SOURCE_EXPRESSION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSourceFeature() <em>Source Feature</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSourceFeature()
+	 * @generated
+	 * @ordered
+	 */
+	protected Feature sourceFeature;
+
+	/**
+	 * The cached value of the '{@link #getDestinationFeature() <em>Destination Feature</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDestinationFeature()
+	 * @generated
+	 * @ordered
+	 */
+	protected Feature destinationFeature;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -94,11 +120,93 @@ public abstract class FeatureChangeImpl extends ChangeImpl implements FeatureCha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Feature getSourceFeature() {
+		if (sourceFeature != null && sourceFeature.eIsProxy()) {
+			InternalEObject oldSourceFeature = (InternalEObject)sourceFeature;
+			sourceFeature = (Feature)eResolveProxy(oldSourceFeature);
+			if (sourceFeature != oldSourceFeature) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MigrationPackage.FEATURE_CHANGE__SOURCE_FEATURE, oldSourceFeature, sourceFeature));
+			}
+		}
+		return sourceFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Feature basicGetSourceFeature() {
+		return sourceFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSourceFeature(Feature newSourceFeature) {
+		Feature oldSourceFeature = sourceFeature;
+		sourceFeature = newSourceFeature;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MigrationPackage.FEATURE_CHANGE__SOURCE_FEATURE, oldSourceFeature, sourceFeature));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Feature getDestinationFeature() {
+		if (destinationFeature != null && destinationFeature.eIsProxy()) {
+			InternalEObject oldDestinationFeature = (InternalEObject)destinationFeature;
+			destinationFeature = (Feature)eResolveProxy(oldDestinationFeature);
+			if (destinationFeature != oldDestinationFeature) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MigrationPackage.FEATURE_CHANGE__DESTINATION_FEATURE, oldDestinationFeature, destinationFeature));
+			}
+		}
+		return destinationFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Feature basicGetDestinationFeature() {
+		return destinationFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDestinationFeature(Feature newDestinationFeature) {
+		Feature oldDestinationFeature = destinationFeature;
+		destinationFeature = newDestinationFeature;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MigrationPackage.FEATURE_CHANGE__DESTINATION_FEATURE, oldDestinationFeature, destinationFeature));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case MigrationPackage.FEATURE_CHANGE__SOURCE_EXPRESSION:
 				return getSourceExpression();
+			case MigrationPackage.FEATURE_CHANGE__SOURCE_FEATURE:
+				if (resolve) return getSourceFeature();
+				return basicGetSourceFeature();
+			case MigrationPackage.FEATURE_CHANGE__DESTINATION_FEATURE:
+				if (resolve) return getDestinationFeature();
+				return basicGetDestinationFeature();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -113,6 +221,12 @@ public abstract class FeatureChangeImpl extends ChangeImpl implements FeatureCha
 		switch (featureID) {
 			case MigrationPackage.FEATURE_CHANGE__SOURCE_EXPRESSION:
 				setSourceExpression((String)newValue);
+				return;
+			case MigrationPackage.FEATURE_CHANGE__SOURCE_FEATURE:
+				setSourceFeature((Feature)newValue);
+				return;
+			case MigrationPackage.FEATURE_CHANGE__DESTINATION_FEATURE:
+				setDestinationFeature((Feature)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -129,6 +243,12 @@ public abstract class FeatureChangeImpl extends ChangeImpl implements FeatureCha
 			case MigrationPackage.FEATURE_CHANGE__SOURCE_EXPRESSION:
 				setSourceExpression(SOURCE_EXPRESSION_EDEFAULT);
 				return;
+			case MigrationPackage.FEATURE_CHANGE__SOURCE_FEATURE:
+				setSourceFeature((Feature)null);
+				return;
+			case MigrationPackage.FEATURE_CHANGE__DESTINATION_FEATURE:
+				setDestinationFeature((Feature)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -143,6 +263,10 @@ public abstract class FeatureChangeImpl extends ChangeImpl implements FeatureCha
 		switch (featureID) {
 			case MigrationPackage.FEATURE_CHANGE__SOURCE_EXPRESSION:
 				return SOURCE_EXPRESSION_EDEFAULT == null ? sourceExpression != null : !SOURCE_EXPRESSION_EDEFAULT.equals(sourceExpression);
+			case MigrationPackage.FEATURE_CHANGE__SOURCE_FEATURE:
+				return sourceFeature != null;
+			case MigrationPackage.FEATURE_CHANGE__DESTINATION_FEATURE:
+				return destinationFeature != null;
 		}
 		return super.eIsSet(featureID);
 	}
