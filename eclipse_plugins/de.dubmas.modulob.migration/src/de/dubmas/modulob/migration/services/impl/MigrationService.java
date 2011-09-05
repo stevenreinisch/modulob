@@ -25,6 +25,7 @@ import com.google.inject.Injector;
 
 import de.dubmas.modulob.migration.Migration;
 import de.dubmas.modulob.migration.services.IMigrationService;
+import de.dubmas.modulob.migration.services.MigrationResult;
 import de.dubmas.modulob.system.EntityModel;
 import de.dubmas.modulob.system.Module;
 import de.dubmas.modulob.ui.internal.DataDslActivator;
@@ -72,7 +73,7 @@ public class MigrationService implements IMigrationService {
 		}
 	}
 	
-	public Migration createMigrationModel(IFile sourceFile, IFile destinationFile) {
+	public MigrationResult createMigrationModel(IFile sourceFile, IFile destinationFile) {
 		 try {
 			 EntityModel source      = loadEntityModelFromFile(sourceFile);
 			 EntityModel destination = loadEntityModelFromFile(destinationFile);
@@ -90,7 +91,10 @@ public class MigrationService implements IMigrationService {
 			 Module sourceModule = source.getModule();
 			 sourceModule.setEntityModel(source);
 			 
-			 return (Migration)xf.call("transform", diffModel, sourceModule);
+			 Migration migration = (Migration)xf.call("transform", diffModel, sourceModule);  
+			 MigrationResult mr  = new MigrationResult(source.getEntities(), destination.getEntities(), migration);
+			 
+			 return mr;
 			 
 		 } catch (Exception e) {
 			 throw new RuntimeException(e);
