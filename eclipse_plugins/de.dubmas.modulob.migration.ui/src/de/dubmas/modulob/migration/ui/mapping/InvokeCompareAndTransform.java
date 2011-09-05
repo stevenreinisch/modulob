@@ -10,14 +10,16 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 
-import de.dubmas.modulob.migration.Migration;
 import de.dubmas.modulob.migration.services.IMigrationService;
+import de.dubmas.modulob.migration.services.MigrationResult;
 import de.dubmas.modulob.migration.services.impl.MigrationService;
 import de.dubmas.modulob.psee.ui.wizard.AbstractWizardPage;
 
 public class InvokeCompareAndTransform extends AbstractWizardPage implements SelectionListener{
 	
-	public static final String MIGRATION_MODEL_KEY = "migrationModel";
+	public static final String MIGRATION_RESULT_KEY     = "migrationModel";
+	public static final String SOURCE_ENTITIES_KEY      = "sourceEntities";
+	public static final String DESTINATION_ENTITIES_KEY = "destinationEntities";
 	
 	private Button invokeButton;
 	
@@ -42,21 +44,28 @@ public class InvokeCompareAndTransform extends AbstractWizardPage implements Sel
 	   
 	    setControl(mainComposite);
 	    
-	    new Label (mainComposite, SWT.NONE).
-    	setText("IMigrationService.createMigrationModel");
+	    new Label (mainComposite, SWT.NONE).setText("IMigrationService.createMigrationModel");
 	    
 	    invokeButton = new Button(mainComposite, SWT.PUSH);
 	    invokeButton.setText("Invoke");
 	    invokeButton.addSelectionListener(this);
 	}
 	
+	public void setVisible(boolean visible){
+		super.setVisible(visible);
+		
+		/*
+		 * update
+		 */
+	}
+	
 	public boolean isPageComplete() {
-		return slots.containsKey(MIGRATION_MODEL_KEY);
+		return slots.containsKey(MIGRATION_RESULT_KEY);
 	}
 	
 	@Override
 	public boolean canFlipToNextPage(){
-		return slots.containsKey(MIGRATION_MODEL_KEY);
+		return slots.containsKey(MIGRATION_RESULT_KEY);
 	}
 	
 	@Override
@@ -75,14 +84,14 @@ public class InvokeCompareAndTransform extends AbstractWizardPage implements Sel
 				IFile sourceFile      = (IFile)slots.get(EntityModelsSelectionPage.SOURCE_FILE_KEY);
 				IFile destinationFile = (IFile)slots.get(EntityModelsSelectionPage.DESTINATION_FILE_KEY);
 				
-				Migration migrationModel = migrationService.createMigrationModel(sourceFile, destinationFile);
-				slots.put(MIGRATION_MODEL_KEY, migrationModel);
+				MigrationResult mr = migrationService.createMigrationModel(sourceFile, destinationFile);
+				slots.put(MIGRATION_RESULT_KEY, mr);
 				
 			} catch (Exception e2) {
 				throw new RuntimeException(e2);
 			}
 			
-			this.getWizard().performFinish();
+			getWizard().getContainer().updateButtons();
 		}
 	}
 }
