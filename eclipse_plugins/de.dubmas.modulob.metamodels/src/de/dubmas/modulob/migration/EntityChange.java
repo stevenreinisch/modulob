@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.dubmas.modulob.migration.EntityChange#getDestinationEntity <em>Destination Entity</em>}</li>
  *   <li>{@link de.dubmas.modulob.migration.EntityChange#getAttributeChanges <em>Attribute Changes</em>}</li>
  *   <li>{@link de.dubmas.modulob.migration.EntityChange#getRelationChanges <em>Relation Changes</em>}</li>
+ *   <li>{@link de.dubmas.modulob.migration.EntityChange#getFeatureChanges <em>Feature Changes</em>}</li>
  * </ul>
  * </p>
  *
@@ -115,5 +116,21 @@ public interface EntityChange extends EObject {
 	 * @generated
 	 */
 	EList<RelationChange> getRelationChanges();
+
+	/**
+	 * Returns the value of the '<em><b>Feature Changes</b></em>' reference list.
+	 * The list contents are of type {@link de.dubmas.modulob.migration.FeatureChange}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Feature Changes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Feature Changes</em>' reference list.
+	 * @see de.dubmas.modulob.migration.MigrationPackage#getEntityChange_FeatureChanges()
+	 * @model transient="true" derived="true"
+	 * @generated
+	 */
+	EList<FeatureChange> getFeatureChanges();
 
 } // EntityChange

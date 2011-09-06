@@ -14,6 +14,8 @@
         eType="#//AttributeChange" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="relationChanges" upperBound="-1"
         eType="#//RelationChange" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="featureChanges" upperBound="-1"
+        eType="#//FeatureChange" transient="true" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FeatureChange" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

@@ -301,6 +301,15 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEntityChange_FeatureChanges() {
+		return (EReference)entityChangeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getFeatureChange() {
 		return featureChangeEClass;
 	}
@@ -503,6 +512,7 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 		createEReference(entityChangeEClass, ENTITY_CHANGE__DESTINATION_ENTITY);
 		createEReference(entityChangeEClass, ENTITY_CHANGE__ATTRIBUTE_CHANGES);
 		createEReference(entityChangeEClass, ENTITY_CHANGE__RELATION_CHANGES);
+		createEReference(entityChangeEClass, ENTITY_CHANGE__FEATURE_CHANGES);
 
 		featureChangeEClass = createEClass(FEATURE_CHANGE);
 		createEAttribute(featureChangeEClass, FEATURE_CHANGE__SOURCE_EXPRESSION);
@@ -596,6 +606,7 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 		initEReference(getEntityChange_DestinationEntity(), theModulobPackage.getEntity(), null, "destinationEntity", null, 0, 1, EntityChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityChange_AttributeChanges(), this.getAttributeChange(), null, "attributeChanges", null, 0, -1, EntityChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityChange_RelationChanges(), this.getRelationChange(), null, "relationChanges", null, 0, -1, EntityChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntityChange_FeatureChanges(), this.getFeatureChange(), null, "featureChanges", null, 0, -1, EntityChange.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(featureChangeEClass, FeatureChange.class, "FeatureChange", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFeatureChange_SourceExpression(), ecorePackage.getEString(), "sourceExpression", null, 0, 1, FeatureChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

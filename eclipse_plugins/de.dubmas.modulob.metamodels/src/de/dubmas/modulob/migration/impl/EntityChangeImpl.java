@@ -10,6 +10,7 @@ import de.dubmas.modulob.Entity;
 
 import de.dubmas.modulob.migration.AttributeChange;
 import de.dubmas.modulob.migration.EntityChange;
+import de.dubmas.modulob.migration.FeatureChange;
 import de.dubmas.modulob.migration.MigrationPackage;
 import de.dubmas.modulob.migration.RelationChange;
 
@@ -27,6 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -40,6 +42,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.dubmas.modulob.migration.impl.EntityChangeImpl#getDestinationEntity <em>Destination Entity</em>}</li>
  *   <li>{@link de.dubmas.modulob.migration.impl.EntityChangeImpl#getAttributeChanges <em>Attribute Changes</em>}</li>
  *   <li>{@link de.dubmas.modulob.migration.impl.EntityChangeImpl#getRelationChanges <em>Relation Changes</em>}</li>
+ *   <li>{@link de.dubmas.modulob.migration.impl.EntityChangeImpl#getFeatureChanges <em>Feature Changes</em>}</li>
  * </ul>
  * </p>
  *
@@ -85,6 +88,16 @@ public abstract class EntityChangeImpl extends EObjectImpl implements EntityChan
 	 * @ordered
 	 */
 	protected EList<RelationChange> relationChanges;
+
+	/**
+	 * The cached value of the '{@link #getFeatureChanges() <em>Feature Changes</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFeatureChanges()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<FeatureChange> featureChanges;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -206,6 +219,20 @@ public abstract class EntityChangeImpl extends EObjectImpl implements EntityChan
 	}
 
 	/**
+	 *
+	 */
+	public EList<FeatureChange> getFeatureChanges() {
+		if (featureChanges == null) {
+			featureChanges = new EObjectResolvingEList<FeatureChange>(FeatureChange.class, this, MigrationPackage.ENTITY_CHANGE__FEATURE_CHANGES);
+		}
+		
+		featureChanges.addAll(getAttributeChanges());
+		featureChanges.addAll(getRelationChanges());
+		
+		return featureChanges;
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -239,6 +266,8 @@ public abstract class EntityChangeImpl extends EObjectImpl implements EntityChan
 				return getAttributeChanges();
 			case MigrationPackage.ENTITY_CHANGE__RELATION_CHANGES:
 				return getRelationChanges();
+			case MigrationPackage.ENTITY_CHANGE__FEATURE_CHANGES:
+				return getFeatureChanges();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -266,6 +295,10 @@ public abstract class EntityChangeImpl extends EObjectImpl implements EntityChan
 				getRelationChanges().clear();
 				getRelationChanges().addAll((Collection<? extends RelationChange>)newValue);
 				return;
+			case MigrationPackage.ENTITY_CHANGE__FEATURE_CHANGES:
+				getFeatureChanges().clear();
+				getFeatureChanges().addAll((Collection<? extends FeatureChange>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -290,6 +323,9 @@ public abstract class EntityChangeImpl extends EObjectImpl implements EntityChan
 			case MigrationPackage.ENTITY_CHANGE__RELATION_CHANGES:
 				getRelationChanges().clear();
 				return;
+			case MigrationPackage.ENTITY_CHANGE__FEATURE_CHANGES:
+				getFeatureChanges().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -310,6 +346,8 @@ public abstract class EntityChangeImpl extends EObjectImpl implements EntityChan
 				return attributeChanges != null && !attributeChanges.isEmpty();
 			case MigrationPackage.ENTITY_CHANGE__RELATION_CHANGES:
 				return relationChanges != null && !relationChanges.isEmpty();
+			case MigrationPackage.ENTITY_CHANGE__FEATURE_CHANGES:
+				return featureChanges != null && !featureChanges.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

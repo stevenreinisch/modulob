@@ -134,13 +134,22 @@ public interface MigrationPackage extends EPackage {
 	int ENTITY_CHANGE__RELATION_CHANGES = 3;
 
 	/**
+	 * The feature id for the '<em><b>Feature Changes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_CHANGE__FEATURE_CHANGES = 4;
+
+	/**
 	 * The number of structural features of the '<em>Entity Change</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_CHANGE_FEATURE_COUNT = 4;
+	int ENTITY_CHANGE_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link de.dubmas.modulob.migration.impl.FeatureChangeImpl <em>Feature Change</em>}' class.
@@ -327,6 +336,15 @@ public interface MigrationPackage extends EPackage {
 	int ENTITY_COPIED__RELATION_CHANGES = ENTITY_CHANGE__RELATION_CHANGES;
 
 	/**
+	 * The feature id for the '<em><b>Feature Changes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_COPIED__FEATURE_CHANGES = ENTITY_CHANGE__FEATURE_CHANGES;
+
+	/**
 	 * The number of structural features of the '<em>Entity Copied</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -380,6 +398,15 @@ public interface MigrationPackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY_RENAMED__RELATION_CHANGES = ENTITY_CHANGE__RELATION_CHANGES;
+
+	/**
+	 * The feature id for the '<em><b>Feature Changes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_RENAMED__FEATURE_CHANGES = ENTITY_CHANGE__FEATURE_CHANGES;
 
 	/**
 	 * The number of structural features of the '<em>Entity Renamed</em>' class.
@@ -437,6 +464,15 @@ public interface MigrationPackage extends EPackage {
 	int ENTITY_CHANGED_FEATURES__RELATION_CHANGES = ENTITY_CHANGE__RELATION_CHANGES;
 
 	/**
+	 * The feature id for the '<em><b>Feature Changes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_CHANGED_FEATURES__FEATURE_CHANGES = ENTITY_CHANGE__FEATURE_CHANGES;
+
+	/**
 	 * The number of structural features of the '<em>Entity Changed Features</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -492,6 +528,15 @@ public interface MigrationPackage extends EPackage {
 	int ENTITY_ADDED__RELATION_CHANGES = ENTITY_CHANGE__RELATION_CHANGES;
 
 	/**
+	 * The feature id for the '<em><b>Feature Changes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ADDED__FEATURE_CHANGES = ENTITY_CHANGE__FEATURE_CHANGES;
+
+	/**
 	 * The number of structural features of the '<em>Entity Added</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -545,6 +590,15 @@ public interface MigrationPackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY_REMOVED__RELATION_CHANGES = ENTITY_CHANGE__RELATION_CHANGES;
+
+	/**
+	 * The feature id for the '<em><b>Feature Changes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_REMOVED__FEATURE_CHANGES = ENTITY_CHANGE__FEATURE_CHANGES;
 
 	/**
 	 * The number of structural features of the '<em>Entity Removed</em>' class.
@@ -1000,6 +1054,17 @@ public interface MigrationPackage extends EPackage {
 	EReference getEntityChange_RelationChanges();
 
 	/**
+	 * Returns the meta object for the reference list '{@link de.dubmas.modulob.migration.EntityChange#getFeatureChanges <em>Feature Changes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Feature Changes</em>'.
+	 * @see de.dubmas.modulob.migration.EntityChange#getFeatureChanges()
+	 * @see #getEntityChange()
+	 * @generated
+	 */
+	EReference getEntityChange_FeatureChanges();
+
+	/**
 	 * Returns the meta object for class '{@link de.dubmas.modulob.migration.FeatureChange <em>Feature Change</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1273,6 +1338,14 @@ public interface MigrationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ENTITY_CHANGE__RELATION_CHANGES = eINSTANCE.getEntityChange_RelationChanges();
+
+		/**
+		 * The meta object literal for the '<em><b>Feature Changes</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY_CHANGE__FEATURE_CHANGES = eINSTANCE.getEntityChange_FeatureChanges();
 
 		/**
 		 * The meta object literal for the '{@link de.dubmas.modulob.migration.impl.FeatureChangeImpl <em>Feature Change</em>}' class.
