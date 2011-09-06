@@ -122,7 +122,7 @@ public class ExeccontextPackageImpl extends EPackageImpl implements ExeccontextP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExecContext_CurrentEntityChange() {
+	public EReference getExecContext_DestinationEntities() {
 		return (EReference)execContextEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -131,7 +131,7 @@ public class ExeccontextPackageImpl extends EPackageImpl implements ExeccontextP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExecContext_CurrentFeatureChange() {
+	public EReference getExecContext_CurrentDestinationEntity() {
 		return (EReference)execContextEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -140,8 +140,8 @@ public class ExeccontextPackageImpl extends EPackageImpl implements ExeccontextP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getExecContext_NextFeatureChangeIndex() {
-		return (EAttribute)execContextEClass.getEStructuralFeatures().get(3);
+	public EReference getExecContext_CurrentDestinationFeature() {
+		return (EReference)execContextEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -149,7 +149,7 @@ public class ExeccontextPackageImpl extends EPackageImpl implements ExeccontextP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getExecContext_NextEntityChangeIndex() {
+	public EAttribute getExecContext_NextDestFeatureIndex() {
 		return (EAttribute)execContextEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -158,8 +158,17 @@ public class ExeccontextPackageImpl extends EPackageImpl implements ExeccontextP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getExecContext_NextDestEntityIndex() {
+		return (EAttribute)execContextEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getExecContext_Migration() {
-		return (EReference)execContextEClass.getEStructuralFeatures().get(5);
+		return (EReference)execContextEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -192,10 +201,11 @@ public class ExeccontextPackageImpl extends EPackageImpl implements ExeccontextP
 		// Create classes and their features
 		execContextEClass = createEClass(EXEC_CONTEXT);
 		createEReference(execContextEClass, EXEC_CONTEXT__SOURCE_ENTITIES);
-		createEReference(execContextEClass, EXEC_CONTEXT__CURRENT_ENTITY_CHANGE);
-		createEReference(execContextEClass, EXEC_CONTEXT__CURRENT_FEATURE_CHANGE);
-		createEAttribute(execContextEClass, EXEC_CONTEXT__NEXT_FEATURE_CHANGE_INDEX);
-		createEAttribute(execContextEClass, EXEC_CONTEXT__NEXT_ENTITY_CHANGE_INDEX);
+		createEReference(execContextEClass, EXEC_CONTEXT__DESTINATION_ENTITIES);
+		createEReference(execContextEClass, EXEC_CONTEXT__CURRENT_DESTINATION_ENTITY);
+		createEReference(execContextEClass, EXEC_CONTEXT__CURRENT_DESTINATION_FEATURE);
+		createEAttribute(execContextEClass, EXEC_CONTEXT__NEXT_DEST_FEATURE_INDEX);
+		createEAttribute(execContextEClass, EXEC_CONTEXT__NEXT_DEST_ENTITY_INDEX);
 		createEReference(execContextEClass, EXEC_CONTEXT__MIGRATION);
 	}
 
@@ -235,10 +245,11 @@ public class ExeccontextPackageImpl extends EPackageImpl implements ExeccontextP
 		// Initialize classes and features; add operations and parameters
 		initEClass(execContextEClass, ExecContext.class, "ExecContext", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExecContext_SourceEntities(), theModulobPackage.getEntity(), null, "sourceEntities", null, 0, -1, ExecContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getExecContext_CurrentEntityChange(), theMigrationPackage.getEntityChange(), null, "currentEntityChange", null, 0, 1, ExecContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getExecContext_CurrentFeatureChange(), theMigrationPackage.getFeatureChange(), null, "currentFeatureChange", null, 0, 1, ExecContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getExecContext_NextFeatureChangeIndex(), ecorePackage.getEInt(), "nextFeatureChangeIndex", null, 0, 1, ExecContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getExecContext_NextEntityChangeIndex(), ecorePackage.getEInt(), "nextEntityChangeIndex", null, 0, 1, ExecContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExecContext_DestinationEntities(), theModulobPackage.getEntity(), null, "destinationEntities", null, 0, -1, ExecContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExecContext_CurrentDestinationEntity(), theModulobPackage.getEntity(), null, "currentDestinationEntity", null, 0, 1, ExecContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExecContext_CurrentDestinationFeature(), theModulobPackage.getFeature(), null, "currentDestinationFeature", null, 0, 1, ExecContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getExecContext_NextDestFeatureIndex(), ecorePackage.getEInt(), "nextDestFeatureIndex", null, 0, 1, ExecContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getExecContext_NextDestEntityIndex(), ecorePackage.getEInt(), "nextDestEntityIndex", null, 0, 1, ExecContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExecContext_Migration(), theMigrationPackage.getMigration(), null, "migration", null, 0, 1, ExecContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource

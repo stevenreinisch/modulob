@@ -5,12 +5,31 @@ import java.util.List;
 
 import org.eclipse.core.resources.IFile;
 
+import de.dubmas.modulob.Entity;
+import de.dubmas.modulob.Feature;
+
 public class Util {
 	
 	public static List<String> fileNamesFromFiles(List<IFile> files){
 		List<String> names = new ArrayList<String>(files.size());
 		for(IFile file: files){
 			names.add(file.getName());
+		}
+		return names;
+	}
+	
+	public static List<String> namesFromEntities(List<Entity> entities){
+		List<String> names = new ArrayList<String>(entities.size());
+		for(Entity e: entities){
+			names.add(e.getName());
+		}
+		return names;
+	}
+	
+	public static List<String> namesFromFeatures(List<Feature> features){
+		List<String> names = new ArrayList<String>(features.size());
+		for(Feature e: features){
+			names.add(e.getName());
 		}
 		return names;
 	}

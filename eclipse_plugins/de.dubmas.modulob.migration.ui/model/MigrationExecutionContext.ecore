@@ -6,12 +6,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="ExecContext">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sourceEntities" upperBound="-1"
         eType="ecore:EClass ../../de.dubmas.modulob.metamodels/model/Modulob.ecore#//Entity"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="currentEntityChange" eType="ecore:EClass ../../de.dubmas.modulob.metamodels/model/Migration.ecore#//EntityChange"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="currentFeatureChange" eType="ecore:EClass ../../de.dubmas.modulob.metamodels/model/Migration.ecore#//FeatureChange"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nextFeatureChangeIndex"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nextEntityChangeIndex"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destinationEntities" upperBound="-1"
+        eType="ecore:EClass ../../de.dubmas.modulob.metamodels/model/Modulob.ecore#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="currentDestinationEntity"
+        eType="ecore:EClass ../../de.dubmas.modulob.metamodels/model/Modulob.ecore#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="currentDestinationFeature"
+        eType="ecore:EClass ../../de.dubmas.modulob.metamodels/model/Modulob.ecore#//Feature"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nextDestFeatureIndex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nextDestEntityIndex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="migration" eType="ecore:EClass ../../de.dubmas.modulob.metamodels/model/Migration.ecore#//Migration"/>
   </eClassifiers>
 </ecore:EPackage>

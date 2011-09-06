@@ -2,6 +2,7 @@ package de.dubmas.modulob.migration.ui.mapping;
 
 import java.util.List;
 
+import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
@@ -11,12 +12,14 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.xtend.util.stdlib.CloningExtensions;
 
 import de.dubmas.modulob.Entity;
 import de.dubmas.modulob.Feature;
+import de.dubmas.modulob.migration.AttributeCopied;
+import de.dubmas.modulob.migration.EntityChange;
+import de.dubmas.modulob.migration.EntityCopied;
 import de.dubmas.modulob.migration.FeatureChange;
-import de.dubmas.modulob.migration.Migration;
+import de.dubmas.modulob.migration.RelationCopied;
 import de.dubmas.modulob.migration.services.MigrationResult;
 import de.dubmas.modulob.migration.services.impl.Util;
 import de.dubmas.modulob.migration.ui.execcontext.ExecContext;
@@ -35,12 +38,14 @@ public class EntityMappingPage extends AbstractWizardPage implements SelectionLi
 	
 	private Composite copyOrChangeComposite;
 	private Button mustCopyButton;
+	private Label mustCopyLabel;
 	private Button mustChangeButton;
+	private Label mustChangeLabel;
 	
 	private Label currentFeatureLabel;
 	
 	private ExecContext execContext;
-	
+		
 	public EntityMappingPage(String pageName) {
 		super(pageName);
 	}
@@ -64,11 +69,13 @@ public class EntityMappingPage extends AbstractWizardPage implements SelectionLi
 	    mustCopyButton = new Button(copyOrChangeComposite, SWT.RADIO);
 	    mustCopyButton.setSelection(true);
 	    mustCopyButton.addSelectionListener(this);
-	    new Label (copyOrChangeComposite, SWT.NONE).setText("Copy");
+	    mustCopyLabel = new Label (copyOrChangeComposite, SWT.NONE);
+	    mustCopyLabel.setText("Copy");
 	    
 	    mustChangeButton = new Button(copyOrChangeComposite, SWT.RADIO);
 	    mustChangeButton.addSelectionListener(this);
-	    new Label (copyOrChangeComposite, SWT.NONE).setText("Change Mapping");
+	    mustChangeLabel = new Label (copyOrChangeComposite, SWT.NONE);
+	    mustChangeLabel.setText("Change Mapping");
 	    
 	    /*
 	     * The composite containing widgets for specifying
@@ -121,10 +128,65 @@ public class EntityMappingPage extends AbstractWizardPage implements SelectionLi
 		/*
 		 * update
 		 */
-		 this.setTitle(this.getTitle() + "becoming visible ...");
+		Entity currentDestEntity = execContext.getCurrentDestinationEntity();
+		List<Entity> allDestEntities = execContext.getDestinationEntities();
+		
+		String title = "Specify mapping for Entity " + 
+						currentDestEntity.getName() +
+					   " (" + (allDestEntities.indexOf(currentDestEntity) + 1) + 
+					   "/" + allDestEntities.size() +
+					   ")";
+					   
+		 this.setTitle(title);
 		 
-		 boolean isCopyChange = true;
-		 if(isCopyChange){
+		 Feature currentDestFeature = execContext.getCurrentDestinationFeature();
+		 List<Feature> allFeatures = currentDestEntity.getFeatures();
+		 
+		 String text = null;
+		 
+		 if(allFeatures.size() > 0){
+			 text = currentDestFeature.getName() + 
+				 	   " (" + (allFeatures.indexOf(currentDestFeature) + 1) +
+				 	   "/" + allFeatures.size() +
+				 	   ")";
+			 
+			 currentFeatureLabel.setText(text);
+		 } else {
+			 text = "Entity " + currentDestEntity.getName() + " has no features. Just press Next!";
+			 
+			 currentFeatureLabel = new Label(mainComposite, SWT.NONE);
+			 currentFeatureLabel.setText(text);
+			 
+			 copyOrChangeComposite.setVisible(false);
+			 featureMappingComp.setVisible(false);
+			 
+			 mainComposite.layout(true);
+			 
+			 return;
+		 }
+		 
+		 
+		 if(isCopyChange()){
+			 
+			 StringBuffer copyLabelText = new StringBuffer();
+			 copyLabelText.append("Click Next to copy ");
+			 
+			 if (currentEntityChange() instanceof EntityCopied) {
+				 copyLabelText.append("Entity ");
+				 copyLabelText.append(execContext.getCurrentDestinationEntity().getName());
+			 } else if(currentFeatureChange() instanceof AttributeCopied){
+				 copyLabelText.append("Feature ");
+				 copyLabelText.append(execContext.getCurrentDestinationFeature().getName());
+			 } else if(currentFeatureChange() instanceof RelationCopied){
+				 copyLabelText.append("Feature ");
+				 copyLabelText.append(execContext.getCurrentDestinationFeature().getName());
+			 }
+			 
+			 copyLabelText.append(". It has not been changed.");
+			 
+			 mustCopyLabel.setText(copyLabelText.toString());
+			 mustChangeLabel.setText("Change Mapping if you do not want to make a copy.");
+			 
 			 copyOrChangeComposite.setVisible(true);
 			 featureMappingComp.setVisible(false);
 		 } else {
@@ -135,12 +197,154 @@ public class EntityMappingPage extends AbstractWizardPage implements SelectionLi
 		 mainComposite.layout(true);
 	}
 	
-	private void setState(){
-		setExecContext();
+	@Override
+	public boolean isPageComplete() {
+		//TODO: show warnings to user if sourceFeature and sourceExpression not specified
 		
-		List<String> entityNames = Util.namesFromEntities(execContext.getSourceEntities());
-	    String[] items           = entityNames.toArray(new String[entityNames.size()]);
-	    sourceEntityDropDown.setItems (items);
+		boolean isFeatureChangeSpecified = true;
+		
+		return isFeatureChangeSpecified;
+	}
+	
+	@Override
+	public boolean canFlipToNextPage(){
+		
+		boolean canFlip = true;
+		
+		return canFlip;
+	}
+	
+	@Override
+	public IWizardPage getNextPage()
+	{
+		IWizardPage page = null;
+		
+		/*
+		 * Does the user has mapped the last destination entity
+		 * and its last feature?
+		 */
+		if ((execContext.getNextDestEntityIndex() 
+			>= 
+			execContext.getDestinationEntities().size())
+			&&
+			execContext.getNextDestFeatureIndex()
+			>=
+			execContext.getCurrentDestinationEntity().getFeatures().size())
+		{
+			page = new OverviewPage("");
+		} 
+		else 
+		{
+			/*
+			 * Does the user want to copy?
+			 */
+			if(mustCopyButton.isVisible() && mustCopyButton.getSelection()){
+				/*
+				 * ... copy an entity or a feature?
+				 * 
+				 * If the user choose to copy an entity,
+				 * the currently mapped feature must be
+				 * the first and the current change must
+				 * be of type EntityCopied.
+				 */
+				int featureIndex = 
+						execContext.getCurrentDestinationEntity().
+										getFeatures().indexOf(execContext.
+													getCurrentDestinationFeature());
+				if(featureIndex == 0
+				   &&
+				   currentEntityChange() instanceof EntityCopied)
+				{
+					/*
+					 *  Set nextDestFeatureIndex to the number
+					 *  of all features of the current destination
+					 *  entity such that the new instance of this page
+					 *  will set force the execContext to pick the next
+					 *  entity.
+					 */
+					int newFeatureIndex = 
+							execContext.getCurrentDestinationEntity().
+								getFeatures().size();
+					execContext.setNextDestFeatureIndex(newFeatureIndex);
+				}
+				
+				/*
+				 * The current change is not of type EntityCopied.
+				 * The user just wants to copy the current feature.
+				 * We do not need to do anything here because the new
+				 * instance of this page will pick the next feature in
+				 * its setExecContext() method.
+				 */
+			}
+			
+			page = new EntityMappingPage("");
+		}
+		page.setWizard(getWizard());
+		return page;
+	}
+	
+	private boolean isCopyChange(){
+		
+		EntityChange ec = currentEntityChange();
+		
+		if(ec == null){
+			return false;
+		}
+		
+		if (ec instanceof EntityCopied) {
+			return true;
+		}
+		
+		FeatureChange fc = currentFeatureChange();
+		
+		if (fc instanceof AttributeCopied) {
+			return true;
+		}
+		
+		if (fc instanceof RelationCopied) {
+			return true;
+		}
+		
+		return false;
+	}
+	
+	private EntityChange currentEntityChange(){
+		Entity destEntity = execContext.getCurrentDestinationEntity();
+		for(EntityChange ec: execContext.getMigration().getEntityChanges()){
+			if(ec.getDestinationEntity() != null
+			   &&
+			   ec.getDestinationEntity().getName().equals(destEntity.getName()))
+			{
+				return ec;
+			}
+		}
+		return null;
+	}
+	
+	private FeatureChange currentFeatureChange(){
+		EntityChange currentEC = currentEntityChange();
+		Feature destFeature    = execContext.getCurrentDestinationFeature();
+		
+		for(FeatureChange fc: currentEC.getFeatureChanges()){
+			if(fc.getDestinationFeature() != null
+			   &&
+			   fc.getDestinationFeature().getName().equals(destFeature.getName()))
+			{
+				return fc;
+			}
+		}
+		
+		return null;
+	}
+	
+	private void setState(){
+		if(getWizard().getContainer().getCurrentPage() == this){
+			setExecContext();
+		
+			List<String> entityNames = Util.namesFromEntities(execContext.getSourceEntities());
+	    	String[] items           = entityNames.toArray(new String[entityNames.size()]);
+	    	sourceEntityDropDown.setItems (items);
+		}
 	}
 	
 	private void setExecContext(){
@@ -152,83 +356,81 @@ public class EntityMappingPage extends AbstractWizardPage implements SelectionLi
 			execContext = ExeccontextFactory.eINSTANCE.createExecContext();
 			MigrationResult mr = (MigrationResult) slots.get(InvokeCompareAndTransform.MIGRATION_RESULT_KEY);
 			execContext.getSourceEntities().addAll(mr.getSourceEntities());
-			
-			/*
-			 * clone the migration because we want to manipulate it
-			 */
-			execContext.setMigration((Migration)CloningExtensions.clone(mr.getMigration()));
+			execContext.getDestinationEntities().addAll(mr.getDestinationEntities());
+			execContext.setMigration(mr.getMigration());
 			
 			pickNextEntityChange();
 			
 			slots.put(EXEC_CONTEXT_KEY, execContext);
-		 } 
-		 
-		execContext = (ExecContext) slots.get(EXEC_CONTEXT_KEY);
+		 } else {
+			 /*
+			  * An instance of this page has already been shown.
+			  */
+			 execContext = (ExecContext) slots.get(EXEC_CONTEXT_KEY);
 
-		/*
-		 * do we have to pick the next entity?
-		 * .. do we have handled all feature changes of the current entityChange?
-		 */
-		if(execContext.getNextFeatureChangeIndex() == 
-		   execContext.getCurrentEntityChange().getFeatureChanges().size())
-		{
-			pickNextEntityChange();
-		}
-		
-		pickNextFeatureChange();
+			 /*
+			  * do we have to pick the next entity?
+			  * .. do we have handled all features of the current entity?
+			  */
+			 if(execContext.getNextDestFeatureIndex() == 
+					 execContext.getCurrentDestinationEntity().getFeatures().size())
+			 {
+				 pickNextEntityChange();
+			 } else{
+				 pickNextFeatureChange();
+			 }
+		 }
 	}
 	
 	private void pickNextEntityChange(){
 		
-		if(execContext.getCurrentEntityChange() != null){
-		   /*
-		 	* remove the current
-		 	*/
-			int currentDestEntityIndex = 
-					execContext.getMigration().getEntityChanges().
-						indexOf(execContext.getCurrentEntityChange());
-		
-			if (currentDestEntityIndex < 0) {
-				throw new RuntimeException(
-					"Cannot find current entityChange. You have to tell me, when I am finished!");
-			}
-		
-			execContext.getMigration().getEntityChanges().remove(currentDestEntityIndex);
+		if(execContext.getCurrentDestinationEntity() == null){
+			execContext.setNextDestEntityIndex(0);
 		}
 		
 		/*
-		 * always pick the last unmapped entity
+		 * If a new entityChange is picked, always
+		 * choose its first featureChange.
 		 */
-		int entityIndex = execContext.getMigration().getEntityChanges().size() - 1;
+		execContext.setNextDestFeatureIndex(0);
 		
-		if (entityIndex < 0) {
+		if (execContext.getNextDestEntityIndex() >= 
+			execContext.getDestinationEntities().size()) 
+		{
 			throw new RuntimeException(
 					"all entityChanges handled! Cannot continue. You have to tell me, when I am finished!");
 		}
 		
+		int entityIndex  = execContext.getNextDestEntityIndex();
+		int featureIndex = execContext.getNextDestFeatureIndex();
 		
-		execContext.setCurrentEntityChange(execContext.getMigration().getEntityChanges().get(entityIndex));
-		execContext.setNextFeatureChangeIndex(0);
+		execContext.setCurrentDestinationEntity((execContext.getDestinationEntities().get(entityIndex)));
+		execContext.setNextDestEntityIndex(++entityIndex);
+		
+		if(featureIndex < execContext.getCurrentDestinationEntity().getFeatures().size()){
+			execContext.setCurrentDestinationFeature(execContext.getCurrentDestinationEntity().getFeatures().get(featureIndex));
+			execContext.setNextDestFeatureIndex(++featureIndex);
+		} else {
+			/*
+			 * The current entity may not have any feature.
+			 */
+			execContext.setCurrentDestinationFeature(null);
+		}
 	}
 	
-	/**
-	 * Get the next feature from the current destination entity
-	 */
 	private void pickNextFeatureChange(){
-		int featureChangeIndex = execContext.getNextFeatureChangeIndex();
+		int featureChangeIndex = execContext.getNextDestFeatureIndex();
 		
-		if(featureChangeIndex >= execContext.getCurrentEntityChange().getFeatureChanges().size()){
-			throw new RuntimeException("I have already mapped all features of mapping: " + 
-										execContext.getCurrentEntityChange().getSourceEntity().getName() + 
-										" -> " + 
-										execContext.getCurrentEntityChange().getDestinationEntity().getName());
+		if(featureChangeIndex >= execContext.getCurrentDestinationEntity().getFeatures().size()){
+			throw new RuntimeException("I have already mapped all features of entity: " + 
+										execContext.getCurrentDestinationEntity());
 		}
 		
-		FeatureChange currentFeatureChange = 
-				execContext.getCurrentEntityChange().getFeatureChanges().get(featureChangeIndex);
+		Feature currentFeatureChange = 
+				execContext.getCurrentDestinationEntity().getFeatures().get(featureChangeIndex);
 		
-		execContext.setCurrentFeatureChange(currentFeatureChange);
-		execContext.setNextFeatureChangeIndex(featureChangeIndex + 1);
+		execContext.setCurrentDestinationFeature(currentFeatureChange);
+		execContext.setNextDestFeatureIndex(++featureChangeIndex);
 	}
 
 	@Override
@@ -254,6 +456,15 @@ public class EntityMappingPage extends AbstractWizardPage implements SelectionLi
 			if(index > -1)
 			{
 				Entity entity = execContext.getSourceEntities().get(index);
+				
+//				EntityChange currentEC = currentEntityChange();
+//				if(currentEC != null){
+//					currentEC.setSourceEntity(entity);
+//				}
+				
+				/*
+				 * Show user features of currently selected source entity.
+				 */
 				List<String> featureNames = Util.namesFromFeatures(entity.getFeatures());
 				String[] items = featureNames.toArray(new String[featureNames.size()]);
 			    sourceFeatureDropDown.setItems (items);
@@ -265,11 +476,18 @@ public class EntityMappingPage extends AbstractWizardPage implements SelectionLi
 			int featureIndex = ((Combo)e.getSource()).getSelectionIndex();
 			if(featureIndex > -1)
 			{
-				int entityIndex = sourceEntityDropDown.getSelectionIndex();
-				Entity entity = execContext.getSourceEntities().get(entityIndex);
-				Feature f = entity.getFeatures().get(featureIndex);
-				//TODO: set feature as destinationFeature on current featureChange
+				int entityIndex       = sourceEntityDropDown.getSelectionIndex();
+				Entity entity         = execContext.getSourceEntities().get(entityIndex);
+				Feature sourceFeature = entity.getFeatures().get(featureIndex);
+				
+				FeatureChange currentFC = currentFeatureChange();
+				if(currentFC != null){
+					currentFC.setDestinationFeature(sourceFeature);
+					currentFC.setSourceExpression(sourceFeature.getName());
+				}
 			}
 		}
+		
+		getWizard().getContainer().updateButtons();
 	}
 }

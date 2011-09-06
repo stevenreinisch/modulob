@@ -109,6 +109,7 @@ public class EntityModelsSelectionPage extends AbstractWizardPage implements Sel
 	    destinationFilesDropDown.addSelectionListener(this);
 	}
 	
+	@Override
 	public boolean isPageComplete() {
 		return slots.containsKey(SOURCE_FILE_KEY) && 
 			   slots.containsKey(DESTINATION_FILE_KEY);

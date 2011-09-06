@@ -26,10 +26,11 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getSourceEntities <em>Source Entities</em>}</li>
- *   <li>{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getCurrentEntityChange <em>Current Entity Change</em>}</li>
- *   <li>{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getCurrentFeatureChange <em>Current Feature Change</em>}</li>
- *   <li>{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getNextFeatureChangeIndex <em>Next Feature Change Index</em>}</li>
- *   <li>{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getNextEntityChangeIndex <em>Next Entity Change Index</em>}</li>
+ *   <li>{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getDestinationEntities <em>Destination Entities</em>}</li>
+ *   <li>{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getCurrentDestinationEntity <em>Current Destination Entity</em>}</li>
+ *   <li>{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getCurrentDestinationFeature <em>Current Destination Feature</em>}</li>
+ *   <li>{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getNextDestFeatureIndex <em>Next Dest Feature Index</em>}</li>
+ *   <li>{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getNextDestEntityIndex <em>Next Dest Entity Index</em>}</li>
  *   <li>{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getMigration <em>Migration</em>}</li>
  * </ul>
  * </p>
@@ -56,108 +57,124 @@ public interface ExecContext extends EObject {
 	EList<Entity> getSourceEntities();
 
 	/**
-	 * Returns the value of the '<em><b>Current Entity Change</b></em>' reference.
+	 * Returns the value of the '<em><b>Destination Entities</b></em>' reference list.
+	 * The list contents are of type {@link de.dubmas.modulob.Entity}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Current Entity Change</em>' reference isn't clear,
+	 * If the meaning of the '<em>Destination Entities</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Current Entity Change</em>' reference.
-	 * @see #setCurrentEntityChange(EntityChange)
-	 * @see de.dubmas.modulob.migration.ui.execcontext.ExeccontextPackage#getExecContext_CurrentEntityChange()
+	 * @return the value of the '<em>Destination Entities</em>' reference list.
+	 * @see de.dubmas.modulob.migration.ui.execcontext.ExeccontextPackage#getExecContext_DestinationEntities()
 	 * @model
 	 * @generated
 	 */
-	EntityChange getCurrentEntityChange();
+	EList<Entity> getDestinationEntities();
 
 	/**
-	 * Sets the value of the '{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getCurrentEntityChange <em>Current Entity Change</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Current Entity Change</em>' reference.
-	 * @see #getCurrentEntityChange()
-	 * @generated
-	 */
-	void setCurrentEntityChange(EntityChange value);
-
-	/**
-	 * Returns the value of the '<em><b>Current Feature Change</b></em>' reference.
+	 * Returns the value of the '<em><b>Current Destination Entity</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Current Feature Change</em>' reference isn't clear,
+	 * If the meaning of the '<em>Current Destination Entity</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Current Feature Change</em>' reference.
-	 * @see #setCurrentFeatureChange(FeatureChange)
-	 * @see de.dubmas.modulob.migration.ui.execcontext.ExeccontextPackage#getExecContext_CurrentFeatureChange()
+	 * @return the value of the '<em>Current Destination Entity</em>' reference.
+	 * @see #setCurrentDestinationEntity(Entity)
+	 * @see de.dubmas.modulob.migration.ui.execcontext.ExeccontextPackage#getExecContext_CurrentDestinationEntity()
 	 * @model
 	 * @generated
 	 */
-	FeatureChange getCurrentFeatureChange();
+	Entity getCurrentDestinationEntity();
 
 	/**
-	 * Sets the value of the '{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getCurrentFeatureChange <em>Current Feature Change</em>}' reference.
+	 * Sets the value of the '{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getCurrentDestinationEntity <em>Current Destination Entity</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Current Feature Change</em>' reference.
-	 * @see #getCurrentFeatureChange()
+	 * @param value the new value of the '<em>Current Destination Entity</em>' reference.
+	 * @see #getCurrentDestinationEntity()
 	 * @generated
 	 */
-	void setCurrentFeatureChange(FeatureChange value);
+	void setCurrentDestinationEntity(Entity value);
 
 	/**
-	 * Returns the value of the '<em><b>Next Feature Change Index</b></em>' attribute.
+	 * Returns the value of the '<em><b>Current Destination Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Next Feature Change Index</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Current Destination Feature</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Next Feature Change Index</em>' attribute.
-	 * @see #setNextFeatureChangeIndex(int)
-	 * @see de.dubmas.modulob.migration.ui.execcontext.ExeccontextPackage#getExecContext_NextFeatureChangeIndex()
+	 * @return the value of the '<em>Current Destination Feature</em>' reference.
+	 * @see #setCurrentDestinationFeature(Feature)
+	 * @see de.dubmas.modulob.migration.ui.execcontext.ExeccontextPackage#getExecContext_CurrentDestinationFeature()
 	 * @model
 	 * @generated
 	 */
-	int getNextFeatureChangeIndex();
+	Feature getCurrentDestinationFeature();
 
 	/**
-	 * Sets the value of the '{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getNextFeatureChangeIndex <em>Next Feature Change Index</em>}' attribute.
+	 * Sets the value of the '{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getCurrentDestinationFeature <em>Current Destination Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Next Feature Change Index</em>' attribute.
-	 * @see #getNextFeatureChangeIndex()
+	 * @param value the new value of the '<em>Current Destination Feature</em>' reference.
+	 * @see #getCurrentDestinationFeature()
 	 * @generated
 	 */
-	void setNextFeatureChangeIndex(int value);
+	void setCurrentDestinationFeature(Feature value);
 
 	/**
-	 * Returns the value of the '<em><b>Next Entity Change Index</b></em>' attribute.
+	 * Returns the value of the '<em><b>Next Dest Feature Index</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Next Entity Change Index</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Next Dest Feature Index</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Next Entity Change Index</em>' attribute.
-	 * @see #setNextEntityChangeIndex(int)
-	 * @see de.dubmas.modulob.migration.ui.execcontext.ExeccontextPackage#getExecContext_NextEntityChangeIndex()
+	 * @return the value of the '<em>Next Dest Feature Index</em>' attribute.
+	 * @see #setNextDestFeatureIndex(int)
+	 * @see de.dubmas.modulob.migration.ui.execcontext.ExeccontextPackage#getExecContext_NextDestFeatureIndex()
 	 * @model
 	 * @generated
 	 */
-	int getNextEntityChangeIndex();
+	int getNextDestFeatureIndex();
 
 	/**
-	 * Sets the value of the '{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getNextEntityChangeIndex <em>Next Entity Change Index</em>}' attribute.
+	 * Sets the value of the '{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getNextDestFeatureIndex <em>Next Dest Feature Index</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Next Entity Change Index</em>' attribute.
-	 * @see #getNextEntityChangeIndex()
+	 * @param value the new value of the '<em>Next Dest Feature Index</em>' attribute.
+	 * @see #getNextDestFeatureIndex()
 	 * @generated
 	 */
-	void setNextEntityChangeIndex(int value);
+	void setNextDestFeatureIndex(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Next Dest Entity Index</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Next Dest Entity Index</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Next Dest Entity Index</em>' attribute.
+	 * @see #setNextDestEntityIndex(int)
+	 * @see de.dubmas.modulob.migration.ui.execcontext.ExeccontextPackage#getExecContext_NextDestEntityIndex()
+	 * @model
+	 * @generated
+	 */
+	int getNextDestEntityIndex();
+
+	/**
+	 * Sets the value of the '{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getNextDestEntityIndex <em>Next Dest Entity Index</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Next Dest Entity Index</em>' attribute.
+	 * @see #getNextDestEntityIndex()
+	 * @generated
+	 */
+	void setNextDestEntityIndex(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Migration</b></em>' reference.

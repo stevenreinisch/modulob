@@ -1,6 +1,7 @@
 package de.dubmas.modulob.migration.ui.mapping;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
@@ -60,12 +61,23 @@ public class InvokeCompareAndTransform extends AbstractWizardPage implements Sel
 	}
 	
 	public boolean isPageComplete() {
-		return slots.containsKey(MIGRATION_RESULT_KEY);
+		boolean isComplete = slots.containsKey(MIGRATION_RESULT_KEY); 
+		
+		return isComplete;
+	}
+	
+	@Override
+	public IWizardPage getNextPage(){
+		IWizardPage page = new EntityMappingPage("");
+		page.setWizard(getWizard());
+		return page;
 	}
 	
 	@Override
 	public boolean canFlipToNextPage(){
-		return slots.containsKey(MIGRATION_RESULT_KEY);
+		boolean canFlip = slots.containsKey(MIGRATION_RESULT_KEY);
+		
+		return canFlip;
 	}
 	
 	@Override

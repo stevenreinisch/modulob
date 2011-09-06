@@ -79,40 +79,49 @@ public interface ExeccontextPackage extends EPackage {
 	int EXEC_CONTEXT__SOURCE_ENTITIES = 0;
 
 	/**
-	 * The feature id for the '<em><b>Current Entity Change</b></em>' reference.
+	 * The feature id for the '<em><b>Destination Entities</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXEC_CONTEXT__CURRENT_ENTITY_CHANGE = 1;
+	int EXEC_CONTEXT__DESTINATION_ENTITIES = 1;
 
 	/**
-	 * The feature id for the '<em><b>Current Feature Change</b></em>' reference.
+	 * The feature id for the '<em><b>Current Destination Entity</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXEC_CONTEXT__CURRENT_FEATURE_CHANGE = 2;
+	int EXEC_CONTEXT__CURRENT_DESTINATION_ENTITY = 2;
 
 	/**
-	 * The feature id for the '<em><b>Next Feature Change Index</b></em>' attribute.
+	 * The feature id for the '<em><b>Current Destination Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXEC_CONTEXT__NEXT_FEATURE_CHANGE_INDEX = 3;
+	int EXEC_CONTEXT__CURRENT_DESTINATION_FEATURE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Next Entity Change Index</b></em>' attribute.
+	 * The feature id for the '<em><b>Next Dest Feature Index</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXEC_CONTEXT__NEXT_ENTITY_CHANGE_INDEX = 4;
+	int EXEC_CONTEXT__NEXT_DEST_FEATURE_INDEX = 4;
+
+	/**
+	 * The feature id for the '<em><b>Next Dest Entity Index</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXEC_CONTEXT__NEXT_DEST_ENTITY_INDEX = 5;
 
 	/**
 	 * The feature id for the '<em><b>Migration</b></em>' reference.
@@ -121,7 +130,7 @@ public interface ExeccontextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXEC_CONTEXT__MIGRATION = 5;
+	int EXEC_CONTEXT__MIGRATION = 6;
 
 	/**
 	 * The number of structural features of the '<em>Exec Context</em>' class.
@@ -130,7 +139,7 @@ public interface ExeccontextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXEC_CONTEXT_FEATURE_COUNT = 6;
+	int EXEC_CONTEXT_FEATURE_COUNT = 7;
 
 
 	/**
@@ -155,48 +164,59 @@ public interface ExeccontextPackage extends EPackage {
 	EReference getExecContext_SourceEntities();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getCurrentEntityChange <em>Current Entity Change</em>}'.
+	 * Returns the meta object for the reference list '{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getDestinationEntities <em>Destination Entities</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Current Entity Change</em>'.
-	 * @see de.dubmas.modulob.migration.ui.execcontext.ExecContext#getCurrentEntityChange()
+	 * @return the meta object for the reference list '<em>Destination Entities</em>'.
+	 * @see de.dubmas.modulob.migration.ui.execcontext.ExecContext#getDestinationEntities()
 	 * @see #getExecContext()
 	 * @generated
 	 */
-	EReference getExecContext_CurrentEntityChange();
+	EReference getExecContext_DestinationEntities();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getCurrentFeatureChange <em>Current Feature Change</em>}'.
+	 * Returns the meta object for the reference '{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getCurrentDestinationEntity <em>Current Destination Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Current Feature Change</em>'.
-	 * @see de.dubmas.modulob.migration.ui.execcontext.ExecContext#getCurrentFeatureChange()
+	 * @return the meta object for the reference '<em>Current Destination Entity</em>'.
+	 * @see de.dubmas.modulob.migration.ui.execcontext.ExecContext#getCurrentDestinationEntity()
 	 * @see #getExecContext()
 	 * @generated
 	 */
-	EReference getExecContext_CurrentFeatureChange();
+	EReference getExecContext_CurrentDestinationEntity();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getNextFeatureChangeIndex <em>Next Feature Change Index</em>}'.
+	 * Returns the meta object for the reference '{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getCurrentDestinationFeature <em>Current Destination Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Next Feature Change Index</em>'.
-	 * @see de.dubmas.modulob.migration.ui.execcontext.ExecContext#getNextFeatureChangeIndex()
+	 * @return the meta object for the reference '<em>Current Destination Feature</em>'.
+	 * @see de.dubmas.modulob.migration.ui.execcontext.ExecContext#getCurrentDestinationFeature()
 	 * @see #getExecContext()
 	 * @generated
 	 */
-	EAttribute getExecContext_NextFeatureChangeIndex();
+	EReference getExecContext_CurrentDestinationFeature();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getNextEntityChangeIndex <em>Next Entity Change Index</em>}'.
+	 * Returns the meta object for the attribute '{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getNextDestFeatureIndex <em>Next Dest Feature Index</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Next Entity Change Index</em>'.
-	 * @see de.dubmas.modulob.migration.ui.execcontext.ExecContext#getNextEntityChangeIndex()
+	 * @return the meta object for the attribute '<em>Next Dest Feature Index</em>'.
+	 * @see de.dubmas.modulob.migration.ui.execcontext.ExecContext#getNextDestFeatureIndex()
 	 * @see #getExecContext()
 	 * @generated
 	 */
-	EAttribute getExecContext_NextEntityChangeIndex();
+	EAttribute getExecContext_NextDestFeatureIndex();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getNextDestEntityIndex <em>Next Dest Entity Index</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Next Dest Entity Index</em>'.
+	 * @see de.dubmas.modulob.migration.ui.execcontext.ExecContext#getNextDestEntityIndex()
+	 * @see #getExecContext()
+	 * @generated
+	 */
+	EAttribute getExecContext_NextDestEntityIndex();
 
 	/**
 	 * Returns the meta object for the reference '{@link de.dubmas.modulob.migration.ui.execcontext.ExecContext#getMigration <em>Migration</em>}'.
@@ -250,36 +270,44 @@ public interface ExeccontextPackage extends EPackage {
 		EReference EXEC_CONTEXT__SOURCE_ENTITIES = eINSTANCE.getExecContext_SourceEntities();
 
 		/**
-		 * The meta object literal for the '<em><b>Current Entity Change</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Destination Entities</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXEC_CONTEXT__CURRENT_ENTITY_CHANGE = eINSTANCE.getExecContext_CurrentEntityChange();
+		EReference EXEC_CONTEXT__DESTINATION_ENTITIES = eINSTANCE.getExecContext_DestinationEntities();
 
 		/**
-		 * The meta object literal for the '<em><b>Current Feature Change</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Current Destination Entity</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXEC_CONTEXT__CURRENT_FEATURE_CHANGE = eINSTANCE.getExecContext_CurrentFeatureChange();
+		EReference EXEC_CONTEXT__CURRENT_DESTINATION_ENTITY = eINSTANCE.getExecContext_CurrentDestinationEntity();
 
 		/**
-		 * The meta object literal for the '<em><b>Next Feature Change Index</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Current Destination Feature</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EXEC_CONTEXT__NEXT_FEATURE_CHANGE_INDEX = eINSTANCE.getExecContext_NextFeatureChangeIndex();
+		EReference EXEC_CONTEXT__CURRENT_DESTINATION_FEATURE = eINSTANCE.getExecContext_CurrentDestinationFeature();
 
 		/**
-		 * The meta object literal for the '<em><b>Next Entity Change Index</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Next Dest Feature Index</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EXEC_CONTEXT__NEXT_ENTITY_CHANGE_INDEX = eINSTANCE.getExecContext_NextEntityChangeIndex();
+		EAttribute EXEC_CONTEXT__NEXT_DEST_FEATURE_INDEX = eINSTANCE.getExecContext_NextDestFeatureIndex();
+
+		/**
+		 * The meta object literal for the '<em><b>Next Dest Entity Index</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXEC_CONTEXT__NEXT_DEST_ENTITY_INDEX = eINSTANCE.getExecContext_NextDestEntityIndex();
 
 		/**
 		 * The meta object literal for the '<em><b>Migration</b></em>' reference feature.
