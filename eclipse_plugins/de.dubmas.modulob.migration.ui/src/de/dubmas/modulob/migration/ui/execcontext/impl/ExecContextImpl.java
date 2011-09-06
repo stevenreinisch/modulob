@@ -7,6 +7,8 @@
 package de.dubmas.modulob.migration.ui.execcontext.impl;
 
 import de.dubmas.modulob.Entity;
+import de.dubmas.modulob.migration.EntityChange;
+import de.dubmas.modulob.migration.FeatureChange;
 import de.dubmas.modulob.Feature;
 
 import de.dubmas.modulob.migration.Migration;
@@ -36,11 +38,10 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.dubmas.modulob.migration.ui.execcontext.impl.ExecContextImpl#getSourceEntities <em>Source Entities</em>}</li>
- *   <li>{@link de.dubmas.modulob.migration.ui.execcontext.impl.ExecContextImpl#getUnmappedDestEntities <em>Unmapped Dest Entities</em>}</li>
- *   <li>{@link de.dubmas.modulob.migration.ui.execcontext.impl.ExecContextImpl#getCurrentDestEntity <em>Current Dest Entity</em>}</li>
- *   <li>{@link de.dubmas.modulob.migration.ui.execcontext.impl.ExecContextImpl#getCurrentDestFeature <em>Current Dest Feature</em>}</li>
- *   <li>{@link de.dubmas.modulob.migration.ui.execcontext.impl.ExecContextImpl#getNextDestFeatureIndex <em>Next Dest Feature Index</em>}</li>
- *   <li>{@link de.dubmas.modulob.migration.ui.execcontext.impl.ExecContextImpl#getNumOfDestEntities <em>Num Of Dest Entities</em>}</li>
+ *   <li>{@link de.dubmas.modulob.migration.ui.execcontext.impl.ExecContextImpl#getCurrentEntityChange <em>Current Entity Change</em>}</li>
+ *   <li>{@link de.dubmas.modulob.migration.ui.execcontext.impl.ExecContextImpl#getCurrentFeatureChange <em>Current Feature Change</em>}</li>
+ *   <li>{@link de.dubmas.modulob.migration.ui.execcontext.impl.ExecContextImpl#getNextFeatureChangeIndex <em>Next Feature Change Index</em>}</li>
+ *   <li>{@link de.dubmas.modulob.migration.ui.execcontext.impl.ExecContextImpl#getNextEntityChangeIndex <em>Next Entity Change Index</em>}</li>
  *   <li>{@link de.dubmas.modulob.migration.ui.execcontext.impl.ExecContextImpl#getMigration <em>Migration</em>}</li>
  * </ul>
  * </p>
@@ -59,74 +60,64 @@ public class ExecContextImpl extends EObjectImpl implements ExecContext {
 	protected EList<Entity> sourceEntities;
 
 	/**
-	 * The cached value of the '{@link #getUnmappedDestEntities() <em>Unmapped Dest Entities</em>}' reference list.
+	 * The cached value of the '{@link #getCurrentEntityChange() <em>Current Entity Change</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUnmappedDestEntities()
+	 * @see #getCurrentEntityChange()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Entity> unmappedDestEntities;
+	protected EntityChange currentEntityChange;
 
 	/**
-	 * The cached value of the '{@link #getCurrentDestEntity() <em>Current Dest Entity</em>}' reference.
+	 * The cached value of the '{@link #getCurrentFeatureChange() <em>Current Feature Change</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCurrentDestEntity()
+	 * @see #getCurrentFeatureChange()
 	 * @generated
 	 * @ordered
 	 */
-	protected Entity currentDestEntity;
+	protected FeatureChange currentFeatureChange;
 
 	/**
-	 * The cached value of the '{@link #getCurrentDestFeature() <em>Current Dest Feature</em>}' reference.
+	 * The default value of the '{@link #getNextFeatureChangeIndex() <em>Next Feature Change Index</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCurrentDestFeature()
+	 * @see #getNextFeatureChangeIndex()
 	 * @generated
 	 * @ordered
 	 */
-	protected Feature currentDestFeature;
+	protected static final int NEXT_FEATURE_CHANGE_INDEX_EDEFAULT = 0;
 
 	/**
-	 * The default value of the '{@link #getNextDestFeatureIndex() <em>Next Dest Feature Index</em>}' attribute.
+	 * The cached value of the '{@link #getNextFeatureChangeIndex() <em>Next Feature Change Index</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNextDestFeatureIndex()
+	 * @see #getNextFeatureChangeIndex()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int NEXT_DEST_FEATURE_INDEX_EDEFAULT = 0;
+	protected int nextFeatureChangeIndex = NEXT_FEATURE_CHANGE_INDEX_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getNextDestFeatureIndex() <em>Next Dest Feature Index</em>}' attribute.
+	 * The default value of the '{@link #getNextEntityChangeIndex() <em>Next Entity Change Index</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNextDestFeatureIndex()
+	 * @see #getNextEntityChangeIndex()
 	 * @generated
 	 * @ordered
 	 */
-	protected int nextDestFeatureIndex = NEXT_DEST_FEATURE_INDEX_EDEFAULT;
+	protected static final int NEXT_ENTITY_CHANGE_INDEX_EDEFAULT = 0;
 
 	/**
-	 * The default value of the '{@link #getNumOfDestEntities() <em>Num Of Dest Entities</em>}' attribute.
+	 * The cached value of the '{@link #getNextEntityChangeIndex() <em>Next Entity Change Index</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNumOfDestEntities()
+	 * @see #getNextEntityChangeIndex()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int NUM_OF_DEST_ENTITIES_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getNumOfDestEntities() <em>Num Of Dest Entities</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNumOfDestEntities()
-	 * @generated
-	 * @ordered
-	 */
-	protected int numOfDestEntities = NUM_OF_DEST_ENTITIES_EDEFAULT;
+	protected int nextEntityChangeIndex = NEXT_ENTITY_CHANGE_INDEX_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getMigration() <em>Migration</em>}' reference.
@@ -174,28 +165,16 @@ public class ExecContextImpl extends EObjectImpl implements ExecContext {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Entity> getUnmappedDestEntities() {
-		if (unmappedDestEntities == null) {
-			unmappedDestEntities = new EObjectResolvingEList<Entity>(Entity.class, this, ExeccontextPackage.EXEC_CONTEXT__UNMAPPED_DEST_ENTITIES);
-		}
-		return unmappedDestEntities;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Entity getCurrentDestEntity() {
-		if (currentDestEntity != null && currentDestEntity.eIsProxy()) {
-			InternalEObject oldCurrentDestEntity = (InternalEObject)currentDestEntity;
-			currentDestEntity = (Entity)eResolveProxy(oldCurrentDestEntity);
-			if (currentDestEntity != oldCurrentDestEntity) {
+	public EntityChange getCurrentEntityChange() {
+		if (currentEntityChange != null && currentEntityChange.eIsProxy()) {
+			InternalEObject oldCurrentEntityChange = (InternalEObject)currentEntityChange;
+			currentEntityChange = (EntityChange)eResolveProxy(oldCurrentEntityChange);
+			if (currentEntityChange != oldCurrentEntityChange) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExeccontextPackage.EXEC_CONTEXT__CURRENT_DEST_ENTITY, oldCurrentDestEntity, currentDestEntity));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExeccontextPackage.EXEC_CONTEXT__CURRENT_ENTITY_CHANGE, oldCurrentEntityChange, currentEntityChange));
 			}
 		}
-		return currentDestEntity;
+		return currentEntityChange;
 	}
 
 	/**
@@ -203,8 +182,8 @@ public class ExecContextImpl extends EObjectImpl implements ExecContext {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Entity basicGetCurrentDestEntity() {
-		return currentDestEntity;
+	public EntityChange basicGetCurrentEntityChange() {
+		return currentEntityChange;
 	}
 
 	/**
@@ -212,11 +191,11 @@ public class ExecContextImpl extends EObjectImpl implements ExecContext {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCurrentDestEntity(Entity newCurrentDestEntity) {
-		Entity oldCurrentDestEntity = currentDestEntity;
-		currentDestEntity = newCurrentDestEntity;
+	public void setCurrentEntityChange(EntityChange newCurrentEntityChange) {
+		EntityChange oldCurrentEntityChange = currentEntityChange;
+		currentEntityChange = newCurrentEntityChange;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExeccontextPackage.EXEC_CONTEXT__CURRENT_DEST_ENTITY, oldCurrentDestEntity, currentDestEntity));
+			eNotify(new ENotificationImpl(this, Notification.SET, ExeccontextPackage.EXEC_CONTEXT__CURRENT_ENTITY_CHANGE, oldCurrentEntityChange, currentEntityChange));
 	}
 
 	/**
@@ -224,16 +203,16 @@ public class ExecContextImpl extends EObjectImpl implements ExecContext {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Feature getCurrentDestFeature() {
-		if (currentDestFeature != null && currentDestFeature.eIsProxy()) {
-			InternalEObject oldCurrentDestFeature = (InternalEObject)currentDestFeature;
-			currentDestFeature = (Feature)eResolveProxy(oldCurrentDestFeature);
-			if (currentDestFeature != oldCurrentDestFeature) {
+	public FeatureChange getCurrentFeatureChange() {
+		if (currentFeatureChange != null && currentFeatureChange.eIsProxy()) {
+			InternalEObject oldCurrentFeatureChange = (InternalEObject)currentFeatureChange;
+			currentFeatureChange = (FeatureChange)eResolveProxy(oldCurrentFeatureChange);
+			if (currentFeatureChange != oldCurrentFeatureChange) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExeccontextPackage.EXEC_CONTEXT__CURRENT_DEST_FEATURE, oldCurrentDestFeature, currentDestFeature));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExeccontextPackage.EXEC_CONTEXT__CURRENT_FEATURE_CHANGE, oldCurrentFeatureChange, currentFeatureChange));
 			}
 		}
-		return currentDestFeature;
+		return currentFeatureChange;
 	}
 
 	/**
@@ -241,8 +220,8 @@ public class ExecContextImpl extends EObjectImpl implements ExecContext {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Feature basicGetCurrentDestFeature() {
-		return currentDestFeature;
+	public FeatureChange basicGetCurrentFeatureChange() {
+		return currentFeatureChange;
 	}
 
 	/**
@@ -250,11 +229,11 @@ public class ExecContextImpl extends EObjectImpl implements ExecContext {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCurrentDestFeature(Feature newCurrentDestFeature) {
-		Feature oldCurrentDestFeature = currentDestFeature;
-		currentDestFeature = newCurrentDestFeature;
+	public void setCurrentFeatureChange(FeatureChange newCurrentFeatureChange) {
+		FeatureChange oldCurrentFeatureChange = currentFeatureChange;
+		currentFeatureChange = newCurrentFeatureChange;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExeccontextPackage.EXEC_CONTEXT__CURRENT_DEST_FEATURE, oldCurrentDestFeature, currentDestFeature));
+			eNotify(new ENotificationImpl(this, Notification.SET, ExeccontextPackage.EXEC_CONTEXT__CURRENT_FEATURE_CHANGE, oldCurrentFeatureChange, currentFeatureChange));
 	}
 
 	/**
@@ -262,8 +241,8 @@ public class ExecContextImpl extends EObjectImpl implements ExecContext {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getNextDestFeatureIndex() {
-		return nextDestFeatureIndex;
+	public int getNextFeatureChangeIndex() {
+		return nextFeatureChangeIndex;
 	}
 
 	/**
@@ -271,11 +250,11 @@ public class ExecContextImpl extends EObjectImpl implements ExecContext {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNextDestFeatureIndex(int newNextDestFeatureIndex) {
-		int oldNextDestFeatureIndex = nextDestFeatureIndex;
-		nextDestFeatureIndex = newNextDestFeatureIndex;
+	public void setNextFeatureChangeIndex(int newNextFeatureChangeIndex) {
+		int oldNextFeatureChangeIndex = nextFeatureChangeIndex;
+		nextFeatureChangeIndex = newNextFeatureChangeIndex;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExeccontextPackage.EXEC_CONTEXT__NEXT_DEST_FEATURE_INDEX, oldNextDestFeatureIndex, nextDestFeatureIndex));
+			eNotify(new ENotificationImpl(this, Notification.SET, ExeccontextPackage.EXEC_CONTEXT__NEXT_FEATURE_CHANGE_INDEX, oldNextFeatureChangeIndex, nextFeatureChangeIndex));
 	}
 
 	/**
@@ -283,8 +262,8 @@ public class ExecContextImpl extends EObjectImpl implements ExecContext {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getNumOfDestEntities() {
-		return numOfDestEntities;
+	public int getNextEntityChangeIndex() {
+		return nextEntityChangeIndex;
 	}
 
 	/**
@@ -292,11 +271,11 @@ public class ExecContextImpl extends EObjectImpl implements ExecContext {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNumOfDestEntities(int newNumOfDestEntities) {
-		int oldNumOfDestEntities = numOfDestEntities;
-		numOfDestEntities = newNumOfDestEntities;
+	public void setNextEntityChangeIndex(int newNextEntityChangeIndex) {
+		int oldNextEntityChangeIndex = nextEntityChangeIndex;
+		nextEntityChangeIndex = newNextEntityChangeIndex;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExeccontextPackage.EXEC_CONTEXT__NUM_OF_DEST_ENTITIES, oldNumOfDestEntities, numOfDestEntities));
+			eNotify(new ENotificationImpl(this, Notification.SET, ExeccontextPackage.EXEC_CONTEXT__NEXT_ENTITY_CHANGE_INDEX, oldNextEntityChangeIndex, nextEntityChangeIndex));
 	}
 
 	/**
@@ -347,18 +326,16 @@ public class ExecContextImpl extends EObjectImpl implements ExecContext {
 		switch (featureID) {
 			case ExeccontextPackage.EXEC_CONTEXT__SOURCE_ENTITIES:
 				return getSourceEntities();
-			case ExeccontextPackage.EXEC_CONTEXT__UNMAPPED_DEST_ENTITIES:
-				return getUnmappedDestEntities();
-			case ExeccontextPackage.EXEC_CONTEXT__CURRENT_DEST_ENTITY:
-				if (resolve) return getCurrentDestEntity();
-				return basicGetCurrentDestEntity();
-			case ExeccontextPackage.EXEC_CONTEXT__CURRENT_DEST_FEATURE:
-				if (resolve) return getCurrentDestFeature();
-				return basicGetCurrentDestFeature();
-			case ExeccontextPackage.EXEC_CONTEXT__NEXT_DEST_FEATURE_INDEX:
-				return getNextDestFeatureIndex();
-			case ExeccontextPackage.EXEC_CONTEXT__NUM_OF_DEST_ENTITIES:
-				return getNumOfDestEntities();
+			case ExeccontextPackage.EXEC_CONTEXT__CURRENT_ENTITY_CHANGE:
+				if (resolve) return getCurrentEntityChange();
+				return basicGetCurrentEntityChange();
+			case ExeccontextPackage.EXEC_CONTEXT__CURRENT_FEATURE_CHANGE:
+				if (resolve) return getCurrentFeatureChange();
+				return basicGetCurrentFeatureChange();
+			case ExeccontextPackage.EXEC_CONTEXT__NEXT_FEATURE_CHANGE_INDEX:
+				return getNextFeatureChangeIndex();
+			case ExeccontextPackage.EXEC_CONTEXT__NEXT_ENTITY_CHANGE_INDEX:
+				return getNextEntityChangeIndex();
 			case ExeccontextPackage.EXEC_CONTEXT__MIGRATION:
 				if (resolve) return getMigration();
 				return basicGetMigration();
@@ -379,21 +356,17 @@ public class ExecContextImpl extends EObjectImpl implements ExecContext {
 				getSourceEntities().clear();
 				getSourceEntities().addAll((Collection<? extends Entity>)newValue);
 				return;
-			case ExeccontextPackage.EXEC_CONTEXT__UNMAPPED_DEST_ENTITIES:
-				getUnmappedDestEntities().clear();
-				getUnmappedDestEntities().addAll((Collection<? extends Entity>)newValue);
+			case ExeccontextPackage.EXEC_CONTEXT__CURRENT_ENTITY_CHANGE:
+				setCurrentEntityChange((EntityChange)newValue);
 				return;
-			case ExeccontextPackage.EXEC_CONTEXT__CURRENT_DEST_ENTITY:
-				setCurrentDestEntity((Entity)newValue);
+			case ExeccontextPackage.EXEC_CONTEXT__CURRENT_FEATURE_CHANGE:
+				setCurrentFeatureChange((FeatureChange)newValue);
 				return;
-			case ExeccontextPackage.EXEC_CONTEXT__CURRENT_DEST_FEATURE:
-				setCurrentDestFeature((Feature)newValue);
+			case ExeccontextPackage.EXEC_CONTEXT__NEXT_FEATURE_CHANGE_INDEX:
+				setNextFeatureChangeIndex((Integer)newValue);
 				return;
-			case ExeccontextPackage.EXEC_CONTEXT__NEXT_DEST_FEATURE_INDEX:
-				setNextDestFeatureIndex((Integer)newValue);
-				return;
-			case ExeccontextPackage.EXEC_CONTEXT__NUM_OF_DEST_ENTITIES:
-				setNumOfDestEntities((Integer)newValue);
+			case ExeccontextPackage.EXEC_CONTEXT__NEXT_ENTITY_CHANGE_INDEX:
+				setNextEntityChangeIndex((Integer)newValue);
 				return;
 			case ExeccontextPackage.EXEC_CONTEXT__MIGRATION:
 				setMigration((Migration)newValue);
@@ -413,20 +386,17 @@ public class ExecContextImpl extends EObjectImpl implements ExecContext {
 			case ExeccontextPackage.EXEC_CONTEXT__SOURCE_ENTITIES:
 				getSourceEntities().clear();
 				return;
-			case ExeccontextPackage.EXEC_CONTEXT__UNMAPPED_DEST_ENTITIES:
-				getUnmappedDestEntities().clear();
+			case ExeccontextPackage.EXEC_CONTEXT__CURRENT_ENTITY_CHANGE:
+				setCurrentEntityChange((EntityChange)null);
 				return;
-			case ExeccontextPackage.EXEC_CONTEXT__CURRENT_DEST_ENTITY:
-				setCurrentDestEntity((Entity)null);
+			case ExeccontextPackage.EXEC_CONTEXT__CURRENT_FEATURE_CHANGE:
+				setCurrentFeatureChange((FeatureChange)null);
 				return;
-			case ExeccontextPackage.EXEC_CONTEXT__CURRENT_DEST_FEATURE:
-				setCurrentDestFeature((Feature)null);
+			case ExeccontextPackage.EXEC_CONTEXT__NEXT_FEATURE_CHANGE_INDEX:
+				setNextFeatureChangeIndex(NEXT_FEATURE_CHANGE_INDEX_EDEFAULT);
 				return;
-			case ExeccontextPackage.EXEC_CONTEXT__NEXT_DEST_FEATURE_INDEX:
-				setNextDestFeatureIndex(NEXT_DEST_FEATURE_INDEX_EDEFAULT);
-				return;
-			case ExeccontextPackage.EXEC_CONTEXT__NUM_OF_DEST_ENTITIES:
-				setNumOfDestEntities(NUM_OF_DEST_ENTITIES_EDEFAULT);
+			case ExeccontextPackage.EXEC_CONTEXT__NEXT_ENTITY_CHANGE_INDEX:
+				setNextEntityChangeIndex(NEXT_ENTITY_CHANGE_INDEX_EDEFAULT);
 				return;
 			case ExeccontextPackage.EXEC_CONTEXT__MIGRATION:
 				setMigration((Migration)null);
@@ -445,16 +415,14 @@ public class ExecContextImpl extends EObjectImpl implements ExecContext {
 		switch (featureID) {
 			case ExeccontextPackage.EXEC_CONTEXT__SOURCE_ENTITIES:
 				return sourceEntities != null && !sourceEntities.isEmpty();
-			case ExeccontextPackage.EXEC_CONTEXT__UNMAPPED_DEST_ENTITIES:
-				return unmappedDestEntities != null && !unmappedDestEntities.isEmpty();
-			case ExeccontextPackage.EXEC_CONTEXT__CURRENT_DEST_ENTITY:
-				return currentDestEntity != null;
-			case ExeccontextPackage.EXEC_CONTEXT__CURRENT_DEST_FEATURE:
-				return currentDestFeature != null;
-			case ExeccontextPackage.EXEC_CONTEXT__NEXT_DEST_FEATURE_INDEX:
-				return nextDestFeatureIndex != NEXT_DEST_FEATURE_INDEX_EDEFAULT;
-			case ExeccontextPackage.EXEC_CONTEXT__NUM_OF_DEST_ENTITIES:
-				return numOfDestEntities != NUM_OF_DEST_ENTITIES_EDEFAULT;
+			case ExeccontextPackage.EXEC_CONTEXT__CURRENT_ENTITY_CHANGE:
+				return currentEntityChange != null;
+			case ExeccontextPackage.EXEC_CONTEXT__CURRENT_FEATURE_CHANGE:
+				return currentFeatureChange != null;
+			case ExeccontextPackage.EXEC_CONTEXT__NEXT_FEATURE_CHANGE_INDEX:
+				return nextFeatureChangeIndex != NEXT_FEATURE_CHANGE_INDEX_EDEFAULT;
+			case ExeccontextPackage.EXEC_CONTEXT__NEXT_ENTITY_CHANGE_INDEX:
+				return nextEntityChangeIndex != NEXT_ENTITY_CHANGE_INDEX_EDEFAULT;
 			case ExeccontextPackage.EXEC_CONTEXT__MIGRATION:
 				return migration != null;
 		}
@@ -471,10 +439,10 @@ public class ExecContextImpl extends EObjectImpl implements ExecContext {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (nextDestFeatureIndex: ");
-		result.append(nextDestFeatureIndex);
-		result.append(", numOfDestEntities: ");
-		result.append(numOfDestEntities);
+		result.append(" (nextFeatureChangeIndex: ");
+		result.append(nextFeatureChangeIndex);
+		result.append(", nextEntityChangeIndex: ");
+		result.append(nextEntityChangeIndex);
 		result.append(')');
 		return result.toString();
 	}
