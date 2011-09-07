@@ -50,7 +50,7 @@ public class MigrationService implements IMigrationService {
 			 * change file extension of old version's file
 			 */
 			IPath destination = new Path(oldVersionFile.getFullPath() + "_v" + oldVersion);
-			oldVersionFile.move(destination, false, null);
+			oldVersionFile.copy(destination, false, null);
 				
 			/*
 			 * copy old entity model into new file 
