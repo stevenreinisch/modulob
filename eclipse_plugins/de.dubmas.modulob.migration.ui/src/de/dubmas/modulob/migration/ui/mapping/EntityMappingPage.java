@@ -1,6 +1,9 @@
 package de.dubmas.modulob.migration.ui.mapping;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.swt.SWT;
@@ -25,6 +28,7 @@ import de.dubmas.modulob.migration.services.impl.Util;
 import de.dubmas.modulob.migration.ui.execcontext.ExecContext;
 import de.dubmas.modulob.migration.ui.execcontext.ExeccontextFactory;
 import de.dubmas.modulob.psee.ui.wizard.AbstractWizardPage;
+import de.dubmas.modulob.types.Primitive;
 
 public class EntityMappingPage extends AbstractWizardPage implements SelectionListener{
 
@@ -192,6 +196,20 @@ public class EntityMappingPage extends AbstractWizardPage implements SelectionLi
 		 } else {
 			 copyOrChangeComposite.setVisible(false);
 			 featureMappingComp.setVisible(true);
+		 }
+		 
+		 /*
+		  * If the user has already specified the first featureMapping
+		  * for the current destination entity, preselect the previously
+		  * selected source entity. This is because of the constraint that
+		  * a destination entity can only be associated with one source 
+		  * entity.
+		  */
+		 if(execContext.getNextDestFeatureIndex() > 1){
+			 Entity currentSourceEntity = currentEntityChange().getSourceEntity();
+			 sourceEntityDropDown.setItems (new String[]{currentSourceEntity.getName()});
+			 
+			 showPossibleFeatures(currentSourceEntity);
 		 }
 		 
 		 mainComposite.layout(true);
@@ -443,6 +461,18 @@ public class EntityMappingPage extends AbstractWizardPage implements SelectionLi
 		onEvent(e);
 	}
 	
+	private void showPossibleFeatures(Entity entity){
+//		List<String> featureNames = Util.namesFromFeatures(entity.getFeatures());
+//		String[] items = featureNames.toArray(new String[featureNames.size()]);
+		
+		Map<String, Feature> featureMap = new HashMap<String, Feature>(); 
+		keyPathComputation(entity, new ArrayList<Entity>(10), featureMap, "");
+		
+		String[] items = featureMap.keySet().toArray(new String[featureMap.keySet().size()]);
+		
+    	sourceFeatureDropDown.setItems (items);
+	}
+	
 	private void onEvent(SelectionEvent e){
 		if(e.getSource() == mustCopyButton ||
 		   e.getSource() == mustCopyButton)
@@ -452,24 +482,26 @@ public class EntityMappingPage extends AbstractWizardPage implements SelectionLi
 		} 
 		else if(e.getSource() == sourceEntityDropDown)
 		{
-			int index = ((Combo)e.getSource()).getSelectionIndex();
-			if(index > -1)
-			{
-				Entity entity = execContext.getSourceEntities().get(index);
-				
-//				EntityChange currentEC = currentEntityChange();
-//				if(currentEC != null){
-//					currentEC.setSourceEntity(entity);
-//				}
-				
-				/*
-				 * Show user features of currently selected source entity.
-				 */
-				List<String> featureNames = Util.namesFromFeatures(entity.getFeatures());
-				String[] items = featureNames.toArray(new String[featureNames.size()]);
-			    sourceFeatureDropDown.setItems (items);
-			}
+			/*
+			 * Only allow the selection of a source entity if
+			 * the user specifies the first featureMapping
+			 * for the current destination entity.
+			 */
+			if(execContext.getNextDestFeatureIndex() == 1){
 			
+				int index = ((Combo)e.getSource()).getSelectionIndex();
+				if(index > -1)
+				{
+					Entity entity   = execContext.getSourceEntities().get(index);
+					EntityChange ec = currentEntityChange();
+					ec.setSourceEntity(entity);
+				
+					/*
+				 	 * Show user features of currently selected source entity.
+				 	 */
+					showPossibleFeatures(entity);
+				}
+			}
 		} 
 		else if(e.getSource() == sourceFeatureDropDown)
 		{
@@ -483,11 +515,80 @@ public class EntityMappingPage extends AbstractWizardPage implements SelectionLi
 				FeatureChange currentFC = currentFeatureChange();
 				if(currentFC != null){
 					currentFC.setDestinationFeature(sourceFeature);
+					//TODO: set keypath expression from selection as sourceExpr.
 					currentFC.setSourceExpression(sourceFeature.getName());
 				}
 			}
 		}
 		
 		getWizard().getContainer().updateButtons();
+	}
+	
+	/**
+	 * 
+	 * @param e
+	 * @param processedEntities
+	 * @param featureMap
+	 * @param prefix can be null
+	 */
+	private void keyPathComputation(Entity e, 
+									List<Entity> processedEntities, 
+									Map<String, Feature> featureMap, 
+									String prefix)
+	{
+		if(processedEntities.contains(e)){
+			return;
+		}
+		
+		processedEntities.add(e);
+		
+		prefix = (prefix == null) ? "" : prefix;
+		
+		for(Feature f: primitiveFeature(e)){
+			featureMap.put(featureNameWithPrefix(f, prefix), f);
+		}
+		for(Feature f: entityFeature(e)){
+			featureMap.put(featureNameWithPrefix(f, prefix), f);
+		}
+		
+		/*
+		 * We can also navigate along our relations to other entities 
+		 * (a.k.a "entityfeatures"). So fasten your seat belt and get
+		 * ready to dive into recursion! 
+		 */
+		for(Feature f: entityFeature(e)){
+			keyPathComputation((Entity)f.getType().getReferenced(), 
+					            processedEntities, 
+					            featureMap, 
+					            featureNameWithPrefix(f, prefix));
+		}
+	}
+	
+	private String featureNameWithPrefix(Feature f, String prefix){
+		if(prefix == null || prefix.equals("")){
+			return f.getName();
+		}
+		
+		return prefix + "." + f.getName();
+	}
+	
+	private List<Feature> primitiveFeature(Entity e){
+		List<Feature> result = new ArrayList<Feature>(e.getFeatures().size());
+		for(Feature f: e.getFeatures()){
+			if (f.getType().getReferenced() instanceof Primitive) {
+				result.add(f);
+			}
+		}
+		return result;
+	}
+	
+	private List<Feature> entityFeature(Entity e){
+		List<Feature> result = new ArrayList<Feature>(e.getFeatures().size());
+		for(Feature f: e.getFeatures()){
+			if (f.getType().getReferenced() instanceof Entity) {
+				result.add(f);
+			}
+		}
+		return result;
 	}
 }
