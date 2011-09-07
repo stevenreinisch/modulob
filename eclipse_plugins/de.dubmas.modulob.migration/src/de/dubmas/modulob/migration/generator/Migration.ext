@@ -1,0 +1,55 @@
+import modulob;
+import migration;
+
+extension de::dubmas::modulob::generator::templates::Types;
+extension de::dubmas::modulob::generator::templates::DataContainer;
+extension de::dubmas::modulob::generator::templates::coredata::CoreDataExtensions;
+
+/*
+ * Do not generate migration code for:
+ * - EntityRemoved
+ * - EntityAdded if no sourceEntity is specified (=> there is no datasource specified)
+ */
+relevantEntityChanges(List[EntityChange] allChanges):
+	allChanges.select(ec | !EntityRemoved.isInstance(ec) 
+							&& 
+							(EntityAdded.isInstance(ec) 
+							 ?
+							 ec.sourceEntity != null
+							 :
+							 true
+							)
+					 )
+;
+
+relevantAttributeChanges(EntityChange ec):
+	ec.attributeChanges.select(ac | !AttributeRemoved.isInstance(ac)
+									&&
+									(AttributeAdded.isInstance(ac) 
+							 		?
+							 		ac.sourceFeature != null
+							 		:
+							 		true
+									)
+							  )
+;
+
+relevantRelationChanges(EntityChange ec):
+	ec.relationChanges.select(rc | !RelationRemoved.isInstance(rc)
+									&&
+									(RelationAdded.isInstance(rc) 
+							 		?
+							 		rc.sourceFeature != null
+							 		:
+							 		true
+									)
+							  )
+;
+
+cached mappingName(EntityChange ec):
+	ec.sourceEntity.entityName() + "To" + ec.destinationEntity.entityName()
+;
+
+cached mappingName(FeatureChange fc):
+	((EntityChange)fc.eContainer).sourceEntity.entityName() + fc.sourceFeature.name + "Mapping"
+;

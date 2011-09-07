@@ -1,0 +1,88 @@
+«IMPORT system»
+«IMPORT migration»
+
+«EXTENSION de::dubmas::modulob::migration::generator::Migration»
+«EXTENSION de::dubmas::modulob::generator::templates::DataContainer»
+«EXTENSION de::dubmas::modulob::generator::templates::coredata::CoreDataExtensions»
+
+«DEFINE main(Module oldModule) FOR Migration»
+	«EXPAND header(oldModule) FOR this»
+	«EXPAND impl(oldModule) FOR this»
+«ENDDEFINE»
+
+«DEFINE header(Module oldModule) FOR Migration»
+	«FILE oldModule.name + "Migration.h"»
+	
+	#import "OBMigrationAbstractMigration.h"
+	
+	@interface «oldModule.name + "Migration"»: OBMigrationAbstractMigration{}
+	@end
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE impl(Module oldModule) FOR Migration»
+	«FILE oldModule.name + "Migration.m"»
+	#import "«oldModule.name + "Migration.h"»"
+	
+	@implementation «oldModule.name + "Migration"»
+		
+		/*
+		 * @return: NSEntityMapping*[]
+		 */
+		- (NSArray*) entityMappings
+		{
+			«IF this.entityChanges.relevantEntityChanges().size > 0»
+				«EXPAND entityMapping FOREACH this.entityChanges.relevantEntityChanges()»
+			
+				NSMutableArray *entityMappings = [NSMutableArray arrayWithObjects:
+					«FOREACH this.entityChanges.relevantEntityChanges() AS ec SEPARATOR ","»«ec.mappingName()»«ENDFOREACH»,
+				nil
+				];
+				
+				return entityMappings;
+			«ELSE»
+				return [NSArray array];
+			«ENDIF»
+		}
+		
+		
+	@end
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE entityMapping FOR EntityChange»
+	NSEntityMapping *«this.mappingName()» = [[NSEntityMapping new] autorelease];
+	[«this.mappingName()» setName:@"«this.mappingName()»"];
+	[«this.mappingName()» setMappingType:NSTransformEntityMappingType];
+	[«this.mappingName()» setSourceEntityName:@"«this.sourceEntity.entityName()»"];
+	[«this.mappingName()» setDestinationEntityName:@"«this.destinationEntity.entityName()»"];
+	[«this.mappingName()» setSourceEntityVersionHash:[self.sourceEntityVersionHashes objectForKey:@"«this.sourceEntity.entityName()»"]];
+	[«this.mappingName()» setDestinationEntityVersionHash:[self.destinationEntityVersionHashes objectForKey:@"«this.destinationEntity.entityName()»"]];
+	[«this.mappingName()» setEntityMigrationPolicyClassName:@"OBMigrationStandardMigrationPolicy"];
+	
+	//build expression for fetching instances to be migrated
+	NSExpression *«this.mappingName()»SourceExpression = [self sourceExpressionForEntity:@"«this.sourceEntity.entityName()»"];
+	[«this.mappingName()» setSourceExpression:«this.mappingName()»SourceExpression];
+	
+	«EXPAND propertyMapping FOREACH this.relevantAttributeChanges()»
+	«EXPAND propertyMapping FOREACH this.relevantRelationChanges()»
+	
+	«IF this.relevantAttributeChanges().size > 0»
+		[«this.mappingName()» setAttributeMappings:[NSArray arrayWithObjects:
+			«FOREACH this.relevantAttributeChanges() AS ac SEPARATOR ","»«ac.mappingName()»«ENDFOREACH»,
+		nil]];
+	«ENDIF»
+	
+	«IF this.relevantRelationChanges().size > 0»
+		[«this.mappingName()» setRelationshipMappings:[NSArray arrayWithObjects:
+			«FOREACH this.relevantRelationChanges() AS rc SEPARATOR ","»«rc.mappingName()»«ENDFOREACH»,
+		nil]];
+	«ENDIF»
+	
+«ENDDEFINE»
+
+«DEFINE propertyMapping FOR FeatureChange»
+	NSPropertyMapping *«this.mappingName()» = [[NSPropertyMapping new] autorelease];
+	[«this.mappingName()» setName:@"«this.destinationFeature.name»"];
+	[«this.mappingName()» setValueExpression:[NSExpression expressionForKeyPath:@"«this.sourceFeature.name»"]];
+«ENDDEFINE»
