@@ -45,6 +45,10 @@ var notificationModelSlot = 'notificationModelSlot'
 
 Workflow {
 	
+	component = org.eclipse.emf.mwe.utils.DirectoryCleaner{
+		directory = targetDir
+	}
+	
 	component = org.eclipse.xtext.mwe.Reader{
 		path = modelPath
 		
