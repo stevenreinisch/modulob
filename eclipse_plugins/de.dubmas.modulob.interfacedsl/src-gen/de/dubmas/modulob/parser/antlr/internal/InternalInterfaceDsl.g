@@ -136,7 +136,7 @@ ruleInterfaceModel returns [EObject current=null]
 	    }
 
 )
-)+)
+)*)
 ;
 
 

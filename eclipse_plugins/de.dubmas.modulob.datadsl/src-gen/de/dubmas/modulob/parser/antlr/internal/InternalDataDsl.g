@@ -137,7 +137,7 @@ ruleEntityModel returns [EObject current=null]
 	    }
 
 )
-)+)
+)*)
 ;
 
 

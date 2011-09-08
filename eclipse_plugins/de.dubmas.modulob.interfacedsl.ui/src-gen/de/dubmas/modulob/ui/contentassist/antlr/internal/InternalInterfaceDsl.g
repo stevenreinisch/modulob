@@ -648,16 +648,9 @@ rule__InterfaceModel__Group__4__Impl
     }
 :
 (
-(
-{ before(grammarAccess.getInterfaceModelAccess().getInterfacesAssignment_4()); }
-(rule__InterfaceModel__InterfacesAssignment_4)
-{ after(grammarAccess.getInterfaceModelAccess().getInterfacesAssignment_4()); }
-)
-(
 { before(grammarAccess.getInterfaceModelAccess().getInterfacesAssignment_4()); }
 (rule__InterfaceModel__InterfacesAssignment_4)*
 { after(grammarAccess.getInterfaceModelAccess().getInterfacesAssignment_4()); }
-)
 )
 
 ;

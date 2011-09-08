@@ -128,7 +128,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEntityModel"
-    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:77:1: ruleEntityModel returns [EObject current=null] : (otherlv_0= 'entities for module' ( ( ruleQualifiedName ) ) otherlv_2= 'version' ( (lv_version_3_0= RULE_STRING ) ) ( (lv_entities_4_0= ruleEntity ) )+ ) ;
+    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:77:1: ruleEntityModel returns [EObject current=null] : (otherlv_0= 'entities for module' ( ( ruleQualifiedName ) ) otherlv_2= 'version' ( (lv_version_3_0= RULE_STRING ) ) ( (lv_entities_4_0= ruleEntity ) )* ) ;
     public final EObject ruleEntityModel() throws RecognitionException {
         EObject current = null;
 
@@ -141,11 +141,11 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:80:28: ( (otherlv_0= 'entities for module' ( ( ruleQualifiedName ) ) otherlv_2= 'version' ( (lv_version_3_0= RULE_STRING ) ) ( (lv_entities_4_0= ruleEntity ) )+ ) )
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:81:1: (otherlv_0= 'entities for module' ( ( ruleQualifiedName ) ) otherlv_2= 'version' ( (lv_version_3_0= RULE_STRING ) ) ( (lv_entities_4_0= ruleEntity ) )+ )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:80:28: ( (otherlv_0= 'entities for module' ( ( ruleQualifiedName ) ) otherlv_2= 'version' ( (lv_version_3_0= RULE_STRING ) ) ( (lv_entities_4_0= ruleEntity ) )* ) )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:81:1: (otherlv_0= 'entities for module' ( ( ruleQualifiedName ) ) otherlv_2= 'version' ( (lv_version_3_0= RULE_STRING ) ) ( (lv_entities_4_0= ruleEntity ) )* )
             {
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:81:1: (otherlv_0= 'entities for module' ( ( ruleQualifiedName ) ) otherlv_2= 'version' ( (lv_version_3_0= RULE_STRING ) ) ( (lv_entities_4_0= ruleEntity ) )+ )
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:81:3: otherlv_0= 'entities for module' ( ( ruleQualifiedName ) ) otherlv_2= 'version' ( (lv_version_3_0= RULE_STRING ) ) ( (lv_entities_4_0= ruleEntity ) )+
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:81:1: (otherlv_0= 'entities for module' ( ( ruleQualifiedName ) ) otherlv_2= 'version' ( (lv_version_3_0= RULE_STRING ) ) ( (lv_entities_4_0= ruleEntity ) )* )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:81:3: otherlv_0= 'entities for module' ( ( ruleQualifiedName ) ) otherlv_2= 'version' ( (lv_version_3_0= RULE_STRING ) ) ( (lv_entities_4_0= ruleEntity ) )*
             {
             otherlv_0=(Token)match(input,11,FOLLOW_11_in_ruleEntityModel122); 
 
@@ -209,8 +209,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:122:2: ( (lv_entities_4_0= ruleEntity ) )+
-            int cnt1=0;
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:122:2: ( (lv_entities_4_0= ruleEntity ) )*
             loop1:
             do {
                 int alt1=2;
@@ -255,12 +254,8 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt1 >= 1 ) break loop1;
-                        EarlyExitException eee =
-                            new EarlyExitException(1, input);
-                        throw eee;
+            	    break loop1;
                 }
-                cnt1++;
             } while (true);
 
 
@@ -2351,7 +2346,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_11_in_ruleEntityModel122 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_ruleEntityModel145 = new BitSet(new long[]{0x0000000000001000L});
     public static final BitSet FOLLOW_12_in_ruleEntityModel157 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleEntityModel174 = new BitSet(new long[]{0x0000000000046000L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleEntityModel174 = new BitSet(new long[]{0x0000000000046002L});
     public static final BitSet FOLLOW_ruleEntity_in_ruleEntityModel200 = new BitSet(new long[]{0x0000000000046002L});
     public static final BitSet FOLLOW_ruleEntity_in_entryRuleEntity237 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleEntity247 = new BitSet(new long[]{0x0000000000000002L});

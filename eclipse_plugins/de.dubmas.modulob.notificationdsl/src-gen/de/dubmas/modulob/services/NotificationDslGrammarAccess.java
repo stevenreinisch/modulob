@@ -32,10 +32,10 @@ public class NotificationDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//NotificationModel returns system::NotificationModel:
 		//	"notifications for module" module=[system::Module|QualifiedName] "version" version=STRING
-		//	notifications+=Notification+;
+		//	notifications+=Notification*;
 		public ParserRule getRule() { return rule; }
 
-		//"notifications for module" module=[system::Module|QualifiedName] "version" version=STRING notifications+=Notification+
+		//"notifications for module" module=[system::Module|QualifiedName] "version" version=STRING notifications+=Notification*
 		public Group getGroup() { return cGroup; }
 
 		//"notifications for module"
@@ -59,7 +59,7 @@ public class NotificationDslGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getVersionSTRINGTerminalRuleCall_3_0() { return cVersionSTRINGTerminalRuleCall_3_0; }
 
-		//notifications+=Notification+
+		//notifications+=Notification*
 		public Assignment getNotificationsAssignment_4() { return cNotificationsAssignment_4; }
 
 		//Notification
@@ -133,7 +133,7 @@ public class NotificationDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//NotificationModel returns system::NotificationModel:
 	//	"notifications for module" module=[system::Module|QualifiedName] "version" version=STRING
-	//	notifications+=Notification+;
+	//	notifications+=Notification*;
 	public NotificationModelElements getNotificationModelAccess() {
 		return (pNotificationModel != null) ? pNotificationModel : (pNotificationModel = new NotificationModelElements());
 	}

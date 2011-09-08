@@ -31,10 +31,10 @@ public class DataDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEntitiesEntityParserRuleCall_4_0 = (RuleCall)cEntitiesAssignment_4.eContents().get(0);
 		
 		//EntityModel returns system::EntityModel:
-		//	"entities for module" module=[system::Module|QualifiedName] "version" version=STRING entities+=Entity+;
+		//	"entities for module" module=[system::Module|QualifiedName] "version" version=STRING entities+=Entity*;
 		public ParserRule getRule() { return rule; }
 
-		//"entities for module" module=[system::Module|QualifiedName] "version" version=STRING entities+=Entity+
+		//"entities for module" module=[system::Module|QualifiedName] "version" version=STRING entities+=Entity*
 		public Group getGroup() { return cGroup; }
 
 		//"entities for module"
@@ -58,7 +58,7 @@ public class DataDslGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getVersionSTRINGTerminalRuleCall_3_0() { return cVersionSTRINGTerminalRuleCall_3_0; }
 
-		//entities+=Entity+
+		//entities+=Entity*
 		public Assignment getEntitiesAssignment_4() { return cEntitiesAssignment_4; }
 
 		//Entity
@@ -250,7 +250,7 @@ public class DataDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//EntityModel returns system::EntityModel:
-	//	"entities for module" module=[system::Module|QualifiedName] "version" version=STRING entities+=Entity+;
+	//	"entities for module" module=[system::Module|QualifiedName] "version" version=STRING entities+=Entity*;
 	public EntityModelElements getEntityModelAccess() {
 		return (pEntityModel != null) ? pEntityModel : (pEntityModel = new EntityModelElements());
 	}

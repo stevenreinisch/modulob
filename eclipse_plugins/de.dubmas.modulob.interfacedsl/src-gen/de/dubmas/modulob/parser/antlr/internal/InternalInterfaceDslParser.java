@@ -122,7 +122,7 @@ public class InternalInterfaceDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInterfaceModel"
-    // ../de.dubmas.modulob.interfacedsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalInterfaceDsl.g:76:1: ruleInterfaceModel returns [EObject current=null] : (otherlv_0= 'interfaces for module' ( ( ruleQualifiedName ) ) otherlv_2= 'version' ( (lv_version_3_0= RULE_STRING ) ) ( (lv_interfaces_4_0= ruleInterface ) )+ ) ;
+    // ../de.dubmas.modulob.interfacedsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalInterfaceDsl.g:76:1: ruleInterfaceModel returns [EObject current=null] : (otherlv_0= 'interfaces for module' ( ( ruleQualifiedName ) ) otherlv_2= 'version' ( (lv_version_3_0= RULE_STRING ) ) ( (lv_interfaces_4_0= ruleInterface ) )* ) ;
     public final EObject ruleInterfaceModel() throws RecognitionException {
         EObject current = null;
 
@@ -135,11 +135,11 @@ public class InternalInterfaceDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.dubmas.modulob.interfacedsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalInterfaceDsl.g:79:28: ( (otherlv_0= 'interfaces for module' ( ( ruleQualifiedName ) ) otherlv_2= 'version' ( (lv_version_3_0= RULE_STRING ) ) ( (lv_interfaces_4_0= ruleInterface ) )+ ) )
-            // ../de.dubmas.modulob.interfacedsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalInterfaceDsl.g:80:1: (otherlv_0= 'interfaces for module' ( ( ruleQualifiedName ) ) otherlv_2= 'version' ( (lv_version_3_0= RULE_STRING ) ) ( (lv_interfaces_4_0= ruleInterface ) )+ )
+            // ../de.dubmas.modulob.interfacedsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalInterfaceDsl.g:79:28: ( (otherlv_0= 'interfaces for module' ( ( ruleQualifiedName ) ) otherlv_2= 'version' ( (lv_version_3_0= RULE_STRING ) ) ( (lv_interfaces_4_0= ruleInterface ) )* ) )
+            // ../de.dubmas.modulob.interfacedsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalInterfaceDsl.g:80:1: (otherlv_0= 'interfaces for module' ( ( ruleQualifiedName ) ) otherlv_2= 'version' ( (lv_version_3_0= RULE_STRING ) ) ( (lv_interfaces_4_0= ruleInterface ) )* )
             {
-            // ../de.dubmas.modulob.interfacedsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalInterfaceDsl.g:80:1: (otherlv_0= 'interfaces for module' ( ( ruleQualifiedName ) ) otherlv_2= 'version' ( (lv_version_3_0= RULE_STRING ) ) ( (lv_interfaces_4_0= ruleInterface ) )+ )
-            // ../de.dubmas.modulob.interfacedsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalInterfaceDsl.g:80:3: otherlv_0= 'interfaces for module' ( ( ruleQualifiedName ) ) otherlv_2= 'version' ( (lv_version_3_0= RULE_STRING ) ) ( (lv_interfaces_4_0= ruleInterface ) )+
+            // ../de.dubmas.modulob.interfacedsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalInterfaceDsl.g:80:1: (otherlv_0= 'interfaces for module' ( ( ruleQualifiedName ) ) otherlv_2= 'version' ( (lv_version_3_0= RULE_STRING ) ) ( (lv_interfaces_4_0= ruleInterface ) )* )
+            // ../de.dubmas.modulob.interfacedsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalInterfaceDsl.g:80:3: otherlv_0= 'interfaces for module' ( ( ruleQualifiedName ) ) otherlv_2= 'version' ( (lv_version_3_0= RULE_STRING ) ) ( (lv_interfaces_4_0= ruleInterface ) )*
             {
             otherlv_0=(Token)match(input,11,FOLLOW_11_in_ruleInterfaceModel122); 
 
@@ -203,8 +203,7 @@ public class InternalInterfaceDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.dubmas.modulob.interfacedsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalInterfaceDsl.g:121:2: ( (lv_interfaces_4_0= ruleInterface ) )+
-            int cnt1=0;
+            // ../de.dubmas.modulob.interfacedsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalInterfaceDsl.g:121:2: ( (lv_interfaces_4_0= ruleInterface ) )*
             loop1:
             do {
                 int alt1=2;
@@ -249,12 +248,8 @@ public class InternalInterfaceDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt1 >= 1 ) break loop1;
-                        EarlyExitException eee =
-                            new EarlyExitException(1, input);
-                        throw eee;
+            	    break loop1;
                 }
-                cnt1++;
             } while (true);
 
 
@@ -2174,7 +2169,7 @@ public class InternalInterfaceDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_11_in_ruleInterfaceModel122 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_ruleInterfaceModel145 = new BitSet(new long[]{0x0000000000001000L});
     public static final BitSet FOLLOW_12_in_ruleInterfaceModel157 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleInterfaceModel174 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleInterfaceModel174 = new BitSet(new long[]{0x0000000000002002L});
     public static final BitSet FOLLOW_ruleInterface_in_ruleInterfaceModel200 = new BitSet(new long[]{0x0000000000002002L});
     public static final BitSet FOLLOW_ruleInterface_in_entryRuleInterface237 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleInterface247 = new BitSet(new long[]{0x0000000000000002L});

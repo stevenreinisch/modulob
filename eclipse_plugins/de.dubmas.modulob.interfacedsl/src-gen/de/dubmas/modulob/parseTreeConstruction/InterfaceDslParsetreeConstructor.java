@@ -53,11 +53,11 @@ protected class ThisRootNode extends RootToken {
 /************ begin Rule InterfaceModel ****************
  *
  * InterfaceModel returns system::InterfaceModel:
- * 	"interfaces for module" module=[system::Module|QualifiedName] "version" version=STRING interfaces+=Interface+;
+ * 	"interfaces for module" module=[system::Module|QualifiedName] "version" version=STRING interfaces+=Interface*;
  *
  **/
 
-// "interfaces for module" module=[system::Module|QualifiedName] "version" version=STRING interfaces+=Interface+
+// "interfaces for module" module=[system::Module|QualifiedName] "version" version=STRING interfaces+=Interface*
 protected class InterfaceModel_Group extends GroupToken {
 	
 	public InterfaceModel_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -73,6 +73,7 @@ protected class InterfaceModel_Group extends GroupToken {
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
 			case 0: return new InterfaceModel_InterfacesAssignment_4(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new InterfaceModel_VersionAssignment_3(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -200,7 +201,7 @@ protected class InterfaceModel_VersionAssignment_3 extends AssignmentToken  {
 
 }
 
-// interfaces+=Interface+
+// interfaces+=Interface*
 protected class InterfaceModel_InterfacesAssignment_4 extends AssignmentToken  {
 	
 	public InterfaceModel_InterfacesAssignment_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -222,7 +223,7 @@ protected class InterfaceModel_InterfacesAssignment_4 extends AssignmentToken  {
 
     @Override	
 	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("interfaces",true)) == null) return null;
+		if((value = eObjectConsumer.getConsumable("interfaces",false)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("interfaces");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);

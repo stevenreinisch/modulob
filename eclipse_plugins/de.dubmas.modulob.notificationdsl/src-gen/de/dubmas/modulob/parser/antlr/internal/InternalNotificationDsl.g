@@ -136,7 +136,7 @@ ruleNotificationModel returns [EObject current=null]
 	    }
 
 )
-)+)
+)*)
 ;
 
 

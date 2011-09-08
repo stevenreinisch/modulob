@@ -165,11 +165,11 @@ public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (module=[Module|QualifiedName] version=STRING entities+=Entity+)
+	 *     (module=[Module|QualifiedName] version=STRING entities+=Entity*)
 	 *
 	 * Features:
 	 *    version[1, 1]
-	 *    entities[1, *]
+	 *    entities[0, *]
 	 *    module[1, 1]
 	 */
 	protected void sequence_EntityModel(EObject context, EntityModel semanticObject) {

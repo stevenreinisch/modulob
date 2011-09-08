@@ -8,7 +8,7 @@ InterfaceModel returns system::InterfaceModel:
 	'interfaces for module' 
 	module = [system::Module | QualifiedName]
 	'version' version = STRING 
-	(interfaces += Interface)+
+	(interfaces += Interface)*
 ;
 
 Interface returns modulob::Interface:

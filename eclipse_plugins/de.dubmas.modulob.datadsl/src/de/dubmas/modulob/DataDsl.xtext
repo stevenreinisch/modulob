@@ -7,7 +7,7 @@ EntityModel returns system::EntityModel:
 	'entities for module' 
 	module = [system::Module | QualifiedName]
 	'version' version = STRING 
-	(entities += Entity)+
+	(entities += Entity)*
 ;
 
 Entity returns modulob::Entity:

@@ -31,10 +31,10 @@ public class InterfaceDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cInterfacesInterfaceParserRuleCall_4_0 = (RuleCall)cInterfacesAssignment_4.eContents().get(0);
 		
 		//InterfaceModel returns system::InterfaceModel:
-		//	"interfaces for module" module=[system::Module|QualifiedName] "version" version=STRING interfaces+=Interface+;
+		//	"interfaces for module" module=[system::Module|QualifiedName] "version" version=STRING interfaces+=Interface*;
 		public ParserRule getRule() { return rule; }
 
-		//"interfaces for module" module=[system::Module|QualifiedName] "version" version=STRING interfaces+=Interface+
+		//"interfaces for module" module=[system::Module|QualifiedName] "version" version=STRING interfaces+=Interface*
 		public Group getGroup() { return cGroup; }
 
 		//"interfaces for module"
@@ -58,7 +58,7 @@ public class InterfaceDslGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getVersionSTRINGTerminalRuleCall_3_0() { return cVersionSTRINGTerminalRuleCall_3_0; }
 
-		//interfaces+=Interface+
+		//interfaces+=Interface*
 		public Assignment getInterfacesAssignment_4() { return cInterfacesAssignment_4; }
 
 		//Interface
@@ -264,7 +264,7 @@ public class InterfaceDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//InterfaceModel returns system::InterfaceModel:
-	//	"interfaces for module" module=[system::Module|QualifiedName] "version" version=STRING interfaces+=Interface+;
+	//	"interfaces for module" module=[system::Module|QualifiedName] "version" version=STRING interfaces+=Interface*;
 	public InterfaceModelElements getInterfaceModelAccess() {
 		return (pInterfaceModel != null) ? pInterfaceModel : (pInterfaceModel = new InterfaceModelElements());
 	}

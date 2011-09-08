@@ -1239,11 +1239,11 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
                 {
                 int LA1_2 = input.LA(2);
 
-                if ( (LA1_2==23) ) {
-                    alt1=3;
-                }
-                else if ( (LA1_2==EOF) ) {
+                if ( (LA1_2==EOF) ) {
                     alt1=2;
+                }
+                else if ( (LA1_2==23) ) {
+                    alt1=3;
                 }
                 else {
                     NoViableAltException nvae =
@@ -1695,42 +1695,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__InterfaceModel__Group__4__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:645:1: rule__InterfaceModel__Group__4__Impl : ( ( ( rule__InterfaceModel__InterfacesAssignment_4 ) ) ( ( rule__InterfaceModel__InterfacesAssignment_4 )* ) ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:645:1: rule__InterfaceModel__Group__4__Impl : ( ( rule__InterfaceModel__InterfacesAssignment_4 )* ) ;
     public final void rule__InterfaceModel__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:649:1: ( ( ( ( rule__InterfaceModel__InterfacesAssignment_4 ) ) ( ( rule__InterfaceModel__InterfacesAssignment_4 )* ) ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:650:1: ( ( ( rule__InterfaceModel__InterfacesAssignment_4 ) ) ( ( rule__InterfaceModel__InterfacesAssignment_4 )* ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:649:1: ( ( ( rule__InterfaceModel__InterfacesAssignment_4 )* ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:650:1: ( ( rule__InterfaceModel__InterfacesAssignment_4 )* )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:650:1: ( ( ( rule__InterfaceModel__InterfacesAssignment_4 ) ) ( ( rule__InterfaceModel__InterfacesAssignment_4 )* ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:651:1: ( ( rule__InterfaceModel__InterfacesAssignment_4 ) ) ( ( rule__InterfaceModel__InterfacesAssignment_4 )* )
-            {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:651:1: ( ( rule__InterfaceModel__InterfacesAssignment_4 ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:652:1: ( rule__InterfaceModel__InterfacesAssignment_4 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:650:1: ( ( rule__InterfaceModel__InterfacesAssignment_4 )* )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:651:1: ( rule__InterfaceModel__InterfacesAssignment_4 )*
             {
              before(grammarAccess.getInterfaceModelAccess().getInterfacesAssignment_4()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:653:1: ( rule__InterfaceModel__InterfacesAssignment_4 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:653:2: rule__InterfaceModel__InterfacesAssignment_4
-            {
-            pushFollow(FOLLOW_rule__InterfaceModel__InterfacesAssignment_4_in_rule__InterfaceModel__Group__4__Impl1309);
-            rule__InterfaceModel__InterfacesAssignment_4();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getInterfaceModelAccess().getInterfacesAssignment_4()); 
-
-            }
-
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:656:1: ( ( rule__InterfaceModel__InterfacesAssignment_4 )* )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:657:1: ( rule__InterfaceModel__InterfacesAssignment_4 )*
-            {
-             before(grammarAccess.getInterfaceModelAccess().getInterfacesAssignment_4()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:658:1: ( rule__InterfaceModel__InterfacesAssignment_4 )*
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:652:1: ( rule__InterfaceModel__InterfacesAssignment_4 )*
             loop2:
             do {
                 int alt2=2;
@@ -1743,9 +1721,9 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
                 switch (alt2) {
             	case 1 :
-            	    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:658:2: rule__InterfaceModel__InterfacesAssignment_4
+            	    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:652:2: rule__InterfaceModel__InterfacesAssignment_4
             	    {
-            	    pushFollow(FOLLOW_rule__InterfaceModel__InterfacesAssignment_4_in_rule__InterfaceModel__Group__4__Impl1321);
+            	    pushFollow(FOLLOW_rule__InterfaceModel__InterfacesAssignment_4_in_rule__InterfaceModel__Group__4__Impl1307);
             	    rule__InterfaceModel__InterfacesAssignment_4();
 
             	    state._fsp--;
@@ -1760,9 +1738,6 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
             } while (true);
 
              after(grammarAccess.getInterfaceModelAccess().getInterfacesAssignment_4()); 
-
-            }
-
 
             }
 
@@ -1785,21 +1760,21 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Interface__Group__0"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:679:1: rule__Interface__Group__0 : rule__Interface__Group__0__Impl rule__Interface__Group__1 ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:672:1: rule__Interface__Group__0 : rule__Interface__Group__0__Impl rule__Interface__Group__1 ;
     public final void rule__Interface__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:683:1: ( rule__Interface__Group__0__Impl rule__Interface__Group__1 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:684:2: rule__Interface__Group__0__Impl rule__Interface__Group__1
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:676:1: ( rule__Interface__Group__0__Impl rule__Interface__Group__1 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:677:2: rule__Interface__Group__0__Impl rule__Interface__Group__1
             {
-            pushFollow(FOLLOW_rule__Interface__Group__0__Impl_in_rule__Interface__Group__01364);
+            pushFollow(FOLLOW_rule__Interface__Group__0__Impl_in_rule__Interface__Group__01348);
             rule__Interface__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Interface__Group__1_in_rule__Interface__Group__01367);
+            pushFollow(FOLLOW_rule__Interface__Group__1_in_rule__Interface__Group__01351);
             rule__Interface__Group__1();
 
             state._fsp--;
@@ -1823,20 +1798,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Interface__Group__0__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:691:1: rule__Interface__Group__0__Impl : ( 'interface' ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:684:1: rule__Interface__Group__0__Impl : ( 'interface' ) ;
     public final void rule__Interface__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:695:1: ( ( 'interface' ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:696:1: ( 'interface' )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:688:1: ( ( 'interface' ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:689:1: ( 'interface' )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:696:1: ( 'interface' )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:697:1: 'interface'
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:689:1: ( 'interface' )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:690:1: 'interface'
             {
              before(grammarAccess.getInterfaceAccess().getInterfaceKeyword_0()); 
-            match(input,13,FOLLOW_13_in_rule__Interface__Group__0__Impl1395); 
+            match(input,13,FOLLOW_13_in_rule__Interface__Group__0__Impl1379); 
              after(grammarAccess.getInterfaceAccess().getInterfaceKeyword_0()); 
 
             }
@@ -1860,21 +1835,21 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Interface__Group__1"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:710:1: rule__Interface__Group__1 : rule__Interface__Group__1__Impl rule__Interface__Group__2 ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:703:1: rule__Interface__Group__1 : rule__Interface__Group__1__Impl rule__Interface__Group__2 ;
     public final void rule__Interface__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:714:1: ( rule__Interface__Group__1__Impl rule__Interface__Group__2 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:715:2: rule__Interface__Group__1__Impl rule__Interface__Group__2
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:707:1: ( rule__Interface__Group__1__Impl rule__Interface__Group__2 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:708:2: rule__Interface__Group__1__Impl rule__Interface__Group__2
             {
-            pushFollow(FOLLOW_rule__Interface__Group__1__Impl_in_rule__Interface__Group__11426);
+            pushFollow(FOLLOW_rule__Interface__Group__1__Impl_in_rule__Interface__Group__11410);
             rule__Interface__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Interface__Group__2_in_rule__Interface__Group__11429);
+            pushFollow(FOLLOW_rule__Interface__Group__2_in_rule__Interface__Group__11413);
             rule__Interface__Group__2();
 
             state._fsp--;
@@ -1898,23 +1873,23 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Interface__Group__1__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:722:1: rule__Interface__Group__1__Impl : ( ( rule__Interface__NameAssignment_1 ) ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:715:1: rule__Interface__Group__1__Impl : ( ( rule__Interface__NameAssignment_1 ) ) ;
     public final void rule__Interface__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:726:1: ( ( ( rule__Interface__NameAssignment_1 ) ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:727:1: ( ( rule__Interface__NameAssignment_1 ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:719:1: ( ( ( rule__Interface__NameAssignment_1 ) ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:720:1: ( ( rule__Interface__NameAssignment_1 ) )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:727:1: ( ( rule__Interface__NameAssignment_1 ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:728:1: ( rule__Interface__NameAssignment_1 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:720:1: ( ( rule__Interface__NameAssignment_1 ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:721:1: ( rule__Interface__NameAssignment_1 )
             {
              before(grammarAccess.getInterfaceAccess().getNameAssignment_1()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:729:1: ( rule__Interface__NameAssignment_1 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:729:2: rule__Interface__NameAssignment_1
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:722:1: ( rule__Interface__NameAssignment_1 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:722:2: rule__Interface__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Interface__NameAssignment_1_in_rule__Interface__Group__1__Impl1456);
+            pushFollow(FOLLOW_rule__Interface__NameAssignment_1_in_rule__Interface__Group__1__Impl1440);
             rule__Interface__NameAssignment_1();
 
             state._fsp--;
@@ -1945,21 +1920,21 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Interface__Group__2"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:739:1: rule__Interface__Group__2 : rule__Interface__Group__2__Impl rule__Interface__Group__3 ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:732:1: rule__Interface__Group__2 : rule__Interface__Group__2__Impl rule__Interface__Group__3 ;
     public final void rule__Interface__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:743:1: ( rule__Interface__Group__2__Impl rule__Interface__Group__3 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:744:2: rule__Interface__Group__2__Impl rule__Interface__Group__3
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:736:1: ( rule__Interface__Group__2__Impl rule__Interface__Group__3 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:737:2: rule__Interface__Group__2__Impl rule__Interface__Group__3
             {
-            pushFollow(FOLLOW_rule__Interface__Group__2__Impl_in_rule__Interface__Group__21486);
+            pushFollow(FOLLOW_rule__Interface__Group__2__Impl_in_rule__Interface__Group__21470);
             rule__Interface__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Interface__Group__3_in_rule__Interface__Group__21489);
+            pushFollow(FOLLOW_rule__Interface__Group__3_in_rule__Interface__Group__21473);
             rule__Interface__Group__3();
 
             state._fsp--;
@@ -1983,20 +1958,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Interface__Group__2__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:751:1: rule__Interface__Group__2__Impl : ( ( rule__Interface__Group_2__0 )? ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:744:1: rule__Interface__Group__2__Impl : ( ( rule__Interface__Group_2__0 )? ) ;
     public final void rule__Interface__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:755:1: ( ( ( rule__Interface__Group_2__0 )? ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:756:1: ( ( rule__Interface__Group_2__0 )? )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:748:1: ( ( ( rule__Interface__Group_2__0 )? ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:749:1: ( ( rule__Interface__Group_2__0 )? )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:756:1: ( ( rule__Interface__Group_2__0 )? )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:757:1: ( rule__Interface__Group_2__0 )?
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:749:1: ( ( rule__Interface__Group_2__0 )? )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:750:1: ( rule__Interface__Group_2__0 )?
             {
              before(grammarAccess.getInterfaceAccess().getGroup_2()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:758:1: ( rule__Interface__Group_2__0 )?
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:751:1: ( rule__Interface__Group_2__0 )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -2005,9 +1980,9 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
             }
             switch (alt3) {
                 case 1 :
-                    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:758:2: rule__Interface__Group_2__0
+                    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:751:2: rule__Interface__Group_2__0
                     {
-                    pushFollow(FOLLOW_rule__Interface__Group_2__0_in_rule__Interface__Group__2__Impl1516);
+                    pushFollow(FOLLOW_rule__Interface__Group_2__0_in_rule__Interface__Group__2__Impl1500);
                     rule__Interface__Group_2__0();
 
                     state._fsp--;
@@ -2041,21 +2016,21 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Interface__Group__3"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:768:1: rule__Interface__Group__3 : rule__Interface__Group__3__Impl rule__Interface__Group__4 ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:761:1: rule__Interface__Group__3 : rule__Interface__Group__3__Impl rule__Interface__Group__4 ;
     public final void rule__Interface__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:772:1: ( rule__Interface__Group__3__Impl rule__Interface__Group__4 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:773:2: rule__Interface__Group__3__Impl rule__Interface__Group__4
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:765:1: ( rule__Interface__Group__3__Impl rule__Interface__Group__4 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:766:2: rule__Interface__Group__3__Impl rule__Interface__Group__4
             {
-            pushFollow(FOLLOW_rule__Interface__Group__3__Impl_in_rule__Interface__Group__31547);
+            pushFollow(FOLLOW_rule__Interface__Group__3__Impl_in_rule__Interface__Group__31531);
             rule__Interface__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Interface__Group__4_in_rule__Interface__Group__31550);
+            pushFollow(FOLLOW_rule__Interface__Group__4_in_rule__Interface__Group__31534);
             rule__Interface__Group__4();
 
             state._fsp--;
@@ -2079,20 +2054,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Interface__Group__3__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:780:1: rule__Interface__Group__3__Impl : ( '{' ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:773:1: rule__Interface__Group__3__Impl : ( '{' ) ;
     public final void rule__Interface__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:784:1: ( ( '{' ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:785:1: ( '{' )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:777:1: ( ( '{' ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:778:1: ( '{' )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:785:1: ( '{' )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:786:1: '{'
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:778:1: ( '{' )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:779:1: '{'
             {
              before(grammarAccess.getInterfaceAccess().getLeftCurlyBracketKeyword_3()); 
-            match(input,14,FOLLOW_14_in_rule__Interface__Group__3__Impl1578); 
+            match(input,14,FOLLOW_14_in_rule__Interface__Group__3__Impl1562); 
              after(grammarAccess.getInterfaceAccess().getLeftCurlyBracketKeyword_3()); 
 
             }
@@ -2116,21 +2091,21 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Interface__Group__4"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:799:1: rule__Interface__Group__4 : rule__Interface__Group__4__Impl rule__Interface__Group__5 ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:792:1: rule__Interface__Group__4 : rule__Interface__Group__4__Impl rule__Interface__Group__5 ;
     public final void rule__Interface__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:803:1: ( rule__Interface__Group__4__Impl rule__Interface__Group__5 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:804:2: rule__Interface__Group__4__Impl rule__Interface__Group__5
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:796:1: ( rule__Interface__Group__4__Impl rule__Interface__Group__5 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:797:2: rule__Interface__Group__4__Impl rule__Interface__Group__5
             {
-            pushFollow(FOLLOW_rule__Interface__Group__4__Impl_in_rule__Interface__Group__41609);
+            pushFollow(FOLLOW_rule__Interface__Group__4__Impl_in_rule__Interface__Group__41593);
             rule__Interface__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Interface__Group__5_in_rule__Interface__Group__41612);
+            pushFollow(FOLLOW_rule__Interface__Group__5_in_rule__Interface__Group__41596);
             rule__Interface__Group__5();
 
             state._fsp--;
@@ -2154,20 +2129,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Interface__Group__4__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:811:1: rule__Interface__Group__4__Impl : ( ( rule__Interface__MethodsAssignment_4 )* ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:804:1: rule__Interface__Group__4__Impl : ( ( rule__Interface__MethodsAssignment_4 )* ) ;
     public final void rule__Interface__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:815:1: ( ( ( rule__Interface__MethodsAssignment_4 )* ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:816:1: ( ( rule__Interface__MethodsAssignment_4 )* )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:808:1: ( ( ( rule__Interface__MethodsAssignment_4 )* ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:809:1: ( ( rule__Interface__MethodsAssignment_4 )* )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:816:1: ( ( rule__Interface__MethodsAssignment_4 )* )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:817:1: ( rule__Interface__MethodsAssignment_4 )*
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:809:1: ( ( rule__Interface__MethodsAssignment_4 )* )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:810:1: ( rule__Interface__MethodsAssignment_4 )*
             {
              before(grammarAccess.getInterfaceAccess().getMethodsAssignment_4()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:818:1: ( rule__Interface__MethodsAssignment_4 )*
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:811:1: ( rule__Interface__MethodsAssignment_4 )*
             loop4:
             do {
                 int alt4=2;
@@ -2180,9 +2155,9 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
                 switch (alt4) {
             	case 1 :
-            	    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:818:2: rule__Interface__MethodsAssignment_4
+            	    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:811:2: rule__Interface__MethodsAssignment_4
             	    {
-            	    pushFollow(FOLLOW_rule__Interface__MethodsAssignment_4_in_rule__Interface__Group__4__Impl1639);
+            	    pushFollow(FOLLOW_rule__Interface__MethodsAssignment_4_in_rule__Interface__Group__4__Impl1623);
             	    rule__Interface__MethodsAssignment_4();
 
             	    state._fsp--;
@@ -2219,16 +2194,16 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Interface__Group__5"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:828:1: rule__Interface__Group__5 : rule__Interface__Group__5__Impl ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:821:1: rule__Interface__Group__5 : rule__Interface__Group__5__Impl ;
     public final void rule__Interface__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:832:1: ( rule__Interface__Group__5__Impl )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:833:2: rule__Interface__Group__5__Impl
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:825:1: ( rule__Interface__Group__5__Impl )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:826:2: rule__Interface__Group__5__Impl
             {
-            pushFollow(FOLLOW_rule__Interface__Group__5__Impl_in_rule__Interface__Group__51670);
+            pushFollow(FOLLOW_rule__Interface__Group__5__Impl_in_rule__Interface__Group__51654);
             rule__Interface__Group__5__Impl();
 
             state._fsp--;
@@ -2252,20 +2227,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Interface__Group__5__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:839:1: rule__Interface__Group__5__Impl : ( '}' ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:832:1: rule__Interface__Group__5__Impl : ( '}' ) ;
     public final void rule__Interface__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:843:1: ( ( '}' ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:844:1: ( '}' )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:836:1: ( ( '}' ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:837:1: ( '}' )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:844:1: ( '}' )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:845:1: '}'
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:837:1: ( '}' )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:838:1: '}'
             {
              before(grammarAccess.getInterfaceAccess().getRightCurlyBracketKeyword_5()); 
-            match(input,15,FOLLOW_15_in_rule__Interface__Group__5__Impl1698); 
+            match(input,15,FOLLOW_15_in_rule__Interface__Group__5__Impl1682); 
              after(grammarAccess.getInterfaceAccess().getRightCurlyBracketKeyword_5()); 
 
             }
@@ -2289,21 +2264,21 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Interface__Group_2__0"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:870:1: rule__Interface__Group_2__0 : rule__Interface__Group_2__0__Impl rule__Interface__Group_2__1 ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:863:1: rule__Interface__Group_2__0 : rule__Interface__Group_2__0__Impl rule__Interface__Group_2__1 ;
     public final void rule__Interface__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:874:1: ( rule__Interface__Group_2__0__Impl rule__Interface__Group_2__1 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:875:2: rule__Interface__Group_2__0__Impl rule__Interface__Group_2__1
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:867:1: ( rule__Interface__Group_2__0__Impl rule__Interface__Group_2__1 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:868:2: rule__Interface__Group_2__0__Impl rule__Interface__Group_2__1
             {
-            pushFollow(FOLLOW_rule__Interface__Group_2__0__Impl_in_rule__Interface__Group_2__01741);
+            pushFollow(FOLLOW_rule__Interface__Group_2__0__Impl_in_rule__Interface__Group_2__01725);
             rule__Interface__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Interface__Group_2__1_in_rule__Interface__Group_2__01744);
+            pushFollow(FOLLOW_rule__Interface__Group_2__1_in_rule__Interface__Group_2__01728);
             rule__Interface__Group_2__1();
 
             state._fsp--;
@@ -2327,20 +2302,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Interface__Group_2__0__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:882:1: rule__Interface__Group_2__0__Impl : ( 'requires' ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:875:1: rule__Interface__Group_2__0__Impl : ( 'requires' ) ;
     public final void rule__Interface__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:886:1: ( ( 'requires' ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:887:1: ( 'requires' )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:879:1: ( ( 'requires' ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:880:1: ( 'requires' )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:887:1: ( 'requires' )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:888:1: 'requires'
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:880:1: ( 'requires' )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:881:1: 'requires'
             {
              before(grammarAccess.getInterfaceAccess().getRequiresKeyword_2_0()); 
-            match(input,16,FOLLOW_16_in_rule__Interface__Group_2__0__Impl1772); 
+            match(input,16,FOLLOW_16_in_rule__Interface__Group_2__0__Impl1756); 
              after(grammarAccess.getInterfaceAccess().getRequiresKeyword_2_0()); 
 
             }
@@ -2364,21 +2339,21 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Interface__Group_2__1"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:901:1: rule__Interface__Group_2__1 : rule__Interface__Group_2__1__Impl rule__Interface__Group_2__2 ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:894:1: rule__Interface__Group_2__1 : rule__Interface__Group_2__1__Impl rule__Interface__Group_2__2 ;
     public final void rule__Interface__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:905:1: ( rule__Interface__Group_2__1__Impl rule__Interface__Group_2__2 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:906:2: rule__Interface__Group_2__1__Impl rule__Interface__Group_2__2
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:898:1: ( rule__Interface__Group_2__1__Impl rule__Interface__Group_2__2 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:899:2: rule__Interface__Group_2__1__Impl rule__Interface__Group_2__2
             {
-            pushFollow(FOLLOW_rule__Interface__Group_2__1__Impl_in_rule__Interface__Group_2__11803);
+            pushFollow(FOLLOW_rule__Interface__Group_2__1__Impl_in_rule__Interface__Group_2__11787);
             rule__Interface__Group_2__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Interface__Group_2__2_in_rule__Interface__Group_2__11806);
+            pushFollow(FOLLOW_rule__Interface__Group_2__2_in_rule__Interface__Group_2__11790);
             rule__Interface__Group_2__2();
 
             state._fsp--;
@@ -2402,23 +2377,23 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Interface__Group_2__1__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:913:1: rule__Interface__Group_2__1__Impl : ( ( rule__Interface__RequiredInterfacesAssignment_2_1 ) ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:906:1: rule__Interface__Group_2__1__Impl : ( ( rule__Interface__RequiredInterfacesAssignment_2_1 ) ) ;
     public final void rule__Interface__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:917:1: ( ( ( rule__Interface__RequiredInterfacesAssignment_2_1 ) ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:918:1: ( ( rule__Interface__RequiredInterfacesAssignment_2_1 ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:910:1: ( ( ( rule__Interface__RequiredInterfacesAssignment_2_1 ) ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:911:1: ( ( rule__Interface__RequiredInterfacesAssignment_2_1 ) )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:918:1: ( ( rule__Interface__RequiredInterfacesAssignment_2_1 ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:919:1: ( rule__Interface__RequiredInterfacesAssignment_2_1 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:911:1: ( ( rule__Interface__RequiredInterfacesAssignment_2_1 ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:912:1: ( rule__Interface__RequiredInterfacesAssignment_2_1 )
             {
              before(grammarAccess.getInterfaceAccess().getRequiredInterfacesAssignment_2_1()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:920:1: ( rule__Interface__RequiredInterfacesAssignment_2_1 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:920:2: rule__Interface__RequiredInterfacesAssignment_2_1
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:913:1: ( rule__Interface__RequiredInterfacesAssignment_2_1 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:913:2: rule__Interface__RequiredInterfacesAssignment_2_1
             {
-            pushFollow(FOLLOW_rule__Interface__RequiredInterfacesAssignment_2_1_in_rule__Interface__Group_2__1__Impl1833);
+            pushFollow(FOLLOW_rule__Interface__RequiredInterfacesAssignment_2_1_in_rule__Interface__Group_2__1__Impl1817);
             rule__Interface__RequiredInterfacesAssignment_2_1();
 
             state._fsp--;
@@ -2449,16 +2424,16 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Interface__Group_2__2"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:930:1: rule__Interface__Group_2__2 : rule__Interface__Group_2__2__Impl ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:923:1: rule__Interface__Group_2__2 : rule__Interface__Group_2__2__Impl ;
     public final void rule__Interface__Group_2__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:934:1: ( rule__Interface__Group_2__2__Impl )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:935:2: rule__Interface__Group_2__2__Impl
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:927:1: ( rule__Interface__Group_2__2__Impl )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:928:2: rule__Interface__Group_2__2__Impl
             {
-            pushFollow(FOLLOW_rule__Interface__Group_2__2__Impl_in_rule__Interface__Group_2__21863);
+            pushFollow(FOLLOW_rule__Interface__Group_2__2__Impl_in_rule__Interface__Group_2__21847);
             rule__Interface__Group_2__2__Impl();
 
             state._fsp--;
@@ -2482,20 +2457,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Interface__Group_2__2__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:941:1: rule__Interface__Group_2__2__Impl : ( ( rule__Interface__Group_2_2__0 )* ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:934:1: rule__Interface__Group_2__2__Impl : ( ( rule__Interface__Group_2_2__0 )* ) ;
     public final void rule__Interface__Group_2__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:945:1: ( ( ( rule__Interface__Group_2_2__0 )* ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:946:1: ( ( rule__Interface__Group_2_2__0 )* )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:938:1: ( ( ( rule__Interface__Group_2_2__0 )* ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:939:1: ( ( rule__Interface__Group_2_2__0 )* )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:946:1: ( ( rule__Interface__Group_2_2__0 )* )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:947:1: ( rule__Interface__Group_2_2__0 )*
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:939:1: ( ( rule__Interface__Group_2_2__0 )* )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:940:1: ( rule__Interface__Group_2_2__0 )*
             {
              before(grammarAccess.getInterfaceAccess().getGroup_2_2()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:948:1: ( rule__Interface__Group_2_2__0 )*
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:941:1: ( rule__Interface__Group_2_2__0 )*
             loop5:
             do {
                 int alt5=2;
@@ -2508,9 +2483,9 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
                 switch (alt5) {
             	case 1 :
-            	    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:948:2: rule__Interface__Group_2_2__0
+            	    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:941:2: rule__Interface__Group_2_2__0
             	    {
-            	    pushFollow(FOLLOW_rule__Interface__Group_2_2__0_in_rule__Interface__Group_2__2__Impl1890);
+            	    pushFollow(FOLLOW_rule__Interface__Group_2_2__0_in_rule__Interface__Group_2__2__Impl1874);
             	    rule__Interface__Group_2_2__0();
 
             	    state._fsp--;
@@ -2547,21 +2522,21 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Interface__Group_2_2__0"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:964:1: rule__Interface__Group_2_2__0 : rule__Interface__Group_2_2__0__Impl rule__Interface__Group_2_2__1 ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:957:1: rule__Interface__Group_2_2__0 : rule__Interface__Group_2_2__0__Impl rule__Interface__Group_2_2__1 ;
     public final void rule__Interface__Group_2_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:968:1: ( rule__Interface__Group_2_2__0__Impl rule__Interface__Group_2_2__1 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:969:2: rule__Interface__Group_2_2__0__Impl rule__Interface__Group_2_2__1
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:961:1: ( rule__Interface__Group_2_2__0__Impl rule__Interface__Group_2_2__1 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:962:2: rule__Interface__Group_2_2__0__Impl rule__Interface__Group_2_2__1
             {
-            pushFollow(FOLLOW_rule__Interface__Group_2_2__0__Impl_in_rule__Interface__Group_2_2__01927);
+            pushFollow(FOLLOW_rule__Interface__Group_2_2__0__Impl_in_rule__Interface__Group_2_2__01911);
             rule__Interface__Group_2_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Interface__Group_2_2__1_in_rule__Interface__Group_2_2__01930);
+            pushFollow(FOLLOW_rule__Interface__Group_2_2__1_in_rule__Interface__Group_2_2__01914);
             rule__Interface__Group_2_2__1();
 
             state._fsp--;
@@ -2585,20 +2560,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Interface__Group_2_2__0__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:976:1: rule__Interface__Group_2_2__0__Impl : ( ',' ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:969:1: rule__Interface__Group_2_2__0__Impl : ( ',' ) ;
     public final void rule__Interface__Group_2_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:980:1: ( ( ',' ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:981:1: ( ',' )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:973:1: ( ( ',' ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:974:1: ( ',' )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:981:1: ( ',' )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:982:1: ','
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:974:1: ( ',' )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:975:1: ','
             {
              before(grammarAccess.getInterfaceAccess().getCommaKeyword_2_2_0()); 
-            match(input,17,FOLLOW_17_in_rule__Interface__Group_2_2__0__Impl1958); 
+            match(input,17,FOLLOW_17_in_rule__Interface__Group_2_2__0__Impl1942); 
              after(grammarAccess.getInterfaceAccess().getCommaKeyword_2_2_0()); 
 
             }
@@ -2622,16 +2597,16 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Interface__Group_2_2__1"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:995:1: rule__Interface__Group_2_2__1 : rule__Interface__Group_2_2__1__Impl ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:988:1: rule__Interface__Group_2_2__1 : rule__Interface__Group_2_2__1__Impl ;
     public final void rule__Interface__Group_2_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:999:1: ( rule__Interface__Group_2_2__1__Impl )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1000:2: rule__Interface__Group_2_2__1__Impl
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:992:1: ( rule__Interface__Group_2_2__1__Impl )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:993:2: rule__Interface__Group_2_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__Interface__Group_2_2__1__Impl_in_rule__Interface__Group_2_2__11989);
+            pushFollow(FOLLOW_rule__Interface__Group_2_2__1__Impl_in_rule__Interface__Group_2_2__11973);
             rule__Interface__Group_2_2__1__Impl();
 
             state._fsp--;
@@ -2655,23 +2630,23 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Interface__Group_2_2__1__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1006:1: rule__Interface__Group_2_2__1__Impl : ( ( rule__Interface__RequiredInterfacesAssignment_2_2_1 ) ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:999:1: rule__Interface__Group_2_2__1__Impl : ( ( rule__Interface__RequiredInterfacesAssignment_2_2_1 ) ) ;
     public final void rule__Interface__Group_2_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1010:1: ( ( ( rule__Interface__RequiredInterfacesAssignment_2_2_1 ) ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1011:1: ( ( rule__Interface__RequiredInterfacesAssignment_2_2_1 ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1003:1: ( ( ( rule__Interface__RequiredInterfacesAssignment_2_2_1 ) ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1004:1: ( ( rule__Interface__RequiredInterfacesAssignment_2_2_1 ) )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1011:1: ( ( rule__Interface__RequiredInterfacesAssignment_2_2_1 ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1012:1: ( rule__Interface__RequiredInterfacesAssignment_2_2_1 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1004:1: ( ( rule__Interface__RequiredInterfacesAssignment_2_2_1 ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1005:1: ( rule__Interface__RequiredInterfacesAssignment_2_2_1 )
             {
              before(grammarAccess.getInterfaceAccess().getRequiredInterfacesAssignment_2_2_1()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1013:1: ( rule__Interface__RequiredInterfacesAssignment_2_2_1 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1013:2: rule__Interface__RequiredInterfacesAssignment_2_2_1
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1006:1: ( rule__Interface__RequiredInterfacesAssignment_2_2_1 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1006:2: rule__Interface__RequiredInterfacesAssignment_2_2_1
             {
-            pushFollow(FOLLOW_rule__Interface__RequiredInterfacesAssignment_2_2_1_in_rule__Interface__Group_2_2__1__Impl2016);
+            pushFollow(FOLLOW_rule__Interface__RequiredInterfacesAssignment_2_2_1_in_rule__Interface__Group_2_2__1__Impl2000);
             rule__Interface__RequiredInterfacesAssignment_2_2_1();
 
             state._fsp--;
@@ -2702,21 +2677,21 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Method__Group__0"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1027:1: rule__Method__Group__0 : rule__Method__Group__0__Impl rule__Method__Group__1 ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1020:1: rule__Method__Group__0 : rule__Method__Group__0__Impl rule__Method__Group__1 ;
     public final void rule__Method__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1031:1: ( rule__Method__Group__0__Impl rule__Method__Group__1 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1032:2: rule__Method__Group__0__Impl rule__Method__Group__1
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1024:1: ( rule__Method__Group__0__Impl rule__Method__Group__1 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1025:2: rule__Method__Group__0__Impl rule__Method__Group__1
             {
-            pushFollow(FOLLOW_rule__Method__Group__0__Impl_in_rule__Method__Group__02050);
+            pushFollow(FOLLOW_rule__Method__Group__0__Impl_in_rule__Method__Group__02034);
             rule__Method__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Method__Group__1_in_rule__Method__Group__02053);
+            pushFollow(FOLLOW_rule__Method__Group__1_in_rule__Method__Group__02037);
             rule__Method__Group__1();
 
             state._fsp--;
@@ -2740,20 +2715,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Method__Group__0__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1039:1: rule__Method__Group__0__Impl : ( ( rule__Method__IsStaticAssignment_0 )? ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1032:1: rule__Method__Group__0__Impl : ( ( rule__Method__IsStaticAssignment_0 )? ) ;
     public final void rule__Method__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1043:1: ( ( ( rule__Method__IsStaticAssignment_0 )? ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1044:1: ( ( rule__Method__IsStaticAssignment_0 )? )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1036:1: ( ( ( rule__Method__IsStaticAssignment_0 )? ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1037:1: ( ( rule__Method__IsStaticAssignment_0 )? )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1044:1: ( ( rule__Method__IsStaticAssignment_0 )? )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1045:1: ( rule__Method__IsStaticAssignment_0 )?
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1037:1: ( ( rule__Method__IsStaticAssignment_0 )? )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1038:1: ( rule__Method__IsStaticAssignment_0 )?
             {
              before(grammarAccess.getMethodAccess().getIsStaticAssignment_0()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1046:1: ( rule__Method__IsStaticAssignment_0 )?
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1039:1: ( rule__Method__IsStaticAssignment_0 )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -2762,9 +2737,9 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
             }
             switch (alt6) {
                 case 1 :
-                    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1046:2: rule__Method__IsStaticAssignment_0
+                    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1039:2: rule__Method__IsStaticAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__Method__IsStaticAssignment_0_in_rule__Method__Group__0__Impl2080);
+                    pushFollow(FOLLOW_rule__Method__IsStaticAssignment_0_in_rule__Method__Group__0__Impl2064);
                     rule__Method__IsStaticAssignment_0();
 
                     state._fsp--;
@@ -2798,21 +2773,21 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Method__Group__1"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1056:1: rule__Method__Group__1 : rule__Method__Group__1__Impl rule__Method__Group__2 ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1049:1: rule__Method__Group__1 : rule__Method__Group__1__Impl rule__Method__Group__2 ;
     public final void rule__Method__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1060:1: ( rule__Method__Group__1__Impl rule__Method__Group__2 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1061:2: rule__Method__Group__1__Impl rule__Method__Group__2
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1053:1: ( rule__Method__Group__1__Impl rule__Method__Group__2 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1054:2: rule__Method__Group__1__Impl rule__Method__Group__2
             {
-            pushFollow(FOLLOW_rule__Method__Group__1__Impl_in_rule__Method__Group__12111);
+            pushFollow(FOLLOW_rule__Method__Group__1__Impl_in_rule__Method__Group__12095);
             rule__Method__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Method__Group__2_in_rule__Method__Group__12114);
+            pushFollow(FOLLOW_rule__Method__Group__2_in_rule__Method__Group__12098);
             rule__Method__Group__2();
 
             state._fsp--;
@@ -2836,23 +2811,23 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Method__Group__1__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1068:1: rule__Method__Group__1__Impl : ( ( rule__Method__TypeAssignment_1 ) ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1061:1: rule__Method__Group__1__Impl : ( ( rule__Method__TypeAssignment_1 ) ) ;
     public final void rule__Method__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1072:1: ( ( ( rule__Method__TypeAssignment_1 ) ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1073:1: ( ( rule__Method__TypeAssignment_1 ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1065:1: ( ( ( rule__Method__TypeAssignment_1 ) ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1066:1: ( ( rule__Method__TypeAssignment_1 ) )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1073:1: ( ( rule__Method__TypeAssignment_1 ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1074:1: ( rule__Method__TypeAssignment_1 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1066:1: ( ( rule__Method__TypeAssignment_1 ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1067:1: ( rule__Method__TypeAssignment_1 )
             {
              before(grammarAccess.getMethodAccess().getTypeAssignment_1()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1075:1: ( rule__Method__TypeAssignment_1 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1075:2: rule__Method__TypeAssignment_1
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1068:1: ( rule__Method__TypeAssignment_1 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1068:2: rule__Method__TypeAssignment_1
             {
-            pushFollow(FOLLOW_rule__Method__TypeAssignment_1_in_rule__Method__Group__1__Impl2141);
+            pushFollow(FOLLOW_rule__Method__TypeAssignment_1_in_rule__Method__Group__1__Impl2125);
             rule__Method__TypeAssignment_1();
 
             state._fsp--;
@@ -2883,21 +2858,21 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Method__Group__2"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1085:1: rule__Method__Group__2 : rule__Method__Group__2__Impl rule__Method__Group__3 ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1078:1: rule__Method__Group__2 : rule__Method__Group__2__Impl rule__Method__Group__3 ;
     public final void rule__Method__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1089:1: ( rule__Method__Group__2__Impl rule__Method__Group__3 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1090:2: rule__Method__Group__2__Impl rule__Method__Group__3
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1082:1: ( rule__Method__Group__2__Impl rule__Method__Group__3 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1083:2: rule__Method__Group__2__Impl rule__Method__Group__3
             {
-            pushFollow(FOLLOW_rule__Method__Group__2__Impl_in_rule__Method__Group__22171);
+            pushFollow(FOLLOW_rule__Method__Group__2__Impl_in_rule__Method__Group__22155);
             rule__Method__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Method__Group__3_in_rule__Method__Group__22174);
+            pushFollow(FOLLOW_rule__Method__Group__3_in_rule__Method__Group__22158);
             rule__Method__Group__3();
 
             state._fsp--;
@@ -2921,23 +2896,23 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Method__Group__2__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1097:1: rule__Method__Group__2__Impl : ( ( rule__Method__NameAssignment_2 ) ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1090:1: rule__Method__Group__2__Impl : ( ( rule__Method__NameAssignment_2 ) ) ;
     public final void rule__Method__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1101:1: ( ( ( rule__Method__NameAssignment_2 ) ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1102:1: ( ( rule__Method__NameAssignment_2 ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1094:1: ( ( ( rule__Method__NameAssignment_2 ) ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1095:1: ( ( rule__Method__NameAssignment_2 ) )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1102:1: ( ( rule__Method__NameAssignment_2 ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1103:1: ( rule__Method__NameAssignment_2 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1095:1: ( ( rule__Method__NameAssignment_2 ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1096:1: ( rule__Method__NameAssignment_2 )
             {
              before(grammarAccess.getMethodAccess().getNameAssignment_2()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1104:1: ( rule__Method__NameAssignment_2 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1104:2: rule__Method__NameAssignment_2
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1097:1: ( rule__Method__NameAssignment_2 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1097:2: rule__Method__NameAssignment_2
             {
-            pushFollow(FOLLOW_rule__Method__NameAssignment_2_in_rule__Method__Group__2__Impl2201);
+            pushFollow(FOLLOW_rule__Method__NameAssignment_2_in_rule__Method__Group__2__Impl2185);
             rule__Method__NameAssignment_2();
 
             state._fsp--;
@@ -2968,21 +2943,21 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Method__Group__3"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1114:1: rule__Method__Group__3 : rule__Method__Group__3__Impl rule__Method__Group__4 ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1107:1: rule__Method__Group__3 : rule__Method__Group__3__Impl rule__Method__Group__4 ;
     public final void rule__Method__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1118:1: ( rule__Method__Group__3__Impl rule__Method__Group__4 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1119:2: rule__Method__Group__3__Impl rule__Method__Group__4
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1111:1: ( rule__Method__Group__3__Impl rule__Method__Group__4 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1112:2: rule__Method__Group__3__Impl rule__Method__Group__4
             {
-            pushFollow(FOLLOW_rule__Method__Group__3__Impl_in_rule__Method__Group__32231);
+            pushFollow(FOLLOW_rule__Method__Group__3__Impl_in_rule__Method__Group__32215);
             rule__Method__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Method__Group__4_in_rule__Method__Group__32234);
+            pushFollow(FOLLOW_rule__Method__Group__4_in_rule__Method__Group__32218);
             rule__Method__Group__4();
 
             state._fsp--;
@@ -3006,20 +2981,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Method__Group__3__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1126:1: rule__Method__Group__3__Impl : ( ( rule__Method__ParametersAssignment_3 )* ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1119:1: rule__Method__Group__3__Impl : ( ( rule__Method__ParametersAssignment_3 )* ) ;
     public final void rule__Method__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1130:1: ( ( ( rule__Method__ParametersAssignment_3 )* ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1131:1: ( ( rule__Method__ParametersAssignment_3 )* )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1123:1: ( ( ( rule__Method__ParametersAssignment_3 )* ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1124:1: ( ( rule__Method__ParametersAssignment_3 )* )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1131:1: ( ( rule__Method__ParametersAssignment_3 )* )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1132:1: ( rule__Method__ParametersAssignment_3 )*
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1124:1: ( ( rule__Method__ParametersAssignment_3 )* )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1125:1: ( rule__Method__ParametersAssignment_3 )*
             {
              before(grammarAccess.getMethodAccess().getParametersAssignment_3()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1133:1: ( rule__Method__ParametersAssignment_3 )*
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1126:1: ( rule__Method__ParametersAssignment_3 )*
             loop7:
             do {
                 int alt7=2;
@@ -3041,9 +3016,9 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
                 switch (alt7) {
             	case 1 :
-            	    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1133:2: rule__Method__ParametersAssignment_3
+            	    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1126:2: rule__Method__ParametersAssignment_3
             	    {
-            	    pushFollow(FOLLOW_rule__Method__ParametersAssignment_3_in_rule__Method__Group__3__Impl2261);
+            	    pushFollow(FOLLOW_rule__Method__ParametersAssignment_3_in_rule__Method__Group__3__Impl2245);
             	    rule__Method__ParametersAssignment_3();
 
             	    state._fsp--;
@@ -3080,16 +3055,16 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Method__Group__4"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1143:1: rule__Method__Group__4 : rule__Method__Group__4__Impl ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1136:1: rule__Method__Group__4 : rule__Method__Group__4__Impl ;
     public final void rule__Method__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1147:1: ( rule__Method__Group__4__Impl )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1148:2: rule__Method__Group__4__Impl
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1140:1: ( rule__Method__Group__4__Impl )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1141:2: rule__Method__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__Method__Group__4__Impl_in_rule__Method__Group__42292);
+            pushFollow(FOLLOW_rule__Method__Group__4__Impl_in_rule__Method__Group__42276);
             rule__Method__Group__4__Impl();
 
             state._fsp--;
@@ -3113,20 +3088,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Method__Group__4__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1154:1: rule__Method__Group__4__Impl : ( ( ';' )? ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1147:1: rule__Method__Group__4__Impl : ( ( ';' )? ) ;
     public final void rule__Method__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1158:1: ( ( ( ';' )? ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1159:1: ( ( ';' )? )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1151:1: ( ( ( ';' )? ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1152:1: ( ( ';' )? )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1159:1: ( ( ';' )? )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1160:1: ( ';' )?
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1152:1: ( ( ';' )? )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1153:1: ( ';' )?
             {
              before(grammarAccess.getMethodAccess().getSemicolonKeyword_4()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1161:1: ( ';' )?
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1154:1: ( ';' )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -3135,9 +3110,9 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
             }
             switch (alt8) {
                 case 1 :
-                    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1162:2: ';'
+                    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1155:2: ';'
                     {
-                    match(input,18,FOLLOW_18_in_rule__Method__Group__4__Impl2321); 
+                    match(input,18,FOLLOW_18_in_rule__Method__Group__4__Impl2305); 
 
                     }
                     break;
@@ -3167,21 +3142,21 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Parameter__Group__0"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1183:1: rule__Parameter__Group__0 : rule__Parameter__Group__0__Impl rule__Parameter__Group__1 ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1176:1: rule__Parameter__Group__0 : rule__Parameter__Group__0__Impl rule__Parameter__Group__1 ;
     public final void rule__Parameter__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1187:1: ( rule__Parameter__Group__0__Impl rule__Parameter__Group__1 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1188:2: rule__Parameter__Group__0__Impl rule__Parameter__Group__1
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1180:1: ( rule__Parameter__Group__0__Impl rule__Parameter__Group__1 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1181:2: rule__Parameter__Group__0__Impl rule__Parameter__Group__1
             {
-            pushFollow(FOLLOW_rule__Parameter__Group__0__Impl_in_rule__Parameter__Group__02364);
+            pushFollow(FOLLOW_rule__Parameter__Group__0__Impl_in_rule__Parameter__Group__02348);
             rule__Parameter__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Parameter__Group__1_in_rule__Parameter__Group__02367);
+            pushFollow(FOLLOW_rule__Parameter__Group__1_in_rule__Parameter__Group__02351);
             rule__Parameter__Group__1();
 
             state._fsp--;
@@ -3205,20 +3180,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Parameter__Group__0__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1195:1: rule__Parameter__Group__0__Impl : ( ( rule__Parameter__SignaturePartAssignment_0 )? ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1188:1: rule__Parameter__Group__0__Impl : ( ( rule__Parameter__SignaturePartAssignment_0 )? ) ;
     public final void rule__Parameter__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1199:1: ( ( ( rule__Parameter__SignaturePartAssignment_0 )? ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1200:1: ( ( rule__Parameter__SignaturePartAssignment_0 )? )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1192:1: ( ( ( rule__Parameter__SignaturePartAssignment_0 )? ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1193:1: ( ( rule__Parameter__SignaturePartAssignment_0 )? )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1200:1: ( ( rule__Parameter__SignaturePartAssignment_0 )? )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1201:1: ( rule__Parameter__SignaturePartAssignment_0 )?
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1193:1: ( ( rule__Parameter__SignaturePartAssignment_0 )? )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1194:1: ( rule__Parameter__SignaturePartAssignment_0 )?
             {
              before(grammarAccess.getParameterAccess().getSignaturePartAssignment_0()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1202:1: ( rule__Parameter__SignaturePartAssignment_0 )?
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1195:1: ( rule__Parameter__SignaturePartAssignment_0 )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -3227,9 +3202,9 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
             }
             switch (alt9) {
                 case 1 :
-                    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1202:2: rule__Parameter__SignaturePartAssignment_0
+                    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1195:2: rule__Parameter__SignaturePartAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__Parameter__SignaturePartAssignment_0_in_rule__Parameter__Group__0__Impl2394);
+                    pushFollow(FOLLOW_rule__Parameter__SignaturePartAssignment_0_in_rule__Parameter__Group__0__Impl2378);
                     rule__Parameter__SignaturePartAssignment_0();
 
                     state._fsp--;
@@ -3263,21 +3238,21 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Parameter__Group__1"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1212:1: rule__Parameter__Group__1 : rule__Parameter__Group__1__Impl rule__Parameter__Group__2 ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1205:1: rule__Parameter__Group__1 : rule__Parameter__Group__1__Impl rule__Parameter__Group__2 ;
     public final void rule__Parameter__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1216:1: ( rule__Parameter__Group__1__Impl rule__Parameter__Group__2 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1217:2: rule__Parameter__Group__1__Impl rule__Parameter__Group__2
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1209:1: ( rule__Parameter__Group__1__Impl rule__Parameter__Group__2 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1210:2: rule__Parameter__Group__1__Impl rule__Parameter__Group__2
             {
-            pushFollow(FOLLOW_rule__Parameter__Group__1__Impl_in_rule__Parameter__Group__12425);
+            pushFollow(FOLLOW_rule__Parameter__Group__1__Impl_in_rule__Parameter__Group__12409);
             rule__Parameter__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Parameter__Group__2_in_rule__Parameter__Group__12428);
+            pushFollow(FOLLOW_rule__Parameter__Group__2_in_rule__Parameter__Group__12412);
             rule__Parameter__Group__2();
 
             state._fsp--;
@@ -3301,20 +3276,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Parameter__Group__1__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1224:1: rule__Parameter__Group__1__Impl : ( ':' ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1217:1: rule__Parameter__Group__1__Impl : ( ':' ) ;
     public final void rule__Parameter__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1228:1: ( ( ':' ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1229:1: ( ':' )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1221:1: ( ( ':' ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1222:1: ( ':' )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1229:1: ( ':' )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1230:1: ':'
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1222:1: ( ':' )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1223:1: ':'
             {
              before(grammarAccess.getParameterAccess().getColonKeyword_1()); 
-            match(input,19,FOLLOW_19_in_rule__Parameter__Group__1__Impl2456); 
+            match(input,19,FOLLOW_19_in_rule__Parameter__Group__1__Impl2440); 
              after(grammarAccess.getParameterAccess().getColonKeyword_1()); 
 
             }
@@ -3338,21 +3313,21 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Parameter__Group__2"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1243:1: rule__Parameter__Group__2 : rule__Parameter__Group__2__Impl rule__Parameter__Group__3 ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1236:1: rule__Parameter__Group__2 : rule__Parameter__Group__2__Impl rule__Parameter__Group__3 ;
     public final void rule__Parameter__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1247:1: ( rule__Parameter__Group__2__Impl rule__Parameter__Group__3 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1248:2: rule__Parameter__Group__2__Impl rule__Parameter__Group__3
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1240:1: ( rule__Parameter__Group__2__Impl rule__Parameter__Group__3 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1241:2: rule__Parameter__Group__2__Impl rule__Parameter__Group__3
             {
-            pushFollow(FOLLOW_rule__Parameter__Group__2__Impl_in_rule__Parameter__Group__22487);
+            pushFollow(FOLLOW_rule__Parameter__Group__2__Impl_in_rule__Parameter__Group__22471);
             rule__Parameter__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Parameter__Group__3_in_rule__Parameter__Group__22490);
+            pushFollow(FOLLOW_rule__Parameter__Group__3_in_rule__Parameter__Group__22474);
             rule__Parameter__Group__3();
 
             state._fsp--;
@@ -3376,23 +3351,23 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Parameter__Group__2__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1255:1: rule__Parameter__Group__2__Impl : ( ( rule__Parameter__TypeAssignment_2 ) ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1248:1: rule__Parameter__Group__2__Impl : ( ( rule__Parameter__TypeAssignment_2 ) ) ;
     public final void rule__Parameter__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1259:1: ( ( ( rule__Parameter__TypeAssignment_2 ) ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1260:1: ( ( rule__Parameter__TypeAssignment_2 ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1252:1: ( ( ( rule__Parameter__TypeAssignment_2 ) ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1253:1: ( ( rule__Parameter__TypeAssignment_2 ) )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1260:1: ( ( rule__Parameter__TypeAssignment_2 ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1261:1: ( rule__Parameter__TypeAssignment_2 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1253:1: ( ( rule__Parameter__TypeAssignment_2 ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1254:1: ( rule__Parameter__TypeAssignment_2 )
             {
              before(grammarAccess.getParameterAccess().getTypeAssignment_2()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1262:1: ( rule__Parameter__TypeAssignment_2 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1262:2: rule__Parameter__TypeAssignment_2
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1255:1: ( rule__Parameter__TypeAssignment_2 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1255:2: rule__Parameter__TypeAssignment_2
             {
-            pushFollow(FOLLOW_rule__Parameter__TypeAssignment_2_in_rule__Parameter__Group__2__Impl2517);
+            pushFollow(FOLLOW_rule__Parameter__TypeAssignment_2_in_rule__Parameter__Group__2__Impl2501);
             rule__Parameter__TypeAssignment_2();
 
             state._fsp--;
@@ -3423,16 +3398,16 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Parameter__Group__3"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1272:1: rule__Parameter__Group__3 : rule__Parameter__Group__3__Impl ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1265:1: rule__Parameter__Group__3 : rule__Parameter__Group__3__Impl ;
     public final void rule__Parameter__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1276:1: ( rule__Parameter__Group__3__Impl )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1277:2: rule__Parameter__Group__3__Impl
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1269:1: ( rule__Parameter__Group__3__Impl )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1270:2: rule__Parameter__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__Parameter__Group__3__Impl_in_rule__Parameter__Group__32547);
+            pushFollow(FOLLOW_rule__Parameter__Group__3__Impl_in_rule__Parameter__Group__32531);
             rule__Parameter__Group__3__Impl();
 
             state._fsp--;
@@ -3456,23 +3431,23 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Parameter__Group__3__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1283:1: rule__Parameter__Group__3__Impl : ( ( rule__Parameter__NameAssignment_3 ) ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1276:1: rule__Parameter__Group__3__Impl : ( ( rule__Parameter__NameAssignment_3 ) ) ;
     public final void rule__Parameter__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1287:1: ( ( ( rule__Parameter__NameAssignment_3 ) ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1288:1: ( ( rule__Parameter__NameAssignment_3 ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1280:1: ( ( ( rule__Parameter__NameAssignment_3 ) ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1281:1: ( ( rule__Parameter__NameAssignment_3 ) )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1288:1: ( ( rule__Parameter__NameAssignment_3 ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1289:1: ( rule__Parameter__NameAssignment_3 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1281:1: ( ( rule__Parameter__NameAssignment_3 ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1282:1: ( rule__Parameter__NameAssignment_3 )
             {
              before(grammarAccess.getParameterAccess().getNameAssignment_3()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1290:1: ( rule__Parameter__NameAssignment_3 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1290:2: rule__Parameter__NameAssignment_3
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1283:1: ( rule__Parameter__NameAssignment_3 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1283:2: rule__Parameter__NameAssignment_3
             {
-            pushFollow(FOLLOW_rule__Parameter__NameAssignment_3_in_rule__Parameter__Group__3__Impl2574);
+            pushFollow(FOLLOW_rule__Parameter__NameAssignment_3_in_rule__Parameter__Group__3__Impl2558);
             rule__Parameter__NameAssignment_3();
 
             state._fsp--;
@@ -3503,21 +3478,21 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Primitive__Group__0"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1309:1: rule__Primitive__Group__0 : rule__Primitive__Group__0__Impl rule__Primitive__Group__1 ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1302:1: rule__Primitive__Group__0 : rule__Primitive__Group__0__Impl rule__Primitive__Group__1 ;
     public final void rule__Primitive__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1313:1: ( rule__Primitive__Group__0__Impl rule__Primitive__Group__1 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1314:2: rule__Primitive__Group__0__Impl rule__Primitive__Group__1
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1306:1: ( rule__Primitive__Group__0__Impl rule__Primitive__Group__1 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1307:2: rule__Primitive__Group__0__Impl rule__Primitive__Group__1
             {
-            pushFollow(FOLLOW_rule__Primitive__Group__0__Impl_in_rule__Primitive__Group__02613);
+            pushFollow(FOLLOW_rule__Primitive__Group__0__Impl_in_rule__Primitive__Group__02597);
             rule__Primitive__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Primitive__Group__1_in_rule__Primitive__Group__02616);
+            pushFollow(FOLLOW_rule__Primitive__Group__1_in_rule__Primitive__Group__02600);
             rule__Primitive__Group__1();
 
             state._fsp--;
@@ -3541,20 +3516,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Primitive__Group__0__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1321:1: rule__Primitive__Group__0__Impl : ( 'primitive type' ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1314:1: rule__Primitive__Group__0__Impl : ( 'primitive type' ) ;
     public final void rule__Primitive__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1325:1: ( ( 'primitive type' ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1326:1: ( 'primitive type' )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1318:1: ( ( 'primitive type' ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1319:1: ( 'primitive type' )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1326:1: ( 'primitive type' )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1327:1: 'primitive type'
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1319:1: ( 'primitive type' )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1320:1: 'primitive type'
             {
              before(grammarAccess.getPrimitiveAccess().getPrimitiveTypeKeyword_0()); 
-            match(input,20,FOLLOW_20_in_rule__Primitive__Group__0__Impl2644); 
+            match(input,20,FOLLOW_20_in_rule__Primitive__Group__0__Impl2628); 
              after(grammarAccess.getPrimitiveAccess().getPrimitiveTypeKeyword_0()); 
 
             }
@@ -3578,16 +3553,16 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Primitive__Group__1"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1340:1: rule__Primitive__Group__1 : rule__Primitive__Group__1__Impl ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1333:1: rule__Primitive__Group__1 : rule__Primitive__Group__1__Impl ;
     public final void rule__Primitive__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1344:1: ( rule__Primitive__Group__1__Impl )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1345:2: rule__Primitive__Group__1__Impl
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1337:1: ( rule__Primitive__Group__1__Impl )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1338:2: rule__Primitive__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Primitive__Group__1__Impl_in_rule__Primitive__Group__12675);
+            pushFollow(FOLLOW_rule__Primitive__Group__1__Impl_in_rule__Primitive__Group__12659);
             rule__Primitive__Group__1__Impl();
 
             state._fsp--;
@@ -3611,23 +3586,23 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Primitive__Group__1__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1351:1: rule__Primitive__Group__1__Impl : ( ( rule__Primitive__NameAssignment_1 ) ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1344:1: rule__Primitive__Group__1__Impl : ( ( rule__Primitive__NameAssignment_1 ) ) ;
     public final void rule__Primitive__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1355:1: ( ( ( rule__Primitive__NameAssignment_1 ) ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1356:1: ( ( rule__Primitive__NameAssignment_1 ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1348:1: ( ( ( rule__Primitive__NameAssignment_1 ) ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1349:1: ( ( rule__Primitive__NameAssignment_1 ) )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1356:1: ( ( rule__Primitive__NameAssignment_1 ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1357:1: ( rule__Primitive__NameAssignment_1 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1349:1: ( ( rule__Primitive__NameAssignment_1 ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1350:1: ( rule__Primitive__NameAssignment_1 )
             {
              before(grammarAccess.getPrimitiveAccess().getNameAssignment_1()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1358:1: ( rule__Primitive__NameAssignment_1 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1358:2: rule__Primitive__NameAssignment_1
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1351:1: ( rule__Primitive__NameAssignment_1 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1351:2: rule__Primitive__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Primitive__NameAssignment_1_in_rule__Primitive__Group__1__Impl2702);
+            pushFollow(FOLLOW_rule__Primitive__NameAssignment_1_in_rule__Primitive__Group__1__Impl2686);
             rule__Primitive__NameAssignment_1();
 
             state._fsp--;
@@ -3658,21 +3633,21 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Any__Group__0"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1372:1: rule__Any__Group__0 : rule__Any__Group__0__Impl rule__Any__Group__1 ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1365:1: rule__Any__Group__0 : rule__Any__Group__0__Impl rule__Any__Group__1 ;
     public final void rule__Any__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1376:1: ( rule__Any__Group__0__Impl rule__Any__Group__1 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1377:2: rule__Any__Group__0__Impl rule__Any__Group__1
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1369:1: ( rule__Any__Group__0__Impl rule__Any__Group__1 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1370:2: rule__Any__Group__0__Impl rule__Any__Group__1
             {
-            pushFollow(FOLLOW_rule__Any__Group__0__Impl_in_rule__Any__Group__02736);
+            pushFollow(FOLLOW_rule__Any__Group__0__Impl_in_rule__Any__Group__02720);
             rule__Any__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Any__Group__1_in_rule__Any__Group__02739);
+            pushFollow(FOLLOW_rule__Any__Group__1_in_rule__Any__Group__02723);
             rule__Any__Group__1();
 
             state._fsp--;
@@ -3696,20 +3671,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Any__Group__0__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1384:1: rule__Any__Group__0__Impl : ( 'any type' ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1377:1: rule__Any__Group__0__Impl : ( 'any type' ) ;
     public final void rule__Any__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1388:1: ( ( 'any type' ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1389:1: ( 'any type' )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1381:1: ( ( 'any type' ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1382:1: ( 'any type' )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1389:1: ( 'any type' )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1390:1: 'any type'
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1382:1: ( 'any type' )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1383:1: 'any type'
             {
              before(grammarAccess.getAnyAccess().getAnyTypeKeyword_0()); 
-            match(input,21,FOLLOW_21_in_rule__Any__Group__0__Impl2767); 
+            match(input,21,FOLLOW_21_in_rule__Any__Group__0__Impl2751); 
              after(grammarAccess.getAnyAccess().getAnyTypeKeyword_0()); 
 
             }
@@ -3733,16 +3708,16 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Any__Group__1"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1403:1: rule__Any__Group__1 : rule__Any__Group__1__Impl ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1396:1: rule__Any__Group__1 : rule__Any__Group__1__Impl ;
     public final void rule__Any__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1407:1: ( rule__Any__Group__1__Impl )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1408:2: rule__Any__Group__1__Impl
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1400:1: ( rule__Any__Group__1__Impl )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1401:2: rule__Any__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Any__Group__1__Impl_in_rule__Any__Group__12798);
+            pushFollow(FOLLOW_rule__Any__Group__1__Impl_in_rule__Any__Group__12782);
             rule__Any__Group__1__Impl();
 
             state._fsp--;
@@ -3766,23 +3741,23 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Any__Group__1__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1414:1: rule__Any__Group__1__Impl : ( ( rule__Any__NameAssignment_1 ) ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1407:1: rule__Any__Group__1__Impl : ( ( rule__Any__NameAssignment_1 ) ) ;
     public final void rule__Any__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1418:1: ( ( ( rule__Any__NameAssignment_1 ) ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1419:1: ( ( rule__Any__NameAssignment_1 ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1411:1: ( ( ( rule__Any__NameAssignment_1 ) ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1412:1: ( ( rule__Any__NameAssignment_1 ) )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1419:1: ( ( rule__Any__NameAssignment_1 ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1420:1: ( rule__Any__NameAssignment_1 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1412:1: ( ( rule__Any__NameAssignment_1 ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1413:1: ( rule__Any__NameAssignment_1 )
             {
              before(grammarAccess.getAnyAccess().getNameAssignment_1()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1421:1: ( rule__Any__NameAssignment_1 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1421:2: rule__Any__NameAssignment_1
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1414:1: ( rule__Any__NameAssignment_1 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1414:2: rule__Any__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Any__NameAssignment_1_in_rule__Any__Group__1__Impl2825);
+            pushFollow(FOLLOW_rule__Any__NameAssignment_1_in_rule__Any__Group__1__Impl2809);
             rule__Any__NameAssignment_1();
 
             state._fsp--;
@@ -3813,21 +3788,21 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__TypeRef__Group__0"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1438:1: rule__TypeRef__Group__0 : rule__TypeRef__Group__0__Impl rule__TypeRef__Group__1 ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1431:1: rule__TypeRef__Group__0 : rule__TypeRef__Group__0__Impl rule__TypeRef__Group__1 ;
     public final void rule__TypeRef__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1442:1: ( rule__TypeRef__Group__0__Impl rule__TypeRef__Group__1 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1443:2: rule__TypeRef__Group__0__Impl rule__TypeRef__Group__1
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1435:1: ( rule__TypeRef__Group__0__Impl rule__TypeRef__Group__1 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1436:2: rule__TypeRef__Group__0__Impl rule__TypeRef__Group__1
             {
-            pushFollow(FOLLOW_rule__TypeRef__Group__0__Impl_in_rule__TypeRef__Group__02862);
+            pushFollow(FOLLOW_rule__TypeRef__Group__0__Impl_in_rule__TypeRef__Group__02846);
             rule__TypeRef__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TypeRef__Group__1_in_rule__TypeRef__Group__02865);
+            pushFollow(FOLLOW_rule__TypeRef__Group__1_in_rule__TypeRef__Group__02849);
             rule__TypeRef__Group__1();
 
             state._fsp--;
@@ -3851,23 +3826,23 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__TypeRef__Group__0__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1450:1: rule__TypeRef__Group__0__Impl : ( ( rule__TypeRef__ReferencedAssignment_0 ) ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1443:1: rule__TypeRef__Group__0__Impl : ( ( rule__TypeRef__ReferencedAssignment_0 ) ) ;
     public final void rule__TypeRef__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1454:1: ( ( ( rule__TypeRef__ReferencedAssignment_0 ) ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1455:1: ( ( rule__TypeRef__ReferencedAssignment_0 ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1447:1: ( ( ( rule__TypeRef__ReferencedAssignment_0 ) ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1448:1: ( ( rule__TypeRef__ReferencedAssignment_0 ) )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1455:1: ( ( rule__TypeRef__ReferencedAssignment_0 ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1456:1: ( rule__TypeRef__ReferencedAssignment_0 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1448:1: ( ( rule__TypeRef__ReferencedAssignment_0 ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1449:1: ( rule__TypeRef__ReferencedAssignment_0 )
             {
              before(grammarAccess.getTypeRefAccess().getReferencedAssignment_0()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1457:1: ( rule__TypeRef__ReferencedAssignment_0 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1457:2: rule__TypeRef__ReferencedAssignment_0
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1450:1: ( rule__TypeRef__ReferencedAssignment_0 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1450:2: rule__TypeRef__ReferencedAssignment_0
             {
-            pushFollow(FOLLOW_rule__TypeRef__ReferencedAssignment_0_in_rule__TypeRef__Group__0__Impl2892);
+            pushFollow(FOLLOW_rule__TypeRef__ReferencedAssignment_0_in_rule__TypeRef__Group__0__Impl2876);
             rule__TypeRef__ReferencedAssignment_0();
 
             state._fsp--;
@@ -3898,16 +3873,16 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__TypeRef__Group__1"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1467:1: rule__TypeRef__Group__1 : rule__TypeRef__Group__1__Impl ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1460:1: rule__TypeRef__Group__1 : rule__TypeRef__Group__1__Impl ;
     public final void rule__TypeRef__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1471:1: ( rule__TypeRef__Group__1__Impl )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1472:2: rule__TypeRef__Group__1__Impl
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1464:1: ( rule__TypeRef__Group__1__Impl )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1465:2: rule__TypeRef__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__TypeRef__Group__1__Impl_in_rule__TypeRef__Group__12922);
+            pushFollow(FOLLOW_rule__TypeRef__Group__1__Impl_in_rule__TypeRef__Group__12906);
             rule__TypeRef__Group__1__Impl();
 
             state._fsp--;
@@ -3931,20 +3906,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__TypeRef__Group__1__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1478:1: rule__TypeRef__Group__1__Impl : ( ( rule__TypeRef__IsMultiAssignment_1 )? ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1471:1: rule__TypeRef__Group__1__Impl : ( ( rule__TypeRef__IsMultiAssignment_1 )? ) ;
     public final void rule__TypeRef__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1482:1: ( ( ( rule__TypeRef__IsMultiAssignment_1 )? ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1483:1: ( ( rule__TypeRef__IsMultiAssignment_1 )? )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1475:1: ( ( ( rule__TypeRef__IsMultiAssignment_1 )? ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1476:1: ( ( rule__TypeRef__IsMultiAssignment_1 )? )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1483:1: ( ( rule__TypeRef__IsMultiAssignment_1 )? )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1484:1: ( rule__TypeRef__IsMultiAssignment_1 )?
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1476:1: ( ( rule__TypeRef__IsMultiAssignment_1 )? )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1477:1: ( rule__TypeRef__IsMultiAssignment_1 )?
             {
              before(grammarAccess.getTypeRefAccess().getIsMultiAssignment_1()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1485:1: ( rule__TypeRef__IsMultiAssignment_1 )?
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1478:1: ( rule__TypeRef__IsMultiAssignment_1 )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -3953,9 +3928,9 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
             }
             switch (alt10) {
                 case 1 :
-                    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1485:2: rule__TypeRef__IsMultiAssignment_1
+                    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1478:2: rule__TypeRef__IsMultiAssignment_1
                     {
-                    pushFollow(FOLLOW_rule__TypeRef__IsMultiAssignment_1_in_rule__TypeRef__Group__1__Impl2949);
+                    pushFollow(FOLLOW_rule__TypeRef__IsMultiAssignment_1_in_rule__TypeRef__Group__1__Impl2933);
                     rule__TypeRef__IsMultiAssignment_1();
 
                     state._fsp--;
@@ -3989,21 +3964,21 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__EFloatObject__Group__0"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1499:1: rule__EFloatObject__Group__0 : rule__EFloatObject__Group__0__Impl rule__EFloatObject__Group__1 ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1492:1: rule__EFloatObject__Group__0 : rule__EFloatObject__Group__0__Impl rule__EFloatObject__Group__1 ;
     public final void rule__EFloatObject__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1503:1: ( rule__EFloatObject__Group__0__Impl rule__EFloatObject__Group__1 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1504:2: rule__EFloatObject__Group__0__Impl rule__EFloatObject__Group__1
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1496:1: ( rule__EFloatObject__Group__0__Impl rule__EFloatObject__Group__1 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1497:2: rule__EFloatObject__Group__0__Impl rule__EFloatObject__Group__1
             {
-            pushFollow(FOLLOW_rule__EFloatObject__Group__0__Impl_in_rule__EFloatObject__Group__02984);
+            pushFollow(FOLLOW_rule__EFloatObject__Group__0__Impl_in_rule__EFloatObject__Group__02968);
             rule__EFloatObject__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EFloatObject__Group__1_in_rule__EFloatObject__Group__02987);
+            pushFollow(FOLLOW_rule__EFloatObject__Group__1_in_rule__EFloatObject__Group__02971);
             rule__EFloatObject__Group__1();
 
             state._fsp--;
@@ -4027,20 +4002,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__EFloatObject__Group__0__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1511:1: rule__EFloatObject__Group__0__Impl : ( ( '-' )? ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1504:1: rule__EFloatObject__Group__0__Impl : ( ( '-' )? ) ;
     public final void rule__EFloatObject__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1515:1: ( ( ( '-' )? ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1516:1: ( ( '-' )? )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1508:1: ( ( ( '-' )? ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1509:1: ( ( '-' )? )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1516:1: ( ( '-' )? )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1517:1: ( '-' )?
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1509:1: ( ( '-' )? )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1510:1: ( '-' )?
             {
              before(grammarAccess.getEFloatObjectAccess().getHyphenMinusKeyword_0()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1518:1: ( '-' )?
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1511:1: ( '-' )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -4049,9 +4024,9 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
             }
             switch (alt11) {
                 case 1 :
-                    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1519:2: '-'
+                    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1512:2: '-'
                     {
-                    match(input,22,FOLLOW_22_in_rule__EFloatObject__Group__0__Impl3016); 
+                    match(input,22,FOLLOW_22_in_rule__EFloatObject__Group__0__Impl3000); 
 
                     }
                     break;
@@ -4081,21 +4056,21 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__EFloatObject__Group__1"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1530:1: rule__EFloatObject__Group__1 : rule__EFloatObject__Group__1__Impl rule__EFloatObject__Group__2 ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1523:1: rule__EFloatObject__Group__1 : rule__EFloatObject__Group__1__Impl rule__EFloatObject__Group__2 ;
     public final void rule__EFloatObject__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1534:1: ( rule__EFloatObject__Group__1__Impl rule__EFloatObject__Group__2 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1535:2: rule__EFloatObject__Group__1__Impl rule__EFloatObject__Group__2
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1527:1: ( rule__EFloatObject__Group__1__Impl rule__EFloatObject__Group__2 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1528:2: rule__EFloatObject__Group__1__Impl rule__EFloatObject__Group__2
             {
-            pushFollow(FOLLOW_rule__EFloatObject__Group__1__Impl_in_rule__EFloatObject__Group__13049);
+            pushFollow(FOLLOW_rule__EFloatObject__Group__1__Impl_in_rule__EFloatObject__Group__13033);
             rule__EFloatObject__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EFloatObject__Group__2_in_rule__EFloatObject__Group__13052);
+            pushFollow(FOLLOW_rule__EFloatObject__Group__2_in_rule__EFloatObject__Group__13036);
             rule__EFloatObject__Group__2();
 
             state._fsp--;
@@ -4119,20 +4094,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__EFloatObject__Group__1__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1542:1: rule__EFloatObject__Group__1__Impl : ( ( RULE_INT )? ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1535:1: rule__EFloatObject__Group__1__Impl : ( ( RULE_INT )? ) ;
     public final void rule__EFloatObject__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1546:1: ( ( ( RULE_INT )? ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1547:1: ( ( RULE_INT )? )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1539:1: ( ( ( RULE_INT )? ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1540:1: ( ( RULE_INT )? )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1547:1: ( ( RULE_INT )? )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1548:1: ( RULE_INT )?
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1540:1: ( ( RULE_INT )? )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1541:1: ( RULE_INT )?
             {
              before(grammarAccess.getEFloatObjectAccess().getINTTerminalRuleCall_1()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1549:1: ( RULE_INT )?
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1542:1: ( RULE_INT )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -4141,9 +4116,9 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
             }
             switch (alt12) {
                 case 1 :
-                    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1549:3: RULE_INT
+                    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1542:3: RULE_INT
                     {
-                    match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__EFloatObject__Group__1__Impl3080); 
+                    match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__EFloatObject__Group__1__Impl3064); 
 
                     }
                     break;
@@ -4173,21 +4148,21 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__EFloatObject__Group__2"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1559:1: rule__EFloatObject__Group__2 : rule__EFloatObject__Group__2__Impl rule__EFloatObject__Group__3 ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1552:1: rule__EFloatObject__Group__2 : rule__EFloatObject__Group__2__Impl rule__EFloatObject__Group__3 ;
     public final void rule__EFloatObject__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1563:1: ( rule__EFloatObject__Group__2__Impl rule__EFloatObject__Group__3 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1564:2: rule__EFloatObject__Group__2__Impl rule__EFloatObject__Group__3
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1556:1: ( rule__EFloatObject__Group__2__Impl rule__EFloatObject__Group__3 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1557:2: rule__EFloatObject__Group__2__Impl rule__EFloatObject__Group__3
             {
-            pushFollow(FOLLOW_rule__EFloatObject__Group__2__Impl_in_rule__EFloatObject__Group__23111);
+            pushFollow(FOLLOW_rule__EFloatObject__Group__2__Impl_in_rule__EFloatObject__Group__23095);
             rule__EFloatObject__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EFloatObject__Group__3_in_rule__EFloatObject__Group__23114);
+            pushFollow(FOLLOW_rule__EFloatObject__Group__3_in_rule__EFloatObject__Group__23098);
             rule__EFloatObject__Group__3();
 
             state._fsp--;
@@ -4211,20 +4186,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__EFloatObject__Group__2__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1571:1: rule__EFloatObject__Group__2__Impl : ( '.' ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1564:1: rule__EFloatObject__Group__2__Impl : ( '.' ) ;
     public final void rule__EFloatObject__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1575:1: ( ( '.' ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1576:1: ( '.' )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1568:1: ( ( '.' ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1569:1: ( '.' )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1576:1: ( '.' )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1577:1: '.'
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1569:1: ( '.' )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1570:1: '.'
             {
              before(grammarAccess.getEFloatObjectAccess().getFullStopKeyword_2()); 
-            match(input,23,FOLLOW_23_in_rule__EFloatObject__Group__2__Impl3142); 
+            match(input,23,FOLLOW_23_in_rule__EFloatObject__Group__2__Impl3126); 
              after(grammarAccess.getEFloatObjectAccess().getFullStopKeyword_2()); 
 
             }
@@ -4248,16 +4223,16 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__EFloatObject__Group__3"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1590:1: rule__EFloatObject__Group__3 : rule__EFloatObject__Group__3__Impl ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1583:1: rule__EFloatObject__Group__3 : rule__EFloatObject__Group__3__Impl ;
     public final void rule__EFloatObject__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1594:1: ( rule__EFloatObject__Group__3__Impl )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1595:2: rule__EFloatObject__Group__3__Impl
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1587:1: ( rule__EFloatObject__Group__3__Impl )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1588:2: rule__EFloatObject__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__EFloatObject__Group__3__Impl_in_rule__EFloatObject__Group__33173);
+            pushFollow(FOLLOW_rule__EFloatObject__Group__3__Impl_in_rule__EFloatObject__Group__33157);
             rule__EFloatObject__Group__3__Impl();
 
             state._fsp--;
@@ -4281,20 +4256,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__EFloatObject__Group__3__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1601:1: rule__EFloatObject__Group__3__Impl : ( RULE_INT ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1594:1: rule__EFloatObject__Group__3__Impl : ( RULE_INT ) ;
     public final void rule__EFloatObject__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1605:1: ( ( RULE_INT ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1606:1: ( RULE_INT )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1598:1: ( ( RULE_INT ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1599:1: ( RULE_INT )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1606:1: ( RULE_INT )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1607:1: RULE_INT
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1599:1: ( RULE_INT )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1600:1: RULE_INT
             {
              before(grammarAccess.getEFloatObjectAccess().getINTTerminalRuleCall_3()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__EFloatObject__Group__3__Impl3200); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__EFloatObject__Group__3__Impl3184); 
              after(grammarAccess.getEFloatObjectAccess().getINTTerminalRuleCall_3()); 
 
             }
@@ -4318,21 +4293,21 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__QualifiedName__Group__0"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1626:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1619:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
     public final void rule__QualifiedName__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1630:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1631:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1623:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1624:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
             {
-            pushFollow(FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__03237);
+            pushFollow(FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__03221);
             rule__QualifiedName__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__03240);
+            pushFollow(FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__03224);
             rule__QualifiedName__Group__1();
 
             state._fsp--;
@@ -4356,20 +4331,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__QualifiedName__Group__0__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1638:1: rule__QualifiedName__Group__0__Impl : ( RULE_ID ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1631:1: rule__QualifiedName__Group__0__Impl : ( RULE_ID ) ;
     public final void rule__QualifiedName__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1642:1: ( ( RULE_ID ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1643:1: ( RULE_ID )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1635:1: ( ( RULE_ID ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1636:1: ( RULE_ID )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1643:1: ( RULE_ID )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1644:1: RULE_ID
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1636:1: ( RULE_ID )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1637:1: RULE_ID
             {
              before(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__QualifiedName__Group__0__Impl3267); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__QualifiedName__Group__0__Impl3251); 
              after(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
 
             }
@@ -4393,16 +4368,16 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__QualifiedName__Group__1"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1655:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1648:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
     public final void rule__QualifiedName__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1659:1: ( rule__QualifiedName__Group__1__Impl )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1660:2: rule__QualifiedName__Group__1__Impl
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1652:1: ( rule__QualifiedName__Group__1__Impl )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1653:2: rule__QualifiedName__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__13296);
+            pushFollow(FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__13280);
             rule__QualifiedName__Group__1__Impl();
 
             state._fsp--;
@@ -4426,20 +4401,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__QualifiedName__Group__1__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1666:1: rule__QualifiedName__Group__1__Impl : ( ( rule__QualifiedName__Group_1__0 )* ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1659:1: rule__QualifiedName__Group__1__Impl : ( ( rule__QualifiedName__Group_1__0 )* ) ;
     public final void rule__QualifiedName__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1670:1: ( ( ( rule__QualifiedName__Group_1__0 )* ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1671:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1663:1: ( ( ( rule__QualifiedName__Group_1__0 )* ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1664:1: ( ( rule__QualifiedName__Group_1__0 )* )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1671:1: ( ( rule__QualifiedName__Group_1__0 )* )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1672:1: ( rule__QualifiedName__Group_1__0 )*
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1664:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1665:1: ( rule__QualifiedName__Group_1__0 )*
             {
              before(grammarAccess.getQualifiedNameAccess().getGroup_1()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1673:1: ( rule__QualifiedName__Group_1__0 )*
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1666:1: ( rule__QualifiedName__Group_1__0 )*
             loop13:
             do {
                 int alt13=2;
@@ -4452,9 +4427,9 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
                 switch (alt13) {
             	case 1 :
-            	    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1673:2: rule__QualifiedName__Group_1__0
+            	    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1666:2: rule__QualifiedName__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl3323);
+            	    pushFollow(FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl3307);
             	    rule__QualifiedName__Group_1__0();
 
             	    state._fsp--;
@@ -4491,21 +4466,21 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__0"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1687:1: rule__QualifiedName__Group_1__0 : rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1680:1: rule__QualifiedName__Group_1__0 : rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 ;
     public final void rule__QualifiedName__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1691:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1692:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1684:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1685:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
             {
-            pushFollow(FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__03358);
+            pushFollow(FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__03342);
             rule__QualifiedName__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__03361);
+            pushFollow(FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__03345);
             rule__QualifiedName__Group_1__1();
 
             state._fsp--;
@@ -4529,20 +4504,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__0__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1699:1: rule__QualifiedName__Group_1__0__Impl : ( '.' ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1692:1: rule__QualifiedName__Group_1__0__Impl : ( '.' ) ;
     public final void rule__QualifiedName__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1703:1: ( ( '.' ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1704:1: ( '.' )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1696:1: ( ( '.' ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1697:1: ( '.' )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1704:1: ( '.' )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1705:1: '.'
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1697:1: ( '.' )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1698:1: '.'
             {
              before(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
-            match(input,23,FOLLOW_23_in_rule__QualifiedName__Group_1__0__Impl3389); 
+            match(input,23,FOLLOW_23_in_rule__QualifiedName__Group_1__0__Impl3373); 
              after(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
 
             }
@@ -4566,16 +4541,16 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__1"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1718:1: rule__QualifiedName__Group_1__1 : rule__QualifiedName__Group_1__1__Impl ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1711:1: rule__QualifiedName__Group_1__1 : rule__QualifiedName__Group_1__1__Impl ;
     public final void rule__QualifiedName__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1722:1: ( rule__QualifiedName__Group_1__1__Impl )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1723:2: rule__QualifiedName__Group_1__1__Impl
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1715:1: ( rule__QualifiedName__Group_1__1__Impl )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1716:2: rule__QualifiedName__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__13420);
+            pushFollow(FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__13404);
             rule__QualifiedName__Group_1__1__Impl();
 
             state._fsp--;
@@ -4599,20 +4574,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__1__Impl"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1729:1: rule__QualifiedName__Group_1__1__Impl : ( RULE_ID ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1722:1: rule__QualifiedName__Group_1__1__Impl : ( RULE_ID ) ;
     public final void rule__QualifiedName__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1733:1: ( ( RULE_ID ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1734:1: ( RULE_ID )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1726:1: ( ( RULE_ID ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1727:1: ( RULE_ID )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1734:1: ( RULE_ID )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1735:1: RULE_ID
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1727:1: ( RULE_ID )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1728:1: RULE_ID
             {
              before(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__QualifiedName__Group_1__1__Impl3447); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__QualifiedName__Group_1__1__Impl3431); 
              after(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1()); 
 
             }
@@ -4636,24 +4611,24 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__InterfaceModel__ModuleAssignment_1"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1751:1: rule__InterfaceModel__ModuleAssignment_1 : ( ( ruleQualifiedName ) ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1744:1: rule__InterfaceModel__ModuleAssignment_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__InterfaceModel__ModuleAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1755:1: ( ( ( ruleQualifiedName ) ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1756:1: ( ( ruleQualifiedName ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1748:1: ( ( ( ruleQualifiedName ) ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1749:1: ( ( ruleQualifiedName ) )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1756:1: ( ( ruleQualifiedName ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1757:1: ( ruleQualifiedName )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1749:1: ( ( ruleQualifiedName ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1750:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getInterfaceModelAccess().getModuleModuleCrossReference_1_0()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1758:1: ( ruleQualifiedName )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1759:1: ruleQualifiedName
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1751:1: ( ruleQualifiedName )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1752:1: ruleQualifiedName
             {
              before(grammarAccess.getInterfaceModelAccess().getModuleModuleQualifiedNameParserRuleCall_1_0_1()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__InterfaceModel__ModuleAssignment_13489);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__InterfaceModel__ModuleAssignment_13473);
             ruleQualifiedName();
 
             state._fsp--;
@@ -4685,20 +4660,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__InterfaceModel__VersionAssignment_3"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1770:1: rule__InterfaceModel__VersionAssignment_3 : ( RULE_STRING ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1763:1: rule__InterfaceModel__VersionAssignment_3 : ( RULE_STRING ) ;
     public final void rule__InterfaceModel__VersionAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1774:1: ( ( RULE_STRING ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1775:1: ( RULE_STRING )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1767:1: ( ( RULE_STRING ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1768:1: ( RULE_STRING )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1775:1: ( RULE_STRING )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1776:1: RULE_STRING
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1768:1: ( RULE_STRING )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1769:1: RULE_STRING
             {
              before(grammarAccess.getInterfaceModelAccess().getVersionSTRINGTerminalRuleCall_3_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__InterfaceModel__VersionAssignment_33524); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__InterfaceModel__VersionAssignment_33508); 
              after(grammarAccess.getInterfaceModelAccess().getVersionSTRINGTerminalRuleCall_3_0()); 
 
             }
@@ -4722,20 +4697,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__InterfaceModel__InterfacesAssignment_4"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1785:1: rule__InterfaceModel__InterfacesAssignment_4 : ( ruleInterface ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1778:1: rule__InterfaceModel__InterfacesAssignment_4 : ( ruleInterface ) ;
     public final void rule__InterfaceModel__InterfacesAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1789:1: ( ( ruleInterface ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1790:1: ( ruleInterface )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1782:1: ( ( ruleInterface ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1783:1: ( ruleInterface )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1790:1: ( ruleInterface )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1791:1: ruleInterface
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1783:1: ( ruleInterface )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1784:1: ruleInterface
             {
              before(grammarAccess.getInterfaceModelAccess().getInterfacesInterfaceParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleInterface_in_rule__InterfaceModel__InterfacesAssignment_43555);
+            pushFollow(FOLLOW_ruleInterface_in_rule__InterfaceModel__InterfacesAssignment_43539);
             ruleInterface();
 
             state._fsp--;
@@ -4763,20 +4738,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Interface__NameAssignment_1"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1800:1: rule__Interface__NameAssignment_1 : ( RULE_ID ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1793:1: rule__Interface__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Interface__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1804:1: ( ( RULE_ID ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1805:1: ( RULE_ID )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1797:1: ( ( RULE_ID ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1798:1: ( RULE_ID )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1805:1: ( RULE_ID )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1806:1: RULE_ID
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1798:1: ( RULE_ID )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1799:1: RULE_ID
             {
              before(grammarAccess.getInterfaceAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Interface__NameAssignment_13586); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Interface__NameAssignment_13570); 
              after(grammarAccess.getInterfaceAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -4800,24 +4775,24 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Interface__RequiredInterfacesAssignment_2_1"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1815:1: rule__Interface__RequiredInterfacesAssignment_2_1 : ( ( ruleQualifiedName ) ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1808:1: rule__Interface__RequiredInterfacesAssignment_2_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Interface__RequiredInterfacesAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1819:1: ( ( ( ruleQualifiedName ) ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1820:1: ( ( ruleQualifiedName ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1812:1: ( ( ( ruleQualifiedName ) ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1813:1: ( ( ruleQualifiedName ) )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1820:1: ( ( ruleQualifiedName ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1821:1: ( ruleQualifiedName )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1813:1: ( ( ruleQualifiedName ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1814:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getInterfaceAccess().getRequiredInterfacesInterfaceCrossReference_2_1_0()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1822:1: ( ruleQualifiedName )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1823:1: ruleQualifiedName
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1815:1: ( ruleQualifiedName )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1816:1: ruleQualifiedName
             {
              before(grammarAccess.getInterfaceAccess().getRequiredInterfacesInterfaceQualifiedNameParserRuleCall_2_1_0_1()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Interface__RequiredInterfacesAssignment_2_13621);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Interface__RequiredInterfacesAssignment_2_13605);
             ruleQualifiedName();
 
             state._fsp--;
@@ -4849,24 +4824,24 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Interface__RequiredInterfacesAssignment_2_2_1"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1834:1: rule__Interface__RequiredInterfacesAssignment_2_2_1 : ( ( ruleQualifiedName ) ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1827:1: rule__Interface__RequiredInterfacesAssignment_2_2_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Interface__RequiredInterfacesAssignment_2_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1838:1: ( ( ( ruleQualifiedName ) ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1839:1: ( ( ruleQualifiedName ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1831:1: ( ( ( ruleQualifiedName ) ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1832:1: ( ( ruleQualifiedName ) )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1839:1: ( ( ruleQualifiedName ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1840:1: ( ruleQualifiedName )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1832:1: ( ( ruleQualifiedName ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1833:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getInterfaceAccess().getRequiredInterfacesInterfaceCrossReference_2_2_1_0()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1841:1: ( ruleQualifiedName )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1842:1: ruleQualifiedName
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1834:1: ( ruleQualifiedName )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1835:1: ruleQualifiedName
             {
              before(grammarAccess.getInterfaceAccess().getRequiredInterfacesInterfaceQualifiedNameParserRuleCall_2_2_1_0_1()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Interface__RequiredInterfacesAssignment_2_2_13660);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Interface__RequiredInterfacesAssignment_2_2_13644);
             ruleQualifiedName();
 
             state._fsp--;
@@ -4898,20 +4873,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Interface__MethodsAssignment_4"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1853:1: rule__Interface__MethodsAssignment_4 : ( ruleMethod ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1846:1: rule__Interface__MethodsAssignment_4 : ( ruleMethod ) ;
     public final void rule__Interface__MethodsAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1857:1: ( ( ruleMethod ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1858:1: ( ruleMethod )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1850:1: ( ( ruleMethod ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1851:1: ( ruleMethod )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1858:1: ( ruleMethod )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1859:1: ruleMethod
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1851:1: ( ruleMethod )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1852:1: ruleMethod
             {
              before(grammarAccess.getInterfaceAccess().getMethodsMethodParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleMethod_in_rule__Interface__MethodsAssignment_43695);
+            pushFollow(FOLLOW_ruleMethod_in_rule__Interface__MethodsAssignment_43679);
             ruleMethod();
 
             state._fsp--;
@@ -4939,24 +4914,24 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Method__IsStaticAssignment_0"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1868:1: rule__Method__IsStaticAssignment_0 : ( ( 'static' ) ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1861:1: rule__Method__IsStaticAssignment_0 : ( ( 'static' ) ) ;
     public final void rule__Method__IsStaticAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1872:1: ( ( ( 'static' ) ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1873:1: ( ( 'static' ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1865:1: ( ( ( 'static' ) ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1866:1: ( ( 'static' ) )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1873:1: ( ( 'static' ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1874:1: ( 'static' )
-            {
-             before(grammarAccess.getMethodAccess().getIsStaticStaticKeyword_0_0()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1875:1: ( 'static' )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1876:1: 'static'
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1866:1: ( ( 'static' ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1867:1: ( 'static' )
             {
              before(grammarAccess.getMethodAccess().getIsStaticStaticKeyword_0_0()); 
-            match(input,24,FOLLOW_24_in_rule__Method__IsStaticAssignment_03731); 
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1868:1: ( 'static' )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1869:1: 'static'
+            {
+             before(grammarAccess.getMethodAccess().getIsStaticStaticKeyword_0_0()); 
+            match(input,24,FOLLOW_24_in_rule__Method__IsStaticAssignment_03715); 
              after(grammarAccess.getMethodAccess().getIsStaticStaticKeyword_0_0()); 
 
             }
@@ -4984,20 +4959,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Method__TypeAssignment_1"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1891:1: rule__Method__TypeAssignment_1 : ( ruleTypeRef ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1884:1: rule__Method__TypeAssignment_1 : ( ruleTypeRef ) ;
     public final void rule__Method__TypeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1895:1: ( ( ruleTypeRef ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1896:1: ( ruleTypeRef )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1888:1: ( ( ruleTypeRef ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1889:1: ( ruleTypeRef )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1896:1: ( ruleTypeRef )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1897:1: ruleTypeRef
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1889:1: ( ruleTypeRef )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1890:1: ruleTypeRef
             {
              before(grammarAccess.getMethodAccess().getTypeTypeRefParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleTypeRef_in_rule__Method__TypeAssignment_13770);
+            pushFollow(FOLLOW_ruleTypeRef_in_rule__Method__TypeAssignment_13754);
             ruleTypeRef();
 
             state._fsp--;
@@ -5025,20 +5000,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Method__NameAssignment_2"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1906:1: rule__Method__NameAssignment_2 : ( RULE_ID ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1899:1: rule__Method__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__Method__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1910:1: ( ( RULE_ID ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1911:1: ( RULE_ID )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1903:1: ( ( RULE_ID ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1904:1: ( RULE_ID )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1911:1: ( RULE_ID )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1912:1: RULE_ID
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1904:1: ( RULE_ID )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1905:1: RULE_ID
             {
              before(grammarAccess.getMethodAccess().getNameIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Method__NameAssignment_23801); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Method__NameAssignment_23785); 
              after(grammarAccess.getMethodAccess().getNameIDTerminalRuleCall_2_0()); 
 
             }
@@ -5062,20 +5037,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Method__ParametersAssignment_3"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1921:1: rule__Method__ParametersAssignment_3 : ( ruleParameter ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1914:1: rule__Method__ParametersAssignment_3 : ( ruleParameter ) ;
     public final void rule__Method__ParametersAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1925:1: ( ( ruleParameter ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1926:1: ( ruleParameter )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1918:1: ( ( ruleParameter ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1919:1: ( ruleParameter )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1926:1: ( ruleParameter )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1927:1: ruleParameter
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1919:1: ( ruleParameter )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1920:1: ruleParameter
             {
              before(grammarAccess.getMethodAccess().getParametersParameterParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleParameter_in_rule__Method__ParametersAssignment_33832);
+            pushFollow(FOLLOW_ruleParameter_in_rule__Method__ParametersAssignment_33816);
             ruleParameter();
 
             state._fsp--;
@@ -5103,20 +5078,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Parameter__SignaturePartAssignment_0"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1936:1: rule__Parameter__SignaturePartAssignment_0 : ( RULE_ID ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1929:1: rule__Parameter__SignaturePartAssignment_0 : ( RULE_ID ) ;
     public final void rule__Parameter__SignaturePartAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1940:1: ( ( RULE_ID ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1941:1: ( RULE_ID )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1933:1: ( ( RULE_ID ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1934:1: ( RULE_ID )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1941:1: ( RULE_ID )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1942:1: RULE_ID
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1934:1: ( RULE_ID )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1935:1: RULE_ID
             {
              before(grammarAccess.getParameterAccess().getSignaturePartIDTerminalRuleCall_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Parameter__SignaturePartAssignment_03863); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Parameter__SignaturePartAssignment_03847); 
              after(grammarAccess.getParameterAccess().getSignaturePartIDTerminalRuleCall_0_0()); 
 
             }
@@ -5140,20 +5115,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Parameter__TypeAssignment_2"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1951:1: rule__Parameter__TypeAssignment_2 : ( ruleTypeRef ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1944:1: rule__Parameter__TypeAssignment_2 : ( ruleTypeRef ) ;
     public final void rule__Parameter__TypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1955:1: ( ( ruleTypeRef ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1956:1: ( ruleTypeRef )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1948:1: ( ( ruleTypeRef ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1949:1: ( ruleTypeRef )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1956:1: ( ruleTypeRef )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1957:1: ruleTypeRef
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1949:1: ( ruleTypeRef )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1950:1: ruleTypeRef
             {
              before(grammarAccess.getParameterAccess().getTypeTypeRefParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleTypeRef_in_rule__Parameter__TypeAssignment_23894);
+            pushFollow(FOLLOW_ruleTypeRef_in_rule__Parameter__TypeAssignment_23878);
             ruleTypeRef();
 
             state._fsp--;
@@ -5181,20 +5156,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Parameter__NameAssignment_3"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1966:1: rule__Parameter__NameAssignment_3 : ( RULE_ID ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1959:1: rule__Parameter__NameAssignment_3 : ( RULE_ID ) ;
     public final void rule__Parameter__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1970:1: ( ( RULE_ID ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1971:1: ( RULE_ID )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1963:1: ( ( RULE_ID ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1964:1: ( RULE_ID )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1971:1: ( RULE_ID )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1972:1: RULE_ID
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1964:1: ( RULE_ID )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1965:1: RULE_ID
             {
              before(grammarAccess.getParameterAccess().getNameIDTerminalRuleCall_3_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Parameter__NameAssignment_33925); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Parameter__NameAssignment_33909); 
              after(grammarAccess.getParameterAccess().getNameIDTerminalRuleCall_3_0()); 
 
             }
@@ -5218,20 +5193,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Primitive__NameAssignment_1"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1983:1: rule__Primitive__NameAssignment_1 : ( RULE_ID ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1976:1: rule__Primitive__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Primitive__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1987:1: ( ( RULE_ID ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1988:1: ( RULE_ID )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1980:1: ( ( RULE_ID ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1981:1: ( RULE_ID )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1988:1: ( RULE_ID )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1989:1: RULE_ID
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1981:1: ( RULE_ID )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1982:1: RULE_ID
             {
              before(grammarAccess.getPrimitiveAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Primitive__NameAssignment_13958); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Primitive__NameAssignment_13942); 
              after(grammarAccess.getPrimitiveAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -5255,20 +5230,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Any__NameAssignment_1"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1998:1: rule__Any__NameAssignment_1 : ( RULE_ID ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1991:1: rule__Any__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Any__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2002:1: ( ( RULE_ID ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2003:1: ( RULE_ID )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1995:1: ( ( RULE_ID ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1996:1: ( RULE_ID )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2003:1: ( RULE_ID )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2004:1: RULE_ID
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1996:1: ( RULE_ID )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:1997:1: RULE_ID
             {
              before(grammarAccess.getAnyAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Any__NameAssignment_13989); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Any__NameAssignment_13973); 
              after(grammarAccess.getAnyAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -5292,24 +5267,24 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__TypeRef__ReferencedAssignment_0"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2019:1: rule__TypeRef__ReferencedAssignment_0 : ( ( ruleQualifiedName ) ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2012:1: rule__TypeRef__ReferencedAssignment_0 : ( ( ruleQualifiedName ) ) ;
     public final void rule__TypeRef__ReferencedAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2023:1: ( ( ( ruleQualifiedName ) ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2024:1: ( ( ruleQualifiedName ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2016:1: ( ( ( ruleQualifiedName ) ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2017:1: ( ( ruleQualifiedName ) )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2024:1: ( ( ruleQualifiedName ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2025:1: ( ruleQualifiedName )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2017:1: ( ( ruleQualifiedName ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2018:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getTypeRefAccess().getReferencedTypeCrossReference_0_0()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2026:1: ( ruleQualifiedName )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2027:1: ruleQualifiedName
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2019:1: ( ruleQualifiedName )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2020:1: ruleQualifiedName
             {
              before(grammarAccess.getTypeRefAccess().getReferencedTypeQualifiedNameParserRuleCall_0_0_1()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__TypeRef__ReferencedAssignment_04030);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__TypeRef__ReferencedAssignment_04014);
             ruleQualifiedName();
 
             state._fsp--;
@@ -5341,24 +5316,24 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__TypeRef__IsMultiAssignment_1"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2038:1: rule__TypeRef__IsMultiAssignment_1 : ( ( '[]' ) ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2031:1: rule__TypeRef__IsMultiAssignment_1 : ( ( '[]' ) ) ;
     public final void rule__TypeRef__IsMultiAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2042:1: ( ( ( '[]' ) ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2043:1: ( ( '[]' ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2035:1: ( ( ( '[]' ) ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2036:1: ( ( '[]' ) )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2043:1: ( ( '[]' ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2044:1: ( '[]' )
-            {
-             before(grammarAccess.getTypeRefAccess().getIsMultiLeftSquareBracketRightSquareBracketKeyword_1_0()); 
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2045:1: ( '[]' )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2046:1: '[]'
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2036:1: ( ( '[]' ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2037:1: ( '[]' )
             {
              before(grammarAccess.getTypeRefAccess().getIsMultiLeftSquareBracketRightSquareBracketKeyword_1_0()); 
-            match(input,25,FOLLOW_25_in_rule__TypeRef__IsMultiAssignment_14070); 
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2038:1: ( '[]' )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2039:1: '[]'
+            {
+             before(grammarAccess.getTypeRefAccess().getIsMultiLeftSquareBracketRightSquareBracketKeyword_1_0()); 
+            match(input,25,FOLLOW_25_in_rule__TypeRef__IsMultiAssignment_14054); 
              after(grammarAccess.getTypeRefAccess().getIsMultiLeftSquareBracketRightSquareBracketKeyword_1_0()); 
 
             }
@@ -5386,20 +5361,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__StringValue__ValueAssignment"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2061:1: rule__StringValue__ValueAssignment : ( ruleEStringObject ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2054:1: rule__StringValue__ValueAssignment : ( ruleEStringObject ) ;
     public final void rule__StringValue__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2065:1: ( ( ruleEStringObject ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2066:1: ( ruleEStringObject )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2058:1: ( ( ruleEStringObject ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2059:1: ( ruleEStringObject )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2066:1: ( ruleEStringObject )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2067:1: ruleEStringObject
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2059:1: ( ruleEStringObject )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2060:1: ruleEStringObject
             {
              before(grammarAccess.getStringValueAccess().getValueEStringObjectParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleEStringObject_in_rule__StringValue__ValueAssignment4109);
+            pushFollow(FOLLOW_ruleEStringObject_in_rule__StringValue__ValueAssignment4093);
             ruleEStringObject();
 
             state._fsp--;
@@ -5427,20 +5402,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__IntegerValue__ValueAssignment"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2076:1: rule__IntegerValue__ValueAssignment : ( ruleEIntegerObject ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2069:1: rule__IntegerValue__ValueAssignment : ( ruleEIntegerObject ) ;
     public final void rule__IntegerValue__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2080:1: ( ( ruleEIntegerObject ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2081:1: ( ruleEIntegerObject )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2073:1: ( ( ruleEIntegerObject ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2074:1: ( ruleEIntegerObject )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2081:1: ( ruleEIntegerObject )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2082:1: ruleEIntegerObject
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2074:1: ( ruleEIntegerObject )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2075:1: ruleEIntegerObject
             {
              before(grammarAccess.getIntegerValueAccess().getValueEIntegerObjectParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleEIntegerObject_in_rule__IntegerValue__ValueAssignment4140);
+            pushFollow(FOLLOW_ruleEIntegerObject_in_rule__IntegerValue__ValueAssignment4124);
             ruleEIntegerObject();
 
             state._fsp--;
@@ -5468,20 +5443,20 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__FloatValue__ValueAssignment"
-    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2091:1: rule__FloatValue__ValueAssignment : ( ruleEFloatObject ) ;
+    // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2084:1: rule__FloatValue__ValueAssignment : ( ruleEFloatObject ) ;
     public final void rule__FloatValue__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2095:1: ( ( ruleEFloatObject ) )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2096:1: ( ruleEFloatObject )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2088:1: ( ( ruleEFloatObject ) )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2089:1: ( ruleEFloatObject )
             {
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2096:1: ( ruleEFloatObject )
-            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2097:1: ruleEFloatObject
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2089:1: ( ruleEFloatObject )
+            // ../de.dubmas.modulob.interfacedsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalInterfaceDsl.g:2090:1: ruleEFloatObject
             {
              before(grammarAccess.getFloatValueAccess().getValueEFloatObjectParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleEFloatObject_in_rule__FloatValue__ValueAssignment4171);
+            pushFollow(FOLLOW_ruleEFloatObject_in_rule__FloatValue__ValueAssignment4155);
             ruleEFloatObject();
 
             state._fsp--;
@@ -5573,119 +5548,118 @@ public class InternalInterfaceDslParser extends AbstractInternalContentAssistPar
     public static final BitSet FOLLOW_rule__InterfaceModel__Group__4_in_rule__InterfaceModel__Group__31223 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__InterfaceModel__VersionAssignment_3_in_rule__InterfaceModel__Group__3__Impl1250 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__InterfaceModel__Group__4__Impl_in_rule__InterfaceModel__Group__41280 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InterfaceModel__InterfacesAssignment_4_in_rule__InterfaceModel__Group__4__Impl1309 = new BitSet(new long[]{0x0000000000002002L});
-    public static final BitSet FOLLOW_rule__InterfaceModel__InterfacesAssignment_4_in_rule__InterfaceModel__Group__4__Impl1321 = new BitSet(new long[]{0x0000000000002002L});
-    public static final BitSet FOLLOW_rule__Interface__Group__0__Impl_in_rule__Interface__Group__01364 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Interface__Group__1_in_rule__Interface__Group__01367 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_rule__Interface__Group__0__Impl1395 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interface__Group__1__Impl_in_rule__Interface__Group__11426 = new BitSet(new long[]{0x0000000000014000L});
-    public static final BitSet FOLLOW_rule__Interface__Group__2_in_rule__Interface__Group__11429 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interface__NameAssignment_1_in_rule__Interface__Group__1__Impl1456 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interface__Group__2__Impl_in_rule__Interface__Group__21486 = new BitSet(new long[]{0x0000000000014000L});
-    public static final BitSet FOLLOW_rule__Interface__Group__3_in_rule__Interface__Group__21489 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interface__Group_2__0_in_rule__Interface__Group__2__Impl1516 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interface__Group__3__Impl_in_rule__Interface__Group__31547 = new BitSet(new long[]{0x0000000001008040L});
-    public static final BitSet FOLLOW_rule__Interface__Group__4_in_rule__Interface__Group__31550 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_rule__Interface__Group__3__Impl1578 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interface__Group__4__Impl_in_rule__Interface__Group__41609 = new BitSet(new long[]{0x0000000001008040L});
-    public static final BitSet FOLLOW_rule__Interface__Group__5_in_rule__Interface__Group__41612 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interface__MethodsAssignment_4_in_rule__Interface__Group__4__Impl1639 = new BitSet(new long[]{0x0000000001000042L});
-    public static final BitSet FOLLOW_rule__Interface__Group__5__Impl_in_rule__Interface__Group__51670 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Interface__Group__5__Impl1698 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interface__Group_2__0__Impl_in_rule__Interface__Group_2__01741 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Interface__Group_2__1_in_rule__Interface__Group_2__01744 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__Interface__Group_2__0__Impl1772 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interface__Group_2__1__Impl_in_rule__Interface__Group_2__11803 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_rule__Interface__Group_2__2_in_rule__Interface__Group_2__11806 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interface__RequiredInterfacesAssignment_2_1_in_rule__Interface__Group_2__1__Impl1833 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interface__Group_2__2__Impl_in_rule__Interface__Group_2__21863 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interface__Group_2_2__0_in_rule__Interface__Group_2__2__Impl1890 = new BitSet(new long[]{0x0000000000020002L});
-    public static final BitSet FOLLOW_rule__Interface__Group_2_2__0__Impl_in_rule__Interface__Group_2_2__01927 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Interface__Group_2_2__1_in_rule__Interface__Group_2_2__01930 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__Interface__Group_2_2__0__Impl1958 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interface__Group_2_2__1__Impl_in_rule__Interface__Group_2_2__11989 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interface__RequiredInterfacesAssignment_2_2_1_in_rule__Interface__Group_2_2__1__Impl2016 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__Group__0__Impl_in_rule__Method__Group__02050 = new BitSet(new long[]{0x0000000001000040L});
-    public static final BitSet FOLLOW_rule__Method__Group__1_in_rule__Method__Group__02053 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__IsStaticAssignment_0_in_rule__Method__Group__0__Impl2080 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__Group__1__Impl_in_rule__Method__Group__12111 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Method__Group__2_in_rule__Method__Group__12114 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__TypeAssignment_1_in_rule__Method__Group__1__Impl2141 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__Group__2__Impl_in_rule__Method__Group__22171 = new BitSet(new long[]{0x00000000000C0040L});
-    public static final BitSet FOLLOW_rule__Method__Group__3_in_rule__Method__Group__22174 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__NameAssignment_2_in_rule__Method__Group__2__Impl2201 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__Group__3__Impl_in_rule__Method__Group__32231 = new BitSet(new long[]{0x00000000000C0040L});
-    public static final BitSet FOLLOW_rule__Method__Group__4_in_rule__Method__Group__32234 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__ParametersAssignment_3_in_rule__Method__Group__3__Impl2261 = new BitSet(new long[]{0x0000000000080042L});
-    public static final BitSet FOLLOW_rule__Method__Group__4__Impl_in_rule__Method__Group__42292 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_rule__Method__Group__4__Impl2321 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Parameter__Group__0__Impl_in_rule__Parameter__Group__02364 = new BitSet(new long[]{0x0000000000080040L});
-    public static final BitSet FOLLOW_rule__Parameter__Group__1_in_rule__Parameter__Group__02367 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Parameter__SignaturePartAssignment_0_in_rule__Parameter__Group__0__Impl2394 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Parameter__Group__1__Impl_in_rule__Parameter__Group__12425 = new BitSet(new long[]{0x0000000001000040L});
-    public static final BitSet FOLLOW_rule__Parameter__Group__2_in_rule__Parameter__Group__12428 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__Parameter__Group__1__Impl2456 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Parameter__Group__2__Impl_in_rule__Parameter__Group__22487 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Parameter__Group__3_in_rule__Parameter__Group__22490 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Parameter__TypeAssignment_2_in_rule__Parameter__Group__2__Impl2517 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Parameter__Group__3__Impl_in_rule__Parameter__Group__32547 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Parameter__NameAssignment_3_in_rule__Parameter__Group__3__Impl2574 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Primitive__Group__0__Impl_in_rule__Primitive__Group__02613 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Primitive__Group__1_in_rule__Primitive__Group__02616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__Primitive__Group__0__Impl2644 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Primitive__Group__1__Impl_in_rule__Primitive__Group__12675 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Primitive__NameAssignment_1_in_rule__Primitive__Group__1__Impl2702 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Any__Group__0__Impl_in_rule__Any__Group__02736 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Any__Group__1_in_rule__Any__Group__02739 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__Any__Group__0__Impl2767 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Any__Group__1__Impl_in_rule__Any__Group__12798 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Any__NameAssignment_1_in_rule__Any__Group__1__Impl2825 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeRef__Group__0__Impl_in_rule__TypeRef__Group__02862 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__TypeRef__Group__1_in_rule__TypeRef__Group__02865 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeRef__ReferencedAssignment_0_in_rule__TypeRef__Group__0__Impl2892 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeRef__Group__1__Impl_in_rule__TypeRef__Group__12922 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeRef__IsMultiAssignment_1_in_rule__TypeRef__Group__1__Impl2949 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EFloatObject__Group__0__Impl_in_rule__EFloatObject__Group__02984 = new BitSet(new long[]{0x0000000000800020L});
-    public static final BitSet FOLLOW_rule__EFloatObject__Group__1_in_rule__EFloatObject__Group__02987 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__EFloatObject__Group__0__Impl3016 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EFloatObject__Group__1__Impl_in_rule__EFloatObject__Group__13049 = new BitSet(new long[]{0x0000000000800020L});
-    public static final BitSet FOLLOW_rule__EFloatObject__Group__2_in_rule__EFloatObject__Group__13052 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__EFloatObject__Group__1__Impl3080 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EFloatObject__Group__2__Impl_in_rule__EFloatObject__Group__23111 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__EFloatObject__Group__3_in_rule__EFloatObject__Group__23114 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__EFloatObject__Group__2__Impl3142 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EFloatObject__Group__3__Impl_in_rule__EFloatObject__Group__33173 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__EFloatObject__Group__3__Impl3200 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__03237 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__03240 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedName__Group__0__Impl3267 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__13296 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl3323 = new BitSet(new long[]{0x0000000000800002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__03358 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__03361 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__QualifiedName__Group_1__0__Impl3389 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__13420 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedName__Group_1__1__Impl3447 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__InterfaceModel__ModuleAssignment_13489 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__InterfaceModel__VersionAssignment_33524 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInterface_in_rule__InterfaceModel__InterfacesAssignment_43555 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Interface__NameAssignment_13586 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Interface__RequiredInterfacesAssignment_2_13621 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Interface__RequiredInterfacesAssignment_2_2_13660 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMethod_in_rule__Interface__MethodsAssignment_43695 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__Method__IsStaticAssignment_03731 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeRef_in_rule__Method__TypeAssignment_13770 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Method__NameAssignment_23801 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleParameter_in_rule__Method__ParametersAssignment_33832 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Parameter__SignaturePartAssignment_03863 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeRef_in_rule__Parameter__TypeAssignment_23894 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Parameter__NameAssignment_33925 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Primitive__NameAssignment_13958 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Any__NameAssignment_13989 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__TypeRef__ReferencedAssignment_04030 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__TypeRef__IsMultiAssignment_14070 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEStringObject_in_rule__StringValue__ValueAssignment4109 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEIntegerObject_in_rule__IntegerValue__ValueAssignment4140 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEFloatObject_in_rule__FloatValue__ValueAssignment4171 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InterfaceModel__InterfacesAssignment_4_in_rule__InterfaceModel__Group__4__Impl1307 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_rule__Interface__Group__0__Impl_in_rule__Interface__Group__01348 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Interface__Group__1_in_rule__Interface__Group__01351 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_rule__Interface__Group__0__Impl1379 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interface__Group__1__Impl_in_rule__Interface__Group__11410 = new BitSet(new long[]{0x0000000000014000L});
+    public static final BitSet FOLLOW_rule__Interface__Group__2_in_rule__Interface__Group__11413 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interface__NameAssignment_1_in_rule__Interface__Group__1__Impl1440 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interface__Group__2__Impl_in_rule__Interface__Group__21470 = new BitSet(new long[]{0x0000000000014000L});
+    public static final BitSet FOLLOW_rule__Interface__Group__3_in_rule__Interface__Group__21473 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interface__Group_2__0_in_rule__Interface__Group__2__Impl1500 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interface__Group__3__Impl_in_rule__Interface__Group__31531 = new BitSet(new long[]{0x0000000001008040L});
+    public static final BitSet FOLLOW_rule__Interface__Group__4_in_rule__Interface__Group__31534 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__Interface__Group__3__Impl1562 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interface__Group__4__Impl_in_rule__Interface__Group__41593 = new BitSet(new long[]{0x0000000001008040L});
+    public static final BitSet FOLLOW_rule__Interface__Group__5_in_rule__Interface__Group__41596 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interface__MethodsAssignment_4_in_rule__Interface__Group__4__Impl1623 = new BitSet(new long[]{0x0000000001000042L});
+    public static final BitSet FOLLOW_rule__Interface__Group__5__Impl_in_rule__Interface__Group__51654 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__Interface__Group__5__Impl1682 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interface__Group_2__0__Impl_in_rule__Interface__Group_2__01725 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Interface__Group_2__1_in_rule__Interface__Group_2__01728 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__Interface__Group_2__0__Impl1756 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interface__Group_2__1__Impl_in_rule__Interface__Group_2__11787 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_rule__Interface__Group_2__2_in_rule__Interface__Group_2__11790 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interface__RequiredInterfacesAssignment_2_1_in_rule__Interface__Group_2__1__Impl1817 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interface__Group_2__2__Impl_in_rule__Interface__Group_2__21847 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interface__Group_2_2__0_in_rule__Interface__Group_2__2__Impl1874 = new BitSet(new long[]{0x0000000000020002L});
+    public static final BitSet FOLLOW_rule__Interface__Group_2_2__0__Impl_in_rule__Interface__Group_2_2__01911 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Interface__Group_2_2__1_in_rule__Interface__Group_2_2__01914 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__Interface__Group_2_2__0__Impl1942 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interface__Group_2_2__1__Impl_in_rule__Interface__Group_2_2__11973 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interface__RequiredInterfacesAssignment_2_2_1_in_rule__Interface__Group_2_2__1__Impl2000 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__Group__0__Impl_in_rule__Method__Group__02034 = new BitSet(new long[]{0x0000000001000040L});
+    public static final BitSet FOLLOW_rule__Method__Group__1_in_rule__Method__Group__02037 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__IsStaticAssignment_0_in_rule__Method__Group__0__Impl2064 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__Group__1__Impl_in_rule__Method__Group__12095 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Method__Group__2_in_rule__Method__Group__12098 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__TypeAssignment_1_in_rule__Method__Group__1__Impl2125 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__Group__2__Impl_in_rule__Method__Group__22155 = new BitSet(new long[]{0x00000000000C0040L});
+    public static final BitSet FOLLOW_rule__Method__Group__3_in_rule__Method__Group__22158 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__NameAssignment_2_in_rule__Method__Group__2__Impl2185 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__Group__3__Impl_in_rule__Method__Group__32215 = new BitSet(new long[]{0x00000000000C0040L});
+    public static final BitSet FOLLOW_rule__Method__Group__4_in_rule__Method__Group__32218 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__ParametersAssignment_3_in_rule__Method__Group__3__Impl2245 = new BitSet(new long[]{0x0000000000080042L});
+    public static final BitSet FOLLOW_rule__Method__Group__4__Impl_in_rule__Method__Group__42276 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_rule__Method__Group__4__Impl2305 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Parameter__Group__0__Impl_in_rule__Parameter__Group__02348 = new BitSet(new long[]{0x0000000000080040L});
+    public static final BitSet FOLLOW_rule__Parameter__Group__1_in_rule__Parameter__Group__02351 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Parameter__SignaturePartAssignment_0_in_rule__Parameter__Group__0__Impl2378 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Parameter__Group__1__Impl_in_rule__Parameter__Group__12409 = new BitSet(new long[]{0x0000000001000040L});
+    public static final BitSet FOLLOW_rule__Parameter__Group__2_in_rule__Parameter__Group__12412 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__Parameter__Group__1__Impl2440 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Parameter__Group__2__Impl_in_rule__Parameter__Group__22471 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Parameter__Group__3_in_rule__Parameter__Group__22474 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Parameter__TypeAssignment_2_in_rule__Parameter__Group__2__Impl2501 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Parameter__Group__3__Impl_in_rule__Parameter__Group__32531 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Parameter__NameAssignment_3_in_rule__Parameter__Group__3__Impl2558 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Primitive__Group__0__Impl_in_rule__Primitive__Group__02597 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Primitive__Group__1_in_rule__Primitive__Group__02600 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__Primitive__Group__0__Impl2628 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Primitive__Group__1__Impl_in_rule__Primitive__Group__12659 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Primitive__NameAssignment_1_in_rule__Primitive__Group__1__Impl2686 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Any__Group__0__Impl_in_rule__Any__Group__02720 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Any__Group__1_in_rule__Any__Group__02723 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__Any__Group__0__Impl2751 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Any__Group__1__Impl_in_rule__Any__Group__12782 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Any__NameAssignment_1_in_rule__Any__Group__1__Impl2809 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeRef__Group__0__Impl_in_rule__TypeRef__Group__02846 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__TypeRef__Group__1_in_rule__TypeRef__Group__02849 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeRef__ReferencedAssignment_0_in_rule__TypeRef__Group__0__Impl2876 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeRef__Group__1__Impl_in_rule__TypeRef__Group__12906 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeRef__IsMultiAssignment_1_in_rule__TypeRef__Group__1__Impl2933 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EFloatObject__Group__0__Impl_in_rule__EFloatObject__Group__02968 = new BitSet(new long[]{0x0000000000800020L});
+    public static final BitSet FOLLOW_rule__EFloatObject__Group__1_in_rule__EFloatObject__Group__02971 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_rule__EFloatObject__Group__0__Impl3000 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EFloatObject__Group__1__Impl_in_rule__EFloatObject__Group__13033 = new BitSet(new long[]{0x0000000000800020L});
+    public static final BitSet FOLLOW_rule__EFloatObject__Group__2_in_rule__EFloatObject__Group__13036 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__EFloatObject__Group__1__Impl3064 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EFloatObject__Group__2__Impl_in_rule__EFloatObject__Group__23095 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__EFloatObject__Group__3_in_rule__EFloatObject__Group__23098 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__EFloatObject__Group__2__Impl3126 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EFloatObject__Group__3__Impl_in_rule__EFloatObject__Group__33157 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__EFloatObject__Group__3__Impl3184 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__03221 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__03224 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedName__Group__0__Impl3251 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__13280 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl3307 = new BitSet(new long[]{0x0000000000800002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__03342 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__03345 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__QualifiedName__Group_1__0__Impl3373 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__13404 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedName__Group_1__1__Impl3431 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__InterfaceModel__ModuleAssignment_13473 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__InterfaceModel__VersionAssignment_33508 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInterface_in_rule__InterfaceModel__InterfacesAssignment_43539 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Interface__NameAssignment_13570 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Interface__RequiredInterfacesAssignment_2_13605 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Interface__RequiredInterfacesAssignment_2_2_13644 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMethod_in_rule__Interface__MethodsAssignment_43679 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__Method__IsStaticAssignment_03715 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeRef_in_rule__Method__TypeAssignment_13754 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Method__NameAssignment_23785 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleParameter_in_rule__Method__ParametersAssignment_33816 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Parameter__SignaturePartAssignment_03847 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeRef_in_rule__Parameter__TypeAssignment_23878 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Parameter__NameAssignment_33909 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Primitive__NameAssignment_13942 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Any__NameAssignment_13973 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__TypeRef__ReferencedAssignment_04014 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__TypeRef__IsMultiAssignment_14054 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEStringObject_in_rule__StringValue__ValueAssignment4093 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEIntegerObject_in_rule__IntegerValue__ValueAssignment4124 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEFloatObject_in_rule__FloatValue__ValueAssignment4155 = new BitSet(new long[]{0x0000000000000002L});
 
 }

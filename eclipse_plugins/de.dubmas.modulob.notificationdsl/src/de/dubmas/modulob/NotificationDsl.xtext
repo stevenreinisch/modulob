@@ -7,7 +7,7 @@ NotificationModel returns system::NotificationModel:
 	'notifications for module' 
 	module = [system::Module | QualifiedName]
 	'version' version = STRING 
-	(notifications += Notification)+
+	(notifications += Notification)*
 ;
 
 Notification returns modulob::Notification:

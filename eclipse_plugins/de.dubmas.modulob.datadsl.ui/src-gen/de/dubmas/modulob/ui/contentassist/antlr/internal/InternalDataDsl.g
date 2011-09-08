@@ -686,16 +686,9 @@ rule__EntityModel__Group__4__Impl
     }
 :
 (
-(
-{ before(grammarAccess.getEntityModelAccess().getEntitiesAssignment_4()); }
-(rule__EntityModel__EntitiesAssignment_4)
-{ after(grammarAccess.getEntityModelAccess().getEntitiesAssignment_4()); }
-)
-(
 { before(grammarAccess.getEntityModelAccess().getEntitiesAssignment_4()); }
 (rule__EntityModel__EntitiesAssignment_4)*
 { after(grammarAccess.getEntityModelAccess().getEntitiesAssignment_4()); }
-)
 )
 
 ;

@@ -25,7 +25,7 @@
         <elements xsi:type="xtext:Assignment" feature="version" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.2"/>
         </elements>
-        <elements xsi:type="xtext:Assignment" cardinality="+" feature="entities" operator="+=">
+        <elements xsi:type="xtext:Assignment" cardinality="*" feature="entities" operator="+=">
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.1"/>
         </elements>
       </alternatives>

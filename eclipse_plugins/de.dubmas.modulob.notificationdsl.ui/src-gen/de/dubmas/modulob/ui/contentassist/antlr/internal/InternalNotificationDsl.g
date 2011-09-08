@@ -618,16 +618,9 @@ rule__NotificationModel__Group__4__Impl
     }
 :
 (
-(
-{ before(grammarAccess.getNotificationModelAccess().getNotificationsAssignment_4()); }
-(rule__NotificationModel__NotificationsAssignment_4)
-{ after(grammarAccess.getNotificationModelAccess().getNotificationsAssignment_4()); }
-)
-(
 { before(grammarAccess.getNotificationModelAccess().getNotificationsAssignment_4()); }
 (rule__NotificationModel__NotificationsAssignment_4)*
 { after(grammarAccess.getNotificationModelAccess().getNotificationsAssignment_4()); }
-)
 )
 
 ;

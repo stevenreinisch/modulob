@@ -1618,42 +1618,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__NotificationModel__Group__4__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:615:1: rule__NotificationModel__Group__4__Impl : ( ( ( rule__NotificationModel__NotificationsAssignment_4 ) ) ( ( rule__NotificationModel__NotificationsAssignment_4 )* ) ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:615:1: rule__NotificationModel__Group__4__Impl : ( ( rule__NotificationModel__NotificationsAssignment_4 )* ) ;
     public final void rule__NotificationModel__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:619:1: ( ( ( ( rule__NotificationModel__NotificationsAssignment_4 ) ) ( ( rule__NotificationModel__NotificationsAssignment_4 )* ) ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:620:1: ( ( ( rule__NotificationModel__NotificationsAssignment_4 ) ) ( ( rule__NotificationModel__NotificationsAssignment_4 )* ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:619:1: ( ( ( rule__NotificationModel__NotificationsAssignment_4 )* ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:620:1: ( ( rule__NotificationModel__NotificationsAssignment_4 )* )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:620:1: ( ( ( rule__NotificationModel__NotificationsAssignment_4 ) ) ( ( rule__NotificationModel__NotificationsAssignment_4 )* ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:621:1: ( ( rule__NotificationModel__NotificationsAssignment_4 ) ) ( ( rule__NotificationModel__NotificationsAssignment_4 )* )
-            {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:621:1: ( ( rule__NotificationModel__NotificationsAssignment_4 ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:622:1: ( rule__NotificationModel__NotificationsAssignment_4 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:620:1: ( ( rule__NotificationModel__NotificationsAssignment_4 )* )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:621:1: ( rule__NotificationModel__NotificationsAssignment_4 )*
             {
              before(grammarAccess.getNotificationModelAccess().getNotificationsAssignment_4()); 
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:623:1: ( rule__NotificationModel__NotificationsAssignment_4 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:623:2: rule__NotificationModel__NotificationsAssignment_4
-            {
-            pushFollow(FOLLOW_rule__NotificationModel__NotificationsAssignment_4_in_rule__NotificationModel__Group__4__Impl1247);
-            rule__NotificationModel__NotificationsAssignment_4();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getNotificationModelAccess().getNotificationsAssignment_4()); 
-
-            }
-
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:626:1: ( ( rule__NotificationModel__NotificationsAssignment_4 )* )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:627:1: ( rule__NotificationModel__NotificationsAssignment_4 )*
-            {
-             before(grammarAccess.getNotificationModelAccess().getNotificationsAssignment_4()); 
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:628:1: ( rule__NotificationModel__NotificationsAssignment_4 )*
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:622:1: ( rule__NotificationModel__NotificationsAssignment_4 )*
             loop2:
             do {
                 int alt2=2;
@@ -1666,9 +1644,9 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
                 switch (alt2) {
             	case 1 :
-            	    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:628:2: rule__NotificationModel__NotificationsAssignment_4
+            	    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:622:2: rule__NotificationModel__NotificationsAssignment_4
             	    {
-            	    pushFollow(FOLLOW_rule__NotificationModel__NotificationsAssignment_4_in_rule__NotificationModel__Group__4__Impl1259);
+            	    pushFollow(FOLLOW_rule__NotificationModel__NotificationsAssignment_4_in_rule__NotificationModel__Group__4__Impl1245);
             	    rule__NotificationModel__NotificationsAssignment_4();
 
             	    state._fsp--;
@@ -1683,9 +1661,6 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
             } while (true);
 
              after(grammarAccess.getNotificationModelAccess().getNotificationsAssignment_4()); 
-
-            }
-
 
             }
 
@@ -1708,21 +1683,21 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Notification__Group__0"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:649:1: rule__Notification__Group__0 : rule__Notification__Group__0__Impl rule__Notification__Group__1 ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:642:1: rule__Notification__Group__0 : rule__Notification__Group__0__Impl rule__Notification__Group__1 ;
     public final void rule__Notification__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:653:1: ( rule__Notification__Group__0__Impl rule__Notification__Group__1 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:654:2: rule__Notification__Group__0__Impl rule__Notification__Group__1
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:646:1: ( rule__Notification__Group__0__Impl rule__Notification__Group__1 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:647:2: rule__Notification__Group__0__Impl rule__Notification__Group__1
             {
-            pushFollow(FOLLOW_rule__Notification__Group__0__Impl_in_rule__Notification__Group__01302);
+            pushFollow(FOLLOW_rule__Notification__Group__0__Impl_in_rule__Notification__Group__01286);
             rule__Notification__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Notification__Group__1_in_rule__Notification__Group__01305);
+            pushFollow(FOLLOW_rule__Notification__Group__1_in_rule__Notification__Group__01289);
             rule__Notification__Group__1();
 
             state._fsp--;
@@ -1746,20 +1721,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Notification__Group__0__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:661:1: rule__Notification__Group__0__Impl : ( 'notification' ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:654:1: rule__Notification__Group__0__Impl : ( 'notification' ) ;
     public final void rule__Notification__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:665:1: ( ( 'notification' ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:666:1: ( 'notification' )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:658:1: ( ( 'notification' ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:659:1: ( 'notification' )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:666:1: ( 'notification' )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:667:1: 'notification'
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:659:1: ( 'notification' )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:660:1: 'notification'
             {
              before(grammarAccess.getNotificationAccess().getNotificationKeyword_0()); 
-            match(input,13,FOLLOW_13_in_rule__Notification__Group__0__Impl1333); 
+            match(input,13,FOLLOW_13_in_rule__Notification__Group__0__Impl1317); 
              after(grammarAccess.getNotificationAccess().getNotificationKeyword_0()); 
 
             }
@@ -1783,21 +1758,21 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Notification__Group__1"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:680:1: rule__Notification__Group__1 : rule__Notification__Group__1__Impl rule__Notification__Group__2 ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:673:1: rule__Notification__Group__1 : rule__Notification__Group__1__Impl rule__Notification__Group__2 ;
     public final void rule__Notification__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:684:1: ( rule__Notification__Group__1__Impl rule__Notification__Group__2 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:685:2: rule__Notification__Group__1__Impl rule__Notification__Group__2
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:677:1: ( rule__Notification__Group__1__Impl rule__Notification__Group__2 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:678:2: rule__Notification__Group__1__Impl rule__Notification__Group__2
             {
-            pushFollow(FOLLOW_rule__Notification__Group__1__Impl_in_rule__Notification__Group__11364);
+            pushFollow(FOLLOW_rule__Notification__Group__1__Impl_in_rule__Notification__Group__11348);
             rule__Notification__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Notification__Group__2_in_rule__Notification__Group__11367);
+            pushFollow(FOLLOW_rule__Notification__Group__2_in_rule__Notification__Group__11351);
             rule__Notification__Group__2();
 
             state._fsp--;
@@ -1821,23 +1796,23 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Notification__Group__1__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:692:1: rule__Notification__Group__1__Impl : ( ( rule__Notification__NameAssignment_1 ) ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:685:1: rule__Notification__Group__1__Impl : ( ( rule__Notification__NameAssignment_1 ) ) ;
     public final void rule__Notification__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:696:1: ( ( ( rule__Notification__NameAssignment_1 ) ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:697:1: ( ( rule__Notification__NameAssignment_1 ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:689:1: ( ( ( rule__Notification__NameAssignment_1 ) ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:690:1: ( ( rule__Notification__NameAssignment_1 ) )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:697:1: ( ( rule__Notification__NameAssignment_1 ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:698:1: ( rule__Notification__NameAssignment_1 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:690:1: ( ( rule__Notification__NameAssignment_1 ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:691:1: ( rule__Notification__NameAssignment_1 )
             {
              before(grammarAccess.getNotificationAccess().getNameAssignment_1()); 
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:699:1: ( rule__Notification__NameAssignment_1 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:699:2: rule__Notification__NameAssignment_1
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:692:1: ( rule__Notification__NameAssignment_1 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:692:2: rule__Notification__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Notification__NameAssignment_1_in_rule__Notification__Group__1__Impl1394);
+            pushFollow(FOLLOW_rule__Notification__NameAssignment_1_in_rule__Notification__Group__1__Impl1378);
             rule__Notification__NameAssignment_1();
 
             state._fsp--;
@@ -1868,21 +1843,21 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Notification__Group__2"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:709:1: rule__Notification__Group__2 : rule__Notification__Group__2__Impl rule__Notification__Group__3 ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:702:1: rule__Notification__Group__2 : rule__Notification__Group__2__Impl rule__Notification__Group__3 ;
     public final void rule__Notification__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:713:1: ( rule__Notification__Group__2__Impl rule__Notification__Group__3 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:714:2: rule__Notification__Group__2__Impl rule__Notification__Group__3
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:706:1: ( rule__Notification__Group__2__Impl rule__Notification__Group__3 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:707:2: rule__Notification__Group__2__Impl rule__Notification__Group__3
             {
-            pushFollow(FOLLOW_rule__Notification__Group__2__Impl_in_rule__Notification__Group__21424);
+            pushFollow(FOLLOW_rule__Notification__Group__2__Impl_in_rule__Notification__Group__21408);
             rule__Notification__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Notification__Group__3_in_rule__Notification__Group__21427);
+            pushFollow(FOLLOW_rule__Notification__Group__3_in_rule__Notification__Group__21411);
             rule__Notification__Group__3();
 
             state._fsp--;
@@ -1906,20 +1881,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Notification__Group__2__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:721:1: rule__Notification__Group__2__Impl : ( '{' ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:714:1: rule__Notification__Group__2__Impl : ( '{' ) ;
     public final void rule__Notification__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:725:1: ( ( '{' ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:726:1: ( '{' )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:718:1: ( ( '{' ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:719:1: ( '{' )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:726:1: ( '{' )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:727:1: '{'
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:719:1: ( '{' )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:720:1: '{'
             {
              before(grammarAccess.getNotificationAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,14,FOLLOW_14_in_rule__Notification__Group__2__Impl1455); 
+            match(input,14,FOLLOW_14_in_rule__Notification__Group__2__Impl1439); 
              after(grammarAccess.getNotificationAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -1943,21 +1918,21 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Notification__Group__3"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:740:1: rule__Notification__Group__3 : rule__Notification__Group__3__Impl rule__Notification__Group__4 ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:733:1: rule__Notification__Group__3 : rule__Notification__Group__3__Impl rule__Notification__Group__4 ;
     public final void rule__Notification__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:744:1: ( rule__Notification__Group__3__Impl rule__Notification__Group__4 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:745:2: rule__Notification__Group__3__Impl rule__Notification__Group__4
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:737:1: ( rule__Notification__Group__3__Impl rule__Notification__Group__4 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:738:2: rule__Notification__Group__3__Impl rule__Notification__Group__4
             {
-            pushFollow(FOLLOW_rule__Notification__Group__3__Impl_in_rule__Notification__Group__31486);
+            pushFollow(FOLLOW_rule__Notification__Group__3__Impl_in_rule__Notification__Group__31470);
             rule__Notification__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Notification__Group__4_in_rule__Notification__Group__31489);
+            pushFollow(FOLLOW_rule__Notification__Group__4_in_rule__Notification__Group__31473);
             rule__Notification__Group__4();
 
             state._fsp--;
@@ -1981,20 +1956,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Notification__Group__3__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:752:1: rule__Notification__Group__3__Impl : ( ( rule__Notification__FeaturesAssignment_3 )* ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:745:1: rule__Notification__Group__3__Impl : ( ( rule__Notification__FeaturesAssignment_3 )* ) ;
     public final void rule__Notification__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:756:1: ( ( ( rule__Notification__FeaturesAssignment_3 )* ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:757:1: ( ( rule__Notification__FeaturesAssignment_3 )* )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:749:1: ( ( ( rule__Notification__FeaturesAssignment_3 )* ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:750:1: ( ( rule__Notification__FeaturesAssignment_3 )* )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:757:1: ( ( rule__Notification__FeaturesAssignment_3 )* )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:758:1: ( rule__Notification__FeaturesAssignment_3 )*
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:750:1: ( ( rule__Notification__FeaturesAssignment_3 )* )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:751:1: ( rule__Notification__FeaturesAssignment_3 )*
             {
              before(grammarAccess.getNotificationAccess().getFeaturesAssignment_3()); 
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:759:1: ( rule__Notification__FeaturesAssignment_3 )*
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:752:1: ( rule__Notification__FeaturesAssignment_3 )*
             loop3:
             do {
                 int alt3=2;
@@ -2007,9 +1982,9 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
                 switch (alt3) {
             	case 1 :
-            	    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:759:2: rule__Notification__FeaturesAssignment_3
+            	    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:752:2: rule__Notification__FeaturesAssignment_3
             	    {
-            	    pushFollow(FOLLOW_rule__Notification__FeaturesAssignment_3_in_rule__Notification__Group__3__Impl1516);
+            	    pushFollow(FOLLOW_rule__Notification__FeaturesAssignment_3_in_rule__Notification__Group__3__Impl1500);
             	    rule__Notification__FeaturesAssignment_3();
 
             	    state._fsp--;
@@ -2046,16 +2021,16 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Notification__Group__4"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:769:1: rule__Notification__Group__4 : rule__Notification__Group__4__Impl ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:762:1: rule__Notification__Group__4 : rule__Notification__Group__4__Impl ;
     public final void rule__Notification__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:773:1: ( rule__Notification__Group__4__Impl )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:774:2: rule__Notification__Group__4__Impl
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:766:1: ( rule__Notification__Group__4__Impl )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:767:2: rule__Notification__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__Notification__Group__4__Impl_in_rule__Notification__Group__41547);
+            pushFollow(FOLLOW_rule__Notification__Group__4__Impl_in_rule__Notification__Group__41531);
             rule__Notification__Group__4__Impl();
 
             state._fsp--;
@@ -2079,20 +2054,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Notification__Group__4__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:780:1: rule__Notification__Group__4__Impl : ( '}' ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:773:1: rule__Notification__Group__4__Impl : ( '}' ) ;
     public final void rule__Notification__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:784:1: ( ( '}' ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:785:1: ( '}' )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:777:1: ( ( '}' ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:778:1: ( '}' )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:785:1: ( '}' )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:786:1: '}'
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:778:1: ( '}' )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:779:1: '}'
             {
              before(grammarAccess.getNotificationAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,15,FOLLOW_15_in_rule__Notification__Group__4__Impl1575); 
+            match(input,15,FOLLOW_15_in_rule__Notification__Group__4__Impl1559); 
              after(grammarAccess.getNotificationAccess().getRightCurlyBracketKeyword_4()); 
 
             }
@@ -2116,21 +2091,21 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Primitive__Group__0"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:810:1: rule__Primitive__Group__0 : rule__Primitive__Group__0__Impl rule__Primitive__Group__1 ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:803:1: rule__Primitive__Group__0 : rule__Primitive__Group__0__Impl rule__Primitive__Group__1 ;
     public final void rule__Primitive__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:814:1: ( rule__Primitive__Group__0__Impl rule__Primitive__Group__1 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:815:2: rule__Primitive__Group__0__Impl rule__Primitive__Group__1
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:807:1: ( rule__Primitive__Group__0__Impl rule__Primitive__Group__1 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:808:2: rule__Primitive__Group__0__Impl rule__Primitive__Group__1
             {
-            pushFollow(FOLLOW_rule__Primitive__Group__0__Impl_in_rule__Primitive__Group__01617);
+            pushFollow(FOLLOW_rule__Primitive__Group__0__Impl_in_rule__Primitive__Group__01601);
             rule__Primitive__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Primitive__Group__1_in_rule__Primitive__Group__01620);
+            pushFollow(FOLLOW_rule__Primitive__Group__1_in_rule__Primitive__Group__01604);
             rule__Primitive__Group__1();
 
             state._fsp--;
@@ -2154,20 +2129,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Primitive__Group__0__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:822:1: rule__Primitive__Group__0__Impl : ( 'primitive type' ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:815:1: rule__Primitive__Group__0__Impl : ( 'primitive type' ) ;
     public final void rule__Primitive__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:826:1: ( ( 'primitive type' ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:827:1: ( 'primitive type' )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:819:1: ( ( 'primitive type' ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:820:1: ( 'primitive type' )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:827:1: ( 'primitive type' )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:828:1: 'primitive type'
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:820:1: ( 'primitive type' )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:821:1: 'primitive type'
             {
              before(grammarAccess.getPrimitiveAccess().getPrimitiveTypeKeyword_0()); 
-            match(input,16,FOLLOW_16_in_rule__Primitive__Group__0__Impl1648); 
+            match(input,16,FOLLOW_16_in_rule__Primitive__Group__0__Impl1632); 
              after(grammarAccess.getPrimitiveAccess().getPrimitiveTypeKeyword_0()); 
 
             }
@@ -2191,16 +2166,16 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Primitive__Group__1"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:841:1: rule__Primitive__Group__1 : rule__Primitive__Group__1__Impl ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:834:1: rule__Primitive__Group__1 : rule__Primitive__Group__1__Impl ;
     public final void rule__Primitive__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:845:1: ( rule__Primitive__Group__1__Impl )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:846:2: rule__Primitive__Group__1__Impl
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:838:1: ( rule__Primitive__Group__1__Impl )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:839:2: rule__Primitive__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Primitive__Group__1__Impl_in_rule__Primitive__Group__11679);
+            pushFollow(FOLLOW_rule__Primitive__Group__1__Impl_in_rule__Primitive__Group__11663);
             rule__Primitive__Group__1__Impl();
 
             state._fsp--;
@@ -2224,23 +2199,23 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Primitive__Group__1__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:852:1: rule__Primitive__Group__1__Impl : ( ( rule__Primitive__NameAssignment_1 ) ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:845:1: rule__Primitive__Group__1__Impl : ( ( rule__Primitive__NameAssignment_1 ) ) ;
     public final void rule__Primitive__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:856:1: ( ( ( rule__Primitive__NameAssignment_1 ) ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:857:1: ( ( rule__Primitive__NameAssignment_1 ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:849:1: ( ( ( rule__Primitive__NameAssignment_1 ) ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:850:1: ( ( rule__Primitive__NameAssignment_1 ) )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:857:1: ( ( rule__Primitive__NameAssignment_1 ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:858:1: ( rule__Primitive__NameAssignment_1 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:850:1: ( ( rule__Primitive__NameAssignment_1 ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:851:1: ( rule__Primitive__NameAssignment_1 )
             {
              before(grammarAccess.getPrimitiveAccess().getNameAssignment_1()); 
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:859:1: ( rule__Primitive__NameAssignment_1 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:859:2: rule__Primitive__NameAssignment_1
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:852:1: ( rule__Primitive__NameAssignment_1 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:852:2: rule__Primitive__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Primitive__NameAssignment_1_in_rule__Primitive__Group__1__Impl1706);
+            pushFollow(FOLLOW_rule__Primitive__NameAssignment_1_in_rule__Primitive__Group__1__Impl1690);
             rule__Primitive__NameAssignment_1();
 
             state._fsp--;
@@ -2271,21 +2246,21 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Any__Group__0"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:873:1: rule__Any__Group__0 : rule__Any__Group__0__Impl rule__Any__Group__1 ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:866:1: rule__Any__Group__0 : rule__Any__Group__0__Impl rule__Any__Group__1 ;
     public final void rule__Any__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:877:1: ( rule__Any__Group__0__Impl rule__Any__Group__1 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:878:2: rule__Any__Group__0__Impl rule__Any__Group__1
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:870:1: ( rule__Any__Group__0__Impl rule__Any__Group__1 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:871:2: rule__Any__Group__0__Impl rule__Any__Group__1
             {
-            pushFollow(FOLLOW_rule__Any__Group__0__Impl_in_rule__Any__Group__01740);
+            pushFollow(FOLLOW_rule__Any__Group__0__Impl_in_rule__Any__Group__01724);
             rule__Any__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Any__Group__1_in_rule__Any__Group__01743);
+            pushFollow(FOLLOW_rule__Any__Group__1_in_rule__Any__Group__01727);
             rule__Any__Group__1();
 
             state._fsp--;
@@ -2309,20 +2284,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Any__Group__0__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:885:1: rule__Any__Group__0__Impl : ( 'any type' ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:878:1: rule__Any__Group__0__Impl : ( 'any type' ) ;
     public final void rule__Any__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:889:1: ( ( 'any type' ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:890:1: ( 'any type' )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:882:1: ( ( 'any type' ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:883:1: ( 'any type' )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:890:1: ( 'any type' )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:891:1: 'any type'
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:883:1: ( 'any type' )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:884:1: 'any type'
             {
              before(grammarAccess.getAnyAccess().getAnyTypeKeyword_0()); 
-            match(input,17,FOLLOW_17_in_rule__Any__Group__0__Impl1771); 
+            match(input,17,FOLLOW_17_in_rule__Any__Group__0__Impl1755); 
              after(grammarAccess.getAnyAccess().getAnyTypeKeyword_0()); 
 
             }
@@ -2346,16 +2321,16 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Any__Group__1"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:904:1: rule__Any__Group__1 : rule__Any__Group__1__Impl ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:897:1: rule__Any__Group__1 : rule__Any__Group__1__Impl ;
     public final void rule__Any__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:908:1: ( rule__Any__Group__1__Impl )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:909:2: rule__Any__Group__1__Impl
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:901:1: ( rule__Any__Group__1__Impl )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:902:2: rule__Any__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Any__Group__1__Impl_in_rule__Any__Group__11802);
+            pushFollow(FOLLOW_rule__Any__Group__1__Impl_in_rule__Any__Group__11786);
             rule__Any__Group__1__Impl();
 
             state._fsp--;
@@ -2379,23 +2354,23 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Any__Group__1__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:915:1: rule__Any__Group__1__Impl : ( ( rule__Any__NameAssignment_1 ) ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:908:1: rule__Any__Group__1__Impl : ( ( rule__Any__NameAssignment_1 ) ) ;
     public final void rule__Any__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:919:1: ( ( ( rule__Any__NameAssignment_1 ) ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:920:1: ( ( rule__Any__NameAssignment_1 ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:912:1: ( ( ( rule__Any__NameAssignment_1 ) ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:913:1: ( ( rule__Any__NameAssignment_1 ) )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:920:1: ( ( rule__Any__NameAssignment_1 ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:921:1: ( rule__Any__NameAssignment_1 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:913:1: ( ( rule__Any__NameAssignment_1 ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:914:1: ( rule__Any__NameAssignment_1 )
             {
              before(grammarAccess.getAnyAccess().getNameAssignment_1()); 
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:922:1: ( rule__Any__NameAssignment_1 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:922:2: rule__Any__NameAssignment_1
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:915:1: ( rule__Any__NameAssignment_1 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:915:2: rule__Any__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Any__NameAssignment_1_in_rule__Any__Group__1__Impl1829);
+            pushFollow(FOLLOW_rule__Any__NameAssignment_1_in_rule__Any__Group__1__Impl1813);
             rule__Any__NameAssignment_1();
 
             state._fsp--;
@@ -2426,21 +2401,21 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__Group__0"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:936:1: rule__Feature__Group__0 : rule__Feature__Group__0__Impl rule__Feature__Group__1 ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:929:1: rule__Feature__Group__0 : rule__Feature__Group__0__Impl rule__Feature__Group__1 ;
     public final void rule__Feature__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:940:1: ( rule__Feature__Group__0__Impl rule__Feature__Group__1 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:941:2: rule__Feature__Group__0__Impl rule__Feature__Group__1
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:933:1: ( rule__Feature__Group__0__Impl rule__Feature__Group__1 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:934:2: rule__Feature__Group__0__Impl rule__Feature__Group__1
             {
-            pushFollow(FOLLOW_rule__Feature__Group__0__Impl_in_rule__Feature__Group__01863);
+            pushFollow(FOLLOW_rule__Feature__Group__0__Impl_in_rule__Feature__Group__01847);
             rule__Feature__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Feature__Group__1_in_rule__Feature__Group__01866);
+            pushFollow(FOLLOW_rule__Feature__Group__1_in_rule__Feature__Group__01850);
             rule__Feature__Group__1();
 
             state._fsp--;
@@ -2464,20 +2439,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__Group__0__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:948:1: rule__Feature__Group__0__Impl : ( ( rule__Feature__IsIndexedAssignment_0 )? ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:941:1: rule__Feature__Group__0__Impl : ( ( rule__Feature__IsIndexedAssignment_0 )? ) ;
     public final void rule__Feature__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:952:1: ( ( ( rule__Feature__IsIndexedAssignment_0 )? ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:953:1: ( ( rule__Feature__IsIndexedAssignment_0 )? )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:945:1: ( ( ( rule__Feature__IsIndexedAssignment_0 )? ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:946:1: ( ( rule__Feature__IsIndexedAssignment_0 )? )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:953:1: ( ( rule__Feature__IsIndexedAssignment_0 )? )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:954:1: ( rule__Feature__IsIndexedAssignment_0 )?
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:946:1: ( ( rule__Feature__IsIndexedAssignment_0 )? )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:947:1: ( rule__Feature__IsIndexedAssignment_0 )?
             {
              before(grammarAccess.getFeatureAccess().getIsIndexedAssignment_0()); 
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:955:1: ( rule__Feature__IsIndexedAssignment_0 )?
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:948:1: ( rule__Feature__IsIndexedAssignment_0 )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -2486,9 +2461,9 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
             }
             switch (alt4) {
                 case 1 :
-                    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:955:2: rule__Feature__IsIndexedAssignment_0
+                    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:948:2: rule__Feature__IsIndexedAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__Feature__IsIndexedAssignment_0_in_rule__Feature__Group__0__Impl1893);
+                    pushFollow(FOLLOW_rule__Feature__IsIndexedAssignment_0_in_rule__Feature__Group__0__Impl1877);
                     rule__Feature__IsIndexedAssignment_0();
 
                     state._fsp--;
@@ -2522,21 +2497,21 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__Group__1"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:965:1: rule__Feature__Group__1 : rule__Feature__Group__1__Impl rule__Feature__Group__2 ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:958:1: rule__Feature__Group__1 : rule__Feature__Group__1__Impl rule__Feature__Group__2 ;
     public final void rule__Feature__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:969:1: ( rule__Feature__Group__1__Impl rule__Feature__Group__2 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:970:2: rule__Feature__Group__1__Impl rule__Feature__Group__2
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:962:1: ( rule__Feature__Group__1__Impl rule__Feature__Group__2 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:963:2: rule__Feature__Group__1__Impl rule__Feature__Group__2
             {
-            pushFollow(FOLLOW_rule__Feature__Group__1__Impl_in_rule__Feature__Group__11924);
+            pushFollow(FOLLOW_rule__Feature__Group__1__Impl_in_rule__Feature__Group__11908);
             rule__Feature__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Feature__Group__2_in_rule__Feature__Group__11927);
+            pushFollow(FOLLOW_rule__Feature__Group__2_in_rule__Feature__Group__11911);
             rule__Feature__Group__2();
 
             state._fsp--;
@@ -2560,20 +2535,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__Group__1__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:977:1: rule__Feature__Group__1__Impl : ( ( rule__Feature__IsContainmentAssignment_1 )? ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:970:1: rule__Feature__Group__1__Impl : ( ( rule__Feature__IsContainmentAssignment_1 )? ) ;
     public final void rule__Feature__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:981:1: ( ( ( rule__Feature__IsContainmentAssignment_1 )? ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:982:1: ( ( rule__Feature__IsContainmentAssignment_1 )? )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:974:1: ( ( ( rule__Feature__IsContainmentAssignment_1 )? ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:975:1: ( ( rule__Feature__IsContainmentAssignment_1 )? )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:982:1: ( ( rule__Feature__IsContainmentAssignment_1 )? )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:983:1: ( rule__Feature__IsContainmentAssignment_1 )?
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:975:1: ( ( rule__Feature__IsContainmentAssignment_1 )? )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:976:1: ( rule__Feature__IsContainmentAssignment_1 )?
             {
              before(grammarAccess.getFeatureAccess().getIsContainmentAssignment_1()); 
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:984:1: ( rule__Feature__IsContainmentAssignment_1 )?
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:977:1: ( rule__Feature__IsContainmentAssignment_1 )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -2582,9 +2557,9 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
             }
             switch (alt5) {
                 case 1 :
-                    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:984:2: rule__Feature__IsContainmentAssignment_1
+                    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:977:2: rule__Feature__IsContainmentAssignment_1
                     {
-                    pushFollow(FOLLOW_rule__Feature__IsContainmentAssignment_1_in_rule__Feature__Group__1__Impl1954);
+                    pushFollow(FOLLOW_rule__Feature__IsContainmentAssignment_1_in_rule__Feature__Group__1__Impl1938);
                     rule__Feature__IsContainmentAssignment_1();
 
                     state._fsp--;
@@ -2618,21 +2593,21 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__Group__2"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:994:1: rule__Feature__Group__2 : rule__Feature__Group__2__Impl rule__Feature__Group__3 ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:987:1: rule__Feature__Group__2 : rule__Feature__Group__2__Impl rule__Feature__Group__3 ;
     public final void rule__Feature__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:998:1: ( rule__Feature__Group__2__Impl rule__Feature__Group__3 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:999:2: rule__Feature__Group__2__Impl rule__Feature__Group__3
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:991:1: ( rule__Feature__Group__2__Impl rule__Feature__Group__3 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:992:2: rule__Feature__Group__2__Impl rule__Feature__Group__3
             {
-            pushFollow(FOLLOW_rule__Feature__Group__2__Impl_in_rule__Feature__Group__21985);
+            pushFollow(FOLLOW_rule__Feature__Group__2__Impl_in_rule__Feature__Group__21969);
             rule__Feature__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Feature__Group__3_in_rule__Feature__Group__21988);
+            pushFollow(FOLLOW_rule__Feature__Group__3_in_rule__Feature__Group__21972);
             rule__Feature__Group__3();
 
             state._fsp--;
@@ -2656,23 +2631,23 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__Group__2__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1006:1: rule__Feature__Group__2__Impl : ( ( rule__Feature__TypeAssignment_2 ) ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:999:1: rule__Feature__Group__2__Impl : ( ( rule__Feature__TypeAssignment_2 ) ) ;
     public final void rule__Feature__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1010:1: ( ( ( rule__Feature__TypeAssignment_2 ) ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1011:1: ( ( rule__Feature__TypeAssignment_2 ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1003:1: ( ( ( rule__Feature__TypeAssignment_2 ) ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1004:1: ( ( rule__Feature__TypeAssignment_2 ) )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1011:1: ( ( rule__Feature__TypeAssignment_2 ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1012:1: ( rule__Feature__TypeAssignment_2 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1004:1: ( ( rule__Feature__TypeAssignment_2 ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1005:1: ( rule__Feature__TypeAssignment_2 )
             {
              before(grammarAccess.getFeatureAccess().getTypeAssignment_2()); 
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1013:1: ( rule__Feature__TypeAssignment_2 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1013:2: rule__Feature__TypeAssignment_2
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1006:1: ( rule__Feature__TypeAssignment_2 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1006:2: rule__Feature__TypeAssignment_2
             {
-            pushFollow(FOLLOW_rule__Feature__TypeAssignment_2_in_rule__Feature__Group__2__Impl2015);
+            pushFollow(FOLLOW_rule__Feature__TypeAssignment_2_in_rule__Feature__Group__2__Impl1999);
             rule__Feature__TypeAssignment_2();
 
             state._fsp--;
@@ -2703,21 +2678,21 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__Group__3"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1023:1: rule__Feature__Group__3 : rule__Feature__Group__3__Impl rule__Feature__Group__4 ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1016:1: rule__Feature__Group__3 : rule__Feature__Group__3__Impl rule__Feature__Group__4 ;
     public final void rule__Feature__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1027:1: ( rule__Feature__Group__3__Impl rule__Feature__Group__4 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1028:2: rule__Feature__Group__3__Impl rule__Feature__Group__4
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1020:1: ( rule__Feature__Group__3__Impl rule__Feature__Group__4 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1021:2: rule__Feature__Group__3__Impl rule__Feature__Group__4
             {
-            pushFollow(FOLLOW_rule__Feature__Group__3__Impl_in_rule__Feature__Group__32045);
+            pushFollow(FOLLOW_rule__Feature__Group__3__Impl_in_rule__Feature__Group__32029);
             rule__Feature__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Feature__Group__4_in_rule__Feature__Group__32048);
+            pushFollow(FOLLOW_rule__Feature__Group__4_in_rule__Feature__Group__32032);
             rule__Feature__Group__4();
 
             state._fsp--;
@@ -2741,23 +2716,23 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__Group__3__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1035:1: rule__Feature__Group__3__Impl : ( ( rule__Feature__NameAssignment_3 ) ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1028:1: rule__Feature__Group__3__Impl : ( ( rule__Feature__NameAssignment_3 ) ) ;
     public final void rule__Feature__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1039:1: ( ( ( rule__Feature__NameAssignment_3 ) ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1040:1: ( ( rule__Feature__NameAssignment_3 ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1032:1: ( ( ( rule__Feature__NameAssignment_3 ) ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1033:1: ( ( rule__Feature__NameAssignment_3 ) )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1040:1: ( ( rule__Feature__NameAssignment_3 ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1041:1: ( rule__Feature__NameAssignment_3 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1033:1: ( ( rule__Feature__NameAssignment_3 ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1034:1: ( rule__Feature__NameAssignment_3 )
             {
              before(grammarAccess.getFeatureAccess().getNameAssignment_3()); 
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1042:1: ( rule__Feature__NameAssignment_3 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1042:2: rule__Feature__NameAssignment_3
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1035:1: ( rule__Feature__NameAssignment_3 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1035:2: rule__Feature__NameAssignment_3
             {
-            pushFollow(FOLLOW_rule__Feature__NameAssignment_3_in_rule__Feature__Group__3__Impl2075);
+            pushFollow(FOLLOW_rule__Feature__NameAssignment_3_in_rule__Feature__Group__3__Impl2059);
             rule__Feature__NameAssignment_3();
 
             state._fsp--;
@@ -2788,21 +2763,21 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__Group__4"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1052:1: rule__Feature__Group__4 : rule__Feature__Group__4__Impl rule__Feature__Group__5 ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1045:1: rule__Feature__Group__4 : rule__Feature__Group__4__Impl rule__Feature__Group__5 ;
     public final void rule__Feature__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1056:1: ( rule__Feature__Group__4__Impl rule__Feature__Group__5 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1057:2: rule__Feature__Group__4__Impl rule__Feature__Group__5
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1049:1: ( rule__Feature__Group__4__Impl rule__Feature__Group__5 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1050:2: rule__Feature__Group__4__Impl rule__Feature__Group__5
             {
-            pushFollow(FOLLOW_rule__Feature__Group__4__Impl_in_rule__Feature__Group__42105);
+            pushFollow(FOLLOW_rule__Feature__Group__4__Impl_in_rule__Feature__Group__42089);
             rule__Feature__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Feature__Group__5_in_rule__Feature__Group__42108);
+            pushFollow(FOLLOW_rule__Feature__Group__5_in_rule__Feature__Group__42092);
             rule__Feature__Group__5();
 
             state._fsp--;
@@ -2826,20 +2801,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__Group__4__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1064:1: rule__Feature__Group__4__Impl : ( ( rule__Feature__Group_4__0 )? ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1057:1: rule__Feature__Group__4__Impl : ( ( rule__Feature__Group_4__0 )? ) ;
     public final void rule__Feature__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1068:1: ( ( ( rule__Feature__Group_4__0 )? ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1069:1: ( ( rule__Feature__Group_4__0 )? )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1061:1: ( ( ( rule__Feature__Group_4__0 )? ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1062:1: ( ( rule__Feature__Group_4__0 )? )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1069:1: ( ( rule__Feature__Group_4__0 )? )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1070:1: ( rule__Feature__Group_4__0 )?
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1062:1: ( ( rule__Feature__Group_4__0 )? )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1063:1: ( rule__Feature__Group_4__0 )?
             {
              before(grammarAccess.getFeatureAccess().getGroup_4()); 
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1071:1: ( rule__Feature__Group_4__0 )?
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1064:1: ( rule__Feature__Group_4__0 )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -2848,9 +2823,9 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
             }
             switch (alt6) {
                 case 1 :
-                    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1071:2: rule__Feature__Group_4__0
+                    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1064:2: rule__Feature__Group_4__0
                     {
-                    pushFollow(FOLLOW_rule__Feature__Group_4__0_in_rule__Feature__Group__4__Impl2135);
+                    pushFollow(FOLLOW_rule__Feature__Group_4__0_in_rule__Feature__Group__4__Impl2119);
                     rule__Feature__Group_4__0();
 
                     state._fsp--;
@@ -2884,21 +2859,21 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__Group__5"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1081:1: rule__Feature__Group__5 : rule__Feature__Group__5__Impl rule__Feature__Group__6 ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1074:1: rule__Feature__Group__5 : rule__Feature__Group__5__Impl rule__Feature__Group__6 ;
     public final void rule__Feature__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1085:1: ( rule__Feature__Group__5__Impl rule__Feature__Group__6 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1086:2: rule__Feature__Group__5__Impl rule__Feature__Group__6
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1078:1: ( rule__Feature__Group__5__Impl rule__Feature__Group__6 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1079:2: rule__Feature__Group__5__Impl rule__Feature__Group__6
             {
-            pushFollow(FOLLOW_rule__Feature__Group__5__Impl_in_rule__Feature__Group__52166);
+            pushFollow(FOLLOW_rule__Feature__Group__5__Impl_in_rule__Feature__Group__52150);
             rule__Feature__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Feature__Group__6_in_rule__Feature__Group__52169);
+            pushFollow(FOLLOW_rule__Feature__Group__6_in_rule__Feature__Group__52153);
             rule__Feature__Group__6();
 
             state._fsp--;
@@ -2922,20 +2897,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__Group__5__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1093:1: rule__Feature__Group__5__Impl : ( ( rule__Feature__Group_5__0 )? ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1086:1: rule__Feature__Group__5__Impl : ( ( rule__Feature__Group_5__0 )? ) ;
     public final void rule__Feature__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1097:1: ( ( ( rule__Feature__Group_5__0 )? ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1098:1: ( ( rule__Feature__Group_5__0 )? )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1090:1: ( ( ( rule__Feature__Group_5__0 )? ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1091:1: ( ( rule__Feature__Group_5__0 )? )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1098:1: ( ( rule__Feature__Group_5__0 )? )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1099:1: ( rule__Feature__Group_5__0 )?
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1091:1: ( ( rule__Feature__Group_5__0 )? )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1092:1: ( rule__Feature__Group_5__0 )?
             {
              before(grammarAccess.getFeatureAccess().getGroup_5()); 
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1100:1: ( rule__Feature__Group_5__0 )?
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1093:1: ( rule__Feature__Group_5__0 )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2944,9 +2919,9 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
             }
             switch (alt7) {
                 case 1 :
-                    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1100:2: rule__Feature__Group_5__0
+                    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1093:2: rule__Feature__Group_5__0
                     {
-                    pushFollow(FOLLOW_rule__Feature__Group_5__0_in_rule__Feature__Group__5__Impl2196);
+                    pushFollow(FOLLOW_rule__Feature__Group_5__0_in_rule__Feature__Group__5__Impl2180);
                     rule__Feature__Group_5__0();
 
                     state._fsp--;
@@ -2980,16 +2955,16 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__Group__6"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1110:1: rule__Feature__Group__6 : rule__Feature__Group__6__Impl ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1103:1: rule__Feature__Group__6 : rule__Feature__Group__6__Impl ;
     public final void rule__Feature__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1114:1: ( rule__Feature__Group__6__Impl )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1115:2: rule__Feature__Group__6__Impl
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1107:1: ( rule__Feature__Group__6__Impl )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1108:2: rule__Feature__Group__6__Impl
             {
-            pushFollow(FOLLOW_rule__Feature__Group__6__Impl_in_rule__Feature__Group__62227);
+            pushFollow(FOLLOW_rule__Feature__Group__6__Impl_in_rule__Feature__Group__62211);
             rule__Feature__Group__6__Impl();
 
             state._fsp--;
@@ -3013,20 +2988,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__Group__6__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1121:1: rule__Feature__Group__6__Impl : ( ( ';' )? ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1114:1: rule__Feature__Group__6__Impl : ( ( ';' )? ) ;
     public final void rule__Feature__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1125:1: ( ( ( ';' )? ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1126:1: ( ( ';' )? )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1118:1: ( ( ( ';' )? ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1119:1: ( ( ';' )? )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1126:1: ( ( ';' )? )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1127:1: ( ';' )?
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1119:1: ( ( ';' )? )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1120:1: ( ';' )?
             {
              before(grammarAccess.getFeatureAccess().getSemicolonKeyword_6()); 
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1128:1: ( ';' )?
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1121:1: ( ';' )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -3035,9 +3010,9 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
             }
             switch (alt8) {
                 case 1 :
-                    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1129:2: ';'
+                    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1122:2: ';'
                     {
-                    match(input,18,FOLLOW_18_in_rule__Feature__Group__6__Impl2256); 
+                    match(input,18,FOLLOW_18_in_rule__Feature__Group__6__Impl2240); 
 
                     }
                     break;
@@ -3067,21 +3042,21 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__Group_4__0"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1154:1: rule__Feature__Group_4__0 : rule__Feature__Group_4__0__Impl rule__Feature__Group_4__1 ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1147:1: rule__Feature__Group_4__0 : rule__Feature__Group_4__0__Impl rule__Feature__Group_4__1 ;
     public final void rule__Feature__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1158:1: ( rule__Feature__Group_4__0__Impl rule__Feature__Group_4__1 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1159:2: rule__Feature__Group_4__0__Impl rule__Feature__Group_4__1
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1151:1: ( rule__Feature__Group_4__0__Impl rule__Feature__Group_4__1 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1152:2: rule__Feature__Group_4__0__Impl rule__Feature__Group_4__1
             {
-            pushFollow(FOLLOW_rule__Feature__Group_4__0__Impl_in_rule__Feature__Group_4__02303);
+            pushFollow(FOLLOW_rule__Feature__Group_4__0__Impl_in_rule__Feature__Group_4__02287);
             rule__Feature__Group_4__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Feature__Group_4__1_in_rule__Feature__Group_4__02306);
+            pushFollow(FOLLOW_rule__Feature__Group_4__1_in_rule__Feature__Group_4__02290);
             rule__Feature__Group_4__1();
 
             state._fsp--;
@@ -3105,20 +3080,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__Group_4__0__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1166:1: rule__Feature__Group_4__0__Impl : ( '=' ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1159:1: rule__Feature__Group_4__0__Impl : ( '=' ) ;
     public final void rule__Feature__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1170:1: ( ( '=' ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1171:1: ( '=' )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1163:1: ( ( '=' ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1164:1: ( '=' )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1171:1: ( '=' )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1172:1: '='
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1164:1: ( '=' )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1165:1: '='
             {
              before(grammarAccess.getFeatureAccess().getEqualsSignKeyword_4_0()); 
-            match(input,19,FOLLOW_19_in_rule__Feature__Group_4__0__Impl2334); 
+            match(input,19,FOLLOW_19_in_rule__Feature__Group_4__0__Impl2318); 
              after(grammarAccess.getFeatureAccess().getEqualsSignKeyword_4_0()); 
 
             }
@@ -3142,16 +3117,16 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__Group_4__1"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1185:1: rule__Feature__Group_4__1 : rule__Feature__Group_4__1__Impl ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1178:1: rule__Feature__Group_4__1 : rule__Feature__Group_4__1__Impl ;
     public final void rule__Feature__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1189:1: ( rule__Feature__Group_4__1__Impl )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1190:2: rule__Feature__Group_4__1__Impl
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1182:1: ( rule__Feature__Group_4__1__Impl )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1183:2: rule__Feature__Group_4__1__Impl
             {
-            pushFollow(FOLLOW_rule__Feature__Group_4__1__Impl_in_rule__Feature__Group_4__12365);
+            pushFollow(FOLLOW_rule__Feature__Group_4__1__Impl_in_rule__Feature__Group_4__12349);
             rule__Feature__Group_4__1__Impl();
 
             state._fsp--;
@@ -3175,23 +3150,23 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__Group_4__1__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1196:1: rule__Feature__Group_4__1__Impl : ( ( rule__Feature__DefaultValueAssignment_4_1 ) ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1189:1: rule__Feature__Group_4__1__Impl : ( ( rule__Feature__DefaultValueAssignment_4_1 ) ) ;
     public final void rule__Feature__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1200:1: ( ( ( rule__Feature__DefaultValueAssignment_4_1 ) ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1201:1: ( ( rule__Feature__DefaultValueAssignment_4_1 ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1193:1: ( ( ( rule__Feature__DefaultValueAssignment_4_1 ) ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1194:1: ( ( rule__Feature__DefaultValueAssignment_4_1 ) )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1201:1: ( ( rule__Feature__DefaultValueAssignment_4_1 ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1202:1: ( rule__Feature__DefaultValueAssignment_4_1 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1194:1: ( ( rule__Feature__DefaultValueAssignment_4_1 ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1195:1: ( rule__Feature__DefaultValueAssignment_4_1 )
             {
              before(grammarAccess.getFeatureAccess().getDefaultValueAssignment_4_1()); 
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1203:1: ( rule__Feature__DefaultValueAssignment_4_1 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1203:2: rule__Feature__DefaultValueAssignment_4_1
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1196:1: ( rule__Feature__DefaultValueAssignment_4_1 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1196:2: rule__Feature__DefaultValueAssignment_4_1
             {
-            pushFollow(FOLLOW_rule__Feature__DefaultValueAssignment_4_1_in_rule__Feature__Group_4__1__Impl2392);
+            pushFollow(FOLLOW_rule__Feature__DefaultValueAssignment_4_1_in_rule__Feature__Group_4__1__Impl2376);
             rule__Feature__DefaultValueAssignment_4_1();
 
             state._fsp--;
@@ -3222,21 +3197,21 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__Group_5__0"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1217:1: rule__Feature__Group_5__0 : rule__Feature__Group_5__0__Impl rule__Feature__Group_5__1 ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1210:1: rule__Feature__Group_5__0 : rule__Feature__Group_5__0__Impl rule__Feature__Group_5__1 ;
     public final void rule__Feature__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1221:1: ( rule__Feature__Group_5__0__Impl rule__Feature__Group_5__1 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1222:2: rule__Feature__Group_5__0__Impl rule__Feature__Group_5__1
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1214:1: ( rule__Feature__Group_5__0__Impl rule__Feature__Group_5__1 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1215:2: rule__Feature__Group_5__0__Impl rule__Feature__Group_5__1
             {
-            pushFollow(FOLLOW_rule__Feature__Group_5__0__Impl_in_rule__Feature__Group_5__02426);
+            pushFollow(FOLLOW_rule__Feature__Group_5__0__Impl_in_rule__Feature__Group_5__02410);
             rule__Feature__Group_5__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Feature__Group_5__1_in_rule__Feature__Group_5__02429);
+            pushFollow(FOLLOW_rule__Feature__Group_5__1_in_rule__Feature__Group_5__02413);
             rule__Feature__Group_5__1();
 
             state._fsp--;
@@ -3260,20 +3235,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__Group_5__0__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1229:1: rule__Feature__Group_5__0__Impl : ( '<->' ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1222:1: rule__Feature__Group_5__0__Impl : ( '<->' ) ;
     public final void rule__Feature__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1233:1: ( ( '<->' ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1234:1: ( '<->' )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1226:1: ( ( '<->' ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1227:1: ( '<->' )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1234:1: ( '<->' )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1235:1: '<->'
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1227:1: ( '<->' )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1228:1: '<->'
             {
              before(grammarAccess.getFeatureAccess().getLessThanSignHyphenMinusGreaterThanSignKeyword_5_0()); 
-            match(input,20,FOLLOW_20_in_rule__Feature__Group_5__0__Impl2457); 
+            match(input,20,FOLLOW_20_in_rule__Feature__Group_5__0__Impl2441); 
              after(grammarAccess.getFeatureAccess().getLessThanSignHyphenMinusGreaterThanSignKeyword_5_0()); 
 
             }
@@ -3297,16 +3272,16 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__Group_5__1"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1248:1: rule__Feature__Group_5__1 : rule__Feature__Group_5__1__Impl ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1241:1: rule__Feature__Group_5__1 : rule__Feature__Group_5__1__Impl ;
     public final void rule__Feature__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1252:1: ( rule__Feature__Group_5__1__Impl )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1253:2: rule__Feature__Group_5__1__Impl
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1245:1: ( rule__Feature__Group_5__1__Impl )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1246:2: rule__Feature__Group_5__1__Impl
             {
-            pushFollow(FOLLOW_rule__Feature__Group_5__1__Impl_in_rule__Feature__Group_5__12488);
+            pushFollow(FOLLOW_rule__Feature__Group_5__1__Impl_in_rule__Feature__Group_5__12472);
             rule__Feature__Group_5__1__Impl();
 
             state._fsp--;
@@ -3330,23 +3305,23 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__Group_5__1__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1259:1: rule__Feature__Group_5__1__Impl : ( ( rule__Feature__InverseAssignment_5_1 ) ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1252:1: rule__Feature__Group_5__1__Impl : ( ( rule__Feature__InverseAssignment_5_1 ) ) ;
     public final void rule__Feature__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1263:1: ( ( ( rule__Feature__InverseAssignment_5_1 ) ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1264:1: ( ( rule__Feature__InverseAssignment_5_1 ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1256:1: ( ( ( rule__Feature__InverseAssignment_5_1 ) ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1257:1: ( ( rule__Feature__InverseAssignment_5_1 ) )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1264:1: ( ( rule__Feature__InverseAssignment_5_1 ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1265:1: ( rule__Feature__InverseAssignment_5_1 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1257:1: ( ( rule__Feature__InverseAssignment_5_1 ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1258:1: ( rule__Feature__InverseAssignment_5_1 )
             {
              before(grammarAccess.getFeatureAccess().getInverseAssignment_5_1()); 
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1266:1: ( rule__Feature__InverseAssignment_5_1 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1266:2: rule__Feature__InverseAssignment_5_1
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1259:1: ( rule__Feature__InverseAssignment_5_1 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1259:2: rule__Feature__InverseAssignment_5_1
             {
-            pushFollow(FOLLOW_rule__Feature__InverseAssignment_5_1_in_rule__Feature__Group_5__1__Impl2515);
+            pushFollow(FOLLOW_rule__Feature__InverseAssignment_5_1_in_rule__Feature__Group_5__1__Impl2499);
             rule__Feature__InverseAssignment_5_1();
 
             state._fsp--;
@@ -3377,21 +3352,21 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__TypeRef__Group__0"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1280:1: rule__TypeRef__Group__0 : rule__TypeRef__Group__0__Impl rule__TypeRef__Group__1 ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1273:1: rule__TypeRef__Group__0 : rule__TypeRef__Group__0__Impl rule__TypeRef__Group__1 ;
     public final void rule__TypeRef__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1284:1: ( rule__TypeRef__Group__0__Impl rule__TypeRef__Group__1 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1285:2: rule__TypeRef__Group__0__Impl rule__TypeRef__Group__1
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1277:1: ( rule__TypeRef__Group__0__Impl rule__TypeRef__Group__1 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1278:2: rule__TypeRef__Group__0__Impl rule__TypeRef__Group__1
             {
-            pushFollow(FOLLOW_rule__TypeRef__Group__0__Impl_in_rule__TypeRef__Group__02549);
+            pushFollow(FOLLOW_rule__TypeRef__Group__0__Impl_in_rule__TypeRef__Group__02533);
             rule__TypeRef__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TypeRef__Group__1_in_rule__TypeRef__Group__02552);
+            pushFollow(FOLLOW_rule__TypeRef__Group__1_in_rule__TypeRef__Group__02536);
             rule__TypeRef__Group__1();
 
             state._fsp--;
@@ -3415,23 +3390,23 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__TypeRef__Group__0__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1292:1: rule__TypeRef__Group__0__Impl : ( ( rule__TypeRef__ReferencedAssignment_0 ) ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1285:1: rule__TypeRef__Group__0__Impl : ( ( rule__TypeRef__ReferencedAssignment_0 ) ) ;
     public final void rule__TypeRef__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1296:1: ( ( ( rule__TypeRef__ReferencedAssignment_0 ) ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1297:1: ( ( rule__TypeRef__ReferencedAssignment_0 ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1289:1: ( ( ( rule__TypeRef__ReferencedAssignment_0 ) ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1290:1: ( ( rule__TypeRef__ReferencedAssignment_0 ) )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1297:1: ( ( rule__TypeRef__ReferencedAssignment_0 ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1298:1: ( rule__TypeRef__ReferencedAssignment_0 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1290:1: ( ( rule__TypeRef__ReferencedAssignment_0 ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1291:1: ( rule__TypeRef__ReferencedAssignment_0 )
             {
              before(grammarAccess.getTypeRefAccess().getReferencedAssignment_0()); 
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1299:1: ( rule__TypeRef__ReferencedAssignment_0 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1299:2: rule__TypeRef__ReferencedAssignment_0
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1292:1: ( rule__TypeRef__ReferencedAssignment_0 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1292:2: rule__TypeRef__ReferencedAssignment_0
             {
-            pushFollow(FOLLOW_rule__TypeRef__ReferencedAssignment_0_in_rule__TypeRef__Group__0__Impl2579);
+            pushFollow(FOLLOW_rule__TypeRef__ReferencedAssignment_0_in_rule__TypeRef__Group__0__Impl2563);
             rule__TypeRef__ReferencedAssignment_0();
 
             state._fsp--;
@@ -3462,16 +3437,16 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__TypeRef__Group__1"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1309:1: rule__TypeRef__Group__1 : rule__TypeRef__Group__1__Impl ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1302:1: rule__TypeRef__Group__1 : rule__TypeRef__Group__1__Impl ;
     public final void rule__TypeRef__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1313:1: ( rule__TypeRef__Group__1__Impl )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1314:2: rule__TypeRef__Group__1__Impl
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1306:1: ( rule__TypeRef__Group__1__Impl )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1307:2: rule__TypeRef__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__TypeRef__Group__1__Impl_in_rule__TypeRef__Group__12609);
+            pushFollow(FOLLOW_rule__TypeRef__Group__1__Impl_in_rule__TypeRef__Group__12593);
             rule__TypeRef__Group__1__Impl();
 
             state._fsp--;
@@ -3495,20 +3470,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__TypeRef__Group__1__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1320:1: rule__TypeRef__Group__1__Impl : ( ( rule__TypeRef__IsMultiAssignment_1 )? ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1313:1: rule__TypeRef__Group__1__Impl : ( ( rule__TypeRef__IsMultiAssignment_1 )? ) ;
     public final void rule__TypeRef__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1324:1: ( ( ( rule__TypeRef__IsMultiAssignment_1 )? ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1325:1: ( ( rule__TypeRef__IsMultiAssignment_1 )? )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1317:1: ( ( ( rule__TypeRef__IsMultiAssignment_1 )? ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1318:1: ( ( rule__TypeRef__IsMultiAssignment_1 )? )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1325:1: ( ( rule__TypeRef__IsMultiAssignment_1 )? )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1326:1: ( rule__TypeRef__IsMultiAssignment_1 )?
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1318:1: ( ( rule__TypeRef__IsMultiAssignment_1 )? )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1319:1: ( rule__TypeRef__IsMultiAssignment_1 )?
             {
              before(grammarAccess.getTypeRefAccess().getIsMultiAssignment_1()); 
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1327:1: ( rule__TypeRef__IsMultiAssignment_1 )?
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1320:1: ( rule__TypeRef__IsMultiAssignment_1 )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -3517,9 +3492,9 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
             }
             switch (alt9) {
                 case 1 :
-                    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1327:2: rule__TypeRef__IsMultiAssignment_1
+                    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1320:2: rule__TypeRef__IsMultiAssignment_1
                     {
-                    pushFollow(FOLLOW_rule__TypeRef__IsMultiAssignment_1_in_rule__TypeRef__Group__1__Impl2636);
+                    pushFollow(FOLLOW_rule__TypeRef__IsMultiAssignment_1_in_rule__TypeRef__Group__1__Impl2620);
                     rule__TypeRef__IsMultiAssignment_1();
 
                     state._fsp--;
@@ -3553,21 +3528,21 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__EFloatObject__Group__0"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1341:1: rule__EFloatObject__Group__0 : rule__EFloatObject__Group__0__Impl rule__EFloatObject__Group__1 ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1334:1: rule__EFloatObject__Group__0 : rule__EFloatObject__Group__0__Impl rule__EFloatObject__Group__1 ;
     public final void rule__EFloatObject__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1345:1: ( rule__EFloatObject__Group__0__Impl rule__EFloatObject__Group__1 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1346:2: rule__EFloatObject__Group__0__Impl rule__EFloatObject__Group__1
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1338:1: ( rule__EFloatObject__Group__0__Impl rule__EFloatObject__Group__1 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1339:2: rule__EFloatObject__Group__0__Impl rule__EFloatObject__Group__1
             {
-            pushFollow(FOLLOW_rule__EFloatObject__Group__0__Impl_in_rule__EFloatObject__Group__02671);
+            pushFollow(FOLLOW_rule__EFloatObject__Group__0__Impl_in_rule__EFloatObject__Group__02655);
             rule__EFloatObject__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EFloatObject__Group__1_in_rule__EFloatObject__Group__02674);
+            pushFollow(FOLLOW_rule__EFloatObject__Group__1_in_rule__EFloatObject__Group__02658);
             rule__EFloatObject__Group__1();
 
             state._fsp--;
@@ -3591,20 +3566,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__EFloatObject__Group__0__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1353:1: rule__EFloatObject__Group__0__Impl : ( ( '-' )? ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1346:1: rule__EFloatObject__Group__0__Impl : ( ( '-' )? ) ;
     public final void rule__EFloatObject__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1357:1: ( ( ( '-' )? ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1358:1: ( ( '-' )? )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1350:1: ( ( ( '-' )? ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1351:1: ( ( '-' )? )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1358:1: ( ( '-' )? )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1359:1: ( '-' )?
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1351:1: ( ( '-' )? )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1352:1: ( '-' )?
             {
              before(grammarAccess.getEFloatObjectAccess().getHyphenMinusKeyword_0()); 
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1360:1: ( '-' )?
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1353:1: ( '-' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -3613,9 +3588,9 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
             }
             switch (alt10) {
                 case 1 :
-                    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1361:2: '-'
+                    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1354:2: '-'
                     {
-                    match(input,21,FOLLOW_21_in_rule__EFloatObject__Group__0__Impl2703); 
+                    match(input,21,FOLLOW_21_in_rule__EFloatObject__Group__0__Impl2687); 
 
                     }
                     break;
@@ -3645,21 +3620,21 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__EFloatObject__Group__1"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1372:1: rule__EFloatObject__Group__1 : rule__EFloatObject__Group__1__Impl rule__EFloatObject__Group__2 ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1365:1: rule__EFloatObject__Group__1 : rule__EFloatObject__Group__1__Impl rule__EFloatObject__Group__2 ;
     public final void rule__EFloatObject__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1376:1: ( rule__EFloatObject__Group__1__Impl rule__EFloatObject__Group__2 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1377:2: rule__EFloatObject__Group__1__Impl rule__EFloatObject__Group__2
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1369:1: ( rule__EFloatObject__Group__1__Impl rule__EFloatObject__Group__2 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1370:2: rule__EFloatObject__Group__1__Impl rule__EFloatObject__Group__2
             {
-            pushFollow(FOLLOW_rule__EFloatObject__Group__1__Impl_in_rule__EFloatObject__Group__12736);
+            pushFollow(FOLLOW_rule__EFloatObject__Group__1__Impl_in_rule__EFloatObject__Group__12720);
             rule__EFloatObject__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EFloatObject__Group__2_in_rule__EFloatObject__Group__12739);
+            pushFollow(FOLLOW_rule__EFloatObject__Group__2_in_rule__EFloatObject__Group__12723);
             rule__EFloatObject__Group__2();
 
             state._fsp--;
@@ -3683,20 +3658,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__EFloatObject__Group__1__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1384:1: rule__EFloatObject__Group__1__Impl : ( ( RULE_INT )? ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1377:1: rule__EFloatObject__Group__1__Impl : ( ( RULE_INT )? ) ;
     public final void rule__EFloatObject__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1388:1: ( ( ( RULE_INT )? ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1389:1: ( ( RULE_INT )? )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1381:1: ( ( ( RULE_INT )? ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1382:1: ( ( RULE_INT )? )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1389:1: ( ( RULE_INT )? )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1390:1: ( RULE_INT )?
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1382:1: ( ( RULE_INT )? )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1383:1: ( RULE_INT )?
             {
              before(grammarAccess.getEFloatObjectAccess().getINTTerminalRuleCall_1()); 
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1391:1: ( RULE_INT )?
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1384:1: ( RULE_INT )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -3705,9 +3680,9 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
             }
             switch (alt11) {
                 case 1 :
-                    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1391:3: RULE_INT
+                    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1384:3: RULE_INT
                     {
-                    match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__EFloatObject__Group__1__Impl2767); 
+                    match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__EFloatObject__Group__1__Impl2751); 
 
                     }
                     break;
@@ -3737,21 +3712,21 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__EFloatObject__Group__2"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1401:1: rule__EFloatObject__Group__2 : rule__EFloatObject__Group__2__Impl rule__EFloatObject__Group__3 ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1394:1: rule__EFloatObject__Group__2 : rule__EFloatObject__Group__2__Impl rule__EFloatObject__Group__3 ;
     public final void rule__EFloatObject__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1405:1: ( rule__EFloatObject__Group__2__Impl rule__EFloatObject__Group__3 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1406:2: rule__EFloatObject__Group__2__Impl rule__EFloatObject__Group__3
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1398:1: ( rule__EFloatObject__Group__2__Impl rule__EFloatObject__Group__3 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1399:2: rule__EFloatObject__Group__2__Impl rule__EFloatObject__Group__3
             {
-            pushFollow(FOLLOW_rule__EFloatObject__Group__2__Impl_in_rule__EFloatObject__Group__22798);
+            pushFollow(FOLLOW_rule__EFloatObject__Group__2__Impl_in_rule__EFloatObject__Group__22782);
             rule__EFloatObject__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EFloatObject__Group__3_in_rule__EFloatObject__Group__22801);
+            pushFollow(FOLLOW_rule__EFloatObject__Group__3_in_rule__EFloatObject__Group__22785);
             rule__EFloatObject__Group__3();
 
             state._fsp--;
@@ -3775,20 +3750,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__EFloatObject__Group__2__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1413:1: rule__EFloatObject__Group__2__Impl : ( '.' ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1406:1: rule__EFloatObject__Group__2__Impl : ( '.' ) ;
     public final void rule__EFloatObject__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1417:1: ( ( '.' ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1418:1: ( '.' )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1410:1: ( ( '.' ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1411:1: ( '.' )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1418:1: ( '.' )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1419:1: '.'
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1411:1: ( '.' )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1412:1: '.'
             {
              before(grammarAccess.getEFloatObjectAccess().getFullStopKeyword_2()); 
-            match(input,22,FOLLOW_22_in_rule__EFloatObject__Group__2__Impl2829); 
+            match(input,22,FOLLOW_22_in_rule__EFloatObject__Group__2__Impl2813); 
              after(grammarAccess.getEFloatObjectAccess().getFullStopKeyword_2()); 
 
             }
@@ -3812,16 +3787,16 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__EFloatObject__Group__3"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1432:1: rule__EFloatObject__Group__3 : rule__EFloatObject__Group__3__Impl ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1425:1: rule__EFloatObject__Group__3 : rule__EFloatObject__Group__3__Impl ;
     public final void rule__EFloatObject__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1436:1: ( rule__EFloatObject__Group__3__Impl )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1437:2: rule__EFloatObject__Group__3__Impl
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1429:1: ( rule__EFloatObject__Group__3__Impl )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1430:2: rule__EFloatObject__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__EFloatObject__Group__3__Impl_in_rule__EFloatObject__Group__32860);
+            pushFollow(FOLLOW_rule__EFloatObject__Group__3__Impl_in_rule__EFloatObject__Group__32844);
             rule__EFloatObject__Group__3__Impl();
 
             state._fsp--;
@@ -3845,20 +3820,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__EFloatObject__Group__3__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1443:1: rule__EFloatObject__Group__3__Impl : ( RULE_INT ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1436:1: rule__EFloatObject__Group__3__Impl : ( RULE_INT ) ;
     public final void rule__EFloatObject__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1447:1: ( ( RULE_INT ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1448:1: ( RULE_INT )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1440:1: ( ( RULE_INT ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1441:1: ( RULE_INT )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1448:1: ( RULE_INT )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1449:1: RULE_INT
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1441:1: ( RULE_INT )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1442:1: RULE_INT
             {
              before(grammarAccess.getEFloatObjectAccess().getINTTerminalRuleCall_3()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__EFloatObject__Group__3__Impl2887); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__EFloatObject__Group__3__Impl2871); 
              after(grammarAccess.getEFloatObjectAccess().getINTTerminalRuleCall_3()); 
 
             }
@@ -3882,21 +3857,21 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__QualifiedName__Group__0"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1468:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1461:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
     public final void rule__QualifiedName__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1472:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1473:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1465:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1466:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
             {
-            pushFollow(FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__02924);
+            pushFollow(FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__02908);
             rule__QualifiedName__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__02927);
+            pushFollow(FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__02911);
             rule__QualifiedName__Group__1();
 
             state._fsp--;
@@ -3920,20 +3895,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__QualifiedName__Group__0__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1480:1: rule__QualifiedName__Group__0__Impl : ( RULE_ID ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1473:1: rule__QualifiedName__Group__0__Impl : ( RULE_ID ) ;
     public final void rule__QualifiedName__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1484:1: ( ( RULE_ID ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1485:1: ( RULE_ID )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1477:1: ( ( RULE_ID ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1478:1: ( RULE_ID )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1485:1: ( RULE_ID )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1486:1: RULE_ID
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1478:1: ( RULE_ID )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1479:1: RULE_ID
             {
              before(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__QualifiedName__Group__0__Impl2954); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__QualifiedName__Group__0__Impl2938); 
              after(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
 
             }
@@ -3957,16 +3932,16 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__QualifiedName__Group__1"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1497:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1490:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
     public final void rule__QualifiedName__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1501:1: ( rule__QualifiedName__Group__1__Impl )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1502:2: rule__QualifiedName__Group__1__Impl
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1494:1: ( rule__QualifiedName__Group__1__Impl )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1495:2: rule__QualifiedName__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__12983);
+            pushFollow(FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__12967);
             rule__QualifiedName__Group__1__Impl();
 
             state._fsp--;
@@ -3990,20 +3965,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__QualifiedName__Group__1__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1508:1: rule__QualifiedName__Group__1__Impl : ( ( rule__QualifiedName__Group_1__0 )* ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1501:1: rule__QualifiedName__Group__1__Impl : ( ( rule__QualifiedName__Group_1__0 )* ) ;
     public final void rule__QualifiedName__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1512:1: ( ( ( rule__QualifiedName__Group_1__0 )* ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1513:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1505:1: ( ( ( rule__QualifiedName__Group_1__0 )* ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1506:1: ( ( rule__QualifiedName__Group_1__0 )* )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1513:1: ( ( rule__QualifiedName__Group_1__0 )* )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1514:1: ( rule__QualifiedName__Group_1__0 )*
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1506:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1507:1: ( rule__QualifiedName__Group_1__0 )*
             {
              before(grammarAccess.getQualifiedNameAccess().getGroup_1()); 
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1515:1: ( rule__QualifiedName__Group_1__0 )*
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1508:1: ( rule__QualifiedName__Group_1__0 )*
             loop12:
             do {
                 int alt12=2;
@@ -4016,9 +3991,9 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
                 switch (alt12) {
             	case 1 :
-            	    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1515:2: rule__QualifiedName__Group_1__0
+            	    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1508:2: rule__QualifiedName__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl3010);
+            	    pushFollow(FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl2994);
             	    rule__QualifiedName__Group_1__0();
 
             	    state._fsp--;
@@ -4055,21 +4030,21 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__0"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1529:1: rule__QualifiedName__Group_1__0 : rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1522:1: rule__QualifiedName__Group_1__0 : rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 ;
     public final void rule__QualifiedName__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1533:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1534:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1526:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1527:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
             {
-            pushFollow(FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__03045);
+            pushFollow(FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__03029);
             rule__QualifiedName__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__03048);
+            pushFollow(FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__03032);
             rule__QualifiedName__Group_1__1();
 
             state._fsp--;
@@ -4093,20 +4068,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__0__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1541:1: rule__QualifiedName__Group_1__0__Impl : ( '.' ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1534:1: rule__QualifiedName__Group_1__0__Impl : ( '.' ) ;
     public final void rule__QualifiedName__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1545:1: ( ( '.' ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1546:1: ( '.' )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1538:1: ( ( '.' ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1539:1: ( '.' )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1546:1: ( '.' )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1547:1: '.'
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1539:1: ( '.' )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1540:1: '.'
             {
              before(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
-            match(input,22,FOLLOW_22_in_rule__QualifiedName__Group_1__0__Impl3076); 
+            match(input,22,FOLLOW_22_in_rule__QualifiedName__Group_1__0__Impl3060); 
              after(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
 
             }
@@ -4130,16 +4105,16 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__1"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1560:1: rule__QualifiedName__Group_1__1 : rule__QualifiedName__Group_1__1__Impl ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1553:1: rule__QualifiedName__Group_1__1 : rule__QualifiedName__Group_1__1__Impl ;
     public final void rule__QualifiedName__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1564:1: ( rule__QualifiedName__Group_1__1__Impl )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1565:2: rule__QualifiedName__Group_1__1__Impl
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1557:1: ( rule__QualifiedName__Group_1__1__Impl )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1558:2: rule__QualifiedName__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__13107);
+            pushFollow(FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__13091);
             rule__QualifiedName__Group_1__1__Impl();
 
             state._fsp--;
@@ -4163,20 +4138,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__1__Impl"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1571:1: rule__QualifiedName__Group_1__1__Impl : ( RULE_ID ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1564:1: rule__QualifiedName__Group_1__1__Impl : ( RULE_ID ) ;
     public final void rule__QualifiedName__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1575:1: ( ( RULE_ID ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1576:1: ( RULE_ID )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1568:1: ( ( RULE_ID ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1569:1: ( RULE_ID )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1576:1: ( RULE_ID )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1577:1: RULE_ID
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1569:1: ( RULE_ID )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1570:1: RULE_ID
             {
              before(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__QualifiedName__Group_1__1__Impl3134); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__QualifiedName__Group_1__1__Impl3118); 
              after(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1()); 
 
             }
@@ -4200,24 +4175,24 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__NotificationModel__ModuleAssignment_1"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1593:1: rule__NotificationModel__ModuleAssignment_1 : ( ( ruleQualifiedName ) ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1586:1: rule__NotificationModel__ModuleAssignment_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__NotificationModel__ModuleAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1597:1: ( ( ( ruleQualifiedName ) ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1598:1: ( ( ruleQualifiedName ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1590:1: ( ( ( ruleQualifiedName ) ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1591:1: ( ( ruleQualifiedName ) )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1598:1: ( ( ruleQualifiedName ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1599:1: ( ruleQualifiedName )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1591:1: ( ( ruleQualifiedName ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1592:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getNotificationModelAccess().getModuleModuleCrossReference_1_0()); 
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1600:1: ( ruleQualifiedName )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1601:1: ruleQualifiedName
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1593:1: ( ruleQualifiedName )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1594:1: ruleQualifiedName
             {
              before(grammarAccess.getNotificationModelAccess().getModuleModuleQualifiedNameParserRuleCall_1_0_1()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__NotificationModel__ModuleAssignment_13176);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__NotificationModel__ModuleAssignment_13160);
             ruleQualifiedName();
 
             state._fsp--;
@@ -4249,20 +4224,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__NotificationModel__VersionAssignment_3"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1612:1: rule__NotificationModel__VersionAssignment_3 : ( RULE_STRING ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1605:1: rule__NotificationModel__VersionAssignment_3 : ( RULE_STRING ) ;
     public final void rule__NotificationModel__VersionAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1616:1: ( ( RULE_STRING ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1617:1: ( RULE_STRING )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1609:1: ( ( RULE_STRING ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1610:1: ( RULE_STRING )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1617:1: ( RULE_STRING )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1618:1: RULE_STRING
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1610:1: ( RULE_STRING )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1611:1: RULE_STRING
             {
              before(grammarAccess.getNotificationModelAccess().getVersionSTRINGTerminalRuleCall_3_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__NotificationModel__VersionAssignment_33211); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__NotificationModel__VersionAssignment_33195); 
              after(grammarAccess.getNotificationModelAccess().getVersionSTRINGTerminalRuleCall_3_0()); 
 
             }
@@ -4286,20 +4261,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__NotificationModel__NotificationsAssignment_4"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1627:1: rule__NotificationModel__NotificationsAssignment_4 : ( ruleNotification ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1620:1: rule__NotificationModel__NotificationsAssignment_4 : ( ruleNotification ) ;
     public final void rule__NotificationModel__NotificationsAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1631:1: ( ( ruleNotification ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1632:1: ( ruleNotification )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1624:1: ( ( ruleNotification ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1625:1: ( ruleNotification )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1632:1: ( ruleNotification )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1633:1: ruleNotification
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1625:1: ( ruleNotification )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1626:1: ruleNotification
             {
              before(grammarAccess.getNotificationModelAccess().getNotificationsNotificationParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleNotification_in_rule__NotificationModel__NotificationsAssignment_43242);
+            pushFollow(FOLLOW_ruleNotification_in_rule__NotificationModel__NotificationsAssignment_43226);
             ruleNotification();
 
             state._fsp--;
@@ -4327,20 +4302,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Notification__NameAssignment_1"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1642:1: rule__Notification__NameAssignment_1 : ( RULE_ID ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1635:1: rule__Notification__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Notification__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1646:1: ( ( RULE_ID ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1647:1: ( RULE_ID )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1639:1: ( ( RULE_ID ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1640:1: ( RULE_ID )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1647:1: ( RULE_ID )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1648:1: RULE_ID
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1640:1: ( RULE_ID )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1641:1: RULE_ID
             {
              before(grammarAccess.getNotificationAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Notification__NameAssignment_13273); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Notification__NameAssignment_13257); 
              after(grammarAccess.getNotificationAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -4364,20 +4339,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Notification__FeaturesAssignment_3"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1657:1: rule__Notification__FeaturesAssignment_3 : ( ruleFeature ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1650:1: rule__Notification__FeaturesAssignment_3 : ( ruleFeature ) ;
     public final void rule__Notification__FeaturesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1661:1: ( ( ruleFeature ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1662:1: ( ruleFeature )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1654:1: ( ( ruleFeature ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1655:1: ( ruleFeature )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1662:1: ( ruleFeature )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1663:1: ruleFeature
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1655:1: ( ruleFeature )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1656:1: ruleFeature
             {
              before(grammarAccess.getNotificationAccess().getFeaturesFeatureParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleFeature_in_rule__Notification__FeaturesAssignment_33304);
+            pushFollow(FOLLOW_ruleFeature_in_rule__Notification__FeaturesAssignment_33288);
             ruleFeature();
 
             state._fsp--;
@@ -4405,20 +4380,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Primitive__NameAssignment_1"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1674:1: rule__Primitive__NameAssignment_1 : ( RULE_ID ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1667:1: rule__Primitive__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Primitive__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1678:1: ( ( RULE_ID ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1679:1: ( RULE_ID )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1671:1: ( ( RULE_ID ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1672:1: ( RULE_ID )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1679:1: ( RULE_ID )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1680:1: RULE_ID
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1672:1: ( RULE_ID )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1673:1: RULE_ID
             {
              before(grammarAccess.getPrimitiveAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Primitive__NameAssignment_13337); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Primitive__NameAssignment_13321); 
              after(grammarAccess.getPrimitiveAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -4442,20 +4417,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Any__NameAssignment_1"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1689:1: rule__Any__NameAssignment_1 : ( RULE_ID ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1682:1: rule__Any__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Any__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1693:1: ( ( RULE_ID ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1694:1: ( RULE_ID )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1686:1: ( ( RULE_ID ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1687:1: ( RULE_ID )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1694:1: ( RULE_ID )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1695:1: RULE_ID
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1687:1: ( RULE_ID )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1688:1: RULE_ID
             {
              before(grammarAccess.getAnyAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Any__NameAssignment_13368); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Any__NameAssignment_13352); 
              after(grammarAccess.getAnyAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -4479,24 +4454,24 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__IsIndexedAssignment_0"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1704:1: rule__Feature__IsIndexedAssignment_0 : ( ( 'indexed' ) ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1697:1: rule__Feature__IsIndexedAssignment_0 : ( ( 'indexed' ) ) ;
     public final void rule__Feature__IsIndexedAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1708:1: ( ( ( 'indexed' ) ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1709:1: ( ( 'indexed' ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1701:1: ( ( ( 'indexed' ) ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1702:1: ( ( 'indexed' ) )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1709:1: ( ( 'indexed' ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1710:1: ( 'indexed' )
-            {
-             before(grammarAccess.getFeatureAccess().getIsIndexedIndexedKeyword_0_0()); 
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1711:1: ( 'indexed' )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1712:1: 'indexed'
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1702:1: ( ( 'indexed' ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1703:1: ( 'indexed' )
             {
              before(grammarAccess.getFeatureAccess().getIsIndexedIndexedKeyword_0_0()); 
-            match(input,23,FOLLOW_23_in_rule__Feature__IsIndexedAssignment_03404); 
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1704:1: ( 'indexed' )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1705:1: 'indexed'
+            {
+             before(grammarAccess.getFeatureAccess().getIsIndexedIndexedKeyword_0_0()); 
+            match(input,23,FOLLOW_23_in_rule__Feature__IsIndexedAssignment_03388); 
              after(grammarAccess.getFeatureAccess().getIsIndexedIndexedKeyword_0_0()); 
 
             }
@@ -4524,24 +4499,24 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__IsContainmentAssignment_1"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1727:1: rule__Feature__IsContainmentAssignment_1 : ( ( '-[' ) ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1720:1: rule__Feature__IsContainmentAssignment_1 : ( ( '-[' ) ) ;
     public final void rule__Feature__IsContainmentAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1731:1: ( ( ( '-[' ) ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1732:1: ( ( '-[' ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1724:1: ( ( ( '-[' ) ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1725:1: ( ( '-[' ) )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1732:1: ( ( '-[' ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1733:1: ( '-[' )
-            {
-             before(grammarAccess.getFeatureAccess().getIsContainmentHyphenMinusLeftSquareBracketKeyword_1_0()); 
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1734:1: ( '-[' )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1735:1: '-['
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1725:1: ( ( '-[' ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1726:1: ( '-[' )
             {
              before(grammarAccess.getFeatureAccess().getIsContainmentHyphenMinusLeftSquareBracketKeyword_1_0()); 
-            match(input,24,FOLLOW_24_in_rule__Feature__IsContainmentAssignment_13448); 
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1727:1: ( '-[' )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1728:1: '-['
+            {
+             before(grammarAccess.getFeatureAccess().getIsContainmentHyphenMinusLeftSquareBracketKeyword_1_0()); 
+            match(input,24,FOLLOW_24_in_rule__Feature__IsContainmentAssignment_13432); 
              after(grammarAccess.getFeatureAccess().getIsContainmentHyphenMinusLeftSquareBracketKeyword_1_0()); 
 
             }
@@ -4569,20 +4544,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__TypeAssignment_2"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1750:1: rule__Feature__TypeAssignment_2 : ( ruleTypeRef ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1743:1: rule__Feature__TypeAssignment_2 : ( ruleTypeRef ) ;
     public final void rule__Feature__TypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1754:1: ( ( ruleTypeRef ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1755:1: ( ruleTypeRef )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1747:1: ( ( ruleTypeRef ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1748:1: ( ruleTypeRef )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1755:1: ( ruleTypeRef )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1756:1: ruleTypeRef
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1748:1: ( ruleTypeRef )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1749:1: ruleTypeRef
             {
              before(grammarAccess.getFeatureAccess().getTypeTypeRefParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleTypeRef_in_rule__Feature__TypeAssignment_23487);
+            pushFollow(FOLLOW_ruleTypeRef_in_rule__Feature__TypeAssignment_23471);
             ruleTypeRef();
 
             state._fsp--;
@@ -4610,20 +4585,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__NameAssignment_3"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1765:1: rule__Feature__NameAssignment_3 : ( RULE_ID ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1758:1: rule__Feature__NameAssignment_3 : ( RULE_ID ) ;
     public final void rule__Feature__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1769:1: ( ( RULE_ID ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1770:1: ( RULE_ID )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1762:1: ( ( RULE_ID ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1763:1: ( RULE_ID )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1770:1: ( RULE_ID )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1771:1: RULE_ID
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1763:1: ( RULE_ID )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1764:1: RULE_ID
             {
              before(grammarAccess.getFeatureAccess().getNameIDTerminalRuleCall_3_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Feature__NameAssignment_33518); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Feature__NameAssignment_33502); 
              after(grammarAccess.getFeatureAccess().getNameIDTerminalRuleCall_3_0()); 
 
             }
@@ -4647,20 +4622,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__DefaultValueAssignment_4_1"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1780:1: rule__Feature__DefaultValueAssignment_4_1 : ( ruleValueObject ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1773:1: rule__Feature__DefaultValueAssignment_4_1 : ( ruleValueObject ) ;
     public final void rule__Feature__DefaultValueAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1784:1: ( ( ruleValueObject ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1785:1: ( ruleValueObject )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1777:1: ( ( ruleValueObject ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1778:1: ( ruleValueObject )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1785:1: ( ruleValueObject )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1786:1: ruleValueObject
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1778:1: ( ruleValueObject )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1779:1: ruleValueObject
             {
              before(grammarAccess.getFeatureAccess().getDefaultValueValueObjectParserRuleCall_4_1_0()); 
-            pushFollow(FOLLOW_ruleValueObject_in_rule__Feature__DefaultValueAssignment_4_13549);
+            pushFollow(FOLLOW_ruleValueObject_in_rule__Feature__DefaultValueAssignment_4_13533);
             ruleValueObject();
 
             state._fsp--;
@@ -4688,24 +4663,24 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__InverseAssignment_5_1"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1795:1: rule__Feature__InverseAssignment_5_1 : ( ( ruleQualifiedName ) ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1788:1: rule__Feature__InverseAssignment_5_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Feature__InverseAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1799:1: ( ( ( ruleQualifiedName ) ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1800:1: ( ( ruleQualifiedName ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1792:1: ( ( ( ruleQualifiedName ) ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1793:1: ( ( ruleQualifiedName ) )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1800:1: ( ( ruleQualifiedName ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1801:1: ( ruleQualifiedName )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1793:1: ( ( ruleQualifiedName ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1794:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getFeatureAccess().getInverseFeatureCrossReference_5_1_0()); 
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1802:1: ( ruleQualifiedName )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1803:1: ruleQualifiedName
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1795:1: ( ruleQualifiedName )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1796:1: ruleQualifiedName
             {
              before(grammarAccess.getFeatureAccess().getInverseFeatureQualifiedNameParserRuleCall_5_1_0_1()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Feature__InverseAssignment_5_13584);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Feature__InverseAssignment_5_13568);
             ruleQualifiedName();
 
             state._fsp--;
@@ -4737,24 +4712,24 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__TypeRef__ReferencedAssignment_0"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1814:1: rule__TypeRef__ReferencedAssignment_0 : ( ( ruleQualifiedName ) ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1807:1: rule__TypeRef__ReferencedAssignment_0 : ( ( ruleQualifiedName ) ) ;
     public final void rule__TypeRef__ReferencedAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1818:1: ( ( ( ruleQualifiedName ) ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1819:1: ( ( ruleQualifiedName ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1811:1: ( ( ( ruleQualifiedName ) ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1812:1: ( ( ruleQualifiedName ) )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1819:1: ( ( ruleQualifiedName ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1820:1: ( ruleQualifiedName )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1812:1: ( ( ruleQualifiedName ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1813:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getTypeRefAccess().getReferencedTypeCrossReference_0_0()); 
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1821:1: ( ruleQualifiedName )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1822:1: ruleQualifiedName
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1814:1: ( ruleQualifiedName )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1815:1: ruleQualifiedName
             {
              before(grammarAccess.getTypeRefAccess().getReferencedTypeQualifiedNameParserRuleCall_0_0_1()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__TypeRef__ReferencedAssignment_03623);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__TypeRef__ReferencedAssignment_03607);
             ruleQualifiedName();
 
             state._fsp--;
@@ -4786,24 +4761,24 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__TypeRef__IsMultiAssignment_1"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1833:1: rule__TypeRef__IsMultiAssignment_1 : ( ( '[]' ) ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1826:1: rule__TypeRef__IsMultiAssignment_1 : ( ( '[]' ) ) ;
     public final void rule__TypeRef__IsMultiAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1837:1: ( ( ( '[]' ) ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1838:1: ( ( '[]' ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1830:1: ( ( ( '[]' ) ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1831:1: ( ( '[]' ) )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1838:1: ( ( '[]' ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1839:1: ( '[]' )
-            {
-             before(grammarAccess.getTypeRefAccess().getIsMultiLeftSquareBracketRightSquareBracketKeyword_1_0()); 
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1840:1: ( '[]' )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1841:1: '[]'
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1831:1: ( ( '[]' ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1832:1: ( '[]' )
             {
              before(grammarAccess.getTypeRefAccess().getIsMultiLeftSquareBracketRightSquareBracketKeyword_1_0()); 
-            match(input,25,FOLLOW_25_in_rule__TypeRef__IsMultiAssignment_13663); 
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1833:1: ( '[]' )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1834:1: '[]'
+            {
+             before(grammarAccess.getTypeRefAccess().getIsMultiLeftSquareBracketRightSquareBracketKeyword_1_0()); 
+            match(input,25,FOLLOW_25_in_rule__TypeRef__IsMultiAssignment_13647); 
              after(grammarAccess.getTypeRefAccess().getIsMultiLeftSquareBracketRightSquareBracketKeyword_1_0()); 
 
             }
@@ -4831,20 +4806,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__StringValue__ValueAssignment"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1856:1: rule__StringValue__ValueAssignment : ( ruleEStringObject ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1849:1: rule__StringValue__ValueAssignment : ( ruleEStringObject ) ;
     public final void rule__StringValue__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1860:1: ( ( ruleEStringObject ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1861:1: ( ruleEStringObject )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1853:1: ( ( ruleEStringObject ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1854:1: ( ruleEStringObject )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1861:1: ( ruleEStringObject )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1862:1: ruleEStringObject
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1854:1: ( ruleEStringObject )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1855:1: ruleEStringObject
             {
              before(grammarAccess.getStringValueAccess().getValueEStringObjectParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleEStringObject_in_rule__StringValue__ValueAssignment3702);
+            pushFollow(FOLLOW_ruleEStringObject_in_rule__StringValue__ValueAssignment3686);
             ruleEStringObject();
 
             state._fsp--;
@@ -4872,20 +4847,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__IntegerValue__ValueAssignment"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1871:1: rule__IntegerValue__ValueAssignment : ( ruleEIntegerObject ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1864:1: rule__IntegerValue__ValueAssignment : ( ruleEIntegerObject ) ;
     public final void rule__IntegerValue__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1875:1: ( ( ruleEIntegerObject ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1876:1: ( ruleEIntegerObject )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1868:1: ( ( ruleEIntegerObject ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1869:1: ( ruleEIntegerObject )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1876:1: ( ruleEIntegerObject )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1877:1: ruleEIntegerObject
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1869:1: ( ruleEIntegerObject )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1870:1: ruleEIntegerObject
             {
              before(grammarAccess.getIntegerValueAccess().getValueEIntegerObjectParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleEIntegerObject_in_rule__IntegerValue__ValueAssignment3733);
+            pushFollow(FOLLOW_ruleEIntegerObject_in_rule__IntegerValue__ValueAssignment3717);
             ruleEIntegerObject();
 
             state._fsp--;
@@ -4913,20 +4888,20 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__FloatValue__ValueAssignment"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1886:1: rule__FloatValue__ValueAssignment : ( ruleEFloatObject ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1879:1: rule__FloatValue__ValueAssignment : ( ruleEFloatObject ) ;
     public final void rule__FloatValue__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1890:1: ( ( ruleEFloatObject ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1891:1: ( ruleEFloatObject )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1883:1: ( ( ruleEFloatObject ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1884:1: ( ruleEFloatObject )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1891:1: ( ruleEFloatObject )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1892:1: ruleEFloatObject
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1884:1: ( ruleEFloatObject )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1885:1: ruleEFloatObject
             {
              before(grammarAccess.getFloatValueAccess().getValueEFloatObjectParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleEFloatObject_in_rule__FloatValue__ValueAssignment3764);
+            pushFollow(FOLLOW_ruleEFloatObject_in_rule__FloatValue__ValueAssignment3748);
             ruleEFloatObject();
 
             state._fsp--;
@@ -5015,105 +4990,104 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
     public static final BitSet FOLLOW_rule__NotificationModel__Group__4_in_rule__NotificationModel__Group__31161 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__NotificationModel__VersionAssignment_3_in_rule__NotificationModel__Group__3__Impl1188 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__NotificationModel__Group__4__Impl_in_rule__NotificationModel__Group__41218 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NotificationModel__NotificationsAssignment_4_in_rule__NotificationModel__Group__4__Impl1247 = new BitSet(new long[]{0x0000000000002002L});
-    public static final BitSet FOLLOW_rule__NotificationModel__NotificationsAssignment_4_in_rule__NotificationModel__Group__4__Impl1259 = new BitSet(new long[]{0x0000000000002002L});
-    public static final BitSet FOLLOW_rule__Notification__Group__0__Impl_in_rule__Notification__Group__01302 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Notification__Group__1_in_rule__Notification__Group__01305 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_rule__Notification__Group__0__Impl1333 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Notification__Group__1__Impl_in_rule__Notification__Group__11364 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_rule__Notification__Group__2_in_rule__Notification__Group__11367 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Notification__NameAssignment_1_in_rule__Notification__Group__1__Impl1394 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Notification__Group__2__Impl_in_rule__Notification__Group__21424 = new BitSet(new long[]{0x0000000001808040L});
-    public static final BitSet FOLLOW_rule__Notification__Group__3_in_rule__Notification__Group__21427 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_rule__Notification__Group__2__Impl1455 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Notification__Group__3__Impl_in_rule__Notification__Group__31486 = new BitSet(new long[]{0x0000000001808040L});
-    public static final BitSet FOLLOW_rule__Notification__Group__4_in_rule__Notification__Group__31489 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Notification__FeaturesAssignment_3_in_rule__Notification__Group__3__Impl1516 = new BitSet(new long[]{0x0000000001800042L});
-    public static final BitSet FOLLOW_rule__Notification__Group__4__Impl_in_rule__Notification__Group__41547 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Notification__Group__4__Impl1575 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Primitive__Group__0__Impl_in_rule__Primitive__Group__01617 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Primitive__Group__1_in_rule__Primitive__Group__01620 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__Primitive__Group__0__Impl1648 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Primitive__Group__1__Impl_in_rule__Primitive__Group__11679 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Primitive__NameAssignment_1_in_rule__Primitive__Group__1__Impl1706 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Any__Group__0__Impl_in_rule__Any__Group__01740 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Any__Group__1_in_rule__Any__Group__01743 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__Any__Group__0__Impl1771 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Any__Group__1__Impl_in_rule__Any__Group__11802 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Any__NameAssignment_1_in_rule__Any__Group__1__Impl1829 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__Group__0__Impl_in_rule__Feature__Group__01863 = new BitSet(new long[]{0x0000000001800040L});
-    public static final BitSet FOLLOW_rule__Feature__Group__1_in_rule__Feature__Group__01866 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__IsIndexedAssignment_0_in_rule__Feature__Group__0__Impl1893 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__Group__1__Impl_in_rule__Feature__Group__11924 = new BitSet(new long[]{0x0000000001800040L});
-    public static final BitSet FOLLOW_rule__Feature__Group__2_in_rule__Feature__Group__11927 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__IsContainmentAssignment_1_in_rule__Feature__Group__1__Impl1954 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__Group__2__Impl_in_rule__Feature__Group__21985 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Feature__Group__3_in_rule__Feature__Group__21988 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__TypeAssignment_2_in_rule__Feature__Group__2__Impl2015 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__Group__3__Impl_in_rule__Feature__Group__32045 = new BitSet(new long[]{0x00000000001C0000L});
-    public static final BitSet FOLLOW_rule__Feature__Group__4_in_rule__Feature__Group__32048 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__NameAssignment_3_in_rule__Feature__Group__3__Impl2075 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__Group__4__Impl_in_rule__Feature__Group__42105 = new BitSet(new long[]{0x00000000001C0000L});
-    public static final BitSet FOLLOW_rule__Feature__Group__5_in_rule__Feature__Group__42108 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__Group_4__0_in_rule__Feature__Group__4__Impl2135 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__Group__5__Impl_in_rule__Feature__Group__52166 = new BitSet(new long[]{0x00000000001C0000L});
-    public static final BitSet FOLLOW_rule__Feature__Group__6_in_rule__Feature__Group__52169 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__Group_5__0_in_rule__Feature__Group__5__Impl2196 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__Group__6__Impl_in_rule__Feature__Group__62227 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_rule__Feature__Group__6__Impl2256 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__Group_4__0__Impl_in_rule__Feature__Group_4__02303 = new BitSet(new long[]{0x0000000000600030L});
-    public static final BitSet FOLLOW_rule__Feature__Group_4__1_in_rule__Feature__Group_4__02306 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__Feature__Group_4__0__Impl2334 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__Group_4__1__Impl_in_rule__Feature__Group_4__12365 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__DefaultValueAssignment_4_1_in_rule__Feature__Group_4__1__Impl2392 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__Group_5__0__Impl_in_rule__Feature__Group_5__02426 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Feature__Group_5__1_in_rule__Feature__Group_5__02429 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__Feature__Group_5__0__Impl2457 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__Group_5__1__Impl_in_rule__Feature__Group_5__12488 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__InverseAssignment_5_1_in_rule__Feature__Group_5__1__Impl2515 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeRef__Group__0__Impl_in_rule__TypeRef__Group__02549 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__TypeRef__Group__1_in_rule__TypeRef__Group__02552 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeRef__ReferencedAssignment_0_in_rule__TypeRef__Group__0__Impl2579 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeRef__Group__1__Impl_in_rule__TypeRef__Group__12609 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeRef__IsMultiAssignment_1_in_rule__TypeRef__Group__1__Impl2636 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EFloatObject__Group__0__Impl_in_rule__EFloatObject__Group__02671 = new BitSet(new long[]{0x0000000000600030L});
-    public static final BitSet FOLLOW_rule__EFloatObject__Group__1_in_rule__EFloatObject__Group__02674 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__EFloatObject__Group__0__Impl2703 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EFloatObject__Group__1__Impl_in_rule__EFloatObject__Group__12736 = new BitSet(new long[]{0x0000000000600030L});
-    public static final BitSet FOLLOW_rule__EFloatObject__Group__2_in_rule__EFloatObject__Group__12739 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__EFloatObject__Group__1__Impl2767 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EFloatObject__Group__2__Impl_in_rule__EFloatObject__Group__22798 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__EFloatObject__Group__3_in_rule__EFloatObject__Group__22801 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__EFloatObject__Group__2__Impl2829 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EFloatObject__Group__3__Impl_in_rule__EFloatObject__Group__32860 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__EFloatObject__Group__3__Impl2887 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__02924 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__02927 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedName__Group__0__Impl2954 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__12983 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl3010 = new BitSet(new long[]{0x0000000000400002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__03045 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__03048 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__QualifiedName__Group_1__0__Impl3076 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__13107 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedName__Group_1__1__Impl3134 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__NotificationModel__ModuleAssignment_13176 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__NotificationModel__VersionAssignment_33211 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNotification_in_rule__NotificationModel__NotificationsAssignment_43242 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Notification__NameAssignment_13273 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFeature_in_rule__Notification__FeaturesAssignment_33304 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Primitive__NameAssignment_13337 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Any__NameAssignment_13368 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__Feature__IsIndexedAssignment_03404 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__Feature__IsContainmentAssignment_13448 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeRef_in_rule__Feature__TypeAssignment_23487 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Feature__NameAssignment_33518 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValueObject_in_rule__Feature__DefaultValueAssignment_4_13549 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Feature__InverseAssignment_5_13584 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__TypeRef__ReferencedAssignment_03623 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__TypeRef__IsMultiAssignment_13663 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEStringObject_in_rule__StringValue__ValueAssignment3702 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEIntegerObject_in_rule__IntegerValue__ValueAssignment3733 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEFloatObject_in_rule__FloatValue__ValueAssignment3764 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NotificationModel__NotificationsAssignment_4_in_rule__NotificationModel__Group__4__Impl1245 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_rule__Notification__Group__0__Impl_in_rule__Notification__Group__01286 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Notification__Group__1_in_rule__Notification__Group__01289 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_rule__Notification__Group__0__Impl1317 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Notification__Group__1__Impl_in_rule__Notification__Group__11348 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_rule__Notification__Group__2_in_rule__Notification__Group__11351 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Notification__NameAssignment_1_in_rule__Notification__Group__1__Impl1378 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Notification__Group__2__Impl_in_rule__Notification__Group__21408 = new BitSet(new long[]{0x0000000001808040L});
+    public static final BitSet FOLLOW_rule__Notification__Group__3_in_rule__Notification__Group__21411 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__Notification__Group__2__Impl1439 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Notification__Group__3__Impl_in_rule__Notification__Group__31470 = new BitSet(new long[]{0x0000000001808040L});
+    public static final BitSet FOLLOW_rule__Notification__Group__4_in_rule__Notification__Group__31473 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Notification__FeaturesAssignment_3_in_rule__Notification__Group__3__Impl1500 = new BitSet(new long[]{0x0000000001800042L});
+    public static final BitSet FOLLOW_rule__Notification__Group__4__Impl_in_rule__Notification__Group__41531 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__Notification__Group__4__Impl1559 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Primitive__Group__0__Impl_in_rule__Primitive__Group__01601 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Primitive__Group__1_in_rule__Primitive__Group__01604 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__Primitive__Group__0__Impl1632 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Primitive__Group__1__Impl_in_rule__Primitive__Group__11663 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Primitive__NameAssignment_1_in_rule__Primitive__Group__1__Impl1690 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Any__Group__0__Impl_in_rule__Any__Group__01724 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Any__Group__1_in_rule__Any__Group__01727 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__Any__Group__0__Impl1755 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Any__Group__1__Impl_in_rule__Any__Group__11786 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Any__NameAssignment_1_in_rule__Any__Group__1__Impl1813 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__Group__0__Impl_in_rule__Feature__Group__01847 = new BitSet(new long[]{0x0000000001800040L});
+    public static final BitSet FOLLOW_rule__Feature__Group__1_in_rule__Feature__Group__01850 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__IsIndexedAssignment_0_in_rule__Feature__Group__0__Impl1877 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__Group__1__Impl_in_rule__Feature__Group__11908 = new BitSet(new long[]{0x0000000001800040L});
+    public static final BitSet FOLLOW_rule__Feature__Group__2_in_rule__Feature__Group__11911 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__IsContainmentAssignment_1_in_rule__Feature__Group__1__Impl1938 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__Group__2__Impl_in_rule__Feature__Group__21969 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Feature__Group__3_in_rule__Feature__Group__21972 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__TypeAssignment_2_in_rule__Feature__Group__2__Impl1999 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__Group__3__Impl_in_rule__Feature__Group__32029 = new BitSet(new long[]{0x00000000001C0000L});
+    public static final BitSet FOLLOW_rule__Feature__Group__4_in_rule__Feature__Group__32032 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__NameAssignment_3_in_rule__Feature__Group__3__Impl2059 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__Group__4__Impl_in_rule__Feature__Group__42089 = new BitSet(new long[]{0x00000000001C0000L});
+    public static final BitSet FOLLOW_rule__Feature__Group__5_in_rule__Feature__Group__42092 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__Group_4__0_in_rule__Feature__Group__4__Impl2119 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__Group__5__Impl_in_rule__Feature__Group__52150 = new BitSet(new long[]{0x00000000001C0000L});
+    public static final BitSet FOLLOW_rule__Feature__Group__6_in_rule__Feature__Group__52153 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__Group_5__0_in_rule__Feature__Group__5__Impl2180 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__Group__6__Impl_in_rule__Feature__Group__62211 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_rule__Feature__Group__6__Impl2240 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__Group_4__0__Impl_in_rule__Feature__Group_4__02287 = new BitSet(new long[]{0x0000000000600030L});
+    public static final BitSet FOLLOW_rule__Feature__Group_4__1_in_rule__Feature__Group_4__02290 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__Feature__Group_4__0__Impl2318 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__Group_4__1__Impl_in_rule__Feature__Group_4__12349 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__DefaultValueAssignment_4_1_in_rule__Feature__Group_4__1__Impl2376 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__Group_5__0__Impl_in_rule__Feature__Group_5__02410 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Feature__Group_5__1_in_rule__Feature__Group_5__02413 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__Feature__Group_5__0__Impl2441 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__Group_5__1__Impl_in_rule__Feature__Group_5__12472 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__InverseAssignment_5_1_in_rule__Feature__Group_5__1__Impl2499 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeRef__Group__0__Impl_in_rule__TypeRef__Group__02533 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__TypeRef__Group__1_in_rule__TypeRef__Group__02536 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeRef__ReferencedAssignment_0_in_rule__TypeRef__Group__0__Impl2563 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeRef__Group__1__Impl_in_rule__TypeRef__Group__12593 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeRef__IsMultiAssignment_1_in_rule__TypeRef__Group__1__Impl2620 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EFloatObject__Group__0__Impl_in_rule__EFloatObject__Group__02655 = new BitSet(new long[]{0x0000000000600030L});
+    public static final BitSet FOLLOW_rule__EFloatObject__Group__1_in_rule__EFloatObject__Group__02658 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__EFloatObject__Group__0__Impl2687 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EFloatObject__Group__1__Impl_in_rule__EFloatObject__Group__12720 = new BitSet(new long[]{0x0000000000600030L});
+    public static final BitSet FOLLOW_rule__EFloatObject__Group__2_in_rule__EFloatObject__Group__12723 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__EFloatObject__Group__1__Impl2751 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EFloatObject__Group__2__Impl_in_rule__EFloatObject__Group__22782 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__EFloatObject__Group__3_in_rule__EFloatObject__Group__22785 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_rule__EFloatObject__Group__2__Impl2813 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EFloatObject__Group__3__Impl_in_rule__EFloatObject__Group__32844 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__EFloatObject__Group__3__Impl2871 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__02908 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__02911 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedName__Group__0__Impl2938 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__12967 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl2994 = new BitSet(new long[]{0x0000000000400002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__03029 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__03032 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_rule__QualifiedName__Group_1__0__Impl3060 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__13091 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedName__Group_1__1__Impl3118 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__NotificationModel__ModuleAssignment_13160 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__NotificationModel__VersionAssignment_33195 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNotification_in_rule__NotificationModel__NotificationsAssignment_43226 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Notification__NameAssignment_13257 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFeature_in_rule__Notification__FeaturesAssignment_33288 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Primitive__NameAssignment_13321 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Any__NameAssignment_13352 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__Feature__IsIndexedAssignment_03388 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__Feature__IsContainmentAssignment_13432 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeRef_in_rule__Feature__TypeAssignment_23471 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Feature__NameAssignment_33502 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValueObject_in_rule__Feature__DefaultValueAssignment_4_13533 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Feature__InverseAssignment_5_13568 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__TypeRef__ReferencedAssignment_03607 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__TypeRef__IsMultiAssignment_13647 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEStringObject_in_rule__StringValue__ValueAssignment3686 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEIntegerObject_in_rule__IntegerValue__ValueAssignment3717 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEFloatObject_in_rule__FloatValue__ValueAssignment3748 = new BitSet(new long[]{0x0000000000000002L});
 
 }
