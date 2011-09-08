@@ -48,7 +48,7 @@ coreDataTypeHeaderFilePath(Entity e):
 ;
 
 coreDataTypeImplFilePath(Entity e):
-	e.headerFilePathPrefix() + e.coreDataTypeName() + ".m"
+	e.implFilePathPrefix() + e.coreDataTypeName() + ".m"
 ;
 
 entityDescription(Entity e):

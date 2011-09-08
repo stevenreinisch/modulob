@@ -53,7 +53,9 @@
 -(NSManagedObjectModel*)createManagedObjectModel;
 @end
 
+«REM»
 static «namespace.daoName(version)» *«namespace.daoName(version).toFirstLower()» = nil;
+«ENDREM»
 
 @implementation «namespace.daoName(version)»
 
@@ -68,6 +70,8 @@ static «namespace.daoName(version)» *«namespace.daoName(version).toFirstLower
 }
 
 «EXPAND momGetter FOR this-»
+
+«REM»
 #pragma mark singleton methods
 //for singleton implementation see:
 //http://stackoverflow.com/questions/145154/what-does-your-objective-c-singleton-look-like
@@ -112,7 +116,7 @@ static «namespace.daoName(version)» *«namespace.daoName(version).toFirstLower
 {
 	//do nothing
 }
-
+«ENDREM»
 @end
 «ENDFILE»
 «ENDDEFINE»
