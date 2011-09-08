@@ -462,8 +462,6 @@ public class EntityMappingPage extends AbstractWizardPage implements SelectionLi
 	}
 	
 	private void showPossibleFeatures(Entity entity){
-//		List<String> featureNames = Util.namesFromFeatures(entity.getFeatures());
-//		String[] items = featureNames.toArray(new String[featureNames.size()]);
 		
 		Map<String, Feature> featureMap = new HashMap<String, Feature>(); 
 		keyPathComputation(entity, new ArrayList<Entity>(10), featureMap, "");
@@ -508,15 +506,11 @@ public class EntityMappingPage extends AbstractWizardPage implements SelectionLi
 			int featureIndex = ((Combo)e.getSource()).getSelectionIndex();
 			if(featureIndex > -1)
 			{
-				int entityIndex       = sourceEntityDropDown.getSelectionIndex();
-				Entity entity         = execContext.getSourceEntities().get(entityIndex);
-				Feature sourceFeature = entity.getFeatures().get(featureIndex);
+				String keyPath = sourceFeatureDropDown.getItem(featureIndex);
 				
 				FeatureChange currentFC = currentFeatureChange();
 				if(currentFC != null){
-					currentFC.setDestinationFeature(sourceFeature);
-					//TODO: set keypath expression from selection as sourceExpr.
-					currentFC.setSourceExpression(sourceFeature.getName());
+					currentFC.setSourceExpression(keyPath);
 				}
 			}
 		}
