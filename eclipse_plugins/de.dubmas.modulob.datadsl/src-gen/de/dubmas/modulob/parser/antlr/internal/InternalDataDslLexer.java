@@ -223,10 +223,10 @@ public class InternalDataDslLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:19:7: ( 'primitive type' )
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:19:9: 'primitive type'
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:19:7: ( 'indexed' )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:19:9: 'indexed'
             {
-            match("primitive type"); 
+            match("indexed"); 
 
 
             }
@@ -244,10 +244,10 @@ public class InternalDataDslLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:20:7: ( 'any type' )
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:20:9: 'any type'
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:20:7: ( '-[' )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:20:9: '-['
             {
-            match("any type"); 
+            match("-["); 
 
 
             }
@@ -265,11 +265,10 @@ public class InternalDataDslLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:21:7: ( 'indexed' )
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:21:9: 'indexed'
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:21:7: ( '=' )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:21:9: '='
             {
-            match("indexed"); 
-
+            match('='); 
 
             }
 
@@ -286,10 +285,10 @@ public class InternalDataDslLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:22:7: ( '-[' )
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:22:9: '-['
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:22:7: ( '<->' )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:22:9: '<->'
             {
-            match("-["); 
+            match("<->"); 
 
 
             }
@@ -307,10 +306,10 @@ public class InternalDataDslLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:23:7: ( '=' )
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:23:9: '='
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:23:7: ( ';' )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:23:9: ';'
             {
-            match('='); 
+            match(';'); 
 
             }
 
@@ -327,10 +326,10 @@ public class InternalDataDslLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:24:7: ( '<->' )
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:24:9: '<->'
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:24:7: ( 'primitive type' )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:24:9: 'primitive type'
             {
-            match("<->"); 
+            match("primitive type"); 
 
 
             }
@@ -348,10 +347,11 @@ public class InternalDataDslLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:25:7: ( ';' )
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:25:9: ';'
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:25:7: ( 'any type' )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:25:9: 'any type'
             {
-            match(';'); 
+            match("any type"); 
+
 
             }
 
@@ -1182,44 +1182,44 @@ public class InternalDataDslLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\3\32\4\uffff\2\32\1\46\1\uffff\1\30\1\uffff\1\30\1\uffff"+
-        "\1\32\1\30\2\uffff\3\30\2\uffff\1\32\1\uffff\3\32\4\uffff\3\32\7"+
-        "\uffff\1\32\5\uffff\13\32\1\uffff\14\32\1\122\7\32\1\uffff\1\132"+
-        "\3\32\1\136\2\32\1\uffff\1\141\2\32\1\uffff\1\144\2\uffff\2\32\2"+
-        "\uffff\1\32\1\150\1\uffff";
+        "\1\uffff\3\32\4\uffff\1\32\1\44\1\uffff\1\30\1\uffff\1\32\1\30\1"+
+        "\uffff\1\32\1\30\2\uffff\3\30\2\uffff\1\32\1\uffff\3\32\4\uffff"+
+        "\1\32\5\uffff\2\32\2\uffff\1\32\5\uffff\13\32\1\uffff\14\32\1\122"+
+        "\7\32\1\uffff\1\132\1\32\1\134\4\32\1\uffff\1\141\1\uffff\2\32\1"+
+        "\144\2\uffff\2\32\2\uffff\1\32\1\150\1\uffff";
     static final String DFA12_eofS =
         "\151\uffff";
     static final String DFA12_minS =
-        "\1\0\1\156\1\145\1\142\4\uffff\1\145\1\156\1\133\1\uffff\1\55\1"+
-        "\uffff\1\135\1\uffff\1\157\1\101\2\uffff\2\0\1\52\2\uffff\1\164"+
-        "\1\uffff\1\162\1\163\1\171\4\uffff\1\151\1\162\1\144\7\uffff\1\162"+
-        "\5\uffff\1\151\1\163\1\164\1\40\1\155\1\163\2\145\1\164\1\151\1"+
-        "\162\1\uffff\2\151\1\170\1\104\1\151\1\157\1\141\1\164\1\163\1\145"+
-        "\1\141\1\145\1\60\1\156\1\143\1\151\1\164\1\144\1\164\1\163\1\uffff"+
-        "\1\60\1\164\1\166\1\145\1\60\1\141\1\40\1\uffff\1\60\1\145\1\156"+
-        "\1\uffff\1\60\2\uffff\1\40\1\143\2\uffff\1\171\1\60\1\uffff";
+        "\1\0\1\156\1\145\1\142\4\uffff\1\156\1\133\1\uffff\1\55\1\uffff"+
+        "\1\145\1\135\1\uffff\1\157\1\101\2\uffff\2\0\1\52\2\uffff\1\164"+
+        "\1\uffff\1\162\1\163\1\171\4\uffff\1\144\5\uffff\1\151\1\162\2\uffff"+
+        "\1\162\5\uffff\1\151\1\163\1\164\1\40\1\145\1\155\1\163\1\145\1"+
+        "\164\1\151\1\162\1\uffff\1\170\2\151\1\104\1\151\1\157\1\141\1\145"+
+        "\1\164\1\163\1\141\1\145\1\60\1\156\1\143\1\144\1\151\2\164\1\163"+
+        "\1\uffff\1\60\1\164\1\60\1\166\1\145\1\141\1\40\1\uffff\1\60\1\uffff"+
+        "\1\145\1\156\1\60\2\uffff\1\40\1\143\2\uffff\1\171\1\60\1\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\156\1\145\1\156\4\uffff\1\162\1\156\1\133\1\uffff\1\55"+
-        "\1\uffff\1\135\1\uffff\1\157\1\172\2\uffff\2\uffff\1\57\2\uffff"+
-        "\1\164\1\uffff\1\162\1\163\1\171\4\uffff\1\151\1\162\1\144\7\uffff"+
-        "\1\162\5\uffff\1\151\1\163\1\164\1\40\1\155\1\163\2\145\1\164\1"+
-        "\151\1\162\1\uffff\2\151\1\170\1\104\1\171\1\157\1\141\1\164\1\163"+
-        "\1\145\1\141\1\145\1\172\1\156\1\143\1\151\1\164\1\144\1\164\1\163"+
-        "\1\uffff\1\172\1\164\1\166\1\145\1\172\1\141\1\40\1\uffff\1\172"+
-        "\1\145\1\156\1\uffff\1\172\2\uffff\1\40\1\143\2\uffff\1\171\1\172"+
-        "\1\uffff";
+        "\1\uffff\1\156\1\145\1\156\4\uffff\1\156\1\133\1\uffff\1\55\1\uffff"+
+        "\1\162\1\135\1\uffff\1\157\1\172\2\uffff\2\uffff\1\57\2\uffff\1"+
+        "\164\1\uffff\1\162\1\163\1\171\4\uffff\1\144\5\uffff\1\151\1\162"+
+        "\2\uffff\1\162\5\uffff\1\151\1\163\1\164\1\40\1\145\1\155\1\163"+
+        "\1\145\1\164\1\151\1\162\1\uffff\1\170\2\151\1\104\1\171\1\157\1"+
+        "\141\1\145\1\164\1\163\1\141\1\145\1\172\1\156\1\143\1\144\1\151"+
+        "\2\164\1\163\1\uffff\1\172\1\164\1\172\1\166\1\145\1\141\1\40\1"+
+        "\uffff\1\172\1\uffff\1\145\1\156\1\172\2\uffff\1\40\1\143\2\uffff"+
+        "\1\171\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\4\uffff\1\5\1\6\1\7\1\10\3\uffff\1\15\1\uffff\1\17\1\uffff\1\22"+
+        "\4\uffff\1\5\1\6\1\7\1\10\2\uffff\1\13\1\uffff\1\15\2\uffff\1\22"+
         "\2\uffff\1\25\1\26\3\uffff\1\32\1\33\1\uffff\1\25\3\uffff\1\5\1"+
-        "\6\1\7\1\10\3\uffff\1\14\1\21\1\15\1\16\1\17\1\20\1\22\1\uffff\1"+
-        "\26\1\27\1\30\1\31\1\32\13\uffff\1\12\24\uffff\1\4\7\uffff\1\2\3"+
-        "\uffff\1\13\1\uffff\1\1\1\3\2\uffff\1\24\1\11\2\uffff\1\23";
+        "\6\1\7\1\10\1\uffff\1\12\1\21\1\13\1\14\1\15\2\uffff\1\20\1\22\1"+
+        "\uffff\1\26\1\27\1\30\1\31\1\32\13\uffff\1\17\24\uffff\1\4\7\uffff"+
+        "\1\2\1\uffff\1\11\3\uffff\1\1\1\3\2\uffff\1\24\1\16\2\uffff\1\23";
     static final String DFA12_specialS =
         "\1\2\23\uffff\1\0\1\1\123\uffff}>";
     static final String[] DFA12_transitionS = {
             "\11\30\2\27\2\30\1\27\22\30\1\27\1\30\1\24\4\30\1\25\5\30\1"+
-            "\12\1\17\1\26\12\23\1\4\1\15\1\14\1\13\2\30\1\7\2\22\1\20\27"+
-            "\22\1\16\2\30\1\21\1\22\1\30\1\3\3\22\1\1\3\22\1\11\6\22\1\10"+
+            "\11\1\17\1\26\12\23\1\4\1\14\1\13\1\12\2\30\1\7\2\22\1\20\27"+
+            "\22\1\16\2\30\1\21\1\22\1\30\1\3\3\22\1\1\3\22\1\10\6\22\1\15"+
             "\5\22\1\2\4\22\1\5\1\30\1\6\uff82\30",
             "\1\31",
             "\1\33",
@@ -1228,12 +1228,12 @@ public class InternalDataDslLexer extends Lexer {
             "",
             "",
             "",
-            "\1\43\14\uffff\1\42",
-            "\1\44",
-            "\1\45",
+            "\1\42",
+            "\1\43",
             "",
-            "\1\50",
+            "\1\46",
             "",
+            "\1\51\14\uffff\1\50",
             "\1\52",
             "",
             "\1\54",
@@ -1255,13 +1255,13 @@ public class InternalDataDslLexer extends Lexer {
             "",
             "",
             "\1\66",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\67",
             "\1\70",
-            "",
-            "",
-            "",
-            "",
-            "",
             "",
             "",
             "\1\71",
@@ -1305,16 +1305,16 @@ public class InternalDataDslLexer extends Lexer {
             "",
             "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
             "\1\133",
-            "\1\134",
-            "\1\135",
             "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
+            "\1\135",
+            "\1\136",
             "\1\137",
             "\1\140",
             "",
             "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
+            "",
             "\1\142",
             "\1\143",
-            "",
             "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
             "",
             "",
@@ -1401,17 +1401,17 @@ public class InternalDataDslLexer extends Lexer {
 
                         else if ( (LA12_0=='@') ) {s = 7;}
 
-                        else if ( (LA12_0=='p') ) {s = 8;}
+                        else if ( (LA12_0=='i') ) {s = 8;}
 
-                        else if ( (LA12_0=='i') ) {s = 9;}
+                        else if ( (LA12_0=='-') ) {s = 9;}
 
-                        else if ( (LA12_0=='-') ) {s = 10;}
+                        else if ( (LA12_0=='=') ) {s = 10;}
 
-                        else if ( (LA12_0=='=') ) {s = 11;}
+                        else if ( (LA12_0=='<') ) {s = 11;}
 
-                        else if ( (LA12_0=='<') ) {s = 12;}
+                        else if ( (LA12_0==';') ) {s = 12;}
 
-                        else if ( (LA12_0==';') ) {s = 13;}
+                        else if ( (LA12_0=='p') ) {s = 13;}
 
                         else if ( (LA12_0=='[') ) {s = 14;}
 

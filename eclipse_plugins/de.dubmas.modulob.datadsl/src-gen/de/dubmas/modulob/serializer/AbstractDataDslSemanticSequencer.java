@@ -213,7 +213,7 @@ public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer 
 	 *    defaultValue[0, 1]
 	 */
 	protected void sequence_Feature(EObject context, Feature semanticObject) {
-		superSequencer.createSequence(context, semanticObject);
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

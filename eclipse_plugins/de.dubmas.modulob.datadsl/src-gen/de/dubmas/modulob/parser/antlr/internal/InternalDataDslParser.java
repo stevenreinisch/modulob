@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDataDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'entities for module'", "'version'", "'abstract'", "'entity'", "':'", "'{'", "'}'", "'@'", "'primitive type'", "'any type'", "'indexed'", "'-['", "'='", "'<->'", "';'", "'[]'", "'-'", "'.'", "'persistency'", "'CoreData'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'entities for module'", "'version'", "'abstract'", "'entity'", "':'", "'{'", "'}'", "'@'", "'indexed'", "'-['", "'='", "'<->'", "';'", "'primitive type'", "'any type'", "'[]'", "'-'", "'.'", "'persistency'", "'CoreData'"
     };
     public static final int RULE_ID=5;
     public static final int T__29=29;
@@ -504,7 +504,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
                 int alt5=2;
                 int LA5_0 = input.LA(1);
 
-                if ( (LA5_0==RULE_ID||(LA5_0>=21 && LA5_0<=22)) ) {
+                if ( (LA5_0==RULE_ID||(LA5_0>=19 && LA5_0<=20)) ) {
                     alt5=1;
                 }
 
@@ -735,8 +735,334 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleAnnotation"
 
 
+    // $ANTLR start "entryRuleFeature"
+    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:332:1: entryRuleFeature returns [EObject current=null] : iv_ruleFeature= ruleFeature EOF ;
+    public final EObject entryRuleFeature() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleFeature = null;
+
+
+        try {
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:333:2: (iv_ruleFeature= ruleFeature EOF )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:334:2: iv_ruleFeature= ruleFeature EOF
+            {
+             newCompositeNode(grammarAccess.getFeatureRule()); 
+            pushFollow(FOLLOW_ruleFeature_in_entryRuleFeature617);
+            iv_ruleFeature=ruleFeature();
+
+            state._fsp--;
+
+             current =iv_ruleFeature; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFeature627); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleFeature"
+
+
+    // $ANTLR start "ruleFeature"
+    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:341:1: ruleFeature returns [EObject current=null] : ( ( (lv_isIndexed_0_0= 'indexed' ) )? ( (lv_isContainment_1_0= '-[' ) )? ( (lv_type_2_0= ruleTypeRef ) ) ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleValueObject ) ) )? (otherlv_6= '<->' ( ( ruleQualifiedName ) ) )? (otherlv_8= ';' )? ) ;
+    public final EObject ruleFeature() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_isIndexed_0_0=null;
+        Token lv_isContainment_1_0=null;
+        Token lv_name_3_0=null;
+        Token otherlv_4=null;
+        Token otherlv_6=null;
+        Token otherlv_8=null;
+        EObject lv_type_2_0 = null;
+
+        EObject lv_defaultValue_5_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:344:28: ( ( ( (lv_isIndexed_0_0= 'indexed' ) )? ( (lv_isContainment_1_0= '-[' ) )? ( (lv_type_2_0= ruleTypeRef ) ) ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleValueObject ) ) )? (otherlv_6= '<->' ( ( ruleQualifiedName ) ) )? (otherlv_8= ';' )? ) )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:345:1: ( ( (lv_isIndexed_0_0= 'indexed' ) )? ( (lv_isContainment_1_0= '-[' ) )? ( (lv_type_2_0= ruleTypeRef ) ) ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleValueObject ) ) )? (otherlv_6= '<->' ( ( ruleQualifiedName ) ) )? (otherlv_8= ';' )? )
+            {
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:345:1: ( ( (lv_isIndexed_0_0= 'indexed' ) )? ( (lv_isContainment_1_0= '-[' ) )? ( (lv_type_2_0= ruleTypeRef ) ) ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleValueObject ) ) )? (otherlv_6= '<->' ( ( ruleQualifiedName ) ) )? (otherlv_8= ';' )? )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:345:2: ( (lv_isIndexed_0_0= 'indexed' ) )? ( (lv_isContainment_1_0= '-[' ) )? ( (lv_type_2_0= ruleTypeRef ) ) ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleValueObject ) ) )? (otherlv_6= '<->' ( ( ruleQualifiedName ) ) )? (otherlv_8= ';' )?
+            {
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:345:2: ( (lv_isIndexed_0_0= 'indexed' ) )?
+            int alt7=2;
+            int LA7_0 = input.LA(1);
+
+            if ( (LA7_0==19) ) {
+                alt7=1;
+            }
+            switch (alt7) {
+                case 1 :
+                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:346:1: (lv_isIndexed_0_0= 'indexed' )
+                    {
+                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:346:1: (lv_isIndexed_0_0= 'indexed' )
+                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:347:3: lv_isIndexed_0_0= 'indexed'
+                    {
+                    lv_isIndexed_0_0=(Token)match(input,19,FOLLOW_19_in_ruleFeature670); 
+
+                            newLeafNode(lv_isIndexed_0_0, grammarAccess.getFeatureAccess().getIsIndexedIndexedKeyword_0_0());
+                        
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getFeatureRule());
+                    	        }
+                           		setWithLastConsumed(current, "isIndexed", true, "indexed");
+                    	    
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:360:3: ( (lv_isContainment_1_0= '-[' ) )?
+            int alt8=2;
+            int LA8_0 = input.LA(1);
+
+            if ( (LA8_0==20) ) {
+                alt8=1;
+            }
+            switch (alt8) {
+                case 1 :
+                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:361:1: (lv_isContainment_1_0= '-[' )
+                    {
+                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:361:1: (lv_isContainment_1_0= '-[' )
+                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:362:3: lv_isContainment_1_0= '-['
+                    {
+                    lv_isContainment_1_0=(Token)match(input,20,FOLLOW_20_in_ruleFeature702); 
+
+                            newLeafNode(lv_isContainment_1_0, grammarAccess.getFeatureAccess().getIsContainmentHyphenMinusLeftSquareBracketKeyword_1_0());
+                        
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getFeatureRule());
+                    	        }
+                           		setWithLastConsumed(current, "isContainment", true, "-[");
+                    	    
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:375:3: ( (lv_type_2_0= ruleTypeRef ) )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:376:1: (lv_type_2_0= ruleTypeRef )
+            {
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:376:1: (lv_type_2_0= ruleTypeRef )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:377:3: lv_type_2_0= ruleTypeRef
+            {
+             
+            	        newCompositeNode(grammarAccess.getFeatureAccess().getTypeTypeRefParserRuleCall_2_0()); 
+            	    
+            pushFollow(FOLLOW_ruleTypeRef_in_ruleFeature737);
+            lv_type_2_0=ruleTypeRef();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getFeatureRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"type",
+                    		lv_type_2_0, 
+                    		"TypeRef");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:393:2: ( (lv_name_3_0= RULE_ID ) )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:394:1: (lv_name_3_0= RULE_ID )
+            {
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:394:1: (lv_name_3_0= RULE_ID )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:395:3: lv_name_3_0= RULE_ID
+            {
+            lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFeature754); 
+
+            			newLeafNode(lv_name_3_0, grammarAccess.getFeatureAccess().getNameIDTerminalRuleCall_3_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getFeatureRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"name",
+                    		lv_name_3_0, 
+                    		"ID");
+            	    
+
+            }
+
+
+            }
+
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:411:2: (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleValueObject ) ) )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
+
+            if ( (LA9_0==21) ) {
+                alt9=1;
+            }
+            switch (alt9) {
+                case 1 :
+                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:411:4: otherlv_4= '=' ( (lv_defaultValue_5_0= ruleValueObject ) )
+                    {
+                    otherlv_4=(Token)match(input,21,FOLLOW_21_in_ruleFeature772); 
+
+                        	newLeafNode(otherlv_4, grammarAccess.getFeatureAccess().getEqualsSignKeyword_4_0());
+                        
+                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:415:1: ( (lv_defaultValue_5_0= ruleValueObject ) )
+                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:416:1: (lv_defaultValue_5_0= ruleValueObject )
+                    {
+                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:416:1: (lv_defaultValue_5_0= ruleValueObject )
+                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:417:3: lv_defaultValue_5_0= ruleValueObject
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getFeatureAccess().getDefaultValueValueObjectParserRuleCall_4_1_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleValueObject_in_ruleFeature793);
+                    lv_defaultValue_5_0=ruleValueObject();
+
+                    state._fsp--;
+
+
+                    	        if (current==null) {
+                    	            current = createModelElementForParent(grammarAccess.getFeatureRule());
+                    	        }
+                           		set(
+                           			current, 
+                           			"defaultValue",
+                            		lv_defaultValue_5_0, 
+                            		"ValueObject");
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:433:4: (otherlv_6= '<->' ( ( ruleQualifiedName ) ) )?
+            int alt10=2;
+            int LA10_0 = input.LA(1);
+
+            if ( (LA10_0==22) ) {
+                alt10=1;
+            }
+            switch (alt10) {
+                case 1 :
+                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:433:6: otherlv_6= '<->' ( ( ruleQualifiedName ) )
+                    {
+                    otherlv_6=(Token)match(input,22,FOLLOW_22_in_ruleFeature808); 
+
+                        	newLeafNode(otherlv_6, grammarAccess.getFeatureAccess().getLessThanSignHyphenMinusGreaterThanSignKeyword_5_0());
+                        
+                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:437:1: ( ( ruleQualifiedName ) )
+                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:438:1: ( ruleQualifiedName )
+                    {
+                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:438:1: ( ruleQualifiedName )
+                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:439:3: ruleQualifiedName
+                    {
+
+                    			if (current==null) {
+                    	            current = createModelElement(grammarAccess.getFeatureRule());
+                    	        }
+                            
+                     
+                    	        newCompositeNode(grammarAccess.getFeatureAccess().getInverseFeatureCrossReference_5_1_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleFeature831);
+                    ruleQualifiedName();
+
+                    state._fsp--;
+
+                     
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:452:4: (otherlv_8= ';' )?
+            int alt11=2;
+            int LA11_0 = input.LA(1);
+
+            if ( (LA11_0==23) ) {
+                alt11=1;
+            }
+            switch (alt11) {
+                case 1 :
+                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:452:6: otherlv_8= ';'
+                    {
+                    otherlv_8=(Token)match(input,23,FOLLOW_23_in_ruleFeature846); 
+
+                        	newLeafNode(otherlv_8, grammarAccess.getFeatureAccess().getSemicolonKeyword_6());
+                        
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleFeature"
+
+
     // $ANTLR start "entryRulePrimitive"
-    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:334:1: entryRulePrimitive returns [EObject current=null] : iv_rulePrimitive= rulePrimitive EOF ;
+    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:466:1: entryRulePrimitive returns [EObject current=null] : iv_rulePrimitive= rulePrimitive EOF ;
     public final EObject entryRulePrimitive() throws RecognitionException {
         EObject current = null;
 
@@ -744,17 +1070,17 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:335:2: (iv_rulePrimitive= rulePrimitive EOF )
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:336:2: iv_rulePrimitive= rulePrimitive EOF
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:467:2: (iv_rulePrimitive= rulePrimitive EOF )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:468:2: iv_rulePrimitive= rulePrimitive EOF
             {
              newCompositeNode(grammarAccess.getPrimitiveRule()); 
-            pushFollow(FOLLOW_rulePrimitive_in_entryRulePrimitive619);
+            pushFollow(FOLLOW_rulePrimitive_in_entryRulePrimitive886);
             iv_rulePrimitive=rulePrimitive();
 
             state._fsp--;
 
              current =iv_rulePrimitive; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePrimitive629); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePrimitive896); 
 
             }
 
@@ -772,7 +1098,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePrimitive"
-    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:343:1: rulePrimitive returns [EObject current=null] : (otherlv_0= 'primitive type' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:475:1: rulePrimitive returns [EObject current=null] : (otherlv_0= 'primitive type' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject rulePrimitive() throws RecognitionException {
         EObject current = null;
 
@@ -782,23 +1108,23 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:346:28: ( (otherlv_0= 'primitive type' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:347:1: (otherlv_0= 'primitive type' ( (lv_name_1_0= RULE_ID ) ) )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:478:28: ( (otherlv_0= 'primitive type' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:479:1: (otherlv_0= 'primitive type' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:347:1: (otherlv_0= 'primitive type' ( (lv_name_1_0= RULE_ID ) ) )
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:347:3: otherlv_0= 'primitive type' ( (lv_name_1_0= RULE_ID ) )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:479:1: (otherlv_0= 'primitive type' ( (lv_name_1_0= RULE_ID ) ) )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:479:3: otherlv_0= 'primitive type' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,19,FOLLOW_19_in_rulePrimitive666); 
+            otherlv_0=(Token)match(input,24,FOLLOW_24_in_rulePrimitive933); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getPrimitiveAccess().getPrimitiveTypeKeyword_0());
                 
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:351:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:352:1: (lv_name_1_0= RULE_ID )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:483:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:484:1: (lv_name_1_0= RULE_ID )
             {
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:352:1: (lv_name_1_0= RULE_ID )
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:353:3: lv_name_1_0= RULE_ID
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:484:1: (lv_name_1_0= RULE_ID )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:485:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_rulePrimitive683); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_rulePrimitive950); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getPrimitiveAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -839,7 +1165,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAny"
-    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:377:1: entryRuleAny returns [EObject current=null] : iv_ruleAny= ruleAny EOF ;
+    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:509:1: entryRuleAny returns [EObject current=null] : iv_ruleAny= ruleAny EOF ;
     public final EObject entryRuleAny() throws RecognitionException {
         EObject current = null;
 
@@ -847,17 +1173,17 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:378:2: (iv_ruleAny= ruleAny EOF )
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:379:2: iv_ruleAny= ruleAny EOF
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:510:2: (iv_ruleAny= ruleAny EOF )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:511:2: iv_ruleAny= ruleAny EOF
             {
              newCompositeNode(grammarAccess.getAnyRule()); 
-            pushFollow(FOLLOW_ruleAny_in_entryRuleAny724);
+            pushFollow(FOLLOW_ruleAny_in_entryRuleAny991);
             iv_ruleAny=ruleAny();
 
             state._fsp--;
 
              current =iv_ruleAny; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAny734); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAny1001); 
 
             }
 
@@ -875,7 +1201,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAny"
-    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:386:1: ruleAny returns [EObject current=null] : (otherlv_0= 'any type' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:518:1: ruleAny returns [EObject current=null] : (otherlv_0= 'any type' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleAny() throws RecognitionException {
         EObject current = null;
 
@@ -885,23 +1211,23 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:389:28: ( (otherlv_0= 'any type' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:390:1: (otherlv_0= 'any type' ( (lv_name_1_0= RULE_ID ) ) )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:521:28: ( (otherlv_0= 'any type' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:522:1: (otherlv_0= 'any type' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:390:1: (otherlv_0= 'any type' ( (lv_name_1_0= RULE_ID ) ) )
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:390:3: otherlv_0= 'any type' ( (lv_name_1_0= RULE_ID ) )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:522:1: (otherlv_0= 'any type' ( (lv_name_1_0= RULE_ID ) ) )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:522:3: otherlv_0= 'any type' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,20,FOLLOW_20_in_ruleAny771); 
+            otherlv_0=(Token)match(input,25,FOLLOW_25_in_ruleAny1038); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getAnyAccess().getAnyTypeKeyword_0());
                 
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:394:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:395:1: (lv_name_1_0= RULE_ID )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:526:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:527:1: (lv_name_1_0= RULE_ID )
             {
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:395:1: (lv_name_1_0= RULE_ID )
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:396:3: lv_name_1_0= RULE_ID
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:527:1: (lv_name_1_0= RULE_ID )
+            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:528:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAny788); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAny1055); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getAnyAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -939,332 +1265,6 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
         return current;
     }
     // $ANTLR end "ruleAny"
-
-
-    // $ANTLR start "entryRuleFeature"
-    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:420:1: entryRuleFeature returns [EObject current=null] : iv_ruleFeature= ruleFeature EOF ;
-    public final EObject entryRuleFeature() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleFeature = null;
-
-
-        try {
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:421:2: (iv_ruleFeature= ruleFeature EOF )
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:422:2: iv_ruleFeature= ruleFeature EOF
-            {
-             newCompositeNode(grammarAccess.getFeatureRule()); 
-            pushFollow(FOLLOW_ruleFeature_in_entryRuleFeature829);
-            iv_ruleFeature=ruleFeature();
-
-            state._fsp--;
-
-             current =iv_ruleFeature; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFeature839); 
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleFeature"
-
-
-    // $ANTLR start "ruleFeature"
-    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:429:1: ruleFeature returns [EObject current=null] : ( ( (lv_isIndexed_0_0= 'indexed' ) )? ( (lv_isContainment_1_0= '-[' ) )? ( (lv_type_2_0= ruleTypeRef ) ) ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleValueObject ) ) )? (otherlv_6= '<->' ( ( ruleQualifiedName ) ) )? (otherlv_8= ';' )? ) ;
-    public final EObject ruleFeature() throws RecognitionException {
-        EObject current = null;
-
-        Token lv_isIndexed_0_0=null;
-        Token lv_isContainment_1_0=null;
-        Token lv_name_3_0=null;
-        Token otherlv_4=null;
-        Token otherlv_6=null;
-        Token otherlv_8=null;
-        EObject lv_type_2_0 = null;
-
-        EObject lv_defaultValue_5_0 = null;
-
-
-         enterRule(); 
-            
-        try {
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:432:28: ( ( ( (lv_isIndexed_0_0= 'indexed' ) )? ( (lv_isContainment_1_0= '-[' ) )? ( (lv_type_2_0= ruleTypeRef ) ) ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleValueObject ) ) )? (otherlv_6= '<->' ( ( ruleQualifiedName ) ) )? (otherlv_8= ';' )? ) )
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:433:1: ( ( (lv_isIndexed_0_0= 'indexed' ) )? ( (lv_isContainment_1_0= '-[' ) )? ( (lv_type_2_0= ruleTypeRef ) ) ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleValueObject ) ) )? (otherlv_6= '<->' ( ( ruleQualifiedName ) ) )? (otherlv_8= ';' )? )
-            {
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:433:1: ( ( (lv_isIndexed_0_0= 'indexed' ) )? ( (lv_isContainment_1_0= '-[' ) )? ( (lv_type_2_0= ruleTypeRef ) ) ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleValueObject ) ) )? (otherlv_6= '<->' ( ( ruleQualifiedName ) ) )? (otherlv_8= ';' )? )
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:433:2: ( (lv_isIndexed_0_0= 'indexed' ) )? ( (lv_isContainment_1_0= '-[' ) )? ( (lv_type_2_0= ruleTypeRef ) ) ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleValueObject ) ) )? (otherlv_6= '<->' ( ( ruleQualifiedName ) ) )? (otherlv_8= ';' )?
-            {
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:433:2: ( (lv_isIndexed_0_0= 'indexed' ) )?
-            int alt7=2;
-            int LA7_0 = input.LA(1);
-
-            if ( (LA7_0==21) ) {
-                alt7=1;
-            }
-            switch (alt7) {
-                case 1 :
-                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:434:1: (lv_isIndexed_0_0= 'indexed' )
-                    {
-                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:434:1: (lv_isIndexed_0_0= 'indexed' )
-                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:435:3: lv_isIndexed_0_0= 'indexed'
-                    {
-                    lv_isIndexed_0_0=(Token)match(input,21,FOLLOW_21_in_ruleFeature882); 
-
-                            newLeafNode(lv_isIndexed_0_0, grammarAccess.getFeatureAccess().getIsIndexedIndexedKeyword_0_0());
-                        
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getFeatureRule());
-                    	        }
-                           		setWithLastConsumed(current, "isIndexed", true, "indexed");
-                    	    
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:448:3: ( (lv_isContainment_1_0= '-[' ) )?
-            int alt8=2;
-            int LA8_0 = input.LA(1);
-
-            if ( (LA8_0==22) ) {
-                alt8=1;
-            }
-            switch (alt8) {
-                case 1 :
-                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:449:1: (lv_isContainment_1_0= '-[' )
-                    {
-                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:449:1: (lv_isContainment_1_0= '-[' )
-                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:450:3: lv_isContainment_1_0= '-['
-                    {
-                    lv_isContainment_1_0=(Token)match(input,22,FOLLOW_22_in_ruleFeature914); 
-
-                            newLeafNode(lv_isContainment_1_0, grammarAccess.getFeatureAccess().getIsContainmentHyphenMinusLeftSquareBracketKeyword_1_0());
-                        
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getFeatureRule());
-                    	        }
-                           		setWithLastConsumed(current, "isContainment", true, "-[");
-                    	    
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:463:3: ( (lv_type_2_0= ruleTypeRef ) )
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:464:1: (lv_type_2_0= ruleTypeRef )
-            {
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:464:1: (lv_type_2_0= ruleTypeRef )
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:465:3: lv_type_2_0= ruleTypeRef
-            {
-             
-            	        newCompositeNode(grammarAccess.getFeatureAccess().getTypeTypeRefParserRuleCall_2_0()); 
-            	    
-            pushFollow(FOLLOW_ruleTypeRef_in_ruleFeature949);
-            lv_type_2_0=ruleTypeRef();
-
-            state._fsp--;
-
-
-            	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getFeatureRule());
-            	        }
-                   		set(
-                   			current, 
-                   			"type",
-                    		lv_type_2_0, 
-                    		"TypeRef");
-            	        afterParserOrEnumRuleCall();
-            	    
-
-            }
-
-
-            }
-
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:481:2: ( (lv_name_3_0= RULE_ID ) )
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:482:1: (lv_name_3_0= RULE_ID )
-            {
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:482:1: (lv_name_3_0= RULE_ID )
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:483:3: lv_name_3_0= RULE_ID
-            {
-            lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFeature966); 
-
-            			newLeafNode(lv_name_3_0, grammarAccess.getFeatureAccess().getNameIDTerminalRuleCall_3_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getFeatureRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"name",
-                    		lv_name_3_0, 
-                    		"ID");
-            	    
-
-            }
-
-
-            }
-
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:499:2: (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleValueObject ) ) )?
-            int alt9=2;
-            int LA9_0 = input.LA(1);
-
-            if ( (LA9_0==23) ) {
-                alt9=1;
-            }
-            switch (alt9) {
-                case 1 :
-                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:499:4: otherlv_4= '=' ( (lv_defaultValue_5_0= ruleValueObject ) )
-                    {
-                    otherlv_4=(Token)match(input,23,FOLLOW_23_in_ruleFeature984); 
-
-                        	newLeafNode(otherlv_4, grammarAccess.getFeatureAccess().getEqualsSignKeyword_4_0());
-                        
-                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:503:1: ( (lv_defaultValue_5_0= ruleValueObject ) )
-                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:504:1: (lv_defaultValue_5_0= ruleValueObject )
-                    {
-                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:504:1: (lv_defaultValue_5_0= ruleValueObject )
-                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:505:3: lv_defaultValue_5_0= ruleValueObject
-                    {
-                     
-                    	        newCompositeNode(grammarAccess.getFeatureAccess().getDefaultValueValueObjectParserRuleCall_4_1_0()); 
-                    	    
-                    pushFollow(FOLLOW_ruleValueObject_in_ruleFeature1005);
-                    lv_defaultValue_5_0=ruleValueObject();
-
-                    state._fsp--;
-
-
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getFeatureRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"defaultValue",
-                            		lv_defaultValue_5_0, 
-                            		"ValueObject");
-                    	        afterParserOrEnumRuleCall();
-                    	    
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:521:4: (otherlv_6= '<->' ( ( ruleQualifiedName ) ) )?
-            int alt10=2;
-            int LA10_0 = input.LA(1);
-
-            if ( (LA10_0==24) ) {
-                alt10=1;
-            }
-            switch (alt10) {
-                case 1 :
-                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:521:6: otherlv_6= '<->' ( ( ruleQualifiedName ) )
-                    {
-                    otherlv_6=(Token)match(input,24,FOLLOW_24_in_ruleFeature1020); 
-
-                        	newLeafNode(otherlv_6, grammarAccess.getFeatureAccess().getLessThanSignHyphenMinusGreaterThanSignKeyword_5_0());
-                        
-                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:525:1: ( ( ruleQualifiedName ) )
-                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:526:1: ( ruleQualifiedName )
-                    {
-                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:526:1: ( ruleQualifiedName )
-                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:527:3: ruleQualifiedName
-                    {
-
-                    			if (current==null) {
-                    	            current = createModelElement(grammarAccess.getFeatureRule());
-                    	        }
-                            
-                     
-                    	        newCompositeNode(grammarAccess.getFeatureAccess().getInverseFeatureCrossReference_5_1_0()); 
-                    	    
-                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleFeature1043);
-                    ruleQualifiedName();
-
-                    state._fsp--;
-
-                     
-                    	        afterParserOrEnumRuleCall();
-                    	    
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:540:4: (otherlv_8= ';' )?
-            int alt11=2;
-            int LA11_0 = input.LA(1);
-
-            if ( (LA11_0==25) ) {
-                alt11=1;
-            }
-            switch (alt11) {
-                case 1 :
-                    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:540:6: otherlv_8= ';'
-                    {
-                    otherlv_8=(Token)match(input,25,FOLLOW_25_in_ruleFeature1058); 
-
-                        	newLeafNode(otherlv_8, grammarAccess.getFeatureAccess().getSemicolonKeyword_6());
-                        
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            }
-
-             leaveRule(); 
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleFeature"
 
 
     // $ANTLR start "entryRuleTypeRef"
@@ -1466,7 +1466,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
                 {
                 int LA13_2 = input.LA(2);
 
-                if ( (LA13_2==EOF||LA13_2==RULE_ID||LA13_2==17||(LA13_2>=21 && LA13_2<=22)||(LA13_2>=24 && LA13_2<=25)) ) {
+                if ( (LA13_2==EOF||LA13_2==RULE_ID||LA13_2==17||(LA13_2>=19 && LA13_2<=20)||(LA13_2>=22 && LA13_2<=23)) ) {
                     alt13=2;
                 }
                 else if ( (LA13_2==28) ) {
@@ -2356,8 +2356,8 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_RULE_ID_in_ruleEntity355 = new BitSet(new long[]{0x0000000000018000L});
     public static final BitSet FOLLOW_15_in_ruleEntity373 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleEntity393 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleEntity407 = new BitSet(new long[]{0x0000000000620020L});
-    public static final BitSet FOLLOW_ruleFeature_in_ruleEntity428 = new BitSet(new long[]{0x0000000000620020L});
+    public static final BitSet FOLLOW_16_in_ruleEntity407 = new BitSet(new long[]{0x00000000001A0020L});
+    public static final BitSet FOLLOW_ruleFeature_in_ruleEntity428 = new BitSet(new long[]{0x00000000001A0020L});
     public static final BitSet FOLLOW_17_in_ruleEntity441 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAnnotation_in_entryRuleAnnotation477 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAnnotation487 = new BitSet(new long[]{0x0000000000000002L});
@@ -2365,25 +2365,25 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleConfigOption_in_ruleAnnotation545 = new BitSet(new long[]{0x0000000000008002L});
     public static final BitSet FOLLOW_15_in_ruleAnnotation558 = new BitSet(new long[]{0x0000000040000000L});
     public static final BitSet FOLLOW_ruleConfigValue_in_ruleAnnotation579 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePrimitive_in_entryRulePrimitive619 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePrimitive629 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rulePrimitive666 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_rulePrimitive683 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAny_in_entryRuleAny724 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAny734 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_ruleAny771 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAny788 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFeature_in_entryRuleFeature829 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFeature839 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_ruleFeature882 = new BitSet(new long[]{0x0000000000600020L});
-    public static final BitSet FOLLOW_22_in_ruleFeature914 = new BitSet(new long[]{0x0000000000600020L});
-    public static final BitSet FOLLOW_ruleTypeRef_in_ruleFeature949 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleFeature966 = new BitSet(new long[]{0x0000000003800002L});
-    public static final BitSet FOLLOW_23_in_ruleFeature984 = new BitSet(new long[]{0x0000000018000050L});
-    public static final BitSet FOLLOW_ruleValueObject_in_ruleFeature1005 = new BitSet(new long[]{0x0000000003000002L});
-    public static final BitSet FOLLOW_24_in_ruleFeature1020 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleFeature1043 = new BitSet(new long[]{0x0000000002000002L});
-    public static final BitSet FOLLOW_25_in_ruleFeature1058 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFeature_in_entryRuleFeature617 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFeature627 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_ruleFeature670 = new BitSet(new long[]{0x0000000000180020L});
+    public static final BitSet FOLLOW_20_in_ruleFeature702 = new BitSet(new long[]{0x0000000000180020L});
+    public static final BitSet FOLLOW_ruleTypeRef_in_ruleFeature737 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleFeature754 = new BitSet(new long[]{0x0000000000E00002L});
+    public static final BitSet FOLLOW_21_in_ruleFeature772 = new BitSet(new long[]{0x0000000018000050L});
+    public static final BitSet FOLLOW_ruleValueObject_in_ruleFeature793 = new BitSet(new long[]{0x0000000000C00002L});
+    public static final BitSet FOLLOW_22_in_ruleFeature808 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleFeature831 = new BitSet(new long[]{0x0000000000800002L});
+    public static final BitSet FOLLOW_23_in_ruleFeature846 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePrimitive_in_entryRulePrimitive886 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePrimitive896 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rulePrimitive933 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_rulePrimitive950 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAny_in_entryRuleAny991 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAny1001 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_ruleAny1038 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAny1055 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleTypeRef_in_entryRuleTypeRef1096 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleTypeRef1106 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_ruleTypeRef1154 = new BitSet(new long[]{0x0000000004000002L});

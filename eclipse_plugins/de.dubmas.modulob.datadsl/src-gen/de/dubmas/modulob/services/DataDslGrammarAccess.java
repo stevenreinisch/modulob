@@ -182,6 +182,92 @@ public class DataDslGrammarAccess extends AbstractGrammarElementFinder {
 		//ConfigValue
 		public RuleCall getValueConfigValueEnumRuleCall_2_1_0() { return cValueConfigValueEnumRuleCall_2_1_0; }
 	}
+
+	public class FeatureElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Feature");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cIsIndexedAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cIsIndexedIndexedKeyword_0_0 = (Keyword)cIsIndexedAssignment_0.eContents().get(0);
+		private final Assignment cIsContainmentAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cIsContainmentHyphenMinusLeftSquareBracketKeyword_1_0 = (Keyword)cIsContainmentAssignment_1.eContents().get(0);
+		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTypeTypeRefParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
+		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNameIDTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cEqualsSignKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cDefaultValueAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cDefaultValueValueObjectParserRuleCall_4_1_0 = (RuleCall)cDefaultValueAssignment_4_1.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cLessThanSignHyphenMinusGreaterThanSignKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cInverseAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final CrossReference cInverseFeatureCrossReference_5_1_0 = (CrossReference)cInverseAssignment_5_1.eContents().get(0);
+		private final RuleCall cInverseFeatureQualifiedNameParserRuleCall_5_1_0_1 = (RuleCall)cInverseFeatureCrossReference_5_1_0.eContents().get(1);
+		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//Feature returns modulob::Feature:
+		//	isIndexed?="indexed"? isContainment?="-["? type=TypeRef name=ID ("=" defaultValue=ValueObject)? ("<->"
+		//	inverse=[modulob::Feature|QualifiedName])? ";"?;
+		public ParserRule getRule() { return rule; }
+
+		//isIndexed?="indexed"? isContainment?="-["? type=TypeRef name=ID ("=" defaultValue=ValueObject)? ("<->"
+		//inverse=[modulob::Feature|QualifiedName])? ";"?
+		public Group getGroup() { return cGroup; }
+
+		//isIndexed?="indexed"?
+		public Assignment getIsIndexedAssignment_0() { return cIsIndexedAssignment_0; }
+
+		//"indexed"
+		public Keyword getIsIndexedIndexedKeyword_0_0() { return cIsIndexedIndexedKeyword_0_0; }
+
+		//isContainment?="-["?
+		public Assignment getIsContainmentAssignment_1() { return cIsContainmentAssignment_1; }
+
+		//"-["
+		public Keyword getIsContainmentHyphenMinusLeftSquareBracketKeyword_1_0() { return cIsContainmentHyphenMinusLeftSquareBracketKeyword_1_0; }
+
+		//type=TypeRef
+		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
+
+		//TypeRef
+		public RuleCall getTypeTypeRefParserRuleCall_2_0() { return cTypeTypeRefParserRuleCall_2_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_3_0() { return cNameIDTerminalRuleCall_3_0; }
+
+		//("=" defaultValue=ValueObject)?
+		public Group getGroup_4() { return cGroup_4; }
+
+		//"="
+		public Keyword getEqualsSignKeyword_4_0() { return cEqualsSignKeyword_4_0; }
+
+		//defaultValue=ValueObject
+		public Assignment getDefaultValueAssignment_4_1() { return cDefaultValueAssignment_4_1; }
+
+		//ValueObject
+		public RuleCall getDefaultValueValueObjectParserRuleCall_4_1_0() { return cDefaultValueValueObjectParserRuleCall_4_1_0; }
+
+		//("<->" inverse=[modulob::Feature|QualifiedName])?
+		public Group getGroup_5() { return cGroup_5; }
+
+		//"<->"
+		public Keyword getLessThanSignHyphenMinusGreaterThanSignKeyword_5_0() { return cLessThanSignHyphenMinusGreaterThanSignKeyword_5_0; }
+
+		//inverse=[modulob::Feature|QualifiedName]
+		public Assignment getInverseAssignment_5_1() { return cInverseAssignment_5_1; }
+
+		//[modulob::Feature|QualifiedName]
+		public CrossReference getInverseFeatureCrossReference_5_1_0() { return cInverseFeatureCrossReference_5_1_0; }
+
+		//QualifiedName
+		public RuleCall getInverseFeatureQualifiedNameParserRuleCall_5_1_0_1() { return cInverseFeatureQualifiedNameParserRuleCall_5_1_0_1; }
+
+		//";"?
+		public Keyword getSemicolonKeyword_6() { return cSemicolonKeyword_6; }
+	}
 	
 	
 	public class ConfigOptionElements extends AbstractEnumRuleElementFinder {
@@ -205,13 +291,7 @@ public class DataDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final EnumLiteralDeclaration cCoreDataEnumLiteralDeclaration = (EnumLiteralDeclaration)rule.eContents().get(1);
 		private final Keyword cCoreDataCoreDataKeyword_0 = (Keyword)cCoreDataEnumLiteralDeclaration.eContents().get(0);
 		
-		////Feature returns modulob::Feature:
-		////	(isIndexed?='indexed')?
-		////	(isContainment?='-[')?
-		////	type=TypeRef name=ID ('=' defaultValue=ValueObject)? 
-		////	('<->' inverse=[modulob::Feature])?
-		////	(';')?
-		////; enum ConfigValue returns modulob::ConfigValue:
+		//enum ConfigValue returns modulob::ConfigValue:
 		//	CoreData;
 		public EnumRule getRule() { return rule; }
 
@@ -227,6 +307,7 @@ public class DataDslGrammarAccess extends AbstractGrammarElementFinder {
 	private AnnotationElements pAnnotation;
 	private ConfigOptionElements unknownRuleConfigOption;
 	private ConfigValueElements unknownRuleConfigValue;
+	private FeatureElements pFeature;
 	
 	private final GrammarProvider grammarProvider;
 
@@ -290,13 +371,7 @@ public class DataDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getConfigOptionAccess().getRule();
 	}
 
-	////Feature returns modulob::Feature:
-	////	(isIndexed?='indexed')?
-	////	(isContainment?='-[')?
-	////	type=TypeRef name=ID ('=' defaultValue=ValueObject)? 
-	////	('<->' inverse=[modulob::Feature])?
-	////	(';')?
-	////; enum ConfigValue returns modulob::ConfigValue:
+	//enum ConfigValue returns modulob::ConfigValue:
 	//	CoreData;
 	public ConfigValueElements getConfigValueAccess() {
 		return (unknownRuleConfigValue != null) ? unknownRuleConfigValue : (unknownRuleConfigValue = new ConfigValueElements());
@@ -304,6 +379,17 @@ public class DataDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public EnumRule getConfigValueRule() {
 		return getConfigValueAccess().getRule();
+	}
+
+	//Feature returns modulob::Feature:
+	//	isIndexed?="indexed"? isContainment?="-["? type=TypeRef name=ID ("=" defaultValue=ValueObject)? ("<->"
+	//	inverse=[modulob::Feature|QualifiedName])? ";"?;
+	public FeatureElements getFeatureAccess() {
+		return (pFeature != null) ? pFeature : (pFeature = new FeatureElements());
+	}
+	
+	public ParserRule getFeatureRule() {
+		return getFeatureAccess().getRule();
 	}
 
 	//TypeLib returns types::Lib:
@@ -334,17 +420,6 @@ public class DataDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getAnyRule() {
 		return getAnyAccess().getRule();
-	}
-
-	//Feature returns modulob::Feature:
-	//	isIndexed?="indexed"? isContainment?="-["? type=TypeRef name=ID ("=" defaultValue=ValueObject)? ("<->"
-	//	inverse=[modulob::Feature|QualifiedName])? ";"?;
-	public DslGrammarAccess.FeatureElements getFeatureAccess() {
-		return gaDsl.getFeatureAccess();
-	}
-	
-	public ParserRule getFeatureRule() {
-		return getFeatureAccess().getRule();
 	}
 
 	//TypeRef returns types::TypeRef:

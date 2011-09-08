@@ -20,6 +20,7 @@ public class DataDslFormatter extends AbstractDeclarativeFormatter {
 	
 	@Override
 	protected void configureFormatting(FormattingConfig c) {
+		
 		/*
 		 * It's usually a good idea to activate the following three statements.
  		 * They will add and preserve newlines around comments
@@ -30,5 +31,15 @@ public class DataDslFormatter extends AbstractDeclarativeFormatter {
 		
 		c.setLinewrap(2).after(((DataDslGrammarAccess)getGrammarAccess()).getEntityModelAccess().getVersionSTRINGTerminalRuleCall_3_0());
 		c.setLinewrap().after(((DataDslGrammarAccess)getGrammarAccess()).getEntityRule());
+		c.setLinewrap().after(((DataDslGrammarAccess)getGrammarAccess()).getEntityAccess().getAnnotationsAssignment_0());
+		
+		c.setNoSpace().after(((DataDslGrammarAccess)getGrammarAccess()).getAnnotationAccess().getCommercialAtKeyword_0());
+		c.setNoSpace().after(((DataDslGrammarAccess)getGrammarAccess()).getAnnotationAccess().getColonKeyword_2_0());
+		c.setNoSpace().after(((DataDslGrammarAccess)getGrammarAccess()).getAnnotationAccess().getOptionAssignment_1());
+		c.setNoSpace().after(((DataDslGrammarAccess)getGrammarAccess()).getAnnotationAccess().getValueAssignment_2_1());
+		
+		c.setLinewrap().after(((DataDslGrammarAccess)getGrammarAccess()).getEntityAccess().getLeftCurlyBracketKeyword_5());
+		c.setLinewrap().after(((DataDslGrammarAccess)getGrammarAccess()).getFeatureAccess().getSemicolonKeyword_6());
+		
 	}
 }
