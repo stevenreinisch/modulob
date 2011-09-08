@@ -139,8 +139,8 @@ public class SystemPackageImpl extends EPackageImpl implements SystemPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
-		BehaviourPackage.eINSTANCE.eClass();
 		MigrationPackage.eINSTANCE.eClass();
+		BehaviourPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theSystemPackage.createPackageContents();

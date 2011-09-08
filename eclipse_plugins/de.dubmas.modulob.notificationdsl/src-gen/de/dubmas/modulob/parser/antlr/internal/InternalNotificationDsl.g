@@ -413,10 +413,12 @@ ruleFeature returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getFeatureRule());
 	        }
         }
-	otherlv_7=RULE_ID
-	{
-		newLeafNode(otherlv_7, grammarAccess.getFeatureAccess().getInverseFeatureCrossReference_5_1_0()); 
-	}
+		{ 
+	        newCompositeNode(grammarAccess.getFeatureAccess().getInverseFeatureCrossReference_5_1_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
 
 )
 ))?(	otherlv_8=';' 

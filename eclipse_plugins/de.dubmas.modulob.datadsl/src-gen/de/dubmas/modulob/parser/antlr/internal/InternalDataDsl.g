@@ -328,6 +328,94 @@ ruleAnnotation returns [EObject current=null]
 
 
 
+
+
+// Entry rule entryRulePrimitive
+entryRulePrimitive returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getPrimitiveRule()); }
+	 iv_rulePrimitive=rulePrimitive 
+	 { $current=$iv_rulePrimitive.current; } 
+	 EOF 
+;
+
+// Rule Primitive
+rulePrimitive returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='primitive type' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getPrimitiveAccess().getPrimitiveTypeKeyword_0());
+    }
+(
+(
+		lv_name_1_0=RULE_ID
+		{
+			newLeafNode(lv_name_1_0, grammarAccess.getPrimitiveAccess().getNameIDTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getPrimitiveRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_1_0, 
+        		"ID");
+	    }
+
+)
+))
+;
+
+
+
+
+
+// Entry rule entryRuleAny
+entryRuleAny returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getAnyRule()); }
+	 iv_ruleAny=ruleAny 
+	 { $current=$iv_ruleAny.current; } 
+	 EOF 
+;
+
+// Rule Any
+ruleAny returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='any type' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getAnyAccess().getAnyTypeKeyword_0());
+    }
+(
+(
+		lv_name_1_0=RULE_ID
+		{
+			newLeafNode(lv_name_1_0, grammarAccess.getAnyAccess().getNameIDTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getAnyRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_1_0, 
+        		"ID");
+	    }
+
+)
+))
+;
+
+
+
+
+
 // Entry rule entryRuleFeature
 entryRuleFeature returns [EObject current=null] 
 	:
@@ -441,10 +529,12 @@ ruleFeature returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getFeatureRule());
 	        }
         }
-	otherlv_7=RULE_ID
-	{
-		newLeafNode(otherlv_7, grammarAccess.getFeatureAccess().getInverseFeatureCrossReference_5_1_0()); 
-	}
+		{ 
+	        newCompositeNode(grammarAccess.getFeatureAccess().getInverseFeatureCrossReference_5_1_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
 
 )
 ))?(	otherlv_8=';' 
@@ -452,94 +542,6 @@ ruleFeature returns [EObject current=null]
     	newLeafNode(otherlv_8, grammarAccess.getFeatureAccess().getSemicolonKeyword_6());
     }
 )?)
-;
-
-
-
-
-
-
-
-// Entry rule entryRulePrimitive
-entryRulePrimitive returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getPrimitiveRule()); }
-	 iv_rulePrimitive=rulePrimitive 
-	 { $current=$iv_rulePrimitive.current; } 
-	 EOF 
-;
-
-// Rule Primitive
-rulePrimitive returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(	otherlv_0='primitive type' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getPrimitiveAccess().getPrimitiveTypeKeyword_0());
-    }
-(
-(
-		lv_name_1_0=RULE_ID
-		{
-			newLeafNode(lv_name_1_0, grammarAccess.getPrimitiveAccess().getNameIDTerminalRuleCall_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getPrimitiveRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"name",
-        		lv_name_1_0, 
-        		"ID");
-	    }
-
-)
-))
-;
-
-
-
-
-
-// Entry rule entryRuleAny
-entryRuleAny returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getAnyRule()); }
-	 iv_ruleAny=ruleAny 
-	 { $current=$iv_ruleAny.current; } 
-	 EOF 
-;
-
-// Rule Any
-ruleAny returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(	otherlv_0='any type' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getAnyAccess().getAnyTypeKeyword_0());
-    }
-(
-(
-		lv_name_1_0=RULE_ID
-		{
-			newLeafNode(lv_name_1_0, grammarAccess.getAnyAccess().getNameIDTerminalRuleCall_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getAnyRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"name",
-        		lv_name_1_0, 
-        		"ID");
-	    }
-
-)
-))
 ;
 
 

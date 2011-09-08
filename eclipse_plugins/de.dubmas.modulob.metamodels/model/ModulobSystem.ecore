@@ -9,7 +9,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="behaviouralModel" eType="#//BehaviouralModel"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="migrations" upperBound="-1"
-        eType="ecore:EClass ModulobMigration.ecore#//Migration" containment="true"/>
+        eType="ecore:EClass Migration.ecore#//Migration" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Module" eSuperTypes="#//Element">
     <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceModel" eType="#//InterfaceModel"

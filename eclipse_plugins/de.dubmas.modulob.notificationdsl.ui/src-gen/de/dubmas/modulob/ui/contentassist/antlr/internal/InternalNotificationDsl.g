@@ -1800,8 +1800,8 @@ rule__Feature__InverseAssignment_5_1
 (
 { before(grammarAccess.getFeatureAccess().getInverseFeatureCrossReference_5_1_0()); }
 (
-{ before(grammarAccess.getFeatureAccess().getInverseFeatureIDTerminalRuleCall_5_1_0_1()); }
-	RULE_ID{ after(grammarAccess.getFeatureAccess().getInverseFeatureIDTerminalRuleCall_5_1_0_1()); }
+{ before(grammarAccess.getFeatureAccess().getInverseFeatureQualifiedNameParserRuleCall_5_1_0_1()); }
+	ruleQualifiedName{ after(grammarAccess.getFeatureAccess().getInverseFeatureQualifiedNameParserRuleCall_5_1_0_1()); }
 )
 { after(grammarAccess.getFeatureAccess().getInverseFeatureCrossReference_5_1_0()); }
 )

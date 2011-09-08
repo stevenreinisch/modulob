@@ -5,9 +5,7 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EPackage;
 import de.dubmas.modulob.common.validation.DslJavaValidator;
-import org.eclipse.xtext.validation.ComposedChecks;
 
-@ComposedChecks(validators= {org.eclipse.xtext.validation.ImportUriValidator.class, org.eclipse.xtext.validation.NamesAreUniqueValidator.class})
 public class AbstractNotificationDslJavaValidator extends DslJavaValidator {
 
 	@Override

@@ -184,9 +184,9 @@ public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer 
 	 * Features:
 	 *    name[1, 1]
 	 *    annotations[0, *]
-	 *    isAbstract[0, 1]
 	 *    super[0, 1]
 	 *    features[0, *]
+	 *    isAbstract[0, 1]
 	 */
 	protected void sequence_Entity(EObject context, Entity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -201,7 +201,7 @@ public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer 
 	 *         type=TypeRef 
 	 *         name=ID 
 	 *         defaultValue=ValueObject? 
-	 *         inverse=[Feature|ID]?
+	 *         inverse=[Feature|QualifiedName]?
 	 *     )
 	 *
 	 * Features:
@@ -213,7 +213,7 @@ public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer 
 	 *    defaultValue[0, 1]
 	 */
 	protected void sequence_Feature(EObject context, Feature semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		superSequencer.createSequence(context, semanticObject);
 	}
 	
 	

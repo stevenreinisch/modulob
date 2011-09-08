@@ -112,16 +112,16 @@ public class DslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLessThanSignHyphenMinusGreaterThanSignKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Assignment cInverseAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
 		private final CrossReference cInverseFeatureCrossReference_5_1_0 = (CrossReference)cInverseAssignment_5_1.eContents().get(0);
-		private final RuleCall cInverseFeatureIDTerminalRuleCall_5_1_0_1 = (RuleCall)cInverseFeatureCrossReference_5_1_0.eContents().get(1);
+		private final RuleCall cInverseFeatureQualifiedNameParserRuleCall_5_1_0_1 = (RuleCall)cInverseFeatureCrossReference_5_1_0.eContents().get(1);
 		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Feature returns modulob::Feature:
 		//	isIndexed?="indexed"? isContainment?="-["? type=TypeRef name=ID ("=" defaultValue=ValueObject)? ("<->"
-		//	inverse=[modulob::Feature])? ";"?;
+		//	inverse=[modulob::Feature|QualifiedName])? ";"?;
 		public ParserRule getRule() { return rule; }
 
 		//isIndexed?="indexed"? isContainment?="-["? type=TypeRef name=ID ("=" defaultValue=ValueObject)? ("<->"
-		//inverse=[modulob::Feature])? ";"?
+		//inverse=[modulob::Feature|QualifiedName])? ";"?
 		public Group getGroup() { return cGroup; }
 
 		//isIndexed?="indexed"?
@@ -160,20 +160,20 @@ public class DslGrammarAccess extends AbstractGrammarElementFinder {
 		//ValueObject
 		public RuleCall getDefaultValueValueObjectParserRuleCall_4_1_0() { return cDefaultValueValueObjectParserRuleCall_4_1_0; }
 
-		//("<->" inverse=[modulob::Feature])?
+		//("<->" inverse=[modulob::Feature|QualifiedName])?
 		public Group getGroup_5() { return cGroup_5; }
 
 		//"<->"
 		public Keyword getLessThanSignHyphenMinusGreaterThanSignKeyword_5_0() { return cLessThanSignHyphenMinusGreaterThanSignKeyword_5_0; }
 
-		//inverse=[modulob::Feature]
+		//inverse=[modulob::Feature|QualifiedName]
 		public Assignment getInverseAssignment_5_1() { return cInverseAssignment_5_1; }
 
-		//[modulob::Feature]
+		//[modulob::Feature|QualifiedName]
 		public CrossReference getInverseFeatureCrossReference_5_1_0() { return cInverseFeatureCrossReference_5_1_0; }
 
-		//ID
-		public RuleCall getInverseFeatureIDTerminalRuleCall_5_1_0_1() { return cInverseFeatureIDTerminalRuleCall_5_1_0_1; }
+		//QualifiedName
+		public RuleCall getInverseFeatureQualifiedNameParserRuleCall_5_1_0_1() { return cInverseFeatureQualifiedNameParserRuleCall_5_1_0_1; }
 
 		//";"?
 		public Keyword getSemicolonKeyword_6() { return cSemicolonKeyword_6; }
@@ -431,7 +431,7 @@ public class DslGrammarAccess extends AbstractGrammarElementFinder {
 
 	//Feature returns modulob::Feature:
 	//	isIndexed?="indexed"? isContainment?="-["? type=TypeRef name=ID ("=" defaultValue=ValueObject)? ("<->"
-	//	inverse=[modulob::Feature])? ";"?;
+	//	inverse=[modulob::Feature|QualifiedName])? ";"?;
 	public FeatureElements getFeatureAccess() {
 		return (pFeature != null) ? pFeature : (pFeature = new FeatureElements());
 	}

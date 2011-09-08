@@ -71,6 +71,14 @@ propertyName(Feature f):
 	((Entity)f.eContainer).entityName().toFirstLower() + f.name.toFirstUpper()
 ;
 
-daoName(String namespace):
-	namespace + 'DAO'
+daoName(String namespace, String version):
+	namespace + 'DAO' + version.versionIdentifier()
+;
+
+versionIdentifier(String version):
+	'_v' +  version.replaceAll('\\.', '_')
+;
+
+daoProtocolName(String namespace):
+	'P_I_' + namespace + 'DAO'
 ;

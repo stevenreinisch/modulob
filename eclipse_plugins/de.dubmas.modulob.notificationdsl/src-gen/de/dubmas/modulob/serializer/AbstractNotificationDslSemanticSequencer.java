@@ -151,7 +151,7 @@ public class AbstractNotificationDslSemanticSequencer extends AbstractSemanticSe
 	 *         type=TypeRef 
 	 *         name=ID 
 	 *         defaultValue=ValueObject? 
-	 *         inverse=[Feature|ID]?
+	 *         inverse=[Feature|QualifiedName]?
 	 *     )
 	 *
 	 * Features:

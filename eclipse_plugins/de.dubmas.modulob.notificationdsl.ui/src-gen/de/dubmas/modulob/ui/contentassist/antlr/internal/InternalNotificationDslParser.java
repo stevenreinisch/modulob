@@ -4688,25 +4688,29 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Feature__InverseAssignment_5_1"
-    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1795:1: rule__Feature__InverseAssignment_5_1 : ( ( RULE_ID ) ) ;
+    // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1795:1: rule__Feature__InverseAssignment_5_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Feature__InverseAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1799:1: ( ( ( RULE_ID ) ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1800:1: ( ( RULE_ID ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1799:1: ( ( ( ruleQualifiedName ) ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1800:1: ( ( ruleQualifiedName ) )
             {
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1800:1: ( ( RULE_ID ) )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1801:1: ( RULE_ID )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1800:1: ( ( ruleQualifiedName ) )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1801:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getFeatureAccess().getInverseFeatureCrossReference_5_1_0()); 
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1802:1: ( RULE_ID )
-            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1803:1: RULE_ID
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1802:1: ( ruleQualifiedName )
+            // ../de.dubmas.modulob.notificationdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalNotificationDsl.g:1803:1: ruleQualifiedName
             {
-             before(grammarAccess.getFeatureAccess().getInverseFeatureIDTerminalRuleCall_5_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Feature__InverseAssignment_5_13584); 
-             after(grammarAccess.getFeatureAccess().getInverseFeatureIDTerminalRuleCall_5_1_0_1()); 
+             before(grammarAccess.getFeatureAccess().getInverseFeatureQualifiedNameParserRuleCall_5_1_0_1()); 
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Feature__InverseAssignment_5_13584);
+            ruleQualifiedName();
+
+            state._fsp--;
+
+             after(grammarAccess.getFeatureAccess().getInverseFeatureQualifiedNameParserRuleCall_5_1_0_1()); 
 
             }
 
@@ -5105,7 +5109,7 @@ public class InternalNotificationDslParser extends AbstractInternalContentAssist
     public static final BitSet FOLLOW_ruleTypeRef_in_rule__Feature__TypeAssignment_23487 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__Feature__NameAssignment_33518 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleValueObject_in_rule__Feature__DefaultValueAssignment_4_13549 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Feature__InverseAssignment_5_13584 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Feature__InverseAssignment_5_13584 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_rule__TypeRef__ReferencedAssignment_03623 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_25_in_rule__TypeRef__IsMultiAssignment_13663 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEStringObject_in_rule__StringValue__ValueAssignment3702 = new BitSet(new long[]{0x0000000000000002L});

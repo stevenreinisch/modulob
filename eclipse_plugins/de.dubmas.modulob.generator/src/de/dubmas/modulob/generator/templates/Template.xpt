@@ -23,7 +23,7 @@
 	
 	«LET this.entityModel.entities.select(e | e.isPersistent()) AS persistentEntites»
 		«IF persistentEntites.size > 0»
-			«EXPAND de::dubmas::modulob::generator::templates::coredata::CoreDataModel::main(this.name) FOR persistentEntites»
+			«EXPAND de::dubmas::modulob::generator::templates::coredata::CoreDataModel::main(this.name, this.entityModel.version) FOR persistentEntites»
 			«EXPAND de::dubmas::modulob::generator::templates::coredata::CoreDataClass::main FOREACH persistentEntites»
 		«ENDIF»
 	«ENDLET»

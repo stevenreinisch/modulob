@@ -75,7 +75,7 @@
               <type metamodel="/0/@metamodelDeclarations.0">
                 <classifier xsi:type="ecore:EClass" href="http://modulob.dubmas.de/1.0#//Feature"/>
               </type>
-              <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.12"/>
             </terminal>
           </elements>
         </elements>

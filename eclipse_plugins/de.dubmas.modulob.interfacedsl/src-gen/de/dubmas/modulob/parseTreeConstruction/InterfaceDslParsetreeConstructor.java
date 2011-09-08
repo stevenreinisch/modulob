@@ -1310,12 +1310,12 @@ protected class Any_NameAssignment_1 extends AssignmentToken  {
  *
  * Feature returns modulob::Feature:
  * 	isIndexed?="indexed"? isContainment?="-["? type=TypeRef name=ID ("=" defaultValue=ValueObject)? ("<->"
- * 	inverse=[modulob::Feature])? ";"?;
+ * 	inverse=[modulob::Feature|QualifiedName])? ";"?;
  *
  **/
 
 // isIndexed?="indexed"? isContainment?="-["? type=TypeRef name=ID ("=" defaultValue=ValueObject)? ("<->"
-// inverse=[modulob::Feature])? ";"?
+// inverse=[modulob::Feature|QualifiedName])? ";"?
 protected class Feature_Group extends GroupToken {
 	
 	public Feature_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1585,7 +1585,7 @@ protected class Feature_DefaultValueAssignment_4_1 extends AssignmentToken  {
 }
 
 
-// ("<->" inverse=[modulob::Feature])?
+// ("<->" inverse=[modulob::Feature|QualifiedName])?
 protected class Feature_Group_5 extends GroupToken {
 	
 	public Feature_Group_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1630,7 +1630,7 @@ protected class Feature_LessThanSignHyphenMinusGreaterThanSignKeyword_5_0 extend
 
 }
 
-// inverse=[modulob::Feature]
+// inverse=[modulob::Feature|QualifiedName]
 protected class Feature_InverseAssignment_5_1 extends AssignmentToken  {
 	
 	public Feature_InverseAssignment_5_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {

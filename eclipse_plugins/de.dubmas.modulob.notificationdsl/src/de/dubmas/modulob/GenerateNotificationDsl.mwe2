@@ -13,6 +13,9 @@ Workflow {
     bean = StandaloneSetup {
         scanClassPath = true
         platformUri = "${runtimeProject}/.."
+        
+        registerGenModelFile = "platform:/resource/de.dubmas.modulob.metamodels/model/Modulob.genmodel"
+		registerGenModelFile = "platform:/resource/de.dubmas.modulob.metamodels/model/ModulobSystem.genmodel"
     }
 
     component = DirectoryCleaner {
@@ -37,12 +40,7 @@ Workflow {
             fragment = grammarAccess.GrammarAccessFragment {}
 
             // generates Java API for the generated EPackages
-            fragment = ecore.EcoreGeneratorFragment {
-			 referencedGenModels = "
-			 	platform:/resource/de.dubmas.modulob.metamodels/model/Modulob.genmodel,
-				platform:/resource/de.dubmas.modulob.metamodels/model/ModulobSystem.genmodel
-			 "
-			}
+            fragment = ecore.EcoreGeneratorFragment {}
 
             // Serializer 2.0
             fragment = serializer.SerializerFragment {}
@@ -64,8 +62,8 @@ Workflow {
 
             // java-based API for validation
             fragment = validation.JavaValidatorFragment {
-                composedCheck = "org.eclipse.xtext.validation.ImportUriValidator"
-                composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
+//                composedCheck = "org.eclipse.xtext.validation.ImportUriValidator"
+//                composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
             }
 
             // scoping and exporting API
@@ -73,7 +71,7 @@ Workflow {
             // fragment = exporting.SimpleNamesFragment {}
 
             // scoping and exporting API
-            fragment = scoping.ImportNamespacesScopingFragment {}
+            //fragment = scoping.ImportNamespacesScopingFragment {}
             fragment = exporting.QualifiedNamesFragment {}
             fragment = builder.BuilderIntegrationFragment {}
 

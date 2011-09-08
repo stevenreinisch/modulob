@@ -29,10 +29,10 @@ enum ConfigValue returns modulob::ConfigValue:
 	CoreData = 'CoreData' 
 ;	
 	
-Feature returns modulob::Feature:
-	(isIndexed?='indexed')?
-	(isContainment?='-[')?
-	type=TypeRef name=ID ('=' defaultValue=ValueObject)? 
-	('<->' inverse=[modulob::Feature])?
-	(';')?
-;
+//Feature returns modulob::Feature:
+//	(isIndexed?='indexed')?
+//	(isContainment?='-[')?
+//	type=TypeRef name=ID ('=' defaultValue=ValueObject)? 
+//	('<->' inverse=[modulob::Feature])?
+//	(';')?
+//;

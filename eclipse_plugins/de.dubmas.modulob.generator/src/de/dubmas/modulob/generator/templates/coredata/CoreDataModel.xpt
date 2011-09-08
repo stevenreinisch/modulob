@@ -4,18 +4,30 @@
 «EXTENSION de::dubmas::modulob::generator::templates::coredata::CoreDataExtensions»
 «EXTENSION org::eclipse::xtend::util::stdlib::io»
 
-«DEFINE main (String namespace) FOR List[Entity]»
-
-	«EXPAND DAOHeader(namespace) FOR this»
-	«EXPAND DAOImpl(namespace)   FOR this»
+«DEFINE main (String namespace, String version) FOR List[Entity]»	
+	«EXPAND DAOProtocol(namespace)        FOR this»
+	«EXPAND DAOHeader(namespace, version) FOR this»
+	«EXPAND DAOImpl(namespace, version)   FOR this»
 
 «ENDDEFINE»
 
-«DEFINE DAOHeader (String namespace) FOR List[Entity]»
-«FILE namespace + "/public/" + namespace.daoName() + ".h"»
+«DEFINE DAOProtocol(String namespace) FOR List[Entity]»
+«FILE namespace + "/public/" + namespace.daoProtocolName() + ".h"»
+#import <Foundation/Foundation.h>
+#import "P_I_OBPersistencyDAO.h"
+
+@protocol «namespace.daoProtocolName()» <P_I_OBPersistencyDAO>
+
+@end
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE DAOHeader (String namespace, String version) FOR List[Entity]»
+«FILE namespace + "/public/" + namespace.daoName(version) + ".h"»
 #import <CoreData/CoreData.h>
 
 #import "CoreDataDAO.h"
+#import "«namespace.daoProtocolName()».h"
 
 /**
  * subclass this class to implement the functionality.
@@ -26,33 +38,33 @@
  *    run and all changes made to the header and implementation
  *    file will be lost!
  */
-@interface «namespace.daoName()»: CoreDataDAO
+@interface «namespace.daoName(version)»: CoreDataDAO <«namespace.daoProtocolName()»>
 {}
 @end
 «ENDFILE»
 «ENDDEFINE»
 
-«DEFINE DAOImpl (String namespace) FOR List[Entity]»
-«FILE namespace + "/private/" + namespace.daoName() + ".m"»
-#import "«namespace.daoName() + ".h"»"
+«DEFINE DAOImpl (String namespace, String version) FOR List[Entity]»
+«FILE namespace + "/private/" + namespace.daoName(version) + ".m"»
+#import "«namespace.daoName(version) + ".h"»"
 #import "CoreDataStoreWrapper.h" 
 
-@interface «namespace.daoName()» ()
+@interface «namespace.daoName(version)» ()
 -(NSManagedObjectModel*)createManagedObjectModel;
 @end
 
-static «namespace.daoName()» *«namespace.daoName().toFirstLower()» = nil;
+static «namespace.daoName(version)» *«namespace.daoName(version).toFirstLower()» = nil;
 
-@implementation «namespace.daoName()»
+@implementation «namespace.daoName(version)»
 
--(id)initWith:(NSString*)nameOfStoreFile_
-{
-	if(self = [super initWithMOM:[self createManagedObjectModel] 
-				 nameOfStoreFile:nameOfStoreFile_])
-	{
-		
-	}
-	return self;
+- (id) init {
+    if(self = [super initWithMOM:[self createManagedObjectModel] 
+                 nameOfStoreFile:@"«namespace»Store"
+                         version:@"«version»"])
+    {
+    
+    }
+    return self;
 }
 
 «EXPAND momGetter FOR this-»
@@ -63,19 +75,19 @@ static «namespace.daoName()» *«namespace.daoName().toFirstLower()» = nil;
 + (CoreDataDAO*)sharedDAO
 {
 	@synchronized(self) {
-		if («namespace.daoName().toFirstLower()» == nil) {
-			[[self alloc] initWith:@"«namespace»Store"]; // assignment not done here
+		if («namespace.daoName(version).toFirstLower()» == nil) {
+			[[self alloc] init]; // assignment not done here
 		}
 	}
-	return «namespace.daoName().toFirstLower()»;
+	return «namespace.daoName(version).toFirstLower()»;
 }
 
 + (id)allocWithZone:(NSZone *)zone
 {
 	@synchronized(self) {
-		if («namespace.daoName().toFirstLower()» == nil) {
-			«namespace.daoName().toFirstLower()» = [super allocWithZone:zone];
-			return «namespace.daoName().toFirstLower()»;  // assignment and return on first allocation
+		if («namespace.daoName(version).toFirstLower()» == nil) {
+			«namespace.daoName(version).toFirstLower()» = [super allocWithZone:zone];
+			return «namespace.daoName(version).toFirstLower()»;  // assignment and return on first allocation
 		}
 	}
 	return nil; //on subsequent allocation attempts return nil

@@ -336,7 +336,7 @@ public class InterfaceDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	//Feature returns modulob::Feature:
 	//	isIndexed?="indexed"? isContainment?="-["? type=TypeRef name=ID ("=" defaultValue=ValueObject)? ("<->"
-	//	inverse=[modulob::Feature])? ";"?;
+	//	inverse=[modulob::Feature|QualifiedName])? ";"?;
 	public DslGrammarAccess.FeatureElements getFeatureAccess() {
 		return gaDsl.getFeatureAccess();
 	}
