@@ -41,5 +41,7 @@ public class DataDslFormatter extends AbstractDeclarativeFormatter {
 		c.setLinewrap().after(((DataDslGrammarAccess)getGrammarAccess()).getEntityAccess().getLeftCurlyBracketKeyword_5());
 		c.setLinewrap().after(((DataDslGrammarAccess)getGrammarAccess()).getFeatureAccess().getSemicolonKeyword_6());
 		
+		c.setIndentationIncrement().after(((DataDslGrammarAccess)getGrammarAccess()).getEntityAccess().getLeftCurlyBracketKeyword_5());
+		c.setIndentationDecrement().before(((DataDslGrammarAccess)getGrammarAccess()).getEntityAccess().getRightCurlyBracketKeyword_7());
 	}
 }
