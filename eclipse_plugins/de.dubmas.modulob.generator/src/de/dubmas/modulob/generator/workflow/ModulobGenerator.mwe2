@@ -7,6 +7,15 @@ var fileEncoding = 'UTF-8'
 //var modelPath    = 'src/model'
 var modulesSlot  = 'modules'
 
+/*
+ * This slot contains all entity models except the one
+ * with the highest version number. The one with the
+ * highest version number is set on the corresponding
+ * module. The others are used to generate the corresponding
+ * DAOs.  
+ */
+var oldVersionEntiyModelSlot = 'oldVersionEntityModels'
+
 var internalAdvices = 'de::dubmas::modulob::generator::templates::Singleton'
 var externalAdvices = ''
 
@@ -33,6 +42,16 @@ Workflow {
 		expand = "de::dubmas::modulob::generator::templates::Template::main FOR ${modulesSlot}"
 		advices = internalAdvices
 		advices = externalAdvices
+		outlet = {
+			path = genPath
+		}
+		fileEncoding = fileEncoding
+	}
+	
+	component = org.eclipse.xpand2.Generator{
+		metaModel = org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel{}
+		expand    = "de::dubmas::modulob::generator::templates::coredata::CoreDataModel::oldVersionDAOs FOR ${oldVersionEntiyModelSlot}"
+		
 		outlet = {
 			path = genPath
 		}

@@ -1,14 +1,24 @@
 «IMPORT modulob»
+«IMPORT system»
 «IMPORT types»
 
 «EXTENSION de::dubmas::modulob::generator::templates::coredata::CoreDataExtensions»
 «EXTENSION org::eclipse::xtend::util::stdlib::io»
 
 «DEFINE main (String namespace, String version) FOR List[Entity]»	
-	«EXPAND DAOProtocol(namespace)        FOR this»
+	«EXPAND DAOProtocol(namespace)              FOR this»
+	«EXPAND DAOHeaderAndImpl(namespace, version)FOR this»
+«ENDDEFINE»
+
+«DEFINE oldVersionDAOs FOR List[EntityModel]»
+	«FOREACH this AS em»
+		«EXPAND DAOHeaderAndImpl(em.module.name, em.version) FOR em.entities»
+	«ENDFOREACH»
+«ENDDEFINE»
+
+«DEFINE DAOHeaderAndImpl(String namespace, String version) FOR List[Entity]»
 	«EXPAND DAOHeader(namespace, version) FOR this»
 	«EXPAND DAOImpl(namespace, version)   FOR this»
-
 «ENDDEFINE»
 
 «DEFINE DAOProtocol(String namespace) FOR List[Entity]»
