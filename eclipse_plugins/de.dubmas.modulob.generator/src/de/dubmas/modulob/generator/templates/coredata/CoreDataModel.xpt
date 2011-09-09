@@ -71,7 +71,7 @@ static «namespace.daoName(version)» *«namespace.daoName(version).toFirstLower
 
 - (id) init {
     if(self = [super initWithMOM:[self createManagedObjectModel] 
-                 nameOfStoreFile:@"«namespace»Store"
+                 nameOfStoreFile:@"«namespace»Store«version.versionIdentifier()»"
                          version:@"«version»"])
     {
     
