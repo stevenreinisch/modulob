@@ -43,6 +43,15 @@ var entityModelSlot       = 'entityModelSlot'
 var interfaceModelSlot    = 'interfaceModelSlot'
 var notificationModelSlot = 'notificationModelSlot'
 
+/*
+ * This slot contains all entity models except the one
+ * with the highest version number. The one with the
+ * highest version number is set on the corresponding
+ * module. The others are used to generate the corresponding
+ * DAOs.  
+ */
+var oldVersionEntiyModelSlot = 'oldVersionEntityModels'
+
 Workflow {
 	
 	component = org.eclipse.emf.mwe.utils.DirectoryCleaner{
@@ -86,10 +95,11 @@ Workflow {
 	}
 	
 	component = de.dubmas.modulob.generator.transformation.ModuleTransformation {
-		entityModelSlotName       = entityModelSlot
-		interfaceModelSlotName    = interfaceModelSlot
-		notificationModelSlotName = notificationModelSlot
-		moduleModelSlotName       = modulesSlot
+		entityModelSlotName          = entityModelSlot
+		interfaceModelSlotName       = interfaceModelSlot
+		notificationModelSlotName    = notificationModelSlot
+		moduleModelSlotName          = modulesSlot
+		oldVersionEntiyModelSlotName = oldVersionEntiyModelSlot	
 	}
 	
 	component = @de.dubmas.modulob.generator.workflow.ModulobGenerator auto-inject {}
