@@ -1,5 +1,6 @@
 package de.dubmas.modulob.migration.ui.mapping;
 
+import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -27,5 +28,22 @@ public class OverviewPage extends AbstractWizardPage {
 	    setControl(mainComposite);
 	    
 	    new Label(mainComposite, SWT.NONE).setText("Overview");
+	}
+	
+	@Override
+	public boolean isPageComplete() {
+		return true;
+	}
+	
+	@Override
+	public boolean canFlipToNextPage(){
+		return true;
+	}
+	
+	@Override
+	public IWizardPage getNextPage(){
+		IWizardPage page = new InvokeMigrationGenerator("");
+		page.setWizard(getWizard());
+		return page;
 	}
 }

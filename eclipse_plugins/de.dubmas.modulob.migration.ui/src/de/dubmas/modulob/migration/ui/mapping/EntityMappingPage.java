@@ -373,8 +373,8 @@ public class EntityMappingPage extends AbstractWizardPage implements SelectionLi
 			 
 			execContext = ExeccontextFactory.eINSTANCE.createExecContext();
 			MigrationResult mr = (MigrationResult) slots.get(InvokeCompareAndTransform.MIGRATION_RESULT_KEY);
-			execContext.getSourceEntities().addAll(mr.getSourceEntities());
-			execContext.getDestinationEntities().addAll(mr.getDestinationEntities());
+			execContext.getSourceEntities().addAll(mr.getSource().getEntities());
+			execContext.getDestinationEntities().addAll(mr.getDestination().getEntities());
 			execContext.setMigration(mr.getMigration());
 			
 			pickNextEntityChange();
@@ -493,7 +493,7 @@ public class EntityMappingPage extends AbstractWizardPage implements SelectionLi
 					Entity entity   = execContext.getSourceEntities().get(index);
 					EntityChange ec = currentEntityChange();
 					ec.setSourceEntity(entity);
-				
+					ec.setDestinationEntity(execContext.getCurrentDestinationEntity());
 					/*
 				 	 * Show user features of currently selected source entity.
 				 	 */
@@ -512,6 +512,9 @@ public class EntityMappingPage extends AbstractWizardPage implements SelectionLi
 				if(currentFC != null){
 					currentFC.setSourceExpression(keyPath);
 				}
+				
+				EntityChange ec = currentEntityChange();
+				ec.setDestinationEntity(execContext.getCurrentDestinationEntity());
 			}
 		}
 		
