@@ -3,6 +3,7 @@ package de.dubmas.modulob.migration.services.impl;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
@@ -44,12 +45,11 @@ public class MigrationService implements IMigrationService {
 	public void createNewEntityModelVersionFile(IFile oldVersionFile, String newVersion) {
 		try {
 			EntityModel oldEM = loadEntityModelFromFile(oldVersionFile);
-			String oldVersion = oldEM.getVersion();
 			
 			/*
-			 * change file extension of old version's file
+			 * change file name of old version's file
 			 */
-			IPath destination = new Path(oldVersionFile.getFullPath() + "_v" + oldVersion);
+			IPath destination = newVersionPath(oldVersionFile, newVersion);
 			oldVersionFile.copy(destination, false, null);
 				
 			/*
@@ -60,7 +60,7 @@ public class MigrationService implements IMigrationService {
 				
 			ResourceSet xrs  = provider.get(oldVersionFile.getProject());	
 			XtextResource xr = (XtextResource) xrs.getResource(
-										URI.createPlatformResourceURI(oldVersionFile.getFullPath().toString(), true) , 
+										URI.createPlatformResourceURI(destination.toString(), true) , 
 														  			  true);
 			xr.getContents().set(0, newEM);
 				
@@ -137,5 +137,17 @@ public class MigrationService implements IMigrationService {
 		if(!original.equals(dummy)){
 			dummy.delete(true, null);
 		}
+	}
+	
+	private IPath newVersionPath(IFile oldVersionFile, String newVersion){
+		String newFileName = fileNameWithVersion(oldVersionFile, newVersion);
+		return oldVersionFile.getParent().getFullPath().append(newFileName + ".modat");
+	}
+	
+	private String fileNameWithVersion(IFile file, String version){
+		int index       = file.getName().lastIndexOf("_v");
+		String fileName = file.getName().substring(0, index);
+		
+		return fileName + "_v" + version;
 	}
 }
