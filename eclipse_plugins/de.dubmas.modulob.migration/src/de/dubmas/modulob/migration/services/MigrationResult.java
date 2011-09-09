@@ -1,19 +1,17 @@
 package de.dubmas.modulob.migration.services;
 
-import java.util.List;
-
-import de.dubmas.modulob.Entity;
 import de.dubmas.modulob.migration.Migration;
+import de.dubmas.modulob.system.EntityModel;
 
 public class MigrationResult {
-	private List<Entity> sourceEntities;
-	public List<Entity> getSourceEntities() {
-		return sourceEntities;
+	private EntityModel source;
+	public EntityModel getSource() {
+		return source;
 	}
 
-	private List<Entity> destinationEntities;
-	public List<Entity> getDestinationEntities() {
-		return destinationEntities;
+	private EntityModel destination;
+	public EntityModel getDestination() {
+		return destination;
 	}
 
 	private Migration migration;
@@ -21,12 +19,12 @@ public class MigrationResult {
 		return migration;
 	}
 	
-	public MigrationResult(List<Entity> sourceEntities,
-			List<Entity> destinationEntities,
+	public MigrationResult(EntityModel source,
+			EntityModel destination,
 			Migration migration) 
 	{
-		this.sourceEntities      = sourceEntities;
-		this.destinationEntities = destinationEntities;
-		this.migration           = migration;
+		this.source      = source;
+		this.destination = destination;
+		this.migration   = migration;
 	}
 }

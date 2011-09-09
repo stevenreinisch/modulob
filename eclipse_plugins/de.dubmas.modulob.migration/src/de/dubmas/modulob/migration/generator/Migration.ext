@@ -1,9 +1,32 @@
 import modulob;
+import system;
 import migration;
 
 extension de::dubmas::modulob::generator::templates::Types;
 extension de::dubmas::modulob::generator::templates::DataContainer;
 extension de::dubmas::modulob::generator::templates::coredata::CoreDataExtensions;
+extension org::eclipse::xtend::util::stdlib::io;
+
+migrationHeaderFilePath(EntityModel sourceModel, EntityModel destinationModel):
+	sourceModel.module.migrationHeaderDir() + migrationName(sourceModel, destinationModel) + ".h"
+;
+
+migrationImplFilePath(EntityModel sourceModel, EntityModel destinationModel):
+	sourceModel.module.migrationImplDir() + migrationName(sourceModel, destinationModel) + ".m"
+;
+
+private migrationHeaderDir(Module m):
+	m.name + "/public/"
+;
+
+private migrationImplDir(Module m):
+	m.name + "/private/"
+;
+
+migrationName(EntityModel sourceModel, EntityModel destinationModel):
+	sourceModel.module.name + sourceModel.version.versionIdentifier() + "To" +
+	destinationModel.module.name + destinationModel.version.versionIdentifier()
+;
 
 /*
  * Do not generate migration code for:
@@ -11,7 +34,8 @@ extension de::dubmas::modulob::generator::templates::coredata::CoreDataExtension
  * - EntityAdded if no sourceEntity is specified (=> there is no datasource specified)
  */
 relevantEntityChanges(List[EntityChange] allChanges):
-	allChanges.select(ec | !EntityRemoved.isInstance(ec) 
+	allChanges.select(ec | !EntityRemoved.isInstance(ec) && ec.sourceEntity != null
+							/*
 							&& 
 							(EntityAdded.isInstance(ec) 
 							 ?
@@ -19,11 +43,13 @@ relevantEntityChanges(List[EntityChange] allChanges):
 							 :
 							 true
 							)
+							*/
 					 )
 ;
 
 relevantAttributeChanges(EntityChange ec):
-	ec.attributeChanges.select(ac | !AttributeRemoved.isInstance(ac)
+	ec.attributeChanges.select(ac | !AttributeRemoved.isInstance(ac) && ac.sourceFeature != null
+									/*
 									&&
 									(AttributeAdded.isInstance(ac) 
 							 		?
@@ -31,11 +57,13 @@ relevantAttributeChanges(EntityChange ec):
 							 		:
 							 		true
 									)
+									*/
 							  )
 ;
 
 relevantRelationChanges(EntityChange ec):
-	ec.relationChanges.select(rc | !RelationRemoved.isInstance(rc)
+	ec.relationChanges.select(rc | !RelationRemoved.isInstance(rc) && rc.sourceFeature != null
+									/*
 									&&
 									(RelationAdded.isInstance(rc) 
 							 		?
@@ -43,6 +71,7 @@ relevantRelationChanges(EntityChange ec):
 							 		:
 							 		true
 									)
+									*/
 							  )
 ;
 
@@ -51,5 +80,5 @@ cached mappingName(EntityChange ec):
 ;
 
 cached mappingName(FeatureChange fc):
-	((EntityChange)fc.eContainer).sourceEntity.entityName() + fc.sourceFeature.name + "Mapping"
+	((EntityChange)fc.eContainer).destinationEntity.entityName() + fc.destinationFeature.name + "Mapping"
 ;

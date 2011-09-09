@@ -5,26 +5,26 @@
 «EXTENSION de::dubmas::modulob::generator::templates::DataContainer»
 «EXTENSION de::dubmas::modulob::generator::templates::coredata::CoreDataExtensions»
 
-«DEFINE main(Module oldModule) FOR Migration»
-	«EXPAND header(oldModule) FOR this»
-	«EXPAND impl(oldModule) FOR this»
+«DEFINE main(EntityModel sourceModel, EntityModel destinationModel) FOR Migration»
+	«EXPAND header(sourceModel, destinationModel) FOR this»
+	«EXPAND impl(sourceModel, destinationModel) FOR this»
 «ENDDEFINE»
 
-«DEFINE header(Module oldModule) FOR Migration»
-	«FILE oldModule.name + "Migration.h"»
+«DEFINE header(EntityModel sourceModel, EntityModel destinationModel) FOR Migration»
+	«FILE migrationHeaderFilePath(sourceModel, destinationModel)»
 	
 	#import "OBMigrationAbstractMigration.h"
 	
-	@interface «oldModule.name + "Migration"»: OBMigrationAbstractMigration{}
+	@interface «migrationName(sourceModel, destinationModel)»: OBMigrationAbstractMigration{}
 	@end
 «ENDFILE»
 «ENDDEFINE»
 
-«DEFINE impl(Module oldModule) FOR Migration»
-	«FILE oldModule.name + "Migration.m"»
-	#import "«oldModule.name + "Migration.h"»"
+«DEFINE impl(EntityModel sourceModel, EntityModel destinationModel) FOR Migration»
+	«FILE migrationImplFilePath(sourceModel, destinationModel)»
+	#import "«migrationName(sourceModel, destinationModel) + ".h"»"
 	
-	@implementation «oldModule.name + "Migration"»
+	@implementation «migrationName(sourceModel, destinationModel)»
 		
 		/*
 		 * @return: NSEntityMapping*[]
@@ -84,5 +84,5 @@
 «DEFINE propertyMapping FOR FeatureChange»
 	NSPropertyMapping *«this.mappingName()» = [[NSPropertyMapping new] autorelease];
 	[«this.mappingName()» setName:@"«this.destinationFeature.name»"];
-	[«this.mappingName()» setValueExpression:[NSExpression expressionForKeyPath:@"«this.sourceFeature.name»"]];
+	[«this.mappingName()» setValueExpression:[NSExpression expressionForKeyPath:@"«this.sourceExpression»"]];
 «ENDDEFINE»

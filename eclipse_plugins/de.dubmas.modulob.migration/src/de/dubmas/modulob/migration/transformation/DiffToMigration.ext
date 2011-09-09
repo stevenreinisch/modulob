@@ -9,6 +9,8 @@ extension org::eclipse::xtend::util::stdlib::io;
 extension de::dubmas::modulob::migration::transformation::DiffModelQueries;
 extension de::dubmas::modulob::migration::transformation::Helper;
 
+extension de::dubmas::modulob::generator::templates::DataContainer;
+
 /*
 	EMF Compare's diff model:
 	
@@ -84,7 +86,20 @@ create EntityRenamed this toEntityRenamed(UpdateAttribute ua, DiffModel diffMode
 ;
 
 create EntityAdded this toEntityAdded(ModelElementChangeLeftTarget change):
-	this.setDestinationEntity((Entity)change.leftElement)
+	let destEntity = (Entity)change.leftElement:
+		this.setDestinationEntity(destEntity) 
+		->
+		this.setAttributeChanges(destEntity.primitiveTypeFeatures().primitiveFeatureToAttributeAdded())
+		->
+		this.setRelationChanges(destEntity.entityFeatures().entityFeatureToRelationAdded())
+;
+
+create AttributeAdded this primitiveFeatureToAttributeAdded(Feature f):
+	this.setDestinationFeature(f)
+;
+
+create RelationAdded this entityFeatureToRelationAdded(Feature f):
+	this.setDestinationFeature(f)
 ;
 
 create EntityRemoved this toEntityRemoved(Entity removedEntity):

@@ -3,8 +3,10 @@ package de.dubmas.modulob.migration.services.impl;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IFolder;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
@@ -15,6 +17,10 @@ import org.eclipse.emf.compare.match.metamodel.MatchModel;
 import org.eclipse.emf.compare.match.service.MatchService;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.mwe2.runtime.workflow.IWorkflowContext;
+import org.eclipse.emf.mwe2.runtime.workflow.WorkflowContextImpl;
+import org.eclipse.xpand2.Generator;
+import org.eclipse.xpand2.output.Outlet;
 import org.eclipse.xtend.XtendFacade;
 import org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel;
 import org.eclipse.xtend.util.stdlib.CloningExtensions;
@@ -73,6 +79,7 @@ public class MigrationService implements IMigrationService {
 		}
 	}
 	
+	@Override
 	public MigrationResult createMigrationModel(IFile sourceFile, IFile destinationFile) {
 		 try {
 			 EntityModel source      = loadEntityModelFromFile(sourceFile);
@@ -88,11 +95,21 @@ public class MigrationService implements IMigrationService {
 			 XtendFacade xf = XtendFacade.create("de::dubmas::modulob::migration::transformation::DiffToMigration");
 			 xf.registerMetaModel(new EmfRegistryMetaModel());
 			 
+			 /*
+			  * We have to set Module->EntityModel because this is
+			  * not done by Xtext.
+			  */
 			 Module sourceModule = source.getModule();
 			 sourceModule.setEntityModel(source);
 			 
+			 Module destinationModule = destination.getModule();
+			 destinationModule.setEntityModel(destination);
+			 
+			 /*
+			  * Call the transformation
+			  */
 			 Migration migration = (Migration)xf.call("transform", diffModel, sourceModule);  
-			 MigrationResult mr  = new MigrationResult(source.getEntities(), destination.getEntities(), migration);
+			 MigrationResult mr  = new MigrationResult(source, destination, migration);
 			 
 			 return mr;
 			 
@@ -100,6 +117,39 @@ public class MigrationService implements IMigrationService {
 			 throw new RuntimeException(e);
 		 }
 	}
+	
+	@Override
+	public boolean generateMigration(EntityModel sourceModel, EntityModel destinationModel, Migration migration, IProject project){
+		try {
+			Generator gen = new Generator();
+			gen.addMetaModel(new EmfRegistryMetaModel());
+			gen.setExpand("de::dubmas::modulob::migration::generator::Main::main(source, destination) FOR migration");
+			
+			
+			IFolder srcGenFolder = (IFolder)project.findMember("src-gen");
+			String path = srcGenFolder.getLocation().toOSString();
+			
+			Outlet outlet = new Outlet();
+			outlet.setFileEncoding("UTF-8");
+			outlet.setPath(path);
+			gen.addOutlet(outlet);
+			
+			IWorkflowContext ctx = new WorkflowContextImpl();
+			ctx.put("source", sourceModel);
+			ctx.put("destination", destinationModel);
+			ctx.put("migration", migration);
+			gen.invoke(ctx);
+			
+			project.refreshLocal(IResource.DEPTH_INFINITE, null);
+			
+			return true;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
 	
 	private EntityModel loadEntityModelFromFile(IFile file) {
 		try {
