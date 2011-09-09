@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDataDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'persistency'", "'CoreData'", "'entities for module'", "'version'", "'entity'", "'{'", "'}'", "':'", "'@'", "'primitive type'", "'any type'", "';'", "'='", "'<->'", "'-'", "'.'", "'abstract'", "'indexed'", "'-['", "'[]'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'persistency'", "'CoreData'", "'entities for module'", "'version'", "'entity'", "'{'", "'}'", "':'", "'@'", "';'", "'='", "'<->'", "'primitive type'", "'any type'", "'-'", "'.'", "'abstract'", "'indexed'", "'-['", "'[]'"
     };
     public static final int RULE_ID=6;
     public static final int T__29=29;
@@ -321,21 +321,98 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleAnnotation"
 
 
+    // $ANTLR start "entryRuleFeature"
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:144:1: entryRuleFeature : ruleFeature EOF ;
+    public final void entryRuleFeature() throws RecognitionException {
+        try {
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:145:1: ( ruleFeature EOF )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:146:1: ruleFeature EOF
+            {
+             before(grammarAccess.getFeatureRule()); 
+            pushFollow(FOLLOW_ruleFeature_in_entryRuleFeature241);
+            ruleFeature();
+
+            state._fsp--;
+
+             after(grammarAccess.getFeatureRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFeature248); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleFeature"
+
+
+    // $ANTLR start "ruleFeature"
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:153:1: ruleFeature : ( ( rule__Feature__Group__0 ) ) ;
+    public final void ruleFeature() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:157:2: ( ( ( rule__Feature__Group__0 ) ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:158:1: ( ( rule__Feature__Group__0 ) )
+            {
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:158:1: ( ( rule__Feature__Group__0 ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:159:1: ( rule__Feature__Group__0 )
+            {
+             before(grammarAccess.getFeatureAccess().getGroup()); 
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:160:1: ( rule__Feature__Group__0 )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:160:2: rule__Feature__Group__0
+            {
+            pushFollow(FOLLOW_rule__Feature__Group__0_in_ruleFeature274);
+            rule__Feature__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getFeatureAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleFeature"
+
+
     // $ANTLR start "entryRulePrimitive"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:146:1: entryRulePrimitive : rulePrimitive EOF ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:174:1: entryRulePrimitive : rulePrimitive EOF ;
     public final void entryRulePrimitive() throws RecognitionException {
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:147:1: ( rulePrimitive EOF )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:148:1: rulePrimitive EOF
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:175:1: ( rulePrimitive EOF )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:176:1: rulePrimitive EOF
             {
              before(grammarAccess.getPrimitiveRule()); 
-            pushFollow(FOLLOW_rulePrimitive_in_entryRulePrimitive243);
+            pushFollow(FOLLOW_rulePrimitive_in_entryRulePrimitive303);
             rulePrimitive();
 
             state._fsp--;
 
              after(grammarAccess.getPrimitiveRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePrimitive250); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePrimitive310); 
 
             }
 
@@ -352,23 +429,23 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rulePrimitive"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:155:1: rulePrimitive : ( ( rule__Primitive__Group__0 ) ) ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:183:1: rulePrimitive : ( ( rule__Primitive__Group__0 ) ) ;
     public final void rulePrimitive() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:159:2: ( ( ( rule__Primitive__Group__0 ) ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:160:1: ( ( rule__Primitive__Group__0 ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:187:2: ( ( ( rule__Primitive__Group__0 ) ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:188:1: ( ( rule__Primitive__Group__0 ) )
             {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:160:1: ( ( rule__Primitive__Group__0 ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:161:1: ( rule__Primitive__Group__0 )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:188:1: ( ( rule__Primitive__Group__0 ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:189:1: ( rule__Primitive__Group__0 )
             {
              before(grammarAccess.getPrimitiveAccess().getGroup()); 
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:162:1: ( rule__Primitive__Group__0 )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:162:2: rule__Primitive__Group__0
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:190:1: ( rule__Primitive__Group__0 )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:190:2: rule__Primitive__Group__0
             {
-            pushFollow(FOLLOW_rule__Primitive__Group__0_in_rulePrimitive276);
+            pushFollow(FOLLOW_rule__Primitive__Group__0_in_rulePrimitive336);
             rule__Primitive__Group__0();
 
             state._fsp--;
@@ -399,20 +476,20 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleAny"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:174:1: entryRuleAny : ruleAny EOF ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:202:1: entryRuleAny : ruleAny EOF ;
     public final void entryRuleAny() throws RecognitionException {
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:175:1: ( ruleAny EOF )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:176:1: ruleAny EOF
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:203:1: ( ruleAny EOF )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:204:1: ruleAny EOF
             {
              before(grammarAccess.getAnyRule()); 
-            pushFollow(FOLLOW_ruleAny_in_entryRuleAny303);
+            pushFollow(FOLLOW_ruleAny_in_entryRuleAny363);
             ruleAny();
 
             state._fsp--;
 
              after(grammarAccess.getAnyRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAny310); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAny370); 
 
             }
 
@@ -429,23 +506,23 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleAny"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:183:1: ruleAny : ( ( rule__Any__Group__0 ) ) ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:211:1: ruleAny : ( ( rule__Any__Group__0 ) ) ;
     public final void ruleAny() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:187:2: ( ( ( rule__Any__Group__0 ) ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:188:1: ( ( rule__Any__Group__0 ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:215:2: ( ( ( rule__Any__Group__0 ) ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:216:1: ( ( rule__Any__Group__0 ) )
             {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:188:1: ( ( rule__Any__Group__0 ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:189:1: ( rule__Any__Group__0 )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:216:1: ( ( rule__Any__Group__0 ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:217:1: ( rule__Any__Group__0 )
             {
              before(grammarAccess.getAnyAccess().getGroup()); 
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:190:1: ( rule__Any__Group__0 )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:190:2: rule__Any__Group__0
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:218:1: ( rule__Any__Group__0 )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:218:2: rule__Any__Group__0
             {
-            pushFollow(FOLLOW_rule__Any__Group__0_in_ruleAny336);
+            pushFollow(FOLLOW_rule__Any__Group__0_in_ruleAny396);
             rule__Any__Group__0();
 
             state._fsp--;
@@ -473,83 +550,6 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
         return ;
     }
     // $ANTLR end "ruleAny"
-
-
-    // $ANTLR start "entryRuleFeature"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:202:1: entryRuleFeature : ruleFeature EOF ;
-    public final void entryRuleFeature() throws RecognitionException {
-        try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:203:1: ( ruleFeature EOF )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:204:1: ruleFeature EOF
-            {
-             before(grammarAccess.getFeatureRule()); 
-            pushFollow(FOLLOW_ruleFeature_in_entryRuleFeature363);
-            ruleFeature();
-
-            state._fsp--;
-
-             after(grammarAccess.getFeatureRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFeature370); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleFeature"
-
-
-    // $ANTLR start "ruleFeature"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:211:1: ruleFeature : ( ( rule__Feature__Group__0 ) ) ;
-    public final void ruleFeature() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:215:2: ( ( ( rule__Feature__Group__0 ) ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:216:1: ( ( rule__Feature__Group__0 ) )
-            {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:216:1: ( ( rule__Feature__Group__0 ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:217:1: ( rule__Feature__Group__0 )
-            {
-             before(grammarAccess.getFeatureAccess().getGroup()); 
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:218:1: ( rule__Feature__Group__0 )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:218:2: rule__Feature__Group__0
-            {
-            pushFollow(FOLLOW_rule__Feature__Group__0_in_ruleFeature396);
-            rule__Feature__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getFeatureAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleFeature"
 
 
     // $ANTLR start "entryRuleTypeRef"
@@ -1333,7 +1333,7 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
                 if ( (LA1_2==26) ) {
                     alt1=3;
                 }
-                else if ( (LA1_2==EOF||LA1_2==RULE_ID||LA1_2==17||LA1_2==22||LA1_2==24||(LA1_2>=28 && LA1_2<=29)) ) {
+                else if ( (LA1_2==EOF||LA1_2==RULE_ID||LA1_2==17||LA1_2==20||LA1_2==22||(LA1_2>=28 && LA1_2<=29)) ) {
                     alt1=2;
                 }
                 else {
@@ -3114,332 +3114,22 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Annotation__Group_2__1__Impl"
 
 
-    // $ANTLR start "rule__Primitive__Group__0"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1184:1: rule__Primitive__Group__0 : rule__Primitive__Group__0__Impl rule__Primitive__Group__1 ;
-    public final void rule__Primitive__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1188:1: ( rule__Primitive__Group__0__Impl rule__Primitive__Group__1 )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1189:2: rule__Primitive__Group__0__Impl rule__Primitive__Group__1
-            {
-            pushFollow(FOLLOW_rule__Primitive__Group__0__Impl_in_rule__Primitive__Group__02360);
-            rule__Primitive__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Primitive__Group__1_in_rule__Primitive__Group__02363);
-            rule__Primitive__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Primitive__Group__0"
-
-
-    // $ANTLR start "rule__Primitive__Group__0__Impl"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1196:1: rule__Primitive__Group__0__Impl : ( 'primitive type' ) ;
-    public final void rule__Primitive__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1200:1: ( ( 'primitive type' ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1201:1: ( 'primitive type' )
-            {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1201:1: ( 'primitive type' )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1202:1: 'primitive type'
-            {
-             before(grammarAccess.getPrimitiveAccess().getPrimitiveTypeKeyword_0()); 
-            match(input,20,FOLLOW_20_in_rule__Primitive__Group__0__Impl2391); 
-             after(grammarAccess.getPrimitiveAccess().getPrimitiveTypeKeyword_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Primitive__Group__0__Impl"
-
-
-    // $ANTLR start "rule__Primitive__Group__1"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1215:1: rule__Primitive__Group__1 : rule__Primitive__Group__1__Impl ;
-    public final void rule__Primitive__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1219:1: ( rule__Primitive__Group__1__Impl )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1220:2: rule__Primitive__Group__1__Impl
-            {
-            pushFollow(FOLLOW_rule__Primitive__Group__1__Impl_in_rule__Primitive__Group__12422);
-            rule__Primitive__Group__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Primitive__Group__1"
-
-
-    // $ANTLR start "rule__Primitive__Group__1__Impl"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1226:1: rule__Primitive__Group__1__Impl : ( ( rule__Primitive__NameAssignment_1 ) ) ;
-    public final void rule__Primitive__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1230:1: ( ( ( rule__Primitive__NameAssignment_1 ) ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1231:1: ( ( rule__Primitive__NameAssignment_1 ) )
-            {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1231:1: ( ( rule__Primitive__NameAssignment_1 ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1232:1: ( rule__Primitive__NameAssignment_1 )
-            {
-             before(grammarAccess.getPrimitiveAccess().getNameAssignment_1()); 
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1233:1: ( rule__Primitive__NameAssignment_1 )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1233:2: rule__Primitive__NameAssignment_1
-            {
-            pushFollow(FOLLOW_rule__Primitive__NameAssignment_1_in_rule__Primitive__Group__1__Impl2449);
-            rule__Primitive__NameAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getPrimitiveAccess().getNameAssignment_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Primitive__Group__1__Impl"
-
-
-    // $ANTLR start "rule__Any__Group__0"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1247:1: rule__Any__Group__0 : rule__Any__Group__0__Impl rule__Any__Group__1 ;
-    public final void rule__Any__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1251:1: ( rule__Any__Group__0__Impl rule__Any__Group__1 )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1252:2: rule__Any__Group__0__Impl rule__Any__Group__1
-            {
-            pushFollow(FOLLOW_rule__Any__Group__0__Impl_in_rule__Any__Group__02483);
-            rule__Any__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Any__Group__1_in_rule__Any__Group__02486);
-            rule__Any__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Any__Group__0"
-
-
-    // $ANTLR start "rule__Any__Group__0__Impl"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1259:1: rule__Any__Group__0__Impl : ( 'any type' ) ;
-    public final void rule__Any__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1263:1: ( ( 'any type' ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1264:1: ( 'any type' )
-            {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1264:1: ( 'any type' )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1265:1: 'any type'
-            {
-             before(grammarAccess.getAnyAccess().getAnyTypeKeyword_0()); 
-            match(input,21,FOLLOW_21_in_rule__Any__Group__0__Impl2514); 
-             after(grammarAccess.getAnyAccess().getAnyTypeKeyword_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Any__Group__0__Impl"
-
-
-    // $ANTLR start "rule__Any__Group__1"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1278:1: rule__Any__Group__1 : rule__Any__Group__1__Impl ;
-    public final void rule__Any__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1282:1: ( rule__Any__Group__1__Impl )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1283:2: rule__Any__Group__1__Impl
-            {
-            pushFollow(FOLLOW_rule__Any__Group__1__Impl_in_rule__Any__Group__12545);
-            rule__Any__Group__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Any__Group__1"
-
-
-    // $ANTLR start "rule__Any__Group__1__Impl"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1289:1: rule__Any__Group__1__Impl : ( ( rule__Any__NameAssignment_1 ) ) ;
-    public final void rule__Any__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1293:1: ( ( ( rule__Any__NameAssignment_1 ) ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1294:1: ( ( rule__Any__NameAssignment_1 ) )
-            {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1294:1: ( ( rule__Any__NameAssignment_1 ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1295:1: ( rule__Any__NameAssignment_1 )
-            {
-             before(grammarAccess.getAnyAccess().getNameAssignment_1()); 
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1296:1: ( rule__Any__NameAssignment_1 )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1296:2: rule__Any__NameAssignment_1
-            {
-            pushFollow(FOLLOW_rule__Any__NameAssignment_1_in_rule__Any__Group__1__Impl2572);
-            rule__Any__NameAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getAnyAccess().getNameAssignment_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Any__Group__1__Impl"
-
-
     // $ANTLR start "rule__Feature__Group__0"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1310:1: rule__Feature__Group__0 : rule__Feature__Group__0__Impl rule__Feature__Group__1 ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1183:1: rule__Feature__Group__0 : rule__Feature__Group__0__Impl rule__Feature__Group__1 ;
     public final void rule__Feature__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1314:1: ( rule__Feature__Group__0__Impl rule__Feature__Group__1 )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1315:2: rule__Feature__Group__0__Impl rule__Feature__Group__1
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1187:1: ( rule__Feature__Group__0__Impl rule__Feature__Group__1 )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1188:2: rule__Feature__Group__0__Impl rule__Feature__Group__1
             {
-            pushFollow(FOLLOW_rule__Feature__Group__0__Impl_in_rule__Feature__Group__02606);
+            pushFollow(FOLLOW_rule__Feature__Group__0__Impl_in_rule__Feature__Group__02359);
             rule__Feature__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Feature__Group__1_in_rule__Feature__Group__02609);
+            pushFollow(FOLLOW_rule__Feature__Group__1_in_rule__Feature__Group__02362);
             rule__Feature__Group__1();
 
             state._fsp--;
@@ -3463,20 +3153,20 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__Group__0__Impl"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1322:1: rule__Feature__Group__0__Impl : ( ( rule__Feature__IsIndexedAssignment_0 )? ) ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1195:1: rule__Feature__Group__0__Impl : ( ( rule__Feature__IsIndexedAssignment_0 )? ) ;
     public final void rule__Feature__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1326:1: ( ( ( rule__Feature__IsIndexedAssignment_0 )? ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1327:1: ( ( rule__Feature__IsIndexedAssignment_0 )? )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1199:1: ( ( ( rule__Feature__IsIndexedAssignment_0 )? ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1200:1: ( ( rule__Feature__IsIndexedAssignment_0 )? )
             {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1327:1: ( ( rule__Feature__IsIndexedAssignment_0 )? )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1328:1: ( rule__Feature__IsIndexedAssignment_0 )?
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1200:1: ( ( rule__Feature__IsIndexedAssignment_0 )? )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1201:1: ( rule__Feature__IsIndexedAssignment_0 )?
             {
              before(grammarAccess.getFeatureAccess().getIsIndexedAssignment_0()); 
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1329:1: ( rule__Feature__IsIndexedAssignment_0 )?
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1202:1: ( rule__Feature__IsIndexedAssignment_0 )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -3485,9 +3175,9 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
             }
             switch (alt8) {
                 case 1 :
-                    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1329:2: rule__Feature__IsIndexedAssignment_0
+                    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1202:2: rule__Feature__IsIndexedAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__Feature__IsIndexedAssignment_0_in_rule__Feature__Group__0__Impl2636);
+                    pushFollow(FOLLOW_rule__Feature__IsIndexedAssignment_0_in_rule__Feature__Group__0__Impl2389);
                     rule__Feature__IsIndexedAssignment_0();
 
                     state._fsp--;
@@ -3521,21 +3211,21 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__Group__1"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1339:1: rule__Feature__Group__1 : rule__Feature__Group__1__Impl rule__Feature__Group__2 ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1212:1: rule__Feature__Group__1 : rule__Feature__Group__1__Impl rule__Feature__Group__2 ;
     public final void rule__Feature__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1343:1: ( rule__Feature__Group__1__Impl rule__Feature__Group__2 )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1344:2: rule__Feature__Group__1__Impl rule__Feature__Group__2
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1216:1: ( rule__Feature__Group__1__Impl rule__Feature__Group__2 )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1217:2: rule__Feature__Group__1__Impl rule__Feature__Group__2
             {
-            pushFollow(FOLLOW_rule__Feature__Group__1__Impl_in_rule__Feature__Group__12667);
+            pushFollow(FOLLOW_rule__Feature__Group__1__Impl_in_rule__Feature__Group__12420);
             rule__Feature__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Feature__Group__2_in_rule__Feature__Group__12670);
+            pushFollow(FOLLOW_rule__Feature__Group__2_in_rule__Feature__Group__12423);
             rule__Feature__Group__2();
 
             state._fsp--;
@@ -3559,20 +3249,20 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__Group__1__Impl"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1351:1: rule__Feature__Group__1__Impl : ( ( rule__Feature__IsContainmentAssignment_1 )? ) ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1224:1: rule__Feature__Group__1__Impl : ( ( rule__Feature__IsContainmentAssignment_1 )? ) ;
     public final void rule__Feature__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1355:1: ( ( ( rule__Feature__IsContainmentAssignment_1 )? ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1356:1: ( ( rule__Feature__IsContainmentAssignment_1 )? )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1228:1: ( ( ( rule__Feature__IsContainmentAssignment_1 )? ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1229:1: ( ( rule__Feature__IsContainmentAssignment_1 )? )
             {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1356:1: ( ( rule__Feature__IsContainmentAssignment_1 )? )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1357:1: ( rule__Feature__IsContainmentAssignment_1 )?
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1229:1: ( ( rule__Feature__IsContainmentAssignment_1 )? )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1230:1: ( rule__Feature__IsContainmentAssignment_1 )?
             {
              before(grammarAccess.getFeatureAccess().getIsContainmentAssignment_1()); 
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1358:1: ( rule__Feature__IsContainmentAssignment_1 )?
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1231:1: ( rule__Feature__IsContainmentAssignment_1 )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -3581,9 +3271,9 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
             }
             switch (alt9) {
                 case 1 :
-                    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1358:2: rule__Feature__IsContainmentAssignment_1
+                    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1231:2: rule__Feature__IsContainmentAssignment_1
                     {
-                    pushFollow(FOLLOW_rule__Feature__IsContainmentAssignment_1_in_rule__Feature__Group__1__Impl2697);
+                    pushFollow(FOLLOW_rule__Feature__IsContainmentAssignment_1_in_rule__Feature__Group__1__Impl2450);
                     rule__Feature__IsContainmentAssignment_1();
 
                     state._fsp--;
@@ -3617,21 +3307,21 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__Group__2"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1368:1: rule__Feature__Group__2 : rule__Feature__Group__2__Impl rule__Feature__Group__3 ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1241:1: rule__Feature__Group__2 : rule__Feature__Group__2__Impl rule__Feature__Group__3 ;
     public final void rule__Feature__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1372:1: ( rule__Feature__Group__2__Impl rule__Feature__Group__3 )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1373:2: rule__Feature__Group__2__Impl rule__Feature__Group__3
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1245:1: ( rule__Feature__Group__2__Impl rule__Feature__Group__3 )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1246:2: rule__Feature__Group__2__Impl rule__Feature__Group__3
             {
-            pushFollow(FOLLOW_rule__Feature__Group__2__Impl_in_rule__Feature__Group__22728);
+            pushFollow(FOLLOW_rule__Feature__Group__2__Impl_in_rule__Feature__Group__22481);
             rule__Feature__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Feature__Group__3_in_rule__Feature__Group__22731);
+            pushFollow(FOLLOW_rule__Feature__Group__3_in_rule__Feature__Group__22484);
             rule__Feature__Group__3();
 
             state._fsp--;
@@ -3655,23 +3345,23 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__Group__2__Impl"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1380:1: rule__Feature__Group__2__Impl : ( ( rule__Feature__TypeAssignment_2 ) ) ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1253:1: rule__Feature__Group__2__Impl : ( ( rule__Feature__TypeAssignment_2 ) ) ;
     public final void rule__Feature__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1384:1: ( ( ( rule__Feature__TypeAssignment_2 ) ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1385:1: ( ( rule__Feature__TypeAssignment_2 ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1257:1: ( ( ( rule__Feature__TypeAssignment_2 ) ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1258:1: ( ( rule__Feature__TypeAssignment_2 ) )
             {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1385:1: ( ( rule__Feature__TypeAssignment_2 ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1386:1: ( rule__Feature__TypeAssignment_2 )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1258:1: ( ( rule__Feature__TypeAssignment_2 ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1259:1: ( rule__Feature__TypeAssignment_2 )
             {
              before(grammarAccess.getFeatureAccess().getTypeAssignment_2()); 
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1387:1: ( rule__Feature__TypeAssignment_2 )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1387:2: rule__Feature__TypeAssignment_2
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1260:1: ( rule__Feature__TypeAssignment_2 )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1260:2: rule__Feature__TypeAssignment_2
             {
-            pushFollow(FOLLOW_rule__Feature__TypeAssignment_2_in_rule__Feature__Group__2__Impl2758);
+            pushFollow(FOLLOW_rule__Feature__TypeAssignment_2_in_rule__Feature__Group__2__Impl2511);
             rule__Feature__TypeAssignment_2();
 
             state._fsp--;
@@ -3702,21 +3392,21 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__Group__3"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1397:1: rule__Feature__Group__3 : rule__Feature__Group__3__Impl rule__Feature__Group__4 ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1270:1: rule__Feature__Group__3 : rule__Feature__Group__3__Impl rule__Feature__Group__4 ;
     public final void rule__Feature__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1401:1: ( rule__Feature__Group__3__Impl rule__Feature__Group__4 )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1402:2: rule__Feature__Group__3__Impl rule__Feature__Group__4
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1274:1: ( rule__Feature__Group__3__Impl rule__Feature__Group__4 )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1275:2: rule__Feature__Group__3__Impl rule__Feature__Group__4
             {
-            pushFollow(FOLLOW_rule__Feature__Group__3__Impl_in_rule__Feature__Group__32788);
+            pushFollow(FOLLOW_rule__Feature__Group__3__Impl_in_rule__Feature__Group__32541);
             rule__Feature__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Feature__Group__4_in_rule__Feature__Group__32791);
+            pushFollow(FOLLOW_rule__Feature__Group__4_in_rule__Feature__Group__32544);
             rule__Feature__Group__4();
 
             state._fsp--;
@@ -3740,23 +3430,23 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__Group__3__Impl"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1409:1: rule__Feature__Group__3__Impl : ( ( rule__Feature__NameAssignment_3 ) ) ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1282:1: rule__Feature__Group__3__Impl : ( ( rule__Feature__NameAssignment_3 ) ) ;
     public final void rule__Feature__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1413:1: ( ( ( rule__Feature__NameAssignment_3 ) ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1414:1: ( ( rule__Feature__NameAssignment_3 ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1286:1: ( ( ( rule__Feature__NameAssignment_3 ) ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1287:1: ( ( rule__Feature__NameAssignment_3 ) )
             {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1414:1: ( ( rule__Feature__NameAssignment_3 ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1415:1: ( rule__Feature__NameAssignment_3 )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1287:1: ( ( rule__Feature__NameAssignment_3 ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1288:1: ( rule__Feature__NameAssignment_3 )
             {
              before(grammarAccess.getFeatureAccess().getNameAssignment_3()); 
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1416:1: ( rule__Feature__NameAssignment_3 )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1416:2: rule__Feature__NameAssignment_3
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1289:1: ( rule__Feature__NameAssignment_3 )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1289:2: rule__Feature__NameAssignment_3
             {
-            pushFollow(FOLLOW_rule__Feature__NameAssignment_3_in_rule__Feature__Group__3__Impl2818);
+            pushFollow(FOLLOW_rule__Feature__NameAssignment_3_in_rule__Feature__Group__3__Impl2571);
             rule__Feature__NameAssignment_3();
 
             state._fsp--;
@@ -3787,21 +3477,21 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__Group__4"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1426:1: rule__Feature__Group__4 : rule__Feature__Group__4__Impl rule__Feature__Group__5 ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1299:1: rule__Feature__Group__4 : rule__Feature__Group__4__Impl rule__Feature__Group__5 ;
     public final void rule__Feature__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1430:1: ( rule__Feature__Group__4__Impl rule__Feature__Group__5 )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1431:2: rule__Feature__Group__4__Impl rule__Feature__Group__5
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1303:1: ( rule__Feature__Group__4__Impl rule__Feature__Group__5 )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1304:2: rule__Feature__Group__4__Impl rule__Feature__Group__5
             {
-            pushFollow(FOLLOW_rule__Feature__Group__4__Impl_in_rule__Feature__Group__42848);
+            pushFollow(FOLLOW_rule__Feature__Group__4__Impl_in_rule__Feature__Group__42601);
             rule__Feature__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Feature__Group__5_in_rule__Feature__Group__42851);
+            pushFollow(FOLLOW_rule__Feature__Group__5_in_rule__Feature__Group__42604);
             rule__Feature__Group__5();
 
             state._fsp--;
@@ -3825,31 +3515,31 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__Group__4__Impl"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1438:1: rule__Feature__Group__4__Impl : ( ( rule__Feature__Group_4__0 )? ) ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1311:1: rule__Feature__Group__4__Impl : ( ( rule__Feature__Group_4__0 )? ) ;
     public final void rule__Feature__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1442:1: ( ( ( rule__Feature__Group_4__0 )? ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1443:1: ( ( rule__Feature__Group_4__0 )? )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1315:1: ( ( ( rule__Feature__Group_4__0 )? ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1316:1: ( ( rule__Feature__Group_4__0 )? )
             {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1443:1: ( ( rule__Feature__Group_4__0 )? )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1444:1: ( rule__Feature__Group_4__0 )?
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1316:1: ( ( rule__Feature__Group_4__0 )? )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1317:1: ( rule__Feature__Group_4__0 )?
             {
              before(grammarAccess.getFeatureAccess().getGroup_4()); 
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1445:1: ( rule__Feature__Group_4__0 )?
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1318:1: ( rule__Feature__Group_4__0 )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
-            if ( (LA10_0==23) ) {
+            if ( (LA10_0==21) ) {
                 alt10=1;
             }
             switch (alt10) {
                 case 1 :
-                    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1445:2: rule__Feature__Group_4__0
+                    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1318:2: rule__Feature__Group_4__0
                     {
-                    pushFollow(FOLLOW_rule__Feature__Group_4__0_in_rule__Feature__Group__4__Impl2878);
+                    pushFollow(FOLLOW_rule__Feature__Group_4__0_in_rule__Feature__Group__4__Impl2631);
                     rule__Feature__Group_4__0();
 
                     state._fsp--;
@@ -3883,21 +3573,21 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__Group__5"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1455:1: rule__Feature__Group__5 : rule__Feature__Group__5__Impl rule__Feature__Group__6 ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1328:1: rule__Feature__Group__5 : rule__Feature__Group__5__Impl rule__Feature__Group__6 ;
     public final void rule__Feature__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1459:1: ( rule__Feature__Group__5__Impl rule__Feature__Group__6 )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1460:2: rule__Feature__Group__5__Impl rule__Feature__Group__6
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1332:1: ( rule__Feature__Group__5__Impl rule__Feature__Group__6 )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1333:2: rule__Feature__Group__5__Impl rule__Feature__Group__6
             {
-            pushFollow(FOLLOW_rule__Feature__Group__5__Impl_in_rule__Feature__Group__52909);
+            pushFollow(FOLLOW_rule__Feature__Group__5__Impl_in_rule__Feature__Group__52662);
             rule__Feature__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Feature__Group__6_in_rule__Feature__Group__52912);
+            pushFollow(FOLLOW_rule__Feature__Group__6_in_rule__Feature__Group__52665);
             rule__Feature__Group__6();
 
             state._fsp--;
@@ -3921,31 +3611,31 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__Group__5__Impl"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1467:1: rule__Feature__Group__5__Impl : ( ( rule__Feature__Group_5__0 )? ) ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1340:1: rule__Feature__Group__5__Impl : ( ( rule__Feature__Group_5__0 )? ) ;
     public final void rule__Feature__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1471:1: ( ( ( rule__Feature__Group_5__0 )? ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1472:1: ( ( rule__Feature__Group_5__0 )? )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1344:1: ( ( ( rule__Feature__Group_5__0 )? ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1345:1: ( ( rule__Feature__Group_5__0 )? )
             {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1472:1: ( ( rule__Feature__Group_5__0 )? )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1473:1: ( rule__Feature__Group_5__0 )?
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1345:1: ( ( rule__Feature__Group_5__0 )? )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1346:1: ( rule__Feature__Group_5__0 )?
             {
              before(grammarAccess.getFeatureAccess().getGroup_5()); 
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1474:1: ( rule__Feature__Group_5__0 )?
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1347:1: ( rule__Feature__Group_5__0 )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
-            if ( (LA11_0==24) ) {
+            if ( (LA11_0==22) ) {
                 alt11=1;
             }
             switch (alt11) {
                 case 1 :
-                    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1474:2: rule__Feature__Group_5__0
+                    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1347:2: rule__Feature__Group_5__0
                     {
-                    pushFollow(FOLLOW_rule__Feature__Group_5__0_in_rule__Feature__Group__5__Impl2939);
+                    pushFollow(FOLLOW_rule__Feature__Group_5__0_in_rule__Feature__Group__5__Impl2692);
                     rule__Feature__Group_5__0();
 
                     state._fsp--;
@@ -3979,16 +3669,16 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__Group__6"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1484:1: rule__Feature__Group__6 : rule__Feature__Group__6__Impl ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1357:1: rule__Feature__Group__6 : rule__Feature__Group__6__Impl ;
     public final void rule__Feature__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1488:1: ( rule__Feature__Group__6__Impl )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1489:2: rule__Feature__Group__6__Impl
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1361:1: ( rule__Feature__Group__6__Impl )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1362:2: rule__Feature__Group__6__Impl
             {
-            pushFollow(FOLLOW_rule__Feature__Group__6__Impl_in_rule__Feature__Group__62970);
+            pushFollow(FOLLOW_rule__Feature__Group__6__Impl_in_rule__Feature__Group__62723);
             rule__Feature__Group__6__Impl();
 
             state._fsp--;
@@ -4012,31 +3702,31 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__Group__6__Impl"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1495:1: rule__Feature__Group__6__Impl : ( ( ';' )? ) ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1368:1: rule__Feature__Group__6__Impl : ( ( ';' )? ) ;
     public final void rule__Feature__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1499:1: ( ( ( ';' )? ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1500:1: ( ( ';' )? )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1372:1: ( ( ( ';' )? ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1373:1: ( ( ';' )? )
             {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1500:1: ( ( ';' )? )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1501:1: ( ';' )?
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1373:1: ( ( ';' )? )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1374:1: ( ';' )?
             {
              before(grammarAccess.getFeatureAccess().getSemicolonKeyword_6()); 
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1502:1: ( ';' )?
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1375:1: ( ';' )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
-            if ( (LA12_0==22) ) {
+            if ( (LA12_0==20) ) {
                 alt12=1;
             }
             switch (alt12) {
                 case 1 :
-                    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1503:2: ';'
+                    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1376:2: ';'
                     {
-                    match(input,22,FOLLOW_22_in_rule__Feature__Group__6__Impl2999); 
+                    match(input,20,FOLLOW_20_in_rule__Feature__Group__6__Impl2752); 
 
                     }
                     break;
@@ -4066,21 +3756,21 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__Group_4__0"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1528:1: rule__Feature__Group_4__0 : rule__Feature__Group_4__0__Impl rule__Feature__Group_4__1 ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1401:1: rule__Feature__Group_4__0 : rule__Feature__Group_4__0__Impl rule__Feature__Group_4__1 ;
     public final void rule__Feature__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1532:1: ( rule__Feature__Group_4__0__Impl rule__Feature__Group_4__1 )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1533:2: rule__Feature__Group_4__0__Impl rule__Feature__Group_4__1
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1405:1: ( rule__Feature__Group_4__0__Impl rule__Feature__Group_4__1 )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1406:2: rule__Feature__Group_4__0__Impl rule__Feature__Group_4__1
             {
-            pushFollow(FOLLOW_rule__Feature__Group_4__0__Impl_in_rule__Feature__Group_4__03046);
+            pushFollow(FOLLOW_rule__Feature__Group_4__0__Impl_in_rule__Feature__Group_4__02799);
             rule__Feature__Group_4__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Feature__Group_4__1_in_rule__Feature__Group_4__03049);
+            pushFollow(FOLLOW_rule__Feature__Group_4__1_in_rule__Feature__Group_4__02802);
             rule__Feature__Group_4__1();
 
             state._fsp--;
@@ -4104,20 +3794,20 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__Group_4__0__Impl"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1540:1: rule__Feature__Group_4__0__Impl : ( '=' ) ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1413:1: rule__Feature__Group_4__0__Impl : ( '=' ) ;
     public final void rule__Feature__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1544:1: ( ( '=' ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1545:1: ( '=' )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1417:1: ( ( '=' ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1418:1: ( '=' )
             {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1545:1: ( '=' )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1546:1: '='
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1418:1: ( '=' )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1419:1: '='
             {
              before(grammarAccess.getFeatureAccess().getEqualsSignKeyword_4_0()); 
-            match(input,23,FOLLOW_23_in_rule__Feature__Group_4__0__Impl3077); 
+            match(input,21,FOLLOW_21_in_rule__Feature__Group_4__0__Impl2830); 
              after(grammarAccess.getFeatureAccess().getEqualsSignKeyword_4_0()); 
 
             }
@@ -4141,16 +3831,16 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__Group_4__1"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1559:1: rule__Feature__Group_4__1 : rule__Feature__Group_4__1__Impl ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1432:1: rule__Feature__Group_4__1 : rule__Feature__Group_4__1__Impl ;
     public final void rule__Feature__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1563:1: ( rule__Feature__Group_4__1__Impl )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1564:2: rule__Feature__Group_4__1__Impl
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1436:1: ( rule__Feature__Group_4__1__Impl )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1437:2: rule__Feature__Group_4__1__Impl
             {
-            pushFollow(FOLLOW_rule__Feature__Group_4__1__Impl_in_rule__Feature__Group_4__13108);
+            pushFollow(FOLLOW_rule__Feature__Group_4__1__Impl_in_rule__Feature__Group_4__12861);
             rule__Feature__Group_4__1__Impl();
 
             state._fsp--;
@@ -4174,23 +3864,23 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__Group_4__1__Impl"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1570:1: rule__Feature__Group_4__1__Impl : ( ( rule__Feature__DefaultValueAssignment_4_1 ) ) ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1443:1: rule__Feature__Group_4__1__Impl : ( ( rule__Feature__DefaultValueAssignment_4_1 ) ) ;
     public final void rule__Feature__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1574:1: ( ( ( rule__Feature__DefaultValueAssignment_4_1 ) ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1575:1: ( ( rule__Feature__DefaultValueAssignment_4_1 ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1447:1: ( ( ( rule__Feature__DefaultValueAssignment_4_1 ) ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1448:1: ( ( rule__Feature__DefaultValueAssignment_4_1 ) )
             {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1575:1: ( ( rule__Feature__DefaultValueAssignment_4_1 ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1576:1: ( rule__Feature__DefaultValueAssignment_4_1 )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1448:1: ( ( rule__Feature__DefaultValueAssignment_4_1 ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1449:1: ( rule__Feature__DefaultValueAssignment_4_1 )
             {
              before(grammarAccess.getFeatureAccess().getDefaultValueAssignment_4_1()); 
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1577:1: ( rule__Feature__DefaultValueAssignment_4_1 )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1577:2: rule__Feature__DefaultValueAssignment_4_1
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1450:1: ( rule__Feature__DefaultValueAssignment_4_1 )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1450:2: rule__Feature__DefaultValueAssignment_4_1
             {
-            pushFollow(FOLLOW_rule__Feature__DefaultValueAssignment_4_1_in_rule__Feature__Group_4__1__Impl3135);
+            pushFollow(FOLLOW_rule__Feature__DefaultValueAssignment_4_1_in_rule__Feature__Group_4__1__Impl2888);
             rule__Feature__DefaultValueAssignment_4_1();
 
             state._fsp--;
@@ -4221,21 +3911,21 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__Group_5__0"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1591:1: rule__Feature__Group_5__0 : rule__Feature__Group_5__0__Impl rule__Feature__Group_5__1 ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1464:1: rule__Feature__Group_5__0 : rule__Feature__Group_5__0__Impl rule__Feature__Group_5__1 ;
     public final void rule__Feature__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1595:1: ( rule__Feature__Group_5__0__Impl rule__Feature__Group_5__1 )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1596:2: rule__Feature__Group_5__0__Impl rule__Feature__Group_5__1
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1468:1: ( rule__Feature__Group_5__0__Impl rule__Feature__Group_5__1 )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1469:2: rule__Feature__Group_5__0__Impl rule__Feature__Group_5__1
             {
-            pushFollow(FOLLOW_rule__Feature__Group_5__0__Impl_in_rule__Feature__Group_5__03169);
+            pushFollow(FOLLOW_rule__Feature__Group_5__0__Impl_in_rule__Feature__Group_5__02922);
             rule__Feature__Group_5__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Feature__Group_5__1_in_rule__Feature__Group_5__03172);
+            pushFollow(FOLLOW_rule__Feature__Group_5__1_in_rule__Feature__Group_5__02925);
             rule__Feature__Group_5__1();
 
             state._fsp--;
@@ -4259,20 +3949,20 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__Group_5__0__Impl"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1603:1: rule__Feature__Group_5__0__Impl : ( '<->' ) ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1476:1: rule__Feature__Group_5__0__Impl : ( '<->' ) ;
     public final void rule__Feature__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1607:1: ( ( '<->' ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1608:1: ( '<->' )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1480:1: ( ( '<->' ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1481:1: ( '<->' )
             {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1608:1: ( '<->' )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1609:1: '<->'
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1481:1: ( '<->' )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1482:1: '<->'
             {
              before(grammarAccess.getFeatureAccess().getLessThanSignHyphenMinusGreaterThanSignKeyword_5_0()); 
-            match(input,24,FOLLOW_24_in_rule__Feature__Group_5__0__Impl3200); 
+            match(input,22,FOLLOW_22_in_rule__Feature__Group_5__0__Impl2953); 
              after(grammarAccess.getFeatureAccess().getLessThanSignHyphenMinusGreaterThanSignKeyword_5_0()); 
 
             }
@@ -4296,16 +3986,16 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__Group_5__1"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1622:1: rule__Feature__Group_5__1 : rule__Feature__Group_5__1__Impl ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1495:1: rule__Feature__Group_5__1 : rule__Feature__Group_5__1__Impl ;
     public final void rule__Feature__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1626:1: ( rule__Feature__Group_5__1__Impl )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1627:2: rule__Feature__Group_5__1__Impl
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1499:1: ( rule__Feature__Group_5__1__Impl )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1500:2: rule__Feature__Group_5__1__Impl
             {
-            pushFollow(FOLLOW_rule__Feature__Group_5__1__Impl_in_rule__Feature__Group_5__13231);
+            pushFollow(FOLLOW_rule__Feature__Group_5__1__Impl_in_rule__Feature__Group_5__12984);
             rule__Feature__Group_5__1__Impl();
 
             state._fsp--;
@@ -4329,23 +4019,23 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__Group_5__1__Impl"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1633:1: rule__Feature__Group_5__1__Impl : ( ( rule__Feature__InverseAssignment_5_1 ) ) ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1506:1: rule__Feature__Group_5__1__Impl : ( ( rule__Feature__InverseAssignment_5_1 ) ) ;
     public final void rule__Feature__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1637:1: ( ( ( rule__Feature__InverseAssignment_5_1 ) ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1638:1: ( ( rule__Feature__InverseAssignment_5_1 ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1510:1: ( ( ( rule__Feature__InverseAssignment_5_1 ) ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1511:1: ( ( rule__Feature__InverseAssignment_5_1 ) )
             {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1638:1: ( ( rule__Feature__InverseAssignment_5_1 ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1639:1: ( rule__Feature__InverseAssignment_5_1 )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1511:1: ( ( rule__Feature__InverseAssignment_5_1 ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1512:1: ( rule__Feature__InverseAssignment_5_1 )
             {
              before(grammarAccess.getFeatureAccess().getInverseAssignment_5_1()); 
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1640:1: ( rule__Feature__InverseAssignment_5_1 )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1640:2: rule__Feature__InverseAssignment_5_1
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1513:1: ( rule__Feature__InverseAssignment_5_1 )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1513:2: rule__Feature__InverseAssignment_5_1
             {
-            pushFollow(FOLLOW_rule__Feature__InverseAssignment_5_1_in_rule__Feature__Group_5__1__Impl3258);
+            pushFollow(FOLLOW_rule__Feature__InverseAssignment_5_1_in_rule__Feature__Group_5__1__Impl3011);
             rule__Feature__InverseAssignment_5_1();
 
             state._fsp--;
@@ -4373,6 +4063,316 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
         return ;
     }
     // $ANTLR end "rule__Feature__Group_5__1__Impl"
+
+
+    // $ANTLR start "rule__Primitive__Group__0"
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1528:1: rule__Primitive__Group__0 : rule__Primitive__Group__0__Impl rule__Primitive__Group__1 ;
+    public final void rule__Primitive__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1532:1: ( rule__Primitive__Group__0__Impl rule__Primitive__Group__1 )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1533:2: rule__Primitive__Group__0__Impl rule__Primitive__Group__1
+            {
+            pushFollow(FOLLOW_rule__Primitive__Group__0__Impl_in_rule__Primitive__Group__03046);
+            rule__Primitive__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__Primitive__Group__1_in_rule__Primitive__Group__03049);
+            rule__Primitive__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Primitive__Group__0"
+
+
+    // $ANTLR start "rule__Primitive__Group__0__Impl"
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1540:1: rule__Primitive__Group__0__Impl : ( 'primitive type' ) ;
+    public final void rule__Primitive__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1544:1: ( ( 'primitive type' ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1545:1: ( 'primitive type' )
+            {
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1545:1: ( 'primitive type' )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1546:1: 'primitive type'
+            {
+             before(grammarAccess.getPrimitiveAccess().getPrimitiveTypeKeyword_0()); 
+            match(input,23,FOLLOW_23_in_rule__Primitive__Group__0__Impl3077); 
+             after(grammarAccess.getPrimitiveAccess().getPrimitiveTypeKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Primitive__Group__0__Impl"
+
+
+    // $ANTLR start "rule__Primitive__Group__1"
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1559:1: rule__Primitive__Group__1 : rule__Primitive__Group__1__Impl ;
+    public final void rule__Primitive__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1563:1: ( rule__Primitive__Group__1__Impl )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1564:2: rule__Primitive__Group__1__Impl
+            {
+            pushFollow(FOLLOW_rule__Primitive__Group__1__Impl_in_rule__Primitive__Group__13108);
+            rule__Primitive__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Primitive__Group__1"
+
+
+    // $ANTLR start "rule__Primitive__Group__1__Impl"
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1570:1: rule__Primitive__Group__1__Impl : ( ( rule__Primitive__NameAssignment_1 ) ) ;
+    public final void rule__Primitive__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1574:1: ( ( ( rule__Primitive__NameAssignment_1 ) ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1575:1: ( ( rule__Primitive__NameAssignment_1 ) )
+            {
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1575:1: ( ( rule__Primitive__NameAssignment_1 ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1576:1: ( rule__Primitive__NameAssignment_1 )
+            {
+             before(grammarAccess.getPrimitiveAccess().getNameAssignment_1()); 
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1577:1: ( rule__Primitive__NameAssignment_1 )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1577:2: rule__Primitive__NameAssignment_1
+            {
+            pushFollow(FOLLOW_rule__Primitive__NameAssignment_1_in_rule__Primitive__Group__1__Impl3135);
+            rule__Primitive__NameAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getPrimitiveAccess().getNameAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Primitive__Group__1__Impl"
+
+
+    // $ANTLR start "rule__Any__Group__0"
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1591:1: rule__Any__Group__0 : rule__Any__Group__0__Impl rule__Any__Group__1 ;
+    public final void rule__Any__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1595:1: ( rule__Any__Group__0__Impl rule__Any__Group__1 )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1596:2: rule__Any__Group__0__Impl rule__Any__Group__1
+            {
+            pushFollow(FOLLOW_rule__Any__Group__0__Impl_in_rule__Any__Group__03169);
+            rule__Any__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__Any__Group__1_in_rule__Any__Group__03172);
+            rule__Any__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Any__Group__0"
+
+
+    // $ANTLR start "rule__Any__Group__0__Impl"
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1603:1: rule__Any__Group__0__Impl : ( 'any type' ) ;
+    public final void rule__Any__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1607:1: ( ( 'any type' ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1608:1: ( 'any type' )
+            {
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1608:1: ( 'any type' )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1609:1: 'any type'
+            {
+             before(grammarAccess.getAnyAccess().getAnyTypeKeyword_0()); 
+            match(input,24,FOLLOW_24_in_rule__Any__Group__0__Impl3200); 
+             after(grammarAccess.getAnyAccess().getAnyTypeKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Any__Group__0__Impl"
+
+
+    // $ANTLR start "rule__Any__Group__1"
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1622:1: rule__Any__Group__1 : rule__Any__Group__1__Impl ;
+    public final void rule__Any__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1626:1: ( rule__Any__Group__1__Impl )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1627:2: rule__Any__Group__1__Impl
+            {
+            pushFollow(FOLLOW_rule__Any__Group__1__Impl_in_rule__Any__Group__13231);
+            rule__Any__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Any__Group__1"
+
+
+    // $ANTLR start "rule__Any__Group__1__Impl"
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1633:1: rule__Any__Group__1__Impl : ( ( rule__Any__NameAssignment_1 ) ) ;
+    public final void rule__Any__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1637:1: ( ( ( rule__Any__NameAssignment_1 ) ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1638:1: ( ( rule__Any__NameAssignment_1 ) )
+            {
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1638:1: ( ( rule__Any__NameAssignment_1 ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1639:1: ( rule__Any__NameAssignment_1 )
+            {
+             before(grammarAccess.getAnyAccess().getNameAssignment_1()); 
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1640:1: ( rule__Any__NameAssignment_1 )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:1640:2: rule__Any__NameAssignment_1
+            {
+            pushFollow(FOLLOW_rule__Any__NameAssignment_1_in_rule__Any__Group__1__Impl3258);
+            rule__Any__NameAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getAnyAccess().getNameAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Any__Group__1__Impl"
 
 
     // $ANTLR start "rule__TypeRef__Group__0"
@@ -5616,99 +5616,25 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Annotation__ValueAssignment_2_1"
 
 
-    // $ANTLR start "rule__Primitive__NameAssignment_1"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2135:1: rule__Primitive__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__Primitive__NameAssignment_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2139:1: ( ( RULE_ID ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2140:1: ( RULE_ID )
-            {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2140:1: ( RULE_ID )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2141:1: RULE_ID
-            {
-             before(grammarAccess.getPrimitiveAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Primitive__NameAssignment_14256); 
-             after(grammarAccess.getPrimitiveAccess().getNameIDTerminalRuleCall_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Primitive__NameAssignment_1"
-
-
-    // $ANTLR start "rule__Any__NameAssignment_1"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2150:1: rule__Any__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__Any__NameAssignment_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2154:1: ( ( RULE_ID ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2155:1: ( RULE_ID )
-            {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2155:1: ( RULE_ID )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2156:1: RULE_ID
-            {
-             before(grammarAccess.getAnyAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Any__NameAssignment_14287); 
-             after(grammarAccess.getAnyAccess().getNameIDTerminalRuleCall_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Any__NameAssignment_1"
-
-
     // $ANTLR start "rule__Feature__IsIndexedAssignment_0"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2165:1: rule__Feature__IsIndexedAssignment_0 : ( ( 'indexed' ) ) ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2133:1: rule__Feature__IsIndexedAssignment_0 : ( ( 'indexed' ) ) ;
     public final void rule__Feature__IsIndexedAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2169:1: ( ( ( 'indexed' ) ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2170:1: ( ( 'indexed' ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2137:1: ( ( ( 'indexed' ) ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2138:1: ( ( 'indexed' ) )
             {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2170:1: ( ( 'indexed' ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2171:1: ( 'indexed' )
-            {
-             before(grammarAccess.getFeatureAccess().getIsIndexedIndexedKeyword_0_0()); 
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2172:1: ( 'indexed' )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2173:1: 'indexed'
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2138:1: ( ( 'indexed' ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2139:1: ( 'indexed' )
             {
              before(grammarAccess.getFeatureAccess().getIsIndexedIndexedKeyword_0_0()); 
-            match(input,28,FOLLOW_28_in_rule__Feature__IsIndexedAssignment_04323); 
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2140:1: ( 'indexed' )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2141:1: 'indexed'
+            {
+             before(grammarAccess.getFeatureAccess().getIsIndexedIndexedKeyword_0_0()); 
+            match(input,28,FOLLOW_28_in_rule__Feature__IsIndexedAssignment_04259); 
              after(grammarAccess.getFeatureAccess().getIsIndexedIndexedKeyword_0_0()); 
 
             }
@@ -5736,24 +5662,24 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__IsContainmentAssignment_1"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2188:1: rule__Feature__IsContainmentAssignment_1 : ( ( '-[' ) ) ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2156:1: rule__Feature__IsContainmentAssignment_1 : ( ( '-[' ) ) ;
     public final void rule__Feature__IsContainmentAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2192:1: ( ( ( '-[' ) ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2193:1: ( ( '-[' ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2160:1: ( ( ( '-[' ) ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2161:1: ( ( '-[' ) )
             {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2193:1: ( ( '-[' ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2194:1: ( '-[' )
-            {
-             before(grammarAccess.getFeatureAccess().getIsContainmentHyphenMinusLeftSquareBracketKeyword_1_0()); 
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2195:1: ( '-[' )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2196:1: '-['
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2161:1: ( ( '-[' ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2162:1: ( '-[' )
             {
              before(grammarAccess.getFeatureAccess().getIsContainmentHyphenMinusLeftSquareBracketKeyword_1_0()); 
-            match(input,29,FOLLOW_29_in_rule__Feature__IsContainmentAssignment_14367); 
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2163:1: ( '-[' )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2164:1: '-['
+            {
+             before(grammarAccess.getFeatureAccess().getIsContainmentHyphenMinusLeftSquareBracketKeyword_1_0()); 
+            match(input,29,FOLLOW_29_in_rule__Feature__IsContainmentAssignment_14303); 
              after(grammarAccess.getFeatureAccess().getIsContainmentHyphenMinusLeftSquareBracketKeyword_1_0()); 
 
             }
@@ -5781,20 +5707,20 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__TypeAssignment_2"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2211:1: rule__Feature__TypeAssignment_2 : ( ruleTypeRef ) ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2179:1: rule__Feature__TypeAssignment_2 : ( ruleTypeRef ) ;
     public final void rule__Feature__TypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2215:1: ( ( ruleTypeRef ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2216:1: ( ruleTypeRef )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2183:1: ( ( ruleTypeRef ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2184:1: ( ruleTypeRef )
             {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2216:1: ( ruleTypeRef )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2217:1: ruleTypeRef
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2184:1: ( ruleTypeRef )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2185:1: ruleTypeRef
             {
              before(grammarAccess.getFeatureAccess().getTypeTypeRefParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleTypeRef_in_rule__Feature__TypeAssignment_24406);
+            pushFollow(FOLLOW_ruleTypeRef_in_rule__Feature__TypeAssignment_24342);
             ruleTypeRef();
 
             state._fsp--;
@@ -5822,20 +5748,20 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__NameAssignment_3"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2226:1: rule__Feature__NameAssignment_3 : ( RULE_ID ) ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2194:1: rule__Feature__NameAssignment_3 : ( RULE_ID ) ;
     public final void rule__Feature__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2230:1: ( ( RULE_ID ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2231:1: ( RULE_ID )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2198:1: ( ( RULE_ID ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2199:1: ( RULE_ID )
             {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2231:1: ( RULE_ID )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2232:1: RULE_ID
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2199:1: ( RULE_ID )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2200:1: RULE_ID
             {
              before(grammarAccess.getFeatureAccess().getNameIDTerminalRuleCall_3_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Feature__NameAssignment_34437); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Feature__NameAssignment_34373); 
              after(grammarAccess.getFeatureAccess().getNameIDTerminalRuleCall_3_0()); 
 
             }
@@ -5859,20 +5785,20 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__DefaultValueAssignment_4_1"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2241:1: rule__Feature__DefaultValueAssignment_4_1 : ( ruleValueObject ) ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2209:1: rule__Feature__DefaultValueAssignment_4_1 : ( ruleValueObject ) ;
     public final void rule__Feature__DefaultValueAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2245:1: ( ( ruleValueObject ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2246:1: ( ruleValueObject )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2213:1: ( ( ruleValueObject ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2214:1: ( ruleValueObject )
             {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2246:1: ( ruleValueObject )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2247:1: ruleValueObject
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2214:1: ( ruleValueObject )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2215:1: ruleValueObject
             {
              before(grammarAccess.getFeatureAccess().getDefaultValueValueObjectParserRuleCall_4_1_0()); 
-            pushFollow(FOLLOW_ruleValueObject_in_rule__Feature__DefaultValueAssignment_4_14468);
+            pushFollow(FOLLOW_ruleValueObject_in_rule__Feature__DefaultValueAssignment_4_14404);
             ruleValueObject();
 
             state._fsp--;
@@ -5900,24 +5826,24 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__InverseAssignment_5_1"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2256:1: rule__Feature__InverseAssignment_5_1 : ( ( ruleQualifiedName ) ) ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2224:1: rule__Feature__InverseAssignment_5_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Feature__InverseAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2260:1: ( ( ( ruleQualifiedName ) ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2261:1: ( ( ruleQualifiedName ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2228:1: ( ( ( ruleQualifiedName ) ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2229:1: ( ( ruleQualifiedName ) )
             {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2261:1: ( ( ruleQualifiedName ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2262:1: ( ruleQualifiedName )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2229:1: ( ( ruleQualifiedName ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2230:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getFeatureAccess().getInverseFeatureCrossReference_5_1_0()); 
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2263:1: ( ruleQualifiedName )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2264:1: ruleQualifiedName
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2231:1: ( ruleQualifiedName )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2232:1: ruleQualifiedName
             {
              before(grammarAccess.getFeatureAccess().getInverseFeatureQualifiedNameParserRuleCall_5_1_0_1()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Feature__InverseAssignment_5_14503);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Feature__InverseAssignment_5_14439);
             ruleQualifiedName();
 
             state._fsp--;
@@ -5946,6 +5872,80 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
         return ;
     }
     // $ANTLR end "rule__Feature__InverseAssignment_5_1"
+
+
+    // $ANTLR start "rule__Primitive__NameAssignment_1"
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2245:1: rule__Primitive__NameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__Primitive__NameAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2249:1: ( ( RULE_ID ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2250:1: ( RULE_ID )
+            {
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2250:1: ( RULE_ID )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2251:1: RULE_ID
+            {
+             before(grammarAccess.getPrimitiveAccess().getNameIDTerminalRuleCall_1_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Primitive__NameAssignment_14476); 
+             after(grammarAccess.getPrimitiveAccess().getNameIDTerminalRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Primitive__NameAssignment_1"
+
+
+    // $ANTLR start "rule__Any__NameAssignment_1"
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2260:1: rule__Any__NameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__Any__NameAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2264:1: ( ( RULE_ID ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2265:1: ( RULE_ID )
+            {
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2265:1: ( RULE_ID )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2266:1: RULE_ID
+            {
+             before(grammarAccess.getAnyAccess().getNameIDTerminalRuleCall_1_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Any__NameAssignment_14507); 
+             after(grammarAccess.getAnyAccess().getNameIDTerminalRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Any__NameAssignment_1"
 
 
     // $ANTLR start "rule__TypeRef__ReferencedAssignment_0"
@@ -6178,15 +6178,15 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleAnnotation_in_entryRuleAnnotation181 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAnnotation188 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Annotation__Group__0_in_ruleAnnotation214 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePrimitive_in_entryRulePrimitive243 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePrimitive250 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Primitive__Group__0_in_rulePrimitive276 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAny_in_entryRuleAny303 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAny310 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Any__Group__0_in_ruleAny336 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFeature_in_entryRuleFeature363 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFeature370 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__Group__0_in_ruleFeature396 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFeature_in_entryRuleFeature241 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFeature248 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__Group__0_in_ruleFeature274 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePrimitive_in_entryRulePrimitive303 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePrimitive310 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Primitive__Group__0_in_rulePrimitive336 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAny_in_entryRuleAny363 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAny370 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Any__Group__0_in_ruleAny396 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleTypeRef_in_entryRuleTypeRef423 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleTypeRef430 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__TypeRef__Group__0_in_ruleTypeRef456 = new BitSet(new long[]{0x0000000000000002L});
@@ -6274,46 +6274,46 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_18_in_rule__Annotation__Group_2__0__Impl2267 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Annotation__Group_2__1__Impl_in_rule__Annotation__Group_2__12298 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Annotation__ValueAssignment_2_1_in_rule__Annotation__Group_2__1__Impl2325 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Primitive__Group__0__Impl_in_rule__Primitive__Group__02360 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Primitive__Group__1_in_rule__Primitive__Group__02363 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__Primitive__Group__0__Impl2391 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Primitive__Group__1__Impl_in_rule__Primitive__Group__12422 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Primitive__NameAssignment_1_in_rule__Primitive__Group__1__Impl2449 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Any__Group__0__Impl_in_rule__Any__Group__02483 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Any__Group__1_in_rule__Any__Group__02486 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__Any__Group__0__Impl2514 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Any__Group__1__Impl_in_rule__Any__Group__12545 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Any__NameAssignment_1_in_rule__Any__Group__1__Impl2572 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__Group__0__Impl_in_rule__Feature__Group__02606 = new BitSet(new long[]{0x0000000030000040L});
-    public static final BitSet FOLLOW_rule__Feature__Group__1_in_rule__Feature__Group__02609 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__IsIndexedAssignment_0_in_rule__Feature__Group__0__Impl2636 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__Group__1__Impl_in_rule__Feature__Group__12667 = new BitSet(new long[]{0x0000000030000040L});
-    public static final BitSet FOLLOW_rule__Feature__Group__2_in_rule__Feature__Group__12670 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__IsContainmentAssignment_1_in_rule__Feature__Group__1__Impl2697 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__Group__2__Impl_in_rule__Feature__Group__22728 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Feature__Group__3_in_rule__Feature__Group__22731 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__TypeAssignment_2_in_rule__Feature__Group__2__Impl2758 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__Group__3__Impl_in_rule__Feature__Group__32788 = new BitSet(new long[]{0x0000000001C00000L});
-    public static final BitSet FOLLOW_rule__Feature__Group__4_in_rule__Feature__Group__32791 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__NameAssignment_3_in_rule__Feature__Group__3__Impl2818 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__Group__4__Impl_in_rule__Feature__Group__42848 = new BitSet(new long[]{0x0000000001C00000L});
-    public static final BitSet FOLLOW_rule__Feature__Group__5_in_rule__Feature__Group__42851 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__Group_4__0_in_rule__Feature__Group__4__Impl2878 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__Group__5__Impl_in_rule__Feature__Group__52909 = new BitSet(new long[]{0x0000000001C00000L});
-    public static final BitSet FOLLOW_rule__Feature__Group__6_in_rule__Feature__Group__52912 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__Group_5__0_in_rule__Feature__Group__5__Impl2939 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__Group__6__Impl_in_rule__Feature__Group__62970 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__Feature__Group__6__Impl2999 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__Group_4__0__Impl_in_rule__Feature__Group_4__03046 = new BitSet(new long[]{0x0000000006000030L});
-    public static final BitSet FOLLOW_rule__Feature__Group_4__1_in_rule__Feature__Group_4__03049 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__Feature__Group_4__0__Impl3077 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__Group_4__1__Impl_in_rule__Feature__Group_4__13108 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__DefaultValueAssignment_4_1_in_rule__Feature__Group_4__1__Impl3135 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__Group_5__0__Impl_in_rule__Feature__Group_5__03169 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Feature__Group_5__1_in_rule__Feature__Group_5__03172 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__Feature__Group_5__0__Impl3200 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__Group_5__1__Impl_in_rule__Feature__Group_5__13231 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Feature__InverseAssignment_5_1_in_rule__Feature__Group_5__1__Impl3258 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__Group__0__Impl_in_rule__Feature__Group__02359 = new BitSet(new long[]{0x0000000030000040L});
+    public static final BitSet FOLLOW_rule__Feature__Group__1_in_rule__Feature__Group__02362 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__IsIndexedAssignment_0_in_rule__Feature__Group__0__Impl2389 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__Group__1__Impl_in_rule__Feature__Group__12420 = new BitSet(new long[]{0x0000000030000040L});
+    public static final BitSet FOLLOW_rule__Feature__Group__2_in_rule__Feature__Group__12423 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__IsContainmentAssignment_1_in_rule__Feature__Group__1__Impl2450 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__Group__2__Impl_in_rule__Feature__Group__22481 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Feature__Group__3_in_rule__Feature__Group__22484 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__TypeAssignment_2_in_rule__Feature__Group__2__Impl2511 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__Group__3__Impl_in_rule__Feature__Group__32541 = new BitSet(new long[]{0x0000000000700000L});
+    public static final BitSet FOLLOW_rule__Feature__Group__4_in_rule__Feature__Group__32544 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__NameAssignment_3_in_rule__Feature__Group__3__Impl2571 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__Group__4__Impl_in_rule__Feature__Group__42601 = new BitSet(new long[]{0x0000000000700000L});
+    public static final BitSet FOLLOW_rule__Feature__Group__5_in_rule__Feature__Group__42604 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__Group_4__0_in_rule__Feature__Group__4__Impl2631 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__Group__5__Impl_in_rule__Feature__Group__52662 = new BitSet(new long[]{0x0000000000700000L});
+    public static final BitSet FOLLOW_rule__Feature__Group__6_in_rule__Feature__Group__52665 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__Group_5__0_in_rule__Feature__Group__5__Impl2692 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__Group__6__Impl_in_rule__Feature__Group__62723 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__Feature__Group__6__Impl2752 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__Group_4__0__Impl_in_rule__Feature__Group_4__02799 = new BitSet(new long[]{0x0000000006000030L});
+    public static final BitSet FOLLOW_rule__Feature__Group_4__1_in_rule__Feature__Group_4__02802 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__Feature__Group_4__0__Impl2830 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__Group_4__1__Impl_in_rule__Feature__Group_4__12861 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__DefaultValueAssignment_4_1_in_rule__Feature__Group_4__1__Impl2888 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__Group_5__0__Impl_in_rule__Feature__Group_5__02922 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Feature__Group_5__1_in_rule__Feature__Group_5__02925 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_rule__Feature__Group_5__0__Impl2953 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__Group_5__1__Impl_in_rule__Feature__Group_5__12984 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Feature__InverseAssignment_5_1_in_rule__Feature__Group_5__1__Impl3011 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Primitive__Group__0__Impl_in_rule__Primitive__Group__03046 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Primitive__Group__1_in_rule__Primitive__Group__03049 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__Primitive__Group__0__Impl3077 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Primitive__Group__1__Impl_in_rule__Primitive__Group__13108 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Primitive__NameAssignment_1_in_rule__Primitive__Group__1__Impl3135 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Any__Group__0__Impl_in_rule__Any__Group__03169 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Any__Group__1_in_rule__Any__Group__03172 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__Any__Group__0__Impl3200 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Any__Group__1__Impl_in_rule__Any__Group__13231 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Any__NameAssignment_1_in_rule__Any__Group__1__Impl3258 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__TypeRef__Group__0__Impl_in_rule__TypeRef__Group__03292 = new BitSet(new long[]{0x0000000040000000L});
     public static final BitSet FOLLOW_rule__TypeRef__Group__1_in_rule__TypeRef__Group__03295 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__TypeRef__ReferencedAssignment_0_in_rule__TypeRef__Group__0__Impl3322 = new BitSet(new long[]{0x0000000000000002L});
@@ -6350,14 +6350,14 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleFeature_in_rule__Entity__FeaturesAssignment_64161 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleConfigOption_in_rule__Annotation__OptionAssignment_14192 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleConfigValue_in_rule__Annotation__ValueAssignment_2_14223 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Primitive__NameAssignment_14256 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Any__NameAssignment_14287 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__Feature__IsIndexedAssignment_04323 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_rule__Feature__IsContainmentAssignment_14367 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeRef_in_rule__Feature__TypeAssignment_24406 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Feature__NameAssignment_34437 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValueObject_in_rule__Feature__DefaultValueAssignment_4_14468 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Feature__InverseAssignment_5_14503 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__Feature__IsIndexedAssignment_04259 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_rule__Feature__IsContainmentAssignment_14303 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeRef_in_rule__Feature__TypeAssignment_24342 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Feature__NameAssignment_34373 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValueObject_in_rule__Feature__DefaultValueAssignment_4_14404 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Feature__InverseAssignment_5_14439 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Primitive__NameAssignment_14476 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Any__NameAssignment_14507 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_rule__TypeRef__ReferencedAssignment_04542 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_30_in_rule__TypeRef__IsMultiAssignment_14582 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEStringObject_in_rule__StringValue__ValueAssignment4621 = new BitSet(new long[]{0x0000000000000002L});
