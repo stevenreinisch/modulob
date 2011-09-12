@@ -82,7 +82,7 @@ public class EntityModelsSelectionPage extends AbstractWizardPage implements Sel
 	    new Label (sourceModelComposite, SWT.NONE).setText("Source:");
 	    
 	    sourceFilesDropDown          = new Combo(sourceModelComposite, SWT.DROP_DOWN);
-	    sourceEntityModelFiles       = fileLister.listAllFiles("modat_v\\S+", EXCLUDED_FOLDER_NAMES);
+	    sourceEntityModelFiles       = fileLister.listAllFiles("modat", EXCLUDED_FOLDER_NAMES);
 		List<String> sourceFileNames = Util.fileNamesFromFiles(sourceEntityModelFiles);
 	    String[] sourceItems         = sourceFileNames.toArray(new String[sourceFileNames.size()]);
 	    

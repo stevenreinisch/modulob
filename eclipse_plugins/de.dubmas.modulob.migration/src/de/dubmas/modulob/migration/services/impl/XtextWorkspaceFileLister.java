@@ -46,7 +46,7 @@ public class XtextWorkspaceFileLister implements IModelFileLister {
 		for(IResource res: container.members()){
 			if (res instanceof IFile) {
 				IFile file = (IFile) res;
-				String fileExtension = Util.getFileExtension(file.getName()); 
+				String fileExtension = file.getFileExtension();//Util.getFileExtension(file.getName()); 
 				if(fileExtension.matches((fileExtensionRegEx))){
 					collection.add(file);
 				}

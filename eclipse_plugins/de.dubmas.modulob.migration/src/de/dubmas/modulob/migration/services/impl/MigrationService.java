@@ -18,6 +18,7 @@ import org.eclipse.emf.compare.match.service.MatchService;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.mwe2.runtime.workflow.IWorkflowContext;
+import org.eclipse.emf.mwe2.runtime.workflow.Workflow;
 import org.eclipse.emf.mwe2.runtime.workflow.WorkflowContextImpl;
 import org.eclipse.xpand2.Generator;
 import org.eclipse.xpand2.output.Outlet;
@@ -96,19 +97,24 @@ public class MigrationService implements IMigrationService {
 			 xf.registerMetaModel(new EmfRegistryMetaModel());
 			 
 			 /*
-			  * We have to set Module->EntityModel because this is
-			  * not done by Xtext.
+			  * Why do we clone the modules?
+			  * The source and destination entity models referenced Module instance as proxies
+			  * that were not resolved which led to errors during code generation.
+			  * After cloning all proxies are resolved.
 			  */
-			 Module sourceModule = source.getModule();
-			 sourceModule.setEntityModel(source);
+			 Module sourceModuleClone      = (Module)CloningExtensions.clone(source.getModule());
+			 Module destinationModuleClone = (Module)CloningExtensions.clone(destination.getModule());
 			 
-			 Module destinationModule = destination.getModule();
-			 destinationModule.setEntityModel(destination);
+			 /*
+			  * We have to set Module->EntityModel because this is not done by Xtext.
+			  */
+			 sourceModuleClone.setEntityModel(source);
+			 destinationModuleClone.setEntityModel(destination);
 			 
 			 /*
 			  * Call the transformation
 			  */
-			 Migration migration = (Migration)xf.call("transform", diffModel, sourceModule);  
+			 Migration migration = (Migration)xf.call("transform", diffModel, sourceModuleClone);  
 			 MigrationResult mr  = new MigrationResult(source, destination, migration);
 			 
 			 return mr;
@@ -121,6 +127,9 @@ public class MigrationService implements IMigrationService {
 	@Override
 	public boolean generateMigration(EntityModel sourceModel, EntityModel destinationModel, Migration migration, IProject project){
 		try {
+			
+			Workflow workflow = new Workflow();
+			
 			Generator gen = new Generator();
 			gen.addMetaModel(new EmfRegistryMetaModel());
 			gen.setExpand("de::dubmas::modulob::migration::generator::Main::main(source, destination) FOR migration");
@@ -138,7 +147,9 @@ public class MigrationService implements IMigrationService {
 			ctx.put("source", sourceModel);
 			ctx.put("destination", destinationModel);
 			ctx.put("migration", migration);
-			gen.invoke(ctx);
+			
+			workflow.addComponent(gen);
+			workflow.invoke(ctx);
 			
 			project.refreshLocal(IResource.DEPTH_INFINITE, null);
 			
@@ -149,7 +160,6 @@ public class MigrationService implements IMigrationService {
 			return false;
 		}
 	}
-	
 	
 	private EntityModel loadEntityModelFromFile(IFile file) {
 		try {
