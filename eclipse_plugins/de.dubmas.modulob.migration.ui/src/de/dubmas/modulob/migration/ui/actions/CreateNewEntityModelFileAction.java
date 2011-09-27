@@ -8,15 +8,21 @@ import org.eclipse.ui.actions.ActionDelegate;
 
 import de.dubmas.modulob.migration.services.IMigrationService;
 import de.dubmas.modulob.migration.services.impl.MigrationService;
+import de.dubmas.modulob.psee.ui.wizard.ActivityExecutor;
+import de.dubmas.modulob.psee.ui.wizard.IActivityExecutor;
 
 public class CreateNewEntityModelFileAction extends ActionDelegate {
 	
 	private IFile selectedEntityModelFile;
 	private IMigrationService migrationService;
+	private IActivityExecutor activityExecutor;
 	
 	 public void run(IAction action) {
-		 migrationService = new MigrationService();
-		 migrationService.createNewEntityModelVersionFile(selectedEntityModelFile, "3.1");
+//		 migrationService = new MigrationService();
+//		 migrationService.createNewEntityModelVersionFile(selectedEntityModelFile, "3.1");
+		 
+		 activityExecutor = new ActivityExecutor();
+		 activityExecutor.executeActivity("newEntityModelVersion");
 	 }
 	 
 	 public void selectionChanged(IAction action, ISelection selection) {
