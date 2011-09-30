@@ -1,0 +1,29 @@
+grammar de.dubmas.modulob.BehaviourDsl with de.dubmas.modulob.common.Dsl
+
+import 'platform:/resource/de.dubmas.modulob.metamodels/model/Modulob.ecore' as modulob
+import 'platform:/resource/de.dubmas.modulob.metamodels/model/ModulobSystem.ecore' as system
+import 'platform:/resource/de.dubmas.modulob.metamodels/model/ModulobBehaviour.ecore' as behaviour
+
+BehaviouralModel returns system::BehaviouralModel:
+	'behaviours for system' 
+	system = [system::System | QualifiedName]
+	'version' version = STRING 
+	(behaviours += Behaviour)* 
+;
+
+Behaviour returns behaviour::Behaviour:
+	'behaviour' name = ID '{'
+		(reactions += Reaction)*
+	'}'
+;
+
+Reaction returns behaviour::Reaction:
+	'interface' interface = [modulob::Interface| QualifiedName]
+	'reacts to' notification = [modulob::Notification | QualifiedName]
+	('as' order = INT '.')?
+	'by calling' method = [modulob::Method | ReferenceableMethodName]
+;
+
+ReferenceableMethodName:
+	ID (':' (ID)?)*
+;

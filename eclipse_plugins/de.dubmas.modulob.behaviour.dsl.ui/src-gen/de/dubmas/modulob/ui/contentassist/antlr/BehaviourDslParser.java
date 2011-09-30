@@ -15,18 +15,18 @@ import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternal
 
 import com.google.inject.Inject;
 
-import de.dubmas.modulob.services.NotificationDslGrammarAccess;
+import de.dubmas.modulob.services.BehaviourDslGrammarAccess;
 
-public class NotificationDslParser extends AbstractContentAssistParser {
+public class BehaviourDslParser extends AbstractContentAssistParser {
 	
 	@Inject
-	private NotificationDslGrammarAccess grammarAccess;
+	private BehaviourDslGrammarAccess grammarAccess;
 	
 	private Map<AbstractElement, String> nameMappings;
 	
 	@Override
-	protected de.dubmas.modulob.ui.contentassist.antlr.internal.InternalNotificationDslParser createParser() {
-		de.dubmas.modulob.ui.contentassist.antlr.internal.InternalNotificationDslParser result = new de.dubmas.modulob.ui.contentassist.antlr.internal.InternalNotificationDslParser(null);
+	protected de.dubmas.modulob.ui.contentassist.antlr.internal.InternalBehaviourDslParser createParser() {
+		de.dubmas.modulob.ui.contentassist.antlr.internal.InternalBehaviourDslParser result = new de.dubmas.modulob.ui.contentassist.antlr.internal.InternalBehaviourDslParser(null);
 		result.setGrammarAccess(grammarAccess);
 		return result;
 	}
@@ -38,9 +38,12 @@ public class NotificationDslParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getValueObjectAccess().getAlternatives(), "rule__ValueObject__Alternatives");
-					put(grammarAccess.getNotificationModelAccess().getGroup(), "rule__NotificationModel__Group__0");
-					put(grammarAccess.getNotificationAccess().getGroup(), "rule__Notification__Group__0");
-					put(grammarAccess.getFeatureAccess().getGroup(), "rule__Feature__Group__0");
+					put(grammarAccess.getBehaviouralModelAccess().getGroup(), "rule__BehaviouralModel__Group__0");
+					put(grammarAccess.getBehaviourAccess().getGroup(), "rule__Behaviour__Group__0");
+					put(grammarAccess.getReactionAccess().getGroup(), "rule__Reaction__Group__0");
+					put(grammarAccess.getReactionAccess().getGroup_4(), "rule__Reaction__Group_4__0");
+					put(grammarAccess.getReferenceableMethodNameAccess().getGroup(), "rule__ReferenceableMethodName__Group__0");
+					put(grammarAccess.getReferenceableMethodNameAccess().getGroup_1(), "rule__ReferenceableMethodName__Group_1__0");
 					put(grammarAccess.getTypeLibAccess().getGroup(), "rule__TypeLib__Group__0");
 					put(grammarAccess.getPrimitiveAccess().getGroup(), "rule__Primitive__Group__0");
 					put(grammarAccess.getAnyAccess().getGroup(), "rule__Any__Group__0");
@@ -48,13 +51,15 @@ public class NotificationDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEFloatObjectAccess().getGroup(), "rule__EFloatObject__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
-					put(grammarAccess.getNotificationModelAccess().getModuleAssignment_1(), "rule__NotificationModel__ModuleAssignment_1");
-					put(grammarAccess.getNotificationModelAccess().getVersionAssignment_3(), "rule__NotificationModel__VersionAssignment_3");
-					put(grammarAccess.getNotificationModelAccess().getNotificationsAssignment_4(), "rule__NotificationModel__NotificationsAssignment_4");
-					put(grammarAccess.getNotificationAccess().getNameAssignment_1(), "rule__Notification__NameAssignment_1");
-					put(grammarAccess.getNotificationAccess().getFeaturesAssignment_3(), "rule__Notification__FeaturesAssignment_3");
-					put(grammarAccess.getFeatureAccess().getTypeAssignment_0(), "rule__Feature__TypeAssignment_0");
-					put(grammarAccess.getFeatureAccess().getNameAssignment_1(), "rule__Feature__NameAssignment_1");
+					put(grammarAccess.getBehaviouralModelAccess().getSystemAssignment_1(), "rule__BehaviouralModel__SystemAssignment_1");
+					put(grammarAccess.getBehaviouralModelAccess().getVersionAssignment_3(), "rule__BehaviouralModel__VersionAssignment_3");
+					put(grammarAccess.getBehaviouralModelAccess().getBehavioursAssignment_4(), "rule__BehaviouralModel__BehavioursAssignment_4");
+					put(grammarAccess.getBehaviourAccess().getNameAssignment_1(), "rule__Behaviour__NameAssignment_1");
+					put(grammarAccess.getBehaviourAccess().getReactionsAssignment_3(), "rule__Behaviour__ReactionsAssignment_3");
+					put(grammarAccess.getReactionAccess().getInterfaceAssignment_1(), "rule__Reaction__InterfaceAssignment_1");
+					put(grammarAccess.getReactionAccess().getNotificationAssignment_3(), "rule__Reaction__NotificationAssignment_3");
+					put(grammarAccess.getReactionAccess().getOrderAssignment_4_1(), "rule__Reaction__OrderAssignment_4_1");
+					put(grammarAccess.getReactionAccess().getMethodAssignment_6(), "rule__Reaction__MethodAssignment_6");
 					put(grammarAccess.getTypeLibAccess().getPrimitiveTypesAssignment_0(), "rule__TypeLib__PrimitiveTypesAssignment_0");
 					put(grammarAccess.getTypeLibAccess().getAnyTypeAssignment_1(), "rule__TypeLib__AnyTypeAssignment_1");
 					put(grammarAccess.getPrimitiveAccess().getNameAssignment_1(), "rule__Primitive__NameAssignment_1");
@@ -73,8 +78,8 @@ public class NotificationDslParser extends AbstractContentAssistParser {
 	@Override
 	protected Collection<FollowElement> getFollowElements(AbstractInternalContentAssistParser parser) {
 		try {
-			de.dubmas.modulob.ui.contentassist.antlr.internal.InternalNotificationDslParser typedParser = (de.dubmas.modulob.ui.contentassist.antlr.internal.InternalNotificationDslParser) parser;
-			typedParser.entryRuleNotificationModel();
+			de.dubmas.modulob.ui.contentassist.antlr.internal.InternalBehaviourDslParser typedParser = (de.dubmas.modulob.ui.contentassist.antlr.internal.InternalBehaviourDslParser) parser;
+			typedParser.entryRuleBehaviouralModel();
 			return typedParser.getFollowElements();
 		} catch(RecognitionException ex) {
 			throw new RuntimeException(ex);
@@ -86,11 +91,11 @@ public class NotificationDslParser extends AbstractContentAssistParser {
 		return new String[] { "RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT" };
 	}
 	
-	public NotificationDslGrammarAccess getGrammarAccess() {
+	public BehaviourDslGrammarAccess getGrammarAccess() {
 		return this.grammarAccess;
 	}
 	
-	public void setGrammarAccess(NotificationDslGrammarAccess grammarAccess) {
+	public void setGrammarAccess(BehaviourDslGrammarAccess grammarAccess) {
 		this.grammarAccess = grammarAccess;
 	}
 }
