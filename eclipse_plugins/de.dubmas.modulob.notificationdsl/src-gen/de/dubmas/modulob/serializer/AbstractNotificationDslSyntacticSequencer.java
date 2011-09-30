@@ -17,12 +17,12 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class AbstractNotificationDslSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected NotificationDslGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Feature_SemicolonKeyword_6_q;
+	protected AbstractElementAlias match_Feature_SemicolonKeyword_2_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (NotificationDslGrammarAccess) access;
-		match_Feature_SemicolonKeyword_6_q = new TokenAlias(true, false, grammarAccess.getFeatureAccess().getSemicolonKeyword_6());
+		match_Feature_SemicolonKeyword_2_q = new TokenAlias(true, false, grammarAccess.getFeatureAccess().getSemicolonKeyword_2());
 	}
 	
 	@Override
@@ -37,8 +37,8 @@ public class AbstractNotificationDslSyntacticSequencer extends AbstractSyntactic
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_Feature_SemicolonKeyword_6_q.equals(syntax))
-				emit_Feature_SemicolonKeyword_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if(match_Feature_SemicolonKeyword_2_q.equals(syntax))
+				emit_Feature_SemicolonKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -47,7 +47,7 @@ public class AbstractNotificationDslSyntacticSequencer extends AbstractSyntactic
 	 * Syntax:
 	 *     ';'?
 	 */
-	protected void emit_Feature_SemicolonKeyword_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Feature_SemicolonKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

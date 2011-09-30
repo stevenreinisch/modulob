@@ -212,6 +212,67 @@ ruleNotification returns [EObject current=null]
 
 
 
+// Entry rule entryRuleFeature
+entryRuleFeature returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getFeatureRule()); }
+	 iv_ruleFeature=ruleFeature 
+	 { $current=$iv_ruleFeature.current; } 
+	 EOF 
+;
+
+// Rule Feature
+ruleFeature returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getFeatureAccess().getTypeTypeRefParserRuleCall_0_0()); 
+	    }
+		lv_type_0_0=ruleTypeRef		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getFeatureRule());
+	        }
+       		set(
+       			$current, 
+       			"type",
+        		lv_type_0_0, 
+        		"TypeRef");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		lv_name_1_0=RULE_ID
+		{
+			newLeafNode(lv_name_1_0, grammarAccess.getFeatureAccess().getNameIDTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getFeatureRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_1_0, 
+        		"ID");
+	    }
+
+)
+)(	otherlv_2=';' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getFeatureAccess().getSemicolonKeyword_2());
+    }
+)?)
+;
+
+
+
+
+
 
 
 // Entry rule entryRulePrimitive
@@ -300,138 +361,6 @@ ruleAny returns [EObject current=null]
 
 
 
-// Entry rule entryRuleFeature
-entryRuleFeature returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getFeatureRule()); }
-	 iv_ruleFeature=ruleFeature 
-	 { $current=$iv_ruleFeature.current; } 
-	 EOF 
-;
-
-// Rule Feature
-ruleFeature returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-((
-(
-		lv_isIndexed_0_0=	'indexed' 
-    {
-        newLeafNode(lv_isIndexed_0_0, grammarAccess.getFeatureAccess().getIsIndexedIndexedKeyword_0_0());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFeatureRule());
-	        }
-       		setWithLastConsumed($current, "isIndexed", true, "indexed");
-	    }
-
-)
-)?(
-(
-		lv_isContainment_1_0=	'-[' 
-    {
-        newLeafNode(lv_isContainment_1_0, grammarAccess.getFeatureAccess().getIsContainmentHyphenMinusLeftSquareBracketKeyword_1_0());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFeatureRule());
-	        }
-       		setWithLastConsumed($current, "isContainment", true, "-[");
-	    }
-
-)
-)?(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getFeatureAccess().getTypeTypeRefParserRuleCall_2_0()); 
-	    }
-		lv_type_2_0=ruleTypeRef		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getFeatureRule());
-	        }
-       		set(
-       			$current, 
-       			"type",
-        		lv_type_2_0, 
-        		"TypeRef");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)(
-(
-		lv_name_3_0=RULE_ID
-		{
-			newLeafNode(lv_name_3_0, grammarAccess.getFeatureAccess().getNameIDTerminalRuleCall_3_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFeatureRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"name",
-        		lv_name_3_0, 
-        		"ID");
-	    }
-
-)
-)(	otherlv_4='=' 
-    {
-    	newLeafNode(otherlv_4, grammarAccess.getFeatureAccess().getEqualsSignKeyword_4_0());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getFeatureAccess().getDefaultValueValueObjectParserRuleCall_4_1_0()); 
-	    }
-		lv_defaultValue_5_0=ruleValueObject		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getFeatureRule());
-	        }
-       		set(
-       			$current, 
-       			"defaultValue",
-        		lv_defaultValue_5_0, 
-        		"ValueObject");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))?(	otherlv_6='<->' 
-    {
-    	newLeafNode(otherlv_6, grammarAccess.getFeatureAccess().getLessThanSignHyphenMinusGreaterThanSignKeyword_5_0());
-    }
-(
-(
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFeatureRule());
-	        }
-        }
-		{ 
-	        newCompositeNode(grammarAccess.getFeatureAccess().getInverseFeatureCrossReference_5_1_0()); 
-	    }
-		ruleQualifiedName		{ 
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))?(	otherlv_8=';' 
-    {
-    	newLeafNode(otherlv_8, grammarAccess.getFeatureAccess().getSemicolonKeyword_6());
-    }
-)?)
-;
-
-
-
-
-
 // Entry rule entryRuleTypeRef
 entryRuleTypeRef returns [EObject current=null] 
 	:
@@ -480,54 +409,6 @@ ruleTypeRef returns [EObject current=null]
 ;
 
 
-
-
-
-// Entry rule entryRuleValueObject
-entryRuleValueObject returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getValueObjectRule()); }
-	 iv_ruleValueObject=ruleValueObject 
-	 { $current=$iv_ruleValueObject.current; } 
-	 EOF 
-;
-
-// Rule ValueObject
-ruleValueObject returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(
-    { 
-        newCompositeNode(grammarAccess.getValueObjectAccess().getStringValueParserRuleCall_0()); 
-    }
-    this_StringValue_0=ruleStringValue
-    { 
-        $current = $this_StringValue_0.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getValueObjectAccess().getIntegerValueParserRuleCall_1()); 
-    }
-    this_IntegerValue_1=ruleIntegerValue
-    { 
-        $current = $this_IntegerValue_1.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getValueObjectAccess().getFloatValueParserRuleCall_2()); 
-    }
-    this_FloatValue_2=ruleFloatValue
-    { 
-        $current = $this_FloatValue_2.current; 
-        afterParserOrEnumRuleCall();
-    }
-)
-;
 
 
 

@@ -15,3 +15,7 @@ Notification returns modulob::Notification:
 		(features+=Feature)*
 	'}'
 ;
+
+Feature returns modulob::Feature:
+	type=TypeRef name=ID (';')?
+;

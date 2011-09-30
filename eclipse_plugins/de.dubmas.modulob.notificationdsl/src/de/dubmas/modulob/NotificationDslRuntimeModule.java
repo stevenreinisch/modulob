@@ -7,5 +7,10 @@ package de.dubmas.modulob;
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 public class NotificationDslRuntimeModule extends de.dubmas.modulob.AbstractNotificationDslRuntimeModule {
+	
+	@Override
+	public Class<? extends org.eclipse.xtext.naming.IQualifiedNameProvider> bindIQualifiedNameProvider() {
+		return de.dubmas.modulob.NotificationDslNameProvider.class;
+	}
 
 }

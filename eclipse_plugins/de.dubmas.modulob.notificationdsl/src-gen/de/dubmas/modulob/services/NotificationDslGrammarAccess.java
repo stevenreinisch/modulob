@@ -105,10 +105,43 @@ public class NotificationDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
+
+	public class FeatureElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Feature");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cTypeTypeRefParserRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//Feature returns modulob::Feature:
+		//	type=TypeRef name=ID ";"?;
+		public ParserRule getRule() { return rule; }
+
+		//type=TypeRef name=ID ";"?
+		public Group getGroup() { return cGroup; }
+
+		//type=TypeRef
+		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
+
+		//TypeRef
+		public RuleCall getTypeTypeRefParserRuleCall_0_0() { return cTypeTypeRefParserRuleCall_0_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//";"?
+		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
+	}
 	
 	
 	private NotificationModelElements pNotificationModel;
 	private NotificationElements pNotification;
+	private FeatureElements pFeature;
 	
 	private final GrammarProvider grammarProvider;
 
@@ -152,6 +185,16 @@ public class NotificationDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getNotificationAccess().getRule();
 	}
 
+	//Feature returns modulob::Feature:
+	//	type=TypeRef name=ID ";"?;
+	public FeatureElements getFeatureAccess() {
+		return (pFeature != null) ? pFeature : (pFeature = new FeatureElements());
+	}
+	
+	public ParserRule getFeatureRule() {
+		return getFeatureAccess().getRule();
+	}
+
 	//TypeLib returns types::Lib:
 	//	primitiveTypes+=Primitive+ anyType=Any;
 	public DslGrammarAccess.TypeLibElements getTypeLibAccess() {
@@ -180,17 +223,6 @@ public class NotificationDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getAnyRule() {
 		return getAnyAccess().getRule();
-	}
-
-	//Feature returns modulob::Feature:
-	//	isIndexed?="indexed"? isContainment?="-["? type=TypeRef name=ID ("=" defaultValue=ValueObject)? ("<->"
-	//	inverse=[modulob::Feature|QualifiedName])? ";"?;
-	public DslGrammarAccess.FeatureElements getFeatureAccess() {
-		return gaDsl.getFeatureAccess();
-	}
-	
-	public ParserRule getFeatureRule() {
-		return getFeatureAccess().getRule();
 	}
 
 	//TypeRef returns types::TypeRef:

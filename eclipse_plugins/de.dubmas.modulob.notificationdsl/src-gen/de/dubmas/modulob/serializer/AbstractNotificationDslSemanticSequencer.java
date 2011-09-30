@@ -145,25 +145,14 @@ public class AbstractNotificationDslSemanticSequencer extends AbstractSemanticSe
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         isIndexed?='indexed'? 
-	 *         isContainment?='-['? 
-	 *         type=TypeRef 
-	 *         name=ID 
-	 *         defaultValue=ValueObject? 
-	 *         inverse=[Feature|QualifiedName]?
-	 *     )
+	 *     (type=TypeRef name=ID)
 	 *
 	 * Features:
-	 *    isIndexed[0, 1]
-	 *    isContainment[0, 1]
 	 *    name[1, 1]
-	 *    inverse[0, 1]
 	 *    type[1, 1]
-	 *    defaultValue[0, 1]
 	 */
 	protected void sequence_Feature(EObject context, Feature semanticObject) {
-		superSequencer.createSequence(context, semanticObject);
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
