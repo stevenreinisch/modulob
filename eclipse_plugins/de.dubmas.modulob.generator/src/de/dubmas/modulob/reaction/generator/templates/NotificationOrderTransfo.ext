@@ -1,0 +1,79 @@
+import system;
+import modulob;
+import behaviour;
+
+extension de::dubmas::modulob::reaction::generator::templates::Notifications;
+extension de::dubmas::modulob::reaction::generator::templates::Util;
+extension de::dubmas::modulob::generator::common::Util;
+extension de::dubmas::modulob::reaction::generator::templates::DispatcherInterfaceInjector;
+extension org::eclipse::xtend::util::stdlib::io;
+extension org::eclipse::xtend::util::stdlib::cloning;
+
+transform(List[Behaviour] behaviours):
+	let clones = (List[Behaviour])clone(behaviours):
+		
+		clones.addDispatcherReactions()
+		->
+		clones.collect(b | b.notificationsTriggeringMultipleReactions().
+								associatedReactions(b).
+									removeDispatcherReactions().
+										renameNotificationAccordingToOrder())																														
+		->
+		clones
+;
+
+private addDispatcherReactions(Behaviour behaviour):
+	behaviour.setReactions(behaviour.reactions.
+		addAll(behaviour.notificationsTriggeringMultipleReactions().dispatcherReaction()).toList())
+;
+
+/*
+ * Uses notificationInModuleWithName(String, String) to lookup original notification
+ * from module list because cross refernced notification ('trigger') 's features did not have 
+ * proper type references if notification triggers multiple reactions.
+ */
+private create Reaction this dispatcherReaction(Notification trigger):
+	let m = (Method)trigger.module().dispatcherInterface().methods.
+						selectFirst(m | m.name == trigger.name.dispatchMethodName()):
+		
+		this.setNotification(notificationInModuleWithName(trigger.moduleName(), trigger.name)) ->
+		this.setInterface((Interface)m.eContainer) ->
+		this.setMethod(m)
+;
+
+//see comment on dispatcherReaction(Event)
+private renameNotificationAccordingToOrder(Reaction r):
+	cloneNotificationWithNewName(notificationInModuleWithName(r.notification.moduleName(), r.notification.name), 
+	                      r, 
+	                      r.notification.module(), 
+	                      r.notification.name + "_" + r.order)
+;
+
+private cloneNotificationWithNewName(Notification n, Reaction r, Module m, String name):
+	let clone = (Notification)n.clone():
+		clone.setName(name) ->
+		clone.addToModule(m) ->
+		//DEBUG: add this notification to the original module such that 
+		//corresponding code (notification constants etc.) can be generated in Notifications.xpt
+		clone.addToModule(m.originalModule())
+		->
+		//DEBUG
+		r.setNotification(clone) ->
+		clone
+;
+
+private addToModule(Notification n, Module m):
+	m.notificationModel.notifications.addAll({n})
+;
+
+List[Reaction] removeDispatcherReactions(List[Reaction] reactions):
+	reactions.removeAll(reactions.dispatcherReactions())
+;
+
+dispatcherReactions(List[Reaction] reactions):
+	reactions.select(r| modulesHavingMultiReactionNotifications().dispatcherInterface().methods.exists(m | r.method == m))
+;
+
+dispatcherInterface(Module m):
+	m.interfaceModel.interfaces.selectFirst(i|i.name == notificationsDispatcherInterfaceName())
+;

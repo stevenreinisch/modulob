@@ -1,0 +1,32 @@
+import system;
+import modulob;
+
+extension de::dubmas::modulob::reaction::generator::templates::Util;
+extension de::dubmas::modulob::generator::common::Util;
+extension de::dubmas::modulob::reaction::generator::templates::Notifications;
+extension de::dubmas::modulob::reaction::generator::templates::NotificationOrderTransfo;
+extension org::eclipse::xtend::util::stdlib::io;
+extension org::eclipse::xtend::util::stdlib::cloning;
+
+//around de.dubmas.modulob.generator.templates::ModelProcessor::preprocess(List[Modules] modules):
+inject(List[Module] modules):
+	
+	modules.
+		select(m | modulesHavingMultiReactionNotifications().exists(module | m.name == module.name)).
+			addNotificationDispatcherInterface()
+	/*	
+	->
+	ctx.proceed({modules})
+	*/
+;
+
+private addNotificationDispatcherInterface(Module m):
+	m.interfaceModel.interfaces.addAll({m.correspondingDispatcherInterface().clone()}).toList()
+;
+
+private correspondingDispatcherInterface(Module module):
+	modulesHavingMultiReactionNotifications().selectFirst(m|m.name == module.name).
+		interfaceModel.interfaces.selectFirst(i|i.name == notificationsDispatcherInterfaceName())
+;
+
+

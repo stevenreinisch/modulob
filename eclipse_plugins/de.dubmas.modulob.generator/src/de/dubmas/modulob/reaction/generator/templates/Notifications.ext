@@ -1,0 +1,102 @@
+import system;
+import modulob;
+import behaviour;
+ 
+extension de::dubmas::modulob::generator::templates::Types; 
+extension org::eclipse::xtend::util::stdlib::io;
+extension org::eclipse::xtend::util::stdlib::globalvar;
+extension de::dubmas::modulob::reaction::generator::templates::Util reexport;
+
+extension de::dubmas::modulob::generator::templates::BaseClasses reexport;
+
+associatedNotificationFeature(modulob::Parameter p, List[Feature] features):
+	/*
+	features.selectFirst(f|f.type.isMulti == p.type.isMulti                         && 
+						   p.type.referenced.metaType.isInstance(f.type.referenced) &&
+						   f.name == p.name)
+	 */
+	 
+	 /*
+	  * Only do name comparison because the parameters of a NotificationDispatcher
+	  * are changed during code generation to 'id'. Thus, the type of a method's
+	  * parameter is not guaranteed to match notification's feature's type.
+	  */
+	 features.selectFirst(f|f.name == p.name)
+;
+
+extractAndForwardMethodName(Reaction r):
+	r.method.name + "_extractAndForward"
+;
+
+referencedModulesSet(List[Behaviour] behaviours):
+	behaviours.reactions.interface.module().
+		addAll(behaviours.reactions.notification.module()).toSet()
+;
+
+associatedReactions(Interface i):
+	transformedBehaviours().reactions.
+		select(r | r.interface.module().name == i.module().name
+		           &&
+		           ((Interface)r.method.eContainer).name == i.name
+		           ) 
+;
+
+associatedReactions(Notification notification, List[Behaviour] behaviours):
+	behaviours.reactions.select(r|r.notification == notification)
+;
+
+associatedReactions(Notification notification, Behaviour behaviour):
+	behaviour.reactions.select(r | r.notification == notification)
+;
+
+associatedReactionsWithOrderGreaterEqualsThan(Notification notification, 
+										      Integer orderIncl, 
+										      List[Behaviour] behaviours):
+	notification.associatedReactions(behaviours).select(r | r.order >= orderIncl)
+;
+
+notificationTriggerName(Module m):
+	m.name + "NotificationTrigger"
+;
+
+notificationsFileName(Module m):
+	m.name + "Notifications"
+;
+
+notificationFeatureKey(Feature f, Notification notification):
+	notification.notificationName() + "_" + f.name
+;
+
+notificationName(Notification notification):
+	"NOTIFICATION_" + notification.moduleName() + "_" + notification.name
+;
+
+module(Notification n):
+	((NotificationModel)n.eContainer).module
+;
+
+moduleName(Notification n):
+	n.module().name
+;
+
+notificationsModuleHeaderFilePath(Interface i):
+	i.headerFilePathPrefix() + i.typeName() + ".h"
+;
+
+notificationsModuleImplFilePath(Interface i):
+	i.implFilePathPrefix() + i.typeName() + ".m"
+;
+
+
+notificationsTriggeringMultipleReactions(Behaviour behaviour):
+	behaviour.
+		reactions.
+			notification.
+				select(notification | behaviour.
+								reactions.select(r | r.notification == notification).size > 1
+					  ).toSet()
+;
+
+modulesHavingMultiReactionNotifications():
+	behaviours().notificationsTriggeringMultipleReactions().module().toSet()
+;

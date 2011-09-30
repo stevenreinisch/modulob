@@ -1,0 +1,69 @@
+import modulob;
+import behaviour;
+
+extension de::dubmas::modulob::generator::templates::ModulobExtensions;
+extension de::dubmas::modulob::reaction::generator::templates::Notifications;
+
+extension org::eclipse::xtend::util::stdlib::io;
+
+/*
+weaveBeforeAdvicesIntoReactions(List[Behaviour] behaviours):
+	behaviours.elements.typeSelect(Advice).weaveInto(behaviours)
+	->
+	behaviours
+;
+
+weaveInto(Advice advice, List[Behaviour] behaviours):
+	if advice.notification.associatedReactions(behaviours).size == 1 then
+	(
+		//create new reaction and add to corresponding behaviour
+		advice.reaction(behaviours).behaviour().
+			setElements(advice.reaction(behaviours).behaviour().elements.addAll({advice.reaction(behaviours).createBeforeReaction(advice)}).toList())
+		->
+		/*
+		 * schedule reaction after new reaction
+		 * new reaction has order == 1, so this is 2
+		 *
+		advice.reaction(behaviours).setOrder(2)
+	)
+	else
+	(
+		let newReaction = (Reaction)advice.reaction(behaviours).createBeforeReaction(advice):
+			advice.reaction(behaviours).behaviour().
+				setElements(advice.reaction(behaviours).behaviour().elements.addAll({newReaction}).toList())
+			->
+			//schedule reactions after new reaction
+			advice.notification.associatedReactionsWithOrderGreaterEqualsThan(advice.reaction(behaviours).order, behaviours)
+				.without({newReaction}).collect(r | r.setOrder(r.order + 1))
+	)
+;
+
+behaviour(Reaction r):
+	(Behaviour)r.eContainer
+;
+
+reaction(Advice advice, List[Behaviour] behaviours):
+	behaviours.elements.typeSelect(Reaction).
+		selectFirst(r | r.event == advice.notification && r.order == advice.order)
+;
+
+private create Reaction this createBeforeReaction(Reaction reactionToBeProceeded, Advice advice):
+	this.setNotification(reactionToBeProceeded.notification) 
+	->
+	/*
+	this.sharedMemories.addAll(reactionToBeProceeded.sharedMemories) 
+	->
+	*
+	this.setOrder(reactionToBeProceeded.order == 0 ? 1 : reactionToBeProceeded.order)
+	->
+	this.setMethod(advice.method)
+	->
+	this.setModule(advice.method.module())
+;
+
+/*
+private Reaction createBeforeReaction(Reaction reactionToBeProceeded):
+	JAVA de.dubmas.modulob.generator.templates.reaction.ModelCreation.
+			createBeforeReaction(de.dubmas.modulob.reaction.Reaction)
+;
+*/

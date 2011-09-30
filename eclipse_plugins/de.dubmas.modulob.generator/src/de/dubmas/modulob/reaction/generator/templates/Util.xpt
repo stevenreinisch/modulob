@@ -1,0 +1,7 @@
+«EXTENSION org::eclipse::xtend::util::stdlib::globalvar»
+«EXTENSION org::eclipse::xtend::util::stdlib::io»
+
+«DEFINE StoreGlobalVar(Object var) FOR String»
+	«("storing: " + var).info() + ("for: " + this).info()»
+	«storeGlobalVar(this, var)»
+«ENDDEFINE»

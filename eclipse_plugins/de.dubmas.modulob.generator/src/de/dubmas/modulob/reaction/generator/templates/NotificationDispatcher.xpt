@@ -1,0 +1,89 @@
+«IMPORT system»
+«IMPORT modulob»
+«IMPORT behaviour»
+
+«EXTENSION de::dubmas::modulob::generator::templates::Types»
+«EXTENSION de::dubmas::modulob::reaction::generator::templates::Util»
+«EXTENSION de::dubmas::modulob::generator::common::Util»
+«EXTENSION de::dubmas::modulob::reaction::generator::templates::Notifications»
+«EXTENSION de::dubmas::modulob::reaction::generator::templates::NotificationOrderTransfo»
+
+«EXTENSION de::dubmas::modulob::generator::templates::BaseClasses»
+
+«EXTENSION org::eclipse::xtend::util::stdlib::io»
+
+«DEFINE main FOR Module»
+	«LET this.interfaceModel.interfaces.
+			selectFirst(i|i.name == notificationsDispatcherInterfaceName()) 
+	   	AS dispatcherInterface»
+	
+		«EXPAND Header FOR dispatcherInterface»
+		«EXPAND Impl   FOR dispatcherInterface»
+	
+	«ENDLET»
+	
+«ENDDEFINE»
+
+«DEFINE Header FOR Interface»
+«FILE this.notificationsModuleHeaderFilePath()»
+	#import <Foundation/Foundation.h>
+	
+	#import "«this.baseClassName()».h"
+	
+	@interface «this.typeName()»: «this.baseClassName()»
+	{}
+
+	@end
+
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE Impl FOR Interface»
+«FILE this.notificationsModuleImplFilePath()»
+	#import "«this.typeName()».h"
+	
+	«FOREACH this.associatedReactions().notification.toSet().module().toSet() AS m»
+		#import "«m.notificationsFileName()».h"
+	«ENDFOREACH»
+	
+	@implementation «this.typeName()»
+	
+	+(void)start
+	{
+		/*
+		 * just create shared instance. thus it registers with
+		 * the notification center
+		 */
+		[«this.typeName()» sharedInstance];
+	}
+	
+	«FOREACH this.associatedReactions() AS r»
+		«EXPAND DispatchMethod(r) FOR r.method»
+	«ENDFOREACH»
+
+	@end
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE DispatchMethod(Reaction rootReaction) FOR Method»
+
+	«EXPAND de::dubmas::modulob::generator::templates::Protocols::MethodSignature FOR this»
+	{
+		«REM»
+		«FOREACH transformedBehaviours().elements.typeSelect(Reaction).removeDispatcherReactions().select(r|r.event.name.startsWith(rootReaction.event.name)).order() AS r»
+	 		id<P_E_RuntimeEvent> event_«r.event.name» = [RuntimePublicEntityFactory newRuntimeEvent];
+			event_«r.event.name».eventName = «r.event.eventName()»;
+			[[RuntimeScheduler sharedInstance]schedule:event_«r.event.name»];		
+		«ENDFOREACH»	
+		
+		[[RuntimeScheduler sharedInstance]continue];
+		«ENDREM»
+		
+		«FOREACH transformedBehaviours().reactions.
+					removeDispatcherReactions().
+						select(r|r.notification.name.startsWith(rootReaction.notification.name)).
+							order() AS r ITERATOR iter»
+			«EXPAND de::dubmas::modulob::reaction::generator::templates::Notifications::TriggerNotification(iter.counter0) FOR r.notification»
+		«ENDFOREACH»
+	}
+«ENDDEFINE»

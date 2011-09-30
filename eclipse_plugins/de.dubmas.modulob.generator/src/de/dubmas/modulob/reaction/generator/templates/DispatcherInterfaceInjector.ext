@@ -1,0 +1,87 @@
+import system;
+import modulob;
+import types;
+
+extension de::dubmas::modulob::reaction::generator::templates::Notifications;
+extension de::dubmas::modulob::generator::common::Util;
+extension org::eclipse::xtend::util::stdlib::io;
+
+injectDispatcherInterfaces(List[Primitive] Primitives):
+	modulesHavingMultiReactionNotifications().injectDispatcherInterface(Primitives)
+;
+
+private injectDispatcherInterface(Module m, List[Primitive] Primitives):
+	m.interfaceModel.interfaces.addAll({dispatcherInterface(m, Primitives)}).toList()
+;
+
+private create Interface this dispatcherInterface(Module m, List[Primitive] Primitives):
+	this.setName(notificationsDispatcherInterfaceName()) ->
+	this.setMethods(m.myMultiReactionNotifications().createMethod(Primitives, false)) ->
+	this.methods.add(createMethod("start", Primitives, true)) ->
+	this.methods.add(sharedInstanceMethod(this)) 
+;
+
+private myMultiReactionNotifications(Module m):
+	behaviours().notificationsTriggeringMultipleReactions().select(e|e.module() == m)
+;
+
+dispatchMethodName(String notificationName):
+	"dispatch_" + notificationName
+;
+
+private List[Parameter] toParameters(List[Feature] features):
+	JAVA de.dubmas.modulob.reaction.generator.templates.ModelCreation.featuresToParametersForNotificationDispatcher(java.util.List)
+;
+
+createMethod(String name, List[Primitive] Primitives, Boolean isStatic):
+	createMethodInternal(name, Primitives, isStatic, {})
+;
+
+createMethod(Notification n, List[Primitive] Primitives, Boolean isStatic):
+	createMethodInternal(n.name.dispatchMethodName(), Primitives, isStatic, n.features.toParameters())
+;
+
+/*
+ * used java extension here because normal 
+ * create extension did not set method's type correctly:
+ * if extension was called multiple times, only upon the last
+ * invocation the method's type was set - in the other cases
+ * it was null after the extension call returned.
+ *
+ * .. returning to this code after some months :) .. this might be due
+ * to a containment reference of a method to its type. Such a reference
+ * can only be held by one instance. But I did not check on this ... :\ 
+ *
+ * !! This is only the case if the typeRef references a primitive type .. 
+ * Why??
+ */
+Method createMethodInternal(String name, 
+ 							List[Primitive] Primitives, 
+ 							Boolean isStatic,
+ 							List[Parameter] parameters):
+	JAVA de.dubmas.modulob.reaction.generator.templates.ModelCreation.createMethod(java.lang.String, 
+													   java.util.List, 
+													   java.lang.Boolean,
+													   java.util.List)
+;
+
+/*
+ * yes, these two extension could be factored into one. but, if
+ * this one extension would be called multiple times, the method's
+ * type would not be set correctly (see comment in createMethod(String, List)
+ */
+private create Method this sharedInstanceMethod (Interface container):
+	this.setName("sharedInstance") ->
+	this.setIsStatic(true) ->
+	this.setType(newTypeRef(container))
+;
+
+private create TypeRef this newVoidTypeRef(List[Primitive] Primitives):
+	this.setIsMulti(false) ->
+	this.setReferenced(Primitives.selectFirst(pt | pt.name == "Void"))
+;
+
+private create TypeRef this newTypeRef(Type referenced):
+	this.setIsMulti(false) ->
+	this.setReferenced(referenced)
+;

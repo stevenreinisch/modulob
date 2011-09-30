@@ -1,0 +1,158 @@
+«IMPORT system»
+«IMPORT modulob»
+«IMPORT behaviour»
+
+«EXTENSION de::dubmas::modulob::generator::templates::Types»
+«EXTENSION de::dubmas::modulob::reaction::generator::templates::Notifications»
+«EXTENSION org::eclipse::xtend::util::stdlib::io»
+«EXTENSION org::eclipse::xtend::util::stdlib::globalvar»
+
+
+«DEFINE main(List[Behaviour] behaviours) FOR List[Module]»
+	
+	«EXPAND StartEventRuntime::main FOR behaviours»
+	
+	«EXPAND NotificationDispatcher::main FOREACH this»
+
+	«REM»
+	«FOREACH behaviours.referencedModulesSet().info() AS m»
+	«ENDREM»
+	«FOREACH this AS m»
+		«IF m.notificationModel.notifications.size > 0»
+			«EXPAND NotificationsHeader FOR m»
+			«EXPAND NotificationsImpl   FOR m»
+	
+			«EXPAND NotificationTriggerHeader FOR m»
+			«EXPAND NotificationTriggerImpl   FOR m»
+		«ENDIF»
+	«ENDFOREACH»
+«ENDDEFINE»
+
+«DEFINE NotificationsHeader FOR Module»
+«FILE this.name + "/public/" + this.notificationsFileName() + ".h"»
+	#import <Foundation/Foundation.h>
+
+	«FOREACH this.notificationModel.notifications AS e»
+		extern NSString *const «e.notificationName()»;
+		
+		
+		«FOREACH e.features AS f»
+		extern NSString *const «f.notificationFeatureKey(e)»;
+		«ENDFOREACH»
+		
+	«ENDFOREACH»
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE NotificationsImpl FOR Module»
+«FILE this.name + "/private/" + this.notificationsFileName() + ".m"»
+	#import "«this.notificationsFileName()».h"
+	
+	«FOREACH this.notificationModel.notifications AS e»
+		NSString *const «e.notificationName()» = @"«e.notificationName()»";
+		
+		
+		«FOREACH e.features AS f»
+		NSString *const «f.notificationFeatureKey(e)» = @"«f.notificationFeatureKey(e)»";
+		«ENDFOREACH»
+		
+	«ENDFOREACH»
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE NotificationTriggerHeader FOR Module»
+«FILE this.name + "/public/" + this.notificationTriggerName() + ".h"»
+	#import <Foundation/Foundation.h>
+	
+	«REM» 
+	
+	We do not forward delcare referenced types because these
+	will simply be typed with 'id' in the generated code.
+	
+	«FOREACH this.sections.elements.typeSelect(Notification).
+				features.select(f | Entity.isInstance(f.type.referenced)).
+					type.referenced.toSet() AS referencedType»
+		
+		@class «referencedType.typeName()»;
+	«ENDFOREACH»
+	«ENDREM»
+
+	@interface «this.notificationTriggerName()» : NSObject {}
+
+	«FOREACH this.notificationModel.notifications AS e»
+		«EXPAND publishSignature FOR e»;
+	«ENDFOREACH»
+	
+@end
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE publishSignature FOR Notification»
+	+(void)triggerNotification_«this.name»
+	
+	
+	«FOREACH this.features AS f ITERATOR iter»
+		«IF iter.counter0 > 0»
+			«f.name»
+		«ENDIF»
+		
+		«REM»
+		:(«f.type.typeRef()») «f.name»
+		«ENDREM»
+		:(id) «f.name»
+	«ENDFOREACH»
+	
+«ENDDEFINE»
+
+«DEFINE NotificationTriggerImpl FOR Module»
+«FILE this.name + "/private/" + this.notificationTriggerName() + ".m"»
+	#import "«this.notificationTriggerName()».h"
+	#import "«this.notificationsFileName()».h"
+
+	«REM»
+	
+	We do not import referenced types because these
+	will simply be typed with 'id' in the generated code.
+	
+	«FOREACH this.sections.elements.typeSelect(Notification).
+				features.select(f | Entity.isInstance(f.type.referenced)).
+					type.referenced.toSet() AS referencedType»
+		
+		#import "«referencedType.typeName()».h"
+	«ENDFOREACH»
+	«ENDREM»
+
+	@implementation «this.notificationTriggerName()»
+
+	«FOREACH this.notificationModel.notifications AS n»
+		«EXPAND publishSignature FOR n»
+		{	
+			«EXPAND TriggerNotification(0) FOR n»	
+		}
+	«ENDFOREACH»
+
+	@end
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE TriggerNotification(Integer count) FOR Notification»
+	NSDictionary *«"userInfo" + count» = [NSDictionary dictionaryWithObjects:
+								  [NSArray arrayWithObjects:
+								  «FOREACH this.features AS f»
+								  	«f.name»,
+								  «ENDFOREACH»
+								   nil]
+															 forKeys:
+								  [NSArray arrayWithObjects:
+								  «FOREACH this.features AS f»
+								  	«f.notificationFeatureKey(this)»,
+								  «ENDFOREACH»
+								   nil]
+								  ];
+	
+			[[NSNotificationCenter defaultCenter] 
+	 		postNotificationName:«this.notificationName()» 
+	 		object:nil
+	 		userInfo:«"userInfo" + count»
+	 		];
+«ENDDEFINE»

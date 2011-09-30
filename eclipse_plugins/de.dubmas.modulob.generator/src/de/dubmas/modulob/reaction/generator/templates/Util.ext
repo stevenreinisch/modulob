@@ -1,0 +1,80 @@
+import system;
+import modulob;
+import behaviour;
+import types;
+
+extension de::dubmas::modulob::generator::templates::BaseClasses;
+extension de::dubmas::modulob::generator::common::Util;
+extension org::eclipse::xtend::util::stdlib::globalvar;
+
+setGlobalVar(Object var, String name):
+	storeGlobalVar(name, var)
+;
+
+dispatcherInterface(Module m):
+	m.interfaceModel.interfaces.
+		selectFirst(i|i.name == notificationsDispatcherInterfaceName())
+;
+
+notificationsModuleName(): "NotificationsModule" ;
+
+notificationsModule():
+	(Module)getGlobalVar(notificationsModuleName())
+;
+
+modules():
+	(List[Module])getGlobalVar("Modules")
+;
+
+behaviours():
+	(List[Behaviour])getGlobalVar("Behaviours")
+;
+
+
+transformedBehaviours():
+	(List[Behaviour])getGlobalVar("TransformedBehaviours")
+;
+
+setReactionNames(List[Behaviour] behaviours):
+	behaviours.reactions.setName()
+;
+
+setName(Reaction r):
+	r.setName(((Behaviour)r.eContainer).name + "." + r.notification.name + "->" + r.method.name)
+;
+
+List[Reaction] order(List[Reaction] reactions):
+	JAVA de.dubmas.modulob.reaction.generator.templates.Util.order(java.util.List)
+;
+
+isStartMethod(Method m):
+	m.isStatic && 
+	m.parameters.isEmpty &&
+	Primitive.isInstance(m.type.referenced) &&
+	((Primitive)m.type.referenced).name == "Void" &&
+	m.name == "start"
+;
+
+hasStartMethod(Interface i):
+	i.methods.exists(m|m.isStartMethod())
+;
+
+hasSharedInstanceMethod(Interface i):
+	i.methods.exists(m|m.isSharedInstanceMethod())
+;
+
+singletonInterfacesWithoutEventDispatcherInterfaces(Module m):
+	m.interfaceModel.interfaces.
+			select(i|i.hasStartMethod() && 
+					 i.hasSharedInstanceMethod() &&
+					 !(i.name == notificationsDispatcherInterfaceName()))
+;
+
+originalModule(Module moduleReferencedInReaction):
+	modules().selectFirst(m|m.name == moduleReferencedInReaction.name)
+;
+
+notificationInModuleWithName(String moduleName, String notificationName):
+	modules().selectFirst(m|m.name == moduleName).
+		notificationModel.notifications.selectFirst(n|n.name == notificationName)
+;

@@ -1,0 +1,94 @@
+«IMPORT modulob»
+«IMPORT behaviour»
+
+«EXTENSION de::dubmas::modulob::generator::templates::Types»
+«EXTENSION de::dubmas::modulob::generator::templates::BaseClasses»
+«EXTENSION de::dubmas::modulob::reaction::generator::templates::Notifications»
+«EXTENSION org::eclipse::xtend::util::stdlib::io»
+
+«AROUND de::dubmas::modulob::generator::templates::BaseClasses::Imports FOR Interface»
+	«targetDef.proceed()»
+	
+	«IF !this.associatedReactions().isEmpty»
+		«FOREACH this.associatedReactions().notification.module().toSet() AS m»
+			#import "«m.notificationsFileName()».h"
+		«ENDFOREACH»
+	
+		@interface «this.baseClassName()» ()
+		«FOREACH this.associatedReactions() AS r»
+			«IF !r.notification.features.isEmpty»
+				«EXPAND ExtractAndForwardMehtodSignature FOR r»;
+			«ENDIF»	
+		«ENDFOREACH»
+		@end
+	«ENDIF»
+«ENDAROUND»
+
+«AROUND de::dubmas::modulob::generator::templates::BaseClasses::InitBody FOR Interface»
+	«targetDef.proceed()»
+	«FOREACH this.associatedReactions() AS r»
+	 	[[NSNotificationCenter defaultCenter]
+		 addObserver:self 
+		 selector:@selector(
+		 «IF !r.notification.features.isEmpty»
+		 	«r.extractAndForwardMethodName()»:
+		 «ELSE»
+		 	«r.method.name»
+		 «ENDIF»
+		 )
+		 name:«r.notification.notificationName()» 
+		 object:nil];
+	«ENDFOREACH»
+«ENDAROUND»
+
+«AROUND de::dubmas::modulob::generator::templates::BaseClasses::DeallocBody FOR Interface»
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+	«targetDef.proceed()»
+«ENDAROUND»
+
+«AROUND de::dubmas::modulob::generator::templates::BaseClasses::MethodBody FOR Method»
+	«IF this.isStartMethod() && ((Interface)this.eContainer).hasSharedInstanceMethod()»
+		/*
+		 * just create shared instance. thus it registers with
+		 * the notification center
+		 *
+		 * use [self class] because decision which subclass is starting
+		 * cannot be made at generation-time
+		 */
+		[[self class] sharedInstance];
+	«ELSE»
+		«targetDef.proceed()»
+	«ENDIF»
+«ENDAROUND»
+
+«AROUND de::dubmas::modulob::generator::templates::BaseClasses::Methods FOR Interface»
+	«targetDef.proceed()»
+	
+	«IF !this.associatedReactions().isEmpty»
+		«FOREACH this.associatedReactions() AS r»
+			«IF !r.notification.features.isEmpty»
+				«EXPAND ExtractAndForwardMehtodSignature FOR r»
+				{
+					NSDictionary *userInfo = [n userInfo];
+					«FOREACH r.notification.features AS f ITERATOR iter»
+						«REM»
+						«f.type.typeRef()» «f.name + iter.counter0» = [userInfo objectForKey:«f.notificationFeatureKey(r.notification)»];
+						«ENDREM»
+						id «f.name + iter.counter0» = [userInfo objectForKey:«f.notificationFeatureKey(r.notification)»];
+					«ENDFOREACH»
+					
+					[self «r.method.name»
+						«FOREACH r.method.parameters AS p ITERATOR iter»
+							«(p.signaturePart != null ? p.signaturePart : "") + 
+							":" + p.associatedNotificationFeature(r.notification.features).name + iter.counter0»
+						«ENDFOREACH»
+					];
+				}
+			«ENDIF»
+		«ENDFOREACH»
+	«ENDIF»
+«ENDAROUND»
+
+«DEFINE ExtractAndForwardMehtodSignature FOR Reaction»
+	-(void)«this.extractAndForwardMethodName()»:(NSNotification*)n
+«ENDDEFINE»

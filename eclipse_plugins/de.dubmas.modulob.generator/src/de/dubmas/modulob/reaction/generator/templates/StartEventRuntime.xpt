@@ -1,0 +1,84 @@
+«IMPORT behaviour»
+
+«EXTENSION de::dubmas::modulob::generator::templates::Types»
+«EXTENSION de::dubmas::modulob::generator::templates::BaseClasses»
+«EXTENSION de::dubmas::modulob::reaction::generator::templates::Notifications»
+
+«DEFINE main FOR List[Behaviour]»
+	«EXPAND Header FOR this»
+	«EXPAND Impl FOR this»
+«ENDDEFINE»
+
+«DEFINE Header FOR List[Behaviour]»
+«FILE "StartEventRuntime.h"»
+	#import <Foundation/Foundation.h>
+
+	#import "P_E_MessagingPeerInfo.h"
+
+	@interface StartEventRuntime : NSObject {}
+		+(void)startWithLocalPeerInfo:(id<P_E_MessagingPeerInfo>)localPeerInfo
+		           AndRegisterClasses:(NSArray*)classNames;
+	@end
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE Impl FOR List[Behaviour]»
+«FILE "DO_NOT_FORGET.txt"»
+
+	.. to register subclasses of the following base classes
+	to register with the Runtime:
+
+	«FOREACH this.referencedModulesSet().singletonInterfacesWithoutEventDispatcherInterfaces() AS i»
+	«i.baseClassName()»
+	«ENDFOREACH»
+	
+	.. at app start like this:
+	
+	[StartEventRuntime startAndRegisterClasses:
+		[NSArray arrayWithObjects:@"<subclass name>",
+								  ...,
+								  nil]];
+	
+«ENDFILE»
+«FILE "StartEventRuntime.m"»
+	#import "StartEventRuntime.h"
+
+	«FOREACH modulesHavingMultiReactionNotifications().dispatcherInterface() AS i»
+		#import "«i.typeName()».h"
+	«ENDFOREACH»
+
+	«REM»
+	«FOREACH this.referencedModulesSet().singletonInterfacesWithoutEventDispatcherInterfaces() AS i»
+		#import "«i.baseClassName()».h";
+	«ENDFOREACH»
+	«ENDREM»
+	
+	#import "RuntimeEvents.h"
+	#import "RuntimeEventPublisher.h"
+
+
+	@implementation StartEventRuntime
+
+	+(void)startWithLocalPeerInfo:(id<P_E_MessagingPeerInfo>)localPeerInfo
+		       AndRegisterClasses:(NSArray*)classNames
+	{
+		for(NSString *className in classNames){
+			Class class = NSClassFromString(className);
+			if(class != nil){
+				[class performSelector:NSSelectorFromString(@"start")];
+			}else{
+				[NSException raise:@"Invalid State" format:@"Class does not exist: %@", className];
+			}
+		}
+	
+		«FOREACH modulesHavingMultiReactionNotifications().dispatcherInterface() AS i»
+			[«i.typeName()» start];
+		«ENDFOREACH»
+		
+		//[RuntimeEventDispatcher start];
+		[RuntimeEventPublisher publishEvent_AppStart:localPeerInfo];
+	}
+
+	@end
+«ENDFILE»
+«ENDDEFINE»
