@@ -109,6 +109,7 @@ Workflow {
 	}
 	
 	component = @de.dubmas.modulob.reaction.generator.workflow.ReactionGenerator auto-inject {}
+	component = de.dubmas.modulob.util.ObjectiveCFormatter{}
 }
 «ENDFILE»
 «ENDDEFINE»

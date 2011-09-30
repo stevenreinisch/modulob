@@ -19,7 +19,8 @@ Require-Bundle: de.dubmas.modulob.systemdsl;visibility:=reexport,
  org.eclipse.xtend,
  org.eclipse.xpand,
  org.eclipse.xtext.common.types.ui,
- org.eclipse.xtext.ui.codetemplates.ui
+ org.eclipse.xtext.ui.codetemplates.ui,
+ de.dubmas.modulob.util;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: de.dubmas.modulob.ui.contentassist.antlr,
  de.dubmas.modulob.ui.internal
