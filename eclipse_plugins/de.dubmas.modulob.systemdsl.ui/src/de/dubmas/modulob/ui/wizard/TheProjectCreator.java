@@ -26,6 +26,7 @@ public class TheProjectCreator extends SystemDslProjectCreator{
 		result.add("de.dubmas.modulob.datadsl");
 		result.add("de.dubmas.modulob.interfacedsl");
 		result.add("de.dubmas.modulob.notificationdsl");
+		result.add("de.dubmas.modulob.behaviour.dsl");
 		result.add("de.dubmas.modulob.generator");
 		result.add("de.dubmas.modulob.generator.common");
 		
