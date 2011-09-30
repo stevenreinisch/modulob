@@ -10,7 +10,7 @@ import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 
 import de.dubmas.modulob.system.SystemPackage;
 
-public class NameProvider extends DefaultDeclarativeQualifiedNameProvider{
+public class InterfaceDslNameProvider extends DefaultDeclarativeQualifiedNameProvider{
 	
 //	@Inject
 //	private ResourceDescriptionsProvider provider;
@@ -37,6 +37,17 @@ public class NameProvider extends DefaultDeclarativeQualifiedNameProvider{
 				segments[segments.length - 1] = ((Interface)obj).getName();
 				return QualifiedName.create(segments);
 			}
+		} else if(obj instanceof Method){
+			Method m = (Method)obj;
+			StringBuffer buffer = new StringBuffer();
+			buffer.append(m.getName());
+			for(Parameter p: m.getParameters()){
+				if(p.getSignaturePart() != null){
+					buffer.append(p.getSignaturePart());
+				}
+				buffer.append(":");
+			}
+			return QualifiedName.create(buffer.toString());
 		}
 		
 		return super.getFullyQualifiedName(obj);

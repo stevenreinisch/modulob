@@ -9,6 +9,6 @@ package de.dubmas.modulob;
 public class InterfaceDslRuntimeModule extends de.dubmas.modulob.AbstractInterfaceDslRuntimeModule {
 	
 	public Class<? extends org.eclipse.xtext.naming.IQualifiedNameProvider> bindIQualifiedNameProvider() {
-		return de.dubmas.modulob.NameProvider.class;
+		return de.dubmas.modulob.InterfaceDslNameProvider.class;
 	}
 }
