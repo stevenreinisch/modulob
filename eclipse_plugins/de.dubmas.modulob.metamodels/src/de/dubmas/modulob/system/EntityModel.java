@@ -18,8 +18,8 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.dubmas.modulob.system.EntityModel#getEntities <em>Entities</em>}</li>
  *   <li>{@link de.dubmas.modulob.system.EntityModel#getModule <em>Module</em>}</li>
+ *   <li>{@link de.dubmas.modulob.system.EntityModel#getEntities <em>Entities</em>}</li>
  * </ul>
  * </p>
  *

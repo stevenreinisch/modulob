@@ -146,7 +146,7 @@ public class BehaviourPackageImpl extends EPackageImpl implements BehaviourPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getReaction_Trigger() {
+	public EReference getReaction_Notification() {
 		return (EReference)reactionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -155,7 +155,7 @@ public class BehaviourPackageImpl extends EPackageImpl implements BehaviourPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getReaction_Reactor() {
+	public EReference getReaction_Method() {
 		return (EReference)reactionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -166,6 +166,24 @@ public class BehaviourPackageImpl extends EPackageImpl implements BehaviourPacka
 	 */
 	public EAttribute getReaction_Order() {
 		return (EAttribute)reactionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getReaction_Interface() {
+		return (EReference)reactionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getReaction_Name() {
+		return (EAttribute)reactionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -201,9 +219,11 @@ public class BehaviourPackageImpl extends EPackageImpl implements BehaviourPacka
 		createEAttribute(behaviourEClass, BEHAVIOUR__NAME);
 
 		reactionEClass = createEClass(REACTION);
-		createEReference(reactionEClass, REACTION__TRIGGER);
-		createEReference(reactionEClass, REACTION__REACTOR);
+		createEReference(reactionEClass, REACTION__NOTIFICATION);
+		createEReference(reactionEClass, REACTION__METHOD);
 		createEAttribute(reactionEClass, REACTION__ORDER);
+		createEReference(reactionEClass, REACTION__INTERFACE);
+		createEAttribute(reactionEClass, REACTION__NAME);
 	}
 
 	/**
@@ -244,9 +264,11 @@ public class BehaviourPackageImpl extends EPackageImpl implements BehaviourPacka
 		initEAttribute(getBehaviour_Name(), ecorePackage.getEString(), "name", null, 1, 1, Behaviour.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reactionEClass, Reaction.class, "Reaction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getReaction_Trigger(), theModulobPackage.getNotification(), null, "trigger", null, 1, 1, Reaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getReaction_Reactor(), theModulobPackage.getMethod(), null, "reactor", null, 1, 1, Reaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReaction_Notification(), theModulobPackage.getNotification(), null, "notification", null, 1, 1, Reaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReaction_Method(), theModulobPackage.getMethod(), null, "method", null, 1, 1, Reaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getReaction_Order(), ecorePackage.getEInt(), "order", null, 0, 1, Reaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReaction_Interface(), theModulobPackage.getInterface(), null, "interface", null, 1, 1, Reaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReaction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Reaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

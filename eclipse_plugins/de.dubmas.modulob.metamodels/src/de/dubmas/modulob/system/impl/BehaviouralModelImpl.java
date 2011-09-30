@@ -13,6 +13,7 @@ import de.dubmas.modulob.system.SystemPackage;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -20,6 +21,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -31,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.dubmas.modulob.system.impl.BehaviouralModelImpl#getBehaviours <em>Behaviours</em>}</li>
+ *   <li>{@link de.dubmas.modulob.system.impl.BehaviouralModelImpl#getSystem <em>System</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,6 +49,16 @@ public class BehaviouralModelImpl extends VersionedElementImpl implements Behavi
 	 * @ordered
 	 */
 	protected EList<Behaviour> behaviours;
+
+	/**
+	 * The cached value of the '{@link #getSystem() <em>System</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSystem()
+	 * @generated
+	 * @ordered
+	 */
+	protected de.dubmas.modulob.system.System system;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -83,6 +96,44 @@ public class BehaviouralModelImpl extends VersionedElementImpl implements Behavi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public de.dubmas.modulob.system.System getSystem() {
+		if (system != null && system.eIsProxy()) {
+			InternalEObject oldSystem = (InternalEObject)system;
+			system = (de.dubmas.modulob.system.System)eResolveProxy(oldSystem);
+			if (system != oldSystem) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SystemPackage.BEHAVIOURAL_MODEL__SYSTEM, oldSystem, system));
+			}
+		}
+		return system;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public de.dubmas.modulob.system.System basicGetSystem() {
+		return system;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSystem(de.dubmas.modulob.system.System newSystem) {
+		de.dubmas.modulob.system.System oldSystem = system;
+		system = newSystem;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SystemPackage.BEHAVIOURAL_MODEL__SYSTEM, oldSystem, system));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -102,6 +153,9 @@ public class BehaviouralModelImpl extends VersionedElementImpl implements Behavi
 		switch (featureID) {
 			case SystemPackage.BEHAVIOURAL_MODEL__BEHAVIOURS:
 				return getBehaviours();
+			case SystemPackage.BEHAVIOURAL_MODEL__SYSTEM:
+				if (resolve) return getSystem();
+				return basicGetSystem();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -119,6 +173,9 @@ public class BehaviouralModelImpl extends VersionedElementImpl implements Behavi
 				getBehaviours().clear();
 				getBehaviours().addAll((Collection<? extends Behaviour>)newValue);
 				return;
+			case SystemPackage.BEHAVIOURAL_MODEL__SYSTEM:
+				setSystem((de.dubmas.modulob.system.System)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -134,6 +191,9 @@ public class BehaviouralModelImpl extends VersionedElementImpl implements Behavi
 			case SystemPackage.BEHAVIOURAL_MODEL__BEHAVIOURS:
 				getBehaviours().clear();
 				return;
+			case SystemPackage.BEHAVIOURAL_MODEL__SYSTEM:
+				setSystem((de.dubmas.modulob.system.System)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -148,6 +208,8 @@ public class BehaviouralModelImpl extends VersionedElementImpl implements Behavi
 		switch (featureID) {
 			case SystemPackage.BEHAVIOURAL_MODEL__BEHAVIOURS:
 				return behaviours != null && !behaviours.isEmpty();
+			case SystemPackage.BEHAVIOURAL_MODEL__SYSTEM:
+				return system != null;
 		}
 		return super.eIsSet(featureID);
 	}

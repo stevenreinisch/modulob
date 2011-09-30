@@ -12,9 +12,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModulobBehaviour.ecore#//Behaviour/name"/>
     </genClasses>
     <genClasses ecoreClass="ModulobBehaviour.ecore#//Reaction">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ModulobBehaviour.ecore#//Reaction/trigger"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ModulobBehaviour.ecore#//Reaction/reactor"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ModulobBehaviour.ecore#//Reaction/notification"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ModulobBehaviour.ecore#//Reaction/method"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModulobBehaviour.ecore#//Reaction/order"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ModulobBehaviour.ecore#//Reaction/interface"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

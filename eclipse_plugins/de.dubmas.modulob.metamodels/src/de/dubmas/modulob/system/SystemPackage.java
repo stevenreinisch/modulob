@@ -318,22 +318,22 @@ public interface SystemPackage extends EPackage {
 	int ENTITY_MODEL__VERSION = VERSIONED_ELEMENT__VERSION;
 
 	/**
-	 * The feature id for the '<em><b>Entities</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_MODEL__ENTITIES = VERSIONED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Module</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_MODEL__MODULE = VERSIONED_ELEMENT_FEATURE_COUNT + 1;
+	int ENTITY_MODEL__MODULE = VERSIONED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Entities</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_MODEL__ENTITIES = VERSIONED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Entity Model</em>' class.
@@ -437,13 +437,22 @@ public interface SystemPackage extends EPackage {
 	int BEHAVIOURAL_MODEL__BEHAVIOURS = VERSIONED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>System</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOURAL_MODEL__SYSTEM = VERSIONED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Behavioural Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIOURAL_MODEL_FEATURE_COUNT = VERSIONED_ELEMENT_FEATURE_COUNT + 1;
+	int BEHAVIOURAL_MODEL_FEATURE_COUNT = VERSIONED_ELEMENT_FEATURE_COUNT + 2;
 
 
 	/**
@@ -648,6 +657,17 @@ public interface SystemPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getBehaviouralModel_Behaviours();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.dubmas.modulob.system.BehaviouralModel#getSystem <em>System</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>System</em>'.
+	 * @see de.dubmas.modulob.system.BehaviouralModel#getSystem()
+	 * @see #getBehaviouralModel()
+	 * @generated
+	 */
+	EReference getBehaviouralModel_System();
 
 	/**
 	 * Returns the meta object for class '{@link de.dubmas.modulob.system.VersionedElement <em>Versioned Element</em>}'.
@@ -876,6 +896,14 @@ public interface SystemPackage extends EPackage {
 		 * @generated
 		 */
 		EReference BEHAVIOURAL_MODEL__BEHAVIOURS = eINSTANCE.getBehaviouralModel_Behaviours();
+
+		/**
+		 * The meta object literal for the '<em><b>System</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BEHAVIOURAL_MODEL__SYSTEM = eINSTANCE.getBehaviouralModel_System();
 
 		/**
 		 * The meta object literal for the '{@link de.dubmas.modulob.system.impl.VersionedElementImpl <em>Versioned Element</em>}' class.

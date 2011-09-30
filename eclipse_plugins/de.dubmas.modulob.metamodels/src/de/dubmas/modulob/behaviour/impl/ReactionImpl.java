@@ -6,6 +6,7 @@
  */
 package de.dubmas.modulob.behaviour.impl;
 
+import de.dubmas.modulob.Interface;
 import de.dubmas.modulob.Method;
 import de.dubmas.modulob.Notification;
 
@@ -25,9 +26,11 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.dubmas.modulob.behaviour.impl.ReactionImpl#getTrigger <em>Trigger</em>}</li>
- *   <li>{@link de.dubmas.modulob.behaviour.impl.ReactionImpl#getReactor <em>Reactor</em>}</li>
+ *   <li>{@link de.dubmas.modulob.behaviour.impl.ReactionImpl#getNotification <em>Notification</em>}</li>
+ *   <li>{@link de.dubmas.modulob.behaviour.impl.ReactionImpl#getMethod <em>Method</em>}</li>
  *   <li>{@link de.dubmas.modulob.behaviour.impl.ReactionImpl#getOrder <em>Order</em>}</li>
+ *   <li>{@link de.dubmas.modulob.behaviour.impl.ReactionImpl#getInterface <em>Interface</em>}</li>
+ *   <li>{@link de.dubmas.modulob.behaviour.impl.ReactionImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,24 +38,24 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  */
 public class ReactionImpl extends EObjectImpl implements Reaction {
 	/**
-	 * The cached value of the '{@link #getTrigger() <em>Trigger</em>}' reference.
+	 * The cached value of the '{@link #getNotification() <em>Notification</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTrigger()
+	 * @see #getNotification()
 	 * @generated
 	 * @ordered
 	 */
-	protected Notification trigger;
+	protected Notification notification;
 
 	/**
-	 * The cached value of the '{@link #getReactor() <em>Reactor</em>}' reference.
+	 * The cached value of the '{@link #getMethod() <em>Method</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReactor()
+	 * @see #getMethod()
 	 * @generated
 	 * @ordered
 	 */
-	protected Method reactor;
+	protected Method method;
 
 	/**
 	 * The default value of the '{@link #getOrder() <em>Order</em>}' attribute.
@@ -73,6 +76,36 @@ public class ReactionImpl extends EObjectImpl implements Reaction {
 	 * @ordered
 	 */
 	protected int order = ORDER_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getInterface() <em>Interface</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInterface()
+	 * @generated
+	 * @ordered
+	 */
+	protected Interface interface_;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,16 +131,16 @@ public class ReactionImpl extends EObjectImpl implements Reaction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Notification getTrigger() {
-		if (trigger != null && trigger.eIsProxy()) {
-			InternalEObject oldTrigger = (InternalEObject)trigger;
-			trigger = (Notification)eResolveProxy(oldTrigger);
-			if (trigger != oldTrigger) {
+	public Notification getNotification() {
+		if (notification != null && notification.eIsProxy()) {
+			InternalEObject oldNotification = (InternalEObject)notification;
+			notification = (Notification)eResolveProxy(oldNotification);
+			if (notification != oldNotification) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, org.eclipse.emf.common.notify.Notification.RESOLVE, BehaviourPackage.REACTION__TRIGGER, oldTrigger, trigger));
+					eNotify(new ENotificationImpl(this, org.eclipse.emf.common.notify.Notification.RESOLVE, BehaviourPackage.REACTION__NOTIFICATION, oldNotification, notification));
 			}
 		}
-		return trigger;
+		return notification;
 	}
 
 	/**
@@ -115,8 +148,8 @@ public class ReactionImpl extends EObjectImpl implements Reaction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Notification basicGetTrigger() {
-		return trigger;
+	public Notification basicGetNotification() {
+		return notification;
 	}
 
 	/**
@@ -124,11 +157,11 @@ public class ReactionImpl extends EObjectImpl implements Reaction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTrigger(Notification newTrigger) {
-		Notification oldTrigger = trigger;
-		trigger = newTrigger;
+	public void setNotification(Notification newNotification) {
+		Notification oldNotification = notification;
+		notification = newNotification;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, org.eclipse.emf.common.notify.Notification.SET, BehaviourPackage.REACTION__TRIGGER, oldTrigger, trigger));
+			eNotify(new ENotificationImpl(this, org.eclipse.emf.common.notify.Notification.SET, BehaviourPackage.REACTION__NOTIFICATION, oldNotification, notification));
 	}
 
 	/**
@@ -136,16 +169,16 @@ public class ReactionImpl extends EObjectImpl implements Reaction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Method getReactor() {
-		if (reactor != null && reactor.eIsProxy()) {
-			InternalEObject oldReactor = (InternalEObject)reactor;
-			reactor = (Method)eResolveProxy(oldReactor);
-			if (reactor != oldReactor) {
+	public Method getMethod() {
+		if (method != null && method.eIsProxy()) {
+			InternalEObject oldMethod = (InternalEObject)method;
+			method = (Method)eResolveProxy(oldMethod);
+			if (method != oldMethod) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, org.eclipse.emf.common.notify.Notification.RESOLVE, BehaviourPackage.REACTION__REACTOR, oldReactor, reactor));
+					eNotify(new ENotificationImpl(this, org.eclipse.emf.common.notify.Notification.RESOLVE, BehaviourPackage.REACTION__METHOD, oldMethod, method));
 			}
 		}
-		return reactor;
+		return method;
 	}
 
 	/**
@@ -153,8 +186,8 @@ public class ReactionImpl extends EObjectImpl implements Reaction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Method basicGetReactor() {
-		return reactor;
+	public Method basicGetMethod() {
+		return method;
 	}
 
 	/**
@@ -162,11 +195,11 @@ public class ReactionImpl extends EObjectImpl implements Reaction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setReactor(Method newReactor) {
-		Method oldReactor = reactor;
-		reactor = newReactor;
+	public void setMethod(Method newMethod) {
+		Method oldMethod = method;
+		method = newMethod;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, org.eclipse.emf.common.notify.Notification.SET, BehaviourPackage.REACTION__REACTOR, oldReactor, reactor));
+			eNotify(new ENotificationImpl(this, org.eclipse.emf.common.notify.Notification.SET, BehaviourPackage.REACTION__METHOD, oldMethod, method));
 	}
 
 	/**
@@ -195,17 +228,81 @@ public class ReactionImpl extends EObjectImpl implements Reaction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Interface getInterface() {
+		if (interface_ != null && interface_.eIsProxy()) {
+			InternalEObject oldInterface = (InternalEObject)interface_;
+			interface_ = (Interface)eResolveProxy(oldInterface);
+			if (interface_ != oldInterface) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, org.eclipse.emf.common.notify.Notification.RESOLVE, BehaviourPackage.REACTION__INTERFACE, oldInterface, interface_));
+			}
+		}
+		return interface_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Interface basicGetInterface() {
+		return interface_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInterface(Interface newInterface) {
+		Interface oldInterface = interface_;
+		interface_ = newInterface;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, org.eclipse.emf.common.notify.Notification.SET, BehaviourPackage.REACTION__INTERFACE, oldInterface, interface_));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, org.eclipse.emf.common.notify.Notification.SET, BehaviourPackage.REACTION__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BehaviourPackage.REACTION__TRIGGER:
-				if (resolve) return getTrigger();
-				return basicGetTrigger();
-			case BehaviourPackage.REACTION__REACTOR:
-				if (resolve) return getReactor();
-				return basicGetReactor();
+			case BehaviourPackage.REACTION__NOTIFICATION:
+				if (resolve) return getNotification();
+				return basicGetNotification();
+			case BehaviourPackage.REACTION__METHOD:
+				if (resolve) return getMethod();
+				return basicGetMethod();
 			case BehaviourPackage.REACTION__ORDER:
 				return getOrder();
+			case BehaviourPackage.REACTION__INTERFACE:
+				if (resolve) return getInterface();
+				return basicGetInterface();
+			case BehaviourPackage.REACTION__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -218,14 +315,20 @@ public class ReactionImpl extends EObjectImpl implements Reaction {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BehaviourPackage.REACTION__TRIGGER:
-				setTrigger((Notification)newValue);
+			case BehaviourPackage.REACTION__NOTIFICATION:
+				setNotification((Notification)newValue);
 				return;
-			case BehaviourPackage.REACTION__REACTOR:
-				setReactor((Method)newValue);
+			case BehaviourPackage.REACTION__METHOD:
+				setMethod((Method)newValue);
 				return;
 			case BehaviourPackage.REACTION__ORDER:
 				setOrder((Integer)newValue);
+				return;
+			case BehaviourPackage.REACTION__INTERFACE:
+				setInterface((Interface)newValue);
+				return;
+			case BehaviourPackage.REACTION__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -239,14 +342,20 @@ public class ReactionImpl extends EObjectImpl implements Reaction {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BehaviourPackage.REACTION__TRIGGER:
-				setTrigger((Notification)null);
+			case BehaviourPackage.REACTION__NOTIFICATION:
+				setNotification((Notification)null);
 				return;
-			case BehaviourPackage.REACTION__REACTOR:
-				setReactor((Method)null);
+			case BehaviourPackage.REACTION__METHOD:
+				setMethod((Method)null);
 				return;
 			case BehaviourPackage.REACTION__ORDER:
 				setOrder(ORDER_EDEFAULT);
+				return;
+			case BehaviourPackage.REACTION__INTERFACE:
+				setInterface((Interface)null);
+				return;
+			case BehaviourPackage.REACTION__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -260,12 +369,16 @@ public class ReactionImpl extends EObjectImpl implements Reaction {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BehaviourPackage.REACTION__TRIGGER:
-				return trigger != null;
-			case BehaviourPackage.REACTION__REACTOR:
-				return reactor != null;
+			case BehaviourPackage.REACTION__NOTIFICATION:
+				return notification != null;
+			case BehaviourPackage.REACTION__METHOD:
+				return method != null;
 			case BehaviourPackage.REACTION__ORDER:
 				return order != ORDER_EDEFAULT;
+			case BehaviourPackage.REACTION__INTERFACE:
+				return interface_ != null;
+			case BehaviourPackage.REACTION__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -282,6 +395,8 @@ public class ReactionImpl extends EObjectImpl implements Reaction {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (order: ");
 		result.append(order);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

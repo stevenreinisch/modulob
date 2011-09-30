@@ -271,7 +271,7 @@ public class SystemPackageImpl extends EPackageImpl implements SystemPackage {
 	 * @generated
 	 */
 	public EReference getEntityModel_Entities() {
-		return (EReference)entityModelEClass.getEStructuralFeatures().get(0);
+		return (EReference)entityModelEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -280,7 +280,7 @@ public class SystemPackageImpl extends EPackageImpl implements SystemPackage {
 	 * @generated
 	 */
 	public EReference getEntityModel_Module() {
-		return (EReference)entityModelEClass.getEStructuralFeatures().get(1);
+		return (EReference)entityModelEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -326,6 +326,15 @@ public class SystemPackageImpl extends EPackageImpl implements SystemPackage {
 	 */
 	public EReference getBehaviouralModel_Behaviours() {
 		return (EReference)behaviouralModelEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBehaviouralModel_System() {
+		return (EReference)behaviouralModelEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -407,8 +416,8 @@ public class SystemPackageImpl extends EPackageImpl implements SystemPackage {
 		createEReference(interfaceModelEClass, INTERFACE_MODEL__MODULE);
 
 		entityModelEClass = createEClass(ENTITY_MODEL);
-		createEReference(entityModelEClass, ENTITY_MODEL__ENTITIES);
 		createEReference(entityModelEClass, ENTITY_MODEL__MODULE);
+		createEReference(entityModelEClass, ENTITY_MODEL__ENTITIES);
 
 		notificationModelEClass = createEClass(NOTIFICATION_MODEL);
 		createEReference(notificationModelEClass, NOTIFICATION_MODEL__NOTIFICATIONS);
@@ -416,6 +425,7 @@ public class SystemPackageImpl extends EPackageImpl implements SystemPackage {
 
 		behaviouralModelEClass = createEClass(BEHAVIOURAL_MODEL);
 		createEReference(behaviouralModelEClass, BEHAVIOURAL_MODEL__BEHAVIOURS);
+		createEReference(behaviouralModelEClass, BEHAVIOURAL_MODEL__SYSTEM);
 
 		versionedElementEClass = createEClass(VERSIONED_ELEMENT);
 		createEAttribute(versionedElementEClass, VERSIONED_ELEMENT__VERSION);
@@ -481,8 +491,8 @@ public class SystemPackageImpl extends EPackageImpl implements SystemPackage {
 		initEReference(getInterfaceModel_Module(), this.getModule(), null, "module", null, 1, 1, InterfaceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entityModelEClass, EntityModel.class, "EntityModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEntityModel_Entities(), theModulobPackage.getEntity(), null, "entities", null, 0, -1, EntityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityModel_Module(), this.getModule(), null, "module", null, 1, 1, EntityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntityModel_Entities(), theModulobPackage.getEntity(), null, "entities", null, 0, -1, EntityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(notificationModelEClass, NotificationModel.class, "NotificationModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getNotificationModel_Notifications(), theModulobPackage.getNotification(), null, "notifications", null, 0, -1, NotificationModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -490,6 +500,7 @@ public class SystemPackageImpl extends EPackageImpl implements SystemPackage {
 
 		initEClass(behaviouralModelEClass, BehaviouralModel.class, "BehaviouralModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBehaviouralModel_Behaviours(), theBehaviourPackage.getBehaviour(), null, "behaviours", null, 0, -1, BehaviouralModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBehaviouralModel_System(), this.getSystem(), null, "system", null, 1, 1, BehaviouralModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(versionedElementEClass, VersionedElement.class, "VersionedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVersionedElement_Version(), ecorePackage.getEString(), "version", null, 1, 1, VersionedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

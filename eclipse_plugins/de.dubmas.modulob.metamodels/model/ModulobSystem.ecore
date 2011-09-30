@@ -40,6 +40,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="BehaviouralModel" eSuperTypes="#//VersionedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="behaviours" upperBound="-1"
         eType="ecore:EClass ModulobBehaviour.ecore#//Behaviour" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="system" lowerBound="1"
+        eType="#//System"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VersionedElement" abstract="true" eSuperTypes="#//Element">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" lowerBound="1"

@@ -34,24 +34,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.dubmas.modulob.system.impl.EntityModelImpl#getEntities <em>Entities</em>}</li>
  *   <li>{@link de.dubmas.modulob.system.impl.EntityModelImpl#getModule <em>Module</em>}</li>
+ *   <li>{@link de.dubmas.modulob.system.impl.EntityModelImpl#getEntities <em>Entities</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class EntityModelImpl extends VersionedElementImpl implements EntityModel {
-	/**
-	 * The cached value of the '{@link #getEntities() <em>Entities</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntities()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Entity> entities;
-
 	/**
 	 * The cached value of the '{@link #getModule() <em>Module</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -61,6 +51,16 @@ public class EntityModelImpl extends VersionedElementImpl implements EntityModel
 	 * @ordered
 	 */
 	protected Module module;
+
+	/**
+	 * The cached value of the '{@link #getEntities() <em>Entities</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEntities()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Entity> entities;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -136,10 +136,10 @@ public class EntityModelImpl extends VersionedElementImpl implements EntityModel
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SystemPackage.ENTITY_MODEL__ENTITIES:
-				return getEntities();
 			case SystemPackage.ENTITY_MODEL__MODULE:
 				return getModule();
+			case SystemPackage.ENTITY_MODEL__ENTITIES:
+				return getEntities();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -153,12 +153,12 @@ public class EntityModelImpl extends VersionedElementImpl implements EntityModel
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case SystemPackage.ENTITY_MODEL__MODULE:
+				setModule((Module)newValue);
+				return;
 			case SystemPackage.ENTITY_MODEL__ENTITIES:
 				getEntities().clear();
 				getEntities().addAll((Collection<? extends Entity>)newValue);
-				return;
-			case SystemPackage.ENTITY_MODEL__MODULE:
-				setModule((Module)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -172,11 +172,11 @@ public class EntityModelImpl extends VersionedElementImpl implements EntityModel
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SystemPackage.ENTITY_MODEL__ENTITIES:
-				getEntities().clear();
-				return;
 			case SystemPackage.ENTITY_MODEL__MODULE:
 				setModule((Module)null);
+				return;
+			case SystemPackage.ENTITY_MODEL__ENTITIES:
+				getEntities().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -190,10 +190,10 @@ public class EntityModelImpl extends VersionedElementImpl implements EntityModel
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SystemPackage.ENTITY_MODEL__ENTITIES:
-				return entities != null && !entities.isEmpty();
 			case SystemPackage.ENTITY_MODEL__MODULE:
 				return module != null;
+			case SystemPackage.ENTITY_MODEL__ENTITIES:
+				return entities != null && !entities.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

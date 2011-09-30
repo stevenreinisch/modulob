@@ -107,22 +107,22 @@ public interface BehaviourPackage extends EPackage {
 	int REACTION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Trigger</b></em>' reference.
+	 * The feature id for the '<em><b>Notification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REACTION__TRIGGER = 0;
+	int REACTION__NOTIFICATION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Reactor</b></em>' reference.
+	 * The feature id for the '<em><b>Method</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REACTION__REACTOR = 1;
+	int REACTION__METHOD = 1;
 
 	/**
 	 * The feature id for the '<em><b>Order</b></em>' attribute.
@@ -134,13 +134,31 @@ public interface BehaviourPackage extends EPackage {
 	int REACTION__ORDER = 2;
 
 	/**
+	 * The feature id for the '<em><b>Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REACTION__INTERFACE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REACTION__NAME = 4;
+
+	/**
 	 * The number of structural features of the '<em>Reaction</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REACTION_FEATURE_COUNT = 3;
+	int REACTION_FEATURE_COUNT = 5;
 
 
 	/**
@@ -186,26 +204,26 @@ public interface BehaviourPackage extends EPackage {
 	EClass getReaction();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.dubmas.modulob.behaviour.Reaction#getTrigger <em>Trigger</em>}'.
+	 * Returns the meta object for the reference '{@link de.dubmas.modulob.behaviour.Reaction#getNotification <em>Notification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Trigger</em>'.
-	 * @see de.dubmas.modulob.behaviour.Reaction#getTrigger()
+	 * @return the meta object for the reference '<em>Notification</em>'.
+	 * @see de.dubmas.modulob.behaviour.Reaction#getNotification()
 	 * @see #getReaction()
 	 * @generated
 	 */
-	EReference getReaction_Trigger();
+	EReference getReaction_Notification();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.dubmas.modulob.behaviour.Reaction#getReactor <em>Reactor</em>}'.
+	 * Returns the meta object for the reference '{@link de.dubmas.modulob.behaviour.Reaction#getMethod <em>Method</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Reactor</em>'.
-	 * @see de.dubmas.modulob.behaviour.Reaction#getReactor()
+	 * @return the meta object for the reference '<em>Method</em>'.
+	 * @see de.dubmas.modulob.behaviour.Reaction#getMethod()
 	 * @see #getReaction()
 	 * @generated
 	 */
-	EReference getReaction_Reactor();
+	EReference getReaction_Method();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.dubmas.modulob.behaviour.Reaction#getOrder <em>Order</em>}'.
@@ -217,6 +235,28 @@ public interface BehaviourPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getReaction_Order();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.dubmas.modulob.behaviour.Reaction#getInterface <em>Interface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Interface</em>'.
+	 * @see de.dubmas.modulob.behaviour.Reaction#getInterface()
+	 * @see #getReaction()
+	 * @generated
+	 */
+	EReference getReaction_Interface();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dubmas.modulob.behaviour.Reaction#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see de.dubmas.modulob.behaviour.Reaction#getName()
+	 * @see #getReaction()
+	 * @generated
+	 */
+	EAttribute getReaction_Name();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -277,20 +317,20 @@ public interface BehaviourPackage extends EPackage {
 		EClass REACTION = eINSTANCE.getReaction();
 
 		/**
-		 * The meta object literal for the '<em><b>Trigger</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Notification</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REACTION__TRIGGER = eINSTANCE.getReaction_Trigger();
+		EReference REACTION__NOTIFICATION = eINSTANCE.getReaction_Notification();
 
 		/**
-		 * The meta object literal for the '<em><b>Reactor</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Method</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REACTION__REACTOR = eINSTANCE.getReaction_Reactor();
+		EReference REACTION__METHOD = eINSTANCE.getReaction_Method();
 
 		/**
 		 * The meta object literal for the '<em><b>Order</b></em>' attribute feature.
@@ -299,6 +339,22 @@ public interface BehaviourPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute REACTION__ORDER = eINSTANCE.getReaction_Order();
+
+		/**
+		 * The meta object literal for the '<em><b>Interface</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REACTION__INTERFACE = eINSTANCE.getReaction_Interface();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REACTION__NAME = eINSTANCE.getReaction_Name();
 
 	}
 
