@@ -9,4 +9,7 @@ package de.dubmas.modulob;
  */
 public class DataDslRuntimeModule extends de.dubmas.modulob.AbstractDataDslRuntimeModule {
 	
+	public Class<? extends org.eclipse.xtext.naming.IQualifiedNameProvider> bindIQualifiedNameProvider() {
+		return de.dubmas.modulob.DataDslNameProvider.class;
+	}
 }

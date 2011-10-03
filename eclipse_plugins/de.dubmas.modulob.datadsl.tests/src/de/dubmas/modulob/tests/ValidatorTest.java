@@ -162,6 +162,37 @@ public class ValidatorTest extends AbstractXtextTests {
 		tester.diagnose().assertError(ValidationIssueCodes.ENTIY_REF_MODULE_BOUNDARIES_CODE);
 	}
 	
+	public void testCheckIfEntitySuperFromSameModule(){
+		/*
+		 * Build model fragment:
+		 * - two modules with entity model with one entity each
+		 * - one entity is super of other
+		 */
+		
+		//first module
+		Module m1 = SystemFactory.eINSTANCE.createModule();
+		EntityModel em1 = SystemFactory.eINSTANCE.createEntityModel();
+		m1.setEntityModel(em1);
+		em1.setModule(m1);
+		Entity e1 = ModulobFactory.eINSTANCE.createEntity();
+		em1.getEntities().add(e1);
+		
+		//second module
+		Module m2 = SystemFactory.eINSTANCE.createModule();
+		EntityModel em2 = SystemFactory.eINSTANCE.createEntityModel();
+		m2.setEntityModel(em2);
+		em2.setModule(m2);
+		Entity e2 = ModulobFactory.eINSTANCE.createEntity();
+		em2.getEntities().add(e2);
+		e2.setSuper(e1);
+		
+		/*
+		 * do test
+		 */
+		tester.validator().checkIfEntitySuperFromSameModule(e2);
+		tester.diagnose().assertError(ValidationIssueCodes.ENTITY_SUPER_SAME_MODULE_CODE);
+	}
+	
 	public void testCheckIfPersistentEntityHasUUID(){
 		/*
 		 * Build model fragment:

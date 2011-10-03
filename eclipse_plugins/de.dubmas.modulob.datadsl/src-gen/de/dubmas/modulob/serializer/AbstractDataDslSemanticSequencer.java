@@ -169,8 +169,8 @@ public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer 
 	 *
 	 * Features:
 	 *    version[1, 1]
-	 *    entities[0, *]
 	 *    module[1, 1]
+	 *    entities[0, *]
 	 */
 	protected void sequence_EntityModel(EObject context, EntityModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -179,7 +179,7 @@ public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (annotations+=Annotation* isAbstract?='abstract'? name=ID super=[Entity|ID]? features+=Feature*)
+	 *     (annotations+=Annotation* isAbstract?='abstract'? name=ID super=[Entity|QualifiedName]? features+=Feature*)
 	 *
 	 * Features:
 	 *    name[1, 1]

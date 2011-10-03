@@ -12,7 +12,7 @@ EntityModel returns system::EntityModel:
 
 Entity returns modulob::Entity:
 	(annotations+=Annotation)*
-	(isAbstract?='abstract')? 'entity' name=ID (':' super=[modulob::Entity])?'{'
+	(isAbstract?='abstract')? 'entity' name=ID (':' super=[modulob::Entity | QualifiedName])?'{'
 		(features+=Feature)*
 	'}'
 ;

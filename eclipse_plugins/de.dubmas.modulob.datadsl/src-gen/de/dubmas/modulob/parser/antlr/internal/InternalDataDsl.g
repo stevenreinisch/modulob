@@ -224,10 +224,12 @@ ruleEntity returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getEntityRule());
 	        }
         }
-	otherlv_5=RULE_ID
-	{
-		newLeafNode(otherlv_5, grammarAccess.getEntityAccess().getSuperEntityCrossReference_4_1_0()); 
-	}
+		{ 
+	        newCompositeNode(grammarAccess.getEntityAccess().getSuperEntityCrossReference_4_1_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
 
 )
 ))?	otherlv_6='{' 

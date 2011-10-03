@@ -91,6 +91,24 @@ class DataDslJavaValidator extends AbstractDataDslJavaValidator {
 		}
 	}
 	
+	@Check
+	def checkIfEntitySuperFromSameModule(Entity e){
+		if(e.^super != null){
+			if(!((e.^super.eContainer as EntityModel).module
+				==
+				((e.eContainer as EntityModel).module)
+			   ))
+			{
+				error("Only Entities from same module can be specified as super entity.", 
+				  	  ModulobPackage::eINSTANCE.entity_Super,
+				  	  0,
+				  	  ValidationIssueCodes::ENTITY_SUPER_SAME_MODULE_CODE,
+				  	  null
+					)
+			}
+		}
+	}
+	
 	/*
 	 * A persistent entity must not reference an entity from another module.
 	 */
@@ -231,9 +249,11 @@ class DataDslJavaValidator extends AbstractDataDslJavaValidator {
 			||
 			p.name == "Integer32"
 			||
-			p.name == "Integer64"))
+			p.name == "Integer64"
+			||
+			p.name == "Bool"))
 		{
-			"Type of this feature must be 'Integer16', 'Integer32', or 'Integer64' for the given default value."
+			"Type of this feature must be 'Integer16', 'Integer32', 'Integer64', or 'Bool' for the given default value."
 		}else{
 			null
 		}

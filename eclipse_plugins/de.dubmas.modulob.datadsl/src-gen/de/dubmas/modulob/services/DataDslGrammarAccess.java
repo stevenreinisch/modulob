@@ -79,19 +79,19 @@ public class DataDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cSuperAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
 		private final CrossReference cSuperEntityCrossReference_4_1_0 = (CrossReference)cSuperAssignment_4_1.eContents().get(0);
-		private final RuleCall cSuperEntityIDTerminalRuleCall_4_1_0_1 = (RuleCall)cSuperEntityCrossReference_4_1_0.eContents().get(1);
+		private final RuleCall cSuperEntityQualifiedNameParserRuleCall_4_1_0_1 = (RuleCall)cSuperEntityCrossReference_4_1_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cFeaturesAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cFeaturesFeatureParserRuleCall_6_0 = (RuleCall)cFeaturesAssignment_6.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Entity returns modulob::Entity:
-		//	annotations+=Annotation* isAbstract?="abstract"? "entity" name=ID (":" super=[modulob::Entity])? "{"
+		//	annotations+=Annotation* isAbstract?="abstract"? "entity" name=ID (":" super=[modulob::Entity|QualifiedName])? "{"
 		//	features+=Feature* "}";
 		public ParserRule getRule() { return rule; }
 
-		//annotations+=Annotation* isAbstract?="abstract"? "entity" name=ID (":" super=[modulob::Entity])? "{" features+=Feature*
-		//"}"
+		//annotations+=Annotation* isAbstract?="abstract"? "entity" name=ID (":" super=[modulob::Entity|QualifiedName])? "{"
+		//features+=Feature* "}"
 		public Group getGroup() { return cGroup; }
 
 		//annotations+=Annotation*
@@ -115,20 +115,20 @@ public class DataDslGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_3_0() { return cNameIDTerminalRuleCall_3_0; }
 
-		//(":" super=[modulob::Entity])?
+		//(":" super=[modulob::Entity|QualifiedName])?
 		public Group getGroup_4() { return cGroup_4; }
 
 		//":"
 		public Keyword getColonKeyword_4_0() { return cColonKeyword_4_0; }
 
-		//super=[modulob::Entity]
+		//super=[modulob::Entity|QualifiedName]
 		public Assignment getSuperAssignment_4_1() { return cSuperAssignment_4_1; }
 
-		//[modulob::Entity]
+		//[modulob::Entity|QualifiedName]
 		public CrossReference getSuperEntityCrossReference_4_1_0() { return cSuperEntityCrossReference_4_1_0; }
 
-		//ID
-		public RuleCall getSuperEntityIDTerminalRuleCall_4_1_0_1() { return cSuperEntityIDTerminalRuleCall_4_1_0_1; }
+		//QualifiedName
+		public RuleCall getSuperEntityQualifiedNameParserRuleCall_4_1_0_1() { return cSuperEntityQualifiedNameParserRuleCall_4_1_0_1; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
@@ -341,7 +341,7 @@ public class DataDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Entity returns modulob::Entity:
-	//	annotations+=Annotation* isAbstract?="abstract"? "entity" name=ID (":" super=[modulob::Entity])? "{"
+	//	annotations+=Annotation* isAbstract?="abstract"? "entity" name=ID (":" super=[modulob::Entity|QualifiedName])? "{"
 	//	features+=Feature* "}";
 	public EntityElements getEntityAccess() {
 		return (pEntity != null) ? pEntity : (pEntity = new EntityElements());
