@@ -5449,25 +5449,29 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__SuperAssignment_4_1"
-    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2069:1: rule__Entity__SuperAssignment_4_1 : ( ( RULE_ID ) ) ;
+    // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2069:1: rule__Entity__SuperAssignment_4_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Entity__SuperAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2073:1: ( ( ( RULE_ID ) ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2074:1: ( ( RULE_ID ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2073:1: ( ( ( ruleQualifiedName ) ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2074:1: ( ( ruleQualifiedName ) )
             {
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2074:1: ( ( RULE_ID ) )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2075:1: ( RULE_ID )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2074:1: ( ( ruleQualifiedName ) )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2075:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getEntityAccess().getSuperEntityCrossReference_4_1_0()); 
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2076:1: ( RULE_ID )
-            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2077:1: RULE_ID
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2076:1: ( ruleQualifiedName )
+            // ../de.dubmas.modulob.datadsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalDataDsl.g:2077:1: ruleQualifiedName
             {
-             before(grammarAccess.getEntityAccess().getSuperEntityIDTerminalRuleCall_4_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Entity__SuperAssignment_4_14126); 
-             after(grammarAccess.getEntityAccess().getSuperEntityIDTerminalRuleCall_4_1_0_1()); 
+             before(grammarAccess.getEntityAccess().getSuperEntityQualifiedNameParserRuleCall_4_1_0_1()); 
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Entity__SuperAssignment_4_14126);
+            ruleQualifiedName();
+
+            state._fsp--;
+
+             after(grammarAccess.getEntityAccess().getSuperEntityQualifiedNameParserRuleCall_4_1_0_1()); 
 
             }
 
@@ -6346,7 +6350,7 @@ public class InternalDataDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleAnnotation_in_rule__Entity__AnnotationsAssignment_04016 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_27_in_rule__Entity__IsAbstractAssignment_14052 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__Entity__NameAssignment_34091 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Entity__SuperAssignment_4_14126 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Entity__SuperAssignment_4_14126 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFeature_in_rule__Entity__FeaturesAssignment_64161 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleConfigOption_in_rule__Annotation__OptionAssignment_14192 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleConfigValue_in_rule__Annotation__ValueAssignment_2_14223 = new BitSet(new long[]{0x0000000000000002L});

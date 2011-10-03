@@ -2074,8 +2074,8 @@ rule__Entity__SuperAssignment_4_1
 (
 { before(grammarAccess.getEntityAccess().getSuperEntityCrossReference_4_1_0()); }
 (
-{ before(grammarAccess.getEntityAccess().getSuperEntityIDTerminalRuleCall_4_1_0_1()); }
-	RULE_ID{ after(grammarAccess.getEntityAccess().getSuperEntityIDTerminalRuleCall_4_1_0_1()); }
+{ before(grammarAccess.getEntityAccess().getSuperEntityQualifiedNameParserRuleCall_4_1_0_1()); }
+	ruleQualifiedName{ after(grammarAccess.getEntityAccess().getSuperEntityQualifiedNameParserRuleCall_4_1_0_1()); }
 )
 { after(grammarAccess.getEntityAccess().getSuperEntityCrossReference_4_1_0()); }
 )
