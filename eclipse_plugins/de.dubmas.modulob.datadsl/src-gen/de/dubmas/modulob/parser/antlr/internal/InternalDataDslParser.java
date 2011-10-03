@@ -22,9 +22,10 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDataDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'entities for module'", "'version'", "'abstract'", "'entity'", "':'", "'{'", "'}'", "'@'", "'indexed'", "'-['", "'='", "'<->'", "';'", "'primitive type'", "'any type'", "'[]'", "'-'", "'.'", "'persistency'", "'CoreData'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_DOC_COMMENT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'entities for module'", "'version'", "'abstract'", "'entity'", "':'", "'{'", "'}'", "'@'", "'indexed'", "'-['", "'='", "'<->'", "';'", "'primitive type'", "'any type'", "'[]'", "'-'", "'.'", "'persistency'", "'CoreData'"
     };
     public static final int RULE_ID=5;
+    public static final int RULE_DOC_COMMENT=7;
     public static final int T__29=29;
     public static final int T__28=28;
     public static final int T__27=27;
@@ -33,25 +34,25 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
     public static final int T__24=24;
     public static final int T__23=23;
     public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=10;
+    public static final int RULE_ANY_OTHER=11;
     public static final int T__21=21;
     public static final int T__20=20;
-    public static final int RULE_SL_COMMENT=8;
+    public static final int RULE_SL_COMMENT=9;
     public static final int EOF=-1;
-    public static final int RULE_ML_COMMENT=7;
+    public static final int RULE_ML_COMMENT=8;
     public static final int T__30=30;
     public static final int T__19=19;
+    public static final int T__31=31;
     public static final int RULE_STRING=4;
     public static final int T__16=16;
     public static final int T__15=15;
     public static final int T__18=18;
     public static final int T__17=17;
     public static final int T__12=12;
-    public static final int T__11=11;
     public static final int T__14=14;
     public static final int T__13=13;
     public static final int RULE_INT=6;
-    public static final int RULE_WS=9;
+    public static final int RULE_WS=10;
 
     // delegates
     // delegators
@@ -147,7 +148,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
             // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:81:1: (otherlv_0= 'entities for module' ( ( ruleQualifiedName ) ) otherlv_2= 'version' ( (lv_version_3_0= RULE_STRING ) ) ( (lv_entities_4_0= ruleEntity ) )* )
             // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:81:3: otherlv_0= 'entities for module' ( ( ruleQualifiedName ) ) otherlv_2= 'version' ( (lv_version_3_0= RULE_STRING ) ) ( (lv_entities_4_0= ruleEntity ) )*
             {
-            otherlv_0=(Token)match(input,11,FOLLOW_11_in_ruleEntityModel122); 
+            otherlv_0=(Token)match(input,12,FOLLOW_12_in_ruleEntityModel122); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getEntityModelAccess().getEntitiesForModuleKeyword_0());
                 
@@ -179,7 +180,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleEntityModel157); 
+            otherlv_2=(Token)match(input,13,FOLLOW_13_in_ruleEntityModel157); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getEntityModelAccess().getVersionKeyword_2());
                 
@@ -215,7 +216,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( ((LA1_0>=13 && LA1_0<=14)||LA1_0==18) ) {
+                if ( ((LA1_0>=14 && LA1_0<=15)||LA1_0==19) ) {
                     alt1=1;
                 }
 
@@ -345,7 +346,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==18) ) {
+                if ( (LA2_0==19) ) {
                     alt2=1;
                 }
 
@@ -392,7 +393,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
             int alt3=2;
             int LA3_0 = input.LA(1);
 
-            if ( (LA3_0==13) ) {
+            if ( (LA3_0==14) ) {
                 alt3=1;
             }
             switch (alt3) {
@@ -402,7 +403,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
                     // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:180:1: (lv_isAbstract_1_0= 'abstract' )
                     // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:181:3: lv_isAbstract_1_0= 'abstract'
                     {
-                    lv_isAbstract_1_0=(Token)match(input,13,FOLLOW_13_in_ruleEntity312); 
+                    lv_isAbstract_1_0=(Token)match(input,14,FOLLOW_14_in_ruleEntity312); 
 
                             newLeafNode(lv_isAbstract_1_0, grammarAccess.getEntityAccess().getIsAbstractAbstractKeyword_1_0());
                         
@@ -421,7 +422,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,14,FOLLOW_14_in_ruleEntity338); 
+            otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleEntity338); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getEntityAccess().getEntityKeyword_2());
                 
@@ -455,14 +456,14 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0==15) ) {
+            if ( (LA4_0==16) ) {
                 alt4=1;
             }
             switch (alt4) {
                 case 1 :
                     // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:216:4: otherlv_4= ':' ( ( ruleQualifiedName ) )
                     {
-                    otherlv_4=(Token)match(input,15,FOLLOW_15_in_ruleEntity373); 
+                    otherlv_4=(Token)match(input,16,FOLLOW_16_in_ruleEntity373); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getEntityAccess().getColonKeyword_4_0());
                         
@@ -500,7 +501,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,16,FOLLOW_16_in_ruleEntity410); 
+            otherlv_6=(Token)match(input,17,FOLLOW_17_in_ruleEntity410); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_5());
                 
@@ -510,7 +511,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
                 int alt5=2;
                 int LA5_0 = input.LA(1);
 
-                if ( (LA5_0==RULE_ID||(LA5_0>=19 && LA5_0<=20)) ) {
+                if ( (LA5_0==RULE_ID||(LA5_0>=20 && LA5_0<=21)) ) {
                     alt5=1;
                 }
 
@@ -553,7 +554,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_8=(Token)match(input,17,FOLLOW_17_in_ruleEntity444); 
+            otherlv_8=(Token)match(input,18,FOLLOW_18_in_ruleEntity444); 
 
                 	newLeafNode(otherlv_8, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_7());
                 
@@ -634,7 +635,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
             // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:282:1: (otherlv_0= '@' ( (lv_option_1_0= ruleConfigOption ) ) (otherlv_2= ':' ( (lv_value_3_0= ruleConfigValue ) ) )? )
             // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:282:3: otherlv_0= '@' ( (lv_option_1_0= ruleConfigOption ) ) (otherlv_2= ':' ( (lv_value_3_0= ruleConfigValue ) ) )?
             {
-            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleAnnotation527); 
+            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleAnnotation527); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getAnnotationAccess().getCommercialAtKeyword_0());
                 
@@ -673,14 +674,14 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( (LA6_0==15) ) {
+            if ( (LA6_0==16) ) {
                 alt6=1;
             }
             switch (alt6) {
                 case 1 :
                     // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:304:4: otherlv_2= ':' ( (lv_value_3_0= ruleConfigValue ) )
                     {
-                    otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleAnnotation561); 
+                    otherlv_2=(Token)match(input,16,FOLLOW_16_in_ruleAnnotation561); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getAnnotationAccess().getColonKeyword_2_0());
                         
@@ -806,7 +807,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
             int alt7=2;
             int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==19) ) {
+            if ( (LA7_0==20) ) {
                 alt7=1;
             }
             switch (alt7) {
@@ -816,7 +817,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
                     // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:348:1: (lv_isIndexed_0_0= 'indexed' )
                     // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:349:3: lv_isIndexed_0_0= 'indexed'
                     {
-                    lv_isIndexed_0_0=(Token)match(input,19,FOLLOW_19_in_ruleFeature673); 
+                    lv_isIndexed_0_0=(Token)match(input,20,FOLLOW_20_in_ruleFeature673); 
 
                             newLeafNode(lv_isIndexed_0_0, grammarAccess.getFeatureAccess().getIsIndexedIndexedKeyword_0_0());
                         
@@ -839,7 +840,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
             int alt8=2;
             int LA8_0 = input.LA(1);
 
-            if ( (LA8_0==20) ) {
+            if ( (LA8_0==21) ) {
                 alt8=1;
             }
             switch (alt8) {
@@ -849,7 +850,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
                     // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:363:1: (lv_isContainment_1_0= '-[' )
                     // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:364:3: lv_isContainment_1_0= '-['
                     {
-                    lv_isContainment_1_0=(Token)match(input,20,FOLLOW_20_in_ruleFeature705); 
+                    lv_isContainment_1_0=(Token)match(input,21,FOLLOW_21_in_ruleFeature705); 
 
                             newLeafNode(lv_isContainment_1_0, grammarAccess.getFeatureAccess().getIsContainmentHyphenMinusLeftSquareBracketKeyword_1_0());
                         
@@ -929,14 +930,14 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
             int alt9=2;
             int LA9_0 = input.LA(1);
 
-            if ( (LA9_0==21) ) {
+            if ( (LA9_0==22) ) {
                 alt9=1;
             }
             switch (alt9) {
                 case 1 :
                     // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:413:4: otherlv_4= '=' ( (lv_defaultValue_5_0= ruleValueObject ) )
                     {
-                    otherlv_4=(Token)match(input,21,FOLLOW_21_in_ruleFeature775); 
+                    otherlv_4=(Token)match(input,22,FOLLOW_22_in_ruleFeature775); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getFeatureAccess().getEqualsSignKeyword_4_0());
                         
@@ -981,14 +982,14 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
             int alt10=2;
             int LA10_0 = input.LA(1);
 
-            if ( (LA10_0==22) ) {
+            if ( (LA10_0==23) ) {
                 alt10=1;
             }
             switch (alt10) {
                 case 1 :
                     // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:435:6: otherlv_6= '<->' ( ( ruleQualifiedName ) )
                     {
-                    otherlv_6=(Token)match(input,22,FOLLOW_22_in_ruleFeature811); 
+                    otherlv_6=(Token)match(input,23,FOLLOW_23_in_ruleFeature811); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getFeatureAccess().getLessThanSignHyphenMinusGreaterThanSignKeyword_5_0());
                         
@@ -1030,14 +1031,14 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
             int alt11=2;
             int LA11_0 = input.LA(1);
 
-            if ( (LA11_0==23) ) {
+            if ( (LA11_0==24) ) {
                 alt11=1;
             }
             switch (alt11) {
                 case 1 :
                     // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:454:6: otherlv_8= ';'
                     {
-                    otherlv_8=(Token)match(input,23,FOLLOW_23_in_ruleFeature849); 
+                    otherlv_8=(Token)match(input,24,FOLLOW_24_in_ruleFeature849); 
 
                         	newLeafNode(otherlv_8, grammarAccess.getFeatureAccess().getSemicolonKeyword_6());
                         
@@ -1120,7 +1121,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
             // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:481:1: (otherlv_0= 'primitive type' ( (lv_name_1_0= RULE_ID ) ) )
             // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:481:3: otherlv_0= 'primitive type' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,24,FOLLOW_24_in_rulePrimitive936); 
+            otherlv_0=(Token)match(input,25,FOLLOW_25_in_rulePrimitive936); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getPrimitiveAccess().getPrimitiveTypeKeyword_0());
                 
@@ -1223,7 +1224,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
             // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:524:1: (otherlv_0= 'any type' ( (lv_name_1_0= RULE_ID ) ) )
             // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:524:3: otherlv_0= 'any type' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,25,FOLLOW_25_in_ruleAny1041); 
+            otherlv_0=(Token)match(input,26,FOLLOW_26_in_ruleAny1041); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getAnyAccess().getAnyTypeKeyword_0());
                 
@@ -1357,7 +1358,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
             int alt12=2;
             int LA12_0 = input.LA(1);
 
-            if ( (LA12_0==26) ) {
+            if ( (LA12_0==27) ) {
                 alt12=1;
             }
             switch (alt12) {
@@ -1367,7 +1368,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
                     // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:583:1: (lv_isMulti_1_0= '[]' )
                     // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:584:3: lv_isMulti_1_0= '[]'
                     {
-                    lv_isMulti_1_0=(Token)match(input,26,FOLLOW_26_in_ruleTypeRef1175); 
+                    lv_isMulti_1_0=(Token)match(input,27,FOLLOW_27_in_ruleTypeRef1175); 
 
                             newLeafNode(lv_isMulti_1_0, grammarAccess.getTypeRefAccess().getIsMultiLeftSquareBracketRightSquareBracketKeyword_1_0());
                         
@@ -1472,10 +1473,10 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
                 {
                 int LA13_2 = input.LA(2);
 
-                if ( (LA13_2==28) ) {
+                if ( (LA13_2==29) ) {
                     alt13=3;
                 }
-                else if ( (LA13_2==EOF||LA13_2==RULE_ID||LA13_2==17||(LA13_2>=19 && LA13_2<=20)||(LA13_2>=22 && LA13_2<=23)) ) {
+                else if ( (LA13_2==EOF||LA13_2==RULE_ID||LA13_2==18||(LA13_2>=20 && LA13_2<=21)||(LA13_2>=23 && LA13_2<=24)) ) {
                     alt13=2;
                 }
                 else {
@@ -1486,8 +1487,8 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
                 }
                 }
                 break;
-            case 27:
             case 28:
+            case 29:
                 {
                 alt13=3;
                 }
@@ -2072,14 +2073,14 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
             int alt14=2;
             int LA14_0 = input.LA(1);
 
-            if ( (LA14_0==27) ) {
+            if ( (LA14_0==28) ) {
                 alt14=1;
             }
             switch (alt14) {
                 case 1 :
                     // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:842:2: kw= '-'
                     {
-                    kw=(Token)match(input,27,FOLLOW_27_in_ruleEFloatObject1882); 
+                    kw=(Token)match(input,28,FOLLOW_28_in_ruleEFloatObject1882); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEFloatObjectAccess().getHyphenMinusKeyword_0()); 
@@ -2114,7 +2115,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            kw=(Token)match(input,28,FOLLOW_28_in_ruleEFloatObject1920); 
+            kw=(Token)match(input,29,FOLLOW_29_in_ruleEFloatObject1920); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getEFloatObjectAccess().getFullStopKeyword_2()); 
@@ -2213,7 +2214,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
                 int alt16=2;
                 int LA16_0 = input.LA(1);
 
-                if ( (LA16_0==28) ) {
+                if ( (LA16_0==29) ) {
                     alt16=1;
                 }
 
@@ -2222,7 +2223,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:896:2: kw= '.' this_ID_2= RULE_ID
             	    {
-            	    kw=(Token)match(input,28,FOLLOW_28_in_ruleQualifiedName2051); 
+            	    kw=(Token)match(input,29,FOLLOW_29_in_ruleQualifiedName2051); 
 
             	            current.merge(kw);
             	            newLeafNode(kw, grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
@@ -2278,7 +2279,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
             // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:919:1: (enumLiteral_0= 'persistency' )
             // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:919:3: enumLiteral_0= 'persistency'
             {
-            enumLiteral_0=(Token)match(input,29,FOLLOW_29_in_ruleConfigOption2126); 
+            enumLiteral_0=(Token)match(input,30,FOLLOW_30_in_ruleConfigOption2126); 
 
                     current = grammarAccess.getConfigOptionAccess().getPersistencyEnumLiteralDeclaration().getEnumLiteral().getInstance();
                     newLeafNode(enumLiteral_0, grammarAccess.getConfigOptionAccess().getPersistencyEnumLiteralDeclaration()); 
@@ -2318,7 +2319,7 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
             // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:932:1: (enumLiteral_0= 'CoreData' )
             // ../de.dubmas.modulob.datadsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalDataDsl.g:932:3: enumLiteral_0= 'CoreData'
             {
-            enumLiteral_0=(Token)match(input,30,FOLLOW_30_in_ruleConfigValue2169); 
+            enumLiteral_0=(Token)match(input,31,FOLLOW_31_in_ruleConfigValue2169); 
 
                     current = grammarAccess.getConfigValueAccess().getCoreDataEnumLiteralDeclaration().getEnumLiteral().getInstance();
                     newLeafNode(enumLiteral_0, grammarAccess.getConfigValueAccess().getCoreDataEnumLiteralDeclaration()); 
@@ -2349,51 +2350,51 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_ruleEntityModel_in_entryRuleEntityModel75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleEntityModel85 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_ruleEntityModel122 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleEntityModel145 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleEntityModel157 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleEntityModel174 = new BitSet(new long[]{0x0000000000046002L});
-    public static final BitSet FOLLOW_ruleEntity_in_ruleEntityModel200 = new BitSet(new long[]{0x0000000000046002L});
+    public static final BitSet FOLLOW_12_in_ruleEntityModel122 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleEntityModel145 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleEntityModel157 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleEntityModel174 = new BitSet(new long[]{0x000000000008C002L});
+    public static final BitSet FOLLOW_ruleEntity_in_ruleEntityModel200 = new BitSet(new long[]{0x000000000008C002L});
     public static final BitSet FOLLOW_ruleEntity_in_entryRuleEntity237 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleEntity247 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAnnotation_in_ruleEntity293 = new BitSet(new long[]{0x0000000000046000L});
-    public static final BitSet FOLLOW_13_in_ruleEntity312 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleEntity338 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEntity355 = new BitSet(new long[]{0x0000000000018000L});
-    public static final BitSet FOLLOW_15_in_ruleEntity373 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleEntity396 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleEntity410 = new BitSet(new long[]{0x00000000001A0020L});
-    public static final BitSet FOLLOW_ruleFeature_in_ruleEntity431 = new BitSet(new long[]{0x00000000001A0020L});
-    public static final BitSet FOLLOW_17_in_ruleEntity444 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAnnotation_in_ruleEntity293 = new BitSet(new long[]{0x000000000008C000L});
+    public static final BitSet FOLLOW_14_in_ruleEntity312 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleEntity338 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEntity355 = new BitSet(new long[]{0x0000000000030000L});
+    public static final BitSet FOLLOW_16_in_ruleEntity373 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleEntity396 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleEntity410 = new BitSet(new long[]{0x0000000000340020L});
+    public static final BitSet FOLLOW_ruleFeature_in_ruleEntity431 = new BitSet(new long[]{0x0000000000340020L});
+    public static final BitSet FOLLOW_18_in_ruleEntity444 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAnnotation_in_entryRuleAnnotation480 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAnnotation490 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_ruleAnnotation527 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_ruleConfigOption_in_ruleAnnotation548 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_15_in_ruleAnnotation561 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_19_in_ruleAnnotation527 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_ruleConfigOption_in_ruleAnnotation548 = new BitSet(new long[]{0x0000000000010002L});
+    public static final BitSet FOLLOW_16_in_ruleAnnotation561 = new BitSet(new long[]{0x0000000080000000L});
     public static final BitSet FOLLOW_ruleConfigValue_in_ruleAnnotation582 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFeature_in_entryRuleFeature620 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleFeature630 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_ruleFeature673 = new BitSet(new long[]{0x0000000000180020L});
-    public static final BitSet FOLLOW_20_in_ruleFeature705 = new BitSet(new long[]{0x0000000000180020L});
+    public static final BitSet FOLLOW_20_in_ruleFeature673 = new BitSet(new long[]{0x0000000000300020L});
+    public static final BitSet FOLLOW_21_in_ruleFeature705 = new BitSet(new long[]{0x0000000000300020L});
     public static final BitSet FOLLOW_ruleTypeRef_in_ruleFeature740 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleFeature757 = new BitSet(new long[]{0x0000000000E00002L});
-    public static final BitSet FOLLOW_21_in_ruleFeature775 = new BitSet(new long[]{0x0000000018000050L});
-    public static final BitSet FOLLOW_ruleValueObject_in_ruleFeature796 = new BitSet(new long[]{0x0000000000C00002L});
-    public static final BitSet FOLLOW_22_in_ruleFeature811 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleFeature834 = new BitSet(new long[]{0x0000000000800002L});
-    public static final BitSet FOLLOW_23_in_ruleFeature849 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleFeature757 = new BitSet(new long[]{0x0000000001C00002L});
+    public static final BitSet FOLLOW_22_in_ruleFeature775 = new BitSet(new long[]{0x0000000030000050L});
+    public static final BitSet FOLLOW_ruleValueObject_in_ruleFeature796 = new BitSet(new long[]{0x0000000001800002L});
+    public static final BitSet FOLLOW_23_in_ruleFeature811 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleFeature834 = new BitSet(new long[]{0x0000000001000002L});
+    public static final BitSet FOLLOW_24_in_ruleFeature849 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rulePrimitive_in_entryRulePrimitive889 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRulePrimitive899 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rulePrimitive936 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_25_in_rulePrimitive936 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_RULE_ID_in_rulePrimitive953 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAny_in_entryRuleAny994 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAny1004 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_ruleAny1041 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_26_in_ruleAny1041 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleAny1058 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleTypeRef_in_entryRuleTypeRef1099 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleTypeRef1109 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleTypeRef1157 = new BitSet(new long[]{0x0000000004000002L});
-    public static final BitSet FOLLOW_26_in_ruleTypeRef1175 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleTypeRef1157 = new BitSet(new long[]{0x0000000008000002L});
+    public static final BitSet FOLLOW_27_in_ruleTypeRef1175 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleValueObject_in_entryRuleValueObject1225 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleValueObject1235 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStringValue_in_ruleValueObject1282 = new BitSet(new long[]{0x0000000000000002L});
@@ -2416,16 +2417,16 @@ public class InternalDataDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleEFloatObject_in_ruleFloatValue1796 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEFloatObject_in_entryRuleEFloatObject1832 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleEFloatObject1843 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_ruleEFloatObject1882 = new BitSet(new long[]{0x0000000010000040L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleEFloatObject1900 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_ruleEFloatObject1920 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_28_in_ruleEFloatObject1882 = new BitSet(new long[]{0x0000000020000040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleEFloatObject1900 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_29_in_ruleEFloatObject1920 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_RULE_INT_in_ruleEFloatObject1935 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName1981 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName1992 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName2032 = new BitSet(new long[]{0x0000000010000002L});
-    public static final BitSet FOLLOW_28_in_ruleQualifiedName2051 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName2066 = new BitSet(new long[]{0x0000000010000002L});
-    public static final BitSet FOLLOW_29_in_ruleConfigOption2126 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_ruleConfigValue2169 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName2032 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_29_in_ruleQualifiedName2051 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName2066 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_30_in_ruleConfigOption2126 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_ruleConfigValue2169 = new BitSet(new long[]{0x0000000000000002L});
 
 }

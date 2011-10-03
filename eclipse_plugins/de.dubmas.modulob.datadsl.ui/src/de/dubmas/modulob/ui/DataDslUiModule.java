@@ -4,6 +4,8 @@
 package de.dubmas.modulob.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.ui.editor.syntaxcoloring.AbstractAntlrTokenToAttributeIdMapper;
+import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
 
 /**
  * Use this class to register components to be used within the IDE.
@@ -11,5 +13,13 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 public class DataDslUiModule extends de.dubmas.modulob.ui.AbstractDataDslUiModule {
 	public DataDslUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
+	}
+	
+	public Class<? extends IHighlightingConfiguration> bindIHighlightingConfiguration() {
+		return de.dubmas.modulob.ui.HighlightingConfiguration.class;
+	}
+	
+	public Class<? extends AbstractAntlrTokenToAttributeIdMapper> bindAbstractAntlrTokenToAttributeIdMapper() {
+		return TokenToAttributeIDMapper.class;
 	}
 }

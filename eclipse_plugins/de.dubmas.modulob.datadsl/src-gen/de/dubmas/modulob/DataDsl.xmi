@@ -136,7 +136,7 @@
       </alternatives>
     </rules>
   </xtext:Grammar>
-  <xtext:Grammar name="de.dubmas.modulob.common.Dsl" usedGrammars="/2">
+  <xtext:Grammar name="de.dubmas.modulob.common.Dsl" usedGrammars="/2" definesHiddenTokens="true" hiddenTokens="/2/@rules.5 /2/@rules.3 /2/@rules.4 /1/@rules.12">
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="modulob">
       <ePackage href="http://modulob.dubmas.de/1.0#/"/>
     </metamodelDeclarations>
@@ -265,6 +265,17 @@
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Keyword" value="."/>
           <elements xsi:type="xtext:RuleCall" rule="/2/@rules.0"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:TerminalRule" name="DOC_COMMENT">
+      <type metamodel="/1/@metamodelDeclarations.2">
+        <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="&lt;*"/>
+        <elements xsi:type="xtext:UntilToken">
+          <terminal xsi:type="xtext:Keyword" value="*>"/>
         </elements>
       </alternatives>
     </rules>

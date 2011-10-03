@@ -12,4 +12,8 @@ public class DataDslRuntimeModule extends de.dubmas.modulob.AbstractDataDslRunti
 	public Class<? extends org.eclipse.xtext.naming.IQualifiedNameProvider> bindIQualifiedNameProvider() {
 		return de.dubmas.modulob.DataDslNameProvider.class;
 	}
+	
+	public Class<? extends de.dubmas.modulob.ICommentExtractor> bindICommentExtractor() {
+		return de.dubmas.modulob.CommentExtractor.class;
+	}
 }
