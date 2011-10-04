@@ -28,7 +28,7 @@ class DataDslJavaValidator extends AbstractDataDslJavaValidator {
 			error("\"indexed\" can only be used if entity is annotated with \"@persistency\"", 
 				  ModulobPackage::eINSTANCE.feature_IsIndexed,
 				  0,
-				  ValidationIssueCodes::INDEXED_ALLOWED_CODE,
+				  de::dubmas::modulob::validation::ValidationIssueCodes::INDEXED_ALLOWED_CODE,
 				  null
 			)
 		}
@@ -48,7 +48,7 @@ class DataDslJavaValidator extends AbstractDataDslJavaValidator {
 			error("Only primitive types, any, or entities can be referenced.", 
 				  ModulobPackage::eINSTANCE.entity_Features,
 				  0,
-				  ValidationIssueCodes::PROPER_FEATURE_TYPES_CODE,
+				  de::dubmas::modulob::validation::ValidationIssueCodes::PROPER_FEATURE_TYPES_CODE,
 				  null
 			)
 		}
@@ -85,7 +85,7 @@ class DataDslJavaValidator extends AbstractDataDslJavaValidator {
 					  f, 
 					  ModulobPackage::eINSTANCE.feature_Type, 
 					  0, 
-					  ValidationIssueCodes::ENTIYFEATURES_HAVE_SAME_PERSISTENCY_CODE, 
+					  de::dubmas::modulob::validation::ValidationIssueCodes::ENTIYFEATURES_HAVE_SAME_PERSISTENCY_CODE, 
 					  null)
 			}
 		}
@@ -102,7 +102,7 @@ class DataDslJavaValidator extends AbstractDataDslJavaValidator {
 				error("Only Entities from same module can be specified as super entity.", 
 				  	  ModulobPackage::eINSTANCE.entity_Super,
 				  	  0,
-				  	  ValidationIssueCodes::ENTITY_SUPER_SAME_MODULE_CODE,
+				  	  de::dubmas::modulob::validation::ValidationIssueCodes::ENTITY_SUPER_SAME_MODULE_CODE,
 				  	  null
 					)
 			}
@@ -122,7 +122,7 @@ class DataDslJavaValidator extends AbstractDataDslJavaValidator {
 				   	  f, 
 				   	  ModulobPackage::eINSTANCE.feature_Type, 
 				   	  0, 
-					  ValidationIssueCodes::ENTIY_REF_MODULE_BOUNDARIES_CODE, 
+					  de::dubmas::modulob::validation::ValidationIssueCodes::ENTIY_REF_MODULE_BOUNDARIES_CODE, 
 					  null)
 			}
 		}
@@ -136,7 +136,7 @@ class DataDslJavaValidator extends AbstractDataDslJavaValidator {
 				   	  f, 
 				   	  ModulobPackage::eINSTANCE.feature_Inverse, 
 				   	  0, 
-					  ValidationIssueCodes::INVERSE_ALLOWED_CODE, 
+					  de::dubmas::modulob::validation::ValidationIssueCodes::INVERSE_ALLOWED_CODE, 
 					  null)
 			}	
 		}
@@ -150,7 +150,7 @@ class DataDslJavaValidator extends AbstractDataDslJavaValidator {
 				   	  f, 
 				   	  ModulobPackage::eINSTANCE.feature_Inverse, 
 				   	  0, 
-					  ValidationIssueCodes::INVERSE_IS_ENTITY_CODE, 
+					  de::dubmas::modulob::validation::ValidationIssueCodes::INVERSE_IS_ENTITY_CODE, 
 					  null)
 			}
 		}
@@ -167,7 +167,7 @@ class DataDslJavaValidator extends AbstractDataDslJavaValidator {
 				   	  f, 
 				   	  ModulobPackage::eINSTANCE.feature_Inverse, 
 				   	  0, 
-					  ValidationIssueCodes::INVERSE_MODULE_BOUNDARIES_CODE, 
+					  de::dubmas::modulob::validation::ValidationIssueCodes::INVERSE_MODULE_BOUNDARIES_CODE, 
 					  null)	
 			}
 		}
@@ -180,7 +180,7 @@ class DataDslJavaValidator extends AbstractDataDslJavaValidator {
 				error("If entity is persistent, it must have an attribute 'String uuid'", 
 				  ModulobPackage::eINSTANCE.entity_Features,
 				  0,
-				  ValidationIssueCodes::UUID_REQUIRED_CODE,
+				  de::dubmas::modulob::validation::ValidationIssueCodes::UUID_REQUIRED_CODE,
 				  null
 				)
 			}
@@ -193,7 +193,7 @@ class DataDslJavaValidator extends AbstractDataDslJavaValidator {
 			error("Name cannot be 'description'.", 
 				  ModulobPackage::eINSTANCE.feature_Name,
 				  0,
-				  ValidationIssueCodes::FEATURE_NAME_CODE,
+				  de::dubmas::modulob::validation::ValidationIssueCodes::FEATURE_NAME_CODE,
 				  null
 				)
 		}
@@ -210,7 +210,7 @@ class DataDslJavaValidator extends AbstractDataDslJavaValidator {
 				error("Default value can only be specified if type is primitive and entity's persistency is 'CoreData'", 
 				  ModulobPackage::eINSTANCE.feature_DefaultValue,
 				  0,
-				  ValidationIssueCodes::DEFAULT_VALUE_EXISTENCE_CODE,
+				  de::dubmas::modulob::validation::ValidationIssueCodes::DEFAULT_VALUE_EXISTENCE_CODE,
 				  null
 				)
 			}
@@ -225,7 +225,7 @@ class DataDslJavaValidator extends AbstractDataDslJavaValidator {
 				error(errorMsg, 
 				  	  ModulobPackage::eINSTANCE.feature_DefaultValue,
 				  	  0,
-				  	  ValidationIssueCodes::DEFAULT_VALUE_CORRECTNESS_CODE,
+				  	  de::dubmas::modulob::validation::ValidationIssueCodes::DEFAULT_VALUE_CORRECTNESS_CODE,
 				  	  null
 					)
 			}

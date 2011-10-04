@@ -412,7 +412,8 @@
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_Id0DYutIEeCogdU7Qm3ilQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_Id0DY-tIEeCogdU7Qm3ilQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="ModulobSystem.ecore#//BehaviouralModel/system"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Id0DZOtIEeCogdU7Qm3ilQ" points="[-19, 0, 175, 382]$[-282, 0, -88, 382]$[-282, -375, -88, 7]$[-244, -375, -50, 7]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Id7_MOtIEeCogdU7Qm3ilQ" id="(0.18691588785046728,0.6190476190476191)"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Id0DZOtIEeCogdU7Qm3ilQ" points="[-6, 1, 223, 381]$[-265, 1, -36, 381]$[-265, -380, -36, 0]$[-231, -380, -2, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6YafAO61EeCogdU7Qm3ilQ" id="(0.06542056074766354,0.6428571428571429)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6YafAe61EeCogdU7Qm3ilQ" id="(0.029411764705882353,0.5952380952380952)"/>
   </edges>
 </notation:Diagram>
