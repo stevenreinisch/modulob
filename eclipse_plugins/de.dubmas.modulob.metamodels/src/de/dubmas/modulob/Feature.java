@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.dubmas.modulob.Feature#getInverse <em>Inverse</em>}</li>
  *   <li>{@link de.dubmas.modulob.Feature#getType <em>Type</em>}</li>
  *   <li>{@link de.dubmas.modulob.Feature#getDefaultValue <em>Default Value</em>}</li>
+ *   <li>{@link de.dubmas.modulob.Feature#getComment <em>Comment</em>}</li>
  * </ul>
  * </p>
  *
@@ -187,5 +188,31 @@ public interface Feature extends EObject {
 	 * @generated
 	 */
 	void setDefaultValue(ValueObject value);
+
+	/**
+	 * Returns the value of the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Comment</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Comment</em>' attribute.
+	 * @see #setComment(String)
+	 * @see de.dubmas.modulob.ModulobPackage#getFeature_Comment()
+	 * @model
+	 * @generated
+	 */
+	String getComment();
+
+	/**
+	 * Sets the value of the '{@link de.dubmas.modulob.Feature#getComment <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Comment</em>' attribute.
+	 * @see #getComment()
+	 * @generated
+	 */
+	void setComment(String value);
 
 } // Feature

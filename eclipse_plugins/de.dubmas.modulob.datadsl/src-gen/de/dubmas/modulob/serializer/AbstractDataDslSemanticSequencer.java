@@ -179,10 +179,18 @@ public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (annotations+=Annotation* isAbstract?='abstract'? name=ID super=[Entity|QualifiedName]? features+=Feature*)
+	 *     (
+	 *         comment=DOC_COMMENT? 
+	 *         annotations+=Annotation* 
+	 *         isAbstract?='abstract'? 
+	 *         name=ID 
+	 *         super=[Entity|QualifiedName]? 
+	 *         features+=Feature*
+	 *     )
 	 *
 	 * Features:
 	 *    name[1, 1]
+	 *    comment[0, 1]
 	 *    annotations[0, *]
 	 *    super[0, 1]
 	 *    features[0, *]
@@ -196,6 +204,7 @@ public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (
+	 *         comment=DOC_COMMENT? 
 	 *         isIndexed?='indexed'? 
 	 *         isContainment?='-['? 
 	 *         type=TypeRef 
@@ -211,6 +220,7 @@ public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer 
 	 *    inverse[0, 1]
 	 *    type[1, 1]
 	 *    defaultValue[0, 1]
+	 *    comment[0, 1]
 	 */
 	protected void sequence_Feature(EObject context, Feature semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -12,6 +12,7 @@ InterfaceModel returns system::InterfaceModel:
 ;
 
 Interface returns modulob::Interface:
+	(comment = DOC_COMMENT)?
 	'interface' name = ID 
 	(
 		'requires' requiredInterfaces += [modulob::Interface | QualifiedName]
@@ -23,6 +24,7 @@ Interface returns modulob::Interface:
 ;
 
 Method returns modulob::Method:
+	(comment = DOC_COMMENT)?
 	(isStatic?='static')?
 	type = TypeRef
 	name=ID 

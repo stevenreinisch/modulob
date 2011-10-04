@@ -53,14 +53,17 @@
 «ENDDEFINE»
 
 «DEFINE protocolDef FOR Entity»
+	«this.codeComment()»
 	@protocol «this.protocolTypeName()» <NSObject>
 «ENDDEFINE»
 
 «DEFINE protocolDef FOR Interface»
+	«this.codeComment()»
 	@protocol «this.protocolTypeName()» <NSObject>
 «ENDDEFINE»
 
 «DEFINE protocolDef FOR Delegate»
+	«this.codeComment()»
 	@protocol «this.protocolTypeName()» <NSObject>
 «ENDDEFINE»
 
@@ -95,21 +98,23 @@
 	«ENDIF»
 «ENDDEFINE»
 
-«DEFINE Property(Feature f) FOR Entity»
-	«IF f.type.referenced.isPrimitive()»
+«DEFINE Property(Feature f) FOR Entity-»
+	«f.codeComment()»
+	«IF f.type.referenced.isPrimitive()-»
 		@property (retain) «f.type.typeRef()» «f.name»;
-	«ELSE»
+	«ELSE-»
 		@property (retain) «f.type.typeRef()» «f.name»;
 	«ENDIF»
 «ENDDEFINE»
 
 «DEFINE Method FOR Method-»
-«EXPAND MethodSignature FOR this»;
+«EXPAND MethodSignature FOR this-»;
 «ENDDEFINE»
 
 «DEFINE MethodSignature FOR Method-»
+	«this.codeComment()»
 	«this.accessIndicator()»(«this.type.typeRef()»)«this.name-»
-	«FOREACH this.parameters AS p»
+	«FOREACH this.parameters AS p-»
 		«REM» only the first parameter has no signature part «ENDREM»
 		«(p.signaturePart != null ? p.signaturePart : "") + ":(" + p.type.typeRef() + ")" + p.name-»
 	«ENDFOREACH»

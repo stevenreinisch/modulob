@@ -68,79 +68,87 @@ public class DataDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class EntityElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Entity");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cAnnotationsAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cAnnotationsAnnotationParserRuleCall_0_0 = (RuleCall)cAnnotationsAssignment_0.eContents().get(0);
-		private final Assignment cIsAbstractAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Keyword cIsAbstractAbstractKeyword_1_0 = (Keyword)cIsAbstractAssignment_1.eContents().get(0);
-		private final Keyword cEntityKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameIDTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cColonKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cSuperAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final CrossReference cSuperEntityCrossReference_4_1_0 = (CrossReference)cSuperAssignment_4_1.eContents().get(0);
-		private final RuleCall cSuperEntityQualifiedNameParserRuleCall_4_1_0_1 = (RuleCall)cSuperEntityCrossReference_4_1_0.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cFeaturesAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cFeaturesFeatureParserRuleCall_6_0 = (RuleCall)cFeaturesAssignment_6.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cCommentAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cCommentDOC_COMMENTTerminalRuleCall_0_0 = (RuleCall)cCommentAssignment_0.eContents().get(0);
+		private final Assignment cAnnotationsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cAnnotationsAnnotationParserRuleCall_1_0 = (RuleCall)cAnnotationsAssignment_1.eContents().get(0);
+		private final Assignment cIsAbstractAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Keyword cIsAbstractAbstractKeyword_2_0 = (Keyword)cIsAbstractAssignment_2.eContents().get(0);
+		private final Keyword cEntityKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cNameAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cNameIDTerminalRuleCall_4_0 = (RuleCall)cNameAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cSuperAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final CrossReference cSuperEntityCrossReference_5_1_0 = (CrossReference)cSuperAssignment_5_1.eContents().get(0);
+		private final RuleCall cSuperEntityQualifiedNameParserRuleCall_5_1_0_1 = (RuleCall)cSuperEntityCrossReference_5_1_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cFeaturesAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cFeaturesFeatureParserRuleCall_7_0 = (RuleCall)cFeaturesAssignment_7.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//Entity returns modulob::Entity:
-		//	annotations+=Annotation* isAbstract?="abstract"? "entity" name=ID (":" super=[modulob::Entity|QualifiedName])? "{"
-		//	features+=Feature* "}";
+		//	comment=DOC_COMMENT? annotations+=Annotation* isAbstract?="abstract"? "entity" name=ID (":"
+		//	super=[modulob::Entity|QualifiedName])? "{" features+=Feature* "}";
 		public ParserRule getRule() { return rule; }
 
-		//annotations+=Annotation* isAbstract?="abstract"? "entity" name=ID (":" super=[modulob::Entity|QualifiedName])? "{"
-		//features+=Feature* "}"
+		//comment=DOC_COMMENT? annotations+=Annotation* isAbstract?="abstract"? "entity" name=ID (":"
+		//super=[modulob::Entity|QualifiedName])? "{" features+=Feature* "}"
 		public Group getGroup() { return cGroup; }
 
+		//comment=DOC_COMMENT?
+		public Assignment getCommentAssignment_0() { return cCommentAssignment_0; }
+
+		//DOC_COMMENT
+		public RuleCall getCommentDOC_COMMENTTerminalRuleCall_0_0() { return cCommentDOC_COMMENTTerminalRuleCall_0_0; }
+
 		//annotations+=Annotation*
-		public Assignment getAnnotationsAssignment_0() { return cAnnotationsAssignment_0; }
+		public Assignment getAnnotationsAssignment_1() { return cAnnotationsAssignment_1; }
 
 		//Annotation
-		public RuleCall getAnnotationsAnnotationParserRuleCall_0_0() { return cAnnotationsAnnotationParserRuleCall_0_0; }
+		public RuleCall getAnnotationsAnnotationParserRuleCall_1_0() { return cAnnotationsAnnotationParserRuleCall_1_0; }
 
 		//isAbstract?="abstract"?
-		public Assignment getIsAbstractAssignment_1() { return cIsAbstractAssignment_1; }
+		public Assignment getIsAbstractAssignment_2() { return cIsAbstractAssignment_2; }
 
 		//"abstract"
-		public Keyword getIsAbstractAbstractKeyword_1_0() { return cIsAbstractAbstractKeyword_1_0; }
+		public Keyword getIsAbstractAbstractKeyword_2_0() { return cIsAbstractAbstractKeyword_2_0; }
 
 		//"entity"
-		public Keyword getEntityKeyword_2() { return cEntityKeyword_2; }
+		public Keyword getEntityKeyword_3() { return cEntityKeyword_3; }
 
 		//name=ID
-		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
+		public Assignment getNameAssignment_4() { return cNameAssignment_4; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_3_0() { return cNameIDTerminalRuleCall_3_0; }
+		public RuleCall getNameIDTerminalRuleCall_4_0() { return cNameIDTerminalRuleCall_4_0; }
 
 		//(":" super=[modulob::Entity|QualifiedName])?
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_5() { return cGroup_5; }
 
 		//":"
-		public Keyword getColonKeyword_4_0() { return cColonKeyword_4_0; }
+		public Keyword getColonKeyword_5_0() { return cColonKeyword_5_0; }
 
 		//super=[modulob::Entity|QualifiedName]
-		public Assignment getSuperAssignment_4_1() { return cSuperAssignment_4_1; }
+		public Assignment getSuperAssignment_5_1() { return cSuperAssignment_5_1; }
 
 		//[modulob::Entity|QualifiedName]
-		public CrossReference getSuperEntityCrossReference_4_1_0() { return cSuperEntityCrossReference_4_1_0; }
+		public CrossReference getSuperEntityCrossReference_5_1_0() { return cSuperEntityCrossReference_5_1_0; }
 
 		//QualifiedName
-		public RuleCall getSuperEntityQualifiedNameParserRuleCall_4_1_0_1() { return cSuperEntityQualifiedNameParserRuleCall_4_1_0_1; }
+		public RuleCall getSuperEntityQualifiedNameParserRuleCall_5_1_0_1() { return cSuperEntityQualifiedNameParserRuleCall_5_1_0_1; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
+		public Keyword getLeftCurlyBracketKeyword_6() { return cLeftCurlyBracketKeyword_6; }
 
 		//features+=Feature*
-		public Assignment getFeaturesAssignment_6() { return cFeaturesAssignment_6; }
+		public Assignment getFeaturesAssignment_7() { return cFeaturesAssignment_7; }
 
 		//Feature
-		public RuleCall getFeaturesFeatureParserRuleCall_6_0() { return cFeaturesFeatureParserRuleCall_6_0; }
+		public RuleCall getFeaturesFeatureParserRuleCall_7_0() { return cFeaturesFeatureParserRuleCall_7_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 
 	public class AnnotationElements extends AbstractParserRuleElementFinder {
@@ -186,87 +194,95 @@ public class DataDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class FeatureElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Feature");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cIsIndexedAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final Keyword cIsIndexedIndexedKeyword_0_0 = (Keyword)cIsIndexedAssignment_0.eContents().get(0);
-		private final Assignment cIsContainmentAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Keyword cIsContainmentHyphenMinusLeftSquareBracketKeyword_1_0 = (Keyword)cIsContainmentAssignment_1.eContents().get(0);
-		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTypeTypeRefParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
-		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameIDTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cEqualsSignKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cDefaultValueAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cDefaultValueValueObjectParserRuleCall_4_1_0 = (RuleCall)cDefaultValueAssignment_4_1.eContents().get(0);
+		private final Assignment cCommentAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cCommentDOC_COMMENTTerminalRuleCall_0_0 = (RuleCall)cCommentAssignment_0.eContents().get(0);
+		private final Assignment cIsIndexedAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cIsIndexedIndexedKeyword_1_0 = (Keyword)cIsIndexedAssignment_1.eContents().get(0);
+		private final Assignment cIsContainmentAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Keyword cIsContainmentHyphenMinusLeftSquareBracketKeyword_2_0 = (Keyword)cIsContainmentAssignment_2.eContents().get(0);
+		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cTypeTypeRefParserRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
+		private final Assignment cNameAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cNameIDTerminalRuleCall_4_0 = (RuleCall)cNameAssignment_4.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cLessThanSignHyphenMinusGreaterThanSignKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cInverseAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final CrossReference cInverseFeatureCrossReference_5_1_0 = (CrossReference)cInverseAssignment_5_1.eContents().get(0);
-		private final RuleCall cInverseFeatureQualifiedNameParserRuleCall_5_1_0_1 = (RuleCall)cInverseFeatureCrossReference_5_1_0.eContents().get(1);
-		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cEqualsSignKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cDefaultValueAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cDefaultValueValueObjectParserRuleCall_5_1_0 = (RuleCall)cDefaultValueAssignment_5_1.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cLessThanSignHyphenMinusGreaterThanSignKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cInverseAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final CrossReference cInverseFeatureCrossReference_6_1_0 = (CrossReference)cInverseAssignment_6_1.eContents().get(0);
+		private final RuleCall cInverseFeatureQualifiedNameParserRuleCall_6_1_0_1 = (RuleCall)cInverseFeatureCrossReference_6_1_0.eContents().get(1);
+		private final Keyword cSemicolonKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Feature returns modulob::Feature:
-		//	isIndexed?="indexed"? isContainment?="-["? type=TypeRef name=ID ("=" defaultValue=ValueObject)? ("<->"
-		//	inverse=[modulob::Feature|QualifiedName])? ";"?;
+		//	comment=DOC_COMMENT? isIndexed?="indexed"? isContainment?="-["? type=TypeRef name=ID ("=" defaultValue=ValueObject)?
+		//	("<->" inverse=[modulob::Feature|QualifiedName])? ";";
 		public ParserRule getRule() { return rule; }
 
-		//isIndexed?="indexed"? isContainment?="-["? type=TypeRef name=ID ("=" defaultValue=ValueObject)? ("<->"
-		//inverse=[modulob::Feature|QualifiedName])? ";"?
+		//comment=DOC_COMMENT? isIndexed?="indexed"? isContainment?="-["? type=TypeRef name=ID ("=" defaultValue=ValueObject)?
+		//("<->" inverse=[modulob::Feature|QualifiedName])? ";"
 		public Group getGroup() { return cGroup; }
 
+		//comment=DOC_COMMENT?
+		public Assignment getCommentAssignment_0() { return cCommentAssignment_0; }
+
+		//DOC_COMMENT
+		public RuleCall getCommentDOC_COMMENTTerminalRuleCall_0_0() { return cCommentDOC_COMMENTTerminalRuleCall_0_0; }
+
 		//isIndexed?="indexed"?
-		public Assignment getIsIndexedAssignment_0() { return cIsIndexedAssignment_0; }
+		public Assignment getIsIndexedAssignment_1() { return cIsIndexedAssignment_1; }
 
 		//"indexed"
-		public Keyword getIsIndexedIndexedKeyword_0_0() { return cIsIndexedIndexedKeyword_0_0; }
+		public Keyword getIsIndexedIndexedKeyword_1_0() { return cIsIndexedIndexedKeyword_1_0; }
 
 		//isContainment?="-["?
-		public Assignment getIsContainmentAssignment_1() { return cIsContainmentAssignment_1; }
+		public Assignment getIsContainmentAssignment_2() { return cIsContainmentAssignment_2; }
 
 		//"-["
-		public Keyword getIsContainmentHyphenMinusLeftSquareBracketKeyword_1_0() { return cIsContainmentHyphenMinusLeftSquareBracketKeyword_1_0; }
+		public Keyword getIsContainmentHyphenMinusLeftSquareBracketKeyword_2_0() { return cIsContainmentHyphenMinusLeftSquareBracketKeyword_2_0; }
 
 		//type=TypeRef
-		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
+		public Assignment getTypeAssignment_3() { return cTypeAssignment_3; }
 
 		//TypeRef
-		public RuleCall getTypeTypeRefParserRuleCall_2_0() { return cTypeTypeRefParserRuleCall_2_0; }
+		public RuleCall getTypeTypeRefParserRuleCall_3_0() { return cTypeTypeRefParserRuleCall_3_0; }
 
 		//name=ID
-		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
+		public Assignment getNameAssignment_4() { return cNameAssignment_4; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_3_0() { return cNameIDTerminalRuleCall_3_0; }
+		public RuleCall getNameIDTerminalRuleCall_4_0() { return cNameIDTerminalRuleCall_4_0; }
 
 		//("=" defaultValue=ValueObject)?
-		public Group getGroup_4() { return cGroup_4; }
-
-		//"="
-		public Keyword getEqualsSignKeyword_4_0() { return cEqualsSignKeyword_4_0; }
-
-		//defaultValue=ValueObject
-		public Assignment getDefaultValueAssignment_4_1() { return cDefaultValueAssignment_4_1; }
-
-		//ValueObject
-		public RuleCall getDefaultValueValueObjectParserRuleCall_4_1_0() { return cDefaultValueValueObjectParserRuleCall_4_1_0; }
-
-		//("<->" inverse=[modulob::Feature|QualifiedName])?
 		public Group getGroup_5() { return cGroup_5; }
 
+		//"="
+		public Keyword getEqualsSignKeyword_5_0() { return cEqualsSignKeyword_5_0; }
+
+		//defaultValue=ValueObject
+		public Assignment getDefaultValueAssignment_5_1() { return cDefaultValueAssignment_5_1; }
+
+		//ValueObject
+		public RuleCall getDefaultValueValueObjectParserRuleCall_5_1_0() { return cDefaultValueValueObjectParserRuleCall_5_1_0; }
+
+		//("<->" inverse=[modulob::Feature|QualifiedName])?
+		public Group getGroup_6() { return cGroup_6; }
+
 		//"<->"
-		public Keyword getLessThanSignHyphenMinusGreaterThanSignKeyword_5_0() { return cLessThanSignHyphenMinusGreaterThanSignKeyword_5_0; }
+		public Keyword getLessThanSignHyphenMinusGreaterThanSignKeyword_6_0() { return cLessThanSignHyphenMinusGreaterThanSignKeyword_6_0; }
 
 		//inverse=[modulob::Feature|QualifiedName]
-		public Assignment getInverseAssignment_5_1() { return cInverseAssignment_5_1; }
+		public Assignment getInverseAssignment_6_1() { return cInverseAssignment_6_1; }
 
 		//[modulob::Feature|QualifiedName]
-		public CrossReference getInverseFeatureCrossReference_5_1_0() { return cInverseFeatureCrossReference_5_1_0; }
+		public CrossReference getInverseFeatureCrossReference_6_1_0() { return cInverseFeatureCrossReference_6_1_0; }
 
 		//QualifiedName
-		public RuleCall getInverseFeatureQualifiedNameParserRuleCall_5_1_0_1() { return cInverseFeatureQualifiedNameParserRuleCall_5_1_0_1; }
+		public RuleCall getInverseFeatureQualifiedNameParserRuleCall_6_1_0_1() { return cInverseFeatureQualifiedNameParserRuleCall_6_1_0_1; }
 
-		//";"?
-		public Keyword getSemicolonKeyword_6() { return cSemicolonKeyword_6; }
+		//";"
+		public Keyword getSemicolonKeyword_7() { return cSemicolonKeyword_7; }
 	}
 	
 	
@@ -341,8 +357,8 @@ public class DataDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Entity returns modulob::Entity:
-	//	annotations+=Annotation* isAbstract?="abstract"? "entity" name=ID (":" super=[modulob::Entity|QualifiedName])? "{"
-	//	features+=Feature* "}";
+	//	comment=DOC_COMMENT? annotations+=Annotation* isAbstract?="abstract"? "entity" name=ID (":"
+	//	super=[modulob::Entity|QualifiedName])? "{" features+=Feature* "}";
 	public EntityElements getEntityAccess() {
 		return (pEntity != null) ? pEntity : (pEntity = new EntityElements());
 	}
@@ -382,8 +398,8 @@ public class DataDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Feature returns modulob::Feature:
-	//	isIndexed?="indexed"? isContainment?="-["? type=TypeRef name=ID ("=" defaultValue=ValueObject)? ("<->"
-	//	inverse=[modulob::Feature|QualifiedName])? ";"?;
+	//	comment=DOC_COMMENT? isIndexed?="indexed"? isContainment?="-["? type=TypeRef name=ID ("=" defaultValue=ValueObject)?
+	//	("<->" inverse=[modulob::Feature|QualifiedName])? ";";
 	public FeatureElements getFeatureAccess() {
 		return (pFeature != null) ? pFeature : (pFeature = new FeatureElements());
 	}

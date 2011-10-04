@@ -1,4 +1,4 @@
-grammar de.dubmas.modulob.SystemDsl with org.eclipse.xtext.common.Terminals
+grammar de.dubmas.modulob.SystemDsl with de.dubmas.modulob.common.Dsl
 
 import 'platform:/resource/de.dubmas.modulob.metamodels/model/ModulobSystem.ecore' as modulobSystem
 
@@ -7,5 +7,6 @@ System returns modulobSystem::System:
 ;
 
 Module returns modulobSystem::Module:
+	(comment = DOC_COMMENT)?
 	'module' name=ID 
 ;

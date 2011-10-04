@@ -323,6 +323,15 @@ public class ModulobPackageImpl extends EPackageImpl implements ModulobPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getMethod_Comment() {
+		return (EAttribute)methodEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getNotification() {
 		return notificationEClass;
 	}
@@ -343,6 +352,15 @@ public class ModulobPackageImpl extends EPackageImpl implements ModulobPackage {
 	 */
 	public EReference getNotification_Features() {
 		return (EReference)notificationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNotification_Comment() {
+		return (EAttribute)notificationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -405,7 +423,7 @@ public class ModulobPackageImpl extends EPackageImpl implements ModulobPackage {
 	 * @generated
 	 */
 	public EAttribute getEntity_IsAbstract() {
-		return (EAttribute)entityEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)entityEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -414,7 +432,7 @@ public class ModulobPackageImpl extends EPackageImpl implements ModulobPackage {
 	 * @generated
 	 */
 	public EReference getEntity_Super() {
-		return (EReference)entityEClass.getEStructuralFeatures().get(2);
+		return (EReference)entityEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -423,7 +441,7 @@ public class ModulobPackageImpl extends EPackageImpl implements ModulobPackage {
 	 * @generated
 	 */
 	public EReference getEntity_Features() {
-		return (EReference)entityEClass.getEStructuralFeatures().get(3);
+		return (EReference)entityEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -514,6 +532,15 @@ public class ModulobPackageImpl extends EPackageImpl implements ModulobPackage {
 	 */
 	public EReference getFeature_DefaultValue() {
 		return (EReference)featureEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFeature_Comment() {
+		return (EAttribute)featureEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -657,10 +684,12 @@ public class ModulobPackageImpl extends EPackageImpl implements ModulobPackage {
 		createEReference(methodEClass, METHOD__PARAMETERS);
 		createEReference(methodEClass, METHOD__TYPE);
 		createEReference(methodEClass, METHOD__ADVICE);
+		createEAttribute(methodEClass, METHOD__COMMENT);
 
 		notificationEClass = createEClass(NOTIFICATION);
 		createEAttribute(notificationEClass, NOTIFICATION__NAME);
 		createEReference(notificationEClass, NOTIFICATION__FEATURES);
+		createEAttribute(notificationEClass, NOTIFICATION__COMMENT);
 
 		parameterEClass = createEClass(PARAMETER);
 		createEAttribute(parameterEClass, PARAMETER__SIGNATURE_PART);
@@ -669,9 +698,9 @@ public class ModulobPackageImpl extends EPackageImpl implements ModulobPackage {
 
 		entityEClass = createEClass(ENTITY);
 		createEReference(entityEClass, ENTITY__ANNOTATIONS);
-		createEAttribute(entityEClass, ENTITY__IS_ABSTRACT);
 		createEReference(entityEClass, ENTITY__SUPER);
 		createEReference(entityEClass, ENTITY__FEATURES);
+		createEAttribute(entityEClass, ENTITY__IS_ABSTRACT);
 
 		annotationEClass = createEClass(ANNOTATION);
 		createEAttribute(annotationEClass, ANNOTATION__OPTION);
@@ -684,6 +713,7 @@ public class ModulobPackageImpl extends EPackageImpl implements ModulobPackage {
 		createEReference(featureEClass, FEATURE__INVERSE);
 		createEReference(featureEClass, FEATURE__TYPE);
 		createEReference(featureEClass, FEATURE__DEFAULT_VALUE);
+		createEAttribute(featureEClass, FEATURE__COMMENT);
 
 		valueObjectEClass = createEClass(VALUE_OBJECT);
 
@@ -757,10 +787,12 @@ public class ModulobPackageImpl extends EPackageImpl implements ModulobPackage {
 		initEReference(getMethod_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMethod_Type(), theTypesPackage.getTypeRef(), null, "type", null, 1, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMethod_Advice(), this.getAdvice(), null, "advice", null, 0, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMethod_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(notificationEClass, Notification.class, "Notification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNotification_Name(), ecorePackage.getEString(), "name", null, 0, 1, Notification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getNotification_Features(), this.getFeature(), null, "features", null, 0, -1, Notification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNotification_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, Notification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getParameter_SignaturePart(), ecorePackage.getEString(), "signaturePart", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -769,9 +801,9 @@ public class ModulobPackageImpl extends EPackageImpl implements ModulobPackage {
 
 		initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEntity_Annotations(), this.getAnnotation(), null, "annotations", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEntity_IsAbstract(), ecorePackage.getEBoolean(), "isAbstract", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_Super(), this.getEntity(), null, "super", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_Features(), this.getFeature(), null, "features", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntity_IsAbstract(), ecorePackage.getEBoolean(), "isAbstract", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(annotationEClass, Annotation.class, "Annotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAnnotation_Option(), this.getConfigOption(), "option", null, 0, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -784,6 +816,7 @@ public class ModulobPackageImpl extends EPackageImpl implements ModulobPackage {
 		initEReference(getFeature_Inverse(), this.getFeature(), null, "inverse", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFeature_Type(), theTypesPackage.getTypeRef(), null, "type", null, 1, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFeature_DefaultValue(), this.getValueObject(), null, "defaultValue", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFeature_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(valueObjectEClass, ValueObject.class, "ValueObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

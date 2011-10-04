@@ -378,6 +378,15 @@ public class SystemPackageImpl extends EPackageImpl implements SystemPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getElement_Comment() {
+		return (EAttribute)elementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SystemFactory getSystemFactory() {
 		return (SystemFactory)getEFactoryInstance();
 	}
@@ -432,6 +441,7 @@ public class SystemPackageImpl extends EPackageImpl implements SystemPackage {
 
 		elementEClass = createEClass(ELEMENT);
 		createEAttribute(elementEClass, ELEMENT__NAME);
+		createEAttribute(elementEClass, ELEMENT__COMMENT);
 	}
 
 	/**
@@ -507,6 +517,7 @@ public class SystemPackageImpl extends EPackageImpl implements SystemPackage {
 
 		initEClass(elementEClass, Element.class, "Element", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getElement_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

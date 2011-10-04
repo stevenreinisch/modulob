@@ -28,15 +28,17 @@
 	«ENDFOREACH»
 «ENDDEFINE»
 
-«DEFINE NotificationsHeader FOR Module»
-«FILE this.name + "/public/" + this.notificationsFileName() + ".h"»
+«DEFINE NotificationsHeader FOR Module-»
+«FILE this.name + "/public/" + this.notificationsFileName() + ".h"-»
 	#import <Foundation/Foundation.h>
 
-	«FOREACH this.notificationModel.notifications AS e»
+	«FOREACH this.notificationModel.notifications AS e-»
+		«e.codeComment()»
 		extern NSString *const «e.notificationName()»;
 		
 		
-		«FOREACH e.features AS f»
+		«FOREACH e.features AS f-»
+		«f.codeComment()»
 		extern NSString *const «f.notificationFeatureKey(e)»;
 		«ENDFOREACH»
 		
@@ -87,12 +89,12 @@
 «ENDFILE»
 «ENDDEFINE»
 
-«DEFINE publishSignature FOR Notification»
+«DEFINE publishSignature FOR Notification-»
+	«this.codeComment()»
 	+(void)triggerNotification_«this.name»
 	
-	
-	«FOREACH this.features AS f ITERATOR iter»
-		«IF iter.counter0 > 0»
+	«FOREACH this.features AS f ITERATOR iter-»
+		«IF iter.counter0 > 0-»
 			«f.name»
 		«ENDIF»
 		
@@ -104,8 +106,8 @@
 	
 «ENDDEFINE»
 
-«DEFINE NotificationTriggerImpl FOR Module»
-«FILE this.name + "/private/" + this.notificationTriggerName() + ".m"»
+«DEFINE NotificationTriggerImpl FOR Module-»
+«FILE this.name + "/private/" + this.notificationTriggerName() + ".m"-»
 	#import "«this.notificationTriggerName()».h"
 	#import "«this.notificationsFileName()».h"
 
@@ -124,10 +126,10 @@
 
 	@implementation «this.notificationTriggerName()»
 
-	«FOREACH this.notificationModel.notifications AS n»
-		«EXPAND publishSignature FOR n»
+	«FOREACH this.notificationModel.notifications AS n-»
+		«EXPAND publishSignature FOR n-»
 		{	
-			«EXPAND TriggerNotification(0) FOR n»	
+			«EXPAND TriggerNotification(0) FOR n-»	
 		}
 	«ENDFOREACH»
 
@@ -135,7 +137,7 @@
 «ENDFILE»
 «ENDDEFINE»
 
-«DEFINE TriggerNotification(Integer count) FOR Notification»
+«DEFINE TriggerNotification(Integer count) FOR Notification-»
 	NSDictionary *«"userInfo" + count» = [NSDictionary dictionaryWithObjects:
 								  [NSArray arrayWithObjects:
 								  «FOREACH this.features AS f»

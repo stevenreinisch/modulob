@@ -69,73 +69,89 @@ public class NotificationDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class NotificationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Notification");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cNotificationKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cFeaturesAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cFeaturesFeatureParserRuleCall_3_0 = (RuleCall)cFeaturesAssignment_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cCommentAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cCommentDOC_COMMENTTerminalRuleCall_0_0 = (RuleCall)cCommentAssignment_0.eContents().get(0);
+		private final Keyword cNotificationKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cFeaturesAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cFeaturesFeatureParserRuleCall_4_0 = (RuleCall)cFeaturesAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Notification returns modulob::Notification:
-		//	"notification" name=ID "{" features+=Feature* "}";
+		//	comment=DOC_COMMENT? "notification" name=ID "{" features+=Feature* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"notification" name=ID "{" features+=Feature* "}"
+		//comment=DOC_COMMENT? "notification" name=ID "{" features+=Feature* "}"
 		public Group getGroup() { return cGroup; }
 
+		//comment=DOC_COMMENT?
+		public Assignment getCommentAssignment_0() { return cCommentAssignment_0; }
+
+		//DOC_COMMENT
+		public RuleCall getCommentDOC_COMMENTTerminalRuleCall_0_0() { return cCommentDOC_COMMENTTerminalRuleCall_0_0; }
+
 		//"notification"
-		public Keyword getNotificationKeyword_0() { return cNotificationKeyword_0; }
+		public Keyword getNotificationKeyword_1() { return cNotificationKeyword_1; }
 
 		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
 		//features+=Feature*
-		public Assignment getFeaturesAssignment_3() { return cFeaturesAssignment_3; }
+		public Assignment getFeaturesAssignment_4() { return cFeaturesAssignment_4; }
 
 		//Feature
-		public RuleCall getFeaturesFeatureParserRuleCall_3_0() { return cFeaturesFeatureParserRuleCall_3_0; }
+		public RuleCall getFeaturesFeatureParserRuleCall_4_0() { return cFeaturesFeatureParserRuleCall_4_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 
 	public class FeatureElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Feature");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cTypeTypeRefParserRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cCommentAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cCommentDOC_COMMENTTerminalRuleCall_0_0 = (RuleCall)cCommentAssignment_0.eContents().get(0);
+		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTypeTypeRefParserRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Feature returns modulob::Feature:
-		//	type=TypeRef name=ID ";"?;
+		//	comment=DOC_COMMENT? type=TypeRef name=ID ";";
 		public ParserRule getRule() { return rule; }
 
-		//type=TypeRef name=ID ";"?
+		//comment=DOC_COMMENT? type=TypeRef name=ID ";"
 		public Group getGroup() { return cGroup; }
 
+		//comment=DOC_COMMENT?
+		public Assignment getCommentAssignment_0() { return cCommentAssignment_0; }
+
+		//DOC_COMMENT
+		public RuleCall getCommentDOC_COMMENTTerminalRuleCall_0_0() { return cCommentDOC_COMMENTTerminalRuleCall_0_0; }
+
 		//type=TypeRef
-		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
+		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
 
 		//TypeRef
-		public RuleCall getTypeTypeRefParserRuleCall_0_0() { return cTypeTypeRefParserRuleCall_0_0; }
+		public RuleCall getTypeTypeRefParserRuleCall_1_0() { return cTypeTypeRefParserRuleCall_1_0; }
 
 		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 
-		//";"?
-		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
+		//";"
+		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
 	}
 	
 	
@@ -176,7 +192,7 @@ public class NotificationDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Notification returns modulob::Notification:
-	//	"notification" name=ID "{" features+=Feature* "}";
+	//	comment=DOC_COMMENT? "notification" name=ID "{" features+=Feature* "}";
 	public NotificationElements getNotificationAccess() {
 		return (pNotification != null) ? pNotification : (pNotification = new NotificationElements());
 	}
@@ -186,7 +202,7 @@ public class NotificationDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Feature returns modulob::Feature:
-	//	type=TypeRef name=ID ";"?;
+	//	comment=DOC_COMMENT? type=TypeRef name=ID ";";
 	public FeatureElements getFeatureAccess() {
 		return (pFeature != null) ? pFeature : (pFeature = new FeatureElements());
 	}
@@ -314,6 +330,15 @@ public class NotificationDslGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getQualifiedNameRule() {
 		return getQualifiedNameAccess().getRule();
 	}
+
+	/// *
+	// * DOC_COMMENTs are intended to be written to artifacts
+	// * generated by a code generator.
+	// * / terminal DOC_COMMENT:
+	//	"<*"->"*>";
+	public TerminalRule getDOC_COMMENTRule() {
+		return gaDsl.getDOC_COMMENTRule();
+	} 
 
 	//terminal ID:
 	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;

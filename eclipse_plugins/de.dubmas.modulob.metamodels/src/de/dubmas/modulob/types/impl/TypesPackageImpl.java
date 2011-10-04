@@ -164,6 +164,15 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getUserDefined_Comment() {
+		return (EAttribute)userDefinedEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPrimitive() {
 		return primitiveEClass;
 	}
@@ -263,6 +272,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		createEAttribute(typeEClass, TYPE__NAME);
 
 		userDefinedEClass = createEClass(USER_DEFINED);
+		createEAttribute(userDefinedEClass, USER_DEFINED__COMMENT);
 
 		primitiveEClass = createEClass(PRIMITIVE);
 
@@ -314,6 +324,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		initEAttribute(getType_Name(), ecorePackage.getEString(), "name", null, 1, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(userDefinedEClass, UserDefined.class, "UserDefined", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUserDefined_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, UserDefined.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(primitiveEClass, Primitive.class, "Primitive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

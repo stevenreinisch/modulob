@@ -123,6 +123,10 @@
         <element xmi:type="ecore:EAttribute" href="ModulobSystem.ecore#//Element/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_7B9NEdOfEeCZnMbSSZ-wKQ"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_0vVQ4O5YEeCogdU7Qm3ilQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="ModulobSystem.ecore#//Element/comment"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_0vVQ4e5YEeCogdU7Qm3ilQ"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_7B8mAtOfEeCZnMbSSZ-wKQ"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_7B8mA9OfEeCZnMbSSZ-wKQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_7B8mBNOfEeCZnMbSSZ-wKQ"/>

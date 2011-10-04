@@ -82,6 +82,15 @@ public interface ModulobPackage extends EPackage {
 	int DELEGATE__NAME = TypesPackage.USER_DEFINED__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATE__COMMENT = TypesPackage.USER_DEFINED__COMMENT;
+
+	/**
 	 * The feature id for the '<em><b>Methods</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -117,6 +126,15 @@ public interface ModulobPackage extends EPackage {
 	 * @ordered
 	 */
 	int INTERFACE__NAME = TypesPackage.USER_DEFINED__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE__COMMENT = TypesPackage.USER_DEFINED__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Required Interfaces</b></em>' reference list.
@@ -210,13 +228,22 @@ public interface ModulobPackage extends EPackage {
 	int METHOD__ADVICE = 4;
 
 	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METHOD__COMMENT = 5;
+
+	/**
 	 * The number of structural features of the '<em>Method</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int METHOD_FEATURE_COUNT = 5;
+	int METHOD_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link de.dubmas.modulob.impl.NotificationImpl <em>Notification</em>}' class.
@@ -247,13 +274,22 @@ public interface ModulobPackage extends EPackage {
 	int NOTIFICATION__FEATURES = 1;
 
 	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTIFICATION__COMMENT = 2;
+
+	/**
 	 * The number of structural features of the '<em>Notification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NOTIFICATION_FEATURE_COUNT = 2;
+	int NOTIFICATION_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link de.dubmas.modulob.impl.ParameterImpl <em>Parameter</em>}' class.
@@ -321,6 +357,15 @@ public interface ModulobPackage extends EPackage {
 	int ENTITY__NAME = TypesPackage.USER_DEFINED__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__COMMENT = TypesPackage.USER_DEFINED__COMMENT;
+
+	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -330,22 +375,13 @@ public interface ModulobPackage extends EPackage {
 	int ENTITY__ANNOTATIONS = TypesPackage.USER_DEFINED_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY__IS_ABSTRACT = TypesPackage.USER_DEFINED_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Super</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__SUPER = TypesPackage.USER_DEFINED_FEATURE_COUNT + 2;
+	int ENTITY__SUPER = TypesPackage.USER_DEFINED_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Features</b></em>' containment reference list.
@@ -354,7 +390,16 @@ public interface ModulobPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__FEATURES = TypesPackage.USER_DEFINED_FEATURE_COUNT + 3;
+	int ENTITY__FEATURES = TypesPackage.USER_DEFINED_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__IS_ABSTRACT = TypesPackage.USER_DEFINED_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
@@ -467,13 +512,22 @@ public interface ModulobPackage extends EPackage {
 	int FEATURE__DEFAULT_VALUE = 5;
 
 	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE__COMMENT = 6;
+
+	/**
 	 * The number of structural features of the '<em>Feature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_FEATURE_COUNT = 6;
+	int FEATURE_FEATURE_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link de.dubmas.modulob.impl.ValueObjectImpl <em>Value Object</em>}' class.
@@ -757,6 +811,17 @@ public interface ModulobPackage extends EPackage {
 	EReference getMethod_Advice();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.dubmas.modulob.Method#getComment <em>Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Comment</em>'.
+	 * @see de.dubmas.modulob.Method#getComment()
+	 * @see #getMethod()
+	 * @generated
+	 */
+	EAttribute getMethod_Comment();
+
+	/**
 	 * Returns the meta object for class '{@link de.dubmas.modulob.Notification <em>Notification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -787,6 +852,17 @@ public interface ModulobPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getNotification_Features();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dubmas.modulob.Notification#getComment <em>Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Comment</em>'.
+	 * @see de.dubmas.modulob.Notification#getComment()
+	 * @see #getNotification()
+	 * @generated
+	 */
+	EAttribute getNotification_Comment();
 
 	/**
 	 * Returns the meta object for class '{@link de.dubmas.modulob.Parameter <em>Parameter</em>}'.
@@ -992,6 +1068,17 @@ public interface ModulobPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getFeature_DefaultValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dubmas.modulob.Feature#getComment <em>Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Comment</em>'.
+	 * @see de.dubmas.modulob.Feature#getComment()
+	 * @see #getFeature()
+	 * @generated
+	 */
+	EAttribute getFeature_Comment();
 
 	/**
 	 * Returns the meta object for class '{@link de.dubmas.modulob.ValueObject <em>Value Object</em>}'.
@@ -1232,6 +1319,14 @@ public interface ModulobPackage extends EPackage {
 		EReference METHOD__ADVICE = eINSTANCE.getMethod_Advice();
 
 		/**
+		 * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute METHOD__COMMENT = eINSTANCE.getMethod_Comment();
+
+		/**
 		 * The meta object literal for the '{@link de.dubmas.modulob.impl.NotificationImpl <em>Notification</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1256,6 +1351,14 @@ public interface ModulobPackage extends EPackage {
 		 * @generated
 		 */
 		EReference NOTIFICATION__FEATURES = eINSTANCE.getNotification_Features();
+
+		/**
+		 * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NOTIFICATION__COMMENT = eINSTANCE.getNotification_Comment();
 
 		/**
 		 * The meta object literal for the '{@link de.dubmas.modulob.impl.ParameterImpl <em>Parameter</em>}' class.
@@ -1416,6 +1519,14 @@ public interface ModulobPackage extends EPackage {
 		 * @generated
 		 */
 		EReference FEATURE__DEFAULT_VALUE = eINSTANCE.getFeature_DefaultValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FEATURE__COMMENT = eINSTANCE.getFeature_Comment();
 
 		/**
 		 * The meta object literal for the '{@link de.dubmas.modulob.impl.ValueObjectImpl <em>Value Object</em>}' class.

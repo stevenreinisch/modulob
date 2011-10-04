@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link de.dubmas.modulob.impl.FeatureImpl#getInverse <em>Inverse</em>}</li>
  *   <li>{@link de.dubmas.modulob.impl.FeatureImpl#getType <em>Type</em>}</li>
  *   <li>{@link de.dubmas.modulob.impl.FeatureImpl#getDefaultValue <em>Default Value</em>}</li>
+ *   <li>{@link de.dubmas.modulob.impl.FeatureImpl#getComment <em>Comment</em>}</li>
  * </ul>
  * </p>
  *
@@ -129,6 +130,26 @@ public class FeatureImpl extends EObjectImpl implements Feature {
 	 * @ordered
 	 */
 	protected ValueObject defaultValue;
+
+	/**
+	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String COMMENT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected String comment = COMMENT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -341,6 +362,27 @@ public class FeatureImpl extends EObjectImpl implements Feature {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getComment() {
+		return comment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setComment(String newComment) {
+		String oldComment = comment;
+		comment = newComment;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModulobPackage.FEATURE__COMMENT, oldComment, comment));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -373,6 +415,8 @@ public class FeatureImpl extends EObjectImpl implements Feature {
 				return getType();
 			case ModulobPackage.FEATURE__DEFAULT_VALUE:
 				return getDefaultValue();
+			case ModulobPackage.FEATURE__COMMENT:
+				return getComment();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -402,6 +446,9 @@ public class FeatureImpl extends EObjectImpl implements Feature {
 				return;
 			case ModulobPackage.FEATURE__DEFAULT_VALUE:
 				setDefaultValue((ValueObject)newValue);
+				return;
+			case ModulobPackage.FEATURE__COMMENT:
+				setComment((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -433,6 +480,9 @@ public class FeatureImpl extends EObjectImpl implements Feature {
 			case ModulobPackage.FEATURE__DEFAULT_VALUE:
 				setDefaultValue((ValueObject)null);
 				return;
+			case ModulobPackage.FEATURE__COMMENT:
+				setComment(COMMENT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -457,6 +507,8 @@ public class FeatureImpl extends EObjectImpl implements Feature {
 				return type != null;
 			case ModulobPackage.FEATURE__DEFAULT_VALUE:
 				return defaultValue != null;
+			case ModulobPackage.FEATURE__COMMENT:
+				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -477,6 +529,8 @@ public class FeatureImpl extends EObjectImpl implements Feature {
 		result.append(isContainment);
 		result.append(", name: ");
 		result.append(name);
+		result.append(", comment: ");
+		result.append(comment);
 		result.append(')');
 		return result.toString();
 	}

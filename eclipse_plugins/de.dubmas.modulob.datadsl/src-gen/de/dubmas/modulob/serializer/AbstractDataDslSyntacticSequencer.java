@@ -8,8 +8,6 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
-import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 
@@ -17,12 +15,10 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class AbstractDataDslSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected DataDslGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Feature_SemicolonKeyword_6_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (DataDslGrammarAccess) access;
-		match_Feature_SemicolonKeyword_6_q = new TokenAlias(true, false, grammarAccess.getFeatureAccess().getSemicolonKeyword_6());
 	}
 	
 	@Override
@@ -37,18 +33,8 @@ public class AbstractDataDslSyntacticSequencer extends AbstractSyntacticSequence
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_Feature_SemicolonKeyword_6_q.equals(syntax))
-				emit_Feature_SemicolonKeyword_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else acceptNodes(getLastNavigableState(), syntaxNodes);
+			acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
-	/**
-	 * Syntax:
-	 *     ';'?
-	 */
-	protected void emit_Feature_SemicolonKeyword_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
 }

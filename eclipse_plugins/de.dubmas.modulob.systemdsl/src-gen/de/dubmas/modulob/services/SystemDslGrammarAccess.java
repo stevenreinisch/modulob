@@ -11,7 +11,7 @@ import org.eclipse.xtext.*;
 import org.eclipse.xtext.service.GrammarProvider;
 import org.eclipse.xtext.service.AbstractElementFinder.*;
 
-import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
+import de.dubmas.modulob.common.services.DslGrammarAccess;
 
 @Singleton
 public class SystemDslGrammarAccess extends AbstractGrammarElementFinder {
@@ -72,25 +72,33 @@ public class SystemDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class ModuleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Module");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cModuleKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cCommentAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cCommentDOC_COMMENTTerminalRuleCall_0_0 = (RuleCall)cCommentAssignment_0.eContents().get(0);
+		private final Keyword cModuleKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		
 		//Module returns modulobSystem::Module:
-		//	"module" name=ID;
+		//	comment=DOC_COMMENT? "module" name=ID;
 		public ParserRule getRule() { return rule; }
 
-		//"module" name=ID
+		//comment=DOC_COMMENT? "module" name=ID
 		public Group getGroup() { return cGroup; }
 
+		//comment=DOC_COMMENT?
+		public Assignment getCommentAssignment_0() { return cCommentAssignment_0; }
+
+		//DOC_COMMENT
+		public RuleCall getCommentDOC_COMMENTTerminalRuleCall_0_0() { return cCommentDOC_COMMENTTerminalRuleCall_0_0; }
+
 		//"module"
-		public Keyword getModuleKeyword_0() { return cModuleKeyword_0; }
+		public Keyword getModuleKeyword_1() { return cModuleKeyword_1; }
 
 		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 	}
 	
 	
@@ -99,13 +107,13 @@ public class SystemDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private final GrammarProvider grammarProvider;
 
-	private TerminalsGrammarAccess gaTerminals;
+	private DslGrammarAccess gaDsl;
 
 	@Inject
 	public SystemDslGrammarAccess(GrammarProvider grammarProvider,
-		TerminalsGrammarAccess gaTerminals) {
+		DslGrammarAccess gaDsl) {
 		this.grammarProvider = grammarProvider;
-		this.gaTerminals = gaTerminals;
+		this.gaDsl = gaDsl;
 	}
 	
 	public Grammar getGrammar() {	
@@ -113,8 +121,8 @@ public class SystemDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 
-	public TerminalsGrammarAccess getTerminalsGrammarAccess() {
-		return gaTerminals;
+	public DslGrammarAccess getDslGrammarAccess() {
+		return gaDsl;
 	}
 
 	
@@ -129,7 +137,7 @@ public class SystemDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Module returns modulobSystem::Module:
-	//	"module" name=ID;
+	//	comment=DOC_COMMENT? "module" name=ID;
 	public ModuleElements getModuleAccess() {
 		return (pModule != null) ? pModule : (pModule = new ModuleElements());
 	}
@@ -138,46 +146,175 @@ public class SystemDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getModuleAccess().getRule();
 	}
 
+	//TypeLib returns types::Lib:
+	//	primitiveTypes+=Primitive+ anyType=Any;
+	public DslGrammarAccess.TypeLibElements getTypeLibAccess() {
+		return gaDsl.getTypeLibAccess();
+	}
+	
+	public ParserRule getTypeLibRule() {
+		return getTypeLibAccess().getRule();
+	}
+
+	//Primitive returns types::Primitive:
+	//	"primitive type" name=ID;
+	public DslGrammarAccess.PrimitiveElements getPrimitiveAccess() {
+		return gaDsl.getPrimitiveAccess();
+	}
+	
+	public ParserRule getPrimitiveRule() {
+		return getPrimitiveAccess().getRule();
+	}
+
+	//Any returns types::Any:
+	//	"any type" name=ID;
+	public DslGrammarAccess.AnyElements getAnyAccess() {
+		return gaDsl.getAnyAccess();
+	}
+	
+	public ParserRule getAnyRule() {
+		return getAnyAccess().getRule();
+	}
+
+	//TypeRef returns types::TypeRef:
+	//	referenced=[types::Type|QualifiedName] isMulti?="[]"?;
+	public DslGrammarAccess.TypeRefElements getTypeRefAccess() {
+		return gaDsl.getTypeRefAccess();
+	}
+	
+	public ParserRule getTypeRefRule() {
+		return getTypeRefAccess().getRule();
+	}
+
+	//ValueObject returns modulob::ValueObject:
+	//	StringValue | IntegerValue | FloatValue;
+	public DslGrammarAccess.ValueObjectElements getValueObjectAccess() {
+		return gaDsl.getValueObjectAccess();
+	}
+	
+	public ParserRule getValueObjectRule() {
+		return getValueObjectAccess().getRule();
+	}
+
+	//StringValue returns modulob::StringValue:
+	//	value=EStringObject;
+	public DslGrammarAccess.StringValueElements getStringValueAccess() {
+		return gaDsl.getStringValueAccess();
+	}
+	
+	public ParserRule getStringValueRule() {
+		return getStringValueAccess().getRule();
+	}
+
+	//EStringObject returns ecore::EString:
+	//	STRING;
+	public DslGrammarAccess.EStringObjectElements getEStringObjectAccess() {
+		return gaDsl.getEStringObjectAccess();
+	}
+	
+	public ParserRule getEStringObjectRule() {
+		return getEStringObjectAccess().getRule();
+	}
+
+	//IntegerValue returns modulob::IntegerValue:
+	//	value=EIntegerObject;
+	public DslGrammarAccess.IntegerValueElements getIntegerValueAccess() {
+		return gaDsl.getIntegerValueAccess();
+	}
+	
+	public ParserRule getIntegerValueRule() {
+		return getIntegerValueAccess().getRule();
+	}
+
+	//EIntegerObject returns ecore::EIntegerObject:
+	//	INT;
+	public DslGrammarAccess.EIntegerObjectElements getEIntegerObjectAccess() {
+		return gaDsl.getEIntegerObjectAccess();
+	}
+	
+	public ParserRule getEIntegerObjectRule() {
+		return getEIntegerObjectAccess().getRule();
+	}
+
+	//FloatValue returns modulob::FloatValue:
+	//	value=EFloatObject;
+	public DslGrammarAccess.FloatValueElements getFloatValueAccess() {
+		return gaDsl.getFloatValueAccess();
+	}
+	
+	public ParserRule getFloatValueRule() {
+		return getFloatValueAccess().getRule();
+	}
+
+	//EFloatObject returns ecore::EFloatObject:
+	//	"-"? INT? "." INT;
+	public DslGrammarAccess.EFloatObjectElements getEFloatObjectAccess() {
+		return gaDsl.getEFloatObjectAccess();
+	}
+	
+	public ParserRule getEFloatObjectRule() {
+		return getEFloatObjectAccess().getRule();
+	}
+
+	//QualifiedName:
+	//	ID ("." ID)*;
+	public DslGrammarAccess.QualifiedNameElements getQualifiedNameAccess() {
+		return gaDsl.getQualifiedNameAccess();
+	}
+	
+	public ParserRule getQualifiedNameRule() {
+		return getQualifiedNameAccess().getRule();
+	}
+
+	/// *
+	// * DOC_COMMENTs are intended to be written to artifacts
+	// * generated by a code generator.
+	// * / terminal DOC_COMMENT:
+	//	"<*"->"*>";
+	public TerminalRule getDOC_COMMENTRule() {
+		return gaDsl.getDOC_COMMENTRule();
+	} 
+
 	//terminal ID:
 	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
 	public TerminalRule getIDRule() {
-		return gaTerminals.getIDRule();
+		return gaDsl.getIDRule();
 	} 
 
 	//terminal INT returns ecore::EInt:
 	//	"0".."9"+;
 	public TerminalRule getINTRule() {
-		return gaTerminals.getINTRule();
+		return gaDsl.getINTRule();
 	} 
 
 	//terminal STRING:
 	//	"\"" ("\\" ("b" | "t" | "n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\""))* "\"" | "\'" ("\\" ("b" | "t" |
 	//	"n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\'"))* "\'";
 	public TerminalRule getSTRINGRule() {
-		return gaTerminals.getSTRINGRule();
+		return gaDsl.getSTRINGRule();
 	} 
 
 	//terminal ML_COMMENT:
 	//	"/ *"->"* /";
 	public TerminalRule getML_COMMENTRule() {
-		return gaTerminals.getML_COMMENTRule();
+		return gaDsl.getML_COMMENTRule();
 	} 
 
 	//terminal SL_COMMENT:
 	//	"//" !("\n" | "\r")* ("\r"? "\n")?;
 	public TerminalRule getSL_COMMENTRule() {
-		return gaTerminals.getSL_COMMENTRule();
+		return gaDsl.getSL_COMMENTRule();
 	} 
 
 	//terminal WS:
 	//	(" " | "\t" | "\r" | "\n")+;
 	public TerminalRule getWSRule() {
-		return gaTerminals.getWSRule();
+		return gaDsl.getWSRule();
 	} 
 
 	//terminal ANY_OTHER:
 	//	.;
 	public TerminalRule getANY_OTHERRule() {
-		return gaTerminals.getANY_OTHERRule();
+		return gaDsl.getANY_OTHERRule();
 	} 
 }

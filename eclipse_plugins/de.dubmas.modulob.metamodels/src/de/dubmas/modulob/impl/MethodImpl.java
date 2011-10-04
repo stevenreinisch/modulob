@@ -40,6 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.dubmas.modulob.impl.MethodImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link de.dubmas.modulob.impl.MethodImpl#getType <em>Type</em>}</li>
  *   <li>{@link de.dubmas.modulob.impl.MethodImpl#getAdvice <em>Advice</em>}</li>
+ *   <li>{@link de.dubmas.modulob.impl.MethodImpl#getComment <em>Comment</em>}</li>
  * </ul>
  * </p>
  *
@@ -115,6 +116,26 @@ public class MethodImpl extends EObjectImpl implements Method {
 	 * @ordered
 	 */
 	protected Advice advice;
+
+	/**
+	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String COMMENT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected String comment = COMMENT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -280,6 +301,27 @@ public class MethodImpl extends EObjectImpl implements Method {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getComment() {
+		return comment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setComment(String newComment) {
+		String oldComment = comment;
+		comment = newComment;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModulobPackage.METHOD__COMMENT, oldComment, comment));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -311,6 +353,8 @@ public class MethodImpl extends EObjectImpl implements Method {
 				return getType();
 			case ModulobPackage.METHOD__ADVICE:
 				return getAdvice();
+			case ModulobPackage.METHOD__COMMENT:
+				return getComment();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -340,6 +384,9 @@ public class MethodImpl extends EObjectImpl implements Method {
 			case ModulobPackage.METHOD__ADVICE:
 				setAdvice((Advice)newValue);
 				return;
+			case ModulobPackage.METHOD__COMMENT:
+				setComment((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -367,6 +414,9 @@ public class MethodImpl extends EObjectImpl implements Method {
 			case ModulobPackage.METHOD__ADVICE:
 				setAdvice((Advice)null);
 				return;
+			case ModulobPackage.METHOD__COMMENT:
+				setComment(COMMENT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -389,6 +439,8 @@ public class MethodImpl extends EObjectImpl implements Method {
 				return type != null;
 			case ModulobPackage.METHOD__ADVICE:
 				return advice != null;
+			case ModulobPackage.METHOD__COMMENT:
+				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -407,6 +459,8 @@ public class MethodImpl extends EObjectImpl implements Method {
 		result.append(isStatic);
 		result.append(", name: ");
 		result.append(name);
+		result.append(", comment: ");
+		result.append(comment);
 		result.append(')');
 		return result.toString();
 	}

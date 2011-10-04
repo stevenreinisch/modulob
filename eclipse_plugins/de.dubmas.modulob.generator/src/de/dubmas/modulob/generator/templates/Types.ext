@@ -204,3 +204,27 @@ singletonName(Interface i):
 delegateName(Interface i):
 	"P_D_" + i.typeName() + "Delegate"
 ;
+
+codeComment(UserDefined type):
+	type.comment.toCodeComment()
+;
+
+codeComment(Method m):
+	m.comment.toCodeComment()
+;
+
+codeComment(Feature f):
+	f.comment.toCodeComment()
+;
+
+codeComment(Notification n):
+	n.comment.toCodeComment()
+;
+
+private toCodeComment(String comment):
+	comment != null
+	?
+	'/' + comment.subString(1, comment.length-1) + '/'
+	:
+	''
+;

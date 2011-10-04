@@ -2,7 +2,6 @@ package de.dubmas.modulob.common.serializer;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
-import de.dubmas.modulob.Feature;
 import de.dubmas.modulob.FloatValue;
 import de.dubmas.modulob.IntegerValue;
 import de.dubmas.modulob.ModulobPackage;
@@ -53,12 +52,6 @@ public class AbstractDslSemanticSequencer extends AbstractSemanticSequencer {
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == ModulobPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-			case ModulobPackage.FEATURE:
-				if(context == grammarAccess.getFeatureRule()) {
-					sequence_Feature(context, (Feature) semanticObject); 
-					return; 
-				}
-				else break;
 			case ModulobPackage.FLOAT_VALUE:
 				if(context == grammarAccess.getFloatValueRule() ||
 				   context == grammarAccess.getValueObjectRule()) {
@@ -126,30 +119,6 @@ public class AbstractDslSemanticSequencer extends AbstractSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getAnyAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (
-	 *         isIndexed?='indexed'? 
-	 *         isContainment?='-['? 
-	 *         type=TypeRef 
-	 *         name=ID 
-	 *         defaultValue=ValueObject? 
-	 *         inverse=[Feature|QualifiedName]?
-	 *     )
-	 *
-	 * Features:
-	 *    isIndexed[0, 1]
-	 *    isContainment[0, 1]
-	 *    name[1, 1]
-	 *    inverse[0, 1]
-	 *    type[1, 1]
-	 *    defaultValue[0, 1]
-	 */
-	protected void sequence_Feature(EObject context, Feature semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

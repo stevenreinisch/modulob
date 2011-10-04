@@ -20,6 +20,7 @@
 		@class «type.typeName()»;
 	«ENDFOREACH»
 
+	«this.codeComment()»
 	@interface «this.typeName()»: 
 	 
 	«EXPAND superClass FOR this»

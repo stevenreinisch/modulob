@@ -24,6 +24,7 @@
 	
 	«EXPAND additionalHeaderImportsOrForwardDecls FOR this»
 	
+	«this.codeComment()»
 	@interface «this.baseClassName()»: NSObject
 	
 	<«this.protocolTypeName()»>

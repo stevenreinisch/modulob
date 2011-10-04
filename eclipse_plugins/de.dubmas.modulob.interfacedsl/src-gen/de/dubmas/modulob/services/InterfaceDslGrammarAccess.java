@@ -68,117 +68,43 @@ public class InterfaceDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class InterfaceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Interface");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cInterfaceKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cRequiresKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cRequiredInterfacesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final CrossReference cRequiredInterfacesInterfaceCrossReference_2_1_0 = (CrossReference)cRequiredInterfacesAssignment_2_1.eContents().get(0);
-		private final RuleCall cRequiredInterfacesInterfaceQualifiedNameParserRuleCall_2_1_0_1 = (RuleCall)cRequiredInterfacesInterfaceCrossReference_2_1_0.eContents().get(1);
-		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
-		private final Keyword cCommaKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
-		private final Assignment cRequiredInterfacesAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final CrossReference cRequiredInterfacesInterfaceCrossReference_2_2_1_0 = (CrossReference)cRequiredInterfacesAssignment_2_2_1.eContents().get(0);
-		private final RuleCall cRequiredInterfacesInterfaceQualifiedNameParserRuleCall_2_2_1_0_1 = (RuleCall)cRequiredInterfacesInterfaceCrossReference_2_2_1_0.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cMethodsAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cMethodsMethodParserRuleCall_4_0 = (RuleCall)cMethodsAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cCommentAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cCommentDOC_COMMENTTerminalRuleCall_0_0 = (RuleCall)cCommentAssignment_0.eContents().get(0);
+		private final Keyword cInterfaceKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cRequiresKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cRequiredInterfacesAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final CrossReference cRequiredInterfacesInterfaceCrossReference_3_1_0 = (CrossReference)cRequiredInterfacesAssignment_3_1.eContents().get(0);
+		private final RuleCall cRequiredInterfacesInterfaceQualifiedNameParserRuleCall_3_1_0_1 = (RuleCall)cRequiredInterfacesInterfaceCrossReference_3_1_0.eContents().get(1);
+		private final Group cGroup_3_2 = (Group)cGroup_3.eContents().get(2);
+		private final Keyword cCommaKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
+		private final Assignment cRequiredInterfacesAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
+		private final CrossReference cRequiredInterfacesInterfaceCrossReference_3_2_1_0 = (CrossReference)cRequiredInterfacesAssignment_3_2_1.eContents().get(0);
+		private final RuleCall cRequiredInterfacesInterfaceQualifiedNameParserRuleCall_3_2_1_0_1 = (RuleCall)cRequiredInterfacesInterfaceCrossReference_3_2_1_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cMethodsAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cMethodsMethodParserRuleCall_5_0 = (RuleCall)cMethodsAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Interface returns modulob::Interface:
-		//	"interface" name=ID ("requires" requiredInterfaces+=[modulob::Interface|QualifiedName] (","
+		//	comment=DOC_COMMENT? "interface" name=ID ("requires" requiredInterfaces+=[modulob::Interface|QualifiedName] (","
 		//	requiredInterfaces+=[modulob::Interface|QualifiedName])*)? "{" methods+=Method* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"interface" name=ID ("requires" requiredInterfaces+=[modulob::Interface|QualifiedName] (","
+		//comment=DOC_COMMENT? "interface" name=ID ("requires" requiredInterfaces+=[modulob::Interface|QualifiedName] (","
 		//requiredInterfaces+=[modulob::Interface|QualifiedName])*)? "{" methods+=Method* "}"
 		public Group getGroup() { return cGroup; }
 
+		//comment=DOC_COMMENT?
+		public Assignment getCommentAssignment_0() { return cCommentAssignment_0; }
+
+		//DOC_COMMENT
+		public RuleCall getCommentDOC_COMMENTTerminalRuleCall_0_0() { return cCommentDOC_COMMENTTerminalRuleCall_0_0; }
+
 		//"interface"
-		public Keyword getInterfaceKeyword_0() { return cInterfaceKeyword_0; }
-
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-
-		//("requires" requiredInterfaces+=[modulob::Interface|QualifiedName] (","
-		//requiredInterfaces+=[modulob::Interface|QualifiedName])*)?
-		public Group getGroup_2() { return cGroup_2; }
-
-		//"requires"
-		public Keyword getRequiresKeyword_2_0() { return cRequiresKeyword_2_0; }
-
-		//requiredInterfaces+=[modulob::Interface|QualifiedName]
-		public Assignment getRequiredInterfacesAssignment_2_1() { return cRequiredInterfacesAssignment_2_1; }
-
-		//[modulob::Interface|QualifiedName]
-		public CrossReference getRequiredInterfacesInterfaceCrossReference_2_1_0() { return cRequiredInterfacesInterfaceCrossReference_2_1_0; }
-
-		//QualifiedName
-		public RuleCall getRequiredInterfacesInterfaceQualifiedNameParserRuleCall_2_1_0_1() { return cRequiredInterfacesInterfaceQualifiedNameParserRuleCall_2_1_0_1; }
-
-		//("," requiredInterfaces+=[modulob::Interface|QualifiedName])*
-		public Group getGroup_2_2() { return cGroup_2_2; }
-
-		//","
-		public Keyword getCommaKeyword_2_2_0() { return cCommaKeyword_2_2_0; }
-
-		//requiredInterfaces+=[modulob::Interface|QualifiedName]
-		public Assignment getRequiredInterfacesAssignment_2_2_1() { return cRequiredInterfacesAssignment_2_2_1; }
-
-		//[modulob::Interface|QualifiedName]
-		public CrossReference getRequiredInterfacesInterfaceCrossReference_2_2_1_0() { return cRequiredInterfacesInterfaceCrossReference_2_2_1_0; }
-
-		//QualifiedName
-		public RuleCall getRequiredInterfacesInterfaceQualifiedNameParserRuleCall_2_2_1_0_1() { return cRequiredInterfacesInterfaceQualifiedNameParserRuleCall_2_2_1_0_1; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
-
-		//methods+=Method*
-		public Assignment getMethodsAssignment_4() { return cMethodsAssignment_4; }
-
-		//Method
-		public RuleCall getMethodsMethodParserRuleCall_4_0() { return cMethodsMethodParserRuleCall_4_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
-	}
-
-	public class MethodElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Method");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cIsStaticAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final Keyword cIsStaticStaticKeyword_0_0 = (Keyword)cIsStaticAssignment_0.eContents().get(0);
-		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cTypeTypeRefParserRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Assignment cParametersAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cParametersParameterParserRuleCall_3_0 = (RuleCall)cParametersAssignment_3.eContents().get(0);
-		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		
-		//Method returns modulob::Method:
-		//	isStatic?="static"? type=TypeRef name=ID parameters+=Parameter* ";"?;
-		public ParserRule getRule() { return rule; }
-
-		//isStatic?="static"? type=TypeRef name=ID parameters+=Parameter* ";"?
-		public Group getGroup() { return cGroup; }
-
-		//isStatic?="static"?
-		public Assignment getIsStaticAssignment_0() { return cIsStaticAssignment_0; }
-
-		//"static"
-		public Keyword getIsStaticStaticKeyword_0_0() { return cIsStaticStaticKeyword_0_0; }
-
-		//type=TypeRef
-		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
-
-		//TypeRef
-		public RuleCall getTypeTypeRefParserRuleCall_1_0() { return cTypeTypeRefParserRuleCall_1_0; }
+		public Keyword getInterfaceKeyword_1() { return cInterfaceKeyword_1; }
 
 		//name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
@@ -186,14 +112,104 @@ public class InterfaceDslGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 
+		//("requires" requiredInterfaces+=[modulob::Interface|QualifiedName] (","
+		//requiredInterfaces+=[modulob::Interface|QualifiedName])*)?
+		public Group getGroup_3() { return cGroup_3; }
+
+		//"requires"
+		public Keyword getRequiresKeyword_3_0() { return cRequiresKeyword_3_0; }
+
+		//requiredInterfaces+=[modulob::Interface|QualifiedName]
+		public Assignment getRequiredInterfacesAssignment_3_1() { return cRequiredInterfacesAssignment_3_1; }
+
+		//[modulob::Interface|QualifiedName]
+		public CrossReference getRequiredInterfacesInterfaceCrossReference_3_1_0() { return cRequiredInterfacesInterfaceCrossReference_3_1_0; }
+
+		//QualifiedName
+		public RuleCall getRequiredInterfacesInterfaceQualifiedNameParserRuleCall_3_1_0_1() { return cRequiredInterfacesInterfaceQualifiedNameParserRuleCall_3_1_0_1; }
+
+		//("," requiredInterfaces+=[modulob::Interface|QualifiedName])*
+		public Group getGroup_3_2() { return cGroup_3_2; }
+
+		//","
+		public Keyword getCommaKeyword_3_2_0() { return cCommaKeyword_3_2_0; }
+
+		//requiredInterfaces+=[modulob::Interface|QualifiedName]
+		public Assignment getRequiredInterfacesAssignment_3_2_1() { return cRequiredInterfacesAssignment_3_2_1; }
+
+		//[modulob::Interface|QualifiedName]
+		public CrossReference getRequiredInterfacesInterfaceCrossReference_3_2_1_0() { return cRequiredInterfacesInterfaceCrossReference_3_2_1_0; }
+
+		//QualifiedName
+		public RuleCall getRequiredInterfacesInterfaceQualifiedNameParserRuleCall_3_2_1_0_1() { return cRequiredInterfacesInterfaceQualifiedNameParserRuleCall_3_2_1_0_1; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
+
+		//methods+=Method*
+		public Assignment getMethodsAssignment_5() { return cMethodsAssignment_5; }
+
+		//Method
+		public RuleCall getMethodsMethodParserRuleCall_5_0() { return cMethodsMethodParserRuleCall_5_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+	}
+
+	public class MethodElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Method");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cCommentAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cCommentDOC_COMMENTTerminalRuleCall_0_0 = (RuleCall)cCommentAssignment_0.eContents().get(0);
+		private final Assignment cIsStaticAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cIsStaticStaticKeyword_1_0 = (Keyword)cIsStaticAssignment_1.eContents().get(0);
+		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTypeTypeRefParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
+		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNameIDTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final Assignment cParametersAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cParametersParameterParserRuleCall_4_0 = (RuleCall)cParametersAssignment_4.eContents().get(0);
+		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//Method returns modulob::Method:
+		//	comment=DOC_COMMENT? isStatic?="static"? type=TypeRef name=ID parameters+=Parameter* ";"?;
+		public ParserRule getRule() { return rule; }
+
+		//comment=DOC_COMMENT? isStatic?="static"? type=TypeRef name=ID parameters+=Parameter* ";"?
+		public Group getGroup() { return cGroup; }
+
+		//comment=DOC_COMMENT?
+		public Assignment getCommentAssignment_0() { return cCommentAssignment_0; }
+
+		//DOC_COMMENT
+		public RuleCall getCommentDOC_COMMENTTerminalRuleCall_0_0() { return cCommentDOC_COMMENTTerminalRuleCall_0_0; }
+
+		//isStatic?="static"?
+		public Assignment getIsStaticAssignment_1() { return cIsStaticAssignment_1; }
+
+		//"static"
+		public Keyword getIsStaticStaticKeyword_1_0() { return cIsStaticStaticKeyword_1_0; }
+
+		//type=TypeRef
+		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
+
+		//TypeRef
+		public RuleCall getTypeTypeRefParserRuleCall_2_0() { return cTypeTypeRefParserRuleCall_2_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_3_0() { return cNameIDTerminalRuleCall_3_0; }
+
 		//parameters+=Parameter*
-		public Assignment getParametersAssignment_3() { return cParametersAssignment_3; }
+		public Assignment getParametersAssignment_4() { return cParametersAssignment_4; }
 
 		//Parameter
-		public RuleCall getParametersParameterParserRuleCall_3_0() { return cParametersParameterParserRuleCall_3_0; }
+		public RuleCall getParametersParameterParserRuleCall_4_0() { return cParametersParameterParserRuleCall_4_0; }
 
 		//";"?
-		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
+		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
 	}
 
 	public class ParameterElements extends AbstractParserRuleElementFinder {
@@ -274,7 +290,7 @@ public class InterfaceDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Interface returns modulob::Interface:
-	//	"interface" name=ID ("requires" requiredInterfaces+=[modulob::Interface|QualifiedName] (","
+	//	comment=DOC_COMMENT? "interface" name=ID ("requires" requiredInterfaces+=[modulob::Interface|QualifiedName] (","
 	//	requiredInterfaces+=[modulob::Interface|QualifiedName])*)? "{" methods+=Method* "}";
 	public InterfaceElements getInterfaceAccess() {
 		return (pInterface != null) ? pInterface : (pInterface = new InterfaceElements());
@@ -285,7 +301,7 @@ public class InterfaceDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Method returns modulob::Method:
-	//	isStatic?="static"? type=TypeRef name=ID parameters+=Parameter* ";"?;
+	//	comment=DOC_COMMENT? isStatic?="static"? type=TypeRef name=ID parameters+=Parameter* ";"?;
 	public MethodElements getMethodAccess() {
 		return (pMethod != null) ? pMethod : (pMethod = new MethodElements());
 	}
@@ -332,17 +348,6 @@ public class InterfaceDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getAnyRule() {
 		return getAnyAccess().getRule();
-	}
-
-	//Feature returns modulob::Feature:
-	//	isIndexed?="indexed"? isContainment?="-["? type=TypeRef name=ID ("=" defaultValue=ValueObject)? ("<->"
-	//	inverse=[modulob::Feature|QualifiedName])? ";"?;
-	public DslGrammarAccess.FeatureElements getFeatureAccess() {
-		return gaDsl.getFeatureAccess();
-	}
-	
-	public ParserRule getFeatureRule() {
-		return getFeatureAccess().getRule();
 	}
 
 	//TypeRef returns types::TypeRef:
@@ -434,6 +439,15 @@ public class InterfaceDslGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getQualifiedNameRule() {
 		return getQualifiedNameAccess().getRule();
 	}
+
+	/// *
+	// * DOC_COMMENTs are intended to be written to artifacts
+	// * generated by a code generator.
+	// * / terminal DOC_COMMENT:
+	//	"<*"->"*>";
+	public TerminalRule getDOC_COMMENTRule() {
+		return gaDsl.getDOC_COMMENTRule();
+	} 
 
 	//terminal ID:
 	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;

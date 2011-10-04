@@ -157,15 +157,33 @@ ruleNotification returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='notification' 
+((
+(
+		lv_comment_0_0=RULE_DOC_COMMENT
+		{
+			newLeafNode(lv_comment_0_0, grammarAccess.getNotificationAccess().getCommentDOC_COMMENTTerminalRuleCall_0_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getNotificationRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"comment",
+        		lv_comment_0_0, 
+        		"DOC_COMMENT");
+	    }
+
+)
+)?	otherlv_1='notification' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getNotificationAccess().getNotificationKeyword_0());
+    	newLeafNode(otherlv_1, grammarAccess.getNotificationAccess().getNotificationKeyword_1());
     }
 (
 (
-		lv_name_1_0=RULE_ID
+		lv_name_2_0=RULE_ID
 		{
-			newLeafNode(lv_name_1_0, grammarAccess.getNotificationAccess().getNameIDTerminalRuleCall_1_0()); 
+			newLeafNode(lv_name_2_0, grammarAccess.getNotificationAccess().getNameIDTerminalRuleCall_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -174,36 +192,36 @@ ruleNotification returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_1_0, 
+        		lv_name_2_0, 
         		"ID");
 	    }
 
 )
-)	otherlv_2='{' 
+)	otherlv_3='{' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getNotificationAccess().getLeftCurlyBracketKeyword_2());
+    	newLeafNode(otherlv_3, grammarAccess.getNotificationAccess().getLeftCurlyBracketKeyword_3());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getNotificationAccess().getFeaturesFeatureParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getNotificationAccess().getFeaturesFeatureParserRuleCall_4_0()); 
 	    }
-		lv_features_3_0=ruleFeature		{
+		lv_features_4_0=ruleFeature		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getNotificationRule());
 	        }
        		add(
        			$current, 
        			"features",
-        		lv_features_3_0, 
+        		lv_features_4_0, 
         		"Feature");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*	otherlv_4='}' 
+)*	otherlv_5='}' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getNotificationAccess().getRightCurlyBracketKeyword_4());
+    	newLeafNode(otherlv_5, grammarAccess.getNotificationAccess().getRightCurlyBracketKeyword_5());
     }
 )
 ;
@@ -228,17 +246,35 @@ ruleFeature returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		{ 
-	        newCompositeNode(grammarAccess.getFeatureAccess().getTypeTypeRefParserRuleCall_0_0()); 
+		lv_comment_0_0=RULE_DOC_COMMENT
+		{
+			newLeafNode(lv_comment_0_0, grammarAccess.getFeatureAccess().getCommentDOC_COMMENTTerminalRuleCall_0_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getFeatureRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"comment",
+        		lv_comment_0_0, 
+        		"DOC_COMMENT");
 	    }
-		lv_type_0_0=ruleTypeRef		{
+
+)
+)?(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getFeatureAccess().getTypeTypeRefParserRuleCall_1_0()); 
+	    }
+		lv_type_1_0=ruleTypeRef		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getFeatureRule());
 	        }
        		set(
        			$current, 
        			"type",
-        		lv_type_0_0, 
+        		lv_type_1_0, 
         		"TypeRef");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -246,9 +282,9 @@ ruleFeature returns [EObject current=null]
 )
 )(
 (
-		lv_name_1_0=RULE_ID
+		lv_name_2_0=RULE_ID
 		{
-			newLeafNode(lv_name_1_0, grammarAccess.getFeatureAccess().getNameIDTerminalRuleCall_1_0()); 
+			newLeafNode(lv_name_2_0, grammarAccess.getFeatureAccess().getNameIDTerminalRuleCall_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -257,16 +293,16 @@ ruleFeature returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_1_0, 
+        		lv_name_2_0, 
         		"ID");
 	    }
 
 )
-)(	otherlv_2=';' 
+)	otherlv_3=';' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getFeatureAccess().getSemicolonKeyword_2());
+    	newLeafNode(otherlv_3, grammarAccess.getFeatureAccess().getSemicolonKeyword_3());
     }
-)?)
+)
 ;
 
 
@@ -674,6 +710,8 @@ ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleT
 
 
 
+
+RULE_DOC_COMMENT : '<*' ( options {greedy=false;} : . )*'*>';
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

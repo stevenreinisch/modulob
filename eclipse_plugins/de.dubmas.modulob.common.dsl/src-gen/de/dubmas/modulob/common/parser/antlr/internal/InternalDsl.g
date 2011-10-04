@@ -208,105 +208,6 @@ ruleAny returns [EObject current=null]
 
 
 
-// Entry rule entryRuleTypeRef
-entryRuleTypeRef returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getTypeRefRule()); }
-	 iv_ruleTypeRef=ruleTypeRef 
-	 { $current=$iv_ruleTypeRef.current; } 
-	 EOF 
-;
-
-// Rule TypeRef
-ruleTypeRef returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-((
-(
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getTypeRefRule());
-	        }
-        }
-		{ 
-	        newCompositeNode(grammarAccess.getTypeRefAccess().getReferencedTypeCrossReference_0_0()); 
-	    }
-		ruleQualifiedName		{ 
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)(
-(
-		lv_isMulti_1_0=	'[]' 
-    {
-        newLeafNode(lv_isMulti_1_0, grammarAccess.getTypeRefAccess().getIsMultiLeftSquareBracketRightSquareBracketKeyword_1_0());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getTypeRefRule());
-	        }
-       		setWithLastConsumed($current, "isMulti", true, "[]");
-	    }
-
-)
-)?)
-;
-
-
-
-
-
-// Entry rule entryRuleValueObject
-entryRuleValueObject returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getValueObjectRule()); }
-	 iv_ruleValueObject=ruleValueObject 
-	 { $current=$iv_ruleValueObject.current; } 
-	 EOF 
-;
-
-// Rule ValueObject
-ruleValueObject returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(
-    { 
-        newCompositeNode(grammarAccess.getValueObjectAccess().getStringValueParserRuleCall_0()); 
-    }
-    this_StringValue_0=ruleStringValue
-    { 
-        $current = $this_StringValue_0.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getValueObjectAccess().getIntegerValueParserRuleCall_1()); 
-    }
-    this_IntegerValue_1=ruleIntegerValue
-    { 
-        $current = $this_IntegerValue_1.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getValueObjectAccess().getFloatValueParserRuleCall_2()); 
-    }
-    this_FloatValue_2=ruleFloatValue
-    { 
-        $current = $this_FloatValue_2.current; 
-        afterParserOrEnumRuleCall();
-    }
-)
-;
-
-
-
 
 
 // Entry rule entryRuleStringValue
@@ -569,6 +470,8 @@ ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleT
 
 
 
+
+RULE_DOC_COMMENT : '<*' ( options {greedy=false;} : . )*'*>';
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

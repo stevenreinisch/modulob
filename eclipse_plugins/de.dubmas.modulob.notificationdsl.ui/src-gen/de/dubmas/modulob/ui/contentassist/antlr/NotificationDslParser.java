@@ -51,10 +51,12 @@ public class NotificationDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNotificationModelAccess().getModuleAssignment_1(), "rule__NotificationModel__ModuleAssignment_1");
 					put(grammarAccess.getNotificationModelAccess().getVersionAssignment_3(), "rule__NotificationModel__VersionAssignment_3");
 					put(grammarAccess.getNotificationModelAccess().getNotificationsAssignment_4(), "rule__NotificationModel__NotificationsAssignment_4");
-					put(grammarAccess.getNotificationAccess().getNameAssignment_1(), "rule__Notification__NameAssignment_1");
-					put(grammarAccess.getNotificationAccess().getFeaturesAssignment_3(), "rule__Notification__FeaturesAssignment_3");
-					put(grammarAccess.getFeatureAccess().getTypeAssignment_0(), "rule__Feature__TypeAssignment_0");
-					put(grammarAccess.getFeatureAccess().getNameAssignment_1(), "rule__Feature__NameAssignment_1");
+					put(grammarAccess.getNotificationAccess().getCommentAssignment_0(), "rule__Notification__CommentAssignment_0");
+					put(grammarAccess.getNotificationAccess().getNameAssignment_2(), "rule__Notification__NameAssignment_2");
+					put(grammarAccess.getNotificationAccess().getFeaturesAssignment_4(), "rule__Notification__FeaturesAssignment_4");
+					put(grammarAccess.getFeatureAccess().getCommentAssignment_0(), "rule__Feature__CommentAssignment_0");
+					put(grammarAccess.getFeatureAccess().getTypeAssignment_1(), "rule__Feature__TypeAssignment_1");
+					put(grammarAccess.getFeatureAccess().getNameAssignment_2(), "rule__Feature__NameAssignment_2");
 					put(grammarAccess.getTypeLibAccess().getPrimitiveTypesAssignment_0(), "rule__TypeLib__PrimitiveTypesAssignment_0");
 					put(grammarAccess.getTypeLibAccess().getAnyTypeAssignment_1(), "rule__TypeLib__AnyTypeAssignment_1");
 					put(grammarAccess.getPrimitiveAccess().getNameAssignment_1(), "rule__Primitive__NameAssignment_1");

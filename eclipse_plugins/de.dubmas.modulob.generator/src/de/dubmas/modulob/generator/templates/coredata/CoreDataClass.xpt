@@ -32,6 +32,7 @@
 	 * implementation is provided by CoreData at runtime.
 	 */
 	 «ENDREM»
+	«this.codeComment()»
 	@interface «this.coreDataTypeName()»: 
 	«IF this.super != null»
 		«this.super.coreDataTypeName()»
@@ -40,6 +41,7 @@
 	«ENDIF» 
 	{}
 	«FOREACH this.features AS f»
+		«f.codeComment()»
 		«IF f.type.referenced.isPrimitive()»
 			@property (nonatomic, retain) «f.type.typeRef()» «f.name»;
 		«ELSE»

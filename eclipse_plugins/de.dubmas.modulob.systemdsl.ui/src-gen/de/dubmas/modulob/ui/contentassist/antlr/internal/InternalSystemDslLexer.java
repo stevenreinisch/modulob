@@ -12,18 +12,23 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalSystemDslLexer extends Lexer {
-    public static final int RULE_ID=4;
-    public static final int RULE_STRING=6;
+    public static final int RULE_ID=6;
+    public static final int RULE_DOC_COMMENT=7;
+    public static final int RULE_ANY_OTHER=11;
+    public static final int RULE_SL_COMMENT=9;
+    public static final int EOF=-1;
+    public static final int RULE_ML_COMMENT=8;
+    public static final int T__19=19;
+    public static final int RULE_STRING=4;
+    public static final int T__16=16;
+    public static final int T__15=15;
+    public static final int T__18=18;
+    public static final int T__17=17;
     public static final int T__12=12;
-    public static final int T__11=11;
     public static final int T__14=14;
     public static final int T__13=13;
-    public static final int RULE_ANY_OTHER=10;
     public static final int RULE_INT=5;
-    public static final int RULE_WS=9;
-    public static final int RULE_SL_COMMENT=8;
-    public static final int EOF=-1;
-    public static final int RULE_ML_COMMENT=7;
+    public static final int RULE_WS=10;
 
     // delegates
     // delegators
@@ -38,36 +43,15 @@ public class InternalSystemDslLexer extends Lexer {
     }
     public String getGrammarFileName() { return "../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g"; }
 
-    // $ANTLR start "T__11"
-    public final void mT__11() throws RecognitionException {
-        try {
-            int _type = T__11;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:11:7: ( 'system' )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:11:9: 'system'
-            {
-            match("system"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__11"
-
     // $ANTLR start "T__12"
     public final void mT__12() throws RecognitionException {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:12:7: ( 'consistsOf' )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:12:9: 'consistsOf'
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:11:7: ( 'system' )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:11:9: 'system'
             {
-            match("consistsOf"); 
+            match("system"); 
 
 
             }
@@ -85,10 +69,11 @@ public class InternalSystemDslLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:13:7: ( ',' )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:13:9: ','
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:12:7: ( 'consistsOf' )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:12:9: 'consistsOf'
             {
-            match(','); 
+            match("consistsOf"); 
+
 
             }
 
@@ -105,6 +90,26 @@ public class InternalSystemDslLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:13:7: ( ',' )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:13:9: ','
+            {
+            match(','); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__14"
+
+    // $ANTLR start "T__15"
+    public final void mT__15() throws RecognitionException {
+        try {
+            int _type = T__15;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
             // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:14:7: ( 'module' )
             // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:14:9: 'module'
             {
@@ -119,26 +124,168 @@ public class InternalSystemDslLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__14"
+    // $ANTLR end "T__15"
+
+    // $ANTLR start "T__16"
+    public final void mT__16() throws RecognitionException {
+        try {
+            int _type = T__16;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:15:7: ( 'primitive type' )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:15:9: 'primitive type'
+            {
+            match("primitive type"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__16"
+
+    // $ANTLR start "T__17"
+    public final void mT__17() throws RecognitionException {
+        try {
+            int _type = T__17;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:16:7: ( 'any type' )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:16:9: 'any type'
+            {
+            match("any type"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__17"
+
+    // $ANTLR start "T__18"
+    public final void mT__18() throws RecognitionException {
+        try {
+            int _type = T__18;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:17:7: ( '-' )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:17:9: '-'
+            {
+            match('-'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__18"
+
+    // $ANTLR start "T__19"
+    public final void mT__19() throws RecognitionException {
+        try {
+            int _type = T__19;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:18:7: ( '.' )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:18:9: '.'
+            {
+            match('.'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__19"
+
+    // $ANTLR start "RULE_DOC_COMMENT"
+    public final void mRULE_DOC_COMMENT() throws RecognitionException {
+        try {
+            int _type = RULE_DOC_COMMENT;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1227:18: ( '<*' ( options {greedy=false; } : . )* '*>' )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1227:20: '<*' ( options {greedy=false; } : . )* '*>'
+            {
+            match("<*"); 
+
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1227:25: ( options {greedy=false; } : . )*
+            loop1:
+            do {
+                int alt1=2;
+                int LA1_0 = input.LA(1);
+
+                if ( (LA1_0=='*') ) {
+                    int LA1_1 = input.LA(2);
+
+                    if ( (LA1_1=='>') ) {
+                        alt1=2;
+                    }
+                    else if ( ((LA1_1>='\u0000' && LA1_1<='=')||(LA1_1>='?' && LA1_1<='\uFFFF')) ) {
+                        alt1=1;
+                    }
+
+
+                }
+                else if ( ((LA1_0>='\u0000' && LA1_0<=')')||(LA1_0>='+' && LA1_0<='\uFFFF')) ) {
+                    alt1=1;
+                }
+
+
+                switch (alt1) {
+            	case 1 :
+            	    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1227:53: .
+            	    {
+            	    matchAny(); 
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop1;
+                }
+            } while (true);
+
+            match("*>"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_DOC_COMMENT"
 
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:464:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:464:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1229:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1229:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:464:11: ( '^' )?
-            int alt1=2;
-            int LA1_0 = input.LA(1);
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1229:11: ( '^' )?
+            int alt2=2;
+            int LA2_0 = input.LA(1);
 
-            if ( (LA1_0=='^') ) {
-                alt1=1;
+            if ( (LA2_0=='^') ) {
+                alt2=1;
             }
-            switch (alt1) {
+            switch (alt2) {
                 case 1 :
-                    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:464:11: '^'
+                    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1229:11: '^'
                     {
                     match('^'); 
 
@@ -156,18 +303,18 @@ public class InternalSystemDslLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:464:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
-            loop2:
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1229:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            loop3:
             do {
-                int alt2=2;
-                int LA2_0 = input.LA(1);
+                int alt3=2;
+                int LA3_0 = input.LA(1);
 
-                if ( ((LA2_0>='0' && LA2_0<='9')||(LA2_0>='A' && LA2_0<='Z')||LA2_0=='_'||(LA2_0>='a' && LA2_0<='z')) ) {
-                    alt2=1;
+                if ( ((LA3_0>='0' && LA3_0<='9')||(LA3_0>='A' && LA3_0<='Z')||LA3_0=='_'||(LA3_0>='a' && LA3_0<='z')) ) {
+                    alt3=1;
                 }
 
 
-                switch (alt2) {
+                switch (alt3) {
             	case 1 :
             	    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:
             	    {
@@ -185,7 +332,7 @@ public class InternalSystemDslLexer extends Lexer {
             	    break;
 
             	default :
-            	    break loop2;
+            	    break loop3;
                 }
             } while (true);
 
@@ -205,24 +352,24 @@ public class InternalSystemDslLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:466:10: ( ( '0' .. '9' )+ )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:466:12: ( '0' .. '9' )+
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1231:10: ( ( '0' .. '9' )+ )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1231:12: ( '0' .. '9' )+
             {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:466:12: ( '0' .. '9' )+
-            int cnt3=0;
-            loop3:
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1231:12: ( '0' .. '9' )+
+            int cnt4=0;
+            loop4:
             do {
-                int alt3=2;
-                int LA3_0 = input.LA(1);
+                int alt4=2;
+                int LA4_0 = input.LA(1);
 
-                if ( ((LA3_0>='0' && LA3_0<='9')) ) {
-                    alt3=1;
+                if ( ((LA4_0>='0' && LA4_0<='9')) ) {
+                    alt4=1;
                 }
 
 
-                switch (alt3) {
+                switch (alt4) {
             	case 1 :
-            	    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:466:13: '0' .. '9'
+            	    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1231:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -230,12 +377,12 @@ public class InternalSystemDslLexer extends Lexer {
             	    break;
 
             	default :
-            	    if ( cnt3 >= 1 ) break loop3;
+            	    if ( cnt4 >= 1 ) break loop4;
                         EarlyExitException eee =
-                            new EarlyExitException(3, input);
+                            new EarlyExitException(4, input);
                         throw eee;
                 }
-                cnt3++;
+                cnt4++;
             } while (true);
 
 
@@ -254,47 +401,47 @@ public class InternalSystemDslLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:468:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:468:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1233:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1233:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:468:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
-            int alt6=2;
-            int LA6_0 = input.LA(1);
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1233:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            int alt7=2;
+            int LA7_0 = input.LA(1);
 
-            if ( (LA6_0=='\"') ) {
-                alt6=1;
+            if ( (LA7_0=='\"') ) {
+                alt7=1;
             }
-            else if ( (LA6_0=='\'') ) {
-                alt6=2;
+            else if ( (LA7_0=='\'') ) {
+                alt7=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 6, 0, input);
+                    new NoViableAltException("", 7, 0, input);
 
                 throw nvae;
             }
-            switch (alt6) {
+            switch (alt7) {
                 case 1 :
-                    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:468:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1233:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:468:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
-                    loop4:
+                    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1233:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    loop5:
                     do {
-                        int alt4=3;
-                        int LA4_0 = input.LA(1);
+                        int alt5=3;
+                        int LA5_0 = input.LA(1);
 
-                        if ( (LA4_0=='\\') ) {
-                            alt4=1;
+                        if ( (LA5_0=='\\') ) {
+                            alt5=1;
                         }
-                        else if ( ((LA4_0>='\u0000' && LA4_0<='!')||(LA4_0>='#' && LA4_0<='[')||(LA4_0>=']' && LA4_0<='\uFFFF')) ) {
-                            alt4=2;
+                        else if ( ((LA5_0>='\u0000' && LA5_0<='!')||(LA5_0>='#' && LA5_0<='[')||(LA5_0>=']' && LA5_0<='\uFFFF')) ) {
+                            alt5=2;
                         }
 
 
-                        switch (alt4) {
+                        switch (alt5) {
                     	case 1 :
-                    	    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:468:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1233:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -310,7 +457,7 @@ public class InternalSystemDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:468:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1233:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -326,7 +473,7 @@ public class InternalSystemDslLexer extends Lexer {
                     	    break;
 
                     	default :
-                    	    break loop4;
+                    	    break loop5;
                         }
                     } while (true);
 
@@ -335,26 +482,26 @@ public class InternalSystemDslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:468:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1233:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:468:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
-                    loop5:
+                    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1233:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    loop6:
                     do {
-                        int alt5=3;
-                        int LA5_0 = input.LA(1);
+                        int alt6=3;
+                        int LA6_0 = input.LA(1);
 
-                        if ( (LA5_0=='\\') ) {
-                            alt5=1;
+                        if ( (LA6_0=='\\') ) {
+                            alt6=1;
                         }
-                        else if ( ((LA5_0>='\u0000' && LA5_0<='&')||(LA5_0>='(' && LA5_0<='[')||(LA5_0>=']' && LA5_0<='\uFFFF')) ) {
-                            alt5=2;
+                        else if ( ((LA6_0>='\u0000' && LA6_0<='&')||(LA6_0>='(' && LA6_0<='[')||(LA6_0>=']' && LA6_0<='\uFFFF')) ) {
+                            alt6=2;
                         }
 
 
-                        switch (alt5) {
+                        switch (alt6) {
                     	case 1 :
-                    	    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:468:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1233:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -370,7 +517,7 @@ public class InternalSystemDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:468:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1233:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -386,7 +533,7 @@ public class InternalSystemDslLexer extends Lexer {
                     	    break;
 
                     	default :
-                    	    break loop5;
+                    	    break loop6;
                         }
                     } while (true);
 
@@ -413,37 +560,37 @@ public class InternalSystemDslLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:470:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:470:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1235:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1235:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:470:24: ( options {greedy=false; } : . )*
-            loop7:
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1235:24: ( options {greedy=false; } : . )*
+            loop8:
             do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
+                int alt8=2;
+                int LA8_0 = input.LA(1);
 
-                if ( (LA7_0=='*') ) {
-                    int LA7_1 = input.LA(2);
+                if ( (LA8_0=='*') ) {
+                    int LA8_1 = input.LA(2);
 
-                    if ( (LA7_1=='/') ) {
-                        alt7=2;
+                    if ( (LA8_1=='/') ) {
+                        alt8=2;
                     }
-                    else if ( ((LA7_1>='\u0000' && LA7_1<='.')||(LA7_1>='0' && LA7_1<='\uFFFF')) ) {
-                        alt7=1;
+                    else if ( ((LA8_1>='\u0000' && LA8_1<='.')||(LA8_1>='0' && LA8_1<='\uFFFF')) ) {
+                        alt8=1;
                     }
 
 
                 }
-                else if ( ((LA7_0>='\u0000' && LA7_0<=')')||(LA7_0>='+' && LA7_0<='\uFFFF')) ) {
-                    alt7=1;
+                else if ( ((LA8_0>='\u0000' && LA8_0<=')')||(LA8_0>='+' && LA8_0<='\uFFFF')) ) {
+                    alt8=1;
                 }
 
 
-                switch (alt7) {
+                switch (alt8) {
             	case 1 :
-            	    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:470:52: .
+            	    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1235:52: .
             	    {
             	    matchAny(); 
 
@@ -451,7 +598,7 @@ public class InternalSystemDslLexer extends Lexer {
             	    break;
 
             	default :
-            	    break loop7;
+            	    break loop8;
                 }
             } while (true);
 
@@ -473,25 +620,25 @@ public class InternalSystemDslLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:472:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:472:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1237:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1237:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:472:24: (~ ( ( '\\n' | '\\r' ) ) )*
-            loop8:
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1237:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            loop9:
             do {
-                int alt8=2;
-                int LA8_0 = input.LA(1);
+                int alt9=2;
+                int LA9_0 = input.LA(1);
 
-                if ( ((LA8_0>='\u0000' && LA8_0<='\t')||(LA8_0>='\u000B' && LA8_0<='\f')||(LA8_0>='\u000E' && LA8_0<='\uFFFF')) ) {
-                    alt8=1;
+                if ( ((LA9_0>='\u0000' && LA9_0<='\t')||(LA9_0>='\u000B' && LA9_0<='\f')||(LA9_0>='\u000E' && LA9_0<='\uFFFF')) ) {
+                    alt9=1;
                 }
 
 
-                switch (alt8) {
+                switch (alt9) {
             	case 1 :
-            	    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:472:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1237:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -507,31 +654,31 @@ public class InternalSystemDslLexer extends Lexer {
             	    break;
 
             	default :
-            	    break loop8;
+            	    break loop9;
                 }
             } while (true);
 
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:472:40: ( ( '\\r' )? '\\n' )?
-            int alt10=2;
-            int LA10_0 = input.LA(1);
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1237:40: ( ( '\\r' )? '\\n' )?
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-            if ( (LA10_0=='\n'||LA10_0=='\r') ) {
-                alt10=1;
+            if ( (LA11_0=='\n'||LA11_0=='\r') ) {
+                alt11=1;
             }
-            switch (alt10) {
+            switch (alt11) {
                 case 1 :
-                    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:472:41: ( '\\r' )? '\\n'
+                    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1237:41: ( '\\r' )? '\\n'
                     {
-                    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:472:41: ( '\\r' )?
-                    int alt9=2;
-                    int LA9_0 = input.LA(1);
+                    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1237:41: ( '\\r' )?
+                    int alt10=2;
+                    int LA10_0 = input.LA(1);
 
-                    if ( (LA9_0=='\r') ) {
-                        alt9=1;
+                    if ( (LA10_0=='\r') ) {
+                        alt10=1;
                     }
-                    switch (alt9) {
+                    switch (alt10) {
                         case 1 :
-                            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:472:41: '\\r'
+                            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1237:41: '\\r'
                             {
                             match('\r'); 
 
@@ -563,22 +710,22 @@ public class InternalSystemDslLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:474:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:474:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1239:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1239:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:474:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
-            int cnt11=0;
-            loop11:
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1239:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            int cnt12=0;
+            loop12:
             do {
-                int alt11=2;
-                int LA11_0 = input.LA(1);
+                int alt12=2;
+                int LA12_0 = input.LA(1);
 
-                if ( ((LA11_0>='\t' && LA11_0<='\n')||LA11_0=='\r'||LA11_0==' ') ) {
-                    alt11=1;
+                if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {
+                    alt12=1;
                 }
 
 
-                switch (alt11) {
+                switch (alt12) {
             	case 1 :
             	    // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:
             	    {
@@ -596,12 +743,12 @@ public class InternalSystemDslLexer extends Lexer {
             	    break;
 
             	default :
-            	    if ( cnt11 >= 1 ) break loop11;
+            	    if ( cnt12 >= 1 ) break loop12;
                         EarlyExitException eee =
-                            new EarlyExitException(11, input);
+                            new EarlyExitException(12, input);
                         throw eee;
                 }
-                cnt11++;
+                cnt12++;
             } while (true);
 
 
@@ -620,8 +767,8 @@ public class InternalSystemDslLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:476:16: ( . )
-            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:476:18: .
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1241:16: ( . )
+            // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1241:18: .
             {
             matchAny(); 
 
@@ -636,82 +783,117 @@ public class InternalSystemDslLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:8: ( T__11 | T__12 | T__13 | T__14 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=11;
-        alt12 = dfa12.predict(input);
-        switch (alt12) {
+        // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | RULE_DOC_COMMENT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt13=16;
+        alt13 = dfa13.predict(input);
+        switch (alt13) {
             case 1 :
-                // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:10: T__11
-                {
-                mT__11(); 
-
-                }
-                break;
-            case 2 :
-                // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:16: T__12
+                // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:10: T__12
                 {
                 mT__12(); 
 
                 }
                 break;
-            case 3 :
-                // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:22: T__13
+            case 2 :
+                // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:16: T__13
                 {
                 mT__13(); 
 
                 }
                 break;
-            case 4 :
-                // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:28: T__14
+            case 3 :
+                // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:22: T__14
                 {
                 mT__14(); 
 
                 }
                 break;
+            case 4 :
+                // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:28: T__15
+                {
+                mT__15(); 
+
+                }
+                break;
             case 5 :
-                // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:34: RULE_ID
+                // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:34: T__16
+                {
+                mT__16(); 
+
+                }
+                break;
+            case 6 :
+                // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:40: T__17
+                {
+                mT__17(); 
+
+                }
+                break;
+            case 7 :
+                // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:46: T__18
+                {
+                mT__18(); 
+
+                }
+                break;
+            case 8 :
+                // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:52: T__19
+                {
+                mT__19(); 
+
+                }
+                break;
+            case 9 :
+                // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:58: RULE_DOC_COMMENT
+                {
+                mRULE_DOC_COMMENT(); 
+
+                }
+                break;
+            case 10 :
+                // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:75: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 6 :
-                // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:42: RULE_INT
+            case 11 :
+                // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:83: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 7 :
-                // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:51: RULE_STRING
+            case 12 :
+                // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:92: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 8 :
-                // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:63: RULE_ML_COMMENT
+            case 13 :
+                // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:104: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 9 :
-                // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:79: RULE_SL_COMMENT
+            case 14 :
+                // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:120: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 10 :
-                // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:95: RULE_WS
+            case 15 :
+                // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:136: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 11 :
-                // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:103: RULE_ANY_OTHER
+            case 16 :
+                // ../de.dubmas.modulob.systemdsl.ui/src-gen/de/dubmas/modulob/ui/contentassist/antlr/internal/InternalSystemDsl.g:1:144: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -723,165 +905,197 @@ public class InternalSystemDslLexer extends Lexer {
     }
 
 
-    protected DFA12 dfa12 = new DFA12(this);
-    static final String DFA12_eotS =
-        "\1\uffff\2\16\1\uffff\1\16\1\14\2\uffff\3\14\2\uffff\1\16\1\uffff"+
-        "\1\16\1\uffff\1\16\5\uffff\11\16\1\43\1\16\1\45\1\uffff\1\16\1\uffff"+
-        "\2\16\1\51\1\uffff";
-    static final String DFA12_eofS =
-        "\52\uffff";
-    static final String DFA12_minS =
-        "\1\0\1\171\1\157\1\uffff\1\157\1\101\2\uffff\2\0\1\52\2\uffff\1"+
-        "\163\1\uffff\1\156\1\uffff\1\144\5\uffff\1\164\1\163\1\165\1\145"+
-        "\1\151\1\154\1\155\1\163\1\145\1\60\1\164\1\60\1\uffff\1\163\1\uffff"+
-        "\1\117\1\146\1\60\1\uffff";
-    static final String DFA12_maxS =
-        "\1\uffff\1\171\1\157\1\uffff\1\157\1\172\2\uffff\2\uffff\1\57\2"+
-        "\uffff\1\163\1\uffff\1\156\1\uffff\1\144\5\uffff\1\164\1\163\1\165"+
-        "\1\145\1\151\1\154\1\155\1\163\1\145\1\172\1\164\1\172\1\uffff\1"+
-        "\163\1\uffff\1\117\1\146\1\172\1\uffff";
-    static final String DFA12_acceptS =
-        "\3\uffff\1\3\2\uffff\1\5\1\6\3\uffff\1\12\1\13\1\uffff\1\5\1\uffff"+
-        "\1\3\1\uffff\1\6\1\7\1\10\1\11\1\12\14\uffff\1\1\1\uffff\1\4\3\uffff"+
-        "\1\2";
-    static final String DFA12_specialS =
-        "\1\0\7\uffff\1\2\1\1\40\uffff}>";
-    static final String[] DFA12_transitionS = {
-            "\11\14\2\13\2\14\1\13\22\14\1\13\1\14\1\10\4\14\1\11\4\14\1"+
-            "\3\2\14\1\12\12\7\7\14\32\6\3\14\1\5\1\6\1\14\2\6\1\2\11\6\1"+
-            "\4\5\6\1\1\7\6\uff85\14",
-            "\1\15",
-            "\1\17",
+    protected DFA13 dfa13 = new DFA13(this);
+    static final String DFA13_eotS =
+        "\1\uffff\2\23\1\uffff\3\23\2\uffff\2\21\2\uffff\3\21\2\uffff\1\23"+
+        "\1\uffff\1\23\1\uffff\3\23\10\uffff\11\23\1\uffff\4\23\1\63\1\23"+
+        "\1\65\1\23\1\uffff\1\23\1\uffff\5\23\1\75\2\uffff";
+    static final String DFA13_eofS =
+        "\76\uffff";
+    static final String DFA13_minS =
+        "\1\0\1\171\1\157\1\uffff\1\157\1\162\1\156\2\uffff\1\52\1\101\2"+
+        "\uffff\2\0\1\52\2\uffff\1\163\1\uffff\1\156\1\uffff\1\144\1\151"+
+        "\1\171\10\uffff\1\164\1\163\1\165\1\155\1\40\1\145\1\151\1\154\1"+
+        "\151\1\uffff\1\155\1\163\1\145\1\164\1\60\1\164\1\60\1\151\1\uffff"+
+        "\1\163\1\uffff\1\166\1\117\1\145\1\146\1\40\1\60\2\uffff";
+    static final String DFA13_maxS =
+        "\1\uffff\1\171\1\157\1\uffff\1\157\1\162\1\156\2\uffff\1\52\1\172"+
+        "\2\uffff\2\uffff\1\57\2\uffff\1\163\1\uffff\1\156\1\uffff\1\144"+
+        "\1\151\1\171\10\uffff\1\164\1\163\1\165\1\155\1\40\1\145\1\151\1"+
+        "\154\1\151\1\uffff\1\155\1\163\1\145\1\164\1\172\1\164\1\172\1\151"+
+        "\1\uffff\1\163\1\uffff\1\166\1\117\1\145\1\146\1\40\1\172\2\uffff";
+    static final String DFA13_acceptS =
+        "\3\uffff\1\3\3\uffff\1\7\1\10\2\uffff\1\12\1\13\3\uffff\1\17\1\20"+
+        "\1\uffff\1\12\1\uffff\1\3\3\uffff\1\7\1\10\1\11\1\13\1\14\1\15\1"+
+        "\16\1\17\11\uffff\1\6\10\uffff\1\1\1\uffff\1\4\6\uffff\1\5\1\2";
+    static final String DFA13_specialS =
+        "\1\1\14\uffff\1\0\1\2\57\uffff}>";
+    static final String[] DFA13_transitionS = {
+            "\11\21\2\20\2\21\1\20\22\21\1\20\1\21\1\15\4\21\1\16\4\21\1"+
+            "\3\1\7\1\10\1\17\12\14\2\21\1\11\4\21\32\13\3\21\1\12\1\13\1"+
+            "\21\1\6\1\13\1\2\11\13\1\4\2\13\1\5\2\13\1\1\7\13\uff85\21",
+            "\1\22",
+            "\1\24",
             "",
-            "\1\21",
-            "\32\16\4\uffff\1\16\1\uffff\32\16",
-            "",
-            "",
-            "\0\23",
-            "\0\23",
-            "\1\24\4\uffff\1\25",
-            "",
-            "",
+            "\1\26",
             "\1\27",
-            "",
             "\1\30",
             "",
-            "\1\31",
             "",
-            "",
-            "",
-            "",
-            "",
-            "\1\32",
             "\1\33",
-            "\1\34",
-            "\1\35",
-            "\1\36",
-            "\1\37",
-            "\1\40",
+            "\32\23\4\uffff\1\23\1\uffff\32\23",
+            "",
+            "",
+            "\0\35",
+            "\0\35",
+            "\1\36\4\uffff\1\37",
+            "",
+            "",
             "\1\41",
+            "",
             "\1\42",
-            "\12\16\7\uffff\32\16\4\uffff\1\16\1\uffff\32\16",
+            "",
+            "\1\43",
             "\1\44",
-            "\12\16\7\uffff\32\16\4\uffff\1\16\1\uffff\32\16",
+            "\1\45",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "",
             "\1\46",
-            "",
             "\1\47",
             "\1\50",
-            "\12\16\7\uffff\32\16\4\uffff\1\16\1\uffff\32\16",
+            "\1\51",
+            "\1\52",
+            "\1\53",
+            "\1\54",
+            "\1\55",
+            "\1\56",
+            "",
+            "\1\57",
+            "\1\60",
+            "\1\61",
+            "\1\62",
+            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "\1\64",
+            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "\1\66",
+            "",
+            "\1\67",
+            "",
+            "\1\70",
+            "\1\71",
+            "\1\72",
+            "\1\73",
+            "\1\74",
+            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "",
             ""
     };
 
-    static final short[] DFA12_eot = DFA.unpackEncodedString(DFA12_eotS);
-    static final short[] DFA12_eof = DFA.unpackEncodedString(DFA12_eofS);
-    static final char[] DFA12_min = DFA.unpackEncodedStringToUnsignedChars(DFA12_minS);
-    static final char[] DFA12_max = DFA.unpackEncodedStringToUnsignedChars(DFA12_maxS);
-    static final short[] DFA12_accept = DFA.unpackEncodedString(DFA12_acceptS);
-    static final short[] DFA12_special = DFA.unpackEncodedString(DFA12_specialS);
-    static final short[][] DFA12_transition;
+    static final short[] DFA13_eot = DFA.unpackEncodedString(DFA13_eotS);
+    static final short[] DFA13_eof = DFA.unpackEncodedString(DFA13_eofS);
+    static final char[] DFA13_min = DFA.unpackEncodedStringToUnsignedChars(DFA13_minS);
+    static final char[] DFA13_max = DFA.unpackEncodedStringToUnsignedChars(DFA13_maxS);
+    static final short[] DFA13_accept = DFA.unpackEncodedString(DFA13_acceptS);
+    static final short[] DFA13_special = DFA.unpackEncodedString(DFA13_specialS);
+    static final short[][] DFA13_transition;
 
     static {
-        int numStates = DFA12_transitionS.length;
-        DFA12_transition = new short[numStates][];
+        int numStates = DFA13_transitionS.length;
+        DFA13_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA12_transition[i] = DFA.unpackEncodedString(DFA12_transitionS[i]);
+            DFA13_transition[i] = DFA.unpackEncodedString(DFA13_transitionS[i]);
         }
     }
 
-    class DFA12 extends DFA {
+    class DFA13 extends DFA {
 
-        public DFA12(BaseRecognizer recognizer) {
+        public DFA13(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 12;
-            this.eot = DFA12_eot;
-            this.eof = DFA12_eof;
-            this.min = DFA12_min;
-            this.max = DFA12_max;
-            this.accept = DFA12_accept;
-            this.special = DFA12_special;
-            this.transition = DFA12_transition;
+            this.decisionNumber = 13;
+            this.eot = DFA13_eot;
+            this.eof = DFA13_eof;
+            this.min = DFA13_min;
+            this.max = DFA13_max;
+            this.accept = DFA13_accept;
+            this.special = DFA13_special;
+            this.transition = DFA13_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | RULE_DOC_COMMENT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_0 = input.LA(1);
+                        int LA13_13 = input.LA(1);
 
                         s = -1;
-                        if ( (LA12_0=='s') ) {s = 1;}
+                        if ( ((LA13_13>='\u0000' && LA13_13<='\uFFFF')) ) {s = 29;}
 
-                        else if ( (LA12_0=='c') ) {s = 2;}
-
-                        else if ( (LA12_0==',') ) {s = 3;}
-
-                        else if ( (LA12_0=='m') ) {s = 4;}
-
-                        else if ( (LA12_0=='^') ) {s = 5;}
-
-                        else if ( ((LA12_0>='A' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='b')||(LA12_0>='d' && LA12_0<='l')||(LA12_0>='n' && LA12_0<='r')||(LA12_0>='t' && LA12_0<='z')) ) {s = 6;}
-
-                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 7;}
-
-                        else if ( (LA12_0=='\"') ) {s = 8;}
-
-                        else if ( (LA12_0=='\'') ) {s = 9;}
-
-                        else if ( (LA12_0=='/') ) {s = 10;}
-
-                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 11;}
-
-                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='+')||(LA12_0>='-' && LA12_0<='.')||(LA12_0>=':' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||(LA12_0>='{' && LA12_0<='\uFFFF')) ) {s = 12;}
+                        else s = 17;
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA12_9 = input.LA(1);
+                        int LA13_0 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_9>='\u0000' && LA12_9<='\uFFFF')) ) {s = 19;}
+                        if ( (LA13_0=='s') ) {s = 1;}
 
-                        else s = 12;
+                        else if ( (LA13_0=='c') ) {s = 2;}
+
+                        else if ( (LA13_0==',') ) {s = 3;}
+
+                        else if ( (LA13_0=='m') ) {s = 4;}
+
+                        else if ( (LA13_0=='p') ) {s = 5;}
+
+                        else if ( (LA13_0=='a') ) {s = 6;}
+
+                        else if ( (LA13_0=='-') ) {s = 7;}
+
+                        else if ( (LA13_0=='.') ) {s = 8;}
+
+                        else if ( (LA13_0=='<') ) {s = 9;}
+
+                        else if ( (LA13_0=='^') ) {s = 10;}
+
+                        else if ( ((LA13_0>='A' && LA13_0<='Z')||LA13_0=='_'||LA13_0=='b'||(LA13_0>='d' && LA13_0<='l')||(LA13_0>='n' && LA13_0<='o')||(LA13_0>='q' && LA13_0<='r')||(LA13_0>='t' && LA13_0<='z')) ) {s = 11;}
+
+                        else if ( ((LA13_0>='0' && LA13_0<='9')) ) {s = 12;}
+
+                        else if ( (LA13_0=='\"') ) {s = 13;}
+
+                        else if ( (LA13_0=='\'') ) {s = 14;}
+
+                        else if ( (LA13_0=='/') ) {s = 15;}
+
+                        else if ( ((LA13_0>='\t' && LA13_0<='\n')||LA13_0=='\r'||LA13_0==' ') ) {s = 16;}
+
+                        else if ( ((LA13_0>='\u0000' && LA13_0<='\b')||(LA13_0>='\u000B' && LA13_0<='\f')||(LA13_0>='\u000E' && LA13_0<='\u001F')||LA13_0=='!'||(LA13_0>='#' && LA13_0<='&')||(LA13_0>='(' && LA13_0<='+')||(LA13_0>=':' && LA13_0<=';')||(LA13_0>='=' && LA13_0<='@')||(LA13_0>='[' && LA13_0<=']')||LA13_0=='`'||(LA13_0>='{' && LA13_0<='\uFFFF')) ) {s = 17;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA12_8 = input.LA(1);
+                        int LA13_14 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_8>='\u0000' && LA12_8<='\uFFFF')) ) {s = 19;}
+                        if ( ((LA13_14>='\u0000' && LA13_14<='\uFFFF')) ) {s = 29;}
 
-                        else s = 12;
+                        else s = 17;
 
                         if ( s>=0 ) return s;
                         break;
             }
             NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 12, _s, input);
+                new NoViableAltException(getDescription(), 13, _s, input);
             error(nvae);
             throw nvae;
         }

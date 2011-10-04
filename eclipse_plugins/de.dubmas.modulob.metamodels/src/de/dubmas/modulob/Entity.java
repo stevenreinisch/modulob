@@ -19,9 +19,9 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.dubmas.modulob.Entity#getAnnotations <em>Annotations</em>}</li>
- *   <li>{@link de.dubmas.modulob.Entity#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link de.dubmas.modulob.Entity#getSuper <em>Super</em>}</li>
  *   <li>{@link de.dubmas.modulob.Entity#getFeatures <em>Features</em>}</li>
+ *   <li>{@link de.dubmas.modulob.Entity#isIsAbstract <em>Is Abstract</em>}</li>
  * </ul>
  * </p>
  *

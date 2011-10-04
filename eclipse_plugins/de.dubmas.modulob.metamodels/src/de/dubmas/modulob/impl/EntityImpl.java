@@ -36,9 +36,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.dubmas.modulob.impl.EntityImpl#getAnnotations <em>Annotations</em>}</li>
- *   <li>{@link de.dubmas.modulob.impl.EntityImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link de.dubmas.modulob.impl.EntityImpl#getSuper <em>Super</em>}</li>
  *   <li>{@link de.dubmas.modulob.impl.EntityImpl#getFeatures <em>Features</em>}</li>
+ *   <li>{@link de.dubmas.modulob.impl.EntityImpl#isIsAbstract <em>Is Abstract</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,26 +54,6 @@ public class EntityImpl extends UserDefinedImpl implements Entity {
 	 * @ordered
 	 */
 	protected EList<Annotation> annotations;
-
-	/**
-	 * The default value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIsAbstract()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean IS_ABSTRACT_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIsAbstract()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean isAbstract = IS_ABSTRACT_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getSuper() <em>Super</em>}' reference.
@@ -94,6 +74,26 @@ public class EntityImpl extends UserDefinedImpl implements Entity {
 	 * @ordered
 	 */
 	protected EList<Feature> features;
+
+	/**
+	 * The default value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsAbstract()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_ABSTRACT_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsAbstract()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isAbstract = IS_ABSTRACT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,13 +223,13 @@ public class EntityImpl extends UserDefinedImpl implements Entity {
 		switch (featureID) {
 			case ModulobPackage.ENTITY__ANNOTATIONS:
 				return getAnnotations();
-			case ModulobPackage.ENTITY__IS_ABSTRACT:
-				return isIsAbstract();
 			case ModulobPackage.ENTITY__SUPER:
 				if (resolve) return getSuper();
 				return basicGetSuper();
 			case ModulobPackage.ENTITY__FEATURES:
 				return getFeatures();
+			case ModulobPackage.ENTITY__IS_ABSTRACT:
+				return isIsAbstract();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -247,15 +247,15 @@ public class EntityImpl extends UserDefinedImpl implements Entity {
 				getAnnotations().clear();
 				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
 				return;
-			case ModulobPackage.ENTITY__IS_ABSTRACT:
-				setIsAbstract((Boolean)newValue);
-				return;
 			case ModulobPackage.ENTITY__SUPER:
 				setSuper((Entity)newValue);
 				return;
 			case ModulobPackage.ENTITY__FEATURES:
 				getFeatures().clear();
 				getFeatures().addAll((Collection<? extends Feature>)newValue);
+				return;
+			case ModulobPackage.ENTITY__IS_ABSTRACT:
+				setIsAbstract((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -272,14 +272,14 @@ public class EntityImpl extends UserDefinedImpl implements Entity {
 			case ModulobPackage.ENTITY__ANNOTATIONS:
 				getAnnotations().clear();
 				return;
-			case ModulobPackage.ENTITY__IS_ABSTRACT:
-				setIsAbstract(IS_ABSTRACT_EDEFAULT);
-				return;
 			case ModulobPackage.ENTITY__SUPER:
 				setSuper((Entity)null);
 				return;
 			case ModulobPackage.ENTITY__FEATURES:
 				getFeatures().clear();
+				return;
+			case ModulobPackage.ENTITY__IS_ABSTRACT:
+				setIsAbstract(IS_ABSTRACT_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -295,12 +295,12 @@ public class EntityImpl extends UserDefinedImpl implements Entity {
 		switch (featureID) {
 			case ModulobPackage.ENTITY__ANNOTATIONS:
 				return annotations != null && !annotations.isEmpty();
-			case ModulobPackage.ENTITY__IS_ABSTRACT:
-				return isAbstract != IS_ABSTRACT_EDEFAULT;
 			case ModulobPackage.ENTITY__SUPER:
 				return super_ != null;
 			case ModulobPackage.ENTITY__FEATURES:
 				return features != null && !features.isEmpty();
+			case ModulobPackage.ENTITY__IS_ABSTRACT:
+				return isAbstract != IS_ABSTRACT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

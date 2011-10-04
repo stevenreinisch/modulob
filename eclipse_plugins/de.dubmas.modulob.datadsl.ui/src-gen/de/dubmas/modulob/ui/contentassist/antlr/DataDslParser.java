@@ -40,12 +40,12 @@ public class DataDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getValueObjectAccess().getAlternatives(), "rule__ValueObject__Alternatives");
 					put(grammarAccess.getEntityModelAccess().getGroup(), "rule__EntityModel__Group__0");
 					put(grammarAccess.getEntityAccess().getGroup(), "rule__Entity__Group__0");
-					put(grammarAccess.getEntityAccess().getGroup_4(), "rule__Entity__Group_4__0");
+					put(grammarAccess.getEntityAccess().getGroup_5(), "rule__Entity__Group_5__0");
 					put(grammarAccess.getAnnotationAccess().getGroup(), "rule__Annotation__Group__0");
 					put(grammarAccess.getAnnotationAccess().getGroup_2(), "rule__Annotation__Group_2__0");
 					put(grammarAccess.getFeatureAccess().getGroup(), "rule__Feature__Group__0");
-					put(grammarAccess.getFeatureAccess().getGroup_4(), "rule__Feature__Group_4__0");
 					put(grammarAccess.getFeatureAccess().getGroup_5(), "rule__Feature__Group_5__0");
+					put(grammarAccess.getFeatureAccess().getGroup_6(), "rule__Feature__Group_6__0");
 					put(grammarAccess.getTypeLibAccess().getGroup(), "rule__TypeLib__Group__0");
 					put(grammarAccess.getPrimitiveAccess().getGroup(), "rule__Primitive__Group__0");
 					put(grammarAccess.getAnyAccess().getGroup(), "rule__Any__Group__0");
@@ -56,19 +56,21 @@ public class DataDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEntityModelAccess().getModuleAssignment_1(), "rule__EntityModel__ModuleAssignment_1");
 					put(grammarAccess.getEntityModelAccess().getVersionAssignment_3(), "rule__EntityModel__VersionAssignment_3");
 					put(grammarAccess.getEntityModelAccess().getEntitiesAssignment_4(), "rule__EntityModel__EntitiesAssignment_4");
-					put(grammarAccess.getEntityAccess().getAnnotationsAssignment_0(), "rule__Entity__AnnotationsAssignment_0");
-					put(grammarAccess.getEntityAccess().getIsAbstractAssignment_1(), "rule__Entity__IsAbstractAssignment_1");
-					put(grammarAccess.getEntityAccess().getNameAssignment_3(), "rule__Entity__NameAssignment_3");
-					put(grammarAccess.getEntityAccess().getSuperAssignment_4_1(), "rule__Entity__SuperAssignment_4_1");
-					put(grammarAccess.getEntityAccess().getFeaturesAssignment_6(), "rule__Entity__FeaturesAssignment_6");
+					put(grammarAccess.getEntityAccess().getCommentAssignment_0(), "rule__Entity__CommentAssignment_0");
+					put(grammarAccess.getEntityAccess().getAnnotationsAssignment_1(), "rule__Entity__AnnotationsAssignment_1");
+					put(grammarAccess.getEntityAccess().getIsAbstractAssignment_2(), "rule__Entity__IsAbstractAssignment_2");
+					put(grammarAccess.getEntityAccess().getNameAssignment_4(), "rule__Entity__NameAssignment_4");
+					put(grammarAccess.getEntityAccess().getSuperAssignment_5_1(), "rule__Entity__SuperAssignment_5_1");
+					put(grammarAccess.getEntityAccess().getFeaturesAssignment_7(), "rule__Entity__FeaturesAssignment_7");
 					put(grammarAccess.getAnnotationAccess().getOptionAssignment_1(), "rule__Annotation__OptionAssignment_1");
 					put(grammarAccess.getAnnotationAccess().getValueAssignment_2_1(), "rule__Annotation__ValueAssignment_2_1");
-					put(grammarAccess.getFeatureAccess().getIsIndexedAssignment_0(), "rule__Feature__IsIndexedAssignment_0");
-					put(grammarAccess.getFeatureAccess().getIsContainmentAssignment_1(), "rule__Feature__IsContainmentAssignment_1");
-					put(grammarAccess.getFeatureAccess().getTypeAssignment_2(), "rule__Feature__TypeAssignment_2");
-					put(grammarAccess.getFeatureAccess().getNameAssignment_3(), "rule__Feature__NameAssignment_3");
-					put(grammarAccess.getFeatureAccess().getDefaultValueAssignment_4_1(), "rule__Feature__DefaultValueAssignment_4_1");
-					put(grammarAccess.getFeatureAccess().getInverseAssignment_5_1(), "rule__Feature__InverseAssignment_5_1");
+					put(grammarAccess.getFeatureAccess().getCommentAssignment_0(), "rule__Feature__CommentAssignment_0");
+					put(grammarAccess.getFeatureAccess().getIsIndexedAssignment_1(), "rule__Feature__IsIndexedAssignment_1");
+					put(grammarAccess.getFeatureAccess().getIsContainmentAssignment_2(), "rule__Feature__IsContainmentAssignment_2");
+					put(grammarAccess.getFeatureAccess().getTypeAssignment_3(), "rule__Feature__TypeAssignment_3");
+					put(grammarAccess.getFeatureAccess().getNameAssignment_4(), "rule__Feature__NameAssignment_4");
+					put(grammarAccess.getFeatureAccess().getDefaultValueAssignment_5_1(), "rule__Feature__DefaultValueAssignment_5_1");
+					put(grammarAccess.getFeatureAccess().getInverseAssignment_6_1(), "rule__Feature__InverseAssignment_6_1");
 					put(grammarAccess.getTypeLibAccess().getPrimitiveTypesAssignment_0(), "rule__TypeLib__PrimitiveTypesAssignment_0");
 					put(grammarAccess.getTypeLibAccess().getAnyTypeAssignment_1(), "rule__TypeLib__AnyTypeAssignment_1");
 					put(grammarAccess.getPrimitiveAccess().getNameAssignment_1(), "rule__Primitive__NameAssignment_1");
@@ -97,7 +99,7 @@ public class DataDslParser extends AbstractContentAssistParser {
 	
 	@Override
 	protected String[] getInitialHiddenTokens() {
-		return new String[] { "RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_DOC_COMMENT" };
+		return new String[] { "RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT" };
 	}
 	
 	public DataDslGrammarAccess getGrammarAccess() {

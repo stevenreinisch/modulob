@@ -11,14 +11,14 @@
 	«ENDREM»
 «ENDDEFINE»
 
-«DEFINE allEntitiesHeader(String moduleName, String sectionName) FOR List[Entity]»
-«FILE moduleName + "/" + sectionName + "/" + moduleName + "All" + sectionName.toFirstUpper() + "Entities.h"»
-	«FOREACH this AS entity»
-		#import "«entity.typeName()».h"
-	«ENDFOREACH»
+«DEFINE allEntitiesHeader(String moduleName, String sectionName) FOR List[Entity]-»
+«FILE moduleName + "/" + sectionName + "/" + moduleName + "All" + sectionName.toFirstUpper() + "Entities.h"-»
+«FOREACH this AS entity-»
+#import "«entity.typeName()».h"
+«ENDFOREACH»
 	
-	«IF this.size >0 »
-		#import "«this.first().factoryName()».h"
-	«ENDIF»
+«IF this.size >0 -»
+#import "«this.first().factoryName()».h"
+«ENDIF»
 «ENDFILE»
 «ENDDEFINE»

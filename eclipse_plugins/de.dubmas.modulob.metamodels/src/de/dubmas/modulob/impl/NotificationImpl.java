@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link de.dubmas.modulob.impl.NotificationImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.dubmas.modulob.impl.NotificationImpl#getFeatures <em>Features</em>}</li>
+ *   <li>{@link de.dubmas.modulob.impl.NotificationImpl#getComment <em>Comment</em>}</li>
  * </ul>
  * </p>
  *
@@ -69,6 +70,26 @@ public class NotificationImpl extends EObjectImpl implements Notification {
 	 * @ordered
 	 */
 	protected EList<Feature> features;
+
+	/**
+	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String COMMENT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected String comment = COMMENT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -127,6 +148,27 @@ public class NotificationImpl extends EObjectImpl implements Notification {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getComment() {
+		return comment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setComment(String newComment) {
+		String oldComment = comment;
+		comment = newComment;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, org.eclipse.emf.common.notify.Notification.SET, ModulobPackage.NOTIFICATION__COMMENT, oldComment, comment));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -148,6 +190,8 @@ public class NotificationImpl extends EObjectImpl implements Notification {
 				return getName();
 			case ModulobPackage.NOTIFICATION__FEATURES:
 				return getFeatures();
+			case ModulobPackage.NOTIFICATION__COMMENT:
+				return getComment();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -168,6 +212,9 @@ public class NotificationImpl extends EObjectImpl implements Notification {
 				getFeatures().clear();
 				getFeatures().addAll((Collection<? extends Feature>)newValue);
 				return;
+			case ModulobPackage.NOTIFICATION__COMMENT:
+				setComment((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -186,6 +233,9 @@ public class NotificationImpl extends EObjectImpl implements Notification {
 			case ModulobPackage.NOTIFICATION__FEATURES:
 				getFeatures().clear();
 				return;
+			case ModulobPackage.NOTIFICATION__COMMENT:
+				setComment(COMMENT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -202,6 +252,8 @@ public class NotificationImpl extends EObjectImpl implements Notification {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ModulobPackage.NOTIFICATION__FEATURES:
 				return features != null && !features.isEmpty();
+			case ModulobPackage.NOTIFICATION__COMMENT:
+				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -218,6 +270,8 @@ public class NotificationImpl extends EObjectImpl implements Notification {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", comment: ");
+		result.append(comment);
 		result.append(')');
 		return result.toString();
 	}

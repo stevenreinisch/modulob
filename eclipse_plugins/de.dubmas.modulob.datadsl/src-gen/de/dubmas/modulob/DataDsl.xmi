@@ -7,6 +7,9 @@
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="system">
       <ePackage href="http://system.modulob.dubmas.de/1.0#/"/>
     </metamodelDeclarations>
+    <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="types">
+      <ePackage href="http://types.modulob.dubmas.de/1.0#/"/>
+    </metamodelDeclarations>
     <rules xsi:type="xtext:ParserRule" name="EntityModel">
       <type metamodel="/0/@metamodelDeclarations.1">
         <classifier xsi:type="ecore:EClass" href="http://system.modulob.dubmas.de/1.0#//EntityModel"/>
@@ -35,6 +38,9 @@
         <classifier xsi:type="ecore:EClass" href="http://modulob.dubmas.de/1.0#//Entity"/>
       </type>
       <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" cardinality="?" feature="comment" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.12"/>
+        </elements>
         <elements xsi:type="xtext:Assignment" cardinality="*" feature="annotations" operator="+=">
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.2"/>
         </elements>
@@ -103,6 +109,9 @@
         <classifier xsi:type="ecore:EClass" href="http://modulob.dubmas.de/1.0#//Feature"/>
       </type>
       <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" cardinality="?" feature="comment" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.12"/>
+        </elements>
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="isIndexed" operator="?=">
           <terminal xsi:type="xtext:Keyword" value="indexed"/>
         </elements>
@@ -132,11 +141,11 @@
             </terminal>
           </elements>
         </elements>
-        <elements xsi:type="xtext:Keyword" cardinality="?" value=";"/>
+        <elements xsi:type="xtext:Keyword" value=";"/>
       </alternatives>
     </rules>
   </xtext:Grammar>
-  <xtext:Grammar name="de.dubmas.modulob.common.Dsl" usedGrammars="/2" definesHiddenTokens="true" hiddenTokens="/2/@rules.5 /2/@rules.3 /2/@rules.4 /1/@rules.12">
+  <xtext:Grammar name="de.dubmas.modulob.common.Dsl" usedGrammars="/2" definesHiddenTokens="true" hiddenTokens="/2/@rules.5 /2/@rules.3 /2/@rules.4">
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="modulob">
       <ePackage href="http://modulob.dubmas.de/1.0#/"/>
     </metamodelDeclarations>

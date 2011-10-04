@@ -145,11 +145,12 @@ public class AbstractNotificationDslSemanticSequencer extends AbstractSemanticSe
 	
 	/**
 	 * Constraint:
-	 *     (type=TypeRef name=ID)
+	 *     (comment=DOC_COMMENT? type=TypeRef name=ID)
 	 *
 	 * Features:
 	 *    name[1, 1]
 	 *    type[1, 1]
+	 *    comment[0, 1]
 	 */
 	protected void sequence_Feature(EObject context, Feature semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -196,11 +197,12 @@ public class AbstractNotificationDslSemanticSequencer extends AbstractSemanticSe
 	
 	/**
 	 * Constraint:
-	 *     (name=ID features+=Feature*)
+	 *     (comment=DOC_COMMENT? name=ID features+=Feature*)
 	 *
 	 * Features:
 	 *    name[1, 1]
 	 *    features[0, *]
+	 *    comment[0, 1]
 	 */
 	protected void sequence_Notification(EObject context, Notification semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

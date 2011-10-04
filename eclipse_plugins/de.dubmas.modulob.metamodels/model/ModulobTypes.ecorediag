@@ -23,6 +23,10 @@
   <children xmi:type="notation:Node" xmi:id="_Ru0YULeNEeCIFKGYgtb4Sw" type="1001">
     <children xmi:type="notation:Node" xmi:id="_Ru0_YLeNEeCIFKGYgtb4Sw" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_Ru1mcLeNEeCIFKGYgtb4Sw" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_kB0xwO5YEeCogdU7Qm3ilQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="ModulobTypes.ecore#//UserDefined/comment"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_kB0xwe5YEeCogdU7Qm3ilQ"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_Ru1mcbeNEeCIFKGYgtb4Sw"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_Ru1mcreNEeCIFKGYgtb4Sw"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_Ru1mc7eNEeCIFKGYgtb4Sw"/>

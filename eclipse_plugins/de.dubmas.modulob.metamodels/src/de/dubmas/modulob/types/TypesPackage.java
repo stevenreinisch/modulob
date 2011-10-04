@@ -107,13 +107,22 @@ public interface TypesPackage extends EPackage {
 	int USER_DEFINED__NAME = TYPE__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_DEFINED__COMMENT = TYPE_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>User Defined</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USER_DEFINED_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
+	int USER_DEFINED_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.dubmas.modulob.types.impl.PrimitiveImpl <em>Primitive</em>}' class.
@@ -279,6 +288,17 @@ public interface TypesPackage extends EPackage {
 	EClass getUserDefined();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.dubmas.modulob.types.UserDefined#getComment <em>Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Comment</em>'.
+	 * @see de.dubmas.modulob.types.UserDefined#getComment()
+	 * @see #getUserDefined()
+	 * @generated
+	 */
+	EAttribute getUserDefined_Comment();
+
+	/**
 	 * Returns the meta object for class '{@link de.dubmas.modulob.types.Primitive <em>Primitive</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -411,6 +431,14 @@ public interface TypesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass USER_DEFINED = eINSTANCE.getUserDefined();
+
+		/**
+		 * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute USER_DEFINED__COMMENT = eINSTANCE.getUserDefined_Comment();
 
 		/**
 		 * The meta object literal for the '{@link de.dubmas.modulob.types.impl.PrimitiveImpl <em>Primitive</em>}' class.

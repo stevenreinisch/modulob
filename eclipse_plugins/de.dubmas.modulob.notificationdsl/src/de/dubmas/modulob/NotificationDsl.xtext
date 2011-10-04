@@ -11,11 +11,13 @@ NotificationModel returns system::NotificationModel:
 ;
 
 Notification returns modulob::Notification:
+	(comment = DOC_COMMENT)?
 	'notification' name=ID '{'
 		(features+=Feature)*
 	'}'
 ;
 
 Feature returns modulob::Feature:
-	type=TypeRef name=ID (';')?
+	(comment = DOC_COMMENT)?
+	type=TypeRef name=ID ';'
 ;

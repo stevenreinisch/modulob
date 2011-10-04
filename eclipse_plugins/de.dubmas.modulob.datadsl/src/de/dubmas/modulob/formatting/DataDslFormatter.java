@@ -31,16 +31,16 @@ public class DataDslFormatter extends AbstractDeclarativeFormatter {
 		
 		c.setLinewrap(2).after(((DataDslGrammarAccess)getGrammarAccess()).getEntityModelAccess().getVersionSTRINGTerminalRuleCall_3_0());
 		c.setLinewrap().after(((DataDslGrammarAccess)getGrammarAccess()).getEntityRule());
-		c.setLinewrap().after(((DataDslGrammarAccess)getGrammarAccess()).getEntityAccess().getAnnotationsAssignment_0());
+		c.setLinewrap().after(((DataDslGrammarAccess)getGrammarAccess()).getEntityAccess().getAnnotationsAssignment_1());
 		
 		c.setNoSpace().after(((DataDslGrammarAccess)getGrammarAccess()).getAnnotationAccess().getCommercialAtKeyword_0());
 		c.setNoSpace().after(((DataDslGrammarAccess)getGrammarAccess()).getAnnotationAccess().getColonKeyword_2_0());
 		c.setNoSpace().after(((DataDslGrammarAccess)getGrammarAccess()).getAnnotationAccess().getOptionAssignment_1());
 				
-		c.setLinewrap().after(((DataDslGrammarAccess)getGrammarAccess()).getEntityAccess().getLeftCurlyBracketKeyword_5());
-		c.setLinewrap().after(((DataDslGrammarAccess)getGrammarAccess()).getFeatureAccess().getSemicolonKeyword_6());
+		c.setLinewrap().after(((DataDslGrammarAccess)getGrammarAccess()).getEntityAccess().getLeftCurlyBracketKeyword_6());
+		c.setLinewrap().after(((DataDslGrammarAccess)getGrammarAccess()).getFeatureAccess().getSemicolonKeyword_7());
 		
-		c.setIndentationIncrement().after(((DataDslGrammarAccess)getGrammarAccess()).getEntityAccess().getLeftCurlyBracketKeyword_5());
-		c.setIndentationDecrement().before(((DataDslGrammarAccess)getGrammarAccess()).getEntityAccess().getRightCurlyBracketKeyword_7());
+		c.setIndentationIncrement().after(((DataDslGrammarAccess)getGrammarAccess()).getEntityAccess().getLeftCurlyBracketKeyword_6());
+		c.setIndentationDecrement().before(((DataDslGrammarAccess)getGrammarAccess()).getEntityAccess().getRightCurlyBracketKeyword_8());
 	}
 }

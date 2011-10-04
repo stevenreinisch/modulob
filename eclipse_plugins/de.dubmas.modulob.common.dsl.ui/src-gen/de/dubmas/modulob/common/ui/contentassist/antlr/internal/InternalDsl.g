@@ -142,60 +142,6 @@ finally {
 
 
 
-// Entry rule entryRuleTypeRef
-entryRuleTypeRef 
-:
-{ before(grammarAccess.getTypeRefRule()); }
-	 ruleTypeRef
-{ after(grammarAccess.getTypeRefRule()); } 
-	 EOF 
-;
-
-// Rule TypeRef
-ruleTypeRef
-    @init {
-		int stackSize = keepStackSize();
-    }
-	:
-(
-{ before(grammarAccess.getTypeRefAccess().getGroup()); }
-(rule__TypeRef__Group__0)
-{ after(grammarAccess.getTypeRefAccess().getGroup()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-// Entry rule entryRuleValueObject
-entryRuleValueObject 
-:
-{ before(grammarAccess.getValueObjectRule()); }
-	 ruleValueObject
-{ after(grammarAccess.getValueObjectRule()); } 
-	 EOF 
-;
-
-// Rule ValueObject
-ruleValueObject
-    @init {
-		int stackSize = keepStackSize();
-    }
-	:
-(
-{ before(grammarAccess.getValueObjectAccess().getAlternatives()); }
-(rule__ValueObject__Alternatives)
-{ after(grammarAccess.getValueObjectAccess().getAlternatives()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 
 
 // Entry rule entryRuleStringValue
@@ -395,33 +341,6 @@ finally {
 
 
 
-rule__ValueObject__Alternatives
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getValueObjectAccess().getStringValueParserRuleCall_0()); }
-	ruleStringValue
-{ after(grammarAccess.getValueObjectAccess().getStringValueParserRuleCall_0()); }
-)
-
-    |(
-{ before(grammarAccess.getValueObjectAccess().getIntegerValueParserRuleCall_1()); }
-	ruleIntegerValue
-{ after(grammarAccess.getValueObjectAccess().getIntegerValueParserRuleCall_1()); }
-)
-
-    |(
-{ before(grammarAccess.getValueObjectAccess().getFloatValueParserRuleCall_2()); }
-	ruleFloatValue
-{ after(grammarAccess.getValueObjectAccess().getFloatValueParserRuleCall_2()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
 
 
 
@@ -614,69 +533,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-
-
-
-
-
-
-
-
-rule__TypeRef__Group__0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__TypeRef__Group__0__Impl
-	rule__TypeRef__Group__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__TypeRef__Group__0__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getTypeRefAccess().getReferencedAssignment_0()); }
-(rule__TypeRef__ReferencedAssignment_0)
-{ after(grammarAccess.getTypeRefAccess().getReferencedAssignment_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__TypeRef__Group__1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__TypeRef__Group__1__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__TypeRef__Group__1__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getTypeRefAccess().getIsMultiAssignment_1()); }
-(rule__TypeRef__IsMultiAssignment_1)?
-{ after(grammarAccess.getTypeRefAccess().getIsMultiAssignment_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
 
 
 
@@ -997,52 +853,6 @@ finally {
 
 
 
-
-
-
-
-rule__TypeRef__ReferencedAssignment_0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getTypeRefAccess().getReferencedTypeCrossReference_0_0()); }
-(
-{ before(grammarAccess.getTypeRefAccess().getReferencedTypeQualifiedNameParserRuleCall_0_0_1()); }
-	ruleQualifiedName{ after(grammarAccess.getTypeRefAccess().getReferencedTypeQualifiedNameParserRuleCall_0_0_1()); }
-)
-{ after(grammarAccess.getTypeRefAccess().getReferencedTypeCrossReference_0_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__TypeRef__IsMultiAssignment_1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getTypeRefAccess().getIsMultiLeftSquareBracketRightSquareBracketKeyword_1_0()); }
-(
-{ before(grammarAccess.getTypeRefAccess().getIsMultiLeftSquareBracketRightSquareBracketKeyword_1_0()); }
-
-	'[]' 
-
-{ after(grammarAccess.getTypeRefAccess().getIsMultiLeftSquareBracketRightSquareBracketKeyword_1_0()); }
-)
-
-{ after(grammarAccess.getTypeRefAccess().getIsMultiLeftSquareBracketRightSquareBracketKeyword_1_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 rule__StringValue__ValueAssignment
     @init {
 		int stackSize = keepStackSize();
@@ -1088,6 +898,8 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+
+RULE_DOC_COMMENT : '<*' ( options {greedy=false;} : . )*'*>';
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

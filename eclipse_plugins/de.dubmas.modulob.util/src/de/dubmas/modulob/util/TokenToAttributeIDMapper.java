@@ -1,4 +1,4 @@
-package de.dubmas.modulob.ui;
+package de.dubmas.modulob.util;
 
 import org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultAntlrTokenToAttributeIdMapper;
 

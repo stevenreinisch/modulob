@@ -79,13 +79,22 @@ public interface SystemPackage extends EPackage {
 	int ELEMENT__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT__COMMENT = 1;
+
+	/**
 	 * The number of structural features of the '<em>Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_FEATURE_COUNT = 1;
+	int ELEMENT_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link de.dubmas.modulob.system.impl.SystemImpl <em>System</em>}' class.
@@ -105,6 +114,15 @@ public interface SystemPackage extends EPackage {
 	 * @ordered
 	 */
 	int SYSTEM__NAME = ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__COMMENT = ELEMENT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Modules</b></em>' containment reference list.
@@ -162,6 +180,15 @@ public interface SystemPackage extends EPackage {
 	int MODULE__NAME = ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODULE__COMMENT = ELEMENT__COMMENT;
+
+	/**
 	 * The feature id for the '<em><b>Interface Model</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -217,6 +244,15 @@ public interface SystemPackage extends EPackage {
 	int VERSIONED_ELEMENT__NAME = ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VERSIONED_ELEMENT__COMMENT = ELEMENT__COMMENT;
+
+	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -252,6 +288,15 @@ public interface SystemPackage extends EPackage {
 	 * @ordered
 	 */
 	int INTERFACE_MODEL__NAME = VERSIONED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_MODEL__COMMENT = VERSIONED_ELEMENT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -309,6 +354,15 @@ public interface SystemPackage extends EPackage {
 	int ENTITY_MODEL__NAME = VERSIONED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_MODEL__COMMENT = VERSIONED_ELEMENT__COMMENT;
+
+	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -364,6 +418,15 @@ public interface SystemPackage extends EPackage {
 	int NOTIFICATION_MODEL__NAME = VERSIONED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTIFICATION_MODEL__COMMENT = VERSIONED_ELEMENT__COMMENT;
+
+	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -417,6 +480,15 @@ public interface SystemPackage extends EPackage {
 	 * @ordered
 	 */
 	int BEHAVIOURAL_MODEL__NAME = VERSIONED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOURAL_MODEL__COMMENT = VERSIONED_ELEMENT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -712,6 +784,17 @@ public interface SystemPackage extends EPackage {
 	EAttribute getElement_Name();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.dubmas.modulob.system.Element#getComment <em>Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Comment</em>'.
+	 * @see de.dubmas.modulob.system.Element#getComment()
+	 * @see #getElement()
+	 * @generated
+	 */
+	EAttribute getElement_Comment();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -940,6 +1023,14 @@ public interface SystemPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ELEMENT__NAME = eINSTANCE.getElement_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ELEMENT__COMMENT = eINSTANCE.getElement_Comment();
 
 	}
 
