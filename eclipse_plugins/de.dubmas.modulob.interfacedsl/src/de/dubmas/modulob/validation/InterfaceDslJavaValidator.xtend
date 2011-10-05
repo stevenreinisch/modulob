@@ -26,21 +26,29 @@ class InterfaceDslJavaValidator extends AbstractInterfaceDslJavaValidator {
 	}
 	
 	@Check
+	def checkIfDelegateHasUniqueName(Delegate d){
+		var delegates = (d.eContainer.eContainer as InterfaceModel).delegates
+		if(!(new CheckUtil()).nameIsUnique(d, delegates))
+		{
+			error ("Delegate with this name already exists." ,
+					TypesPackage::eINSTANCE.type_Name, 
+					0 ,
+					ValidationIssueCodes::INTERFACE_NAME_NOT_UNIQUE_CODE ,
+					null )
+		}
+	}
+	
+	def delegates(InterfaceModel im){
+		im.interfaces.map(i | i.delegates).flatten
+	}
+	
+	@Check
 	def checkIfMethodHasUniqueName(Method m){
-		//(m.eContainer as UserDefined).checkIfMethodHasUniqueNameInternal(m)
 		switch m.eContainer.eClass {
 			case ModulobPackage::eINSTANCE.interface: (m.eContainer as Interface).methods.methodNameCheck(m)
 			case ModulobPackage::eINSTANCE.delegate : (m.eContainer as Delegate).methods.methodNameCheck(m)
 		}
-	}
-	
-//	def dispatch checkIfMethodHasUniqueNameInternal(Interface i, Method m){
-//		i.methods.methodNameCheck(m)
-//	}
-//	
-//	def dispatch checkIfMethodHasUniqueNameInternal(Delegate d, Method m){
-//		d.methods.methodNameCheck(m)
-//	}
+	}	
 	
 	def methodNameCheck(List<Method> methods, Method m){
 		if(!methodNameIsUnique(m, methods))
