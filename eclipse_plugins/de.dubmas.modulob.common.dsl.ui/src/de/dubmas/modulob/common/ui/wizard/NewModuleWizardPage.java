@@ -1,7 +1,6 @@
 package de.dubmas.modulob.common.ui.wizard;
 
 import java.lang.reflect.InvocationTargetException;
-import java.net.URI;
 
 import org.eclipse.core.filesystem.EFS;
 import org.eclipse.core.filesystem.IFileStore;
@@ -25,7 +24,8 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.xtext.builder.EclipseResourceFileSystemAccess;
+import org.eclipse.xtext.generator.AbstractFileSystemAccess;
+import org.eclipse.xtext.generator.JavaIoFileSystemAccess;
 
 public class NewModuleWizardPage extends NewContainerWizardPage {
 
@@ -214,7 +214,7 @@ public class NewModuleWizardPage extends NewContainerWizardPage {
 						status.setError("This module is hidden in the workspace due to resource filters.");
 						return status;
 					}
-					URI location= pack.getResource().getLocationURI();
+					java.net.URI location= pack.getResource().getLocationURI();
 					if (location != null) {
 						IFileStore store= EFS.getStore(location);
 						if (store.fetchInfo().exists()) {
@@ -318,14 +318,18 @@ public class NewModuleWizardPage extends NewContainerWizardPage {
 		 * Create files for interface model, data model, ...
 		 */
 		ModuleFileGenerator gen = new ModuleFileGenerator();
-		gen.setDestinationDirPath("src/" + packName + "/");
+		
 		gen.setModuleName(packName);
 		
-		EclipseResourceFileSystemAccess fsa = new EclipseResourceFileSystemAccess();
-		fsa.setRoot(getWorkspaceRoot());
-		IPath outputPath = fCreatedPackageFragment.getJavaProject().getPath().append("src/" + packName + "/");
-		fsa.setOutputPath(outputPath.toString());
+		AbstractFileSystemAccess fsa = new JavaIoFileSystemAccess();
+		String packagePath = packName.replaceAll("\\.", "/");
+		IPath outputPath = 
+				fCreatedPackageFragment.getJavaProject().getPath().append("src/" + packagePath);
+		outputPath = getWorkspaceRoot().getLocation().append(outputPath);
+		String outPathString = outputPath.toString();
+		fsa.setOutputPath(outPathString);
 		gen.doGenerate(fsa);
+		getWorkspaceRoot().refreshLocal(IResource.DEPTH_INFINITE, monitor);
 		
 		if (monitor.isCanceled()) {
 			throw new InterruptedException();
