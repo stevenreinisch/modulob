@@ -31,4 +31,31 @@ class BehaviourDslJavaValidator extends AbstractBehaviourDslJavaValidator{
 				      null)		
 		}
 	}
+	
+	
+	/*
+	 * The features of a reaction's notification must match 
+	 * the reaction's parameters in number, type, and name.
+	 */
+	@Check
+	def checkIfParametersMatch(Reaction r){
+		if(((r.notification.features.size != r.method.parameters.size)
+			&&
+			!r.notification.features.
+				forall(f | r.method.parameters.exists(p | f.type.isMulti == p.type.isMulti
+														  &&
+														  f.type.referenced == p.type.referenced
+														  &&
+														  f.name == p.name
+				)))
+		)
+		{
+			error("The features of a reaction's notification must match the method's parameters in number, type, and name.", 
+				   r, 
+				   BehaviourPackage::eINSTANCE.reaction_Notification, 
+				   0, 
+				   de::dubmas::modulob::validation::BehaviourValidationIssueCodes::REACTION_PARAMETER_ORDER, 
+				   null)		
+		}
+	}
 }

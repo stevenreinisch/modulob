@@ -6,11 +6,11 @@
 «EXTENSION de::dubmas::modulob::reaction::generator::templates::Notifications»
 «EXTENSION org::eclipse::xtend::util::stdlib::io»
 
-«AROUND de::dubmas::modulob::generator::templates::BaseClasses::Imports FOR Interface»
+«AROUND de::dubmas::modulob::generator::templates::BaseClasses::Imports FOR Interface-»
 	«targetDef.proceed()»
 	
-	«IF !this.associatedReactions().isEmpty»
-		«FOREACH this.associatedReactions().notification.module().toSet() AS m»
+	«IF !this.associatedReactions().isEmpty-»
+		«FOREACH this.associatedReactions().notification.module().toSet() AS m-»
 			#import "«m.notificationsFileName()».h"
 		«ENDFOREACH»
 	
@@ -70,17 +70,17 @@
 				«EXPAND ExtractAndForwardMehtodSignature FOR r»
 				{
 					NSDictionary *userInfo = [n userInfo];
-					«FOREACH r.notification.features AS f ITERATOR iter»
+					«FOREACH r.notification.features AS f»
 						«REM»
 						«f.type.typeRef()» «f.name + iter.counter0» = [userInfo objectForKey:«f.notificationFeatureKey(r.notification)»];
 						«ENDREM»
-						id «f.name + iter.counter0» = [userInfo objectForKey:«f.notificationFeatureKey(r.notification)»];
+						id «f.name» = [userInfo objectForKey:«f.notificationFeatureKey(r.notification)»];
 					«ENDFOREACH»
 					
 					[self «r.method.name»
-						«FOREACH r.method.parameters AS p ITERATOR iter»
+						«FOREACH r.method.parameters AS p»
 							«(p.signaturePart != null ? p.signaturePart : "") + 
-							":" + p.associatedNotificationFeature(r.notification.features).name + iter.counter0»
+							":" + p.associatedNotificationFeature(r.notification.features).name»
 						«ENDFOREACH»
 					];
 				}
