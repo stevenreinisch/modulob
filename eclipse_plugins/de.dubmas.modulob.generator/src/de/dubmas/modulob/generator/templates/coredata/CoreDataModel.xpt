@@ -256,7 +256,7 @@ static «namespace.daoName(version)» *«namespace.daoName(version).toFirstLower
 «ENDDEFINE»
 
 «DEFINE DefaultValue(String propertyName) FOR StringValue»
-	[«propertyName» setDefaultValue:@"«this.value»"];
+	[«propertyName» setDefaultValue:@«this.value.trim()»];
 «ENDDEFINE»
 
 «DEFINE DefaultValue(String propertyName) FOR IntegerValue»

@@ -7,16 +7,18 @@
 
 «DEFINE main FOR Module»
 	«EXPAND Protocol FOREACH this.interfaceModel.interfaces»
+	«REM»
 	«EXPAND Protocol FOREACH this.interfaceModel.interfaces.delegates»
+	«ENDREM»
 «ENDDEFINE»
 
-«DEFINE Protocol FOR Type»
-«FILE this.protocolFilePath()»
+«DEFINE Protocol FOR Interface»
+«FILE this.protocolFilePath()-»
 	#import <Foundation/Foundation.h>
 	
 	«EXPAND preheaderImports FOR this»
 	
-	«FOREACH this.dependentTypes() AS type»
+	«FOREACH this.dependentTypes() AS type-»
 		«EXPAND typeForwardDecl FOR type»
 	«ENDFOREACH»
 		
@@ -25,6 +27,19 @@
 	«EXPAND ProtocolBody FOR this»
 
 	@end
+	
+	«IF this.delegates.size > 0-»
+	#pragma mark -
+	#pragma mark delegates
+	
+	«FOREACH this.delegates AS d-»
+		#pragma mark «d.name»
+		«EXPAND protocolDef FOR d»
+		«EXPAND ProtocolBody FOR d»
+		@end
+	«ENDFOREACH»
+	
+	«ENDIF»
 «ENDFILE»
 «ENDDEFINE»
 
@@ -37,32 +52,32 @@
 «DEFINE typeForwardDecl FOR Type»
 «ENDDEFINE»
 
-«DEFINE typeForwardDecl FOR Entity»
+«DEFINE typeForwardDecl FOR Entity-»
 	@class «this.typeName()»;
 «ENDDEFINE»
 
-«DEFINE typeForwardDecl FOR Interface»
+«DEFINE typeForwardDecl FOR Interface-»
 	@protocol «this.protocolTypeName()»;
 «ENDDEFINE»
 
-«DEFINE typeForwardDecl FOR Delegate»
+«DEFINE typeForwardDecl FOR Delegate-»
 	@protocol «this.protocolTypeName()»;
 «ENDDEFINE»
 
 «DEFINE protocolDef FOR Type»
 «ENDDEFINE»
 
-«DEFINE protocolDef FOR Entity»
+«DEFINE protocolDef FOR Entity-»
 	«this.codeComment()»
 	@protocol «this.protocolTypeName()» <NSObject>
 «ENDDEFINE»
 
-«DEFINE protocolDef FOR Interface»
+«DEFINE protocolDef FOR Interface-»
 	«this.codeComment()»
 	@protocol «this.protocolTypeName()» <NSObject>
 «ENDDEFINE»
 
-«DEFINE protocolDef FOR Delegate»
+«DEFINE protocolDef FOR Delegate-»
 	«this.codeComment()»
 	@protocol «this.protocolTypeName()» <NSObject>
 «ENDDEFINE»
@@ -74,27 +89,28 @@
 	«EXPAND Property(this) FOREACH this.features»
 «ENDDEFINE»
 
-«DEFINE ProtocolBody FOR Interface»
+«DEFINE ProtocolBody FOR Interface-»
 	«EXPAND Method FOREACH this.methods»
 	
-	«FOREACH this.requiredInterfaces AS ri»
+	«FOREACH this.requiredInterfaces AS ri-»
 		@property (nonatomic, retain) «ri.protocolTypeRef()» «ri.requiredInterfacePropertyName()»;
 	«ENDFOREACH»
 	
 «ENDDEFINE»
 
-«DEFINE ProtocolBody FOR Delegate»
+«DEFINE ProtocolBody FOR Delegate-»
+	@optional
 	«EXPAND Method FOREACH this.methods»
 «ENDDEFINE»
 
-«DEFINE Property(Entity parent) FOR Feature»
+«DEFINE Property(Entity parent) FOR Feature-»
 	«EXPAND Property(this) FOR parent»
 
-	«IF this.type.isMulti»
-		-(void)add«this.name.toFirstUpper()»Object:(«this.type.referenced.typeRef()»)object;
-		-(void)remove«this.name.toFirstUpper()»Object:(«this.type.referenced.typeRef()»)object;
-		-(void)add«this.name.toFirstUpper()»:(NSSet *)«this.name»_;
-		-(void)remove«this.name.toFirstUpper()»:(NSSet *)«this.name»_;
+	«IF this.type.isMulti-»
+	-(void)add«this.name.toFirstUpper()»Object:(«this.type.referenced.typeRef()»)object;
+	-(void)remove«this.name.toFirstUpper()»Object:(«this.type.referenced.typeRef()»)object;
+	-(void)add«this.name.toFirstUpper()»:(NSSet *)«this.name»_;
+	-(void)remove«this.name.toFirstUpper()»:(NSSet *)«this.name»_;
 	«ENDIF»
 «ENDDEFINE»
 

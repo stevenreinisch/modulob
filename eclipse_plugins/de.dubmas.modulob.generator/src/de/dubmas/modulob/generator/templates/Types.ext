@@ -17,7 +17,8 @@ List[types::Type] dependentTypes(types::Type type):
 			((Interface)type).methods.parameters.type.referenced
 				.addAll(((Interface)type).methods.type.referenced)
 					.select(t | !Primitive.isInstance(t))
-						.addAll(((Interface)type).requiredInterfaces).toSet()//toSet() to remove duplicates
+						.addAll(((Interface)type).requiredInterfaces)
+							.addAll(((Interface)type).delegates.dependentTypes()).toSet()//toSet() to remove duplicates
 					
 		case Delegate.name  : 
 			((Delegate)type).methods.parameters.type.referenced.

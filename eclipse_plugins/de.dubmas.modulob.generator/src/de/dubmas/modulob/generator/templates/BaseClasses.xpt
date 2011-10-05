@@ -13,20 +13,19 @@
 «ENDDEFINE»
 
 «DEFINE Header FOR Interface»
-«FILE this.baseClassHeaderFilePath()»
+«FILE this.baseClassHeaderFilePath()-»
 	#import <Foundation/Foundation.h>
 	
 	#import "«this.protocolTypeName()».h"
 
-	«FOREACH this.dependentTypes() AS type»
-		«EXPAND dependentTypeImport FOR type»
+	«FOREACH this.dependentTypes() AS type-»
+	«EXPAND dependentTypeImport FOR type-»
 	«ENDFOREACH»
 	
 	«EXPAND additionalHeaderImportsOrForwardDecls FOR this»
 	
 	«this.codeComment()»
 	@interface «this.baseClassName()»: NSObject
-	
 	<«this.protocolTypeName()»>
 	{
 	«FOREACH this.requiredInterfaces AS ri»
@@ -48,12 +47,12 @@
 «DEFINE dependentTypeImport FOR Type»
 «ENDDEFINE»
 
-«DEFINE dependentTypeImport FOR Entity»
-	#import "«this.typeName()».h"
+«DEFINE dependentTypeImport FOR Entity-»
+#import "«this.typeName()».h"
 «ENDDEFINE»
 
-«DEFINE dependentTypeImport FOR Interface»
-	#import "«this.protocolTypeName()».h"
+«DEFINE dependentTypeImport FOR Interface-»
+#import "«this.protocolTypeName()».h"
 «ENDDEFINE»
 
 «DEFINE additionalHeaderImportsOrForwardDecls FOR Interface»
@@ -66,7 +65,7 @@
 «ENDDEFINE»
 
 «DEFINE Impl FOR Interface»
-«FILE this.baseClassImplFilePath()»
+«FILE this.baseClassImplFilePath()-»
 	#import "«this.baseClassName()».h"
 	
 	#import "Objection.h"
