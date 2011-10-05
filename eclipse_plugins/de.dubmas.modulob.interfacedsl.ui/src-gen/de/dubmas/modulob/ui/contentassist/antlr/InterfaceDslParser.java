@@ -44,6 +44,7 @@ public class InterfaceDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInterfaceAccess().getGroup_3_2(), "rule__Interface__Group_3_2__0");
 					put(grammarAccess.getMethodAccess().getGroup(), "rule__Method__Group__0");
 					put(grammarAccess.getParameterAccess().getGroup(), "rule__Parameter__Group__0");
+					put(grammarAccess.getDelegateAccess().getGroup(), "rule__Delegate__Group__0");
 					put(grammarAccess.getTypeLibAccess().getGroup(), "rule__TypeLib__Group__0");
 					put(grammarAccess.getPrimitiveAccess().getGroup(), "rule__Primitive__Group__0");
 					put(grammarAccess.getAnyAccess().getGroup(), "rule__Any__Group__0");
@@ -59,6 +60,7 @@ public class InterfaceDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInterfaceAccess().getRequiredInterfacesAssignment_3_1(), "rule__Interface__RequiredInterfacesAssignment_3_1");
 					put(grammarAccess.getInterfaceAccess().getRequiredInterfacesAssignment_3_2_1(), "rule__Interface__RequiredInterfacesAssignment_3_2_1");
 					put(grammarAccess.getInterfaceAccess().getMethodsAssignment_5(), "rule__Interface__MethodsAssignment_5");
+					put(grammarAccess.getInterfaceAccess().getDelegatesAssignment_6(), "rule__Interface__DelegatesAssignment_6");
 					put(grammarAccess.getMethodAccess().getCommentAssignment_0(), "rule__Method__CommentAssignment_0");
 					put(grammarAccess.getMethodAccess().getIsStaticAssignment_1(), "rule__Method__IsStaticAssignment_1");
 					put(grammarAccess.getMethodAccess().getTypeAssignment_2(), "rule__Method__TypeAssignment_2");
@@ -67,6 +69,8 @@ public class InterfaceDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getParameterAccess().getSignaturePartAssignment_0(), "rule__Parameter__SignaturePartAssignment_0");
 					put(grammarAccess.getParameterAccess().getTypeAssignment_2(), "rule__Parameter__TypeAssignment_2");
 					put(grammarAccess.getParameterAccess().getNameAssignment_3(), "rule__Parameter__NameAssignment_3");
+					put(grammarAccess.getDelegateAccess().getNameAssignment_1(), "rule__Delegate__NameAssignment_1");
+					put(grammarAccess.getDelegateAccess().getMethodsAssignment_3(), "rule__Delegate__MethodsAssignment_3");
 					put(grammarAccess.getTypeLibAccess().getPrimitiveTypesAssignment_0(), "rule__TypeLib__PrimitiveTypesAssignment_0");
 					put(grammarAccess.getTypeLibAccess().getAnyTypeAssignment_1(), "rule__TypeLib__AnyTypeAssignment_1");
 					put(grammarAccess.getPrimitiveAccess().getNameAssignment_1(), "rule__Primitive__NameAssignment_1");

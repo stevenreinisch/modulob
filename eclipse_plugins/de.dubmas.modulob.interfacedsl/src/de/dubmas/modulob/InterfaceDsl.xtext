@@ -20,6 +20,8 @@ Interface returns modulob::Interface:
 	)?
 	'{'
 		(methods += Method)* 
+		
+		(delegates += Delegate)*
 	'}'
 ;
 
@@ -37,5 +39,8 @@ Parameter returns modulob::Parameter:
 ;
 
 
-
-
+Delegate returns modulob::Delegate:
+	'delegate' name=ID '{'
+		(methods += Method)*
+	'}'
+;

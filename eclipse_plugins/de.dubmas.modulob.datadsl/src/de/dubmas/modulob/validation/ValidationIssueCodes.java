@@ -9,9 +9,16 @@ public class ValidationIssueCodes {
 	public static final String UUID_REQUIRED_CODE = "UUID_REQUIRED_CODE";
 	public static final String ENTITY_SUPER_SAME_MODULE_CODE = "ENTITY_SUPER_SAME_MODULE_CODE";
 	public static final String FEATURE_NAME_CODE = "FEATURE_NAME_CODE";
+	public static final String FEATURE_NOT_ID_CODE = "FEATURE_NOT_ID_CODE";
 	public static final String DEFAULT_VALUE_EXISTENCE_CODE = "DEFAULT_VALUE_EXISTENCE_CODE";
 	public static final String DEFAULT_VALUE_CORRECTNESS_CODE = "DEFAULT_VALUE_CORRECTNESS_CODE";
 	public static final String INVERSE_ALLOWED_CODE = "INVERSE_ALLOWED_CODE";
 	public static final String INVERSE_IS_ENTITY_CODE = "INVERSE_IS_ENTITY_CODE";
 	public static final String INVERSE_MODULE_BOUNDARIES_CODE = "INVERSE_MODULE_BOUNDARIES_CODE";
+	
+	public static final String ENTITY_NAME_NOT_UNIQUE_CODE = "ENTITY_NAME_NOT_UNIQUE_CODE";
+	public static final String FEATURE_NAME_NOT_UNIQUE_CODE = "FEATURE_NAME_NOT_UNIQUE";
+	
+	
+	public static final String MODULE_NAME_NOT_UNIQUE_CODE = "MODULE_NAME_NOT_UNIQUE";
 }

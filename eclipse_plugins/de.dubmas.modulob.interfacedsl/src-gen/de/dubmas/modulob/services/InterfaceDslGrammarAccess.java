@@ -86,15 +86,17 @@ public class InterfaceDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cMethodsAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cMethodsMethodParserRuleCall_5_0 = (RuleCall)cMethodsAssignment_5.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cDelegatesAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cDelegatesDelegateParserRuleCall_6_0 = (RuleCall)cDelegatesAssignment_6.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Interface returns modulob::Interface:
 		//	comment=DOC_COMMENT? "interface" name=ID ("requires" requiredInterfaces+=[modulob::Interface|QualifiedName] (","
-		//	requiredInterfaces+=[modulob::Interface|QualifiedName])*)? "{" methods+=Method* "}";
+		//	requiredInterfaces+=[modulob::Interface|QualifiedName])*)? "{" methods+=Method* delegates+=Delegate* "}";
 		public ParserRule getRule() { return rule; }
 
 		//comment=DOC_COMMENT? "interface" name=ID ("requires" requiredInterfaces+=[modulob::Interface|QualifiedName] (","
-		//requiredInterfaces+=[modulob::Interface|QualifiedName])*)? "{" methods+=Method* "}"
+		//requiredInterfaces+=[modulob::Interface|QualifiedName])*)? "{" methods+=Method* delegates+=Delegate* "}"
 		public Group getGroup() { return cGroup; }
 
 		//comment=DOC_COMMENT?
@@ -152,8 +154,14 @@ public class InterfaceDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Method
 		public RuleCall getMethodsMethodParserRuleCall_5_0() { return cMethodsMethodParserRuleCall_5_0; }
 
+		//delegates+=Delegate*
+		public Assignment getDelegatesAssignment_6() { return cDelegatesAssignment_6; }
+
+		//Delegate
+		public RuleCall getDelegatesDelegateParserRuleCall_6_0() { return cDelegatesDelegateParserRuleCall_6_0; }
+
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
 	public class MethodElements extends AbstractParserRuleElementFinder {
@@ -251,12 +259,53 @@ public class InterfaceDslGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_3_0() { return cNameIDTerminalRuleCall_3_0; }
 	}
+
+	public class DelegateElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Delegate");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDelegateKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cMethodsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cMethodsMethodParserRuleCall_3_0 = (RuleCall)cMethodsAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//Delegate returns modulob::Delegate:
+		//	"delegate" name=ID "{" methods+=Method* "}";
+		public ParserRule getRule() { return rule; }
+
+		//"delegate" name=ID "{" methods+=Method* "}"
+		public Group getGroup() { return cGroup; }
+
+		//"delegate"
+		public Keyword getDelegateKeyword_0() { return cDelegateKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+
+		//methods+=Method*
+		public Assignment getMethodsAssignment_3() { return cMethodsAssignment_3; }
+
+		//Method
+		public RuleCall getMethodsMethodParserRuleCall_3_0() { return cMethodsMethodParserRuleCall_3_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
 	
 	
 	private InterfaceModelElements pInterfaceModel;
 	private InterfaceElements pInterface;
 	private MethodElements pMethod;
 	private ParameterElements pParameter;
+	private DelegateElements pDelegate;
 	
 	private final GrammarProvider grammarProvider;
 
@@ -291,7 +340,7 @@ public class InterfaceDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	//Interface returns modulob::Interface:
 	//	comment=DOC_COMMENT? "interface" name=ID ("requires" requiredInterfaces+=[modulob::Interface|QualifiedName] (","
-	//	requiredInterfaces+=[modulob::Interface|QualifiedName])*)? "{" methods+=Method* "}";
+	//	requiredInterfaces+=[modulob::Interface|QualifiedName])*)? "{" methods+=Method* delegates+=Delegate* "}";
 	public InterfaceElements getInterfaceAccess() {
 		return (pInterface != null) ? pInterface : (pInterface = new InterfaceElements());
 	}
@@ -318,6 +367,16 @@ public class InterfaceDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getParameterRule() {
 		return getParameterAccess().getRule();
+	}
+
+	//Delegate returns modulob::Delegate:
+	//	"delegate" name=ID "{" methods+=Method* "}";
+	public DelegateElements getDelegateAccess() {
+		return (pDelegate != null) ? pDelegate : (pDelegate = new DelegateElements());
+	}
+	
+	public ParserRule getDelegateRule() {
+		return getDelegateAccess().getRule();
 	}
 
 	//TypeLib returns types::Lib:

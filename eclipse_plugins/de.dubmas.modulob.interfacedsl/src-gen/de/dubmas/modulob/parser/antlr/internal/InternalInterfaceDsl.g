@@ -257,9 +257,27 @@ ruleInterface returns [EObject current=null]
 	    }
 
 )
-)*	otherlv_9='}' 
+)*(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getInterfaceAccess().getDelegatesDelegateParserRuleCall_6_0()); 
+	    }
+		lv_delegates_9_0=ruleDelegate		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getInterfaceRule());
+	        }
+       		add(
+       			$current, 
+       			"delegates",
+        		lv_delegates_9_0, 
+        		"Delegate");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*	otherlv_10='}' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getInterfaceAccess().getRightCurlyBracketKeyword_6());
+    	newLeafNode(otherlv_10, grammarAccess.getInterfaceAccess().getRightCurlyBracketKeyword_7());
     }
 )
 ;
@@ -453,6 +471,75 @@ ruleParameter returns [EObject current=null]
 
 )
 ))
+;
+
+
+
+
+
+// Entry rule entryRuleDelegate
+entryRuleDelegate returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getDelegateRule()); }
+	 iv_ruleDelegate=ruleDelegate 
+	 { $current=$iv_ruleDelegate.current; } 
+	 EOF 
+;
+
+// Rule Delegate
+ruleDelegate returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='delegate' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getDelegateAccess().getDelegateKeyword_0());
+    }
+(
+(
+		lv_name_1_0=RULE_ID
+		{
+			newLeafNode(lv_name_1_0, grammarAccess.getDelegateAccess().getNameIDTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getDelegateRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_1_0, 
+        		"ID");
+	    }
+
+)
+)	otherlv_2='{' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getDelegateAccess().getLeftCurlyBracketKeyword_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDelegateAccess().getMethodsMethodParserRuleCall_3_0()); 
+	    }
+		lv_methods_3_0=ruleMethod		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDelegateRule());
+	        }
+       		add(
+       			$current, 
+       			"methods",
+        		lv_methods_3_0, 
+        		"Method");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*	otherlv_4='}' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getDelegateAccess().getRightCurlyBracketKeyword_4());
+    }
+)
 ;
 
 

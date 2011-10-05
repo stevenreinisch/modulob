@@ -1,20 +1,16 @@
 package de.dubmas.modulob.validation
 
-import de.dubmas.modulob.system.EntityModel
+import java.util.*
+import org.eclipse.emf.common.util.EList
+import de.dubmas.modulob.validation.ValidationIssueCodes
 
-import de.dubmas.modulob.ModulobPackage
-import de.dubmas.modulob.Feature
-import de.dubmas.modulob.Entity
-import de.dubmas.modulob.ConfigOption
-import de.dubmas.modulob.ConfigValue
-import de.dubmas.modulob.ValueObject
-import de.dubmas.modulob.StringValue
-import de.dubmas.modulob.IntegerValue
-import de.dubmas.modulob.FloatValue
+import de.dubmas.modulob.util.*
 
-import de.dubmas.modulob.types.TypesPackage
-import de.dubmas.modulob.types.Primitive
+import de.dubmas.modulob.system.*
+import de.dubmas.modulob.*
+import de.dubmas.modulob.types.*
 
+import org.eclipse.emf.ecore.*
 import org.eclipse.xtext.validation.Check
 import com.google.inject.Inject
 
@@ -174,15 +170,28 @@ class DataDslJavaValidator extends AbstractDataDslJavaValidator {
 	}
 	
 	@Check
-	def checkIfPersistentEntityHasUUID(Entity e){
-		if(e.isPersistent){
-			if(! e.uuidInInheritanceHierarchy){
-				error("If entity is persistent, it must have an attribute 'String uuid'", 
-				  ModulobPackage::eINSTANCE.entity_Features,
-				  0,
-				  de::dubmas::modulob::validation::ValidationIssueCodes::UUID_REQUIRED_CODE,
-				  null
-				)
+	def checkIfEntityHasUUID(Entity e){
+		if(! e.uuidInInheritanceHierarchy ) { 
+			error (
+				"An entity, must have an attribute 'String uuid'" ,
+				ModulobPackage::eINSTANCE.entity_Features , 
+				0 ,
+				de::dubmas::modulob::validation::ValidationIssueCodes:: UUID_REQUIRED_CODE ,
+				null ) 
+		}
+	}
+	
+	@Check
+	def checkIfPersistentEntityHasIdFeature(Feature f){
+		var entity = (f.eContainer as Entity)
+		if(entity.isPersistent){
+			if(TypesPackage::eINSTANCE.any.isInstance(f.type.referenced)){
+				error (
+					"'id' not allowed for persistent entities. Use a persistent entity as type!" ,
+					ModulobPackage::eINSTANCE.feature_Type , 
+					0 ,
+					de::dubmas::modulob::validation::ValidationIssueCodes::FEATURE_NOT_ID_CODE ,
+					null )
 			}
 		}
 	}
@@ -264,6 +273,32 @@ class DataDslJavaValidator extends AbstractDataDslJavaValidator {
 			"Type of this feature must be Decimal for the given default value."
 		}else{
 			null
+		}
+	}
+	
+	///name uniqueness checks
+	
+	@Check
+	def checkIfEntitiyHasUniqueName(Entity e){
+		if(!(new CheckUtil()).nameIsUnique(e, (e.eContainer as EntityModel).entities))
+		{
+			error ("Entity with this name already exists." ,
+					TypesPackage::eINSTANCE.type_Name, 
+					0 ,
+					ValidationIssueCodes::ENTITY_NAME_NOT_UNIQUE_CODE ,
+					null )
+		}
+	}
+	
+	@Check
+	def checkIfFeatureHasUniqueName(Feature f){
+		if(!(new CheckUtil()).nameIsUnique(f, (f.eContainer as Entity).features))
+		{
+			error ("Feature with this name already exists." ,
+					ModulobPackage::eINSTANCE.feature_Name, 
+					0 ,
+					ValidationIssueCodes::FEATURE_NAME_CODE,
+					null )
 		}
 	}
 }

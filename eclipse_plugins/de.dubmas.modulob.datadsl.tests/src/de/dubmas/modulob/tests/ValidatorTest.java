@@ -217,7 +217,7 @@ public class ValidatorTest extends AbstractXtextTests {
 		/*
 		 * do test
 		 */
-		tester.validator().checkIfPersistentEntityHasUUID(superEntity);
+		tester.validator().checkIfEntityHasUUID(superEntity);
 		tester.diagnose().assertError(ValidationIssueCodes.UUID_REQUIRED_CODE);
 	}
 	

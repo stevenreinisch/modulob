@@ -35,14 +35,15 @@ protected class ThisRootNode extends RootToken {
 			case 1: return new Interface_Group(this, this, 1, inst);
 			case 2: return new Method_Group(this, this, 2, inst);
 			case 3: return new Parameter_Group(this, this, 3, inst);
-			case 4: return new TypeLib_Group(this, this, 4, inst);
-			case 5: return new Primitive_Group(this, this, 5, inst);
-			case 6: return new Any_Group(this, this, 6, inst);
-			case 7: return new TypeRef_Group(this, this, 7, inst);
-			case 8: return new ValueObject_Alternatives(this, this, 8, inst);
-			case 9: return new StringValue_ValueAssignment(this, this, 9, inst);
-			case 10: return new IntegerValue_ValueAssignment(this, this, 10, inst);
-			case 11: return new FloatValue_ValueAssignment(this, this, 11, inst);
+			case 4: return new Delegate_Group(this, this, 4, inst);
+			case 5: return new TypeLib_Group(this, this, 5, inst);
+			case 6: return new Primitive_Group(this, this, 6, inst);
+			case 7: return new Any_Group(this, this, 7, inst);
+			case 8: return new TypeRef_Group(this, this, 8, inst);
+			case 9: return new ValueObject_Alternatives(this, this, 9, inst);
+			case 10: return new StringValue_ValueAssignment(this, this, 10, inst);
+			case 11: return new IntegerValue_ValueAssignment(this, this, 11, inst);
+			case 12: return new FloatValue_ValueAssignment(this, this, 12, inst);
 			default: return null;
 		}	
 	}	
@@ -255,12 +256,12 @@ protected class InterfaceModel_InterfacesAssignment_4 extends AssignmentToken  {
  *
  * Interface returns modulob::Interface:
  * 	comment=DOC_COMMENT? "interface" name=ID ("requires" requiredInterfaces+=[modulob::Interface|QualifiedName] (","
- * 	requiredInterfaces+=[modulob::Interface|QualifiedName])*)? "{" methods+=Method* "}";
+ * 	requiredInterfaces+=[modulob::Interface|QualifiedName])*)? "{" methods+=Method* delegates+=Delegate* "}";
  *
  **/
 
 // comment=DOC_COMMENT? "interface" name=ID ("requires" requiredInterfaces+=[modulob::Interface|QualifiedName] (","
-// requiredInterfaces+=[modulob::Interface|QualifiedName])*)? "{" methods+=Method* "}"
+// requiredInterfaces+=[modulob::Interface|QualifiedName])*)? "{" methods+=Method* delegates+=Delegate* "}"
 protected class Interface_Group extends GroupToken {
 	
 	public Interface_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -275,7 +276,7 @@ protected class Interface_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Interface_RightCurlyBracketKeyword_6(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Interface_RightCurlyBracketKeyword_7(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -615,23 +616,72 @@ protected class Interface_MethodsAssignment_5 extends AssignmentToken  {
 	}	
 }
 
-// "}"
-protected class Interface_RightCurlyBracketKeyword_6 extends KeywordToken  {
+// delegates+=Delegate*
+protected class Interface_DelegatesAssignment_6 extends AssignmentToken  {
 	
-	public Interface_RightCurlyBracketKeyword_6(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Interface_DelegatesAssignment_6(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
-	public Keyword getGrammarElement() {
-		return grammarAccess.getInterfaceAccess().getRightCurlyBracketKeyword_6();
+	public Assignment getGrammarElement() {
+		return grammarAccess.getInterfaceAccess().getDelegatesAssignment_6();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Interface_MethodsAssignment_5(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Interface_LeftCurlyBracketKeyword_4(lastRuleCallOrigin, this, 1, inst);
+			case 0: return new Delegate_Group(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("delegates",false)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("delegates");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getDelegateRule().getType().getClassifier())) {
+				type = AssignmentType.PARSER_RULE_CALL;
+				element = grammarAccess.getInterfaceAccess().getDelegatesDelegateParserRuleCall_6_0(); 
+				consumed = obj;
+				return param;
+			}
+		}
+		return null;
+	}
+
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		if(value == inst.getEObject() && !inst.isConsumed()) return null;
+		switch(index) {
+			case 0: return new Interface_DelegatesAssignment_6(lastRuleCallOrigin, next, actIndex, consumed);
+			case 1: return new Interface_MethodsAssignment_5(lastRuleCallOrigin, next, actIndex, consumed);
+			case 2: return new Interface_LeftCurlyBracketKeyword_4(lastRuleCallOrigin, next, actIndex, consumed);
+			default: return null;
+		}	
+	}	
+}
+
+// "}"
+protected class Interface_RightCurlyBracketKeyword_7 extends KeywordToken  {
+	
+	public Interface_RightCurlyBracketKeyword_7(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getInterfaceAccess().getRightCurlyBracketKeyword_7();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Interface_DelegatesAssignment_6(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new Interface_MethodsAssignment_5(lastRuleCallOrigin, this, 1, inst);
+			case 2: return new Interface_LeftCurlyBracketKeyword_4(lastRuleCallOrigin, this, 2, inst);
 			default: return null;
 		}	
 	}
@@ -1051,6 +1101,193 @@ protected class Parameter_NameAssignment_3 extends AssignmentToken  {
 
 
 /************ end Rule Parameter ****************/
+
+
+/************ begin Rule Delegate ****************
+ *
+ * Delegate returns modulob::Delegate:
+ * 	"delegate" name=ID "{" methods+=Method* "}";
+ *
+ **/
+
+// "delegate" name=ID "{" methods+=Method* "}"
+protected class Delegate_Group extends GroupToken {
+	
+	public Delegate_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getDelegateAccess().getGroup();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Delegate_RightCurlyBracketKeyword_4(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getDelegateRule().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// "delegate"
+protected class Delegate_DelegateKeyword_0 extends KeywordToken  {
+	
+	public Delegate_DelegateKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getDelegateAccess().getDelegateKeyword_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index, inst);
+		}	
+	}
+
+}
+
+// name=ID
+protected class Delegate_NameAssignment_1 extends AssignmentToken  {
+	
+	public Delegate_NameAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getDelegateAccess().getNameAssignment_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Delegate_DelegateKeyword_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("name",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("name");
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getDelegateAccess().getNameIDTerminalRuleCall_1_0(), value, null)) {
+			type = AssignmentType.TERMINAL_RULE_CALL;
+			element = grammarAccess.getDelegateAccess().getNameIDTerminalRuleCall_1_0();
+			return obj;
+		}
+		return null;
+	}
+
+}
+
+// "{"
+protected class Delegate_LeftCurlyBracketKeyword_2 extends KeywordToken  {
+	
+	public Delegate_LeftCurlyBracketKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getDelegateAccess().getLeftCurlyBracketKeyword_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Delegate_NameAssignment_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// methods+=Method*
+protected class Delegate_MethodsAssignment_3 extends AssignmentToken  {
+	
+	public Delegate_MethodsAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getDelegateAccess().getMethodsAssignment_3();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Method_Group(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("methods",false)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("methods");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getMethodRule().getType().getClassifier())) {
+				type = AssignmentType.PARSER_RULE_CALL;
+				element = grammarAccess.getDelegateAccess().getMethodsMethodParserRuleCall_3_0(); 
+				consumed = obj;
+				return param;
+			}
+		}
+		return null;
+	}
+
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		if(value == inst.getEObject() && !inst.isConsumed()) return null;
+		switch(index) {
+			case 0: return new Delegate_MethodsAssignment_3(lastRuleCallOrigin, next, actIndex, consumed);
+			case 1: return new Delegate_LeftCurlyBracketKeyword_2(lastRuleCallOrigin, next, actIndex, consumed);
+			default: return null;
+		}	
+	}	
+}
+
+// "}"
+protected class Delegate_RightCurlyBracketKeyword_4 extends KeywordToken  {
+	
+	public Delegate_RightCurlyBracketKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getDelegateAccess().getRightCurlyBracketKeyword_4();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Delegate_MethodsAssignment_3(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new Delegate_LeftCurlyBracketKeyword_2(lastRuleCallOrigin, this, 1, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+
+/************ end Rule Delegate ****************/
 
 
 /************ begin Rule TypeLib ****************
