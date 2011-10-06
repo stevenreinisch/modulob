@@ -19,11 +19,17 @@ import org.eclipse.xpand2.output.OutputImpl;
 import org.eclipse.xtend.type.impl.java.JavaBeansMetaModel;
 import org.osgi.framework.Bundle;
 
+import com.google.common.collect.ImmutableList;
+
 import de.dubmas.modulob.ui.internal.SystemDslActivator;
 import de.dubmas.modulob.ui.wizard.SystemDslProjectCreator;
 import de.dubmas.modulob.util.ShellCommandExecutor;
 
 public class TheProjectCreator extends SystemDslProjectCreator{
+	
+	public TheProjectCreator() {
+		SRC_FOLDER_LIST = ImmutableList.of(SRC_ROOT);
+	}
 	
 	@Override
 	protected List<String> getRequiredBundles() {

@@ -1,17 +1,18 @@
 
-migration + ui
---------------
+- systemDSL new project wizard: text
 
-- overall concept: 
-	- how is migration created
-	- how are related models created/updated
-		- how is migration model stored? as xmi? as xtext dsl?
+- comments associator for serialization
+- add "_" to file name if new entity model version created
 
-- action for creation of new entity model version
-- wizard for creation of new version (new version must be specified)
-- model cloning
 
-- how to handle diff model?
-- supply EntityModelsSelectionPage with paths of selected files
-- read entity models from these paths and supply EntityMappingWizard with these models
-- EntityMappingWizard re-adds pages if entity models are set
+
+ChangeLog:
+
+- PublicEntityFactory -> EntityFactory
+- AllPublicEntities.h -> AllEntities.h
+- Notifications.h -> AllNotifications.h
+
+
+Migration:
+- all DAOs have version in name
+- remove ';' at end of DI_INJECT

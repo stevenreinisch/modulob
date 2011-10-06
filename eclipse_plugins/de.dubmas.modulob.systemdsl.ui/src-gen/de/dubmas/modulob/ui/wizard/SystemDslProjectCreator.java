@@ -24,7 +24,7 @@ public class SystemDslProjectCreator extends AbstractPluginProjectCreator {
 
 	protected static final String SRC_ROOT = "src";
 	protected static final String SRC_GEN_ROOT = "src-gen";
-	protected final List<String> SRC_FOLDER_LIST = ImmutableList.of(SRC_ROOT, SRC_GEN_ROOT);
+	protected List<String> SRC_FOLDER_LIST = ImmutableList.of(SRC_ROOT, SRC_GEN_ROOT);
 
 	@Override
 	protected SystemDslProjectInfo getProjectInfo() {

@@ -29,7 +29,7 @@ behaviours for system «this.projectName» version "1.0"
 «ENDDEFINE»
 
 «DEFINE typeLib FOR SystemDslProjectInfo»
-«FILE "src/lib.modulob"-»
+«FILE "src/" + this.projectName + "/" + "lib.modulob"-»
 primitive type Void
 primitive type Timestamp
 primitive type Decimal
