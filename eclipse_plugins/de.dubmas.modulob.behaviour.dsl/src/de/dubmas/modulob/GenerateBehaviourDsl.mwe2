@@ -5,7 +5,7 @@ import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
 var grammarURI = "classpath:/de/dubmas/modulob/BehaviourDsl.xtext"
-var file.extensions = "behav"
+var file.extensions = "mobe"
 var projectName = "de.dubmas.modulob.behaviour.dsl"
 var runtimeProject = "../${projectName}"
 

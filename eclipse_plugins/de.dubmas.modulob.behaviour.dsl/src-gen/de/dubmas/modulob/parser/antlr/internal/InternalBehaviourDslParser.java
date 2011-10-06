@@ -21,18 +21,20 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalBehaviourDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'behaviours for system'", "'version'", "'behaviour'", "'{'", "'}'", "'interface'", "'reacts to'", "'as'", "'.'", "'by calling'", "':'", "'primitive type'", "'any type'", "'-'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_DOC_COMMENT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'behaviours for system'", "'version'", "'behaviour'", "'{'", "'}'", "'interface'", "'reacts to'", "'as'", "'.'", "'by calling'", "':'", "'primitive type'", "'any type'", "'-'"
     };
     public static final int RULE_ID=5;
+    public static final int RULE_DOC_COMMENT=7;
+    public static final int T__25=25;
     public static final int T__24=24;
     public static final int T__23=23;
     public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=10;
+    public static final int RULE_ANY_OTHER=11;
     public static final int T__21=21;
     public static final int T__20=20;
-    public static final int RULE_SL_COMMENT=8;
+    public static final int RULE_SL_COMMENT=9;
     public static final int EOF=-1;
-    public static final int RULE_ML_COMMENT=7;
+    public static final int RULE_ML_COMMENT=8;
     public static final int T__19=19;
     public static final int RULE_STRING=4;
     public static final int T__16=16;
@@ -40,11 +42,10 @@ public class InternalBehaviourDslParser extends AbstractInternalAntlrParser {
     public static final int T__18=18;
     public static final int T__17=17;
     public static final int T__12=12;
-    public static final int T__11=11;
     public static final int T__14=14;
     public static final int T__13=13;
     public static final int RULE_INT=6;
-    public static final int RULE_WS=9;
+    public static final int RULE_WS=10;
 
     // delegates
     // delegators
@@ -140,7 +141,7 @@ public class InternalBehaviourDslParser extends AbstractInternalAntlrParser {
             // ../de.dubmas.modulob.behaviour.dsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalBehaviourDsl.g:80:1: (otherlv_0= 'behaviours for system' ( ( ruleQualifiedName ) ) otherlv_2= 'version' ( (lv_version_3_0= RULE_STRING ) ) ( (lv_behaviours_4_0= ruleBehaviour ) )* )
             // ../de.dubmas.modulob.behaviour.dsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalBehaviourDsl.g:80:3: otherlv_0= 'behaviours for system' ( ( ruleQualifiedName ) ) otherlv_2= 'version' ( (lv_version_3_0= RULE_STRING ) ) ( (lv_behaviours_4_0= ruleBehaviour ) )*
             {
-            otherlv_0=(Token)match(input,11,FOLLOW_11_in_ruleBehaviouralModel122); 
+            otherlv_0=(Token)match(input,12,FOLLOW_12_in_ruleBehaviouralModel122); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getBehaviouralModelAccess().getBehavioursForSystemKeyword_0());
                 
@@ -172,7 +173,7 @@ public class InternalBehaviourDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleBehaviouralModel157); 
+            otherlv_2=(Token)match(input,13,FOLLOW_13_in_ruleBehaviouralModel157); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getBehaviouralModelAccess().getVersionKeyword_2());
                 
@@ -208,7 +209,7 @@ public class InternalBehaviourDslParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==13) ) {
+                if ( (LA1_0==14) ) {
                     alt1=1;
                 }
 
@@ -328,7 +329,7 @@ public class InternalBehaviourDslParser extends AbstractInternalAntlrParser {
             // ../de.dubmas.modulob.behaviour.dsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalBehaviourDsl.g:160:1: (otherlv_0= 'behaviour' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_reactions_3_0= ruleReaction ) )* otherlv_4= '}' )
             // ../de.dubmas.modulob.behaviour.dsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalBehaviourDsl.g:160:3: otherlv_0= 'behaviour' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_reactions_3_0= ruleReaction ) )* otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,13,FOLLOW_13_in_ruleBehaviour284); 
+            otherlv_0=(Token)match(input,14,FOLLOW_14_in_ruleBehaviour284); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getBehaviourAccess().getBehaviourKeyword_0());
                 
@@ -358,7 +359,7 @@ public class InternalBehaviourDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,14,FOLLOW_14_in_ruleBehaviour318); 
+            otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleBehaviour318); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getBehaviourAccess().getLeftCurlyBracketKeyword_2());
                 
@@ -368,7 +369,7 @@ public class InternalBehaviourDslParser extends AbstractInternalAntlrParser {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==16) ) {
+                if ( (LA2_0==17) ) {
                     alt2=1;
                 }
 
@@ -411,7 +412,7 @@ public class InternalBehaviourDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,15,FOLLOW_15_in_ruleBehaviour352); 
+            otherlv_4=(Token)match(input,16,FOLLOW_16_in_ruleBehaviour352); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getBehaviourAccess().getRightCurlyBracketKeyword_4());
                 
@@ -492,7 +493,7 @@ public class InternalBehaviourDslParser extends AbstractInternalAntlrParser {
             // ../de.dubmas.modulob.behaviour.dsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalBehaviourDsl.g:229:1: (otherlv_0= 'interface' ( ( ruleQualifiedName ) ) otherlv_2= 'reacts to' ( ( ruleQualifiedName ) ) (otherlv_4= 'as' ( (lv_order_5_0= RULE_INT ) ) otherlv_6= '.' )? otherlv_7= 'by calling' ( ( ruleReferenceableMethodName ) ) )
             // ../de.dubmas.modulob.behaviour.dsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalBehaviourDsl.g:229:3: otherlv_0= 'interface' ( ( ruleQualifiedName ) ) otherlv_2= 'reacts to' ( ( ruleQualifiedName ) ) (otherlv_4= 'as' ( (lv_order_5_0= RULE_INT ) ) otherlv_6= '.' )? otherlv_7= 'by calling' ( ( ruleReferenceableMethodName ) )
             {
-            otherlv_0=(Token)match(input,16,FOLLOW_16_in_ruleReaction435); 
+            otherlv_0=(Token)match(input,17,FOLLOW_17_in_ruleReaction435); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getReactionAccess().getInterfaceKeyword_0());
                 
@@ -524,7 +525,7 @@ public class InternalBehaviourDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleReaction470); 
+            otherlv_2=(Token)match(input,18,FOLLOW_18_in_ruleReaction470); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getReactionAccess().getReactsToKeyword_2());
                 
@@ -560,14 +561,14 @@ public class InternalBehaviourDslParser extends AbstractInternalAntlrParser {
             int alt3=2;
             int LA3_0 = input.LA(1);
 
-            if ( (LA3_0==18) ) {
+            if ( (LA3_0==19) ) {
                 alt3=1;
             }
             switch (alt3) {
                 case 1 :
                     // ../de.dubmas.modulob.behaviour.dsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalBehaviourDsl.g:267:4: otherlv_4= 'as' ( (lv_order_5_0= RULE_INT ) ) otherlv_6= '.'
                     {
-                    otherlv_4=(Token)match(input,18,FOLLOW_18_in_ruleReaction506); 
+                    otherlv_4=(Token)match(input,19,FOLLOW_19_in_ruleReaction506); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getReactionAccess().getAsKeyword_4_0());
                         
@@ -597,7 +598,7 @@ public class InternalBehaviourDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_6=(Token)match(input,19,FOLLOW_19_in_ruleReaction540); 
+                    otherlv_6=(Token)match(input,20,FOLLOW_20_in_ruleReaction540); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getReactionAccess().getFullStopKeyword_4_2());
                         
@@ -607,7 +608,7 @@ public class InternalBehaviourDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,20,FOLLOW_20_in_ruleReaction554); 
+            otherlv_7=(Token)match(input,21,FOLLOW_21_in_ruleReaction554); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getReactionAccess().getByCallingKeyword_5());
                 
@@ -726,7 +727,7 @@ public class InternalBehaviourDslParser extends AbstractInternalAntlrParser {
                 int alt5=2;
                 int LA5_0 = input.LA(1);
 
-                if ( (LA5_0==21) ) {
+                if ( (LA5_0==22) ) {
                     alt5=1;
                 }
 
@@ -735,7 +736,7 @@ public class InternalBehaviourDslParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../de.dubmas.modulob.behaviour.dsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalBehaviourDsl.g:341:2: kw= ':' (this_ID_2= RULE_ID )?
             	    {
-            	    kw=(Token)match(input,21,FOLLOW_21_in_ruleReferenceableMethodName684); 
+            	    kw=(Token)match(input,22,FOLLOW_22_in_ruleReferenceableMethodName684); 
 
             	            current.merge(kw);
             	            newLeafNode(kw, grammarAccess.getReferenceableMethodNameAccess().getColonKeyword_1_0()); 
@@ -846,7 +847,7 @@ public class InternalBehaviourDslParser extends AbstractInternalAntlrParser {
             // ../de.dubmas.modulob.behaviour.dsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalBehaviourDsl.g:376:1: (otherlv_0= 'primitive type' ( (lv_name_1_0= RULE_ID ) ) )
             // ../de.dubmas.modulob.behaviour.dsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalBehaviourDsl.g:376:3: otherlv_0= 'primitive type' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,22,FOLLOW_22_in_rulePrimitive798); 
+            otherlv_0=(Token)match(input,23,FOLLOW_23_in_rulePrimitive798); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getPrimitiveAccess().getPrimitiveTypeKeyword_0());
                 
@@ -949,7 +950,7 @@ public class InternalBehaviourDslParser extends AbstractInternalAntlrParser {
             // ../de.dubmas.modulob.behaviour.dsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalBehaviourDsl.g:419:1: (otherlv_0= 'any type' ( (lv_name_1_0= RULE_ID ) ) )
             // ../de.dubmas.modulob.behaviour.dsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalBehaviourDsl.g:419:3: otherlv_0= 'any type' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,23,FOLLOW_23_in_ruleAny903); 
+            otherlv_0=(Token)match(input,24,FOLLOW_24_in_ruleAny903); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getAnyAccess().getAnyTypeKeyword_0());
                 
@@ -1497,14 +1498,14 @@ public class InternalBehaviourDslParser extends AbstractInternalAntlrParser {
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( (LA6_0==24) ) {
+            if ( (LA6_0==25) ) {
                 alt6=1;
             }
             switch (alt6) {
                 case 1 :
                     // ../de.dubmas.modulob.behaviour.dsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalBehaviourDsl.g:640:2: kw= '-'
                     {
-                    kw=(Token)match(input,24,FOLLOW_24_in_ruleEFloatObject1476); 
+                    kw=(Token)match(input,25,FOLLOW_25_in_ruleEFloatObject1476); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEFloatObjectAccess().getHyphenMinusKeyword_0()); 
@@ -1539,7 +1540,7 @@ public class InternalBehaviourDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            kw=(Token)match(input,19,FOLLOW_19_in_ruleEFloatObject1514); 
+            kw=(Token)match(input,20,FOLLOW_20_in_ruleEFloatObject1514); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getEFloatObjectAccess().getFullStopKeyword_2()); 
@@ -1638,7 +1639,7 @@ public class InternalBehaviourDslParser extends AbstractInternalAntlrParser {
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( (LA8_0==19) ) {
+                if ( (LA8_0==20) ) {
                     alt8=1;
                 }
 
@@ -1647,7 +1648,7 @@ public class InternalBehaviourDslParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../de.dubmas.modulob.behaviour.dsl/src-gen/de/dubmas/modulob/parser/antlr/internal/InternalBehaviourDsl.g:694:2: kw= '.' this_ID_2= RULE_ID
             	    {
-            	    kw=(Token)match(input,19,FOLLOW_19_in_ruleQualifiedName1645); 
+            	    kw=(Token)match(input,20,FOLLOW_20_in_ruleQualifiedName1645); 
 
             	            current.merge(kw);
             	            newLeafNode(kw, grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
@@ -1694,41 +1695,41 @@ public class InternalBehaviourDslParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_ruleBehaviouralModel_in_entryRuleBehaviouralModel75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBehaviouralModel85 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_ruleBehaviouralModel122 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleBehaviouralModel145 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleBehaviouralModel157 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleBehaviouralModel174 = new BitSet(new long[]{0x0000000000002002L});
-    public static final BitSet FOLLOW_ruleBehaviour_in_ruleBehaviouralModel200 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_12_in_ruleBehaviouralModel122 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleBehaviouralModel145 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleBehaviouralModel157 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleBehaviouralModel174 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_ruleBehaviour_in_ruleBehaviouralModel200 = new BitSet(new long[]{0x0000000000004002L});
     public static final BitSet FOLLOW_ruleBehaviour_in_entryRuleBehaviour237 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBehaviour247 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_ruleBehaviour284 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleBehaviour301 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleBehaviour318 = new BitSet(new long[]{0x0000000000018000L});
-    public static final BitSet FOLLOW_ruleReaction_in_ruleBehaviour339 = new BitSet(new long[]{0x0000000000018000L});
-    public static final BitSet FOLLOW_15_in_ruleBehaviour352 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_ruleBehaviour284 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleBehaviour301 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleBehaviour318 = new BitSet(new long[]{0x0000000000030000L});
+    public static final BitSet FOLLOW_ruleReaction_in_ruleBehaviour339 = new BitSet(new long[]{0x0000000000030000L});
+    public static final BitSet FOLLOW_16_in_ruleBehaviour352 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleReaction_in_entryRuleReaction388 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleReaction398 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_ruleReaction435 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleReaction458 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleReaction470 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleReaction493 = new BitSet(new long[]{0x0000000000140000L});
-    public static final BitSet FOLLOW_18_in_ruleReaction506 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleReaction523 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleReaction540 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleReaction554 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_17_in_ruleReaction435 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleReaction458 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleReaction470 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleReaction493 = new BitSet(new long[]{0x0000000000280000L});
+    public static final BitSet FOLLOW_19_in_ruleReaction506 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleReaction523 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleReaction540 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleReaction554 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_ruleReferenceableMethodName_in_ruleReaction577 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleReferenceableMethodName_in_entryRuleReferenceableMethodName614 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleReferenceableMethodName625 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleReferenceableMethodName665 = new BitSet(new long[]{0x0000000000200002L});
-    public static final BitSet FOLLOW_21_in_ruleReferenceableMethodName684 = new BitSet(new long[]{0x0000000000200022L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleReferenceableMethodName700 = new BitSet(new long[]{0x0000000000200002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleReferenceableMethodName665 = new BitSet(new long[]{0x0000000000400002L});
+    public static final BitSet FOLLOW_22_in_ruleReferenceableMethodName684 = new BitSet(new long[]{0x0000000000400022L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleReferenceableMethodName700 = new BitSet(new long[]{0x0000000000400002L});
     public static final BitSet FOLLOW_rulePrimitive_in_entryRulePrimitive751 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRulePrimitive761 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rulePrimitive798 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_23_in_rulePrimitive798 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_RULE_ID_in_rulePrimitive815 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAny_in_entryRuleAny856 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAny866 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_ruleAny903 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_24_in_ruleAny903 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleAny920 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStringValue_in_entryRuleStringValue965 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleStringValue975 = new BitSet(new long[]{0x0000000000000002L});
@@ -1747,14 +1748,14 @@ public class InternalBehaviourDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleEFloatObject_in_ruleFloatValue1390 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEFloatObject_in_entryRuleEFloatObject1426 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleEFloatObject1437 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_ruleEFloatObject1476 = new BitSet(new long[]{0x0000000000080040L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleEFloatObject1494 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleEFloatObject1514 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_25_in_ruleEFloatObject1476 = new BitSet(new long[]{0x0000000000100040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleEFloatObject1494 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleEFloatObject1514 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_RULE_INT_in_ruleEFloatObject1529 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName1575 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName1586 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName1626 = new BitSet(new long[]{0x0000000000080002L});
-    public static final BitSet FOLLOW_19_in_ruleQualifiedName1645 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName1660 = new BitSet(new long[]{0x0000000000080002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName1626 = new BitSet(new long[]{0x0000000000100002L});
+    public static final BitSet FOLLOW_20_in_ruleQualifiedName1645 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName1660 = new BitSet(new long[]{0x0000000000100002L});
 
 }
