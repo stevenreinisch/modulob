@@ -9,6 +9,7 @@ public class ValidationIssueCodes {
 	public static final String UUID_REQUIRED_CODE = "UUID_REQUIRED_CODE";
 	public static final String ENTITY_SUPER_SAME_MODULE_CODE = "ENTITY_SUPER_SAME_MODULE_CODE";
 	public static final String FEATURE_NAME_CODE = "FEATURE_NAME_CODE";
+	public static final String FEATURE_MULTI_TYPE_CODE = "FEATURE_MULTI_TYPE_CODE";
 	public static final String FEATURE_NOT_ID_CODE = "FEATURE_NOT_ID_CODE";
 	public static final String DEFAULT_VALUE_EXISTENCE_CODE = "DEFAULT_VALUE_EXISTENCE_CODE";
 	public static final String DEFAULT_VALUE_CORRECTNESS_CODE = "DEFAULT_VALUE_CORRECTNESS_CODE";

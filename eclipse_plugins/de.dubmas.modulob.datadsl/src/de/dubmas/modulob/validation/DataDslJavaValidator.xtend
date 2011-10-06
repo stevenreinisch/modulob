@@ -301,4 +301,22 @@ class DataDslJavaValidator extends AbstractDataDslJavaValidator {
 					null )
 		}
 	}
+	
+	@Check
+	def checkIfFeatureCanBeMultiPrimitive(Feature f){
+		var e = (f.eContainer as Entity)
+		if(e.isCoreDataPersistent){
+			if(f.type.isMulti 
+			   &&
+			   TypesPackage::eINSTANCE.primitive.isInstance(f.type.referenced)
+			  )
+			{
+				error ("Set of primitive type not allowed if entity is Core Data persistent" ,
+					   ModulobPackage::eINSTANCE.feature_Type, 
+					   0 ,
+					   ValidationIssueCodes::FEATURE_MULTI_TYPE_CODE,
+					   null )
+			}
+		}
+	}
 }
