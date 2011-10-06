@@ -97,4 +97,5 @@
 «AROUND de::dubmas::modulob::generator::templates::AllHeaders::moduleHeaderImports FOR Module»
 «targetDef.proceed()»
 #import "«this.notificationsFileName() + ".h"»"
+#import "«this.notificationTriggerName() + ".h"»"
 «ENDAROUND»
