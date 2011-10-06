@@ -1,4 +1,4 @@
-package de.dubmas.modulob.common.ui.wizard;
+package de.dubmas.modulob.ui.wizard.ui;
 
 import java.lang.reflect.InvocationTargetException;
 

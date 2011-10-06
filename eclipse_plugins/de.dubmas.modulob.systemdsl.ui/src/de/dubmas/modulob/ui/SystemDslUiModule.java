@@ -19,7 +19,7 @@ public class SystemDslUiModule extends de.dubmas.modulob.ui.AbstractSystemDslUiM
 	}
 	
 	public Class<? extends org.eclipse.xtext.ui.wizard.IProjectCreator> bindIProjectCreator() {
-		return de.dubmas.modulob.ui.wizard.TheProjectCreator.class;
+		return de.dubmas.modulob.ui.wizard.util.TheProjectCreator.class;
 	}
 	
 	public Class<? extends IHighlightingConfiguration> bindIHighlightingConfiguration() {

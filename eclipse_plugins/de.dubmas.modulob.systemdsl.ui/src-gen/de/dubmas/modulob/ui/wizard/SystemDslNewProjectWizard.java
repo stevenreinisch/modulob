@@ -32,7 +32,7 @@ public class SystemDslNewProjectWizard extends XtextNewProjectWizard {
 	 */
 	@Override
 	protected IProjectInfo getProjectInfo() {
-		de.dubmas.modulob.ui.wizard.SystemDslProjectInfo projectInfo = new de.dubmas.modulob.ui.wizard.SystemDslProjectInfo();
+		de.dubmas.modulob.ui.wizard.util.SystemDslProjectInfo projectInfo = new de.dubmas.modulob.ui.wizard.util.SystemDslProjectInfo();
 		projectInfo.setProjectName(mainPage.getProjectName());
 		return projectInfo;
 	}

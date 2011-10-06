@@ -1,4 +1,4 @@
-package de.dubmas.modulob.ui.wizard;
+package de.dubmas.modulob.ui.wizard.util;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -20,6 +20,7 @@ import org.eclipse.xtend.type.impl.java.JavaBeansMetaModel;
 import org.osgi.framework.Bundle;
 
 import de.dubmas.modulob.ui.internal.SystemDslActivator;
+import de.dubmas.modulob.ui.wizard.SystemDslProjectCreator;
 import de.dubmas.modulob.util.ShellCommandExecutor;
 
 public class TheProjectCreator extends SystemDslProjectCreator{
@@ -62,7 +63,7 @@ public class TheProjectCreator extends SystemDslProjectCreator{
 		execCtx.registerMetaModel(new JavaBeansMetaModel());
 
 		XpandFacade facade = XpandFacade.create(execCtx);
-		facade.evaluate("de::dubmas::modulob::ui::wizard::SystemDslNewProject::main", getProjectInfo());
+		facade.evaluate("de::dubmas::modulob::ui::wizard::util::SystemDslNewProject::main", getProjectInfo());
 
 		copyFormattingFiles(project);
 		

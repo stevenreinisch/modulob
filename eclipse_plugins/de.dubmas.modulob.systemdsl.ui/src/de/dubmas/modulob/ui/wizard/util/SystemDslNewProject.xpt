@@ -1,9 +1,10 @@
 «IMPORT de::dubmas::modulob::ui::wizard»
 
-«DEFINE main FOR SystemDslProjectInfo»
-«EXPAND model    FOR this»
-«EXPAND workflow FOR this»
-«EXPAND typeLib  FOR this»
+«DEFINE main             FOR SystemDslProjectInfo»
+«EXPAND model            FOR this»
+«EXPAND behaviouralModel FOR this»
+«EXPAND workflow         FOR this»
+«EXPAND typeLib          FOR this»
 «ENDDEFINE»
 
 «DEFINE model FOR SystemDslProjectInfo»
@@ -14,8 +15,21 @@ system «this.projectName» consistsOf
 «ENDFILE»
 «ENDDEFINE»
 
+«DEFINE behaviouralModel FOR SystemDslProjectInfo»
+«FILE "src/" + this.projectName + "/" + this.projectName + ".mobe"-»
+behaviours for system «this.projectName» version "1.0"
+	/*
+	behaviour SystemStart {
+		interface <aModule.name>.AnInterface
+		reacts to <aModule.name>.aNotification
+		by calling foo:bar:
+	} 
+	*/
+«ENDFILE»
+«ENDDEFINE»
+
 «DEFINE typeLib FOR SystemDslProjectInfo»
-«FILE "src/" + this.projectName + "/lib.modulob"-»
+«FILE "src/lib.modulob"-»
 primitive type Void
 primitive type Timestamp
 primitive type Decimal

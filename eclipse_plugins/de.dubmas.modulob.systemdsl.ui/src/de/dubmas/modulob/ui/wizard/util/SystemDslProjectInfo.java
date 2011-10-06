@@ -1,4 +1,4 @@
-package de.dubmas.modulob.ui.wizard;
+package de.dubmas.modulob.ui.wizard.util;
 
 import org.eclipse.xtext.ui.wizard.DefaultProjectInfo;
 

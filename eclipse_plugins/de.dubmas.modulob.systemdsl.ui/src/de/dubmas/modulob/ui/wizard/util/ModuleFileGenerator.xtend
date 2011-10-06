@@ -1,5 +1,4 @@
-package de.dubmas.modulob.common.ui.wizard
-
+package de.dubmas.modulob.ui.wizard.util
 
 import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.emf.ecore.resource.Resource
@@ -28,7 +27,7 @@ class ModuleFileGenerator {
 	interfaces for module «fqModuleName» version "1.0"
 	
 	interface AnInterface {
-		Void foo:String param1 bar:Timestamp param2
+		Void foo:String value bar:Timestamp date
 	}
 	'''
 	
@@ -46,7 +45,8 @@ class ModuleFileGenerator {
 	notifications for module «fqModuleName» version "1.0"
 	
 	notification aNotification {
-		String contextAttribute;
+		String value;
+		Timestamp date;
 	}
 	'''
 }

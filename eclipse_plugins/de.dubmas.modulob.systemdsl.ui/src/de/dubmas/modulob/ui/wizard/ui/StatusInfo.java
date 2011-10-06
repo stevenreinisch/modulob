@@ -1,4 +1,4 @@
-package de.dubmas.modulob.common.ui.wizard;
+package de.dubmas.modulob.ui.wizard.ui;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IStatus;

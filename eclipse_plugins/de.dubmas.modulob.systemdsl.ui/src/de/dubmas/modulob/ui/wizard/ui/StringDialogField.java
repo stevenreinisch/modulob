@@ -1,4 +1,4 @@
-package de.dubmas.modulob.common.ui.wizard;
+package de.dubmas.modulob.ui.wizard.ui;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;

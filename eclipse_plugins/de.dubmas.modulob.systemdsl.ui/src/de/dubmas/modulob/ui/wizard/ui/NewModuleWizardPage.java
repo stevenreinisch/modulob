@@ -1,4 +1,4 @@
-package de.dubmas.modulob.common.ui.wizard;
+package de.dubmas.modulob.ui.wizard.ui;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -26,6 +26,8 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.xtext.generator.AbstractFileSystemAccess;
 import org.eclipse.xtext.generator.JavaIoFileSystemAccess;
+
+import de.dubmas.modulob.ui.wizard.util.ModuleFileGenerator;
 
 public class NewModuleWizardPage extends NewContainerWizardPage {
 
