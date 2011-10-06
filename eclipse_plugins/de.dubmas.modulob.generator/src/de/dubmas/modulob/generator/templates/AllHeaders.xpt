@@ -1,0 +1,50 @@
+«IMPORT modulob»
+«IMPORT system»
+
+«EXTENSION de::dubmas::modulob::generator::templates::Factories»
+«EXTENSION de::dubmas::modulob::generator::templates::Types»
+
+«DEFINE main FOR Module»
+	«EXPAND allEntitiesHeader     FOR this.entityModel»
+	«EXPAND allInterfaceHeaders   FOR this.interfaceModel»
+	«EXPAND moduleHeader          FOR this»
+«ENDDEFINE»
+
+«DEFINE moduleHeader FOR Module»
+«FILE this.name + "/public/" + this.name + "Headers.h"-»
+	«EXPAND moduleHeaderImports FOR this»
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE moduleHeaderImports FOR Module»
+#import "«this.name»AllInterfaces.h"
+#import "«this.name»AllEntities.h"
+«ENDDEFINE»
+
+«DEFINE allInterfaceHeaders FOR InterfaceModel»
+«FILE this.module.name + "/public/" + this.module.name + "AllInterfaces.h"-»
+«FOREACH this.interfaces AS i-»
+#import "«i.protocolTypeName()».h"
+«ENDFOREACH»
+
+«EXPAND interfaceAccessMacros FOR this»
+
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE interfaceAccessMacros FOR InterfaceModel-»
+«FOREACH this.interfaces AS i-»
+#define «i.typeName() + "Access"» («i.protocolTypeRef()»)DI_INJECT(@protocol(«i.protocolTypeName()»))
+«ENDFOREACH»
+«ENDDEFINE»
+
+«DEFINE allEntitiesHeader FOR EntityModel-»
+«FILE this.module.name + "/public/" + this.module.name + "AllEntities.h"-»
+«FOREACH this.entities AS entity-»
+#import "«entity.typeName()».h"
+«ENDFOREACH»
+	
+#import "«this.entities.first().factoryName()».h"
+
+«ENDFILE»
+«ENDDEFINE»

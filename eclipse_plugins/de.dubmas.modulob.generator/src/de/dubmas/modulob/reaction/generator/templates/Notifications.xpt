@@ -30,19 +30,18 @@
 
 «DEFINE NotificationsHeader FOR Module-»
 «FILE this.name + "/public/" + this.notificationsFileName() + ".h"-»
-	#import <Foundation/Foundation.h>
+#import <Foundation/Foundation.h>
 
-	«FOREACH this.notificationModel.notifications AS e-»
-		«e.codeComment()»
-		extern NSString *const «e.notificationName()»;
+«FOREACH this.notificationModel.notifications AS e-»
+«e.codeComment()»
+extern NSString *const «e.notificationName()»;
 		
+«FOREACH e.features AS f-»
+	«f.codeComment()»
+	extern NSString *const «f.notificationFeatureKey(e)»;
+«ENDFOREACH»
 		
-		«FOREACH e.features AS f-»
-		«f.codeComment()»
-		extern NSString *const «f.notificationFeatureKey(e)»;
-		«ENDFOREACH»
-		
-	«ENDFOREACH»
+«ENDFOREACH»
 «ENDFILE»
 «ENDDEFINE»
 

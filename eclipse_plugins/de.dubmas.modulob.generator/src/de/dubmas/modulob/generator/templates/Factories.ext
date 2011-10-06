@@ -28,7 +28,7 @@ factoryProtocolName(Module m, String prefix):
 */
 
 factoryName(Module m, String prefix):
-	m.name + "Public" + prefix + "Factory"
+	m.name + prefix + "Factory"
 ;
 
 /*

@@ -60,7 +60,7 @@ notificationTriggerName(Module m):
 ;
 
 notificationsFileName(Module m):
-	m.name + "Notifications"
+	m.name + "AllNotifications"
 ;
 
 notificationFeatureKey(Feature f, Notification notification):

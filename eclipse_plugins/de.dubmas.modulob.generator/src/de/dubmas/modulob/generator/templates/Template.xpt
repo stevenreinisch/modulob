@@ -14,7 +14,7 @@
 
 «DEFINE main FOR Module-»
 	«EXPAND de::dubmas::modulob::generator::templates::Protocols::main FOR this»
-	«EXPAND de::dubmas::modulob::generator::templates::AllEntitiesHeader::main FOR this»
+	«EXPAND de::dubmas::modulob::generator::templates::AllHeaders::main FOR this»
 	
 	«EXPAND de::dubmas::modulob::generator::templates::BaseClasses::main FOR this»
 	«EXPAND de::dubmas::modulob::generator::templates::Factories::main FOR this»

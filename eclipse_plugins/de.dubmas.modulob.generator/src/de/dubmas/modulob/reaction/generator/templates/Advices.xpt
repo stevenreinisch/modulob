@@ -1,3 +1,4 @@
+«IMPORT system»
 «IMPORT modulob»
 «IMPORT behaviour»
 
@@ -92,3 +93,8 @@
 «DEFINE ExtractAndForwardMehtodSignature FOR Reaction»
 	-(void)«this.extractAndForwardMethodName()»:(NSNotification*)n
 «ENDDEFINE»
+
+«AROUND de::dubmas::modulob::generator::templates::AllHeaders::moduleHeaderImports FOR Module»
+«targetDef.proceed()»
+#import "«this.notificationsFileName() + ".h"»"
+«ENDAROUND»
