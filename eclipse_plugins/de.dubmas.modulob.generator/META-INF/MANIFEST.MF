@@ -17,4 +17,5 @@ Export-Package: de.dubmas.modulob.generator.templates,
  de.dubmas.modulob.generator.templates.coredata,
  de.dubmas.modulob.generator.templates.json,
  de.dubmas.modulob.generator.transformation,
- de.dubmas.modulob.generator.workflow
+ de.dubmas.modulob.generator.workflow,
+ de.dubmas.modulob.reaction
