@@ -106,10 +106,10 @@ public class AddConditionalNodeFeature extends AbstractAddShapeFeature{
 	
 	private Polygon createPolygon(ContainerShape containerShape){
 		List<Point> points = new ArrayList<Point>(4);
-		Point p1 = Graphiti.getGaService().createPoint(60, 100);
-		Point p2 = Graphiti.getGaService().createPoint(80, 120);
-		Point p3 = Graphiti.getGaService().createPoint(60, 140);
-		Point p4 = Graphiti.getGaService().createPoint(40, 120);
+		Point p1 = Graphiti.getGaService().createPoint(20, 0);
+		Point p2 = Graphiti.getGaService().createPoint(40, 20);
+		Point p3 = Graphiti.getGaService().createPoint(20, 40);
+		Point p4 = Graphiti.getGaService().createPoint(0, 20);
 		points.add(p1);
 		points.add(p2);
 		points.add(p3);
