@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+  <extension point="org.eclipse.graphiti.ui.diagramTypes">
+    <diagramType
+      description="This is the diagram type for modeling modulob state machines"
+      id="de.dubmas.modulob.state.diagramtype"
+      name="modulob State Machine Diagram Type"
+      type="modulob state machine">
+    </diagramType>
+  </extension>
+ 
+  <extension point="org.eclipse.graphiti.ui.diagramTypeProviders">
+    <diagramTypeProvider
+      class="de.dubmas.modulob.state.diagram.graphiti.DiagramTypeProvider"
+      description="This is the editor for modeling modulob state machines."
+      id="de.dubmas.modulob.state.diagramtypeprovider"
+      name="modulob state machine editor">
+      <diagramType id="de.dubmas.modulob.state.diagramtype">
+      </diagramType>
+    </diagramTypeProvider>
+  </extension>
+</plugin>
