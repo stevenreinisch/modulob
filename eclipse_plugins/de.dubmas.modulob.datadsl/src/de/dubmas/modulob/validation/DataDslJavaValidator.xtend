@@ -319,4 +319,15 @@ class DataDslJavaValidator extends AbstractDataDslJavaValidator {
 			}
 		}
 	}
+	
+	@Check
+	def checkIfFeatureDefinedInSuperHierarchy(Feature f){
+		if(f.existInSuperHierarchy((f.eContainer as Entity))){
+			error ("Feature is already defined in entity's super hierarchy.",
+					   ModulobPackage::eINSTANCE.feature_Name, 
+					   0 ,
+					   ValidationIssueCodes::FEATURE_IN_HIERARCHY_CODE,
+					   null )
+		}
+	}
 }

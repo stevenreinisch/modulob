@@ -4,6 +4,7 @@ import de.dubmas.modulob.system.EntityModel
 
 import de.dubmas.modulob.ModulobPackage
 import de.dubmas.modulob.Entity
+import de.dubmas.modulob.Feature
 import de.dubmas.modulob.ConfigOption
 
 import de.dubmas.modulob.types.TypesPackage
@@ -64,5 +65,24 @@ class DataDslExtensions {
 		}else{
 			false
 		})
+	}
+	
+	def boolean existInSuperHierarchy(Feature f, Entity e){
+		if(e.^super == null){
+			false
+		} else {
+			if(e.^super.features.exists(f_ | f_.name == f.name
+											 &&
+											 f_.type.isMulti == f_.type.isMulti
+											 &&
+											 f_.type.referenced == f_.type.referenced
+			)){
+				return true
+			} else {
+				return f.existInSuperHierarchy(e.^super)
+			}
+		}
+		
+		false
 	}
 }

@@ -376,4 +376,48 @@ public class ValidatorTest extends AbstractXtextTests {
 		tester.validator().checkIfInverseNotCrossesModuleBoundaries(f2);
 		tester.diagnose().assertError(ValidationIssueCodes.INVERSE_MODULE_BOUNDARIES_CODE);
 	}
+	
+	public void testCheckIfFeatureDefinedInSuperHierarchy(){
+		/*
+		 * Build model fragment:
+		 * - hierarchy: e -> superE -> superSuperE
+		 * - superSuperE has same feature (equal name and type)
+		 */
+		Entity superSuperE = ModulobFactory.eINSTANCE.createEntity();
+		
+		Feature f1 = ModulobFactory.eINSTANCE.createFeature();
+		superSuperE.getFeatures().add(f1);
+		TypeRef tr1 = TypesFactory.eINSTANCE.createTypeRef();
+		tr1.setReferenced(superSuperE);
+		f1.setType(tr1);
+		
+		Entity superE = ModulobFactory.eINSTANCE.createEntity();
+		superE.setSuper(superSuperE);
+		
+		Entity e = ModulobFactory.eINSTANCE.createEntity();
+		e.setSuper(superE);
+		Feature f2 = ModulobFactory.eINSTANCE.createFeature();
+		e.getFeatures().add(f2);
+		TypeRef tr2 = TypesFactory.eINSTANCE.createTypeRef();
+		tr2.setReferenced(superSuperE);
+		f2.setType(tr2);
+		
+		/*
+		 * do test
+		 */
+		tester.validator().checkIfFeatureDefinedInSuperHierarchy(f2);
+		tester.diagnose().assertError(ValidationIssueCodes.FEATURE_IN_HIERARCHY_CODE);
+		
+		/*
+		 * change model:
+		 * - flatten hierarchy by one level
+		 */
+		superE.setSuper(null);
+		
+		/*
+		 * do test
+		 */
+		tester.validator().checkIfFeatureDefinedInSuperHierarchy(f2);
+		tester.diagnose().assertOK();
+	}
 }
