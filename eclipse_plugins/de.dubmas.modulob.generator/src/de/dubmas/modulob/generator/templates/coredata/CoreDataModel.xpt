@@ -232,8 +232,15 @@ static «namespace.daoName(version)» *«namespace.daoName(version).toFirstLower
 	«ENDIF»
 	[«this.featureName()» setDeleteRule:NSNullifyDeleteRule];
 	«IF this.type.isMulti»
+		«REM»comment
+		
+		We leave setMaxCount because xcode does not set this either. 
+		(As a result, maxCount == 0 at runtime) 
+		
 		[«this.featureName()» setMaxCount:UINT_MAX];
+		«ENDREM»
 	«ELSE»
+		[«this.featureName()» setMinCount:1];
 		[«this.featureName()» setMaxCount:1];
 	«ENDIF»
 «ENDDEFINE»
