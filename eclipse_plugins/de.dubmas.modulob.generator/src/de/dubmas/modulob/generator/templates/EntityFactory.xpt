@@ -19,7 +19,7 @@
 	«ENDFOREACH»
 
 	@interface «this.factoryName("Entity")»: NSObject{}
-	«FOREACH this.entityModel.entities AS e»
+	«FOREACH this.entityModel.entities.select(e|!e.isAbstract) AS e»
 		+(«e.typeRef()»)«e.factoryMethodName()»;
 	«ENDFOREACH»
 	@end
@@ -46,7 +46,7 @@
 	
 	@implementation «this.factoryName("Entity")»
 
-	«FOREACH this.entityModel.entities AS e»
+	«FOREACH this.entityModel.entities.select(e|!e.isAbstract) AS e»
 		+(«e.typeRef()»)«e.factoryMethodName()»
 		{
 			«IF e.isPersistent()»
