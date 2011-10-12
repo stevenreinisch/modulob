@@ -39,7 +39,7 @@
     [self.stateMachine update];
 }
 
-- (void) onDeleteChar {
+- (void) deleteChar {
     [self.pin removeLastObject];
     [self.stateMachine update];
 }
@@ -49,6 +49,60 @@
 
 - (void) enter_empty {
     self.pin = [[NSMutableArray new] autorelease];
+}
+
+#pragma mark guards
+
+- (NSNumber*) guard_partiallyFilled_to_empty {
+    BOOL result = NO;
+    
+    if ([pin count] == 0) {
+        result = YES;
+    }
+    
+    NSLog(@"evaluated guard_partiallyFilled_to_empty with result: %d", result);
+    
+    return [NSNumber numberWithBool:result];
+}
+
+- (NSNumber*) guard_partiallyFilled_to_partiallyFilled {
+    BOOL result = NO;
+    
+    if ([pin count] > 0 && [pin count] < MAX_PIN_DIGITS) {
+        result = YES;
+    }
+    
+    NSLog(@"evaluated guard_partiallyFilled_to_partiallyFilled with result: %d", result);
+    
+    return [NSNumber numberWithBool:result];
+}
+
+- (NSNumber*) guard_partiallyFilled_to_completelyFilled {
+    BOOL result = NO;
+    
+    if ([pin count] == MAX_PIN_DIGITS) {
+        result = YES;
+    }
+    
+    NSLog(@"evaluated guard_partiallyFilled_to_completelyFilled with result: %d", result);
+    
+    return [NSNumber numberWithBool:result];
+}
+
+- (NSNumber*) guard_completelyFilled_to_userAuthenticated {
+    BOOL result = NO;
+    
+    NSLog(@"evaluated guard_completelyFilled_to_userAuthenticated with result: %d", result);
+    
+    return [NSNumber numberWithBool:result];
+}
+
+- (NSNumber*) guard_completelyFilled_to_userNotAuthenticated {
+    BOOL result = NO;
+    
+    NSLog(@"evaluated guard_completelyFilled_to_userNotAuthenticated with result: %d", result);
+    
+    return [NSNumber numberWithBool:result];
 }
 
 @end

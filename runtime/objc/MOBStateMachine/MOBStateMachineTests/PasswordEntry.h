@@ -11,6 +11,8 @@
 #import "MOBStateMachine.h"
 #import "P_D_PasswordEntryStateHandler.h"
 
+#define MAX_PIN_DIGITS 4
+
 @interface PasswordEntry : NSObject <P_D_PasswordEntryStateHandler>
 
 /*
@@ -35,6 +37,6 @@
 /*
  * The last character in the pin field has been deleted.
  */
-- (void) onDeleteChar;
+- (void) deleteChar;
 
 @end

@@ -74,6 +74,11 @@
         partiallyFilled_to_empty.guardSelectorName = @"guard_partiallyFilled_to_empty";
         partiallyFilled_to_empty.actionSelectorName = @"action_partiallyFilled_to_empty";
         
+        MOBTransition * partiallyFilled_to_partiallyFilled = [[MOBTransition new] autorelease];
+        partiallyFilled_to_partiallyFilled.ID = PasswordEntryTransition_PARTIALLYFILLED_EMPTY;
+        partiallyFilled_to_partiallyFilled.guardSelectorName = @"guard_partiallyFilled_to_partiallyFilled";
+        partiallyFilled_to_partiallyFilled.actionSelectorName = @"action_partiallyFilled_to_partiallyFilled";
+        
         MOBTransition * partiallyFilled_to_completelyFilled = [[MOBTransition new] autorelease];
         partiallyFilled_to_completelyFilled.ID = PasswordEntryTransition_PARTIALLYFILLED_COMPLETELYFILLED;
         partiallyFilled_to_completelyFilled.guardSelectorName = @"guard_partiallyFilled_to_completelyFilled";
@@ -104,7 +109,8 @@
         partiallyFilled.incomingTransitions = [NSSet setWithObjects:empty_to_partiallyFilled, 
                                                                     nil];
         partiallyFilled.outgoingTransitions = [NSSet setWithObjects:partiallyFilled_to_empty,
-                                                                    partiallyFilled_to_completelyFilled, 
+                                                                    partiallyFilled_to_completelyFilled,
+                                                                    partiallyFilled_to_partiallyFilled,
                                                                     nil];
         
         completelyFilled.incomingTransitions = [NSSet setWithObjects:partiallyFilled_to_completelyFilled, 
@@ -127,6 +133,9 @@
         
         partiallyFilled_to_empty.sourceState = partiallyFilled;
         partiallyFilled_to_empty.targetState = empty;
+        
+        partiallyFilled_to_partiallyFilled.sourceState = partiallyFilled;
+        partiallyFilled_to_partiallyFilled.targetState = partiallyFilled;
         
         partiallyFilled_to_completelyFilled.sourceState = partiallyFilled;
         partiallyFilled_to_completelyFilled.targetState = completelyFilled;
@@ -151,10 +160,12 @@
         
         [self.transitions addObject:empty_to_partiallyFilled];
         [self.transitions addObject:partiallyFilled_to_empty];
+        [self.transitions addObject:partiallyFilled_to_partiallyFilled];
         [self.transitions addObject:partiallyFilled_to_completelyFilled];
         [self.transitions addObject:completelyFilled_to_userAuthenticated];
         [self.transitions addObject:completelyFilled_to_userNotAuthenticated];
         [self.transitions addObject:userNotAuthenticated_to_empty];
+        
     }
     
     return self;

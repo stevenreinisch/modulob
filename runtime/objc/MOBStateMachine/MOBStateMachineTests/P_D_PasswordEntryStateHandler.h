@@ -59,6 +59,12 @@
 - (void) action_partiallyFilled_to_empty;
 
 /*
+ * transition partiallyFilled_to_partiallyFilled
+ */
+- (NSNumber*) guard_partiallyFilled_to_partiallyFilled;
+- (void) action_partiallyFilled_to_partiallyFilled;
+
+/*
  * transition partiallyFilled_to_completelyFilled
  */
 - (NSNumber*) guard_partiallyFilled_to_completelyFilled;

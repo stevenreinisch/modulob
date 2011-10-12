@@ -10,8 +10,11 @@
 
 @interface MOBStateMachine ()
 @property (nonatomic, retain) MOBState *currentState;
+@property (nonatomic, retain) NSArray *transitionIndex;
 
 - (void) checkConsistencyAtStartUp;
+
+- (void) buildTransitionIndex;
 
 - (BOOL) switchTransitionInternal:(MOBTransition*) transition;
 - (void) executeSelector:(NSString*) selectorName;
@@ -20,7 +23,7 @@
 
 @implementation MOBStateMachine
 
-@synthesize delegate, states, transitions, currentState;
+@synthesize delegate, states, transitions, transitionIndex, currentState;
 
 #pragma mark -
 
@@ -36,9 +39,10 @@
 }
 
 - (void) dealloc {
-    self.states       = nil;
-    self.transitions  = nil;
-    self.currentState = nil;
+    self.states          = nil;
+    self.transitions     = nil;
+    self.transitionIndex = nil;
+    self.currentState    = nil;
     
     [super dealloc];
 }
@@ -47,6 +51,7 @@
 
 - (void) start {
     [self currentState];
+    [self buildTransitionIndex];
     [self checkConsistencyAtStartUp];
     
     [self executeSelector:currentState.entrySelectorName];
@@ -80,7 +85,8 @@
 }
 
 - (void) switchTransition:(NSUInteger) transitionID {
-    [NSException raise:@"" format:@"MOBStateMachine#switchTransition: not implemented yet"];
+    MOBTransition *t = [transitionIndex objectAtIndex:transitionID];
+    [self switchTransitionInternal:t];
 }
 
 #pragma mark -
@@ -104,9 +110,19 @@
     return YES;
 }
 
+- (void) buildTransitionIndex {
+    self.transitionIndex = 
+        [transitions sortedArrayUsingDescriptors:[NSArray arrayWithObject:
+                                                  [NSSortDescriptor sortDescriptorWithKey:@"ID" 
+                                                                                ascending:YES]]];
+}
+
 - (void) checkConsistencyAtStartUp {
     NSAssert([states count] > 0, @"state machine must have at least one state");
     NSAssert([transitions count] > 0, @"state machine must have at least one transition");
+    NSAssert([transitions count] == [transitionIndex count],
+             @"transitions and transitionIndex must have same size");
+    NSAssert([[transitionIndex objectAtIndex:0] ID] == 0, @"first transition in index must have ID == 0");
     
     NSArray *initialStates = [[states filteredSetUsingPredicate:
                                 [NSPredicate predicateWithFormat:@"SELF.isInitial == YES"]] 

@@ -56,6 +56,40 @@
     STAssertEquals(passwordEntry.stateMachine.currentState.ID, 
                    (NSInteger)PasswordEntryState_PARTIALLYFILLED, 
                    @"wrong current state");
+    
+    [passwordEntry deleteChar];
+    
+    STAssertEquals(passwordEntry.stateMachine.currentState.ID, 
+                   (NSInteger)PasswordEntryState_EMPTY, 
+                   @"wrong current state");
+    
+    //enter first digit
+    [passwordEntry keyStroke:@"2"];
+    
+    STAssertEquals(passwordEntry.stateMachine.currentState.ID, 
+                   (NSInteger)PasswordEntryState_PARTIALLYFILLED, 
+                   @"wrong current state");
+    
+    //enter second digit
+    [passwordEntry keyStroke:@"2"];
+    
+    STAssertEquals(passwordEntry.stateMachine.currentState.ID, 
+                   (NSInteger)PasswordEntryState_PARTIALLYFILLED, 
+                   @"wrong current state");
+    
+    //enter third digit
+    [passwordEntry keyStroke:@"4"];
+    
+    STAssertEquals(passwordEntry.stateMachine.currentState.ID, 
+                   (NSInteger)PasswordEntryState_PARTIALLYFILLED, 
+                   @"wrong current state");
+    
+    //enter fourth digit
+    [passwordEntry keyStroke:@"7"];
+    
+    STAssertEquals(passwordEntry.stateMachine.currentState.ID, 
+                   (NSInteger)PasswordEntryState_COMPLETELYFILLED, 
+                   @"wrong current state");
 }
 
 @end
