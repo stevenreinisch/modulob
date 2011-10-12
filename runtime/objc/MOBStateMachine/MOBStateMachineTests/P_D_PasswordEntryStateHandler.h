@@ -49,37 +49,37 @@
 /*
  * transition empty_to_partiallyFilled
  */
-- (void) guard_empty_to_partiallyFilled;
+- (NSNumber*) guard_empty_to_partiallyFilled;
 - (void) action_empty_to_partiallyFilled;
 
 /*
  * transition partiallyFilled_to_empty
  */
-- (void) guard_partiallyFilled_to_empty;
+- (NSNumber*) guard_partiallyFilled_to_empty;
 - (void) action_partiallyFilled_to_empty;
 
 /*
  * transition partiallyFilled_to_completelyFilled
  */
-- (void) guard_partiallyFilled_to_completelyFilled;
+- (NSNumber*) guard_partiallyFilled_to_completelyFilled;
 - (void) action_partiallyFilled_to_completelyFilled;
 
 /*
  * transition completelyFilled_to_userAuthenticated
  */
-- (void) guard_completelyFilled_to_userAuthenticated;
+- (NSNumber*) guard_completelyFilled_to_userAuthenticated;
 - (void) action_completelyFilled_to_userAuthenticated;
 
 /*
  * transition completelyFilled_to_userNotAuthenticated
  */
-- (void) guard_completelyFilled_to_userNotAuthenticated;
+- (NSNumber*) guard_completelyFilled_to_userNotAuthenticated;
 - (void) action_completelyFilled_to_userNotAuthenticated;
 
 /*
  * transition userNotAuthenticated_to_empty
  */
-- (void) guard_userNotAuthenticated_to_empty;
+- (NSNumber*) guard_userNotAuthenticated_to_empty;
 - (void) action_userNotAuthenticated_to_empty;
 
 @end

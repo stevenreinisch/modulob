@@ -8,7 +8,7 @@
 
 #import "PasswordEntry.h"
 
-#import "MOBStateMachine.h"
+#import "PasswordEntryStateMachine.h"
 
 @implementation PasswordEntry
 
@@ -18,11 +18,21 @@
 {
     self = [super init];
     if (self) {
-        // Initialization code here.
+        self.stateMachine = [[PasswordEntryStateMachine new] autorelease];
+        [stateMachine setDelegate:self];
+        [stateMachine start];
     }
     
     return self;
 }
+
+- (void) dealloc {
+    self.stateMachine = nil;
+    
+    [super dealloc];
+}
+
+#pragma mark -
 
 - (void) keyStroke:(NSString*) enteredChar {
     [self.pin addObject:enteredChar];
@@ -34,6 +44,11 @@
     [self.stateMachine update];
 }
 
+#pragma mark -
+#pragma mark state handling
 
+- (void) enter_empty {
+    self.pin = [[NSMutableArray new] autorelease];
+}
 
 @end

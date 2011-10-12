@@ -20,7 +20,7 @@
 {
     self = [super init];
     if (self) {
-        // Initialization code here.
+        ID = -1;
     }
     
     return self;

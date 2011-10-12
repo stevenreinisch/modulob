@@ -22,7 +22,7 @@
  *  case ANOTHERSTATE: // do that;
  * }
  */
-@property (nonatomic, assign) NSUInteger ID;
+@property (nonatomic, assign) NSInteger ID;
 
 /*
  * Only one state can have isInitial == YES.

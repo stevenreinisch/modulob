@@ -12,7 +12,7 @@
 
 @interface MOBTransition : NSObject
 
-@property (nonatomic, assign) NSUInteger ID;
+@property (nonatomic, assign) NSInteger ID;
 
 @property (nonatomic, retain) MOBState *sourceState;
 @property (nonatomic, retain) MOBState *targetState;
@@ -23,7 +23,7 @@
  * this transition or not.
  *
  * The corresponding method must take no arguments and
- * return a BOOL value.
+ * its return value must be [NSNumber numberWithBool:].
  *
  * If guardSelectorName == nil or the state machine's
  * delegate does not repond to this selector, the state
