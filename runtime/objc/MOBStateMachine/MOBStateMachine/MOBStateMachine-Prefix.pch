@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'MOBStateMachine' target in the 'MOBStateMachine' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif

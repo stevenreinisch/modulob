@@ -73,7 +73,6 @@ public class NewModuleWizardPage extends NewContainerWizardPage {
 		updateStatus(new IStatus[] { fContainerStatus, fPackageStatus });
 	}
 	
-	@Override
 	public void createControl(Composite parent) {
 		initializeDialogUnits(parent);
 

@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F93734701445761D00895CBD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F937346F1445761D00895CBD /* Foundation.framework */; };
+		F93734761445761D00895CBD /* MOBStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = F93734751445761D00895CBD /* MOBStateMachine.m */; };
+		F937347E1445761D00895CBD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F937347D1445761D00895CBD /* SenTestingKit.framework */; };
+		F93734801445761D00895CBD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F937347F1445761D00895CBD /* UIKit.framework */; };
+		F93734811445761D00895CBD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F937346F1445761D00895CBD /* Foundation.framework */; };
+		F93734831445761D00895CBD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F93734821445761D00895CBD /* CoreGraphics.framework */; };
+		F93734861445761D00895CBD /* libMOBStateMachine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F937346C1445761D00895CBD /* libMOBStateMachine.a */; };
+		F937348C1445761D00895CBD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F937348A1445761D00895CBD /* InfoPlist.strings */; };
+		F937348E1445761D00895CBD /* MOBStateMachineTests.h in Resources */ = {isa = PBXBuildFile; fileRef = F937348D1445761D00895CBD /* MOBStateMachineTests.h */; };
+		F93734901445761D00895CBD /* MOBStateMachineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F937348F1445761D00895CBD /* MOBStateMachineTests.m */; };
+		F937349B1445767F00895CBD /* MOBState.h in Headers */ = {isa = PBXBuildFile; fileRef = F93734991445767F00895CBD /* MOBState.h */; };
+		F937349C1445767F00895CBD /* MOBState.m in Sources */ = {isa = PBXBuildFile; fileRef = F937349A1445767F00895CBD /* MOBState.m */; };
+		F937349F144576C700895CBD /* MOBTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = F937349D144576C700895CBD /* MOBTransition.h */; };
+		F93734A0144576C700895CBD /* MOBTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F937349E144576C700895CBD /* MOBTransition.m */; };
+		F93734A3144586AF00895CBD /* PasswordEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = F93734A2144586AF00895CBD /* PasswordEntry.m */; };
+		F93734A91445892100895CBD /* PasswordEntryStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = F93734A81445892100895CBD /* PasswordEntryStateMachine.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F93734841445761D00895CBD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F93734631445761D00895CBD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F937346B1445761D00895CBD;
+			remoteInfo = MOBStateMachine;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F937346C1445761D00895CBD /* libMOBStateMachine.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMOBStateMachine.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F937346F1445761D00895CBD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F93734731445761D00895CBD /* MOBStateMachine-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MOBStateMachine-Prefix.pch"; sourceTree = "<group>"; };
+		F93734741445761D00895CBD /* MOBStateMachine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MOBStateMachine.h; sourceTree = "<group>"; };
+		F93734751445761D00895CBD /* MOBStateMachine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MOBStateMachine.m; sourceTree = "<group>"; };
+		F937347C1445761D00895CBD /* MOBStateMachineTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MOBStateMachineTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F937347D1445761D00895CBD /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		F937347F1445761D00895CBD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		F93734821445761D00895CBD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		F93734891445761D00895CBD /* MOBStateMachineTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MOBStateMachineTests-Info.plist"; sourceTree = "<group>"; };
+		F937348B1445761D00895CBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F937348D1445761D00895CBD /* MOBStateMachineTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MOBStateMachineTests.h; sourceTree = "<group>"; };
+		F937348F1445761D00895CBD /* MOBStateMachineTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MOBStateMachineTests.m; sourceTree = "<group>"; };
+		F93734991445767F00895CBD /* MOBState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBState.h; sourceTree = "<group>"; };
+		F937349A1445767F00895CBD /* MOBState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBState.m; sourceTree = "<group>"; };
+		F937349D144576C700895CBD /* MOBTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBTransition.h; sourceTree = "<group>"; };
+		F937349E144576C700895CBD /* MOBTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBTransition.m; sourceTree = "<group>"; };
+		F93734A1144586AF00895CBD /* PasswordEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasswordEntry.h; path = ../PasswordEntry.h; sourceTree = "<group>"; };
+		F93734A2144586AF00895CBD /* PasswordEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PasswordEntry.m; path = ../PasswordEntry.m; sourceTree = "<group>"; };
+		F93734A71445892100895CBD /* PasswordEntryStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasswordEntryStateMachine.h; path = ../PasswordEntryStateMachine.h; sourceTree = "<group>"; };
+		F93734A81445892100895CBD /* PasswordEntryStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PasswordEntryStateMachine.m; path = ../PasswordEntryStateMachine.m; sourceTree = "<group>"; };
+		F93734AE1445993900895CBD /* P_D_PasswordEntryStateHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = P_D_PasswordEntryStateHandler.h; path = ../P_D_PasswordEntryStateHandler.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F93734691445761D00895CBD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F93734701445761D00895CBD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F93734781445761D00895CBD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F937347E1445761D00895CBD /* SenTestingKit.framework in Frameworks */,
+				F93734801445761D00895CBD /* UIKit.framework in Frameworks */,
+				F93734811445761D00895CBD /* Foundation.framework in Frameworks */,
+				F93734831445761D00895CBD /* CoreGraphics.framework in Frameworks */,
+				F93734861445761D00895CBD /* libMOBStateMachine.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F93734611445761D00895CBD = {
+			isa = PBXGroup;
+			children = (
+				F93734711445761D00895CBD /* MOBStateMachine */,
+				F93734871445761D00895CBD /* MOBStateMachineTests */,
+				F937346E1445761D00895CBD /* Frameworks */,
+				F937346D1445761D00895CBD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F937346D1445761D00895CBD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F937346C1445761D00895CBD /* libMOBStateMachine.a */,
+				F937347C1445761D00895CBD /* MOBStateMachineTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F937346E1445761D00895CBD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F937346F1445761D00895CBD /* Foundation.framework */,
+				F937347D1445761D00895CBD /* SenTestingKit.framework */,
+				F937347F1445761D00895CBD /* UIKit.framework */,
+				F93734821445761D00895CBD /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F93734711445761D00895CBD /* MOBStateMachine */ = {
+			isa = PBXGroup;
+			children = (
+				F93734721445761D00895CBD /* Supporting Files */,
+				F93734741445761D00895CBD /* MOBStateMachine.h */,
+				F93734751445761D00895CBD /* MOBStateMachine.m */,
+				F93734991445767F00895CBD /* MOBState.h */,
+				F937349A1445767F00895CBD /* MOBState.m */,
+				F937349D144576C700895CBD /* MOBTransition.h */,
+				F937349E144576C700895CBD /* MOBTransition.m */,
+			);
+			path = MOBStateMachine;
+			sourceTree = "<group>";
+		};
+		F93734721445761D00895CBD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F93734731445761D00895CBD /* MOBStateMachine-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F93734871445761D00895CBD /* MOBStateMachineTests */ = {
+			isa = PBXGroup;
+			children = (
+				F93734881445761D00895CBD /* Supporting Files */,
+				F93734AF14459B5200895CBD /* testCaseDefinitions */,
+				F937348D1445761D00895CBD /* MOBStateMachineTests.h */,
+				F937348F1445761D00895CBD /* MOBStateMachineTests.m */,
+			);
+			path = MOBStateMachineTests;
+			sourceTree = "<group>";
+		};
+		F93734881445761D00895CBD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F93734891445761D00895CBD /* MOBStateMachineTests-Info.plist */,
+				F937348A1445761D00895CBD /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F93734AF14459B5200895CBD /* testCaseDefinitions */ = {
+			isa = PBXGroup;
+			children = (
+				F93734A1144586AF00895CBD /* PasswordEntry.h */,
+				F93734A2144586AF00895CBD /* PasswordEntry.m */,
+				F93734A71445892100895CBD /* PasswordEntryStateMachine.h */,
+				F93734A81445892100895CBD /* PasswordEntryStateMachine.m */,
+				F93734AE1445993900895CBD /* P_D_PasswordEntryStateHandler.h */,
+			);
+			path = testCaseDefinitions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		F937346A1445761D00895CBD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F937349B1445767F00895CBD /* MOBState.h in Headers */,
+				F937349F144576C700895CBD /* MOBTransition.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		F937346B1445761D00895CBD /* MOBStateMachine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F93734931445761D00895CBD /* Build configuration list for PBXNativeTarget "MOBStateMachine" */;
+			buildPhases = (
+				F93734681445761D00895CBD /* Sources */,
+				F93734691445761D00895CBD /* Frameworks */,
+				F937346A1445761D00895CBD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MOBStateMachine;
+			productName = MOBStateMachine;
+			productReference = F937346C1445761D00895CBD /* libMOBStateMachine.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F937347B1445761D00895CBD /* MOBStateMachineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F93734961445761D00895CBD /* Build configuration list for PBXNativeTarget "MOBStateMachineTests" */;
+			buildPhases = (
+				F93734771445761D00895CBD /* Sources */,
+				F93734781445761D00895CBD /* Frameworks */,
+				F93734791445761D00895CBD /* Resources */,
+				F937347A1445761D00895CBD /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F93734851445761D00895CBD /* PBXTargetDependency */,
+			);
+			name = MOBStateMachineTests;
+			productName = MOBStateMachineTests;
+			productReference = F937347C1445761D00895CBD /* MOBStateMachineTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F93734631445761D00895CBD /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = F93734661445761D00895CBD /* Build configuration list for PBXProject "MOBStateMachine" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F93734611445761D00895CBD;
+			productRefGroup = F937346D1445761D00895CBD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F937346B1445761D00895CBD /* MOBStateMachine */,
+				F937347B1445761D00895CBD /* MOBStateMachineTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F93734791445761D00895CBD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F937348C1445761D00895CBD /* InfoPlist.strings in Resources */,
+				F937348E1445761D00895CBD /* MOBStateMachineTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F937347A1445761D00895CBD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F93734681445761D00895CBD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F93734761445761D00895CBD /* MOBStateMachine.m in Sources */,
+				F937349C1445767F00895CBD /* MOBState.m in Sources */,
+				F93734A0144576C700895CBD /* MOBTransition.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F93734771445761D00895CBD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F93734901445761D00895CBD /* MOBStateMachineTests.m in Sources */,
+				F93734A3144586AF00895CBD /* PasswordEntry.m in Sources */,
+				F93734A91445892100895CBD /* PasswordEntryStateMachine.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F93734851445761D00895CBD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F937346B1445761D00895CBD /* MOBStateMachine */;
+			targetProxy = F93734841445761D00895CBD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F937348A1445761D00895CBD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F937348B1445761D00895CBD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F93734911445761D00895CBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F93734921445761D00895CBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F93734941445761D00895CBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/MOBStateMachine.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MOBStateMachine/MOBStateMachine-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F93734951445761D00895CBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/MOBStateMachine.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MOBStateMachine/MOBStateMachine-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F93734971445761D00895CBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MOBStateMachine/MOBStateMachine-Prefix.pch";
+				INFOPLIST_FILE = "MOBStateMachineTests/MOBStateMachineTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		F93734981445761D00895CBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MOBStateMachine/MOBStateMachine-Prefix.pch";
+				INFOPLIST_FILE = "MOBStateMachineTests/MOBStateMachineTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F93734661445761D00895CBD /* Build configuration list for PBXProject "MOBStateMachine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F93734911445761D00895CBD /* Debug */,
+				F93734921445761D00895CBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F93734931445761D00895CBD /* Build configuration list for PBXNativeTarget "MOBStateMachine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F93734941445761D00895CBD /* Debug */,
+				F93734951445761D00895CBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F93734961445761D00895CBD /* Build configuration list for PBXNativeTarget "MOBStateMachineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F93734971445761D00895CBD /* Debug */,
+				F93734981445761D00895CBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F93734631445761D00895CBD /* Project object */;
+}
