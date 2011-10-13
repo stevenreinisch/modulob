@@ -1,3 +1,4 @@
+import system;
 import modulob;
 import types;
 
@@ -21,6 +22,19 @@ coreDataPrimitiveType(String ptName):
 		default         : "NSUndefinedAttributeType"
 	}
 ;	
+
+xcDataPrimitiveType(String ptName):
+	switch(ptName){
+		case "String"   : "String"
+		case "Integer16": "Integer 16"
+		case "Integer32": "Integer 32"
+		case "Integer64": "Integer 64"
+		case "Decimal"  : "Decimal"
+		case "Bool"     : "Boolean"
+		case "Timestamp": "Date"
+		default         : "Undefined"
+	}
+;
 
 coreDataTypeName(types::Type type):
 	type.typeName()
@@ -71,14 +85,18 @@ propertyName(Feature f):
 	((Entity)f.eContainer).entityName().toFirstLower() + f.name.toFirstUpper()
 ;
 
-daoName(String namespace, String version):
-	namespace + 'DAO' + version.versionIdentifier()
+daoName(Module m):
+	m.name + 'DAO'// + version.versionIdentifier()
 ;
 
 versionIdentifier(String version):
 	'_v' +  version.replaceAll('\\.', '_')
 ;
 
-daoProtocolName(String namespace):
-	'P_I_' + namespace + 'DAO'
+daoProtocolName(Module m):
+	'P_I_' + m.name + 'DAO'
+;
+
+String xcdataModelVersion(Module m):
+	m.name + "_" + m.entityModel.version
 ;

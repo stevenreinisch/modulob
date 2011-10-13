@@ -33,7 +33,7 @@
 	#import "«this.factoryName("Entity")».h"
 	
 	«IF this.entityModel.entities.select(e|e.isPersistent()).size > 0»
-		#import "«this.name.daoProtocolName()».h"
+		#import "«this.daoProtocolName()».h"
 	«ENDIF»
 	
 	«FOREACH this.entityModel.entities AS e»
@@ -49,8 +49,8 @@
 	«FOREACH this.entityModel.entities.select(e|!e.isAbstract) AS e»
 		+(«e.typeRef()»)«e.factoryMethodName()»
 		{
+			id<«this.daoProtocolName()»> dao = DI_INJECT(@protocol(«this.daoProtocolName()»));
 			«IF e.isPersistent()»
-				id<«this.name.daoProtocolName()»> dao = DI_INJECT(@protocol(«this.name.daoProtocolName()»))
 				«e.typeRef()» object = [dao createEntity:@"«e.entityName()»"];
 				@try {
 					NSString *uuid = [dao uuid];
@@ -62,7 +62,9 @@
 				}
 				return object;
 			«ELSE»
-				return [[«e.typeName()» new]autorelease];
+				«e.typeRef()» instance = [[«e.typeName()» new] autorelease];
+				instance.uuid = [dao uuid];
+            	return instance;
 			«ENDIF»
 		}
 	«ENDFOREACH»

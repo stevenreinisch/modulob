@@ -5,39 +5,35 @@
 «EXTENSION de::dubmas::modulob::generator::templates::coredata::CoreDataExtensions»
 «EXTENSION org::eclipse::xtend::util::stdlib::io»
 
-«DEFINE main (String namespace, String version) FOR List[Entity]»	
-	«EXPAND DAOProtocol(namespace)              FOR this»
-	«EXPAND DAOHeaderAndImpl(namespace, version)FOR this»
+«DEFINE main FOR Module-»
+	«EXPAND XCDataModel::main           FOR this»
+	«EXPAND XCDataModel::currentVersion FOR this»	
+	«EXPAND DAOProtocol                 FOR this»
+	«EXPAND DAOHeaderAndImpl            FOR this»
 «ENDDEFINE»
 
-«DEFINE oldVersionDAOs FOR List[EntityModel]»
-	«FOREACH this AS em»
-		«EXPAND DAOHeaderAndImpl(em.module.name, em.version) FOR em.entities»
-	«ENDFOREACH»
+«DEFINE DAOHeaderAndImpl FOR Module»
+	«EXPAND DAOHeader FOR this»
+	«EXPAND DAOImpl   FOR this»
 «ENDDEFINE»
 
-«DEFINE DAOHeaderAndImpl(String namespace, String version) FOR List[Entity]»
-	«EXPAND DAOHeader(namespace, version) FOR this»
-	«EXPAND DAOImpl(namespace, version)   FOR this»
-«ENDDEFINE»
-
-«DEFINE DAOProtocol(String namespace) FOR List[Entity]»
-«FILE namespace + "/public/" + namespace.daoProtocolName() + ".h"»
+«DEFINE DAOProtocol FOR Module»
+«FILE this.name + "/public/" + this.daoProtocolName() + ".h"»
 #import <Foundation/Foundation.h>
 #import "P_I_OBPersistencyDAO.h"
 
-@protocol «namespace.daoProtocolName()» <P_I_OBPersistencyDAO>
+@protocol «this.daoProtocolName()» <P_I_OBPersistencyDAO>
 
 @end
 «ENDFILE»
 «ENDDEFINE»
 
-«DEFINE DAOHeader (String namespace, String version) FOR List[Entity]»
-«FILE namespace + "/public/" + namespace.daoName(version) + ".h"»
+«DEFINE DAOHeader FOR Module»
+«FILE this.name + "/public/" + this.daoName() + ".h"»
 #import <CoreData/CoreData.h>
 
 #import "CoreDataDAO.h"
-#import "«namespace.daoProtocolName()».h"
+#import "«this.daoProtocolName()».h"
 
 /**
  * subclass this class to implement the functionality.
@@ -48,18 +44,18 @@
  *    run and all changes made to the header and implementation
  *    file will be lost!
  */
-@interface «namespace.daoName(version)»: CoreDataDAO <«namespace.daoProtocolName()»>
+@interface «this.daoName()»: CoreDataDAO <«this.daoProtocolName()»>
 {}
 @end
 «ENDFILE»
 «ENDDEFINE»
 
-«DEFINE DAOImpl (String namespace, String version) FOR List[Entity]»
-«FILE namespace + "/private/" + namespace.daoName(version) + ".m"»
-#import "«namespace.daoName(version) + ".h"»"
+«DEFINE DAOImpl FOR Module»
+«FILE this.name + "/private/" + this.daoName() + ".m"»
+#import "«this.daoName() + ".h"»"
 #import "CoreDataStoreWrapper.h" 
 
-@interface «namespace.daoName(version)» ()
+@interface «this.daoName()» ()
 -(NSManagedObjectModel*)createManagedObjectModel;
 @end
 
@@ -67,16 +63,16 @@
 static «namespace.daoName(version)» *«namespace.daoName(version).toFirstLower()» = nil;
 «ENDREM»
 
-@implementation «namespace.daoName(version)»
+@implementation «this.daoName()»
 
-- (id) init {
-    if(self = [super initWithMOM:[self createManagedObjectModel] 
-                 nameOfStoreFile:@"«namespace»Store«version.versionIdentifier()»"
-                         version:@"«version»"])
-    {
-    
-    }
-    return self;
+-(id)initWith:(NSString*)nameOfStoreFile_
+{
+	if(self = [super initWithMOM:[self createManagedObjectModel] 
+				 nameOfStoreFile:nameOfStoreFile_])
+	{
+		
+	}
+	return self;
 }
 
 «EXPAND momGetter FOR this-»
@@ -131,12 +127,22 @@ static «namespace.daoName(version)» *«namespace.daoName(version).toFirstLower
 «ENDFILE»
 «ENDDEFINE»
 
+«DEFINE momGetter FOR Module-»
+-(NSManagedObjectModel*)createManagedObjectModel {
+	/*
+	 * *.momd files are the compiled version of *.xcdatamodeld 
+	 */
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"«this.name»" withExtension:@"momd"];
+    return [[[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL] autorelease];
+}
+«ENDDEFINE»
+
+«REM»
 «DEFINE momGetter FOR List[Entity]-»
 -(NSManagedObjectModel*)createManagedObjectModel
 {
 	NSManagedObjectModel *mom = [[NSManagedObjectModel alloc] init];
 	
-	«REM»forward declarations«ENDREM»
 	//begin: forward declarations
 	//entities
 	«FOREACH this AS e»
@@ -173,6 +179,7 @@ static «namespace.daoName(version)» *«namespace.daoName(version).toFirstLower
 	return [mom autorelease];
 }
 «ENDDEFINE»
+
 
 «DEFINE inheritanceHierarchy FOR List[Entity]»
 	«FOREACH this AS e»
@@ -214,11 +221,10 @@ static «namespace.daoName(version)» *«namespace.daoName(version).toFirstLower
 	[«this.entityDescription()»Properties release];
 	//end: «this.entityDescription()»
 «ENDDEFINE»
+«ENDREM»
 
+«REM»
 «DEFINE relationship FOR Feature»
-	«REM»
-	NSRelationshipDescription *«this.featureName()» = [NSRelationshipDescription new];
-	«ENDREM»
 	[«this.featureName()» setName:@"«this.name»"];
 	[«this.featureName()» setOptional:YES];
 	[«this.featureName()» setDestinationEntity:«((Entity)this.type.referenced).entityDescription()»];
@@ -238,7 +244,7 @@ static «namespace.daoName(version)» *«namespace.daoName(version).toFirstLower
 		(As a result, maxCount == 0 at runtime) 
 		
 		[«this.featureName()» setMaxCount:UINT_MAX];
-		«ENDREM»
+		
 	«ELSE»
 		[«this.featureName()» setMinCount:1];
 		[«this.featureName()» setMaxCount:1];
@@ -273,3 +279,5 @@ static «namespace.daoName(version)» *«namespace.daoName(version).toFirstLower
 «DEFINE DefaultValue(String propertyName) FOR FloatValue»
 	[«propertyName» setDefaultValue:[NSDecimalNumber decimalNumberWithString:@"«this.value»"]];
 «ENDDEFINE»
+
+«ENDREM»

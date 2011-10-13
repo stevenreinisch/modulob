@@ -1,0 +1,95 @@
+«IMPORT system»
+«IMPORT modulob»
+
+«EXTENSION de::dubmas::modulob::generator::templates::coredata::CoreDataExtensions»
+«EXTENSION de::dubmas::modulob::generator::templates::Types»
+
+«DEFINE main FOR Module»
+«EXPAND modelFile FOR this.entityModel»
+«ENDDEFINE»
+
+«DEFINE currentVersion FOR Module-»
+«FILE this.name + "/private/" + this.name +  ".xcdatamodeld/.xccurrentversion"-»
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>_XCCurrentVersionName</key>
+	<string>«this.xcdataModelVersion()».xcdatamodel</string>
+<dict/>
+</plist>
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE modelFile FOR EntityModel»
+«FILE this.module.name + "/private/" + this.module.name +  ".xcdatamodeld/" + this.module.xcdataModelVersion() + ".xcdatamodel/contents"»
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="«this.module.xcdataModelVersion()»" 
+			   type="com.apple.IDECoreDataModeler.DataModel" 
+			   documentVersion="1.0" 
+			   lastSavedToolsVersion="562" 
+			   systemVersion="11B26" 
+			   minimumToolsVersion="Automatic" 
+			   macOSVersion="Automatic" 
+			   iOSVersion="Automatic">
+«EXPAND entity FOREACH this.entities.persistentEntities().sortBy(e|e.name)»
+</model>
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE entity FOR Entity»
+<entity name="«this.typeName()»" 
+	«IF this.super != null»
+		parentEntity = "«this.super.typeName()»" 
+	«ENDIF»
+	
+	 representedClassName="«this.coreDataTypeName()»" syncable="YES"  >
+	«EXPAND attribute FOREACH this.primitiveTypeFeatures().sortBy(f|f.name)»
+	«EXPAND relationship FOREACH this.entityFeatures().sortBy(f|f.name)»
+</entity>
+«ENDDEFINE»
+
+«DEFINE attribute FOR Feature-»
+	<attribute attributeType="«this.type.referenced.name.xcDataPrimitiveType()»" 
+	«IF this.defaultValue != null»
+		defaultValueString="«EXPAND DefaultValue FOR this.defaultValue-»"
+	«ENDIF» 
+	«IF this.isIndexed»
+		indexed="YES"
+	«ENDIF»
+	name="«this.name»" 
+	optional="YES" 
+	syncable="YES" />
+«ENDDEFINE»
+
+«DEFINE DefaultValue FOR ValueObject»
+«ENDDEFINE»
+
+«DEFINE DefaultValue FOR StringValue-»
+«this.value.trim()»
+«ENDDEFINE»
+
+«DEFINE DefaultValue FOR IntegerValue-»
+«this.value»
+«ENDDEFINE»
+
+«DEFINE DefaultValue FOR FloatValue-»
+«this.value»
+«ENDDEFINE»
+
+«DEFINE relationship FOR Feature»
+	<relationship deletionRule="Nullify" 
+	 destinationEntity="«this.type.referenced.typeName()»" 
+	«IF this.inverse != null»
+		inverseEntity="«this.type.referenced.typeName()»"
+		inverseName="«this.inverse.name»"
+	«ENDIF»			  
+	name="«this.name»" 
+	optional="YES" 
+	«IF this.type.isMulti»
+		toMany="YES"
+	«ELSE»
+		maxCount="1" minCount="1"
+	«ENDIF»
+	/>
+«ENDDEFINE»

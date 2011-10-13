@@ -50,7 +50,7 @@ Workflow {
 	
 	component = org.eclipse.xpand2.Generator{
 		metaModel = org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel{}
-		expand    = "de::dubmas::modulob::generator::templates::coredata::CoreDataModel::oldVersionDAOs FOR ${oldVersionEntiyModelSlot}"
+		expand    = "de::dubmas::modulob::generator::templates::coredata::XCDataModel::modelFile FOREACH ${oldVersionEntiyModelSlot}"
 		
 		outlet = {
 			path = genPath
