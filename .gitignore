@@ -2,6 +2,7 @@
 *.project
 *.metadata
 *.class
+xtend-gen
 bin
 target
 Servers

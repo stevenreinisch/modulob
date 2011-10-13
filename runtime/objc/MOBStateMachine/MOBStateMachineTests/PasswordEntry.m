@@ -12,7 +12,7 @@
 
 @implementation PasswordEntry
 
-@synthesize pin, correctUserPin, stateMachine;
+@synthesize pin, correctUserPin, stateMachine, pinCorrect;
 
 - (id)init
 {
@@ -21,6 +21,8 @@
         self.stateMachine = [[PasswordEntryStateMachine new] autorelease];
         [stateMachine setDelegate:self];
         [stateMachine start];
+        
+        self.pinCorrect = NO;
     }
     
     return self;
@@ -49,6 +51,25 @@
 
 - (void) enter_empty {
     self.pin = [[NSMutableArray new] autorelease];
+}
+
+- (void) enter_completelyFilled {
+    NSMutableString *enteredPin = [NSMutableString stringWithCapacity:MAX_PIN_DIGITS];
+    for (NSString *digit in pin){
+        [enteredPin appendString:digit];
+    }
+    
+    if ([correctUserPin isEqualToString:enteredPin]) {
+        pinCorrect = YES;
+    }
+    
+    [stateMachine update];
+}
+
+- (void) enter_userNotAuthenticated {
+    //we could present the user a dialog here ..
+    
+    [stateMachine update];
 }
 
 #pragma mark guards
@@ -90,7 +111,7 @@
 }
 
 - (NSNumber*) guard_completelyFilled_to_userAuthenticated {
-    BOOL result = NO;
+    BOOL result = pinCorrect;
     
     NSLog(@"evaluated guard_completelyFilled_to_userAuthenticated with result: %d", result);
     
@@ -98,11 +119,19 @@
 }
 
 - (NSNumber*) guard_completelyFilled_to_userNotAuthenticated {
-    BOOL result = NO;
+    BOOL result = !pinCorrect;
     
     NSLog(@"evaluated guard_completelyFilled_to_userNotAuthenticated with result: %d", result);
     
     return [NSNumber numberWithBool:result];
 }
+
+//- (NSNumber*) guard_userNotAuthenticated_to_empty {
+//    BOOL result = YES;
+//    
+//    NSLog(@"evaluated guard_completelyFilled_to_userNotAuthenticated with result: %d", result);
+//    
+//    return [NSNumber numberWithBool:result];
+//}
 
 @end

@@ -23,6 +23,8 @@
 
 @property (nonatomic, retain) NSString *correctUserPin;
 
+@property (nonatomic, assign) BOOL pinCorrect;
+
 /*
  * This state machine controls the state of
  * instances of this class.

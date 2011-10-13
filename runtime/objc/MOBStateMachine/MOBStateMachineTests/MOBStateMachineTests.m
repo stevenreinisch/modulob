@@ -26,6 +26,7 @@
     [super setUp];
     
     self.passwordEntry = [[PasswordEntry new] autorelease];
+    self.passwordEntry.correctUserPin = @"1234";
 }
 
 - (void)tearDown
@@ -87,9 +88,27 @@
     //enter fourth digit
     [passwordEntry keyStroke:@"7"];
     
-    STAssertEquals(passwordEntry.stateMachine.currentState.ID, 
-                   (NSInteger)PasswordEntryState_COMPLETELYFILLED, 
-                   @"wrong current state");
+    if ([@"2247" isEqualToString:self.passwordEntry.correctUserPin]) {
+        STAssertEquals(passwordEntry.stateMachine.currentState.ID, 
+                       (NSInteger)PasswordEntryState_USERAUTHENTICATED, 
+                       @"wrong current state");
+    } else {
+        /*
+        * After the user has entered MAX_PIN_DIGITS passwordEntry
+        * enters the state PasswordEntryState_COMPLETELYFILLED. 
+        * It immediately evaluates if the entered pin is correct 
+        * and tells the state machine to update. Because of this 
+        * immediate update passwordEntry does not stay in state
+        * PasswordEntryState_COMPLETELYFILLED.
+        * If the entered pin pin does not match the correctPin,
+        * the state PasswordEntryState_USERNOTAUTHENTICATED is
+        * entered which again immediately updates the state machine.
+        * The state machines switches to PasswordEntryState_EMPTY.
+        */
+        STAssertEquals(passwordEntry.stateMachine.currentState.ID, 
+                       (NSInteger)PasswordEntryState_EMPTY, 
+                       @"wrong current state");
+    }
 }
 
 @end
