@@ -183,10 +183,11 @@ public class AbstractNotificationDslSemanticSequencer extends AbstractSemanticSe
 	
 	/**
 	 * Constraint:
-	 *     (module=[Module|QualifiedName] version=STRING notifications+=Notification*)
+	 *     (current?='current'? module=[Module|QualifiedName] version=STRING notifications+=Notification*)
 	 *
 	 * Features:
 	 *    version[1, 1]
+	 *    current[0, 1]
 	 *    notifications[0, *]
 	 *    module[1, 1]
 	 */

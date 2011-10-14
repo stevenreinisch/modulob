@@ -53,9 +53,10 @@ public class DataDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEFloatObjectAccess().getGroup(), "rule__EFloatObject__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
-					put(grammarAccess.getEntityModelAccess().getModuleAssignment_1(), "rule__EntityModel__ModuleAssignment_1");
-					put(grammarAccess.getEntityModelAccess().getVersionAssignment_3(), "rule__EntityModel__VersionAssignment_3");
-					put(grammarAccess.getEntityModelAccess().getEntitiesAssignment_4(), "rule__EntityModel__EntitiesAssignment_4");
+					put(grammarAccess.getEntityModelAccess().getCurrentAssignment_0(), "rule__EntityModel__CurrentAssignment_0");
+					put(grammarAccess.getEntityModelAccess().getModuleAssignment_2(), "rule__EntityModel__ModuleAssignment_2");
+					put(grammarAccess.getEntityModelAccess().getVersionAssignment_4(), "rule__EntityModel__VersionAssignment_4");
+					put(grammarAccess.getEntityModelAccess().getEntitiesAssignment_5(), "rule__EntityModel__EntitiesAssignment_5");
 					put(grammarAccess.getEntityAccess().getCommentAssignment_0(), "rule__Entity__CommentAssignment_0");
 					put(grammarAccess.getEntityAccess().getAnnotationsAssignment_1(), "rule__Entity__AnnotationsAssignment_1");
 					put(grammarAccess.getEntityAccess().getIsAbstractAssignment_2(), "rule__Entity__IsAbstractAssignment_2");

@@ -12,6 +12,9 @@
         <classifier xsi:type="ecore:EClass" href="http://system.modulob.dubmas.de/1.0#//InterfaceModel"/>
       </type>
       <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" cardinality="?" feature="current" operator="?=">
+          <terminal xsi:type="xtext:Keyword" value="current"/>
+        </elements>
         <elements xsi:type="xtext:Keyword" value="interfaces for module"/>
         <elements xsi:type="xtext:Assignment" feature="module" operator="=">
           <terminal xsi:type="xtext:CrossReference">

@@ -53,11 +53,13 @@ protected class ThisRootNode extends RootToken {
 /************ begin Rule InterfaceModel ****************
  *
  * InterfaceModel returns system::InterfaceModel:
- * 	"interfaces for module" module=[system::Module|QualifiedName] "version" version=STRING interfaces+=Interface*;
+ * 	^current?="current"? "interfaces for module" module=[system::Module|QualifiedName] "version" version=STRING
+ * 	interfaces+=Interface*;
  *
  **/
 
-// "interfaces for module" module=[system::Module|QualifiedName] "version" version=STRING interfaces+=Interface*
+// ^current?="current"? "interfaces for module" module=[system::Module|QualifiedName] "version" version=STRING
+// interfaces+=Interface*
 protected class InterfaceModel_Group extends GroupToken {
 	
 	public InterfaceModel_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -72,8 +74,8 @@ protected class InterfaceModel_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new InterfaceModel_InterfacesAssignment_4(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new InterfaceModel_VersionAssignment_3(lastRuleCallOrigin, this, 1, inst);
+			case 0: return new InterfaceModel_InterfacesAssignment_5(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new InterfaceModel_VersionAssignment_4(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -87,16 +89,16 @@ protected class InterfaceModel_Group extends GroupToken {
 
 }
 
-// "interfaces for module"
-protected class InterfaceModel_InterfacesForModuleKeyword_0 extends KeywordToken  {
+// ^current?="current"?
+protected class InterfaceModel_CurrentAssignment_0 extends AssignmentToken  {
 	
-	public InterfaceModel_InterfacesForModuleKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public InterfaceModel_CurrentAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
-	public Keyword getGrammarElement() {
-		return grammarAccess.getInterfaceModelAccess().getInterfacesForModuleKeyword_0();
+	public Assignment getGrammarElement() {
+		return grammarAccess.getInterfaceModelAccess().getCurrentAssignment_0();
 	}
 
     @Override
@@ -106,24 +108,58 @@ protected class InterfaceModel_InterfacesForModuleKeyword_0 extends KeywordToken
 		}	
 	}
 
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("current",false)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("current");
+		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
+			type = AssignmentType.KEYWORD;
+			element = grammarAccess.getInterfaceModelAccess().getCurrentCurrentKeyword_0_0();
+			return obj;
+		}
+		return null;
+	}
+
 }
 
-// module=[system::Module|QualifiedName]
-protected class InterfaceModel_ModuleAssignment_1 extends AssignmentToken  {
+// "interfaces for module"
+protected class InterfaceModel_InterfacesForModuleKeyword_1 extends KeywordToken  {
 	
-	public InterfaceModel_ModuleAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public InterfaceModel_InterfacesForModuleKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
-	public Assignment getGrammarElement() {
-		return grammarAccess.getInterfaceModelAccess().getModuleAssignment_1();
+	public Keyword getGrammarElement() {
+		return grammarAccess.getInterfaceModelAccess().getInterfacesForModuleKeyword_1();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new InterfaceModel_InterfacesForModuleKeyword_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new InterfaceModel_CurrentAssignment_0(lastRuleCallOrigin, this, 0, inst);
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index - 1, inst);
+		}	
+	}
+
+}
+
+// module=[system::Module|QualifiedName]
+protected class InterfaceModel_ModuleAssignment_2 extends AssignmentToken  {
+	
+	public InterfaceModel_ModuleAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getInterfaceModelAccess().getModuleAssignment_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new InterfaceModel_InterfacesForModuleKeyword_1(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -134,9 +170,9 @@ protected class InterfaceModel_ModuleAssignment_1 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("module");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::CrossReferenceImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getInterfaceModelAccess().getModuleModuleCrossReference_1_0().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getInterfaceModelAccess().getModuleModuleCrossReference_2_0().getType().getClassifier())) {
 				type = AssignmentType.CROSS_REFERENCE;
-				element = grammarAccess.getInterfaceModelAccess().getModuleModuleCrossReference_1_0(); 
+				element = grammarAccess.getInterfaceModelAccess().getModuleModuleCrossReference_2_0(); 
 				return obj;
 			}
 		}
@@ -146,21 +182,21 @@ protected class InterfaceModel_ModuleAssignment_1 extends AssignmentToken  {
 }
 
 // "version"
-protected class InterfaceModel_VersionKeyword_2 extends KeywordToken  {
+protected class InterfaceModel_VersionKeyword_3 extends KeywordToken  {
 	
-	public InterfaceModel_VersionKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public InterfaceModel_VersionKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getInterfaceModelAccess().getVersionKeyword_2();
+		return grammarAccess.getInterfaceModelAccess().getVersionKeyword_3();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new InterfaceModel_ModuleAssignment_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new InterfaceModel_ModuleAssignment_2(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -168,21 +204,21 @@ protected class InterfaceModel_VersionKeyword_2 extends KeywordToken  {
 }
 
 // version=STRING
-protected class InterfaceModel_VersionAssignment_3 extends AssignmentToken  {
+protected class InterfaceModel_VersionAssignment_4 extends AssignmentToken  {
 	
-	public InterfaceModel_VersionAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public InterfaceModel_VersionAssignment_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getInterfaceModelAccess().getVersionAssignment_3();
+		return grammarAccess.getInterfaceModelAccess().getVersionAssignment_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new InterfaceModel_VersionKeyword_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new InterfaceModel_VersionKeyword_3(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -191,9 +227,9 @@ protected class InterfaceModel_VersionAssignment_3 extends AssignmentToken  {
 	public IEObjectConsumer tryConsume() {
 		if((value = eObjectConsumer.getConsumable("version",true)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("version");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getInterfaceModelAccess().getVersionSTRINGTerminalRuleCall_3_0(), value, null)) {
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getInterfaceModelAccess().getVersionSTRINGTerminalRuleCall_4_0(), value, null)) {
 			type = AssignmentType.TERMINAL_RULE_CALL;
-			element = grammarAccess.getInterfaceModelAccess().getVersionSTRINGTerminalRuleCall_3_0();
+			element = grammarAccess.getInterfaceModelAccess().getVersionSTRINGTerminalRuleCall_4_0();
 			return obj;
 		}
 		return null;
@@ -202,15 +238,15 @@ protected class InterfaceModel_VersionAssignment_3 extends AssignmentToken  {
 }
 
 // interfaces+=Interface*
-protected class InterfaceModel_InterfacesAssignment_4 extends AssignmentToken  {
+protected class InterfaceModel_InterfacesAssignment_5 extends AssignmentToken  {
 	
-	public InterfaceModel_InterfacesAssignment_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public InterfaceModel_InterfacesAssignment_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getInterfaceModelAccess().getInterfacesAssignment_4();
+		return grammarAccess.getInterfaceModelAccess().getInterfacesAssignment_5();
 	}
 
     @Override
@@ -229,7 +265,7 @@ protected class InterfaceModel_InterfacesAssignment_4 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getInterfaceRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getInterfaceModelAccess().getInterfacesInterfaceParserRuleCall_4_0(); 
+				element = grammarAccess.getInterfaceModelAccess().getInterfacesInterfaceParserRuleCall_5_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -241,8 +277,8 @@ protected class InterfaceModel_InterfacesAssignment_4 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new InterfaceModel_InterfacesAssignment_4(lastRuleCallOrigin, next, actIndex, consumed);
-			case 1: return new InterfaceModel_VersionAssignment_3(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new InterfaceModel_InterfacesAssignment_5(lastRuleCallOrigin, next, actIndex, consumed);
+			case 1: return new InterfaceModel_VersionAssignment_4(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	

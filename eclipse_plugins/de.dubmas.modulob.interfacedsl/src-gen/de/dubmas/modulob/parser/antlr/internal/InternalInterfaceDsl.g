@@ -77,9 +77,24 @@ ruleInterfaceModel returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='interfaces for module' 
+((
+(
+		lv_current_0_0=	'current' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getInterfaceModelAccess().getInterfacesForModuleKeyword_0());
+        newLeafNode(lv_current_0_0, grammarAccess.getInterfaceModelAccess().getCurrentCurrentKeyword_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getInterfaceModelRule());
+	        }
+       		setWithLastConsumed($current, "current", true, "current");
+	    }
+
+)
+)?	otherlv_1='interfaces for module' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getInterfaceModelAccess().getInterfacesForModuleKeyword_1());
     }
 (
 (
@@ -89,22 +104,22 @@ ruleInterfaceModel returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getInterfaceModelAccess().getModuleModuleCrossReference_1_0()); 
+	        newCompositeNode(grammarAccess.getInterfaceModelAccess().getModuleModuleCrossReference_2_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_2='version' 
+)	otherlv_3='version' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getInterfaceModelAccess().getVersionKeyword_2());
+    	newLeafNode(otherlv_3, grammarAccess.getInterfaceModelAccess().getVersionKeyword_3());
     }
 (
 (
-		lv_version_3_0=RULE_STRING
+		lv_version_4_0=RULE_STRING
 		{
-			newLeafNode(lv_version_3_0, grammarAccess.getInterfaceModelAccess().getVersionSTRINGTerminalRuleCall_3_0()); 
+			newLeafNode(lv_version_4_0, grammarAccess.getInterfaceModelAccess().getVersionSTRINGTerminalRuleCall_4_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -113,7 +128,7 @@ ruleInterfaceModel returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"version",
-        		lv_version_3_0, 
+        		lv_version_4_0, 
         		"STRING");
 	    }
 
@@ -121,16 +136,16 @@ ruleInterfaceModel returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getInterfaceModelAccess().getInterfacesInterfaceParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getInterfaceModelAccess().getInterfacesInterfaceParserRuleCall_5_0()); 
 	    }
-		lv_interfaces_4_0=ruleInterface		{
+		lv_interfaces_5_0=ruleInterface		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getInterfaceModelRule());
 	        }
        		add(
        			$current, 
        			"interfaces",
-        		lv_interfaces_4_0, 
+        		lv_interfaces_5_0, 
         		"Interface");
 	        afterParserOrEnumRuleCall();
 	    }

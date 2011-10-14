@@ -51,9 +51,10 @@ public class BehaviourDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEFloatObjectAccess().getGroup(), "rule__EFloatObject__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
-					put(grammarAccess.getBehaviouralModelAccess().getSystemAssignment_1(), "rule__BehaviouralModel__SystemAssignment_1");
-					put(grammarAccess.getBehaviouralModelAccess().getVersionAssignment_3(), "rule__BehaviouralModel__VersionAssignment_3");
-					put(grammarAccess.getBehaviouralModelAccess().getBehavioursAssignment_4(), "rule__BehaviouralModel__BehavioursAssignment_4");
+					put(grammarAccess.getBehaviouralModelAccess().getCurrentAssignment_0(), "rule__BehaviouralModel__CurrentAssignment_0");
+					put(grammarAccess.getBehaviouralModelAccess().getSystemAssignment_2(), "rule__BehaviouralModel__SystemAssignment_2");
+					put(grammarAccess.getBehaviouralModelAccess().getVersionAssignment_4(), "rule__BehaviouralModel__VersionAssignment_4");
+					put(grammarAccess.getBehaviouralModelAccess().getBehavioursAssignment_5(), "rule__BehaviouralModel__BehavioursAssignment_5");
 					put(grammarAccess.getBehaviourAccess().getNameAssignment_1(), "rule__Behaviour__NameAssignment_1");
 					put(grammarAccess.getBehaviourAccess().getReactionsAssignment_3(), "rule__Behaviour__ReactionsAssignment_3");
 					put(grammarAccess.getReactionAccess().getInterfaceAssignment_1(), "rule__Reaction__InterfaceAssignment_1");

@@ -161,10 +161,11 @@ public class AbstractBehaviourDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (system=[System|QualifiedName] version=STRING behaviours+=Behaviour*)
+	 *     (current?='current'? system=[System|QualifiedName] version=STRING behaviours+=Behaviour*)
 	 *
 	 * Features:
 	 *    version[1, 1]
+	 *    current[0, 1]
 	 *    behaviours[0, *]
 	 *    system[1, 1]
 	 */

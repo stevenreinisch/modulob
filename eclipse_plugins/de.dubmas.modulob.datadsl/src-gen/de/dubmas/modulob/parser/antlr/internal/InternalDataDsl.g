@@ -78,9 +78,24 @@ ruleEntityModel returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='entities for module' 
+((
+(
+		lv_current_0_0=	'current' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getEntityModelAccess().getEntitiesForModuleKeyword_0());
+        newLeafNode(lv_current_0_0, grammarAccess.getEntityModelAccess().getCurrentCurrentKeyword_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getEntityModelRule());
+	        }
+       		setWithLastConsumed($current, "current", true, "current");
+	    }
+
+)
+)?	otherlv_1='entities for module' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getEntityModelAccess().getEntitiesForModuleKeyword_1());
     }
 (
 (
@@ -90,22 +105,22 @@ ruleEntityModel returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getEntityModelAccess().getModuleModuleCrossReference_1_0()); 
+	        newCompositeNode(grammarAccess.getEntityModelAccess().getModuleModuleCrossReference_2_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_2='version' 
+)	otherlv_3='version' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getEntityModelAccess().getVersionKeyword_2());
+    	newLeafNode(otherlv_3, grammarAccess.getEntityModelAccess().getVersionKeyword_3());
     }
 (
 (
-		lv_version_3_0=RULE_STRING
+		lv_version_4_0=RULE_STRING
 		{
-			newLeafNode(lv_version_3_0, grammarAccess.getEntityModelAccess().getVersionSTRINGTerminalRuleCall_3_0()); 
+			newLeafNode(lv_version_4_0, grammarAccess.getEntityModelAccess().getVersionSTRINGTerminalRuleCall_4_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -114,7 +129,7 @@ ruleEntityModel returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"version",
-        		lv_version_3_0, 
+        		lv_version_4_0, 
         		"STRING");
 	    }
 
@@ -122,16 +137,16 @@ ruleEntityModel returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getEntityModelAccess().getEntitiesEntityParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getEntityModelAccess().getEntitiesEntityParserRuleCall_5_0()); 
 	    }
-		lv_entities_4_0=ruleEntity		{
+		lv_entities_5_0=ruleEntity		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getEntityModelRule());
 	        }
        		add(
        			$current, 
        			"entities",
-        		lv_entities_4_0, 
+        		lv_entities_5_0, 
         		"Entity");
 	        afterParserOrEnumRuleCall();
 	    }

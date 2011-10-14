@@ -8,6 +8,7 @@ import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 
+import de.dubmas.modulob.system.EntityModel;
 import de.dubmas.modulob.system.SystemPackage;
 
 public class DataDslNameProvider extends DefaultDeclarativeQualifiedNameProvider{
@@ -26,23 +27,24 @@ public class DataDslNameProvider extends DefaultDeclarativeQualifiedNameProvider
 				String[] segments     = new String[nodeSegments.length];// + 1];
 				System.arraycopy(nodeSegments, 1, segments, 0, nodeSegments.length-1);
 				segments[segments.length - 1] = ((Entity)obj).getName();
-				//debug(segments, (Entity)obj);
+				
 				return QualifiedName.create(segments);
 			}
 		}
 		
-		return super.getFullyQualifiedName(obj);
-	}
-	
-	private void debug(String[] segments, Entity e){
-		System.out.println("segments for entity: " + e.getName());
-		for(String s: segments){
-			if(s == null){
-				System.out.println("Null segment");
-			}else{
-				System.out.println(s);
+		if (obj instanceof EntityModel) {
+			EntityModel em = (EntityModel)obj;
+			
+			String moduleName = em.getModule() != null ? em.getModule().getName() : "";
+
+			if(moduleName != null){
+				String emName = "EntityModel_v" + em.getVersion();
+				return QualifiedName.create(moduleName, emName);
+			} else {
+				return null;
 			}
 		}
-		System.out.println();
+		
+		return super.getFullyQualifiedName(obj);
 	}
 }

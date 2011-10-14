@@ -1,5 +1,6 @@
 RULE_ID=6
 RULE_DOC_COMMENT=7
+T__26=26
 T__25=25
 T__24=24
 T__23=23
@@ -24,6 +25,7 @@ RULE_WS=10
 'primitive type'=23
 'version'=13
 'by calling'=19
+'current'=26
 'behaviours for system'=12
 '{'=15
 'as'=20

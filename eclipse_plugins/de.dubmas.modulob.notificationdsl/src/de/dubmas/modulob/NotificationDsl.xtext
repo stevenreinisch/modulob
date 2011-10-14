@@ -4,7 +4,7 @@ import 'platform:/resource/de.dubmas.modulob.metamodels/model/Modulob.ecore' as 
 import 'platform:/resource/de.dubmas.modulob.metamodels/model/ModulobSystem.ecore' as system
 
 NotificationModel returns system::NotificationModel:
-	'notifications for module' 
+	(^current ?= 'current')? 'notifications for module' 
 	module = [system::Module | QualifiedName]
 	'version' version = STRING 
 	(notifications += Notification)*

@@ -446,11 +446,9 @@ rule__NotificationModel__Group__0__Impl
     }
 :
 (
-{ before(grammarAccess.getNotificationModelAccess().getNotificationsForModuleKeyword_0()); }
-
-	'notifications for module' 
-
-{ after(grammarAccess.getNotificationModelAccess().getNotificationsForModuleKeyword_0()); }
+{ before(grammarAccess.getNotificationModelAccess().getCurrentAssignment_0()); }
+(rule__NotificationModel__CurrentAssignment_0)?
+{ after(grammarAccess.getNotificationModelAccess().getCurrentAssignment_0()); }
 )
 
 ;
@@ -477,9 +475,11 @@ rule__NotificationModel__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getNotificationModelAccess().getModuleAssignment_1()); }
-(rule__NotificationModel__ModuleAssignment_1)
-{ after(grammarAccess.getNotificationModelAccess().getModuleAssignment_1()); }
+{ before(grammarAccess.getNotificationModelAccess().getNotificationsForModuleKeyword_1()); }
+
+	'notifications for module' 
+
+{ after(grammarAccess.getNotificationModelAccess().getNotificationsForModuleKeyword_1()); }
 )
 
 ;
@@ -506,11 +506,9 @@ rule__NotificationModel__Group__2__Impl
     }
 :
 (
-{ before(grammarAccess.getNotificationModelAccess().getVersionKeyword_2()); }
-
-	'version' 
-
-{ after(grammarAccess.getNotificationModelAccess().getVersionKeyword_2()); }
+{ before(grammarAccess.getNotificationModelAccess().getModuleAssignment_2()); }
+(rule__NotificationModel__ModuleAssignment_2)
+{ after(grammarAccess.getNotificationModelAccess().getModuleAssignment_2()); }
 )
 
 ;
@@ -537,9 +535,11 @@ rule__NotificationModel__Group__3__Impl
     }
 :
 (
-{ before(grammarAccess.getNotificationModelAccess().getVersionAssignment_3()); }
-(rule__NotificationModel__VersionAssignment_3)
-{ after(grammarAccess.getNotificationModelAccess().getVersionAssignment_3()); }
+{ before(grammarAccess.getNotificationModelAccess().getVersionKeyword_3()); }
+
+	'version' 
+
+{ after(grammarAccess.getNotificationModelAccess().getVersionKeyword_3()); }
 )
 
 ;
@@ -554,6 +554,7 @@ rule__NotificationModel__Group__4
     }
 :
 	rule__NotificationModel__Group__4__Impl
+	rule__NotificationModel__Group__5
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -565,15 +566,45 @@ rule__NotificationModel__Group__4__Impl
     }
 :
 (
-{ before(grammarAccess.getNotificationModelAccess().getNotificationsAssignment_4()); }
-(rule__NotificationModel__NotificationsAssignment_4)*
-{ after(grammarAccess.getNotificationModelAccess().getNotificationsAssignment_4()); }
+{ before(grammarAccess.getNotificationModelAccess().getVersionAssignment_4()); }
+(rule__NotificationModel__VersionAssignment_4)
+{ after(grammarAccess.getNotificationModelAccess().getVersionAssignment_4()); }
 )
 
 ;
 finally {
 	restoreStackSize(stackSize);
 }
+
+
+rule__NotificationModel__Group__5
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__NotificationModel__Group__5__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__NotificationModel__Group__5__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getNotificationModelAccess().getNotificationsAssignment_5()); }
+(rule__NotificationModel__NotificationsAssignment_5)*
+{ after(grammarAccess.getNotificationModelAccess().getNotificationsAssignment_5()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 
 
 
@@ -1342,33 +1373,22 @@ finally {
 
 
 
-rule__NotificationModel__ModuleAssignment_1
+rule__NotificationModel__CurrentAssignment_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getNotificationModelAccess().getModuleModuleCrossReference_1_0()); }
+{ before(grammarAccess.getNotificationModelAccess().getCurrentCurrentKeyword_0_0()); }
 (
-{ before(grammarAccess.getNotificationModelAccess().getModuleModuleQualifiedNameParserRuleCall_1_0_1()); }
-	ruleQualifiedName{ after(grammarAccess.getNotificationModelAccess().getModuleModuleQualifiedNameParserRuleCall_1_0_1()); }
-)
-{ after(grammarAccess.getNotificationModelAccess().getModuleModuleCrossReference_1_0()); }
+{ before(grammarAccess.getNotificationModelAccess().getCurrentCurrentKeyword_0_0()); }
+
+	'current' 
+
+{ after(grammarAccess.getNotificationModelAccess().getCurrentCurrentKeyword_0_0()); }
 )
 
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__NotificationModel__VersionAssignment_3
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getNotificationModelAccess().getVersionSTRINGTerminalRuleCall_3_0()); }
-	RULE_STRING{ after(grammarAccess.getNotificationModelAccess().getVersionSTRINGTerminalRuleCall_3_0()); }
+{ after(grammarAccess.getNotificationModelAccess().getCurrentCurrentKeyword_0_0()); }
 )
 
 ;
@@ -1376,14 +1396,48 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__NotificationModel__NotificationsAssignment_4
+rule__NotificationModel__ModuleAssignment_2
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getNotificationModelAccess().getNotificationsNotificationParserRuleCall_4_0()); }
-	ruleNotification{ after(grammarAccess.getNotificationModelAccess().getNotificationsNotificationParserRuleCall_4_0()); }
+{ before(grammarAccess.getNotificationModelAccess().getModuleModuleCrossReference_2_0()); }
+(
+{ before(grammarAccess.getNotificationModelAccess().getModuleModuleQualifiedNameParserRuleCall_2_0_1()); }
+	ruleQualifiedName{ after(grammarAccess.getNotificationModelAccess().getModuleModuleQualifiedNameParserRuleCall_2_0_1()); }
+)
+{ after(grammarAccess.getNotificationModelAccess().getModuleModuleCrossReference_2_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__NotificationModel__VersionAssignment_4
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getNotificationModelAccess().getVersionSTRINGTerminalRuleCall_4_0()); }
+	RULE_STRING{ after(grammarAccess.getNotificationModelAccess().getVersionSTRINGTerminalRuleCall_4_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__NotificationModel__NotificationsAssignment_5
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getNotificationModelAccess().getNotificationsNotificationParserRuleCall_5_0()); }
+	ruleNotification{ after(grammarAccess.getNotificationModelAccess().getNotificationsNotificationParserRuleCall_5_0()); }
 )
 
 ;

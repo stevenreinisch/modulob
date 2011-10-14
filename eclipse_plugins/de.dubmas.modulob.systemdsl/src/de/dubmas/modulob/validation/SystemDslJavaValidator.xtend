@@ -4,6 +4,7 @@ import AbstractSystemDslJavaValidator
 
 import de.dubmas.modulob.system.*
 import de.dubmas.modulob.util.*
+import org.eclipse.emf.ecore.*
 import org.eclipse.xtext.validation.Check
 import org.eclipse.xtext.resource.IResourceDescriptions
 
@@ -24,4 +25,6 @@ class SystemDslJavaValidator extends AbstractSystemDslJavaValidator {
 					null )
 		}
 	}
+	
+	
 }

@@ -29,7 +29,7 @@ public class DataDslFormatter extends AbstractDeclarativeFormatter {
 		c.setLinewrap(0, 1, 2).before(((DataDslGrammarAccess)getGrammarAccess()).getML_COMMENTRule());
 		c.setLinewrap(0, 1, 1).after(((DataDslGrammarAccess)getGrammarAccess()).getML_COMMENTRule());
 		
-		c.setLinewrap(2).after(((DataDslGrammarAccess)getGrammarAccess()).getEntityModelAccess().getVersionSTRINGTerminalRuleCall_3_0());
+		c.setLinewrap(2).after(((DataDslGrammarAccess)getGrammarAccess()).getEntityModelAccess().getVersionSTRINGTerminalRuleCall_4_0());
 		c.setLinewrap().after(((DataDslGrammarAccess)getGrammarAccess()).getEntityRule());
 		c.setLinewrap().after(((DataDslGrammarAccess)getGrammarAccess()).getEntityAccess().getAnnotationsAssignment_1());
 		

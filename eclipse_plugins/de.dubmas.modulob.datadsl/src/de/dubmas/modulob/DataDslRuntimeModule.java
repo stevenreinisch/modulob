@@ -3,6 +3,10 @@
  */
 package de.dubmas.modulob;
 
+import org.eclipse.xtext.resource.IDefaultResourceDescriptionStrategy;
+
+import de.dubmas.modulob.util.ModulobResourceDescriptionStrategy;
+
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
@@ -13,7 +17,7 @@ public class DataDslRuntimeModule extends de.dubmas.modulob.AbstractDataDslRunti
 		return de.dubmas.modulob.DataDslNameProvider.class;
 	}
 	
-	public Class<? extends de.dubmas.modulob.ICommentExtractor> bindICommentExtractor() {
-		return de.dubmas.modulob.CommentExtractor.class;
+	public Class <? extends IDefaultResourceDescriptionStrategy> bindIDefaultResourceDescriptionStrategy() {
+		return ModulobResourceDescriptionStrategy.class;
 	}
 }

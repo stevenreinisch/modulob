@@ -77,9 +77,24 @@ ruleBehaviouralModel returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='behaviours for system' 
+((
+(
+		lv_current_0_0=	'current' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getBehaviouralModelAccess().getBehavioursForSystemKeyword_0());
+        newLeafNode(lv_current_0_0, grammarAccess.getBehaviouralModelAccess().getCurrentCurrentKeyword_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getBehaviouralModelRule());
+	        }
+       		setWithLastConsumed($current, "current", true, "current");
+	    }
+
+)
+)?	otherlv_1='behaviours for system' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getBehaviouralModelAccess().getBehavioursForSystemKeyword_1());
     }
 (
 (
@@ -89,22 +104,22 @@ ruleBehaviouralModel returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getBehaviouralModelAccess().getSystemSystemCrossReference_1_0()); 
+	        newCompositeNode(grammarAccess.getBehaviouralModelAccess().getSystemSystemCrossReference_2_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_2='version' 
+)	otherlv_3='version' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getBehaviouralModelAccess().getVersionKeyword_2());
+    	newLeafNode(otherlv_3, grammarAccess.getBehaviouralModelAccess().getVersionKeyword_3());
     }
 (
 (
-		lv_version_3_0=RULE_STRING
+		lv_version_4_0=RULE_STRING
 		{
-			newLeafNode(lv_version_3_0, grammarAccess.getBehaviouralModelAccess().getVersionSTRINGTerminalRuleCall_3_0()); 
+			newLeafNode(lv_version_4_0, grammarAccess.getBehaviouralModelAccess().getVersionSTRINGTerminalRuleCall_4_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -113,7 +128,7 @@ ruleBehaviouralModel returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"version",
-        		lv_version_3_0, 
+        		lv_version_4_0, 
         		"STRING");
 	    }
 
@@ -121,16 +136,16 @@ ruleBehaviouralModel returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getBehaviouralModelAccess().getBehavioursBehaviourParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getBehaviouralModelAccess().getBehavioursBehaviourParserRuleCall_5_0()); 
 	    }
-		lv_behaviours_4_0=ruleBehaviour		{
+		lv_behaviours_5_0=ruleBehaviour		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getBehaviouralModelRule());
 	        }
        		add(
        			$current, 
        			"behaviours",
-        		lv_behaviours_4_0, 
+        		lv_behaviours_5_0, 
         		"Behaviour");
 	        afterParserOrEnumRuleCall();
 	    }

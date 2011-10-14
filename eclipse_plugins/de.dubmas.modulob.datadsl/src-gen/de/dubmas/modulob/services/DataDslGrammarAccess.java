@@ -20,49 +20,59 @@ public class DataDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class EntityModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EntityModel");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cEntitiesForModuleKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cModuleAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cModuleModuleCrossReference_1_0 = (CrossReference)cModuleAssignment_1.eContents().get(0);
-		private final RuleCall cModuleModuleQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cModuleModuleCrossReference_1_0.eContents().get(1);
-		private final Keyword cVersionKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cVersionAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cVersionSTRINGTerminalRuleCall_3_0 = (RuleCall)cVersionAssignment_3.eContents().get(0);
-		private final Assignment cEntitiesAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cEntitiesEntityParserRuleCall_4_0 = (RuleCall)cEntitiesAssignment_4.eContents().get(0);
+		private final Assignment cCurrentAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cCurrentCurrentKeyword_0_0 = (Keyword)cCurrentAssignment_0.eContents().get(0);
+		private final Keyword cEntitiesForModuleKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cModuleAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cModuleModuleCrossReference_2_0 = (CrossReference)cModuleAssignment_2.eContents().get(0);
+		private final RuleCall cModuleModuleQualifiedNameParserRuleCall_2_0_1 = (RuleCall)cModuleModuleCrossReference_2_0.eContents().get(1);
+		private final Keyword cVersionKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cVersionAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cVersionSTRINGTerminalRuleCall_4_0 = (RuleCall)cVersionAssignment_4.eContents().get(0);
+		private final Assignment cEntitiesAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cEntitiesEntityParserRuleCall_5_0 = (RuleCall)cEntitiesAssignment_5.eContents().get(0);
 		
 		//EntityModel returns system::EntityModel:
-		//	"entities for module" module=[system::Module|QualifiedName] "version" version=STRING entities+=Entity*;
+		//	^current?="current"? "entities for module" module=[system::Module|QualifiedName] "version" version=STRING
+		//	entities+=Entity*;
 		public ParserRule getRule() { return rule; }
 
-		//"entities for module" module=[system::Module|QualifiedName] "version" version=STRING entities+=Entity*
+		//^current?="current"? "entities for module" module=[system::Module|QualifiedName] "version" version=STRING
+		//entities+=Entity*
 		public Group getGroup() { return cGroup; }
 
+		//^current?="current"?
+		public Assignment getCurrentAssignment_0() { return cCurrentAssignment_0; }
+
+		//"current"
+		public Keyword getCurrentCurrentKeyword_0_0() { return cCurrentCurrentKeyword_0_0; }
+
 		//"entities for module"
-		public Keyword getEntitiesForModuleKeyword_0() { return cEntitiesForModuleKeyword_0; }
+		public Keyword getEntitiesForModuleKeyword_1() { return cEntitiesForModuleKeyword_1; }
 
 		//module=[system::Module|QualifiedName]
-		public Assignment getModuleAssignment_1() { return cModuleAssignment_1; }
+		public Assignment getModuleAssignment_2() { return cModuleAssignment_2; }
 
 		//[system::Module|QualifiedName]
-		public CrossReference getModuleModuleCrossReference_1_0() { return cModuleModuleCrossReference_1_0; }
+		public CrossReference getModuleModuleCrossReference_2_0() { return cModuleModuleCrossReference_2_0; }
 
 		//QualifiedName
-		public RuleCall getModuleModuleQualifiedNameParserRuleCall_1_0_1() { return cModuleModuleQualifiedNameParserRuleCall_1_0_1; }
+		public RuleCall getModuleModuleQualifiedNameParserRuleCall_2_0_1() { return cModuleModuleQualifiedNameParserRuleCall_2_0_1; }
 
 		//"version"
-		public Keyword getVersionKeyword_2() { return cVersionKeyword_2; }
+		public Keyword getVersionKeyword_3() { return cVersionKeyword_3; }
 
 		//version=STRING
-		public Assignment getVersionAssignment_3() { return cVersionAssignment_3; }
+		public Assignment getVersionAssignment_4() { return cVersionAssignment_4; }
 
 		//STRING
-		public RuleCall getVersionSTRINGTerminalRuleCall_3_0() { return cVersionSTRINGTerminalRuleCall_3_0; }
+		public RuleCall getVersionSTRINGTerminalRuleCall_4_0() { return cVersionSTRINGTerminalRuleCall_4_0; }
 
 		//entities+=Entity*
-		public Assignment getEntitiesAssignment_4() { return cEntitiesAssignment_4; }
+		public Assignment getEntitiesAssignment_5() { return cEntitiesAssignment_5; }
 
 		//Entity
-		public RuleCall getEntitiesEntityParserRuleCall_4_0() { return cEntitiesEntityParserRuleCall_4_0; }
+		public RuleCall getEntitiesEntityParserRuleCall_5_0() { return cEntitiesEntityParserRuleCall_5_0; }
 	}
 
 	public class EntityElements extends AbstractParserRuleElementFinder {
@@ -347,7 +357,8 @@ public class DataDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//EntityModel returns system::EntityModel:
-	//	"entities for module" module=[system::Module|QualifiedName] "version" version=STRING entities+=Entity*;
+	//	^current?="current"? "entities for module" module=[system::Module|QualifiedName] "version" version=STRING
+	//	entities+=Entity*;
 	public EntityModelElements getEntityModelAccess() {
 		return (pEntityModel != null) ? pEntityModel : (pEntityModel = new EntityModelElements());
 	}

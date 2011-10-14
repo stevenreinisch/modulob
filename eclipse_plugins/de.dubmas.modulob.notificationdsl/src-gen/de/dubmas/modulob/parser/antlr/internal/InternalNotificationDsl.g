@@ -77,9 +77,24 @@ ruleNotificationModel returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='notifications for module' 
+((
+(
+		lv_current_0_0=	'current' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getNotificationModelAccess().getNotificationsForModuleKeyword_0());
+        newLeafNode(lv_current_0_0, grammarAccess.getNotificationModelAccess().getCurrentCurrentKeyword_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getNotificationModelRule());
+	        }
+       		setWithLastConsumed($current, "current", true, "current");
+	    }
+
+)
+)?	otherlv_1='notifications for module' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getNotificationModelAccess().getNotificationsForModuleKeyword_1());
     }
 (
 (
@@ -89,22 +104,22 @@ ruleNotificationModel returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getNotificationModelAccess().getModuleModuleCrossReference_1_0()); 
+	        newCompositeNode(grammarAccess.getNotificationModelAccess().getModuleModuleCrossReference_2_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_2='version' 
+)	otherlv_3='version' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getNotificationModelAccess().getVersionKeyword_2());
+    	newLeafNode(otherlv_3, grammarAccess.getNotificationModelAccess().getVersionKeyword_3());
     }
 (
 (
-		lv_version_3_0=RULE_STRING
+		lv_version_4_0=RULE_STRING
 		{
-			newLeafNode(lv_version_3_0, grammarAccess.getNotificationModelAccess().getVersionSTRINGTerminalRuleCall_3_0()); 
+			newLeafNode(lv_version_4_0, grammarAccess.getNotificationModelAccess().getVersionSTRINGTerminalRuleCall_4_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -113,7 +128,7 @@ ruleNotificationModel returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"version",
-        		lv_version_3_0, 
+        		lv_version_4_0, 
         		"STRING");
 	    }
 
@@ -121,16 +136,16 @@ ruleNotificationModel returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getNotificationModelAccess().getNotificationsNotificationParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getNotificationModelAccess().getNotificationsNotificationParserRuleCall_5_0()); 
 	    }
-		lv_notifications_4_0=ruleNotification		{
+		lv_notifications_5_0=ruleNotification		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getNotificationModelRule());
 	        }
        		add(
        			$current, 
        			"notifications",
-        		lv_notifications_4_0, 
+        		lv_notifications_5_0, 
         		"Notification");
 	        afterParserOrEnumRuleCall();
 	    }

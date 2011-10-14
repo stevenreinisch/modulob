@@ -262,13 +262,22 @@ public interface SystemPackage extends EPackage {
 	int VERSIONED_ELEMENT__VERSION = ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Current</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VERSIONED_ELEMENT__CURRENT = ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Versioned Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERSIONED_ELEMENT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
+	int VERSIONED_ELEMENT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.dubmas.modulob.system.impl.InterfaceModelImpl <em>Interface Model</em>}' class.
@@ -306,6 +315,15 @@ public interface SystemPackage extends EPackage {
 	 * @ordered
 	 */
 	int INTERFACE_MODEL__VERSION = VERSIONED_ELEMENT__VERSION;
+
+	/**
+	 * The feature id for the '<em><b>Current</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_MODEL__CURRENT = VERSIONED_ELEMENT__CURRENT;
 
 	/**
 	 * The feature id for the '<em><b>Interfaces</b></em>' containment reference list.
@@ -372,6 +390,15 @@ public interface SystemPackage extends EPackage {
 	int ENTITY_MODEL__VERSION = VERSIONED_ELEMENT__VERSION;
 
 	/**
+	 * The feature id for the '<em><b>Current</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_MODEL__CURRENT = VERSIONED_ELEMENT__CURRENT;
+
+	/**
 	 * The feature id for the '<em><b>Module</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -436,6 +463,15 @@ public interface SystemPackage extends EPackage {
 	int NOTIFICATION_MODEL__VERSION = VERSIONED_ELEMENT__VERSION;
 
 	/**
+	 * The feature id for the '<em><b>Current</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTIFICATION_MODEL__CURRENT = VERSIONED_ELEMENT__CURRENT;
+
+	/**
 	 * The feature id for the '<em><b>Notifications</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -498,6 +534,15 @@ public interface SystemPackage extends EPackage {
 	 * @ordered
 	 */
 	int BEHAVIOURAL_MODEL__VERSION = VERSIONED_ELEMENT__VERSION;
+
+	/**
+	 * The feature id for the '<em><b>Current</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOURAL_MODEL__CURRENT = VERSIONED_ELEMENT__CURRENT;
 
 	/**
 	 * The feature id for the '<em><b>Behaviours</b></em>' containment reference list.
@@ -763,6 +808,17 @@ public interface SystemPackage extends EPackage {
 	EAttribute getVersionedElement_Version();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.dubmas.modulob.system.VersionedElement#isCurrent <em>Current</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Current</em>'.
+	 * @see de.dubmas.modulob.system.VersionedElement#isCurrent()
+	 * @see #getVersionedElement()
+	 * @generated
+	 */
+	EAttribute getVersionedElement_Current();
+
+	/**
 	 * Returns the meta object for class '{@link de.dubmas.modulob.system.Element <em>Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1005,6 +1061,14 @@ public interface SystemPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VERSIONED_ELEMENT__VERSION = eINSTANCE.getVersionedElement_Version();
+
+		/**
+		 * The meta object literal for the '<em><b>Current</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VERSIONED_ELEMENT__CURRENT = eINSTANCE.getVersionedElement_Current();
 
 		/**
 		 * The meta object literal for the '{@link de.dubmas.modulob.system.impl.ElementImpl <em>Element</em>}' class.

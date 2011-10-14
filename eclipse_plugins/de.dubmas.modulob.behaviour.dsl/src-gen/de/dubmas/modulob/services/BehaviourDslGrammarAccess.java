@@ -20,49 +20,59 @@ public class BehaviourDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class BehaviouralModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BehaviouralModel");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cBehavioursForSystemKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cSystemAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cSystemSystemCrossReference_1_0 = (CrossReference)cSystemAssignment_1.eContents().get(0);
-		private final RuleCall cSystemSystemQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cSystemSystemCrossReference_1_0.eContents().get(1);
-		private final Keyword cVersionKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cVersionAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cVersionSTRINGTerminalRuleCall_3_0 = (RuleCall)cVersionAssignment_3.eContents().get(0);
-		private final Assignment cBehavioursAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cBehavioursBehaviourParserRuleCall_4_0 = (RuleCall)cBehavioursAssignment_4.eContents().get(0);
+		private final Assignment cCurrentAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cCurrentCurrentKeyword_0_0 = (Keyword)cCurrentAssignment_0.eContents().get(0);
+		private final Keyword cBehavioursForSystemKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cSystemAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cSystemSystemCrossReference_2_0 = (CrossReference)cSystemAssignment_2.eContents().get(0);
+		private final RuleCall cSystemSystemQualifiedNameParserRuleCall_2_0_1 = (RuleCall)cSystemSystemCrossReference_2_0.eContents().get(1);
+		private final Keyword cVersionKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cVersionAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cVersionSTRINGTerminalRuleCall_4_0 = (RuleCall)cVersionAssignment_4.eContents().get(0);
+		private final Assignment cBehavioursAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cBehavioursBehaviourParserRuleCall_5_0 = (RuleCall)cBehavioursAssignment_5.eContents().get(0);
 		
 		//BehaviouralModel returns system::BehaviouralModel:
-		//	"behaviours for system" system=[system::System|QualifiedName] "version" version=STRING behaviours+=Behaviour*;
+		//	^current?="current"? "behaviours for system" system=[system::System|QualifiedName] "version" version=STRING
+		//	behaviours+=Behaviour*;
 		public ParserRule getRule() { return rule; }
 
-		//"behaviours for system" system=[system::System|QualifiedName] "version" version=STRING behaviours+=Behaviour*
+		//^current?="current"? "behaviours for system" system=[system::System|QualifiedName] "version" version=STRING
+		//behaviours+=Behaviour*
 		public Group getGroup() { return cGroup; }
 
+		//^current?="current"?
+		public Assignment getCurrentAssignment_0() { return cCurrentAssignment_0; }
+
+		//"current"
+		public Keyword getCurrentCurrentKeyword_0_0() { return cCurrentCurrentKeyword_0_0; }
+
 		//"behaviours for system"
-		public Keyword getBehavioursForSystemKeyword_0() { return cBehavioursForSystemKeyword_0; }
+		public Keyword getBehavioursForSystemKeyword_1() { return cBehavioursForSystemKeyword_1; }
 
 		//system=[system::System|QualifiedName]
-		public Assignment getSystemAssignment_1() { return cSystemAssignment_1; }
+		public Assignment getSystemAssignment_2() { return cSystemAssignment_2; }
 
 		//[system::System|QualifiedName]
-		public CrossReference getSystemSystemCrossReference_1_0() { return cSystemSystemCrossReference_1_0; }
+		public CrossReference getSystemSystemCrossReference_2_0() { return cSystemSystemCrossReference_2_0; }
 
 		//QualifiedName
-		public RuleCall getSystemSystemQualifiedNameParserRuleCall_1_0_1() { return cSystemSystemQualifiedNameParserRuleCall_1_0_1; }
+		public RuleCall getSystemSystemQualifiedNameParserRuleCall_2_0_1() { return cSystemSystemQualifiedNameParserRuleCall_2_0_1; }
 
 		//"version"
-		public Keyword getVersionKeyword_2() { return cVersionKeyword_2; }
+		public Keyword getVersionKeyword_3() { return cVersionKeyword_3; }
 
 		//version=STRING
-		public Assignment getVersionAssignment_3() { return cVersionAssignment_3; }
+		public Assignment getVersionAssignment_4() { return cVersionAssignment_4; }
 
 		//STRING
-		public RuleCall getVersionSTRINGTerminalRuleCall_3_0() { return cVersionSTRINGTerminalRuleCall_3_0; }
+		public RuleCall getVersionSTRINGTerminalRuleCall_4_0() { return cVersionSTRINGTerminalRuleCall_4_0; }
 
 		//behaviours+=Behaviour*
-		public Assignment getBehavioursAssignment_4() { return cBehavioursAssignment_4; }
+		public Assignment getBehavioursAssignment_5() { return cBehavioursAssignment_5; }
 
 		//Behaviour
-		public RuleCall getBehavioursBehaviourParserRuleCall_4_0() { return cBehavioursBehaviourParserRuleCall_4_0; }
+		public RuleCall getBehavioursBehaviourParserRuleCall_5_0() { return cBehavioursBehaviourParserRuleCall_5_0; }
 	}
 
 	public class BehaviourElements extends AbstractParserRuleElementFinder {
@@ -244,7 +254,8 @@ public class BehaviourDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//BehaviouralModel returns system::BehaviouralModel:
-	//	"behaviours for system" system=[system::System|QualifiedName] "version" version=STRING behaviours+=Behaviour*;
+	//	^current?="current"? "behaviours for system" system=[system::System|QualifiedName] "version" version=STRING
+	//	behaviours+=Behaviour*;
 	public BehaviouralModelElements getBehaviouralModelAccess() {
 		return (pBehaviouralModel != null) ? pBehaviouralModel : (pBehaviouralModel = new BehaviouralModelElements());
 	}

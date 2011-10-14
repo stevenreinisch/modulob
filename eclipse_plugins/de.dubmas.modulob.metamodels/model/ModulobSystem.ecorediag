@@ -103,6 +103,10 @@
         <element xmi:type="ecore:EAttribute" href="ModulobSystem.ecore#//VersionedElement/version"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_7B7X6dOfEeCZnMbSSZ-wKQ"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_zuzvYfWoEeCX7NtgmFC4gA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="ModulobSystem.ecore#//VersionedElement/current"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_zuzvYvWoEeCX7NtgmFC4gA"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_7B7X4dOfEeCZnMbSSZ-wKQ"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_7B7X4tOfEeCZnMbSSZ-wKQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_7B7X49OfEeCZnMbSSZ-wKQ"/>

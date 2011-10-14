@@ -52,9 +52,10 @@ public class InterfaceDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEFloatObjectAccess().getGroup(), "rule__EFloatObject__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
-					put(grammarAccess.getInterfaceModelAccess().getModuleAssignment_1(), "rule__InterfaceModel__ModuleAssignment_1");
-					put(grammarAccess.getInterfaceModelAccess().getVersionAssignment_3(), "rule__InterfaceModel__VersionAssignment_3");
-					put(grammarAccess.getInterfaceModelAccess().getInterfacesAssignment_4(), "rule__InterfaceModel__InterfacesAssignment_4");
+					put(grammarAccess.getInterfaceModelAccess().getCurrentAssignment_0(), "rule__InterfaceModel__CurrentAssignment_0");
+					put(grammarAccess.getInterfaceModelAccess().getModuleAssignment_2(), "rule__InterfaceModel__ModuleAssignment_2");
+					put(grammarAccess.getInterfaceModelAccess().getVersionAssignment_4(), "rule__InterfaceModel__VersionAssignment_4");
+					put(grammarAccess.getInterfaceModelAccess().getInterfacesAssignment_5(), "rule__InterfaceModel__InterfacesAssignment_5");
 					put(grammarAccess.getInterfaceAccess().getCommentAssignment_0(), "rule__Interface__CommentAssignment_0");
 					put(grammarAccess.getInterfaceAccess().getNameAssignment_2(), "rule__Interface__NameAssignment_2");
 					put(grammarAccess.getInterfaceAccess().getRequiredInterfacesAssignment_3_1(), "rule__Interface__RequiredInterfacesAssignment_3_1");

@@ -12,11 +12,15 @@ import de.dubmas.modulob.types.*
 
 import org.eclipse.emf.ecore.*
 import org.eclipse.xtext.validation.Check
+import org.eclipse.xtext.naming.IQualifiedNameProvider
+import org.eclipse.xtext.resource.*
 import com.google.inject.Inject
 
 class DataDslJavaValidator extends AbstractDataDslJavaValidator {
 	
 	@Inject extension DataDslExtensions extensions
+	@Inject	IResourceDescriptions index
+	@Inject IQualifiedNameProvider qnProvider
 		
 	@Check
 	def checkIfIndexedAllowed(Feature f) {
@@ -328,6 +332,29 @@ class DataDslJavaValidator extends AbstractDataDslJavaValidator {
 					   0 ,
 					   ValidationIssueCodes::FEATURE_IN_HIERARCHY_CODE,
 					   null )
+		}
+	}
+	
+	@Check
+	def checkIfOnlyOneCurrentEntityModel(EntityModel em){
+		
+		if(index.getExportedObjectsByType(SystemPackage::eINSTANCE.entityModel)
+			.exists(desc | em.isCurrent
+						   &&
+						   Boolean::parseBoolean(desc.getUserData(ModulobResourceDescriptionStrategy::ENTITY_MODEL_CURRENT_KEY))
+						   &&
+						   //first segment is name of module (see DataDslNameProvider)
+						   desc.qualifiedName.segments.get(0) == qnProvider.getFullyQualifiedName(em).segments.get(0)
+						   &&
+						   desc.qualifiedName.toString() != qnProvider.getFullyQualifiedName(em).toString()
+				   ))
+		{
+			
+			error ("There can only be one current entity model.",
+					SystemPackage::eINSTANCE.versionedElement_Current, 
+					0 ,
+					ValidationIssueCodes::CURRENT_ENTITY_MODEL_CODE,
+					null )
 		}
 	}
 }
