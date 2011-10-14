@@ -14,6 +14,7 @@
             ID,
             isInitial,
             isFinal,
+            duration,
             entrySelectorName,
             exitSelectorName,
             incomingTransitions,
@@ -23,7 +24,8 @@
 {
     self = [super init];
     if (self) {
-        ID = -1;
+        ID       = UNDEFINED;
+        duration = UNDEFINED;
     }
     
     return self;

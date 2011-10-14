@@ -20,7 +20,7 @@
 {
     self = [super init];
     if (self) {
-        ID = -1;
+        ID = UNDEFINED;
     }
     
     return self;

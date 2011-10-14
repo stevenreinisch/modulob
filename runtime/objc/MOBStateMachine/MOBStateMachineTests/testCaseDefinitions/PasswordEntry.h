@@ -25,6 +25,8 @@
 
 @property (nonatomic, assign) BOOL pinCorrect;
 
+@property (nonatomic, assign) BOOL lockAfterFailedAuthentication;
+
 /*
  * This state machine controls the state of
  * instances of this class.

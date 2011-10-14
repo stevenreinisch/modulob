@@ -23,6 +23,4 @@
 
 - (MOBState*) currentState;
 
-- (void) switchTransition:(NSUInteger) transitionID;
-
 @end

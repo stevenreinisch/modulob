@@ -3,27 +3,27 @@
 //  MOBStateMachine
 //
 //  Created by steven reinisch on 10/12/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 dubmas. All rights reserved.
 //
 
 #import "MOBStateMachine.h"
 
 @interface MOBStateMachine ()
 @property (nonatomic, retain) MOBState *currentState;
-@property (nonatomic, retain) NSArray *transitionIndex;
 
 - (void) checkConsistencyAtStartUp;
 
-- (void) buildTransitionIndex;
-
 - (BOOL) switchTransitionInternal:(MOBTransition*) transition;
+- (void) enterState:(MOBState*) newState;
 - (void) executeSelector:(NSString*) selectorName;
 - (BOOL) evaluateGuardSelector:(NSString*) selectorName;
+
+- (void) currentStateDurationEnded;
 @end
 
 @implementation MOBStateMachine
 
-@synthesize delegate, states, transitions, transitionIndex, currentState;
+@synthesize delegate, states, transitions, currentState;
 
 #pragma mark -
 
@@ -41,7 +41,6 @@
 - (void) dealloc {
     self.states          = nil;
     self.transitions     = nil;
-    self.transitionIndex = nil;
     self.currentState    = nil;
     
     [super dealloc];
@@ -51,7 +50,6 @@
 
 - (void) start {
     [self currentState];
-    [self buildTransitionIndex];
     [self checkConsistencyAtStartUp];
     
     [self executeSelector:currentState.entrySelectorName];
@@ -73,6 +71,10 @@
             switched = [self switchTransitionInternal:transition];
         }
     }
+    
+    if (switched && transition) {
+        [self enterState:transition.targetState];
+    }
 }
 
 - (MOBState*) currentState {
@@ -84,45 +86,38 @@
     return currentState;
 }
 
-- (void) switchTransition:(NSUInteger) transitionID {
-    MOBTransition *t = [transitionIndex objectAtIndex:transitionID];
-    [self switchTransitionInternal:t];
-}
-
 #pragma mark -
 #pragma mark private
 
 /*
  * 1. execute current state's exit selector
  * 2. execute transition's action selector
- * 3. set current state to transition.targetState
- * 4. execute current state's entry selector
  */
 - (BOOL) switchTransitionInternal:(MOBTransition*) transition {
     [self executeSelector:currentState.exitSelectorName];
-    
     [self executeSelector:transition.actionSelectorName];
-    
-    self.currentState = transition.targetState;
-    
-    [self executeSelector:currentState.entrySelectorName];
-    
     return YES;
 }
 
-- (void) buildTransitionIndex {
-    self.transitionIndex = 
-        [transitions sortedArrayUsingDescriptors:[NSArray arrayWithObject:
-                                                  [NSSortDescriptor sortDescriptorWithKey:@"ID" 
-                                                                                ascending:YES]]];
+- (void) enterState:(MOBState*) newState {
+    self.currentState = newState;
+    [self executeSelector:currentState.entrySelectorName];
+    
+    if (DEFINED(newState.duration)) {
+        NSLog(@"starting timer for state: %@ (ID: %d) with duration: %f",
+              newState.name, newState.ID, newState.duration);
+        
+        [NSTimer scheduledTimerWithTimeInterval:newState.duration 
+                                         target:self 
+                                       selector:@selector(currentStateDurationEnded) 
+                                       userInfo:nil 
+                                        repeats:NO];
+    }
 }
 
 - (void) checkConsistencyAtStartUp {
     NSAssert([states count] > 0, @"state machine must have at least one state");
     NSAssert([transitions count] > 0, @"state machine must have at least one transition");
-    NSAssert([transitions count] == [transitionIndex count],
-             @"transitions and transitionIndex must have same size");
-    NSAssert([[transitionIndex objectAtIndex:0] ID] == 0, @"first transition in index must have ID == 0");
     
     NSArray *initialStates = [[states filteredSetUsingPredicate:
                                 [NSPredicate predicateWithFormat:@"SELF.isInitial == YES"]] 
@@ -140,7 +135,7 @@
                                [NSPredicate predicateWithFormat:@"SELF.isFinal == YES"]] 
                                  allObjects];
     
-    NSAssert([finalStates count] > 1, @"at least one state must be final");
+    NSAssert([finalStates count] >= 1, @"at least one state must be final");
     
     for(MOBState *finalState in finalStates) {
         NSSet *outgoingTransitions = finalState.outgoingTransitions;
@@ -181,6 +176,18 @@
         }
     }
 	return YES;
+}
+
+/*
+ * If the current state's duration has ended,
+ * the state machine leaves the current state
+ * by updating itself.
+ */
+- (void) currentStateDurationEnded {
+    NSLog(@"timer ended for state: %@ (ID: %d) with duration: %f",
+          currentState.name, currentState.ID, currentState.duration);
+    
+    [self update];
 }
 
 @end

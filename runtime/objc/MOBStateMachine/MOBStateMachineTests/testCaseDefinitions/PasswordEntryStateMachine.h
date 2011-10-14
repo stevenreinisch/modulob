@@ -13,7 +13,8 @@ enum {
     PasswordEntryState_PARTIALLYFILLED,
     PasswordEntryState_COMPLETELYFILLED,
     PasswordEntryState_USERAUTHENTICATED,
-    PasswordEntryState_USERNOTAUTHENTICATED
+    PasswordEntryState_USERNOTAUTHENTICATED,
+    PasswordEntryState_LOCKED
 };
 
 enum {
@@ -22,7 +23,9 @@ enum {
     PasswordEntryTransition_PARTIALLYFILLED_COMPLETELYFILLED,    
     PasswordEntryTransition_COMPLETELYFILLED_USERAUTHENTICATED,
     PasswordEntryTransition_COMPLETELYFILLED_USERNOTAUTHENTICATED,
-    PasswordEntryTransition_USERNOTAUTHENTICATED_EMPTY
+    PasswordEntryTransition_USERNOTAUTHENTICATED_EMPTY,
+    PasswordEntryTransition_USERNOTAUTHENTICATED_LOCKED,
+    PasswordEntryTransition_LOCKED_EMPTY
 };
 
 @interface PasswordEntryStateMachine : MOBStateMachine

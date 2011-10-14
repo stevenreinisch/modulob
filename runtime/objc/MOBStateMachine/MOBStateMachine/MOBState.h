@@ -42,6 +42,18 @@
 @property (nonatomic, assign) BOOL isFinal;
 
 /*
+ * If duration is specified, the state machine waits
+ * for this time interval after this state is entered
+ * and exists this state after this time interval.
+ *
+ * This can be used to model timeouts; e.g. in networking
+ * code: you can have a state "WaitingForReply" that is
+ * automatically exited if a certain time interval has
+ * elapsed.
+ */
+@property (nonatomic, assign) NSTimeInterval duration;
+
+/*
  * If a state is entered, entrySelectorName != nil
  * and the state machine's delegagte responds to this
  * selector, this selector is executed on the state

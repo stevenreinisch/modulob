@@ -27,6 +27,7 @@
     
     self.passwordEntry = [[PasswordEntry new] autorelease];
     self.passwordEntry.correctUserPin = @"1234";
+    self.passwordEntry.lockAfterFailedAuthentication = NO;
 }
 
 - (void)tearDown

@@ -43,6 +43,12 @@
 - (void) enter_userNotAuthenticated;
 - (void) exit_userNotAuthenticated;
 
+/*
+ * state locked
+ */
+- (void) enter_locked;
+- (void) exit_locked;
+
 #pragma mark -
 #pragma mark transitions: actions (optional)
 
@@ -81,13 +87,35 @@
  */
 - (void) action_userNotAuthenticated_to_empty;
 
+/*
+ * transition userNotAuthenticated_to_locked
+ */
+- (void) action_userNotAuthenticated_to_locked;
+
+/*
+ * transition locked_to_empty
+ */
+- (void) action_locked_to_empty;
 
 #pragma mark transitions: guards (optional)
+/*
+ * Guards are optional if state has only one
+ * outgoing transition.
+ */
 
 /*
  * transition empty_to_partiallyFilled
  */
 - (NSNumber*) guard_empty_to_partiallyFilled;
+
+/*
+ * transition locked_to_empty
+ */
+- (NSNumber*) guard_locked_to_empty;
+
+#pragma mark transitions: guards (required)
+
+@required
 
 /*
  * transition partiallyFilled_to_empty
@@ -118,5 +146,10 @@
  * transition userNotAuthenticated_to_empty
  */
 - (NSNumber*) guard_userNotAuthenticated_to_empty;
+
+/*
+ * transition userNotAuthenticated_to_locked
+ */
+- (NSNumber*) guard_userNotAuthenticated_to_locked;
 
 @end

@@ -12,7 +12,7 @@
 
 @implementation PasswordEntry
 
-@synthesize pin, correctUserPin, stateMachine, pinCorrect;
+@synthesize pin, correctUserPin, stateMachine, pinCorrect, lockAfterFailedAuthentication;
 
 - (id)init
 {
@@ -23,6 +23,7 @@
         [stateMachine start];
         
         self.pinCorrect = NO;
+        self.lockAfterFailedAuthentication = NO;
     }
     
     return self;
@@ -126,12 +127,20 @@
     return [NSNumber numberWithBool:result];
 }
 
-//- (NSNumber*) guard_userNotAuthenticated_to_empty {
-//    BOOL result = YES;
-//    
-//    NSLog(@"evaluated guard_completelyFilled_to_userNotAuthenticated with result: %d", result);
-//    
-//    return [NSNumber numberWithBool:result];
-//}
+- (NSNumber*) guard_userNotAuthenticated_to_empty {
+    BOOL result = !lockAfterFailedAuthentication;
+    
+    NSLog(@"evaluated guard_userNotAuthenticated_to_empty with result: %d", result);
+    
+    return [NSNumber numberWithBool:result];
+}
+
+- (NSNumber*) guard_userNotAuthenticated_to_locked {
+    BOOL result = lockAfterFailedAuthentication;
+    
+    NSLog(@"evaluated guard_userNotAuthenticated_to_locked with result: %d", result);
+    
+    return [NSNumber numberWithBool:result];
+}
 
 @end

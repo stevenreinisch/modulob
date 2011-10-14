@@ -2,6 +2,9 @@
 // Prefix header for all source files of the 'MOBStateMachine' target in the 'MOBStateMachine' project
 //
 
+#define UNDEFINED -1
+#define DEFINED(i) i > UNDEFINED
+
 #ifdef __OBJC__
     #import <Foundation/Foundation.h>
 #endif

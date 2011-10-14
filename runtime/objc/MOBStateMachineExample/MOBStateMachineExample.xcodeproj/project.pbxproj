@@ -1,0 +1,477 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F988A2D5144880A9002EC3AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F988A2D4144880A9002EC3AD /* UIKit.framework */; };
+		F988A2D7144880A9002EC3AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F988A2D6144880A9002EC3AD /* Foundation.framework */; };
+		F988A2D9144880A9002EC3AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F988A2D8144880A9002EC3AD /* CoreGraphics.framework */; };
+		F988A2DF144880A9002EC3AD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F988A2DD144880A9002EC3AD /* InfoPlist.strings */; };
+		F988A2E1144880A9002EC3AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F988A2E0144880A9002EC3AD /* main.m */; };
+		F988A2E5144880A9002EC3AD /* MOBStateMachineExampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F988A2E4144880A9002EC3AD /* MOBStateMachineExampleAppDelegate.m */; };
+		F988A2E8144880A9002EC3AD /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = F988A2E6144880A9002EC3AD /* MainWindow.xib */; };
+		F988A2EB144880A9002EC3AD /* MOBStateMachineExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F988A2EA144880A9002EC3AD /* MOBStateMachineExampleViewController.m */; };
+		F988A2EE144880A9002EC3AD /* MOBStateMachineExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F988A2EC144880A9002EC3AD /* MOBStateMachineExampleViewController.xib */; };
+		F988A2F6144880A9002EC3AD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F988A2F5144880A9002EC3AD /* SenTestingKit.framework */; };
+		F988A2F7144880A9002EC3AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F988A2D4144880A9002EC3AD /* UIKit.framework */; };
+		F988A2F8144880A9002EC3AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F988A2D6144880A9002EC3AD /* Foundation.framework */; };
+		F988A2F9144880A9002EC3AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F988A2D8144880A9002EC3AD /* CoreGraphics.framework */; };
+		F988A301144880A9002EC3AD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F988A2FF144880A9002EC3AD /* InfoPlist.strings */; };
+		F988A303144880A9002EC3AD /* MOBStateMachineExampleTests.h in Resources */ = {isa = PBXBuildFile; fileRef = F988A302144880A9002EC3AD /* MOBStateMachineExampleTests.h */; };
+		F988A305144880A9002EC3AD /* MOBStateMachineExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F988A304144880A9002EC3AD /* MOBStateMachineExampleTests.m */; };
+		F988A31214488266002EC3AD /* PasswordEntryStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = F988A31114488266002EC3AD /* PasswordEntryStateMachine.m */; };
+		F988A3141448829F002EC3AD /* libMOBStateMachine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F988A3131448829F002EC3AD /* libMOBStateMachine.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F988A2FA144880A9002EC3AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F988A2C7144880A9002EC3AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F988A2CF144880A9002EC3AD;
+			remoteInfo = MOBStateMachineExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F988A2D0144880A9002EC3AD /* MOBStateMachineExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOBStateMachineExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F988A2D4144880A9002EC3AD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F988A2D6144880A9002EC3AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F988A2D8144880A9002EC3AD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F988A2DC144880A9002EC3AD /* MOBStateMachineExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MOBStateMachineExample-Info.plist"; sourceTree = "<group>"; };
+		F988A2DE144880A9002EC3AD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F988A2E0144880A9002EC3AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F988A2E2144880A9002EC3AD /* MOBStateMachineExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MOBStateMachineExample-Prefix.pch"; sourceTree = "<group>"; };
+		F988A2E3144880A9002EC3AD /* MOBStateMachineExampleAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MOBStateMachineExampleAppDelegate.h; sourceTree = "<group>"; };
+		F988A2E4144880A9002EC3AD /* MOBStateMachineExampleAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MOBStateMachineExampleAppDelegate.m; sourceTree = "<group>"; };
+		F988A2E7144880A9002EC3AD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		F988A2E9144880A9002EC3AD /* MOBStateMachineExampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MOBStateMachineExampleViewController.h; sourceTree = "<group>"; };
+		F988A2EA144880A9002EC3AD /* MOBStateMachineExampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MOBStateMachineExampleViewController.m; sourceTree = "<group>"; };
+		F988A2ED144880A9002EC3AD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MOBStateMachineExampleViewController.xib; sourceTree = "<group>"; };
+		F988A2F4144880A9002EC3AD /* MOBStateMachineExampleTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MOBStateMachineExampleTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F988A2F5144880A9002EC3AD /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		F988A2FE144880A9002EC3AD /* MOBStateMachineExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MOBStateMachineExampleTests-Info.plist"; sourceTree = "<group>"; };
+		F988A300144880A9002EC3AD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F988A302144880A9002EC3AD /* MOBStateMachineExampleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MOBStateMachineExampleTests.h; sourceTree = "<group>"; };
+		F988A304144880A9002EC3AD /* MOBStateMachineExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MOBStateMachineExampleTests.m; sourceTree = "<group>"; };
+		F988A30F14488266002EC3AD /* P_D_PasswordEntryStateHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = P_D_PasswordEntryStateHandler.h; path = ../../MOBStateMachine/MOBStateMachineTests/testCaseDefinitions/P_D_PasswordEntryStateHandler.h; sourceTree = "<group>"; };
+		F988A31014488266002EC3AD /* PasswordEntryStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasswordEntryStateMachine.h; path = ../../MOBStateMachine/MOBStateMachineTests/testCaseDefinitions/PasswordEntryStateMachine.h; sourceTree = "<group>"; };
+		F988A31114488266002EC3AD /* PasswordEntryStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PasswordEntryStateMachine.m; path = ../../MOBStateMachine/MOBStateMachineTests/testCaseDefinitions/PasswordEntryStateMachine.m; sourceTree = "<group>"; };
+		F988A3131448829F002EC3AD /* libMOBStateMachine.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libMOBStateMachine.a; path = "../MOBStateMachine/build/Release-iphoneos/libMOBStateMachine.a"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F988A2CD144880A9002EC3AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F988A3141448829F002EC3AD /* libMOBStateMachine.a in Frameworks */,
+				F988A2D5144880A9002EC3AD /* UIKit.framework in Frameworks */,
+				F988A2D7144880A9002EC3AD /* Foundation.framework in Frameworks */,
+				F988A2D9144880A9002EC3AD /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F988A2F0144880A9002EC3AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F988A2F6144880A9002EC3AD /* SenTestingKit.framework in Frameworks */,
+				F988A2F7144880A9002EC3AD /* UIKit.framework in Frameworks */,
+				F988A2F8144880A9002EC3AD /* Foundation.framework in Frameworks */,
+				F988A2F9144880A9002EC3AD /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F988A2C5144880A9002EC3AD = {
+			isa = PBXGroup;
+			children = (
+				F988A3131448829F002EC3AD /* libMOBStateMachine.a */,
+				F988A2DA144880A9002EC3AD /* MOBStateMachineExample */,
+				F988A2FC144880A9002EC3AD /* MOBStateMachineExampleTests */,
+				F988A2D3144880A9002EC3AD /* Frameworks */,
+				F988A2D1144880A9002EC3AD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F988A2D1144880A9002EC3AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F988A2D0144880A9002EC3AD /* MOBStateMachineExample.app */,
+				F988A2F4144880A9002EC3AD /* MOBStateMachineExampleTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F988A2D3144880A9002EC3AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F988A2D4144880A9002EC3AD /* UIKit.framework */,
+				F988A2D6144880A9002EC3AD /* Foundation.framework */,
+				F988A2D8144880A9002EC3AD /* CoreGraphics.framework */,
+				F988A2F5144880A9002EC3AD /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F988A2DA144880A9002EC3AD /* MOBStateMachineExample */ = {
+			isa = PBXGroup;
+			children = (
+				F988A30E14488248002EC3AD /* StateMachine */,
+				F988A2E3144880A9002EC3AD /* MOBStateMachineExampleAppDelegate.h */,
+				F988A2E4144880A9002EC3AD /* MOBStateMachineExampleAppDelegate.m */,
+				F988A2E6144880A9002EC3AD /* MainWindow.xib */,
+				F988A2E9144880A9002EC3AD /* MOBStateMachineExampleViewController.h */,
+				F988A2EA144880A9002EC3AD /* MOBStateMachineExampleViewController.m */,
+				F988A2EC144880A9002EC3AD /* MOBStateMachineExampleViewController.xib */,
+				F988A2DB144880A9002EC3AD /* Supporting Files */,
+			);
+			path = MOBStateMachineExample;
+			sourceTree = "<group>";
+		};
+		F988A2DB144880A9002EC3AD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F988A2DC144880A9002EC3AD /* MOBStateMachineExample-Info.plist */,
+				F988A2DD144880A9002EC3AD /* InfoPlist.strings */,
+				F988A2E0144880A9002EC3AD /* main.m */,
+				F988A2E2144880A9002EC3AD /* MOBStateMachineExample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F988A2FC144880A9002EC3AD /* MOBStateMachineExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				F988A302144880A9002EC3AD /* MOBStateMachineExampleTests.h */,
+				F988A304144880A9002EC3AD /* MOBStateMachineExampleTests.m */,
+				F988A2FD144880A9002EC3AD /* Supporting Files */,
+			);
+			path = MOBStateMachineExampleTests;
+			sourceTree = "<group>";
+		};
+		F988A2FD144880A9002EC3AD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F988A2FE144880A9002EC3AD /* MOBStateMachineExampleTests-Info.plist */,
+				F988A2FF144880A9002EC3AD /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F988A30E14488248002EC3AD /* StateMachine */ = {
+			isa = PBXGroup;
+			children = (
+				F988A30F14488266002EC3AD /* P_D_PasswordEntryStateHandler.h */,
+				F988A31014488266002EC3AD /* PasswordEntryStateMachine.h */,
+				F988A31114488266002EC3AD /* PasswordEntryStateMachine.m */,
+			);
+			name = StateMachine;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F988A2CF144880A9002EC3AD /* MOBStateMachineExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F988A308144880A9002EC3AD /* Build configuration list for PBXNativeTarget "MOBStateMachineExample" */;
+			buildPhases = (
+				F988A2CC144880A9002EC3AD /* Sources */,
+				F988A2CD144880A9002EC3AD /* Frameworks */,
+				F988A2CE144880A9002EC3AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MOBStateMachineExample;
+			productName = MOBStateMachineExample;
+			productReference = F988A2D0144880A9002EC3AD /* MOBStateMachineExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F988A2F3144880A9002EC3AD /* MOBStateMachineExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F988A30B144880A9002EC3AD /* Build configuration list for PBXNativeTarget "MOBStateMachineExampleTests" */;
+			buildPhases = (
+				F988A2EF144880A9002EC3AD /* Sources */,
+				F988A2F0144880A9002EC3AD /* Frameworks */,
+				F988A2F1144880A9002EC3AD /* Resources */,
+				F988A2F2144880A9002EC3AD /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F988A2FB144880A9002EC3AD /* PBXTargetDependency */,
+			);
+			name = MOBStateMachineExampleTests;
+			productName = MOBStateMachineExampleTests;
+			productReference = F988A2F4144880A9002EC3AD /* MOBStateMachineExampleTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F988A2C7144880A9002EC3AD /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = F988A2CA144880A9002EC3AD /* Build configuration list for PBXProject "MOBStateMachineExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F988A2C5144880A9002EC3AD;
+			productRefGroup = F988A2D1144880A9002EC3AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F988A2CF144880A9002EC3AD /* MOBStateMachineExample */,
+				F988A2F3144880A9002EC3AD /* MOBStateMachineExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F988A2CE144880A9002EC3AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F988A2DF144880A9002EC3AD /* InfoPlist.strings in Resources */,
+				F988A2E8144880A9002EC3AD /* MainWindow.xib in Resources */,
+				F988A2EE144880A9002EC3AD /* MOBStateMachineExampleViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F988A2F1144880A9002EC3AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F988A301144880A9002EC3AD /* InfoPlist.strings in Resources */,
+				F988A303144880A9002EC3AD /* MOBStateMachineExampleTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F988A2F2144880A9002EC3AD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F988A2CC144880A9002EC3AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F988A2E1144880A9002EC3AD /* main.m in Sources */,
+				F988A2E5144880A9002EC3AD /* MOBStateMachineExampleAppDelegate.m in Sources */,
+				F988A2EB144880A9002EC3AD /* MOBStateMachineExampleViewController.m in Sources */,
+				F988A31214488266002EC3AD /* PasswordEntryStateMachine.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F988A2EF144880A9002EC3AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F988A305144880A9002EC3AD /* MOBStateMachineExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F988A2FB144880A9002EC3AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F988A2CF144880A9002EC3AD /* MOBStateMachineExample */;
+			targetProxy = F988A2FA144880A9002EC3AD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F988A2DD144880A9002EC3AD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F988A2DE144880A9002EC3AD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F988A2E6144880A9002EC3AD /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F988A2E7144880A9002EC3AD /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		F988A2EC144880A9002EC3AD /* MOBStateMachineExampleViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F988A2ED144880A9002EC3AD /* en */,
+			);
+			name = MOBStateMachineExampleViewController.xib;
+			sourceTree = "<group>";
+		};
+		F988A2FF144880A9002EC3AD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F988A300144880A9002EC3AD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F988A306144880A9002EC3AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F988A307144880A9002EC3AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F988A309144880A9002EC3AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MOBStateMachineExample/MOBStateMachineExample-Prefix.pch";
+				INFOPLIST_FILE = "MOBStateMachineExample/MOBStateMachineExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F988A30A144880A9002EC3AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MOBStateMachineExample/MOBStateMachineExample-Prefix.pch";
+				INFOPLIST_FILE = "MOBStateMachineExample/MOBStateMachineExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F988A30C144880A9002EC3AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MOBStateMachineExample.app/MOBStateMachineExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MOBStateMachineExample/MOBStateMachineExample-Prefix.pch";
+				INFOPLIST_FILE = "MOBStateMachineExampleTests/MOBStateMachineExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		F988A30D144880A9002EC3AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MOBStateMachineExample.app/MOBStateMachineExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MOBStateMachineExample/MOBStateMachineExample-Prefix.pch";
+				INFOPLIST_FILE = "MOBStateMachineExampleTests/MOBStateMachineExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F988A2CA144880A9002EC3AD /* Build configuration list for PBXProject "MOBStateMachineExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F988A306144880A9002EC3AD /* Debug */,
+				F988A307144880A9002EC3AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F988A308144880A9002EC3AD /* Build configuration list for PBXNativeTarget "MOBStateMachineExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F988A309144880A9002EC3AD /* Debug */,
+				F988A30A144880A9002EC3AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F988A30B144880A9002EC3AD /* Build configuration list for PBXNativeTarget "MOBStateMachineExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F988A30C144880A9002EC3AD /* Debug */,
+				F988A30D144880A9002EC3AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F988A2C7144880A9002EC3AD /* Project object */;
+}
