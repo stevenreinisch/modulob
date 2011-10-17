@@ -35,6 +35,12 @@
        genModel = "model/ModulobTypes.genmodel">
 	</package>
 	
+	<package
+	   uri = "http://state.modulob.dubmas.de/1.0"
+       class="de.dubmas.modulob.state.StatePackage"
+       genModel = "model/State.genmodel">
+	</package>
+	
   </extension>
 
 </plugin>
