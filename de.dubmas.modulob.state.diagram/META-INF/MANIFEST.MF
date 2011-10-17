@@ -11,6 +11,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.graphiti.ui;bundle-version="0.8.0",
  org.eclipse.core.resources;bundle-version="3.7.100",
  org.eclipse.ui.views.properties.tabbed;bundle-version="3.5.200",
- de.dubmas.modulob.metamodels;bundle-version="1.0.0"
+ de.dubmas.modulob.metamodels;bundle-version="1.0.0",
+ org.eclipse.emf.transaction;bundle-version="1.4.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy

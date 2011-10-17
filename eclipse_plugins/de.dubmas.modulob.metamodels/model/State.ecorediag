@@ -246,19 +246,6 @@
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_b3CbcPDmEeC_D606O-cJMA" id="(0.803921568627451,0.23809523809523808)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_b3CbcfDmEeC_D606O-cJMA" id="(0.7156862745098039,0.11904761904761904)"/>
   </edges>
-  <edges xmi:type="notation:Edge" xmi:id="_oaulgPDmEeC_D606O-cJMA" type="3002" source="_ZIiN0PDmEeC_D606O-cJMA" target="_juzB4PDmEeC_D606O-cJMA">
-    <children xmi:type="notation:Node" xmi:id="_oavMkPDmEeC_D606O-cJMA" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_oavMkfDmEeC_D606O-cJMA" x="54" y="-12"/>
-    </children>
-    <children xmi:type="notation:Node" xmi:id="_oavMkvDmEeC_D606O-cJMA" type="4012">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_oavMk_DmEeC_D606O-cJMA" x="11" y="-12"/>
-    </children>
-    <styles xmi:type="notation:ConnectorStyle" xmi:id="_oaulgfDmEeC_D606O-cJMA" lineColor="4210752"/>
-    <styles xmi:type="notation:FontStyle" xmi:id="_oaulgvDmEeC_D606O-cJMA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="State.ecore#//StateMachine/conditions"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_oaulg_DmEeC_D606O-cJMA" points="[-8, 0, -586, -213]$[-38, 0, -616, -213]$[-38, 302, -616, 89]$[578, 302, 0, 89]$[578, 237, 0, 24]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_oaxBwPDmEeC_D606O-cJMA" id="(0.08823529411764706,0.6904761904761905)"/>
-  </edges>
   <edges xmi:type="notation:Edge" xmi:id="_uKioAPDmEeC_D606O-cJMA" type="3002" source="_zqQOcPDlEeC_D606O-cJMA" target="_juzB4PDmEeC_D606O-cJMA">
     <children xmi:type="notation:Node" xmi:id="_uKjPEPDmEeC_D606O-cJMA" type="4011">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_uKjPEfDmEeC_D606O-cJMA" x="-3" y="-34"/>

@@ -7,6 +7,7 @@ import org.eclipse.graphiti.features.impl.AbstractCreateConnectionFeature;
 import org.eclipse.graphiti.mm.pictograms.Anchor;
 import org.eclipse.graphiti.mm.pictograms.Connection;
 
+import de.dubmas.modulob.state.Condition;
 import de.dubmas.modulob.state.Node;
 import de.dubmas.modulob.state.StateFactory;
 import de.dubmas.modulob.state.Transition;
@@ -48,6 +49,11 @@ public class CreateTransitionFeature extends AbstractCreateConnectionFeature {
         if (source != null && target != null) {
             // create new business object
             Transition trans = createTransition(source, target);
+            
+            Condition guard = StateFactory.eINSTANCE.createCondition();
+            guard.setExpression("");
+            trans.setGuard(guard);
+            
             Util.addToStateMachine(trans, getDiagram());
             // add connection for business object
             AddConnectionContext addContext =

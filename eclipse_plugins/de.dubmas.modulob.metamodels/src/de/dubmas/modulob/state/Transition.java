@@ -80,26 +80,26 @@ public interface Transition extends EObject {
 	void setTarget(Node value);
 
 	/**
-	 * Returns the value of the '<em><b>Guard</b></em>' reference.
+	 * Returns the value of the '<em><b>Guard</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Guard</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Guard</em>' reference.
+	 * @return the value of the '<em>Guard</em>' containment reference.
 	 * @see #setGuard(Condition)
 	 * @see de.dubmas.modulob.state.StatePackage#getTransition_Guard()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	Condition getGuard();
 
 	/**
-	 * Sets the value of the '{@link de.dubmas.modulob.state.Transition#getGuard <em>Guard</em>}' reference.
+	 * Sets the value of the '{@link de.dubmas.modulob.state.Transition#getGuard <em>Guard</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Guard</em>' reference.
+	 * @param value the new value of the '<em>Guard</em>' containment reference.
 	 * @see #getGuard()
 	 * @generated
 	 */

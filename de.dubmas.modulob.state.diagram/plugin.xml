@@ -5,7 +5,7 @@
       description="This is the diagram type for modeling modulob state machines"
       id="de.dubmas.modulob.state.diagramtype"
       name="modulob State Machine Diagram Type"
-      type="modulob state machine">
+      type="modulobStateMachine">
     </diagramType>
   </extension>
  
@@ -19,4 +19,43 @@
       </diagramType>
     </diagramTypeProvider>
   </extension>
+  
+  <extension
+          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+          <propertyContributor contributorId="modulobStateMachine.PropertyContributor">
+              <propertyCategory category="modulob">
+              </propertyCategory>
+          </propertyContributor>
+      </extension>
+       
+      <extension
+          point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+          <propertyTabs contributorId="modulobStateMachine.PropertyContributor">
+              <propertyTab label="Main" category="modulob"
+                  id="graphiti.main.tab">
+              </propertyTab>
+          </propertyTabs>
+      </extension>
+       
+      <extension
+          point="org.eclipse.ui.views.properties.tabbed.propertySections">
+          <propertySections contributorId="modulobStateMachine.PropertyContributor">
+              <propertySection tab="graphiti.main.tab"           
+               class="de.dubmas.modulob.state.diagram.graphiti.property.TransitionSection"
+               filter="de.dubmas.modulob.state.diagram.graphiti.property.TransitionFilter"
+               id="graphiti.main.tab.transition">
+              </propertySection>
+          </propertySections>
+      </extension>
+      
+      <extension
+          point="org.eclipse.ui.views.properties.tabbed.propertySections">
+          <propertySections contributorId="modulobStateMachine.PropertyContributor">
+              <propertySection tab="graphiti.main.tab"           
+               class="de.dubmas.modulob.state.diagram.graphiti.property.StateSection"
+               filter="de.dubmas.modulob.state.diagram.graphiti.property.StateFilter"
+               id="graphiti.main.tab.state">
+              </propertySection>
+          </propertySections>
+      </extension>
 </plugin>

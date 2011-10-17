@@ -57,7 +57,7 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	protected Node target;
 
 	/**
-	 * The cached value of the '{@link #getGuard() <em>Guard</em>}' reference.
+	 * The cached value of the '{@link #getGuard() <em>Guard</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getGuard()
@@ -167,14 +167,6 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	 * @generated
 	 */
 	public Condition getGuard() {
-		if (guard != null && guard.eIsProxy()) {
-			InternalEObject oldGuard = (InternalEObject)guard;
-			guard = (Condition)eResolveProxy(oldGuard);
-			if (guard != oldGuard) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StatePackage.TRANSITION__GUARD, oldGuard, guard));
-			}
-		}
 		return guard;
 	}
 
@@ -183,8 +175,14 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Condition basicGetGuard() {
-		return guard;
+	public NotificationChain basicSetGuard(Condition newGuard, NotificationChain msgs) {
+		Condition oldGuard = guard;
+		guard = newGuard;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, StatePackage.TRANSITION__GUARD, oldGuard, newGuard);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -193,10 +191,31 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	 * @generated
 	 */
 	public void setGuard(Condition newGuard) {
-		Condition oldGuard = guard;
-		guard = newGuard;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StatePackage.TRANSITION__GUARD, oldGuard, guard));
+		if (newGuard != guard) {
+			NotificationChain msgs = null;
+			if (guard != null)
+				msgs = ((InternalEObject)guard).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - StatePackage.TRANSITION__GUARD, null, msgs);
+			if (newGuard != null)
+				msgs = ((InternalEObject)newGuard).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - StatePackage.TRANSITION__GUARD, null, msgs);
+			msgs = basicSetGuard(newGuard, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StatePackage.TRANSITION__GUARD, newGuard, newGuard));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case StatePackage.TRANSITION__GUARD:
+				return basicSetGuard(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -214,8 +233,7 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 				if (resolve) return getTarget();
 				return basicGetTarget();
 			case StatePackage.TRANSITION__GUARD:
-				if (resolve) return getGuard();
-				return basicGetGuard();
+				return getGuard();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

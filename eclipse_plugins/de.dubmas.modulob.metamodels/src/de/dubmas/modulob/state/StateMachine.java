@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link de.dubmas.modulob.state.StateMachine#getNodes <em>Nodes</em>}</li>
  *   <li>{@link de.dubmas.modulob.state.StateMachine#getTransitions <em>Transitions</em>}</li>
- *   <li>{@link de.dubmas.modulob.state.StateMachine#getConditions <em>Conditions</em>}</li>
  * </ul>
  * </p>
  *
@@ -60,21 +59,5 @@ public interface StateMachine extends EObject {
 	 * @generated
 	 */
 	EList<Transition> getTransitions();
-
-	/**
-	 * Returns the value of the '<em><b>Conditions</b></em>' containment reference list.
-	 * The list contents are of type {@link de.dubmas.modulob.state.Condition}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Conditions</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Conditions</em>' containment reference list.
-	 * @see de.dubmas.modulob.state.StatePackage#getStateMachine_Conditions()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Condition> getConditions();
 
 } // StateMachine

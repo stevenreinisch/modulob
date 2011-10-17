@@ -86,8 +86,6 @@ public class Util {
 					sm.getNodes().add((Node)obj);
 				} else if (obj instanceof Transition){
 					sm.getTransitions().add((Transition)obj);
-				} else if (obj instanceof Condition){
-					sm.getConditions().add((Condition)obj);
 				}
 			}
 			stateMachineResource.save(Collections.EMPTY_MAP);

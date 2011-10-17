@@ -35,7 +35,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link de.dubmas.modulob.state.impl.StateMachineImpl#getNodes <em>Nodes</em>}</li>
  *   <li>{@link de.dubmas.modulob.state.impl.StateMachineImpl#getTransitions <em>Transitions</em>}</li>
- *   <li>{@link de.dubmas.modulob.state.impl.StateMachineImpl#getConditions <em>Conditions</em>}</li>
  * </ul>
  * </p>
  *
@@ -61,16 +60,6 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 	 * @ordered
 	 */
 	protected EList<Transition> transitions;
-
-	/**
-	 * The cached value of the '{@link #getConditions() <em>Conditions</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConditions()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Condition> conditions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -120,18 +109,6 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Condition> getConditions() {
-		if (conditions == null) {
-			conditions = new EObjectContainmentEList<Condition>(Condition.class, this, StatePackage.STATE_MACHINE__CONDITIONS);
-		}
-		return conditions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -139,8 +116,6 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 				return ((InternalEList<?>)getNodes()).basicRemove(otherEnd, msgs);
 			case StatePackage.STATE_MACHINE__TRANSITIONS:
 				return ((InternalEList<?>)getTransitions()).basicRemove(otherEnd, msgs);
-			case StatePackage.STATE_MACHINE__CONDITIONS:
-				return ((InternalEList<?>)getConditions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -157,8 +132,6 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 				return getNodes();
 			case StatePackage.STATE_MACHINE__TRANSITIONS:
 				return getTransitions();
-			case StatePackage.STATE_MACHINE__CONDITIONS:
-				return getConditions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -180,10 +153,6 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 				getTransitions().clear();
 				getTransitions().addAll((Collection<? extends Transition>)newValue);
 				return;
-			case StatePackage.STATE_MACHINE__CONDITIONS:
-				getConditions().clear();
-				getConditions().addAll((Collection<? extends Condition>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -202,9 +171,6 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 			case StatePackage.STATE_MACHINE__TRANSITIONS:
 				getTransitions().clear();
 				return;
-			case StatePackage.STATE_MACHINE__CONDITIONS:
-				getConditions().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -221,8 +187,6 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 				return nodes != null && !nodes.isEmpty();
 			case StatePackage.STATE_MACHINE__TRANSITIONS:
 				return transitions != null && !transitions.isEmpty();
-			case StatePackage.STATE_MACHINE__CONDITIONS:
-				return conditions != null && !conditions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

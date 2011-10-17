@@ -125,7 +125,7 @@ public interface StatePackage extends EPackage {
 	int TRANSITION__TARGET = 1;
 
 	/**
-	 * The feature id for the '<em><b>Guard</b></em>' reference.
+	 * The feature id for the '<em><b>Guard</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -245,7 +245,7 @@ public interface StatePackage extends EPackage {
 	int CONDITIONAL_NODE__OUTGOING = NODE__OUTGOING;
 
 	/**
-	 * The feature id for the '<em><b>Condition</b></em>' reference.
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -337,22 +337,13 @@ public interface StatePackage extends EPackage {
 	int STATE_MACHINE__TRANSITIONS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_MACHINE__CONDITIONS = 2;
-
-	/**
 	 * The number of structural features of the '<em>Machine</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_MACHINE_FEATURE_COUNT = 3;
+	int STATE_MACHINE_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link de.dubmas.modulob.state.impl.ConditionImpl <em>Condition</em>}' class.
@@ -448,10 +439,10 @@ public interface StatePackage extends EPackage {
 	EReference getTransition_Target();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.dubmas.modulob.state.Transition#getGuard <em>Guard</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.dubmas.modulob.state.Transition#getGuard <em>Guard</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Guard</em>'.
+	 * @return the meta object for the containment reference '<em>Guard</em>'.
 	 * @see de.dubmas.modulob.state.Transition#getGuard()
 	 * @see #getTransition()
 	 * @generated
@@ -489,10 +480,10 @@ public interface StatePackage extends EPackage {
 	EClass getConditionalNode();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.dubmas.modulob.state.ConditionalNode#getCondition <em>Condition</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.dubmas.modulob.state.ConditionalNode#getCondition <em>Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Condition</em>'.
+	 * @return the meta object for the containment reference '<em>Condition</em>'.
 	 * @see de.dubmas.modulob.state.ConditionalNode#getCondition()
 	 * @see #getConditionalNode()
 	 * @generated
@@ -551,17 +542,6 @@ public interface StatePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getStateMachine_Transitions();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.dubmas.modulob.state.StateMachine#getConditions <em>Conditions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Conditions</em>'.
-	 * @see de.dubmas.modulob.state.StateMachine#getConditions()
-	 * @see #getStateMachine()
-	 * @generated
-	 */
-	EReference getStateMachine_Conditions();
 
 	/**
 	 * Returns the meta object for class '{@link de.dubmas.modulob.state.Condition <em>Condition</em>}'.
@@ -659,7 +639,7 @@ public interface StatePackage extends EPackage {
 		EReference TRANSITION__TARGET = eINSTANCE.getTransition_Target();
 
 		/**
-		 * The meta object literal for the '<em><b>Guard</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Guard</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -697,7 +677,7 @@ public interface StatePackage extends EPackage {
 		EClass CONDITIONAL_NODE = eINSTANCE.getConditionalNode();
 
 		/**
-		 * The meta object literal for the '<em><b>Condition</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -747,14 +727,6 @@ public interface StatePackage extends EPackage {
 		 * @generated
 		 */
 		EReference STATE_MACHINE__TRANSITIONS = eINSTANCE.getStateMachine_Transitions();
-
-		/**
-		 * The meta object literal for the '<em><b>Conditions</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STATE_MACHINE__CONDITIONS = eINSTANCE.getStateMachine_Conditions();
 
 		/**
 		 * The meta object literal for the '{@link de.dubmas.modulob.state.impl.ConditionImpl <em>Condition</em>}' class.
