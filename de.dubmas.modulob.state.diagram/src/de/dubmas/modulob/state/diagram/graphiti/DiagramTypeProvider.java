@@ -8,4 +8,14 @@ public class DiagramTypeProvider extends AbstractDiagramTypeProvider {
 		super();
 		setFeatureProvider(new FeatureProvider(this));
 	}
+	
+	@Override
+	public boolean isAutoUpdateAtStartup() {
+		return true;
+	}
+	
+	@Override
+	public boolean isAutoUpdateAtRuntime() {
+		return true;
+	}
 }

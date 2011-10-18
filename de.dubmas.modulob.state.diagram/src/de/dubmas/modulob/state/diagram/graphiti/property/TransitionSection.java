@@ -24,7 +24,7 @@ import de.dubmas.modulob.state.Transition;
 public class TransitionSection extends GFPropertySection implements
 ITabbedPropertyConstants {
 	
-	private Text nameText;
+	private Text guardField;
 	private Transition transition;
 	private IDiagramTypeProvider diagramTypeProvider;
 	 
@@ -33,9 +33,9 @@ ITabbedPropertyConstants {
 		@Override
 		public void modifyText(ModifyEvent e) {
 			try {
-				String text = ((Text)e.getSource()).getText();
+				String guard = ((Text)e.getSource()).getText();
 					
-				if(text != null && !text.equals("")){
+				if(guard != null && !guard.equals("")){
 						
 					EditingDomain editingDomain =
 							diagramTypeProvider.getDiagramEditor().getEditingDomain();
@@ -45,7 +45,7 @@ ITabbedPropertyConstants {
 								execute(SetCommand.create(editingDomain, 
 														  transition.getGuard(), 
 														  StatePackage.eINSTANCE.getCondition_Expression(), 
-														  text));
+														  guard));
 					}
 				}
 			} catch (Exception ex){
@@ -64,21 +64,21 @@ ITabbedPropertyConstants {
         Composite composite = factory.createFlatFormComposite(parent);
         FormData data;
  
-        nameText = factory.createText(composite, "");
+        guardField = factory.createText(composite, "switches if this and that is true");
         data = new FormData();
         data.left = new FormAttachment(0, STANDARD_LABEL_WIDTH);
         data.right = new FormAttachment(100, 0);
         data.top = new FormAttachment(0, VSPACE);
-        nameText.setLayoutData(data);
+        guardField.setLayoutData(data);
  
-        CLabel valueLabel = factory.createCLabel(composite, "Name:");
+        CLabel valueLabel = factory.createCLabel(composite, "Guard (Describe why transition switches.):");
         data = new FormData();
         data.left = new FormAttachment(0, 0);
-        data.right = new FormAttachment(nameText, -HSPACE);
-        data.top = new FormAttachment(nameText, 0, SWT.CENTER);
+        data.right = new FormAttachment(guardField, -HSPACE);
+        data.top = new FormAttachment(guardField, 0, SWT.CENTER);
         valueLabel.setLayoutData(data);
         
-        nameText.addModifyListener(listener);
+        guardField.addModifyListener(listener);
     }
  
     @Override
@@ -96,8 +96,8 @@ ITabbedPropertyConstants {
             
             this.transition = (Transition)bo;
             
-            String name = transition.getGuard().getExpression();
-            nameText.setText(name == null ? "" : name);
+            String guard = transition.getGuard().getExpression();
+            guardField.setText(guard == null ? "" : guard);
         }
     }
 }

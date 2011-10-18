@@ -27,7 +27,7 @@ public class CreateStateFeature extends AbstractCreateFeature {
 
 	@Override
 	public Object[] create(ICreateContext context) {
-		// ask user for EClass name
+
         String newStateName = ExampleUtil.askString(TITLE, USER_QUESTION, "");
         if (newStateName == null || newStateName.trim().length() == 0) {
             return EMPTY;
@@ -35,13 +35,11 @@ public class CreateStateFeature extends AbstractCreateFeature {
         
         // create EClass
         State newState = StateFactory.eINSTANCE.createState();
-        // Add model element to resource.
-        // We add the model element to the resource of the diagram for
-        // simplicity's sake. Normally, a customer would use its own
-        // model persistence layer for storing the business model separately.
-        Util.addToStateMachine(newState, getDiagram());
         newState.setName(newStateName);
- 
+        newState.setDuration(new Double(-1.0));
+        
+        Util.addToStateMachine(newState, getDiagram());
+        
         // do the add
         addGraphicalRepresentation(context, newState);
  

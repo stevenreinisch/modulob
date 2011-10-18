@@ -1,6 +1,5 @@
 package de.dubmas.modulob.state.diagram.graphiti.add;
 
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.graphiti.features.IFeatureProvider;
 import org.eclipse.graphiti.features.context.IAddContext;
 import org.eclipse.graphiti.features.impl.AbstractAddShapeFeature;
@@ -52,7 +51,7 @@ public class AddStateFeature extends AbstractAddShapeFeature{
 
 	@Override
 	public PictogramElement add(IAddContext context) {
-		State addedState     = (State) context.getNewObject();
+		State state     = (State) context.getNewObject();
 		Diagram targetDiagram = (Diagram) context.getTargetContainer();
 
 		// CONTAINER SHAPE WITH ROUNDED RECTANGLE
@@ -75,7 +74,7 @@ public class AddStateFeature extends AbstractAddShapeFeature{
             context.getX(), context.getY(), width, height);
 
         // create link and wire it
-        link(containerShape, addedState);
+        link(containerShape, state);
 		
         //SHAPE WITH LINE
         // create shape for line
@@ -92,7 +91,7 @@ public class AddStateFeature extends AbstractAddShapeFeature{
         shape = peCreateService.createShape(containerShape, false);
 
         // create and set text graphics algorithm
-        Text text = gaService.createDefaultText(getDiagram(), shape, addedState.getName());
+        Text text = gaService.createDefaultText(getDiagram(), shape, state.getName());
         text.setForeground(manageColor(CLASS_TEXT_FOREGROUND));
         text.setHorizontalAlignment(Orientation.ALIGNMENT_CENTER);
         text.setVerticalAlignment(Orientation.ALIGNMENT_CENTER);
@@ -100,7 +99,7 @@ public class AddStateFeature extends AbstractAddShapeFeature{
         gaService.setLocationAndSize(text, 0, 0, width, 20);
 
         // create link and wire it
-        link(shape, addedState);
+        link(shape, state);
         
         // add a chopbox anchor to the shape
         peCreateService.createChopboxAnchor(containerShape);
@@ -122,10 +121,13 @@ public class AddStateFeature extends AbstractAddShapeFeature{
         // anchor is located on the right border of the visible rectangle
         // and touches the border of the invisible rectangle
   
-        int w = 6;
-        gaService.setLocationAndSize(rectangle, -2 * w, -w, 2 * w, 2 * w);
-        rectangle.setForeground(manageColor(CLASS_FOREGROUND));
-        rectangle.setBackground(manageColor(CLASS_BACKGROUND));
+        /*
+         * If you want to show the anchor uncomment the following lines.
+         */
+//        int w = 6;
+//        gaService.setLocationAndSize(rectangle, -2 * w, -w, 2 * w, 2 * w);
+//        rectangle.setForeground(manageColor(CLASS_FOREGROUND));
+//        rectangle.setBackground(manageColor(CLASS_BACKGROUND));
         
         // call the layout feature
         layoutPictogramElement(containerShape);

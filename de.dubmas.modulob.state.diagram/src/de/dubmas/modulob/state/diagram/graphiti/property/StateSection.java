@@ -24,7 +24,8 @@ import de.dubmas.modulob.state.StatePackage;
 public class StateSection extends GFPropertySection implements
 ITabbedPropertyConstants {
 	
-	private Text nameText;
+	private Text durationField;
+	private Text nameField;
 	private State state;
 	private IDiagramTypeProvider diagramTypeProvider;
 	 
@@ -40,12 +41,28 @@ ITabbedPropertyConstants {
 					EditingDomain editingDomain =
 							diagramTypeProvider.getDiagramEditor().getEditingDomain();
 						
-					if(editingDomain != null){
+					if(editingDomain != null && e.getSource() == durationField) {
+						
+						Double value = null;
+						try {
+							value = Double.parseDouble(text);
+						} catch (NumberFormatException nfe) {
+							value = new Double(0.0);
+						}
+						
 						editingDomain.getCommandStack().
 								execute(SetCommand.create(editingDomain, 
 														  state, 
-														  StatePackage.eINSTANCE.getState_Name(), 
-														  text));
+														  StatePackage.eINSTANCE.getState_Duration(), 
+														  value));
+						
+					} else if (editingDomain != null && e.getSource() == nameField){
+						
+						editingDomain.getCommandStack().
+							execute(SetCommand.create(editingDomain, 
+													  state, 
+													  StatePackage.eINSTANCE.getState_Name(), 
+													  text));
 					}
 				}
 			} catch (Exception ex){
@@ -61,24 +78,49 @@ ITabbedPropertyConstants {
         super.createControls(parent, tabbedPropertySheetPage);
  
         TabbedPropertySheetWidgetFactory factory = getWidgetFactory();
-        Composite composite = factory.createFlatFormComposite(parent);
+        Composite composite;
+        CLabel valueLabel;
         FormData data;
  
-        nameText = factory.createText(composite, "");
+//        composite = factory.createFlatFormComposite(parent);
+//        nameField = factory.createText(composite, "");
+//        data = new FormData();
+//        data.left = new FormAttachment(0, STANDARD_LABEL_WIDTH);
+//        data.right = new FormAttachment(100, 0);
+//        data.top = new FormAttachment(0, VSPACE);
+//        nameField.setLayoutData(data);
+// 
+//        valueLabel = factory.createCLabel(composite, "Name:");
+//        data = new FormData();
+//        data.width = 20;
+//        data.left = new FormAttachment(0, 0);
+//        data.right = new FormAttachment(nameField, -HSPACE);
+//        data.top = new FormAttachment(nameField, 0, SWT.CENTER);
+//        valueLabel.setLayoutData(data);
+//        
+//        nameField.addModifyListener(listener);
+        
+        ////
+        
+        composite = factory.createFlatFormComposite(parent);
+        
+        durationField = factory.createText(composite, "0.0");
         data = new FormData();
+        data.width = 10;
         data.left = new FormAttachment(0, STANDARD_LABEL_WIDTH);
         data.right = new FormAttachment(100, 0);
         data.top = new FormAttachment(0, VSPACE);
-        nameText.setLayoutData(data);
+        durationField.setLayoutData(data);
  
-        CLabel valueLabel = factory.createCLabel(composite, "Name:");
+        valueLabel = factory.createCLabel(composite, "Duration (sec):");
         data = new FormData();
+        data.width = 100;
         data.left = new FormAttachment(0, 0);
-        data.right = new FormAttachment(nameText, -HSPACE);
-        data.top = new FormAttachment(nameText, 0, SWT.CENTER);
+        data.right = new FormAttachment(durationField, -HSPACE);
+        data.top = new FormAttachment(durationField, 0, SWT.CENTER);
         valueLabel.setLayoutData(data);
         
-        nameText.addModifyListener(listener);
+        durationField.addModifyListener(listener);
     }
  
     @Override
@@ -96,8 +138,8 @@ ITabbedPropertyConstants {
             
             this.state = (State)bo;
             
-            String name = state.getName();
-            nameText.setText(name == null ? "" : name);
+            String duration = state.getDuration().toString();
+            durationField.setText(duration == null ? "" : duration);
         }
     }
 }
