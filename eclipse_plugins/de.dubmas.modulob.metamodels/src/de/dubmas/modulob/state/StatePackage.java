@@ -300,13 +300,22 @@ public interface StatePackage extends EPackage {
 	int STATE__NAME = NODE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Duration</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__DURATION = NODE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_FEATURE_COUNT = NODE_FEATURE_COUNT + 1;
+	int STATE_FEATURE_COUNT = NODE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.dubmas.modulob.state.impl.StateMachineImpl <em>Machine</em>}' class.
@@ -512,6 +521,17 @@ public interface StatePackage extends EPackage {
 	EAttribute getState_Name();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.dubmas.modulob.state.State#getDuration <em>Duration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Duration</em>'.
+	 * @see de.dubmas.modulob.state.State#getDuration()
+	 * @see #getState()
+	 * @generated
+	 */
+	EAttribute getState_Duration();
+
+	/**
 	 * Returns the meta object for class '{@link de.dubmas.modulob.state.StateMachine <em>Machine</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -701,6 +721,14 @@ public interface StatePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute STATE__NAME = eINSTANCE.getState_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Duration</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STATE__DURATION = eINSTANCE.getState_Duration();
 
 		/**
 		 * The meta object literal for the '{@link de.dubmas.modulob.state.impl.StateMachineImpl <em>Machine</em>}' class.

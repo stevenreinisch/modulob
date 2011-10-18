@@ -270,6 +270,15 @@ public class StatePackageImpl extends EPackageImpl implements StatePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getState_Duration() {
+		return (EAttribute)stateEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getStateMachine() {
 		return stateMachineEClass;
 	}
@@ -356,6 +365,7 @@ public class StatePackageImpl extends EPackageImpl implements StatePackage {
 
 		stateEClass = createEClass(STATE);
 		createEAttribute(stateEClass, STATE__NAME);
+		createEAttribute(stateEClass, STATE__DURATION);
 
 		stateMachineEClass = createEClass(STATE_MACHINE);
 		createEReference(stateMachineEClass, STATE_MACHINE__NODES);
@@ -417,6 +427,7 @@ public class StatePackageImpl extends EPackageImpl implements StatePackage {
 
 		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getState_Name(), ecorePackage.getEString(), "name", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getState_Duration(), ecorePackage.getEDoubleObject(), "duration", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stateMachineEClass, StateMachine.class, "StateMachine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStateMachine_Nodes(), this.getNode(), null, "nodes", null, 0, -1, StateMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

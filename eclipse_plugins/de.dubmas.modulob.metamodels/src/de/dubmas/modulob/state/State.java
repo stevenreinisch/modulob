@@ -16,6 +16,7 @@ package de.dubmas.modulob.state;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.dubmas.modulob.state.State#getName <em>Name</em>}</li>
+ *   <li>{@link de.dubmas.modulob.state.State#getDuration <em>Duration</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,5 +50,31 @@ public interface State extends Node {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Duration</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Duration</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Duration</em>' attribute.
+	 * @see #setDuration(Double)
+	 * @see de.dubmas.modulob.state.StatePackage#getState_Duration()
+	 * @model
+	 * @generated
+	 */
+	Double getDuration();
+
+	/**
+	 * Sets the value of the '{@link de.dubmas.modulob.state.State#getDuration <em>Duration</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Duration</em>' attribute.
+	 * @see #getDuration()
+	 * @generated
+	 */
+	void setDuration(Double value);
 
 } // State

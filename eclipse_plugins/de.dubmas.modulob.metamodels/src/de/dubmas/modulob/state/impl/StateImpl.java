@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.dubmas.modulob.state.impl.StateImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.dubmas.modulob.state.impl.StateImpl#getDuration <em>Duration</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,6 +49,26 @@ public class StateImpl extends NodeImpl implements State {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDuration() <em>Duration</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDuration()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Double DURATION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDuration() <em>Duration</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDuration()
+	 * @generated
+	 * @ordered
+	 */
+	protected Double duration = DURATION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -94,11 +115,34 @@ public class StateImpl extends NodeImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Double getDuration() {
+		return duration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDuration(Double newDuration) {
+		Double oldDuration = duration;
+		duration = newDuration;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StatePackage.STATE__DURATION, oldDuration, duration));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case StatePackage.STATE__NAME:
 				return getName();
+			case StatePackage.STATE__DURATION:
+				return getDuration();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -113,6 +157,9 @@ public class StateImpl extends NodeImpl implements State {
 		switch (featureID) {
 			case StatePackage.STATE__NAME:
 				setName((String)newValue);
+				return;
+			case StatePackage.STATE__DURATION:
+				setDuration((Double)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -129,6 +176,9 @@ public class StateImpl extends NodeImpl implements State {
 			case StatePackage.STATE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case StatePackage.STATE__DURATION:
+				setDuration(DURATION_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -143,6 +193,8 @@ public class StateImpl extends NodeImpl implements State {
 		switch (featureID) {
 			case StatePackage.STATE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case StatePackage.STATE__DURATION:
+				return DURATION_EDEFAULT == null ? duration != null : !DURATION_EDEFAULT.equals(duration);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -159,6 +211,8 @@ public class StateImpl extends NodeImpl implements State {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", duration: ");
+		result.append(duration);
 		result.append(')');
 		return result.toString();
 	}
