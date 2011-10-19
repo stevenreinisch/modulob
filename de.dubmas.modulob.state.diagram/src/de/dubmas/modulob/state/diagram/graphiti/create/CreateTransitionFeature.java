@@ -54,6 +54,9 @@ public class CreateTransitionFeature extends AbstractCreateConnectionFeature {
             guard.setExpression("");
             trans.setGuard(guard);
             
+            source.getOutgoing().add(trans);
+            target.getIncoming().add(trans);
+            
             Util.addToStateMachine(trans, getDiagram());
             // add connection for business object
             AddConnectionContext addContext =

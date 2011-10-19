@@ -8,22 +8,19 @@ import org.eclipse.graphiti.features.IDirectEditingFeature;
 import org.eclipse.graphiti.features.IFeature;
 import org.eclipse.graphiti.features.IUpdateFeature;
 import org.eclipse.graphiti.features.context.IAddContext;
-import org.eclipse.graphiti.features.context.ICustomContext;
 import org.eclipse.graphiti.features.context.IDirectEditingContext;
 import org.eclipse.graphiti.features.context.IPictogramElementContext;
 import org.eclipse.graphiti.features.context.IUpdateContext;
-import org.eclipse.graphiti.features.custom.ICustomFeature;
 import org.eclipse.graphiti.mm.pictograms.ContainerShape;
 import org.eclipse.graphiti.mm.pictograms.PictogramElement;
 import org.eclipse.graphiti.ui.features.DefaultFeatureProvider;
 
+import de.dubmas.modulob.state.InitialNode;
 import de.dubmas.modulob.state.State;
 import de.dubmas.modulob.state.Transition;
+import de.dubmas.modulob.state.diagram.graphiti.add.AddInitialNodeFeature;
 import de.dubmas.modulob.state.diagram.graphiti.add.AddStateFeature;
 import de.dubmas.modulob.state.diagram.graphiti.add.AddTransitionFeature;
-import de.dubmas.modulob.state.diagram.graphiti.create.CreateConditionFeature;
-import de.dubmas.modulob.state.diagram.graphiti.create.CreateConditionalNodeFeature;
-import de.dubmas.modulob.state.diagram.graphiti.create.CreateFinalNodeFeature;
 import de.dubmas.modulob.state.diagram.graphiti.create.CreateInitialNodeFeature;
 import de.dubmas.modulob.state.diagram.graphiti.create.CreateStateFeature;
 import de.dubmas.modulob.state.diagram.graphiti.create.CreateTransitionFeature;
@@ -43,8 +40,8 @@ public class FeatureProvider extends DefaultFeatureProvider {
         		new CreateConditionalNodeFeature(this),
         		new CreateConditionFeature(this),
         		new CreateFinalNodeFeature(this),
-        		new CreateInitialNodeFeature(this),
         		*/
+        		new CreateInitialNodeFeature(this),
         		new CreateStateFeature(this)
         };
     }
@@ -64,11 +61,10 @@ public class FeatureProvider extends DefaultFeatureProvider {
             return new AddConditionFeature(this);
         } else if (context.getNewObject() instanceof FinalNode) {
             return new AddFinalNodeFeature(this);
-        } else if (context.getNewObject() instanceof InitialNode) {
+        } else*/ 
+    	if (context.getNewObject() instanceof InitialNode) {
             return new AddInitialNodeFeature(this);
-        } else 
-        */	
-        if (context.getNewObject() instanceof State) {
+        } else if (context.getNewObject() instanceof State) {
             return new AddStateFeature(this);
         } else if (context.getNewObject() instanceof Transition) {
             return new AddTransitionFeature(this);

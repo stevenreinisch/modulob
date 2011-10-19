@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.graphiti.mm.pictograms.Diagram;
 
-import de.dubmas.modulob.state.Condition;
 import de.dubmas.modulob.state.Node;
 import de.dubmas.modulob.state.StateFactory;
 import de.dubmas.modulob.state.StateMachine;
@@ -23,7 +22,7 @@ public class Util {
 	public static final String STATE_MODEL_EXTENSION = "state";
 	
 	private static Resource stateMachineResource;
-	private static StateMachine stateMachine;
+	public static StateMachine stateMachine;
 	
 	
 	private static StateMachine stateMachineInDiagram(Diagram d) throws Exception{
@@ -46,6 +45,7 @@ public class Util {
 			stateMachineResource_.setTrackingModification(true);
 			
 			sm = StateFactory.eINSTANCE.createStateMachine();
+			
 			stateMachineResource_.getContents().add(sm);
 			stateMachineResource_.save(Collections.EMPTY_MAP);
 			

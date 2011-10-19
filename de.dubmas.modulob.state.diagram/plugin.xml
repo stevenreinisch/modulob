@@ -58,4 +58,15 @@
               </propertySection>
           </propertySections>
       </extension>
+      
+      <extension
+          point="org.eclipse.ui.views.properties.tabbed.propertySections">
+          <propertySections contributorId="modulobStateMachine.PropertyContributor">
+              <propertySection tab="graphiti.main.tab"           
+               class="de.dubmas.modulob.state.diagram.graphiti.property.StateMachineSection"
+               filter="de.dubmas.modulob.state.diagram.graphiti.property.StateMachineFilter"
+               id="graphiti.main.tab.state">
+              </propertySection>
+          </propertySections>
+      </extension>
 </plugin>
