@@ -346,13 +346,31 @@ public interface StatePackage extends EPackage {
 	int STATE_MACHINE__TRANSITIONS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_MACHINE__NAME = 2;
+
+	/**
+	 * The feature id for the '<em><b>Module</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_MACHINE__MODULE = 3;
+
+	/**
 	 * The number of structural features of the '<em>Machine</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_MACHINE_FEATURE_COUNT = 2;
+	int STATE_MACHINE_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link de.dubmas.modulob.state.impl.ConditionImpl <em>Condition</em>}' class.
@@ -564,6 +582,28 @@ public interface StatePackage extends EPackage {
 	EReference getStateMachine_Transitions();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.dubmas.modulob.state.StateMachine#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see de.dubmas.modulob.state.StateMachine#getName()
+	 * @see #getStateMachine()
+	 * @generated
+	 */
+	EAttribute getStateMachine_Name();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.dubmas.modulob.state.StateMachine#getModule <em>Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Module</em>'.
+	 * @see de.dubmas.modulob.state.StateMachine#getModule()
+	 * @see #getStateMachine()
+	 * @generated
+	 */
+	EReference getStateMachine_Module();
+
+	/**
 	 * Returns the meta object for class '{@link de.dubmas.modulob.state.Condition <em>Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -755,6 +795,22 @@ public interface StatePackage extends EPackage {
 		 * @generated
 		 */
 		EReference STATE_MACHINE__TRANSITIONS = eINSTANCE.getStateMachine_Transitions();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STATE_MACHINE__NAME = eINSTANCE.getStateMachine_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Module</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STATE_MACHINE__MODULE = eINSTANCE.getStateMachine_Module();
 
 		/**
 		 * The meta object literal for the '{@link de.dubmas.modulob.state.impl.ConditionImpl <em>Condition</em>}' class.

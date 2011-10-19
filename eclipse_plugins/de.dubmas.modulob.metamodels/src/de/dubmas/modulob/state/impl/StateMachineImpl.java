@@ -12,8 +12,10 @@ import de.dubmas.modulob.state.StateMachine;
 import de.dubmas.modulob.state.StatePackage;
 import de.dubmas.modulob.state.Transition;
 
+import de.dubmas.modulob.system.Module;
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -21,6 +23,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -35,6 +38,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link de.dubmas.modulob.state.impl.StateMachineImpl#getNodes <em>Nodes</em>}</li>
  *   <li>{@link de.dubmas.modulob.state.impl.StateMachineImpl#getTransitions <em>Transitions</em>}</li>
+ *   <li>{@link de.dubmas.modulob.state.impl.StateMachineImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.dubmas.modulob.state.impl.StateMachineImpl#getModule <em>Module</em>}</li>
  * </ul>
  * </p>
  *
@@ -60,6 +65,36 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 	 * @ordered
 	 */
 	protected EList<Transition> transitions;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getModule() <em>Module</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getModule()
+	 * @generated
+	 * @ordered
+	 */
+	protected Module module;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -109,6 +144,65 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StatePackage.STATE_MACHINE__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Module getModule() {
+		if (module != null && module.eIsProxy()) {
+			InternalEObject oldModule = (InternalEObject)module;
+			module = (Module)eResolveProxy(oldModule);
+			if (module != oldModule) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StatePackage.STATE_MACHINE__MODULE, oldModule, module));
+			}
+		}
+		return module;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Module basicGetModule() {
+		return module;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setModule(Module newModule) {
+		Module oldModule = module;
+		module = newModule;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StatePackage.STATE_MACHINE__MODULE, oldModule, module));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -132,6 +226,11 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 				return getNodes();
 			case StatePackage.STATE_MACHINE__TRANSITIONS:
 				return getTransitions();
+			case StatePackage.STATE_MACHINE__NAME:
+				return getName();
+			case StatePackage.STATE_MACHINE__MODULE:
+				if (resolve) return getModule();
+				return basicGetModule();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -153,6 +252,12 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 				getTransitions().clear();
 				getTransitions().addAll((Collection<? extends Transition>)newValue);
 				return;
+			case StatePackage.STATE_MACHINE__NAME:
+				setName((String)newValue);
+				return;
+			case StatePackage.STATE_MACHINE__MODULE:
+				setModule((Module)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -171,6 +276,12 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 			case StatePackage.STATE_MACHINE__TRANSITIONS:
 				getTransitions().clear();
 				return;
+			case StatePackage.STATE_MACHINE__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case StatePackage.STATE_MACHINE__MODULE:
+				setModule((Module)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -187,8 +298,28 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 				return nodes != null && !nodes.isEmpty();
 			case StatePackage.STATE_MACHINE__TRANSITIONS:
 				return transitions != null && !transitions.isEmpty();
+			case StatePackage.STATE_MACHINE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case StatePackage.STATE_MACHINE__MODULE:
+				return module != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //StateMachineImpl
