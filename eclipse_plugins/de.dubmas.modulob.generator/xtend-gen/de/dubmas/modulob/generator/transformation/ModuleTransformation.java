@@ -1,5 +1,6 @@
 package de.dubmas.modulob.generator.transformation;
 
+import de.dubmas.modulob.state.StateMachine;
 import de.dubmas.modulob.system.EntityModel;
 import de.dubmas.modulob.system.InterfaceModel;
 import de.dubmas.modulob.system.Module;
@@ -31,6 +32,8 @@ public class ModuleTransformation implements IWorkflowComponent {
   
   private String oldVersionEntiyModelSlotName;
   
+  private String stateMachinesSlotName;
+  
   public String setInterfaceModelSlotName(final String name) {
     String _interfaceModelSlotName = this.interfaceModelSlotName = name;
     return _interfaceModelSlotName;
@@ -56,6 +59,11 @@ public class ModuleTransformation implements IWorkflowComponent {
     return _oldVersionEntiyModelSlotName;
   }
   
+  public String setStateMachinesSlotName(final String name) {
+    String _stateMachinesSlotName = this.stateMachinesSlotName = name;
+    return _stateMachinesSlotName;
+  }
+  
   public void invoke(final IWorkflowContext context) {
     {
       Object _get = context.get(this.moduleSlotName);
@@ -66,6 +74,8 @@ public class ModuleTransformation implements IWorkflowComponent {
       List<EntityModel> entityModels = ((List<EntityModel>) _get_2);
       Object _get_3 = context.get(this.notificationModelSlotName);
       List<NotificationModel> notificationModels = ((List<NotificationModel>) _get_3);
+      Object _get_4 = context.get(this.stateMachinesSlotName);
+      List<StateMachine> stateMachines = ((List<StateMachine>) _get_4);
       for (final Module m : modules) {
         final Function1<InterfaceModel,Boolean> _function = new Function1<InterfaceModel,Boolean>() {
             public Boolean apply(final InterfaceModel im) {
@@ -85,8 +95,8 @@ public class ModuleTransformation implements IWorkflowComponent {
       for (final Module m_1 : modules) {
         {
           String _name = m_1.getName();
-          SortedMap<String,EntityModel> _get_4 = groupedEntityModels.get(_name);
-          SortedMap<String,EntityModel> sortedEntityModels = _get_4;
+          SortedMap<String,EntityModel> _get_5 = groupedEntityModels.get(_name);
+          SortedMap<String,EntityModel> sortedEntityModels = _get_5;
           String _lastKey = sortedEntityModels.lastKey();
           EntityModel _remove = sortedEntityModels.remove(_lastKey);
           EntityModel entityModelWithHighestVersion = _remove;
@@ -116,6 +126,20 @@ public class ModuleTransformation implements IWorkflowComponent {
         Iterable<NotificationModel> _filter_1 = IterableExtensions.<NotificationModel>filter(notificationModels, _function_1);
         NotificationModel _head_1 = IterableExtensions.<NotificationModel>head(_filter_1);
         m_2.setNotificationModel(_head_1);
+      }
+      for (final StateMachine sm : stateMachines) {
+        final Function1<Module,Boolean> _function_2 = new Function1<Module,Boolean>() {
+            public Boolean apply(final Module m_3) {
+              String _name_1 = m_3.getName();
+              Module _module_2 = sm.getModule();
+              String _name_2 = _module_2.getName();
+              boolean _operator_equals_2 = ObjectExtensions.operator_equals(_name_1, _name_2);
+              return ((Boolean)_operator_equals_2);
+            }
+          };
+        Iterable<Module> _filter_2 = IterableExtensions.<Module>filter(modules, _function_2);
+        Module _head_2 = IterableExtensions.<Module>head(_filter_2);
+        sm.setModule(_head_2);
       }
     }
   }

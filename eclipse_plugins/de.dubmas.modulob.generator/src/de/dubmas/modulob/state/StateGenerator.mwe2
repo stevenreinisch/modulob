@@ -1,0 +1,17 @@
+module de.dubmas.modulob.state.StateGenerator
+
+var genPath      = 'src-gen'
+var fileEncoding = 'UTF-8'
+var stateMachinesSlot = 'stateMachinesSlot'
+
+Workflow {
+	component = org.eclipse.xpand2.Generator{
+		metaModel = org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel{}
+		expand    = "de::dubmas::modulob::state::Template::main FOREACH ${stateMachinesSlot}"
+		
+		outlet = {
+			path = genPath
+		}
+		fileEncoding = fileEncoding
+	}
+}

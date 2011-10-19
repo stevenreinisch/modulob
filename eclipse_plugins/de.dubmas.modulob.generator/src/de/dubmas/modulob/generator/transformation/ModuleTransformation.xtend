@@ -6,6 +6,7 @@ import de.dubmas.modulob.system.Module
 import de.dubmas.modulob.system.InterfaceModel
 import de.dubmas.modulob.system.EntityModel
 import de.dubmas.modulob.system.NotificationModel
+import de.dubmas.modulob.state.StateMachine
 import org.eclipse.xtend.util.stdlib.CloningExtensions
 
 class ModuleTransformation implements org.eclipse.emf.mwe2.runtime.workflow.IWorkflowComponent {
@@ -15,6 +16,7 @@ class ModuleTransformation implements org.eclipse.emf.mwe2.runtime.workflow.IWor
 	String notificationModelSlotName
 	String moduleSlotName
 	String oldVersionEntiyModelSlotName
+	String stateMachinesSlotName
 	
 	def setInterfaceModelSlotName(String name){
 		interfaceModelSlotName = name
@@ -36,12 +38,17 @@ class ModuleTransformation implements org.eclipse.emf.mwe2.runtime.workflow.IWor
 		oldVersionEntiyModelSlotName = name
 	}
 	
+	def setStateMachinesSlotName(String name){
+		stateMachinesSlotName = name
+	}
+	
 	override invoke(IWorkflowContext context) {
 		var modules            = context.get(moduleSlotName) as List<Module>
 		var interfaceModels    = context.get(interfaceModelSlotName) as List<InterfaceModel>
 		var entityModels       = context.get(entityModelSlotName) as List<EntityModel>
 		var notificationModels = context.get(notificationModelSlotName) as List<NotificationModel>
-	
+		var stateMachines      = context.get(stateMachinesSlotName) as List<StateMachine>
+		
 		for(m: modules){
 			m.interfaceModel = interfaceModels.filter(im | im.module == m).head
 		}
@@ -77,6 +84,10 @@ class ModuleTransformation implements org.eclipse.emf.mwe2.runtime.workflow.IWor
 		
 		for(m: modules){
 			m.notificationModel = notificationModels.filter(nm | nm.module == m).head
+		}
+		
+		for(sm: stateMachines){
+			sm.module = modules.filter(m | m.name == sm.module.name).head
 		}
 	}
 	
