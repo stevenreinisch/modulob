@@ -1,20 +1,20 @@
 package de.dubmas.modulob.state.diagram.graphiti.property;
 
-import org.eclipse.graphiti.mm.pictograms.Diagram;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.graphiti.mm.pictograms.PictogramElement;
+import org.eclipse.graphiti.services.Graphiti;
 import org.eclipse.graphiti.ui.platform.AbstractPropertySectionFilter;
+
+import de.dubmas.modulob.state.StateMachine;
 
 public class StateMachineFilter extends AbstractPropertySectionFilter {
 
-	/*
-	 * A StateMachine instance itself is not represented
-	 * as a shape - the whole diagram represents an instance.
-	 * Thus, if the pe is a diagram, the properties view for
-	 * a StateMachine must be shown.
-	 */
 	@Override
 	protected boolean accept(PictogramElement pe) {
-		if (pe instanceof Diagram) {
+		EObject eObject = 
+				Graphiti.getLinkService()
+					.getBusinessObjectForLinkedPictogramElement(pe);
+		if (eObject instanceof StateMachine) {
 			return true;
 		}
 		return false;

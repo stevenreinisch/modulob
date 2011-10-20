@@ -6,23 +6,21 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.graphiti.dt.IDiagramTypeProvider;
-import org.eclipse.graphiti.mm.pictograms.Diagram;
 import org.eclipse.graphiti.mm.pictograms.PictogramElement;
+import org.eclipse.graphiti.services.Graphiti;
 import org.eclipse.graphiti.ui.platform.GFPropertySection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;
-import org.eclipse.swt.events.ModifyEvent;
-import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertyConstants;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
+import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.resource.IResourceDescriptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
@@ -32,14 +30,14 @@ import com.google.inject.Injector;
 
 import de.dubmas.modulob.state.StateMachine;
 import de.dubmas.modulob.state.StatePackage;
-import de.dubmas.modulob.state.diagram.util.Util;
+import de.dubmas.modulob.system.Module;
+import de.dubmas.modulob.system.System;
 import de.dubmas.modulob.system.SystemPackage;
 import de.dubmas.modulob.ui.internal.SystemDslActivator;
 
 public class StateMachineSection extends GFPropertySection implements
 ITabbedPropertyConstants {
 
-	private Text nameField;
 	private Combo modulesDropDown;
 	
 	private Injector injector;
@@ -60,24 +58,6 @@ ITabbedPropertyConstants {
 		CLabel valueLabel;
 		FormData data;
 
-		composite = factory.createFlatFormComposite(parent);
-		nameField = factory.createText(composite, "");
-		data = new FormData();
-		data.left = new FormAttachment(0, STANDARD_LABEL_WIDTH);
-		data.right = new FormAttachment(100, 0);
-		data.top = new FormAttachment(0, VSPACE);
-		nameField.setLayoutData(data);
-
-		valueLabel = factory.createCLabel(composite, "Name:");
-		data = new FormData();
-		data.width = 20;
-		data.left = new FormAttachment(0, 0);
-		data.right = new FormAttachment(nameField, -HSPACE);
-		data.top = new FormAttachment(nameField, 0, SWT.CENTER);
-		valueLabel.setLayoutData(data);
-
-		nameField.addModifyListener(listener);
-
 		// //
 		composite = factory.createFlatFormComposite(parent);
 
@@ -91,8 +71,8 @@ ITabbedPropertyConstants {
 		data = new FormData();
 		data.width = 20;
 		data.left = new FormAttachment(0, 0);
-		data.right = new FormAttachment(nameField, -HSPACE);
-		data.top = new FormAttachment(nameField, 0, SWT.CENTER);
+		data.right = new FormAttachment(modulesDropDown, -HSPACE);
+		data.top = new FormAttachment(modulesDropDown, 0, SWT.CENTER);
 		valueLabel.setLayoutData(data);
 	}
 	
@@ -117,19 +97,36 @@ ITabbedPropertyConstants {
 		return moduleNames.toArray(new String[moduleNames.size()]);
 	}
 	
+	private String qualifiedName(Module m){
+		//TODO: null pointer check!!!
+		IQualifiedNameProvider qnProvider = injector.getInstance(IQualifiedNameProvider.class);
+		return qnProvider.getFullyQualifiedName(m).toString();
+		//return ((System)m.eContainer()).getName() + "." + m.getName();
+	}
 	 	@Override
 	    public void refresh() {
 	    	
 	    	this.diagramTypeProvider = this.getDiagramTypeProvider();
+	    	diagramTypeProvider.getDiagram().getChildren();
 	    	
 	        PictogramElement pe = getSelectedPictogramElement();
-	        if (pe instanceof Diagram) {
+	        if (pe != null) {
+	            Object bo = Graphiti.getLinkService()
+	                 .getBusinessObjectForLinkedPictogramElement(pe);
+
+	            if (bo == null || !(bo instanceof StateMachine))
+	                return;
 	            try {
-					this.stateMachine = Util.stateMachine;
+					this.stateMachine = (StateMachine)bo;
 					
-					if(this.stateMachine != null){
-						String name = stateMachine.getName();
-						nameField.setText(name == null ? "" : name);
+					Module m = this.stateMachine.getModule(); 
+					if(m != null){
+						for(int i = 0; i < modulesDropDown.getItemCount(); ++i){
+							String qName = qualifiedName(m);
+							if(modulesDropDown.getItem(i).equals(qName)){
+								modulesDropDown.select(i);
+							}
+						}
 					}
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
@@ -142,36 +139,36 @@ ITabbedPropertyConstants {
 	 	
 	 //////
 	 	
-	 	private ModifyListener listener = new ModifyListener(){
-
-			@Override
-			public void modifyText(ModifyEvent e) {
-				if(stateMachine != null){
-					try {
-						String text = ((Text)e.getSource()).getText();
-						
-						if(text != null && !text.equals("")){
-							
-							EditingDomain editingDomain =
-									diagramTypeProvider.getDiagramEditor().getEditingDomain();
-							
-							if (editingDomain != null && e.getSource() == nameField){
-							
-								editingDomain.getCommandStack().
-									execute(SetCommand.create(
-												editingDomain, 
-												stateMachine, 
-												StatePackage.eINSTANCE.getStateMachine_Name(), 
-												text));
-							}
-						}
-					} catch (Exception ex){
-						ex.printStackTrace();
-						//TODO: write to error log
-					}
-				}
-			}
-		};
+//	 	private ModifyListener listener = new ModifyListener(){
+//
+//			@Override
+//			public void modifyText(ModifyEvent e) {
+//				if(stateMachine != null){
+//					try {
+//						String text = ((Text)e.getSource()).getText();
+//						
+//						if(text != null && !text.equals("")){
+//							
+//							EditingDomain editingDomain =
+//									diagramTypeProvider.getDiagramEditor().getEditingDomain();
+//							
+//							if (editingDomain != null && e.getSource() == nameField){
+//							
+//								editingDomain.getCommandStack().
+//									execute(SetCommand.create(
+//												editingDomain, 
+//												stateMachine, 
+//												StatePackage.eINSTANCE.getStateMachine_Name(), 
+//												text));
+//							}
+//						}
+//					} catch (Exception ex){
+//						ex.printStackTrace();
+//						//TODO: write to error log
+//					}
+//				}
+//			}
+//		};
 		
 		private SelectionListener selectionListener = new SelectionListener(){
 			

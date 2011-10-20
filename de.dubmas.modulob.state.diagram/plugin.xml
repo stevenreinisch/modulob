@@ -69,4 +69,16 @@
               </propertySection>
           </propertySections>
       </extension>
+      
+      <extension point = "org.eclipse.ui.newWizards">
+ 		<wizard
+	   		id = "de.dubmas.modulob.state.diagram.newWizard"
+      	   	name = "New modulob state"
+	   		class="de.dubmas.modulob.state.diagram.graphiti.wizard.NewStateWizard"
+	   		category="de.dubmas.modulob.ui"
+	   		>
+    	    <description>Create a new modulob state.</description>
+	   		<selection class="org.eclipse.core.resources.IFolder"/>
+		</wizard>
+	</extension>
 </plugin>

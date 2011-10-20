@@ -82,7 +82,6 @@ public class AddConditionFeature extends AbstractAddShapeFeature{
         text.setForeground(manageColor(CLASS_TEXT_FOREGROUND));
         text.setHorizontalAlignment(Orientation.ALIGNMENT_CENTER);
         text.setVerticalAlignment(Orientation.ALIGNMENT_CENTER);
-        text.getFont().setBold(true);
         gaService.setLocationAndSize(text, 0, 0, width, 20);
 
         // create link and wire it

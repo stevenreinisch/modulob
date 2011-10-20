@@ -133,7 +133,7 @@ ITabbedPropertyConstants {
             Object bo = Graphiti.getLinkService()
                  .getBusinessObjectForLinkedPictogramElement(pe);
 
-            if (bo == null)
+            if (bo == null || !(bo instanceof State))
                 return;
             
             this.state = (State)bo;
