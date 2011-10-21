@@ -55,7 +55,7 @@ public class XMIReader {
 		return result;
 	}
 	
-	private static void listFilesWithExtension(final File root, 
+	public static void listFilesWithExtension(final File root, 
 											   final String fileExtension, 
 											   final List<File> files)
 	{
