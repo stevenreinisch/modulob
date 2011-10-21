@@ -12,7 +12,9 @@ Require-Bundle: org.eclipse.xpand;bundle-version="1.1.0",
  de.dubmas.modulob.generator.common;bundle-version="1.0.0",
  org.eclipse.xtext.xtend2.lib;bundle-version="2.0.1",
  org.eclipse.emf.mwe2.runtime,
- org.eclipse.xtext.xbase.lib
+ org.eclipse.xtext.xbase.lib,
+ de.dubmas.modulob.util;bundle-version="1.0.0",
+ de.dubmas.modulob.common.dsl;bundle-version="1.0.0"
 Export-Package: de.dubmas.modulob.generator.templates,
  de.dubmas.modulob.generator.templates.coredata,
  de.dubmas.modulob.generator.templates.json,
@@ -20,4 +22,4 @@ Export-Package: de.dubmas.modulob.generator.templates,
  de.dubmas.modulob.generator.workflow,
  de.dubmas.modulob.reaction,
  de.dubmas.modulob.reaction.generator.templates,
- de.dubmas.modulob.state
+ de.dubmas.modulob.stategenerator

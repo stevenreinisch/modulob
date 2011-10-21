@@ -85,10 +85,6 @@ class ModuleTransformation implements org.eclipse.emf.mwe2.runtime.workflow.IWor
 		for(m: modules){
 			m.notificationModel = notificationModels.filter(nm | nm.module == m).head
 		}
-		
-		for(sm: stateMachines){
-			sm.module = modules.filter(m | m.name == sm.module.name).head
-		}
 	}
 	
 	def sortedEntityModelsGroupedByModule(List<EntityModel> entityModels){

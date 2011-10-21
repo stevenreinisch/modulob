@@ -127,20 +127,6 @@ public class ModuleTransformation implements IWorkflowComponent {
         NotificationModel _head_1 = IterableExtensions.<NotificationModel>head(_filter_1);
         m_2.setNotificationModel(_head_1);
       }
-      for (final StateMachine sm : stateMachines) {
-        final Function1<Module,Boolean> _function_2 = new Function1<Module,Boolean>() {
-            public Boolean apply(final Module m_3) {
-              String _name_1 = m_3.getName();
-              Module _module_2 = sm.getModule();
-              String _name_2 = _module_2.getName();
-              boolean _operator_equals_2 = ObjectExtensions.operator_equals(_name_1, _name_2);
-              return ((Boolean)_operator_equals_2);
-            }
-          };
-        Iterable<Module> _filter_2 = IterableExtensions.<Module>filter(modules, _function_2);
-        Module _head_2 = IterableExtensions.<Module>head(_filter_2);
-        sm.setModule(_head_2);
-      }
     }
   }
   
