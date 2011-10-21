@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F93105E3145162C2009ACCBC /* MOBAbstractState.h in Headers */ = {isa = PBXBuildFile; fileRef = F93105E1145162C2009ACCBC /* MOBAbstractState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F93105E4145162C2009ACCBC /* MOBAbstractState.m in Sources */ = {isa = PBXBuildFile; fileRef = F93105E2145162C2009ACCBC /* MOBAbstractState.m */; };
+		F93105E7145162D0009ACCBC /* MOBInitialState.h in Headers */ = {isa = PBXBuildFile; fileRef = F93105E5145162D0009ACCBC /* MOBInitialState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F93105E8145162D0009ACCBC /* MOBInitialState.m in Sources */ = {isa = PBXBuildFile; fileRef = F93105E6145162D0009ACCBC /* MOBInitialState.m */; };
+		F93105EB145162DA009ACCBC /* MOBFinalState.h in Headers */ = {isa = PBXBuildFile; fileRef = F93105E9145162DA009ACCBC /* MOBFinalState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F93105EC145162DA009ACCBC /* MOBFinalState.m in Sources */ = {isa = PBXBuildFile; fileRef = F93105EA145162DA009ACCBC /* MOBFinalState.m */; };
 		F988A28A14487EA9002EC3AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F988A28914487EA9002EC3AD /* Foundation.framework */; };
 		F988A29014487EA9002EC3AD /* MOBStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = F988A28F14487EA9002EC3AD /* MOBStateMachine.m */; };
 		F988A29814487EA9002EC3AD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F988A29714487EA9002EC3AD /* SenTestingKit.framework */; };
@@ -37,6 +43,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F93105E1145162C2009ACCBC /* MOBAbstractState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBAbstractState.h; sourceTree = "<group>"; };
+		F93105E2145162C2009ACCBC /* MOBAbstractState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBAbstractState.m; sourceTree = "<group>"; };
+		F93105E5145162D0009ACCBC /* MOBInitialState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBInitialState.h; sourceTree = "<group>"; };
+		F93105E6145162D0009ACCBC /* MOBInitialState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBInitialState.m; sourceTree = "<group>"; };
+		F93105E9145162DA009ACCBC /* MOBFinalState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBFinalState.h; sourceTree = "<group>"; };
+		F93105EA145162DA009ACCBC /* MOBFinalState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBFinalState.m; sourceTree = "<group>"; };
 		F988A28614487EA9002EC3AD /* libMOBStateMachine.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMOBStateMachine.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F988A28914487EA9002EC3AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F988A28D14487EA9002EC3AD /* MOBStateMachine-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MOBStateMachine-Prefix.pch"; sourceTree = "<group>"; };
@@ -120,6 +132,9 @@
 			children = (
 				F988A2C314487F7F002EC3AD /* PublicHeaders */,
 				F988A28F14487EA9002EC3AD /* MOBStateMachine.m */,
+				F93105E2145162C2009ACCBC /* MOBAbstractState.m */,
+				F93105E6145162D0009ACCBC /* MOBInitialState.m */,
+				F93105EA145162DA009ACCBC /* MOBFinalState.m */,
 				F988A2BC14487F48002EC3AD /* MOBState.m */,
 				F988A2BE14487F48002EC3AD /* MOBTransition.m */,
 				F988A28C14487EA9002EC3AD /* Supporting Files */,
@@ -171,7 +186,10 @@
 			isa = PBXGroup;
 			children = (
 				F988A28E14487EA9002EC3AD /* MOBStateMachine.h */,
+				F93105E1145162C2009ACCBC /* MOBAbstractState.h */,
 				F988A2BB14487F48002EC3AD /* MOBState.h */,
+				F93105E5145162D0009ACCBC /* MOBInitialState.h */,
+				F93105E9145162DA009ACCBC /* MOBFinalState.h */,
 				F988A2BD14487F48002EC3AD /* MOBTransition.h */,
 			);
 			name = PublicHeaders;
@@ -187,6 +205,9 @@
 				F988A2BF14487F48002EC3AD /* MOBState.h in Headers */,
 				F988A2C114487F48002EC3AD /* MOBTransition.h in Headers */,
 				F988A2C414487FA0002EC3AD /* MOBStateMachine.h in Headers */,
+				F93105E3145162C2009ACCBC /* MOBAbstractState.h in Headers */,
+				F93105E7145162D0009ACCBC /* MOBInitialState.h in Headers */,
+				F93105EB145162DA009ACCBC /* MOBFinalState.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +309,9 @@
 				F988A29014487EA9002EC3AD /* MOBStateMachine.m in Sources */,
 				F988A2C014487F48002EC3AD /* MOBState.m in Sources */,
 				F988A2C214487F48002EC3AD /* MOBTransition.m in Sources */,
+				F93105E4145162C2009ACCBC /* MOBAbstractState.m in Sources */,
+				F93105E8145162D0009ACCBC /* MOBInitialState.m in Sources */,
+				F93105EC145162DA009ACCBC /* MOBFinalState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +464,7 @@
 				F988A2AF14487EA9002EC3AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F988A2B014487EA9002EC3AD /* Build configuration list for PBXNativeTarget "MOBStateMachineTests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +473,7 @@
 				F988A2B214487EA9002EC3AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

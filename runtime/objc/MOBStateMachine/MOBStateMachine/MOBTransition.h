@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@class MOBState;
+@class MOBAbstractState;
 
 @interface MOBTransition : NSObject
 
 @property (nonatomic, assign) NSInteger ID;
 
-@property (nonatomic, retain) MOBState *sourceState;
-@property (nonatomic, retain) MOBState *targetState;
+@property (nonatomic, retain) MOBAbstractState *sourceState;
+@property (nonatomic, retain) MOBAbstractState *targetState;
 
 /*
  * The selector that is executed on a state machine's

@@ -8,10 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-#import  "MOBState.h"
+#import "MOBAbstractState.h"
+#import "MOBInitialState.h"
+#import "MOBState.h"
+#import "MOBFinalState.h"
+
 #import  "MOBTransition.h"
 
-@interface MOBStateMachine : NSObject
+@interface MOBStateMachine : NSObject {
+    id currentState;
+}
 
 @property (nonatomic, assign) id delegate;
 
@@ -21,6 +27,6 @@
 - (void) start;
 - (void) update;
 
-- (MOBState*) currentState;
+- (MOBAbstractState*) currentState;
 
 @end

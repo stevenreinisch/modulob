@@ -9,6 +9,8 @@
 #import "PasswordEntryStateMachine.h"
 
 #import "MOBState.h"
+#import "MOBInitialState.h"
+#import "MOBFinalState.h"
 #import "MOBTransition.h"
 
 @implementation PasswordEntryStateMachine
@@ -20,59 +22,63 @@
         
         /*
          * Define the states.
-         */ 
+         */
+        MOBInitialState *initial = [[MOBInitialState new] autorelease];
+        initial.name = @"initial";
+        initial.ID   = PasswordEntryState_INITIAL;
+        initial.entrySelectorName = @"enter_initial";
+        initial.exitSelectorName  = @"exit_initial";
+        
         MOBState *empty = [[MOBState new] autorelease];
         empty.name = @"name";
         empty.ID = PasswordEntryState_EMPTY;
-        empty.isInitial = YES;
-        empty.isFinal = NO;
         empty.entrySelectorName = @"enter_empty";
         empty.exitSelectorName = @"exit_empty";
         
         MOBState *partiallyFilled = [[MOBState new] autorelease];
         partiallyFilled.name = @"partiallyFilled";
         partiallyFilled.ID = PasswordEntryState_PARTIALLYFILLED;
-        partiallyFilled.isInitial = NO;
-        partiallyFilled.isFinal = NO;
         partiallyFilled.entrySelectorName = @"enter_partiallyFilled";
         partiallyFilled.exitSelectorName = @"exit_partiallyFilled";
         
         MOBState *completelyFilled = [[MOBState new] autorelease];
         completelyFilled.name = @"completelyFilled";
         completelyFilled.ID = PasswordEntryState_COMPLETELYFILLED;
-        completelyFilled.isInitial = NO;
-        completelyFilled.isFinal = NO;
         completelyFilled.entrySelectorName = @"enter_completelyFilled";
         completelyFilled.exitSelectorName = @"exit_completelyFilled";
         
         MOBState *userAuthenticated = [[MOBState new] autorelease];
         userAuthenticated.name = @"userAuthenticated";
         userAuthenticated.ID = PasswordEntryState_USERAUTHENTICATED;
-        userAuthenticated.isInitial = NO;
-        userAuthenticated.isFinal = YES;
         userAuthenticated.entrySelectorName = @"enter_userAuthenticated";
         userAuthenticated.exitSelectorName = @"exit_userAuthenticated";
         
         MOBState *userNotAuthenticated = [[MOBState new] autorelease];
         userNotAuthenticated.name = @"userNotAuthenticated";
         userNotAuthenticated.ID = PasswordEntryState_USERNOTAUTHENTICATED;
-        userNotAuthenticated.isInitial = NO;
-        userNotAuthenticated.isFinal = NO;
         userNotAuthenticated.entrySelectorName = @"enter_userNotAuthenticated";
         userNotAuthenticated.exitSelectorName = @"exit_userNotAuthenticated";
         
         MOBState *locked = [[MOBState new] autorelease];
         locked.name = @"locked";
         locked.ID = PasswordEntryState_LOCKED;
-        locked.isInitial = NO;
-        locked.isFinal = NO;
         locked.duration = 5.0;
         locked.entrySelectorName = @"enter_locked";
         locked.exitSelectorName = @"exit_locked";
         
+        MOBFinalState *userAuthenticated_final = [[MOBFinalState new] autorelease];
+        userAuthenticated_final.name = @"userAuthenticated_final";
+        userAuthenticated_final.ID   = PasswordEntryState_USERAUTHENTICATED_FINAL;
+        userAuthenticated_final.entrySelectorName = @"enter_userAuthenticated_Final";
+        
         /*
          * Define transitions.
          */
+        MOBTransition *initial_to_empty = [[MOBTransition new] autorelease];
+        initial_to_empty.ID = PasswordEntryTransition_INITIAL_EMPTY;
+        initial_to_empty.guardSelectorName = @"guard_initial_to_empty";
+        initial_to_empty.actionSelectorName = @"action_initial_to_empty";
+        
         MOBTransition * empty_to_partiallyFilled = [[MOBTransition new] autorelease];
         empty_to_partiallyFilled.ID = PasswordEntryTransition_EMPTY_PARTIALLYFILLED;
         empty_to_partiallyFilled.guardSelectorName = @"guard_empty_to_partiallyFilled";
@@ -118,12 +124,24 @@
         locked_to_empty.guardSelectorName = @"guard_locked_to_empty";
         locked_to_empty.actionSelectorName = @"action_locked_to_empty";
         
+        MOBTransition * userauthenticated_to_final = [[MOBTransition new] autorelease];
+        userauthenticated_to_final.ID = PasswordEntryTransition_USERAUTHENTICATED_FINAL;
+        userauthenticated_to_final.guardSelectorName = @"guard_userauthenticated_to_final";
+        userauthenticated_to_final.actionSelectorName = @"action_userauthenticated_to_final";
+        
+        
         /*
          * Wire states and transitions.
          */
         
         //states -> transitions
-        empty.outgoingTransitions = [NSSet setWithObjects:empty_to_partiallyFilled, nil];
+        initial.outgoingTransitions = [NSSet setWithObjects:initial_to_empty, 
+                                                            nil];
+        
+        empty.incomingTransitions = [NSSet setWithObjects:initial_to_empty, 
+                                                          nil];
+        empty.outgoingTransitions = [NSSet setWithObjects:empty_to_partiallyFilled, 
+                                                          nil];
         
         partiallyFilled.incomingTransitions = [NSSet setWithObjects:empty_to_partiallyFilled, 
                                                                     nil];
@@ -141,6 +159,9 @@
         userAuthenticated.incomingTransitions = [NSSet setWithObjects:completelyFilled_to_userAuthenticated, 
                                                                       nil];
         
+        userAuthenticated.outgoingTransitions = [NSSet setWithObjects:userauthenticated_to_final, 
+                                                                      nil];
+        
         userNotAuthenticated.incomingTransitions = [NSSet setWithObjects:completelyFilled_to_userNotAuthenticated, 
                                                                          nil];
         userNotAuthenticated.outgoingTransitions = [NSSet setWithObjects:userNotAuthenticated_to_empty, 
@@ -153,6 +174,9 @@
                                                            nil];
         
         //transitions -> states
+        initial_to_empty.sourceState = initial;
+        initial_to_empty.targetState = empty;
+        
         empty_to_partiallyFilled.sourceState = empty;
         empty_to_partiallyFilled.targetState = partiallyFilled;
         
@@ -171,6 +195,9 @@
         completelyFilled_to_userNotAuthenticated.sourceState = completelyFilled;
         completelyFilled_to_userNotAuthenticated.targetState = userNotAuthenticated;
         
+        userauthenticated_to_final.sourceState = userAuthenticated;
+        userauthenticated_to_final.targetState = userAuthenticated_final;
+        
         userNotAuthenticated_to_empty.sourceState = userNotAuthenticated;
         userNotAuthenticated_to_empty.targetState = empty;
         
@@ -183,19 +210,23 @@
         /*
          * Add states and transitions to this state machine instance.
          */
+        [self.states addObject:initial];
         [self.states addObject:empty];
         [self.states addObject:partiallyFilled];
         [self.states addObject:completelyFilled];
         [self.states addObject:userAuthenticated];
         [self.states addObject:userNotAuthenticated];
         [self.states addObject:locked];
+        [self.states addObject:userAuthenticated_final];
         
+        [self.transitions addObject:initial_to_empty];
         [self.transitions addObject:empty_to_partiallyFilled];
         [self.transitions addObject:partiallyFilled_to_empty];
         [self.transitions addObject:partiallyFilled_to_partiallyFilled];
         [self.transitions addObject:partiallyFilled_to_completelyFilled];
         [self.transitions addObject:completelyFilled_to_userAuthenticated];
         [self.transitions addObject:completelyFilled_to_userNotAuthenticated];
+        [self.transitions addObject:userauthenticated_to_final];
         [self.transitions addObject:userNotAuthenticated_to_empty];
         [self.transitions addObject:userNotAuthenticated_to_locked];
         [self.transitions addObject:locked_to_empty];

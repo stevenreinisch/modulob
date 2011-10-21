@@ -1,25 +1,23 @@
 //
-//  MOBState.m
+//  MOBInitialState.m
 //  MOBStateMachine
 //
-//  Created by steven reinisch on 10/12/11.
+//  Created by steven reinisch on 10/21/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "MOBState.h"
+#import "MOBInitialState.h"
 
-@implementation MOBState
+@implementation MOBInitialState
 
-@synthesize duration,
-            exitSelectorName,
-            incomingTransitions,
+@synthesize exitSelectorName,
             outgoingTransitions;
 
 - (id)init
 {
     self = [super init];
     if (self) {
-        duration = UNDEFINED;
+        // Initialization code here.
     }
     
     return self;
@@ -27,7 +25,6 @@
 
 - (void) dealloc {
     self.exitSelectorName    = nil;
-    self.incomingTransitions = nil;
     self.outgoingTransitions = nil;
     
     [super dealloc];

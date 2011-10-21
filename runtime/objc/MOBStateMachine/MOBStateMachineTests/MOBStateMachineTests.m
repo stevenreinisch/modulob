@@ -41,7 +41,7 @@
 {
     STAssertNotNil(passwordEntry.stateMachine, @"no state machine found");
     
-    STAssertEquals(passwordEntry.stateMachine.currentState.ID, 
+    STAssertEquals([[passwordEntry.stateMachine currentState] ID], 
                    (NSInteger)PasswordEntryState_EMPTY, 
                    @"wrong current state");
     
@@ -55,34 +55,34 @@
      */
     [passwordEntry keyStroke:@"0"];
     
-    STAssertEquals(passwordEntry.stateMachine.currentState.ID, 
+    STAssertEquals([[passwordEntry.stateMachine currentState] ID], 
                    (NSInteger)PasswordEntryState_PARTIALLYFILLED, 
                    @"wrong current state");
     
     [passwordEntry deleteChar];
     
-    STAssertEquals(passwordEntry.stateMachine.currentState.ID, 
+    STAssertEquals([[passwordEntry.stateMachine currentState] ID], 
                    (NSInteger)PasswordEntryState_EMPTY, 
                    @"wrong current state");
     
     //enter first digit
     [passwordEntry keyStroke:@"2"];
     
-    STAssertEquals(passwordEntry.stateMachine.currentState.ID, 
+    STAssertEquals([[passwordEntry.stateMachine currentState] ID], 
                    (NSInteger)PasswordEntryState_PARTIALLYFILLED, 
                    @"wrong current state");
     
     //enter second digit
     [passwordEntry keyStroke:@"2"];
     
-    STAssertEquals(passwordEntry.stateMachine.currentState.ID, 
+    STAssertEquals([[passwordEntry.stateMachine currentState] ID], 
                    (NSInteger)PasswordEntryState_PARTIALLYFILLED, 
                    @"wrong current state");
     
     //enter third digit
     [passwordEntry keyStroke:@"4"];
     
-    STAssertEquals(passwordEntry.stateMachine.currentState.ID, 
+    STAssertEquals([[passwordEntry.stateMachine currentState] ID], 
                    (NSInteger)PasswordEntryState_PARTIALLYFILLED, 
                    @"wrong current state");
     
@@ -90,7 +90,7 @@
     [passwordEntry keyStroke:@"7"];
     
     if ([@"2247" isEqualToString:self.passwordEntry.correctUserPin]) {
-        STAssertEquals(passwordEntry.stateMachine.currentState.ID, 
+        STAssertEquals([[passwordEntry.stateMachine currentState] ID], 
                        (NSInteger)PasswordEntryState_USERAUTHENTICATED, 
                        @"wrong current state");
     } else {
@@ -106,7 +106,7 @@
         * entered which again immediately updates the state machine.
         * The state machines switches to PasswordEntryState_EMPTY.
         */
-        STAssertEquals(passwordEntry.stateMachine.currentState.ID, 
+        STAssertEquals([[passwordEntry.stateMachine currentState] ID], 
                        (NSInteger)PasswordEntryState_EMPTY, 
                        @"wrong current state");
     }

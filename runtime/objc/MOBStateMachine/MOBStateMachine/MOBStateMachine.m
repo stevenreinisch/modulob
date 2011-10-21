@@ -9,12 +9,11 @@
 #import "MOBStateMachine.h"
 
 @interface MOBStateMachine ()
-@property (nonatomic, retain) MOBState *currentState;
 
 - (void) checkConsistencyAtStartUp;
 
 - (BOOL) switchTransitionInternal:(MOBTransition*) transition;
-- (void) enterState:(MOBState*) newState;
+- (void) enterState:(MOBAbstractState*) newState;
 - (void) executeSelector:(NSString*) selectorName;
 - (BOOL) evaluateGuardSelector:(NSString*) selectorName;
 
@@ -23,7 +22,7 @@
 
 @implementation MOBStateMachine
 
-@synthesize delegate, states, transitions, currentState;
+@synthesize delegate, states, transitions;
 
 #pragma mark -
 
@@ -41,7 +40,8 @@
 - (void) dealloc {
     self.states          = nil;
     self.transitions     = nil;
-    self.currentState    = nil;
+    
+    currentState         = nil;
     
     [super dealloc];
 }
@@ -52,7 +52,7 @@
     [self currentState];
     [self checkConsistencyAtStartUp];
     
-    [self executeSelector:currentState.entrySelectorName];
+    [self update];
 }
 
 /*
@@ -61,26 +61,31 @@
  * this transition is switched.
  */
 - (void) update {
-    BOOL switched = NO;
-    
-    NSEnumerator *enumerator  = [currentState.outgoingTransitions objectEnumerator];
-    MOBTransition *transition = nil;
-    
-    while (!switched && (transition = [enumerator nextObject]) ) {
-        if ([self evaluateGuardSelector:transition.guardSelectorName]) {
-            switched = [self switchTransitionInternal:transition];
+    if (![currentState isKindOfClass:[MOBFinalState class]]) {
+        
+        BOOL switched = NO;
+        
+        NSEnumerator *enumerator  = [[currentState outgoingTransitions] objectEnumerator];
+        MOBTransition *transition = nil;
+        
+        while (!switched && (transition = [enumerator nextObject]) ) {
+            if ([self evaluateGuardSelector:transition.guardSelectorName]) {
+                switched = [self switchTransitionInternal:transition];
+            }
         }
-    }
-    
-    if (switched && transition) {
-        [self enterState:transition.targetState];
+        
+        if (switched && transition) {
+            [self enterState:transition.targetState];
+        }
+    } else {
+        NSLog(@"ERROR: MOBStateMachine cannot update .. in final state.");
     }
 }
 
-- (MOBState*) currentState {
+- (MOBAbstractState*) currentState {
     if(!currentState){
-        self.currentState = [[[states filteredSetUsingPredicate:
-                               [NSPredicate predicateWithFormat:@"SELF.isInitial == YES"]] 
+        currentState = [[[states filteredSetUsingPredicate:
+                               [NSPredicate predicateWithFormat:@"SELF isKindOfClass: %@", [MOBInitialState class]]] 
                                 allObjects] objectAtIndex:0];
     }
     return currentState;
@@ -94,24 +99,27 @@
  * 2. execute transition's action selector
  */
 - (BOOL) switchTransitionInternal:(MOBTransition*) transition {
-    [self executeSelector:currentState.exitSelectorName];
+    [self executeSelector:[currentState exitSelectorName]];
     [self executeSelector:transition.actionSelectorName];
     return YES;
 }
 
-- (void) enterState:(MOBState*) newState {
-    self.currentState = newState;
-    [self executeSelector:currentState.entrySelectorName];
+- (void) enterState:(MOBAbstractState*) newState {
+    currentState = newState;
+    [self executeSelector:[currentState entrySelectorName]];
     
-    if (DEFINED(newState.duration)) {
-        NSLog(@"starting timer for state: %@ (ID: %d) with duration: %f",
-              newState.name, newState.ID, newState.duration);
-        
-        [NSTimer scheduledTimerWithTimeInterval:newState.duration 
-                                         target:self 
-                                       selector:@selector(currentStateDurationEnded) 
-                                       userInfo:nil 
-                                        repeats:NO];
+    if ([currentState isKindOfClass:[MOBState class]]) 
+    {
+        if (DEFINED([(id)newState duration])) {
+            NSLog(@"starting timer for state: %@ (ID: %d) with duration: %f",
+                  [newState name], [newState ID], [(id)newState duration]);
+            
+            [NSTimer scheduledTimerWithTimeInterval:[(id)newState duration] 
+                                             target:self 
+                                           selector:@selector(currentStateDurationEnded) 
+                                           userInfo:nil 
+                                            repeats:NO];
+        }
     }
 }
 
@@ -120,31 +128,22 @@
     NSAssert([transitions count] > 0, @"state machine must have at least one transition");
     
     NSArray *initialStates = [[states filteredSetUsingPredicate:
-                                [NSPredicate predicateWithFormat:@"SELF.isInitial == YES"]] 
+                                [NSPredicate predicateWithFormat:@"SELF isKindOfClass: %@", [MOBInitialState class]]] 
                                   allObjects];
     
     NSAssert([initialStates count] == 1, @"only one state can be initial state");
     
-    MOBState *initialState = [initialStates objectAtIndex:0];
+    MOBInitialState *initialState = [initialStates objectAtIndex:0];
     
-    NSAssert(self.currentState == initialState, 
+    NSAssert(currentState == initialState, 
              @"current state: %@ (ID: %d) must be the same as %@ (ID: %d)",
-             currentState.name, currentState.ID, initialState.name, initialState.ID);
+             [currentState name], [currentState ID], [initialState name], [initialState ID]);
     
     NSArray *finalStates = [[states filteredSetUsingPredicate:
-                               [NSPredicate predicateWithFormat:@"SELF.isFinal == YES"]] 
+                               [NSPredicate predicateWithFormat:@"SELF isKindOfClass: %@", [MOBFinalState class]]] 
                                  allObjects];
     
     NSAssert([finalStates count] >= 1, @"at least one state must be final");
-    
-    for(MOBState *finalState in finalStates) {
-        NSSet *outgoingTransitions = finalState.outgoingTransitions;
-        if (outgoingTransitions) {
-            NSAssert([outgoingTransitions count] == 1, 
-                     @"final state: %@ (ID: %d) must not have any outgoing transition",
-                     finalState.name, finalState.ID);
-        }
-    }
 }
 
 -(void) executeSelector:(NSString*) selectorName {
@@ -185,7 +184,7 @@
  */
 - (void) currentStateDurationEnded {
     NSLog(@"timer ended for state: %@ (ID: %d) with duration: %f",
-          currentState.name, currentState.ID, currentState.duration);
+          [currentState name], [currentState ID], [currentState duration]);
     
     [self update];
 }

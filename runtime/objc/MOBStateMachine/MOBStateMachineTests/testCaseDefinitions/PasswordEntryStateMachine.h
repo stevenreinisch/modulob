@@ -8,21 +8,25 @@
 
 #import "MOBStateMachine.h"
 
-enum {
-    PasswordEntryState_EMPTY = 0,
+enum{
+    PasswordEntryState_INITIAL = 0,
+    PasswordEntryState_EMPTY,
     PasswordEntryState_PARTIALLYFILLED,
     PasswordEntryState_COMPLETELYFILLED,
     PasswordEntryState_USERAUTHENTICATED,
     PasswordEntryState_USERNOTAUTHENTICATED,
-    PasswordEntryState_LOCKED
+    PasswordEntryState_LOCKED,
+    PasswordEntryState_USERAUTHENTICATED_FINAL
 };
 
 enum {
-    PasswordEntryTransition_EMPTY_PARTIALLYFILLED = 0,
+    PasswordEntryTransition_INITIAL_EMPTY = 0,
+    PasswordEntryTransition_EMPTY_PARTIALLYFILLED,
     PasswordEntryTransition_PARTIALLYFILLED_EMPTY,
     PasswordEntryTransition_PARTIALLYFILLED_COMPLETELYFILLED,    
     PasswordEntryTransition_COMPLETELYFILLED_USERAUTHENTICATED,
     PasswordEntryTransition_COMPLETELYFILLED_USERNOTAUTHENTICATED,
+    PasswordEntryTransition_USERAUTHENTICATED_FINAL,
     PasswordEntryTransition_USERNOTAUTHENTICATED_EMPTY,
     PasswordEntryTransition_USERNOTAUTHENTICATED_LOCKED,
     PasswordEntryTransition_LOCKED_EMPTY
