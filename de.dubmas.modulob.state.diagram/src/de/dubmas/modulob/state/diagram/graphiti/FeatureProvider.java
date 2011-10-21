@@ -17,14 +17,17 @@ import org.eclipse.graphiti.mm.pictograms.ContainerShape;
 import org.eclipse.graphiti.mm.pictograms.PictogramElement;
 import org.eclipse.graphiti.ui.features.DefaultFeatureProvider;
 
+import de.dubmas.modulob.state.FinalNode;
 import de.dubmas.modulob.state.InitialNode;
 import de.dubmas.modulob.state.State;
 import de.dubmas.modulob.state.StateMachine;
 import de.dubmas.modulob.state.Transition;
+import de.dubmas.modulob.state.diagram.graphiti.add.AddFinalNodeFeature;
 import de.dubmas.modulob.state.diagram.graphiti.add.AddInitialNodeFeature;
 import de.dubmas.modulob.state.diagram.graphiti.add.AddStateFeature;
 import de.dubmas.modulob.state.diagram.graphiti.add.AddStateMachineFeature;
 import de.dubmas.modulob.state.diagram.graphiti.add.AddTransitionFeature;
+import de.dubmas.modulob.state.diagram.graphiti.create.CreateFinalNodeFeature;
 import de.dubmas.modulob.state.diagram.graphiti.create.CreateInitialNodeFeature;
 import de.dubmas.modulob.state.diagram.graphiti.create.CreateStateFeature;
 import de.dubmas.modulob.state.diagram.graphiti.create.CreateTransitionFeature;
@@ -45,8 +48,8 @@ public class FeatureProvider extends DefaultFeatureProvider {
         		/*
         		new CreateConditionalNodeFeature(this),
         		new CreateConditionFeature(this),
-        		new CreateFinalNodeFeature(this),
         		*/
+        		new CreateFinalNodeFeature(this),
         		new CreateInitialNodeFeature(this),
         		new CreateStateFeature(this)
         };
@@ -65,10 +68,10 @@ public class FeatureProvider extends DefaultFeatureProvider {
             return new AddConditionalNodeFeature(this);
         } else if (context.getNewObject() instanceof Condition) {
             return new AddConditionFeature(this);
-        } else if (context.getNewObject() instanceof FinalNode) {
+        }*/ 
+    	if (context.getNewObject() instanceof FinalNode) {
             return new AddFinalNodeFeature(this);
-        } else*/ 
-    	if (context.getNewObject() instanceof InitialNode) {
+        } else if (context.getNewObject() instanceof InitialNode) {
             return new AddInitialNodeFeature(this);
         } else if (context.getNewObject() instanceof State) {
             return new AddStateFeature(this);

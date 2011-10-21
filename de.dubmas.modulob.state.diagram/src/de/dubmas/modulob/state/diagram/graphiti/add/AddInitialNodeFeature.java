@@ -54,7 +54,7 @@ public class AddInitialNodeFeature extends AbstractAddShapeFeature{
 																targetDiagram, true);
 
 		// define a default size for the shape
-		int width = 40;
+		int width = 20;
         int height = width;
 		IGaService gaService = Graphiti.getGaService();
 
@@ -90,8 +90,8 @@ public class AddInitialNodeFeature extends AbstractAddShapeFeature{
         // anchor is located on the right border of the visible rectangle
         // and touches the border of the invisible rectangle
   
-        int w = 6;
-        gaService.setLocationAndSize(rectangle, -2 * w, -w, 2 * w, 2 * w);
+//        int w = 6;
+//        gaService.setLocationAndSize(rectangle, -2 * w, -w, 2 * w, 2 * w);
         rectangle.setForeground(manageColor(CLASS_FOREGROUND));
         rectangle.setBackground(manageColor(CLASS_BACKGROUND));
         
