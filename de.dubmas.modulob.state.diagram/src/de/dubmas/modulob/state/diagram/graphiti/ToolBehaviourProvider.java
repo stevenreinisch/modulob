@@ -1,7 +1,5 @@
 package de.dubmas.modulob.state.diagram.graphiti;
 
-import java.util.List;
-
 import org.eclipse.graphiti.dt.IDiagramTypeProvider;
 import org.eclipse.graphiti.features.IFeatureProvider;
 import org.eclipse.graphiti.mm.pictograms.PictogramElement;
@@ -9,16 +7,15 @@ import org.eclipse.graphiti.platform.IPlatformImageConstants;
 import org.eclipse.graphiti.tb.DefaultToolBehaviorProvider;
 import org.eclipse.graphiti.tb.IDecorator;
 import org.eclipse.graphiti.tb.ImageDecorator;
-import org.eclipse.xtext.xbase.lib.Functions.Function1;
-import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
-import de.dubmas.modulob.state.InitialNode;
 import de.dubmas.modulob.state.State;
 import de.dubmas.modulob.state.StateMachine;
-import de.dubmas.modulob.state.Transition;
+import de.dubmas.modulob.state.diagram.queries.StateMachineQueries;
 
 public class ToolBehaviourProvider extends DefaultToolBehaviorProvider {
 
+	private StateMachineQueries checks = new StateMachineQueries();
+	
 	public ToolBehaviourProvider(IDiagramTypeProvider diagramTypeProvider) {
 		super(diagramTypeProvider);
 	}
@@ -50,7 +47,7 @@ public class ToolBehaviourProvider extends DefaultToolBehaviorProvider {
                     .setMessage("Module not set. Open Properties View and set it!");
                 return new IDecorator[] { imageRenderingDecorator };
             } 
-            else if (statesConnectedToInitialNode(stateMachine).size() != 1){
+            else if (checks.statesConnectedToInitialNode(stateMachine).size() != 1){
             	IDecorator imageRenderingDecorator =
                         new ImageDecorator(
                             IPlatformImageConstants.IMG_ECLIPSE_ERROR_TSK);
@@ -58,34 +55,27 @@ public class ToolBehaviourProvider extends DefaultToolBehaviorProvider {
                         .setMessage("Exactly one State must be connected to one InitialNode!");
                 return new IDecorator[] { imageRenderingDecorator };
             }
-            
+            else if (checks.danglingStates(stateMachine).size() > 0){
+            	IDecorator imageRenderingDecorator =
+                        new ImageDecorator(
+                            IPlatformImageConstants.IMG_ECLIPSE_ERROR_TSK);
+                    imageRenderingDecorator
+                        .setMessage("Every state must have at least one incoming transition!");
+                return new IDecorator[] { imageRenderingDecorator };
+            }
+            else if (checks.finalStates(stateMachine).size() == 0){
+            	IDecorator imageRenderingDecorator =
+                        new ImageDecorator(
+                            IPlatformImageConstants.IMG_ECLIPSE_ERROR_TSK);
+                    imageRenderingDecorator
+                        .setMessage("State machine must have at least one final node!");
+                return new IDecorator[] { imageRenderingDecorator };
+            }
             
         }
  
         return super.getDecorators(pe);
     }
 	
-	private List<State> statesConnectedToInitialNode(StateMachine sm) {
-		Iterable<State> states = IterableExtensions.filter(sm.getNodes(), State.class);
-		
-		List<State> result = IterableExtensions.toList(
-				 IterableExtensions.filter(states, 
-						new Function1<State, Boolean>(){
-							public Boolean apply(State s){
-								if (IterableExtensions.exists(s.getIncoming(), 
-										new Function1<Transition, Boolean>(){
-											public Boolean apply(Transition t){
-												return t.getSource() instanceof InitialNode;
-											}
-										})) 
-				{
-					return true;
-				} else {
-					return false;
-				}
-			}
-		}));
-		
-		return result;
-	}
+	
 }
