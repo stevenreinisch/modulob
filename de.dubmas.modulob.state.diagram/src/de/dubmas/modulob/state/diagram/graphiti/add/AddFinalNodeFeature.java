@@ -20,11 +20,11 @@ import de.dubmas.modulob.state.FinalNode;
 public class AddFinalNodeFeature extends AbstractAddShapeFeature{
 
 		//?? stroke color ??
-	    private static final IColorConstant CLASS_FOREGROUND =
+	    private static final IColorConstant BLACK =
 	        new ColorConstant(0, 0, 0);
 	 
-	    private static final IColorConstant CLASS_BACKGROUND =
-	        new ColorConstant(0, 0, 0);
+	    private static final IColorConstant WHITE =
+	        new ColorConstant(255, 255, 255);
 	
 	public AddFinalNodeFeature(IFeatureProvider fp) {
 		super(fp);
@@ -61,12 +61,12 @@ public class AddFinalNodeFeature extends AbstractAddShapeFeature{
 		// create and set graphics algorithm
         Ellipse ellipse =
             gaService.createEllipse(containerShape);
-        ellipse.setForeground(manageColor(CLASS_FOREGROUND));
-        ellipse.setBackground(manageColor(CLASS_BACKGROUND));
+        ellipse.setForeground(manageColor(BLACK));
+        ellipse.setBackground(manageColor(WHITE));
         ellipse.setLineWidth(2);
         gaService.setLocationAndSize(ellipse,
             context.getX(), context.getY(), width, height);
-
+        
         // create link and wire it
         link(containerShape, addedFinalNode);
 	
@@ -92,8 +92,8 @@ public class AddFinalNodeFeature extends AbstractAddShapeFeature{
   
 //        int w = 6;
 //        gaService.setLocationAndSize(rectangle, -2 * w, -w, 2 * w, 2 * w);
-        rectangle.setForeground(manageColor(CLASS_FOREGROUND));
-        rectangle.setBackground(manageColor(CLASS_BACKGROUND));
+        rectangle.setForeground(manageColor(BLACK));
+        rectangle.setBackground(manageColor(WHITE));
         
         // call the layout feature
         layoutPictogramElement(containerShape);

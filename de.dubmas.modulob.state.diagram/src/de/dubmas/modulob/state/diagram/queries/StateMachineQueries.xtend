@@ -17,4 +17,20 @@ class StateMachineQueries {
 	def danglingStates(StateMachine sm){
 		sm.nodes.filter(typeof(State)).filter(s | s.incoming.size == 0).toList
 	}
+	
+	def initialNode(StateMachine sm){
+		sm.nodes.filter(typeof(InitialNode)).toList.head
+	}
+	
+	def states(StateMachine sm){
+		sm.nodes.filter(typeof(State)).toList
+	}
+	
+	def finalNodes(StateMachine sm){
+		sm.nodes.filter(typeof(FinalNode)).toList
+	}
+	
+	def transition(StateMachine sm, Node source, Node target){
+		sm.transitions.filter(t | t.source == source && t.target == target).head
+	}
 }

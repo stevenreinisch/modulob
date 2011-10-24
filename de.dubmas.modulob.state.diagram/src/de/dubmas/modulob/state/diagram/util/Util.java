@@ -1,7 +1,8 @@
 package de.dubmas.modulob.state.diagram.util;
 
-import org.eclipse.core.runtime.IPath;
-import org.eclipse.core.runtime.Path;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -17,15 +18,20 @@ public class Util {
 	public static final String DIAGRAM_EXTENSION     = "diagram";
 	
 	public static StateMachine stateMachineInDiagram(Diagram d) {
+		URI modelURI = d.eResource().getURI().trimFragment();
+		modelURI = modelURI.trimFileExtension();
+		modelURI = modelURI.appendFileExtension(STATE_MODEL_EXTENSION);
+		final IWorkspaceRoot workspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
+		IResource _rfile = workspaceRoot.findMember(modelURI.toPlatformString(true));
+
+		Resource modelResource = null;
 		
-		IPath diagramPath  = new Path(d.eResource().getURI().toString());
-		IPath modelPath    = diagramPath.removeFileExtension().
-								addFileExtension(STATE_MODEL_EXTENSION).
-									makeRelative();
+		if(_rfile == null || !_rfile.exists()){
+			modelResource = d.eResource().getResourceSet().createResource(modelURI);
+		} else {
+			modelResource = d.eResource().getResourceSet().getResource(modelURI, true);
+		}
 		
-		URI modelURI = URI.createURI(modelPath.toString());
-		
-		Resource modelResource = d.eResource().getResourceSet().getResource(modelURI, true);
 		if (modelResource.getContents().size() > 0){
 			return (StateMachine)modelResource.getContents().get(0);
 		}
