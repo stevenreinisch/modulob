@@ -46,6 +46,7 @@ public class TheProjectCreator extends SystemDslProjectCreator{
 		result.add("de.dubmas.modulob.generator");
 		result.add("de.dubmas.modulob.generator.common");
 		result.add("de.dubmas.modulob.util");
+		result.add("de.dubmas.modulob.state.diagram");
 		
 		result.add("org.eclipse.xpand");
 		result.add("org.eclipse.xtend");
@@ -55,6 +56,7 @@ public class TheProjectCreator extends SystemDslProjectCreator{
 		result.add("org.eclipse.xtend.typesystem.emf");
 		result.add("org.eclipse.xtend.util.stdlib");
 		result.add("org.eclipse.xtext.xbase.lib");
+		result.add("org.eclipse.xtext.xtend2.lib");
 		
 		return result;
 	}

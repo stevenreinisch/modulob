@@ -17,7 +17,7 @@ public class XMIReader {
 	
 	/**
 	 * 
-	 * @param fileExtension
+	 * @param fileExtension without leading dot (correct:  "java", incorrect: ".java")
 	 * @param folderURI e.g. "platform:/resource/project-name/path"
 	 * @return
 	 * @throws IOException 
@@ -34,7 +34,7 @@ public class XMIReader {
 		
 		ResourceSet set = new ResourceSetImpl();
 		set.getResourceFactoryRegistry().
-			getExtensionToFactoryMap().put("state", new XMIResourceFactoryImpl());
+			getExtensionToFactoryMap().put(fileExtension, new XMIResourceFactoryImpl());
 		
 		for(File file : files){
 			//String nuri = folderURI + file;

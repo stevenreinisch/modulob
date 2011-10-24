@@ -13,6 +13,12 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 public class ResourceProvider {
 	
+	/**
+	 * 
+	 * @param folderRelativePath
+	 * @param fileExtension without leading dot (correct:  "java", incorrect: ".java")
+	 * @return
+	 */
 	public static List<Resource> resourcesInFolderWithExtension(String folderRelativePath, String fileExtension){
 		List<Resource> result = new ArrayList<Resource>(5);
 		File folder = new File(folderRelativePath);
@@ -22,7 +28,7 @@ public class ResourceProvider {
 		
 		ResourceSet set = new ResourceSetImpl();
 		set.getResourceFactoryRegistry().
-			getExtensionToFactoryMap().put("state", new XMIResourceFactoryImpl());
+			getExtensionToFactoryMap().put(fileExtension, new XMIResourceFactoryImpl());
 		
 		for(File file : files){
 			

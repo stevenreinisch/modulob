@@ -1,4 +1,4 @@
-package de.dubmas.modulob.state.diagram.queries
+package de.dubmas.modulob.util.queries
 
 import de.dubmas.modulob.state.*
 

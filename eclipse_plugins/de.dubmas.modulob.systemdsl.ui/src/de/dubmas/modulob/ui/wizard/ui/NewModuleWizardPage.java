@@ -14,6 +14,7 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
+import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.ui.wizards.NewContainerWizardPage;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
@@ -313,7 +314,7 @@ public class NewModuleWizardPage extends NewContainerWizardPage {
 
 		IPackageFragmentRoot root= getPackageFragmentRoot();
 		String packName= getPackageText();
-		fCreatedPackageFragment= root.createPackageFragment(packName, true, monitor);
+		fCreatedPackageFragment = root.createPackageFragment(packName, true, monitor);
 
 		/*
 		 * Create files for interface model, data model, ...
@@ -330,10 +331,19 @@ public class NewModuleWizardPage extends NewContainerWizardPage {
 		String outPathString = outputPath.toString();
 		fsa.setOutputPath(outPathString);
 		gen.doGenerate(fsa);
+		
 		getWorkspaceRoot().refreshLocal(IResource.DEPTH_INFINITE, monitor);
+		
+		createStatesSubPackage(packName, monitor);
 		
 		if (monitor.isCanceled()) {
 			throw new InterruptedException();
 		}
+	}
+	
+	private void createStatesSubPackage(String modulePackagename, IProgressMonitor monitor) throws JavaModelException{
+		IPackageFragmentRoot root = getPackageFragmentRoot();
+		String statesPkgName = modulePackagename + ".states";
+		root.createPackageFragment(statesPkgName, true, monitor);
 	}
 }

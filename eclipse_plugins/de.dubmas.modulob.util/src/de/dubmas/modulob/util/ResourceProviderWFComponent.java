@@ -1,6 +1,5 @@
 package de.dubmas.modulob.util;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.ecore.resource.Resource;

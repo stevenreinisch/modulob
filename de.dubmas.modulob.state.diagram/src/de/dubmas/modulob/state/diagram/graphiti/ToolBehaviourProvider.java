@@ -10,11 +10,11 @@ import org.eclipse.graphiti.tb.ImageDecorator;
 
 import de.dubmas.modulob.state.State;
 import de.dubmas.modulob.state.StateMachine;
-import de.dubmas.modulob.state.diagram.queries.StateMachineQueries;
+import de.dubmas.modulob.util.queries.StateMachineQueries;
 
 public class ToolBehaviourProvider extends DefaultToolBehaviorProvider {
 
-	private StateMachineQueries checks = new StateMachineQueries();
+	private StateMachineQueries queries = new StateMachineQueries();
 	
 	public ToolBehaviourProvider(IDiagramTypeProvider diagramTypeProvider) {
 		super(diagramTypeProvider);
@@ -47,7 +47,7 @@ public class ToolBehaviourProvider extends DefaultToolBehaviorProvider {
                     .setMessage("Module not set. Open Properties View and set it!");
                 return new IDecorator[] { imageRenderingDecorator };
             } 
-            else if (checks.statesConnectedToInitialNode(stateMachine).size() != 1){
+            else if (queries.statesConnectedToInitialNode(stateMachine).size() != 1){
             	IDecorator imageRenderingDecorator =
                         new ImageDecorator(
                             IPlatformImageConstants.IMG_ECLIPSE_ERROR_TSK);
@@ -55,7 +55,7 @@ public class ToolBehaviourProvider extends DefaultToolBehaviorProvider {
                         .setMessage("Exactly one State must be connected to one InitialNode!");
                 return new IDecorator[] { imageRenderingDecorator };
             }
-            else if (checks.danglingStates(stateMachine).size() > 0){
+            else if (queries.danglingStates(stateMachine).size() > 0){
             	IDecorator imageRenderingDecorator =
                         new ImageDecorator(
                             IPlatformImageConstants.IMG_ECLIPSE_ERROR_TSK);
@@ -63,7 +63,7 @@ public class ToolBehaviourProvider extends DefaultToolBehaviorProvider {
                         .setMessage("Every state must have at least one incoming transition!");
                 return new IDecorator[] { imageRenderingDecorator };
             }
-            else if (checks.finalStates(stateMachine).size() == 0){
+            else if (queries.finalStates(stateMachine).size() == 0){
             	IDecorator imageRenderingDecorator =
                         new ImageDecorator(
                             IPlatformImageConstants.IMG_ECLIPSE_ERROR_TSK);

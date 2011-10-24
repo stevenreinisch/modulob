@@ -14,7 +14,7 @@ import de.dubmas.modulob.state.Transition;
 
 public class Util {
 	
-	public static final String STATE_MODEL_EXTENSION = "state";
+	public static final String STATE_MODEL_EXTENSION = "most";
 	public static final String DIAGRAM_EXTENSION     = "diagram";
 	
 	public static StateMachine stateMachineInDiagram(Diagram d) {

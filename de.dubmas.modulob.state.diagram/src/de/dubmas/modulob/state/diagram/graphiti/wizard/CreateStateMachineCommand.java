@@ -28,8 +28,8 @@ import de.dubmas.modulob.state.StateFactory;
 import de.dubmas.modulob.state.StateMachine;
 import de.dubmas.modulob.state.Transition;
 import de.dubmas.modulob.state.diagram.graphiti.DiagramTypeProvider;
-import de.dubmas.modulob.state.diagram.queries.StateMachineQueries;
 import de.dubmas.modulob.state.diagram.util.Util;
+import de.dubmas.modulob.util.queries.StateMachineQueries;
 
 public class CreateStateMachineCommand extends RecordingCommand {
 
@@ -93,6 +93,7 @@ public class CreateStateMachineCommand extends RecordingCommand {
 		State s        = StateFactory.eINSTANCE.createState();
 		s.setName("NewState");
 		s.setDuration(-1.0);
+		
 		FinalNode fn   = StateFactory.eINSTANCE.createFinalNode();
 		
 		Transition initial_to_state = StateFactory.eINSTANCE.createTransition();
@@ -108,6 +109,11 @@ public class CreateStateMachineCommand extends RecordingCommand {
 		state_to_final.setGuard(guard);
 		state_to_final.setSource(s);
 		state_to_final.setTarget(fn);
+		
+		in.getOutgoing().add(initial_to_state);
+		s.getIncoming().add(initial_to_state);
+		s.getOutgoing().add(state_to_final);
+		fn.getIncoming().add(state_to_final);
 		
 		sm.getNodes().add(in);
 		sm.getNodes().add(s);
