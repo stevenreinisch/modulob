@@ -67,7 +67,7 @@ class Extensions {
 	}
 	
 	def deterministicExitStates(StateMachine sm){
-		sm.nodes.filter(typeof(State)).filter(s | s.outgoing.size <= 1)
+		sm.nodes.filter(typeof(State)).filter(s | s.outgoing.size == 1)
 	}
 
 	def nonDeterministicExitStates(StateMachine sm){

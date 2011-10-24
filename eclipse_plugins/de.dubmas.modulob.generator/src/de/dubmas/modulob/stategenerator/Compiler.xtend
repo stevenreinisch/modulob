@@ -62,6 +62,7 @@ class Compiler implements IGenerator{
 			 */
 			 «FOR n: sm.nodes»
 			 	«n.stateDef»
+			 	
 			 «ENDFOR»
 			 
 			 /*
@@ -190,19 +191,23 @@ class Compiler implements IGenerator{
 		 * state «n.name()»
 		 */
 		«n.entryExit»
+		
 	«ENDFOR»
 	
 	#pragma mark -
 	#pragma mark transitions: actions (optional)
 	«FOR t: sm.transitions»
 		«t.transitionAction»
+		
 	«ENDFOR»
 	
 	«IF sm.deterministicExitStates().size > 0»
 		#pragma mark transitions: guards (optional)
 		//Guards are optional if state has only one outgoing transition.
+		
 		«FOR t: sm.deterministicExitStates.map(s | s.outgoing).flatten»
 			«t.transitionGuard»
+			
 		«ENDFOR»	
 	«ENDIF»
 
@@ -210,8 +215,10 @@ class Compiler implements IGenerator{
 		#pragma mark transitions: guards (required)
 
 		@required
+		
 		«FOR t: sm.nonDeterministicExitStates.map(s | s.outgoing).flatten»
 			«t.transitionGuard»
+			
 		«ENDFOR»
 	«ENDIF»
 	@end
