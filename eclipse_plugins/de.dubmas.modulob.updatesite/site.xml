@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/de.dubmas.modulob.feature_0.0.1.201110251225.jar" id="de.dubmas.modulob.feature" version="0.0.1.201110251225" os="macosx" ws="" nl="" arch="">
+      <category name="modulob"/>
+   </feature>
+   <category-def name="modulob" label="modulob">
+      <description>
+         Install the modulob plugins.
+      </description>
+   </category-def>
+</site>

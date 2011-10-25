@@ -1,6 +1,7 @@
 package de.dubmas.modulob.stategenerator;
 
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.generator.JavaIoFileSystemAccess;
 import org.eclipse.xtext.resource.IResourceServiceProvider;
 import org.eclipse.xtext.service.AbstractGenericModule;
@@ -18,8 +19,8 @@ public class StateGeneratorModule extends AbstractGenericModule{
 		return JavaIoFileSystemAccess.class;
 	}
 	
-	public Class<? extends org.eclipse.xtext.generator.IGenerator> bindIGenerator() {
-		return Compiler.class;
+	public Class<? extends IGenerator> bindIGenerator() {
+		return (Class<? extends IGenerator>)Compiler.class;
 	}
 	
 	public java.lang.ClassLoader bindClassLoaderToInstance() {

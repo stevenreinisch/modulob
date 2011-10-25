@@ -227,7 +227,6 @@
       <wizard
             category="de.dubmas.modulob.ui"
             class="de.dubmas.modulob.ui.SystemDslExecutableExtensionFactory:de.dubmas.modulob.ui.wizard.SystemDslNewProjectWizard"
-            icon="icons/editor.gif"
             id="de.dubmas.modulob.ui.wizard.SystemDslNewProjectWizard"
             name="New modulob system"
             project="true">
