@@ -24,7 +24,7 @@ class ModuleFileGenerator {
 	
 	def interfaceFile ()
 	'''
-	interfaces for module «fqModuleName» version "1.0"
+	current interfaces for module «fqModuleName» version "1.0"
 	
 	interface AnInterface {
 		Void foo:String value bar:Timestamp date
@@ -33,7 +33,7 @@ class ModuleFileGenerator {
 	
 	def dataFile ()
 	'''
-	entities for module «fqModuleName» version "1.0"
+	current entities for module «fqModuleName» version "1.0"
 	
 	entity AnEntity {
 		String uuid;
@@ -42,7 +42,7 @@ class ModuleFileGenerator {
 	
 	def notificationFile()
 	'''
-	notifications for module «fqModuleName» version "1.0"
+	current notifications for module «fqModuleName» version "1.0"
 	
 	notification aNotification {
 		String value;
