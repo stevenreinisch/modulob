@@ -70,7 +70,7 @@ static «this.daoName()» *«this.daoName().toFirstLower()» = nil;
 {
 	@synchronized(self) {
 		if («this.daoName().toFirstLower()» == nil) {
-			[[self alloc] init]; // assignment not done here
+			[[self alloc] initWith:@"«this.storeFileName()»"]; // assignment not done here
 		}
 	}
 	return «this.daoName().toFirstLower()»;
