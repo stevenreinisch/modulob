@@ -33,7 +33,7 @@
 	#import "«this.factoryName("Entity")».h"
 	
 	«IF this.entityModel.entities.select(e|e.isPersistent()).size > 0»
-		#import "«this.daoProtocolName()».h"
+		#import "«this.daoName()».h"
 	«ENDIF»
 	
 	«FOREACH this.entityModel.entities AS e»
@@ -52,7 +52,7 @@
 			«IF e.isPersistent()»
 				«e.typeRef()» object = [[«this.daoName()» sharedDAO] createEntity:@"«e.entityName()»"];
 				@try {
-					NSString *uuid = [dao uuid];
+					NSString *uuid = [[«this.daoName()» sharedDAO] uuid];
 					[(NSManagedObject*)object setValue:uuid forKey:@"uuid"];
 				}
 				@catch (NSException * e) {
