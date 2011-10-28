@@ -57,6 +57,7 @@ public class TheProjectCreator extends SystemDslProjectCreator{
 		result.add("org.eclipse.xtend.util.stdlib");
 		result.add("org.eclipse.xtext.xbase.lib");
 		result.add("org.eclipse.xtext.xtend2.lib");
+		result.add("org.eclipse.xtend.typesystem.xsd");
 		
 		return result;
 	}
