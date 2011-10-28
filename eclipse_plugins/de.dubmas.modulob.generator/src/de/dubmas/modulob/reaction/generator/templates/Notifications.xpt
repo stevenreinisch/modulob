@@ -9,9 +9,9 @@
 
 
 «DEFINE main(List[Behaviour] behaviours) FOR List[Module]»
-	
+	«REM»
 	«EXPAND StartEventRuntime::main FOR behaviours»
-	
+	«ENDREM»
 	«EXPAND NotificationDispatcher::main FOREACH this»
 
 	«REM»
