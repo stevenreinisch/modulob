@@ -7,8 +7,7 @@
 
 «DEFINE main FOR Module-»
 	«EXPAND XCDataModel::main           FOR this»
-	«EXPAND XCDataModel::currentVersion FOR this»	
-	«EXPAND DAOProtocol                 FOR this»
+	«EXPAND XCDataModel::currentVersion FOR this»		
 	«EXPAND DAOHeaderAndImpl            FOR this»
 «ENDDEFINE»
 
@@ -17,23 +16,11 @@
 	«EXPAND DAOImpl   FOR this»
 «ENDDEFINE»
 
-«DEFINE DAOProtocol FOR Module»
-«FILE this.name + "/public/" + this.daoProtocolName() + ".h"»
-#import <Foundation/Foundation.h>
-#import "P_I_OBPersistencyDAO.h"
-
-@protocol «this.daoProtocolName()» <P_I_OBPersistencyDAO>
-
-@end
-«ENDFILE»
-«ENDDEFINE»
-
 «DEFINE DAOHeader FOR Module»
 «FILE this.name + "/public/" + this.daoName() + ".h"»
 #import <CoreData/CoreData.h>
 
 #import "CoreDataDAO.h"
-#import "«this.daoProtocolName()».h"
 
 /**
  * subclass this class to implement the functionality.
@@ -44,7 +31,7 @@
  *    run and all changes made to the header and implementation
  *    file will be lost!
  */
-@interface «this.daoName()»: CoreDataDAO <«this.daoProtocolName()»>
+@interface «this.daoName()»: CoreDataDAO
 {}
 @end
 «ENDFILE»
@@ -59,9 +46,7 @@
 -(NSManagedObjectModel*)createManagedObjectModel;
 @end
 
-«REM»
-static «namespace.daoName(version)» *«namespace.daoName(version).toFirstLower()» = nil;
-«ENDREM»
+static «this.daoName()» *«this.daoName().toFirstLower()» = nil;
 
 @implementation «this.daoName()»
 
@@ -77,7 +62,6 @@ static «namespace.daoName(version)» *«namespace.daoName(version).toFirstLower
 
 «EXPAND momGetter FOR this-»
 
-«REM»
 #pragma mark singleton methods
 //for singleton implementation see:
 //http://stackoverflow.com/questions/145154/what-does-your-objective-c-singleton-look-like
@@ -85,19 +69,19 @@ static «namespace.daoName(version)» *«namespace.daoName(version).toFirstLower
 + (CoreDataDAO*)sharedDAO
 {
 	@synchronized(self) {
-		if («namespace.daoName(version).toFirstLower()» == nil) {
+		if («this.daoName().toFirstLower()» == nil) {
 			[[self alloc] init]; // assignment not done here
 		}
 	}
-	return «namespace.daoName(version).toFirstLower()»;
+	return «this.daoName().toFirstLower()»;
 }
 
 + (id)allocWithZone:(NSZone *)zone
 {
 	@synchronized(self) {
-		if («namespace.daoName(version).toFirstLower()» == nil) {
-			«namespace.daoName(version).toFirstLower()» = [super allocWithZone:zone];
-			return «namespace.daoName(version).toFirstLower()»;  // assignment and return on first allocation
+		if («this.daoName().toFirstLower()» == nil) {
+			«this.daoName().toFirstLower()» = [super allocWithZone:zone];
+			return «this.daoName().toFirstLower()»;  // assignment and return on first allocation
 		}
 	}
 	return nil; //on subsequent allocation attempts return nil
@@ -122,7 +106,7 @@ static «namespace.daoName(version)» *«namespace.daoName(version).toFirstLower
 {
 	//do nothing
 }
-«ENDREM»
+
 @end
 «ENDFILE»
 «ENDDEFINE»

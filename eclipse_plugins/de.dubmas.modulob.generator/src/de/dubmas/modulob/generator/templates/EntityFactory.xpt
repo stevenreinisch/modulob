@@ -49,9 +49,8 @@
 	«FOREACH this.entityModel.entities.select(e|!e.isAbstract) AS e»
 		+(«e.typeRef()»)«e.factoryMethodName()»
 		{
-			id<«this.daoProtocolName()»> dao = DI_INJECT(@protocol(«this.daoProtocolName()»));
 			«IF e.isPersistent()»
-				«e.typeRef()» object = [dao createEntity:@"«e.entityName()»"];
+				«e.typeRef()» object = [[«this.daoName()» sharedDAO] createEntity:@"«e.entityName()»"];
 				@try {
 					NSString *uuid = [dao uuid];
 					[(NSManagedObject*)object setValue:uuid forKey:@"uuid"];
