@@ -31,10 +31,7 @@
 «FILE this.factoryImplFilePath("Entity")»
 
 	#import "«this.factoryName("Entity")».h"
-	
-	«IF this.entityModel.entities.select(e|e.isPersistent()).size > 0»
-		#import "«this.daoName()».h"
-	«ENDIF»
+	#import "«this.daoName()».h"
 	
 	«FOREACH this.entityModel.entities AS e»
 		«IF e.isPersistent()»
@@ -62,7 +59,7 @@
 				return object;
 			«ELSE»
 				«e.typeRef()» instance = [[«e.typeName()» new] autorelease];
-				instance.uuid = [dao uuid];
+				instance.uuid = [[«this.daoName()» sharedDAO] uuid];
             	return instance;
 			«ENDIF»
 		}
