@@ -21,8 +21,6 @@ public class CreateTransitionFeature extends AbstractCreateConnectionFeature {
     }
  
     public boolean canCreate(ICreateConnectionContext context) {
-        // return true if both anchors belong to an EClass
-        // and those EClasses are not identical
         Node source = getNode(context.getSourceAnchor());
         Node target = getNode(context.getTargetAnchor());
         if (source != null && target != null && source != target) {
@@ -32,7 +30,6 @@ public class CreateTransitionFeature extends AbstractCreateConnectionFeature {
     }
  
     public boolean canStartConnection(ICreateConnectionContext context) {
-        // return true if start anchor belongs to a EClass
         if (getNode(context.getSourceAnchor()) != null) {
             return true;
         }
@@ -42,7 +39,6 @@ public class CreateTransitionFeature extends AbstractCreateConnectionFeature {
     public Connection create(ICreateConnectionContext context) {
         Connection newConnection = null;
  
-        // get EClasses which should be connected
         Node source = getNode(context.getSourceAnchor());
         Node target = getNode(context.getTargetAnchor());
  
@@ -69,9 +65,20 @@ public class CreateTransitionFeature extends AbstractCreateConnectionFeature {
        
         return newConnection;
     }
+ 
+    /**
+    * Creates a Transition between two Nodes.
+    */
+    private Transition createTransition(Node source, Node target) {
+        Transition trans = StateFactory.eINSTANCE.createTransition();
+        trans.setSource(source);
+        trans.setTarget(target);
+        
+        return trans;
+   }
     
     /**
-     * Returns the EClass belonging to the anchor, or null if not available.
+     * Returns the de.dubmas.modulob.state.Node belonging to the anchor, or null if not available.
      */
     private Node getNode(Anchor anchor) {
         if (anchor != null) {
@@ -83,17 +90,4 @@ public class CreateTransitionFeature extends AbstractCreateConnectionFeature {
         }
         return null;
     }
- 
-    /**
-    * Creates a EReference between two EClasses.
-    */
-    private Transition createTransition(Node source, Node target) {
-        Transition trans = StateFactory.eINSTANCE.createTransition();
-        trans.setSource(source);
-        trans.setTarget(target);
-        
-        getDiagram().eResource().getContents().add(trans);
-        
-        return trans;
-   }
 }

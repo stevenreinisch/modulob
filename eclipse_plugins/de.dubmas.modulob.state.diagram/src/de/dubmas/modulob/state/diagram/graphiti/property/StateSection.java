@@ -114,7 +114,7 @@ ITabbedPropertyConstants {
  
         valueLabel = factory.createCLabel(composite, "Duration (sec):");
         data = new FormData();
-        data.width = 100;
+        data.width = 200;
         data.left = new FormAttachment(0, 0);
         data.right = new FormAttachment(durationField, -HSPACE);
         data.top = new FormAttachment(durationField, 0, SWT.CENTER);

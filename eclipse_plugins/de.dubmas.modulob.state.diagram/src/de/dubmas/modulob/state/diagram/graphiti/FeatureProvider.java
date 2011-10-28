@@ -4,14 +4,18 @@ import org.eclipse.graphiti.dt.IDiagramTypeProvider;
 import org.eclipse.graphiti.features.IAddFeature;
 import org.eclipse.graphiti.features.ICreateConnectionFeature;
 import org.eclipse.graphiti.features.ICreateFeature;
+import org.eclipse.graphiti.features.IDeleteFeature;
 import org.eclipse.graphiti.features.IDirectEditingFeature;
 import org.eclipse.graphiti.features.IFeature;
 import org.eclipse.graphiti.features.IMoveShapeFeature;
+import org.eclipse.graphiti.features.IReconnectionFeature;
 import org.eclipse.graphiti.features.IUpdateFeature;
 import org.eclipse.graphiti.features.context.IAddContext;
+import org.eclipse.graphiti.features.context.IDeleteContext;
 import org.eclipse.graphiti.features.context.IDirectEditingContext;
 import org.eclipse.graphiti.features.context.IMoveShapeContext;
 import org.eclipse.graphiti.features.context.IPictogramElementContext;
+import org.eclipse.graphiti.features.context.IReconnectionContext;
 import org.eclipse.graphiti.features.context.IUpdateContext;
 import org.eclipse.graphiti.mm.pictograms.ContainerShape;
 import org.eclipse.graphiti.mm.pictograms.PictogramElement;
@@ -31,8 +35,10 @@ import de.dubmas.modulob.state.diagram.graphiti.create.CreateFinalNodeFeature;
 import de.dubmas.modulob.state.diagram.graphiti.create.CreateInitialNodeFeature;
 import de.dubmas.modulob.state.diagram.graphiti.create.CreateStateFeature;
 import de.dubmas.modulob.state.diagram.graphiti.create.CreateTransitionFeature;
+import de.dubmas.modulob.state.diagram.graphiti.delete.StateMachineDeleteFeature;
 import de.dubmas.modulob.state.diagram.graphiti.directedit.DirectEditState;
 import de.dubmas.modulob.state.diagram.graphiti.directedit.DirectEditStateMachine;
+import de.dubmas.modulob.state.diagram.graphiti.reconnect.ReconnectFeature;
 import de.dubmas.modulob.state.diagram.graphiti.update.UpdateState;
 import de.dubmas.modulob.state.diagram.graphiti.update.UpdateStateMachine;
 
@@ -129,5 +135,15 @@ public class FeatureProvider extends DefaultFeatureProvider {
     		return null;
     	}
     	return super.getMoveShapeFeature(context);
+    }
+    
+    @Override
+    public IDeleteFeature getDeleteFeature(IDeleteContext context) {
+    	return new StateMachineDeleteFeature(this);
+    }
+    
+    @Override
+    public IReconnectionFeature getReconnectionFeature(IReconnectionContext context) {
+    	return new ReconnectFeature(this);
     }
 }

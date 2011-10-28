@@ -1,5 +1,7 @@
 package de.dubmas.modulob.state.diagram.util;
 
+import java.util.Collections;
+
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -68,6 +70,8 @@ public class Util {
 						} else if (obj instanceof Transition){
 							sm.getTransitions().add((Transition)obj);
 						}
+						
+						sm.eResource().save(Collections.EMPTY_MAP);
 					}
 //				}};
 //			
