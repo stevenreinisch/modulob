@@ -96,6 +96,8 @@
 
 «AROUND de::dubmas::modulob::generator::templates::AllHeaders::moduleHeaderImports FOR Module»
 «targetDef.proceed()»
+«IF this.notificationModel.notifications.size > 0»
 #import "«this.notificationsFileName() + ".h"»"
 #import "«this.notificationTriggerName() + ".h"»"
+«ENDIF»
 «ENDAROUND»
