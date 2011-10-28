@@ -256,6 +256,6 @@ class Compiler implements IGenerator{
 	 * transition «t.name()»
 	 «IF t.guard.expression != ""»* guard description: «t.guard.expression»«ELSE»*«ENDIF»
 	 */
-	- (void) «t.guardSelectorName()»;
+	- (BOOL) «t.guardSelectorName()»;
 	'''
 }
