@@ -2,6 +2,8 @@
 «IMPORT system»
 
 «EXTENSION de::dubmas::modulob::generator::templates::Factories»
+«EXTENSION de::dubmas::modulob::generator::templates::DataContainer»
+«EXTENSION de::dubmas::modulob::generator::templates::coredata::CoreDataExtensions»
 «EXTENSION de::dubmas::modulob::generator::templates::Types»
 
 «DEFINE main FOR Module»
@@ -45,6 +47,10 @@
 «ENDFOREACH»
 	
 #import "«this.entities.first().factoryName()».h"
+
+«IF this.entities.exists(e|e.isPersistent())»
+#import "«this.module.daoName()».h"
+«ENDIF»
 
 «ENDFILE»
 «ENDDEFINE»
