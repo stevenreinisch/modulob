@@ -46,6 +46,10 @@ Workflow {
 			path = genPath
 		}
 		fileEncoding = fileEncoding
+		
+		beautifier = java.util.LinkedList{
+			first = de.dubmas.modulob.generator.templates.XCDataModelBeautifier{}
+		}
 	}
 	
 	component = org.eclipse.xpand2.Generator{
@@ -56,5 +60,9 @@ Workflow {
 			path = genPath
 		}
 		fileEncoding = fileEncoding
+		
+		beautifier = java.util.LinkedList{
+			first = de.dubmas.modulob.generator.templates.XCDataModelBeautifier{}
+		}
 	}
 }
