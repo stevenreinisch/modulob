@@ -1,4 +1,4 @@
-«IMPORT de::dubmas::modulob::ui::wizard»
+«IMPORT de::dubmas::modulob::ui::wizard::util»
 
 «DEFINE main             FOR SystemDslProjectInfo»
 «EXPAND model            FOR this»
