@@ -1,13 +1,12 @@
 package de.dubmas.modulob.validation
 
-import java.util.*
-import de.dubmas.modulob.*
-import de.dubmas.modulob.behaviour.*
-import de.dubmas.modulob.system.System
-import de.dubmas.modulob.system.BehaviouralModel
-import de.dubmas.modulob.system.NotificationModel
-import org.eclipse.xtext.validation.Check
 import com.google.inject.Inject
+import de.dubmas.modulob.Notification
+import de.dubmas.modulob.behaviour.BehaviourPackage
+import de.dubmas.modulob.behaviour.Reaction
+import de.dubmas.modulob.system.BehaviouralModel
+import java.util.LinkedList
+import org.eclipse.xtext.validation.Check
 
 class BehaviourDslJavaValidator extends AbstractBehaviourDslJavaValidator{
 	

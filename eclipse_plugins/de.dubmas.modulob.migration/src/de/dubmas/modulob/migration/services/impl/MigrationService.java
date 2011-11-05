@@ -163,39 +163,15 @@ public class MigrationService implements IMigrationService {
 	
 	private EntityModel loadEntityModelFromFile(IFile file) {
 		try {
-			
-			IFile tmpFile = createDummyCopyIfNeccessary(file);
-			
-			ResourceSet xrs   = provider.get(tmpFile.getProject());
-			URI uri           = URI.createPlatformResourceURI(tmpFile.getFullPath().toString(), true);
+			ResourceSet xrs   = provider.get(file.getProject());
+			URI uri           = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
 			Resource resource = xrs.getResource(uri, true);
 			
 			EntityModel em = (EntityModel)resource.getContents().get(0); 
-
-			deleteDummyCopyIfNeccessary(file, tmpFile);
 			
 			return em;
 		} catch (Exception e) {
 			throw new RuntimeException(e);
-		}
-	}
-	
-	private IFile createDummyCopyIfNeccessary(IFile file) throws Exception{
-		
-		String fileExtension = Util.getFileExtension(file.getName());
-		
-		if(!fileExtension.equals("modat")){			
-			IPath dummyDestination = new Path(file.getFullPath() + ".modat");
-			file.copy(dummyDestination, true, null);
-			return (IFile)file.getParent().findMember(file.getName() + ".modat");
-		}
-		
-		return file;
-	}
-	
-	private void deleteDummyCopyIfNeccessary(IFile original, IFile dummy) throws Exception{
-		if(!original.equals(dummy)){
-			dummy.delete(true, null);
 		}
 	}
 	

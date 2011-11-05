@@ -1,8 +1,5 @@
 package de.dubmas.modulob.ui.wizard.util
 
-import org.eclipse.xtext.generator.IGenerator
-import org.eclipse.emf.ecore.resource.Resource
-import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess
 
 class ModuleFileGenerator {

@@ -71,6 +71,19 @@
         </page>
     </extension>
     <extension
+            point="org.eclipse.ui.propertyPages">
+        <page
+            class="de.dubmas.modulob.ui.BehaviourDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="de.dubmas.modulob.BehaviourDsl"
+            name="BehaviourDsl">
+            <keywordReference id="de.dubmas.modulob.ui.keyword_BehaviourDsl"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+        </page>
+    </extension>
+    <extension
         point="org.eclipse.ui.keywords">
         <keyword
             id="de.dubmas.modulob.ui.keyword_BehaviourDsl"
@@ -145,6 +158,30 @@
             class="de.dubmas.modulob.ui.BehaviourDslExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
       </participant>
    </extension>
+   <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+            category="de.dubmas.modulob.BehaviourDsl"
+            class="de.dubmas.modulob.ui.BehaviourDslExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="de.dubmas.modulob.BehaviourDsl.compiler.preferencePage"
+            name="Compiler">
+            <keywordReference id="de.dubmas.modulob.ui.keyword_BehaviourDsl"/>
+        </page>
+    </extension>
+    <extension
+            point="org.eclipse.ui.propertyPages">
+        <page
+            category="de.dubmas.modulob.BehaviourDsl"
+            class="de.dubmas.modulob.ui.BehaviourDslExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="de.dubmas.modulob.BehaviourDsl.compiler.propertyPage"
+            name="Compiler">
+            <keywordReference id="de.dubmas.modulob.ui.keyword_BehaviourDsl"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+        </page>
+    </extension>
 
 	<!-- Quick Outline -->
 	<extension
@@ -190,7 +227,7 @@
    	<!-- Rename Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler 
-			class="de.dubmas.modulob.ui.BehaviourDslExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RenameElementHandler"
+			class="de.dubmas.modulob.ui.BehaviourDslExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.IRenameElementHandler"
 			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
 			<activeWhen>
 				<reference
@@ -212,6 +249,15 @@
          </command>
       </menuContribution>
    </extension>
+   <extension point="org.eclipse.ui.preferencePages">
+	    <page
+	        category="de.dubmas.modulob.BehaviourDsl"
+	        class="de.dubmas.modulob.ui.BehaviourDslExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+	        id="de.dubmas.modulob.BehaviourDsl.refactoring"
+	        name="Refactoring">
+	        <keywordReference id="de.dubmas.modulob.ui.keyword_BehaviourDsl"/>
+	    </page>
+	</extension>
 
   <extension point="org.eclipse.compare.contentViewers">
     <viewer id="de.dubmas.modulob.BehaviourDsl.compare.contentViewers"

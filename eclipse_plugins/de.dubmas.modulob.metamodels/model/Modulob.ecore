@@ -54,7 +54,7 @@
     <eLiterals name="persistency" literal="persistency"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ConfigValue">
-    <eLiterals name="CoreData" value="1" literal="CoreData"/>
+    <eLiterals name="CoreData" literal="CoreData"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Feature">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isIndexed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>

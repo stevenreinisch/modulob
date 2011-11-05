@@ -2,6 +2,7 @@
 <?eclipse version="3.0"?>
 
 <plugin>
+
     <extension
             point="org.eclipse.ui.editors">
         <editor
@@ -67,6 +68,19 @@
             id="de.dubmas.modulob.common.Dsl.templates"
             name="Templates">
             <keywordReference id="de.dubmas.modulob.common.ui.keyword_Dsl"/>
+        </page>
+    </extension>
+    <extension
+            point="org.eclipse.ui.propertyPages">
+        <page
+            class="de.dubmas.modulob.common.ui.DslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="de.dubmas.modulob.common.Dsl"
+            name="Dsl">
+            <keywordReference id="de.dubmas.modulob.common.ui.keyword_Dsl"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
         </page>
     </extension>
     <extension
@@ -144,6 +158,30 @@
             class="de.dubmas.modulob.common.ui.DslExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
       </participant>
    </extension>
+   <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+            category="de.dubmas.modulob.common.Dsl"
+            class="de.dubmas.modulob.common.ui.DslExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="de.dubmas.modulob.common.Dsl.compiler.preferencePage"
+            name="Compiler">
+            <keywordReference id="de.dubmas.modulob.common.ui.keyword_Dsl"/>
+        </page>
+    </extension>
+    <extension
+            point="org.eclipse.ui.propertyPages">
+        <page
+            category="de.dubmas.modulob.common.Dsl"
+            class="de.dubmas.modulob.common.ui.DslExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="de.dubmas.modulob.common.Dsl.compiler.propertyPage"
+            name="Compiler">
+            <keywordReference id="de.dubmas.modulob.common.ui.keyword_Dsl"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+        </page>
+    </extension>
 
 	<!-- Quick Outline -->
 	<extension
@@ -189,7 +227,7 @@
    	<!-- Rename Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler 
-			class="de.dubmas.modulob.common.ui.DslExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RenameElementHandler"
+			class="de.dubmas.modulob.common.ui.DslExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.IRenameElementHandler"
 			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
 			<activeWhen>
 				<reference
@@ -211,6 +249,15 @@
          </command>
       </menuContribution>
    </extension>
+   <extension point="org.eclipse.ui.preferencePages">
+	    <page
+	        category="de.dubmas.modulob.common.Dsl"
+	        class="de.dubmas.modulob.common.ui.DslExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+	        id="de.dubmas.modulob.common.Dsl.refactoring"
+	        name="Refactoring">
+	        <keywordReference id="de.dubmas.modulob.common.ui.keyword_Dsl"/>
+	    </page>
+	</extension>
 
   <extension point="org.eclipse.compare.contentViewers">
     <viewer id="de.dubmas.modulob.common.Dsl.compare.contentViewers"

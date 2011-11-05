@@ -1,9 +1,11 @@
 package de.dubmas.modulob.validation
 
-import java.util.*
-import de.dubmas.modulob.*
-import de.dubmas.modulob.behaviour.*
+import de.dubmas.modulob.Notification
+import de.dubmas.modulob.behaviour.Behaviour
+import de.dubmas.modulob.behaviour.Reaction
 import de.dubmas.modulob.system.BehaviouralModel
+import java.util.LinkedList
+import java.util.List
 
 class BehaviourDslExtensions {
 	

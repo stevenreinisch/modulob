@@ -30,7 +30,7 @@ public enum ConfigValue implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CORE_DATA(1, "CoreData", "CoreData");
+	CORE_DATA(0, "CoreData", "CoreData");
 
 	/**
 	 * The '<em><b>Core Data</b></em>' literal value.
@@ -45,7 +45,7 @@ public enum ConfigValue implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CORE_DATA_VALUE = 1;
+	public static final int CORE_DATA_VALUE = 0;
 
 	/**
 	 * An array of all the '<em><b>Config Value</b></em>' enumerators.

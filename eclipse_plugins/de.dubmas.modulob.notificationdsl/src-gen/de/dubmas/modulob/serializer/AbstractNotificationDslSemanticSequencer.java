@@ -134,9 +134,6 @@ public class AbstractNotificationDslSemanticSequencer extends AbstractSemanticSe
 	/**
 	 * Constraint:
 	 *     name=ID
-	 *
-	 * Features:
-	 *    name[1, 1]
 	 */
 	protected void sequence_Any(EObject context, Any semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -146,11 +143,6 @@ public class AbstractNotificationDslSemanticSequencer extends AbstractSemanticSe
 	/**
 	 * Constraint:
 	 *     (comment=DOC_COMMENT? type=TypeRef name=ID)
-	 *
-	 * Features:
-	 *    name[1, 1]
-	 *    type[1, 1]
-	 *    comment[0, 1]
 	 */
 	protected void sequence_Feature(EObject context, Feature semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -160,9 +152,6 @@ public class AbstractNotificationDslSemanticSequencer extends AbstractSemanticSe
 	/**
 	 * Constraint:
 	 *     value=EFloatObject
-	 *
-	 * Features:
-	 *    value[1, 1]
 	 */
 	protected void sequence_FloatValue(EObject context, FloatValue semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -172,9 +161,6 @@ public class AbstractNotificationDslSemanticSequencer extends AbstractSemanticSe
 	/**
 	 * Constraint:
 	 *     value=EIntegerObject
-	 *
-	 * Features:
-	 *    value[1, 1]
 	 */
 	protected void sequence_IntegerValue(EObject context, IntegerValue semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -184,12 +170,6 @@ public class AbstractNotificationDslSemanticSequencer extends AbstractSemanticSe
 	/**
 	 * Constraint:
 	 *     (current?='current'? module=[Module|QualifiedName] version=STRING notifications+=Notification*)
-	 *
-	 * Features:
-	 *    version[1, 1]
-	 *    current[0, 1]
-	 *    notifications[0, *]
-	 *    module[1, 1]
 	 */
 	protected void sequence_NotificationModel(EObject context, NotificationModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -199,11 +179,6 @@ public class AbstractNotificationDslSemanticSequencer extends AbstractSemanticSe
 	/**
 	 * Constraint:
 	 *     (comment=DOC_COMMENT? name=ID features+=Feature*)
-	 *
-	 * Features:
-	 *    name[1, 1]
-	 *    features[0, *]
-	 *    comment[0, 1]
 	 */
 	protected void sequence_Notification(EObject context, Notification semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -213,9 +188,6 @@ public class AbstractNotificationDslSemanticSequencer extends AbstractSemanticSe
 	/**
 	 * Constraint:
 	 *     name=ID
-	 *
-	 * Features:
-	 *    name[1, 1]
 	 */
 	protected void sequence_Primitive(EObject context, Primitive semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -225,9 +197,6 @@ public class AbstractNotificationDslSemanticSequencer extends AbstractSemanticSe
 	/**
 	 * Constraint:
 	 *     value=EStringObject
-	 *
-	 * Features:
-	 *    value[1, 1]
 	 */
 	protected void sequence_StringValue(EObject context, StringValue semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -237,10 +206,6 @@ public class AbstractNotificationDslSemanticSequencer extends AbstractSemanticSe
 	/**
 	 * Constraint:
 	 *     (primitiveTypes+=Primitive+ anyType=Any)
-	 *
-	 * Features:
-	 *    primitiveTypes[1, *]
-	 *    anyType[1, 1]
 	 */
 	protected void sequence_TypeLib(EObject context, Lib semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -250,10 +215,6 @@ public class AbstractNotificationDslSemanticSequencer extends AbstractSemanticSe
 	/**
 	 * Constraint:
 	 *     (referenced=[Type|QualifiedName] isMulti?='[]'?)
-	 *
-	 * Features:
-	 *    isMulti[0, 1]
-	 *    referenced[1, 1]
 	 */
 	protected void sequence_TypeRef(EObject context, TypeRef semanticObject) {
 		superSequencer.createSequence(context, semanticObject);

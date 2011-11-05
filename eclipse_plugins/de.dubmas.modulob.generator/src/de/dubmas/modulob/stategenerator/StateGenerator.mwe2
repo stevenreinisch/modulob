@@ -1,7 +1,6 @@
 module de.dubmas.modulob.stategenerator.StateGenerator
 
 var genPath      = 'src-gen'
-var fileEncoding = 'UTF-8'
 var stateMachinesSlot = 'stateMachinesSlot'
 
 Workflow {

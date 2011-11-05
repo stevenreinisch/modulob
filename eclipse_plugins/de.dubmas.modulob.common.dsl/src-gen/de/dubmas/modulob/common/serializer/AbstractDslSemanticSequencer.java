@@ -106,9 +106,6 @@ public class AbstractDslSemanticSequencer extends AbstractSemanticSequencer {
 	/**
 	 * Constraint:
 	 *     name=ID
-	 *
-	 * Features:
-	 *    name[1, 1]
 	 */
 	protected void sequence_Any(EObject context, Any semanticObject) {
 		if(errorAcceptor != null) {
@@ -125,9 +122,6 @@ public class AbstractDslSemanticSequencer extends AbstractSemanticSequencer {
 	/**
 	 * Constraint:
 	 *     value=EFloatObject
-	 *
-	 * Features:
-	 *    value[1, 1]
 	 */
 	protected void sequence_FloatValue(EObject context, FloatValue semanticObject) {
 		if(errorAcceptor != null) {
@@ -144,9 +138,6 @@ public class AbstractDslSemanticSequencer extends AbstractSemanticSequencer {
 	/**
 	 * Constraint:
 	 *     value=EIntegerObject
-	 *
-	 * Features:
-	 *    value[1, 1]
 	 */
 	protected void sequence_IntegerValue(EObject context, IntegerValue semanticObject) {
 		if(errorAcceptor != null) {
@@ -163,9 +154,6 @@ public class AbstractDslSemanticSequencer extends AbstractSemanticSequencer {
 	/**
 	 * Constraint:
 	 *     name=ID
-	 *
-	 * Features:
-	 *    name[1, 1]
 	 */
 	protected void sequence_Primitive(EObject context, Primitive semanticObject) {
 		if(errorAcceptor != null) {
@@ -182,9 +170,6 @@ public class AbstractDslSemanticSequencer extends AbstractSemanticSequencer {
 	/**
 	 * Constraint:
 	 *     value=EStringObject
-	 *
-	 * Features:
-	 *    value[1, 1]
 	 */
 	protected void sequence_StringValue(EObject context, StringValue semanticObject) {
 		if(errorAcceptor != null) {
@@ -201,10 +186,6 @@ public class AbstractDslSemanticSequencer extends AbstractSemanticSequencer {
 	/**
 	 * Constraint:
 	 *     (primitiveTypes+=Primitive+ anyType=Any)
-	 *
-	 * Features:
-	 *    primitiveTypes[1, *]
-	 *    anyType[1, 1]
 	 */
 	protected void sequence_TypeLib(EObject context, Lib semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -214,10 +195,6 @@ public class AbstractDslSemanticSequencer extends AbstractSemanticSequencer {
 	/**
 	 * Constraint:
 	 *     (referenced=[Type|QualifiedName] isMulti?='[]'?)
-	 *
-	 * Features:
-	 *    isMulti[0, 1]
-	 *    referenced[1, 1]
 	 */
 	protected void sequence_TypeRef(EObject context, TypeRef semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

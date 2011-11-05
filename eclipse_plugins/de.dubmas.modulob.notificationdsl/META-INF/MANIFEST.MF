@@ -30,4 +30,6 @@ Export-Package: de.dubmas.modulob,
  de.dubmas.modulob.serializer,
  de.dubmas.modulob.parser.antlr,
  de.dubmas.modulob.parser.antlr.internal,
- de.dubmas.modulob.validation
+ de.dubmas.modulob.validation,
+ de.dubmas.modulob.generator,
+ de.dubmas.modulob.formatting

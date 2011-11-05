@@ -1,14 +1,10 @@
 package de.dubmas.modulob.validation
 
-import AbstractSystemDslJavaValidator
-
-import de.dubmas.modulob.system.*
-import de.dubmas.modulob.util.*
-import org.eclipse.emf.ecore.*
+import de.dubmas.modulob.system.Module
+import de.dubmas.modulob.system.System
+import de.dubmas.modulob.system.SystemPackage
+import de.dubmas.modulob.util.CheckUtil
 import org.eclipse.xtext.validation.Check
-import org.eclipse.xtext.resource.IResourceDescriptions
-
-import com.google.inject.Inject
 
 class SystemDslJavaValidator extends AbstractSystemDslJavaValidator {
 	

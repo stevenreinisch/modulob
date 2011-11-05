@@ -1,13 +1,15 @@
 package de.dubmas.modulob.validation
 
-import AbstractInterfaceDslJavaValidator
-import de.dubmas.modulob.*
-import de.dubmas.modulob.system.*
-import de.dubmas.modulob.types.*
-import de.dubmas.modulob.util.*
+import de.dubmas.modulob.Delegate
+import de.dubmas.modulob.Interface
 import de.dubmas.modulob.InterfaceDslNameProvider
+import de.dubmas.modulob.Method
+import de.dubmas.modulob.ModulobPackage
+import de.dubmas.modulob.system.InterfaceModel
+import de.dubmas.modulob.types.TypesPackage
+import de.dubmas.modulob.util.CheckUtil
+import java.util.List
 import org.eclipse.xtext.validation.Check
-import java.util.*
 
 class InterfaceDslJavaValidator extends AbstractInterfaceDslJavaValidator {
 	

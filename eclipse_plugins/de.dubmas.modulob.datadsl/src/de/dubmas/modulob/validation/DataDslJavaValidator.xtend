@@ -1,20 +1,23 @@
 package de.dubmas.modulob.validation
 
-import java.util.*
-import org.eclipse.emf.common.util.EList
-import de.dubmas.modulob.validation.ValidationIssueCodes
-
-import de.dubmas.modulob.util.*
-
-import de.dubmas.modulob.system.*
-import de.dubmas.modulob.*
-import de.dubmas.modulob.types.*
-
-import org.eclipse.emf.ecore.*
-import org.eclipse.xtext.validation.Check
-import org.eclipse.xtext.naming.IQualifiedNameProvider
-import org.eclipse.xtext.resource.*
 import com.google.inject.Inject
+import de.dubmas.modulob.ConfigOption
+import de.dubmas.modulob.Entity
+import de.dubmas.modulob.Feature
+import de.dubmas.modulob.FloatValue
+import de.dubmas.modulob.IntegerValue
+import de.dubmas.modulob.ModulobPackage
+import de.dubmas.modulob.StringValue
+import de.dubmas.modulob.ValueObject
+import de.dubmas.modulob.system.EntityModel
+import de.dubmas.modulob.system.SystemPackage
+import de.dubmas.modulob.types.Primitive
+import de.dubmas.modulob.types.TypesPackage
+import de.dubmas.modulob.util.CheckUtil
+import de.dubmas.modulob.util.ModulobResourceDescriptionStrategy
+import org.eclipse.xtext.naming.IQualifiedNameProvider
+import org.eclipse.xtext.resource.IResourceDescriptions
+import org.eclipse.xtext.validation.Check
 
 class DataDslJavaValidator extends AbstractDataDslJavaValidator {
 	

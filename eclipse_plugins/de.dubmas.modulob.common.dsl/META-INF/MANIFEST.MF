@@ -29,4 +29,6 @@ Export-Package: de.dubmas.modulob.common,
  de.dubmas.modulob.common.scoping,
  de.dubmas.modulob.common.serializer,
  de.dubmas.modulob.common.services,
- de.dubmas.modulob.common.validation
+ de.dubmas.modulob.common.validation,
+ de.dubmas.modulob.common.generator,
+ de.dubmas.modulob.common.formatting

@@ -29,6 +29,13 @@ public class DataDslNameProvider extends DefaultDeclarativeQualifiedNameProvider
 				segments[segments.length - 1] = ((Entity)obj).getName();
 				
 				return QualifiedName.create(segments);
+			} else if (obj.eContainer() != null) {
+				EntityModel em = (EntityModel) obj.eContainer();
+				
+				if(em.getModule() != null){
+					String moduleName = em.getModule().getName(); 
+					return QualifiedName.create(moduleName, ((Entity)obj).getName());
+				}
 			}
 		}
 		

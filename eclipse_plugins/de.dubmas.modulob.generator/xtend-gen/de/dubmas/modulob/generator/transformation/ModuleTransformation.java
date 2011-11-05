@@ -21,7 +21,6 @@ import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 
 @SuppressWarnings("all")
 public class ModuleTransformation implements IWorkflowComponent {
-  
   private String interfaceModelSlotName;
   
   private String entityModelSlotName;
@@ -65,7 +64,6 @@ public class ModuleTransformation implements IWorkflowComponent {
   }
   
   public void invoke(final IWorkflowContext context) {
-    {
       Object _get = context.get(this.moduleSlotName);
       List<Module> modules = ((List<Module>) _get);
       Object _get_1 = context.get(this.interfaceModelSlotName);
@@ -118,20 +116,18 @@ public class ModuleTransformation implements IWorkflowComponent {
       for (final Module m_2 : modules) {
         final Function1<NotificationModel,Boolean> _function_1 = new Function1<NotificationModel,Boolean>() {
             public Boolean apply(final NotificationModel nm) {
-              Module _module_1 = nm.getModule();
-              boolean _operator_equals_1 = ObjectExtensions.operator_equals(_module_1, m_2);
-              return ((Boolean)_operator_equals_1);
+              Module _module = nm.getModule();
+              boolean _operator_equals = ObjectExtensions.operator_equals(_module, m_2);
+              return ((Boolean)_operator_equals);
             }
           };
         Iterable<NotificationModel> _filter_1 = IterableExtensions.<NotificationModel>filter(notificationModels, _function_1);
         NotificationModel _head_1 = IterableExtensions.<NotificationModel>head(_filter_1);
         m_2.setNotificationModel(_head_1);
       }
-    }
   }
   
   public Map<String,SortedMap<String,EntityModel>> sortedEntityModelsGroupedByModule(final List<EntityModel> entityModels) {
-    {
       HashMap<String,SortedMap<String,EntityModel>> _hashMap = new HashMap<String,SortedMap<String,EntityModel>>();
       Map<String,SortedMap<String,EntityModel>> moduleEntityModelsMap = _hashMap;
       for (final EntityModel em : entityModels) {
@@ -155,7 +151,6 @@ public class ModuleTransformation implements IWorkflowComponent {
         }
       }
       return moduleEntityModelsMap;
-    }
   }
   
   public void postInvoke() {

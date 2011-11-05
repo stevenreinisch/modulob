@@ -137,9 +137,6 @@ public class AbstractBehaviourDslSemanticSequencer extends AbstractSemanticSeque
 	/**
 	 * Constraint:
 	 *     name=ID
-	 *
-	 * Features:
-	 *    name[1, 1]
 	 */
 	protected void sequence_Any(EObject context, Any semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -149,10 +146,6 @@ public class AbstractBehaviourDslSemanticSequencer extends AbstractSemanticSeque
 	/**
 	 * Constraint:
 	 *     (name=ID reactions+=Reaction*)
-	 *
-	 * Features:
-	 *    reactions[0, *]
-	 *    name[1, 1]
 	 */
 	protected void sequence_Behaviour(EObject context, Behaviour semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -162,12 +155,6 @@ public class AbstractBehaviourDslSemanticSequencer extends AbstractSemanticSeque
 	/**
 	 * Constraint:
 	 *     (current?='current'? system=[System|QualifiedName] version=STRING behaviours+=Behaviour*)
-	 *
-	 * Features:
-	 *    version[1, 1]
-	 *    current[0, 1]
-	 *    behaviours[0, *]
-	 *    system[1, 1]
 	 */
 	protected void sequence_BehaviouralModel(EObject context, BehaviouralModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -177,9 +164,6 @@ public class AbstractBehaviourDslSemanticSequencer extends AbstractSemanticSeque
 	/**
 	 * Constraint:
 	 *     value=EFloatObject
-	 *
-	 * Features:
-	 *    value[1, 1]
 	 */
 	protected void sequence_FloatValue(EObject context, FloatValue semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -189,9 +173,6 @@ public class AbstractBehaviourDslSemanticSequencer extends AbstractSemanticSeque
 	/**
 	 * Constraint:
 	 *     value=EIntegerObject
-	 *
-	 * Features:
-	 *    value[1, 1]
 	 */
 	protected void sequence_IntegerValue(EObject context, IntegerValue semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -201,9 +182,6 @@ public class AbstractBehaviourDslSemanticSequencer extends AbstractSemanticSeque
 	/**
 	 * Constraint:
 	 *     name=ID
-	 *
-	 * Features:
-	 *    name[1, 1]
 	 */
 	protected void sequence_Primitive(EObject context, Primitive semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -213,12 +191,6 @@ public class AbstractBehaviourDslSemanticSequencer extends AbstractSemanticSeque
 	/**
 	 * Constraint:
 	 *     (interface=[Interface|QualifiedName] notification=[Notification|QualifiedName] order=INT? method=[Method|ReferenceableMethodName])
-	 *
-	 * Features:
-	 *    notification[1, 1]
-	 *    method[1, 1]
-	 *    order[0, 1]
-	 *    interface[1, 1]
 	 */
 	protected void sequence_Reaction(EObject context, Reaction semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -228,9 +200,6 @@ public class AbstractBehaviourDslSemanticSequencer extends AbstractSemanticSeque
 	/**
 	 * Constraint:
 	 *     value=EStringObject
-	 *
-	 * Features:
-	 *    value[1, 1]
 	 */
 	protected void sequence_StringValue(EObject context, StringValue semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -240,10 +209,6 @@ public class AbstractBehaviourDslSemanticSequencer extends AbstractSemanticSeque
 	/**
 	 * Constraint:
 	 *     (primitiveTypes+=Primitive+ anyType=Any)
-	 *
-	 * Features:
-	 *    primitiveTypes[1, *]
-	 *    anyType[1, 1]
 	 */
 	protected void sequence_TypeLib(EObject context, Lib semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -253,10 +218,6 @@ public class AbstractBehaviourDslSemanticSequencer extends AbstractSemanticSeque
 	/**
 	 * Constraint:
 	 *     (referenced=[Type|QualifiedName] isMulti?='[]'?)
-	 *
-	 * Features:
-	 *    isMulti[0, 1]
-	 *    referenced[1, 1]
 	 */
 	protected void sequence_TypeRef(EObject context, TypeRef semanticObject) {
 		superSequencer.createSequence(context, semanticObject);

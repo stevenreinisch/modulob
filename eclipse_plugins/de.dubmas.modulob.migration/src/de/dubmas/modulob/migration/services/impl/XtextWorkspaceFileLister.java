@@ -46,8 +46,8 @@ public class XtextWorkspaceFileLister implements IModelFileLister {
 		for(IResource res: container.members()){
 			if (res instanceof IFile) {
 				IFile file = (IFile) res;
-				String fileExtension = file.getFileExtension();//Util.getFileExtension(file.getName()); 
-				if(fileExtension.matches((fileExtensionRegEx))){
+				String fileExtension = file.getFileExtension(); 
+				if(fileExtension != null && fileExtension.matches((fileExtensionRegEx))){
 					collection.add(file);
 				}
 			} else if ((res instanceof IFolder) && !excludedFolderNames.contains(res.getName())) {
@@ -55,15 +55,4 @@ public class XtextWorkspaceFileLister implements IModelFileLister {
 			}
 		}
 	}
-	
-	
-//	public static void main(String[] args) {
-//		String fullFileName1 = "test.txt";
-//		String fullFileName2 = "test.txt_v3.1";
-//		String fullFileName3 = ".test";
-//		
-//		System.out.println(getFileExtension(fullFileName1));
-//		System.out.println(getFileExtension(fullFileName2));
-//		System.out.println(getFileExtension(fullFileName3));
-//	}
 }

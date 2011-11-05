@@ -31,4 +31,5 @@ Export-Package: de.dubmas.modulob,
  de.dubmas.modulob.parser.antlr,
  de.dubmas.modulob.parser.antlr.internal,
  de.dubmas.modulob.services,
- de.dubmas.modulob.validation
+ de.dubmas.modulob.validation,
+ de.dubmas.modulob.formatting

@@ -1,14 +1,17 @@
 package de.dubmas.modulob.stategenerator
 
-import de.dubmas.modulob.state.*
-
-import de.dubmas.modulob.util.Indexed
 import com.google.inject.Inject
-import de.dubmas.modulob.stategenerator.StateMachineExtensions
-import java.util.List
-import org.eclipse.xtext.generator.IGenerator
-import org.eclipse.xtext.generator.IFileSystemAccess
+import de.dubmas.modulob.state.FinalNode
+import de.dubmas.modulob.state.InitialNode
+import de.dubmas.modulob.state.Node
+import de.dubmas.modulob.state.State
+import de.dubmas.modulob.state.StateMachine
+import de.dubmas.modulob.state.StatePackage
+import de.dubmas.modulob.state.Transition
+import de.dubmas.modulob.util.Indexed
 import org.eclipse.emf.ecore.resource.Resource
+import org.eclipse.xtext.generator.IFileSystemAccess
+import org.eclipse.xtext.generator.IGenerator
 
 class Compiler implements IGenerator{
 	

@@ -1,10 +1,13 @@
 package de.dubmas.modulob.ui.wizard;
 
 import org.eclipse.ui.dialogs.WizardNewProjectCreationPage;
+import org.eclipse.xtext.ui.wizard.IProjectCreator;
 import org.eclipse.xtext.ui.wizard.IProjectInfo;
 import org.eclipse.xtext.ui.wizard.XtextNewProjectWizard;
-import org.eclipse.xtext.ui.wizard.IProjectCreator;
+
 import com.google.inject.Inject;
+
+import de.dubmas.modulob.ui.wizard.util.SystemDslProjectInfo;
 
 public class SystemDslNewProjectWizard extends XtextNewProjectWizard {
 
@@ -32,7 +35,7 @@ public class SystemDslNewProjectWizard extends XtextNewProjectWizard {
 	 */
 	@Override
 	protected IProjectInfo getProjectInfo() {
-		de.dubmas.modulob.ui.wizard.util.SystemDslProjectInfo projectInfo = new de.dubmas.modulob.ui.wizard.util.SystemDslProjectInfo();
+		SystemDslProjectInfo projectInfo = new SystemDslProjectInfo();
 		projectInfo.setProjectName(mainPage.getProjectName());
 		return projectInfo;
 	}

@@ -1,12 +1,10 @@
 package de.dubmas.modulob.validation
 
-import de.dubmas.modulob.*
-import de.dubmas.modulob.system.*
-import de.dubmas.modulob.util.*
-import de.dubmas.modulob.validation.AbstractNotificationDslJavaValidator
-import de.dubmas.modulob.validation.ValidationIssueCodes
-
-import org.eclipse.emf.ecore.*
+import de.dubmas.modulob.Feature
+import de.dubmas.modulob.ModulobPackage
+import de.dubmas.modulob.Notification
+import de.dubmas.modulob.system.NotificationModel
+import de.dubmas.modulob.util.CheckUtil
 import org.eclipse.xtext.validation.Check
 
 class NotificationDslJavaValidator extends AbstractNotificationDslJavaValidator {

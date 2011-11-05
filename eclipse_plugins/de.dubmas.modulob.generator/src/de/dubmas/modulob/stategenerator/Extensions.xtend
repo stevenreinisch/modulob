@@ -1,6 +1,12 @@
 package de.dubmas.modulob.stategenerator
 
-import de.dubmas.modulob.state.*
+import de.dubmas.modulob.state.FinalNode
+import de.dubmas.modulob.state.InitialNode
+import de.dubmas.modulob.state.Node
+import de.dubmas.modulob.state.State
+import de.dubmas.modulob.state.StateMachine
+import de.dubmas.modulob.state.StatePackage
+import de.dubmas.modulob.state.Transition
 
 class Extensions {
 	def dispatch name(Node n){}

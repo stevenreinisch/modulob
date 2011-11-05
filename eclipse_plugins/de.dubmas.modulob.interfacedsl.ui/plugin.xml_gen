@@ -71,6 +71,19 @@
         </page>
     </extension>
     <extension
+            point="org.eclipse.ui.propertyPages">
+        <page
+            class="de.dubmas.modulob.ui.InterfaceDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="de.dubmas.modulob.InterfaceDsl"
+            name="InterfaceDsl">
+            <keywordReference id="de.dubmas.modulob.ui.keyword_InterfaceDsl"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+        </page>
+    </extension>
+    <extension
         point="org.eclipse.ui.keywords">
         <keyword
             id="de.dubmas.modulob.ui.keyword_InterfaceDsl"
@@ -145,6 +158,30 @@
             class="de.dubmas.modulob.ui.InterfaceDslExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
       </participant>
    </extension>
+   <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+            category="de.dubmas.modulob.InterfaceDsl"
+            class="de.dubmas.modulob.ui.InterfaceDslExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="de.dubmas.modulob.InterfaceDsl.compiler.preferencePage"
+            name="Compiler">
+            <keywordReference id="de.dubmas.modulob.ui.keyword_InterfaceDsl"/>
+        </page>
+    </extension>
+    <extension
+            point="org.eclipse.ui.propertyPages">
+        <page
+            category="de.dubmas.modulob.InterfaceDsl"
+            class="de.dubmas.modulob.ui.InterfaceDslExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="de.dubmas.modulob.InterfaceDsl.compiler.propertyPage"
+            name="Compiler">
+            <keywordReference id="de.dubmas.modulob.ui.keyword_InterfaceDsl"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+        </page>
+    </extension>
 
 	<!-- Quick Outline -->
 	<extension
