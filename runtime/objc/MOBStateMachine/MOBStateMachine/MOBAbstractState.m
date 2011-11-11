@@ -7,6 +7,7 @@
 //
 
 #import "MOBAbstractState.h"
+#import "MOBStateMachineConstants.h"
 
 @implementation MOBAbstractState
 
@@ -18,7 +19,7 @@
 {
     self = [super init];
     if (self) {
-        ID       = UNDEFINED;
+        ID       = MOBSTATEMACHINE_UNDEFINED;
     }
     
     return self;

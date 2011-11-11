@@ -7,6 +7,7 @@
 //
 
 #import "MOBState.h"
+#import "MOBStateMachineConstants.h"
 
 @implementation MOBState
 
@@ -19,7 +20,7 @@
 {
     self = [super init];
     if (self) {
-        duration = UNDEFINED;
+        duration = MOBSTATEMACHINE_UNDEFINED;
     }
     
     return self;

@@ -7,6 +7,7 @@
 //
 
 #import "MOBStateMachine.h"
+#import "MOBStateMachineConstants.h"
 
 #define FURTHER_UPDATES_REQUESTED (requestedUpdates > 0)
 
@@ -151,7 +152,7 @@
     
     if ([currentState isKindOfClass:[MOBState class]]) 
     {
-        if (DEFINED([(id)newState duration])) {
+        if (MOBSTATEMACHINE_DEFINED([(id)newState duration])) {
             NSLog(@"starting timer for state: %@ (ID: %d) with duration: %f",
                   [newState name], [newState ID], [(id)newState duration]);
             

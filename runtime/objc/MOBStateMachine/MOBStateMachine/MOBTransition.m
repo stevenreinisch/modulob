@@ -7,6 +7,7 @@
 //
 
 #import "MOBTransition.h"
+#import "MOBStateMachineConstants.h"
 
 @implementation MOBTransition
 
@@ -20,7 +21,7 @@
 {
     self = [super init];
     if (self) {
-        ID = UNDEFINED;
+        ID = MOBSTATEMACHINE_UNDEFINED;
     }
     
     return self;
