@@ -8,21 +8,27 @@
 
 #import "MOBStateMachine.h"
 
+#define FURTHER_UPDATES_REQUESTED (requestedUpdates > 0)
+
 @interface MOBStateMachine ()
 
 - (void) checkConsistencyAtStartUp;
-
+- (void) doUpdate;
 - (BOOL) switchTransitionInternal:(MOBTransition*) transition;
 - (void) enterState:(MOBAbstractState*) newState;
 - (void) executeSelector:(NSString*) selectorName;
 - (BOOL) evaluateGuardSelector:(NSString*) selectorName;
 
 - (void) currentStateDurationEnded;
+
+@property (nonatomic, assign) BOOL inUpdate;
+@property (nonatomic, assign) NSUInteger requestedUpdates;
+
 @end
 
 @implementation MOBStateMachine
 
-@synthesize delegate, states, transitions;
+@synthesize delegate, states, transitions, inUpdate, requestedUpdates;
 
 #pragma mark -
 
@@ -30,18 +36,22 @@
 {
     self = [super init];
     if (self) {
-        self.states      = [[NSMutableSet new] autorelease];
-        self.transitions = [[NSMutableSet new] autorelease];
+        self.inUpdate         = NO;
+        self.requestedUpdates = 0;
+        self.states           = [[NSMutableSet new] autorelease];
+        self.transitions      = [[NSMutableSet new] autorelease];
     }
     
     return self;
 }
 
 - (void) dealloc {
-    self.states          = nil;
-    self.transitions     = nil;
+    self.inUpdate         = NO;
+    self.requestedUpdates = 0;
+    self.states           = nil;
+    self.transitions      = nil;
     
-    currentState         = nil;
+    currentState          = nil;
     
     [super dealloc];
 }
@@ -61,24 +71,51 @@
  * this transition is switched.
  */
 - (void) update {
+    
     if (![currentState isKindOfClass:[MOBFinalState class]]) {
         
-        BOOL switched = NO;
-        
-        NSEnumerator *enumerator  = [[currentState outgoingTransitions] objectEnumerator];
-        MOBTransition *transition = nil;
-        
-        while (!switched && (transition = [enumerator nextObject]) ) {
-            if ([self evaluateGuardSelector:transition.guardSelectorName]) {
-                switched = [self switchTransitionInternal:transition];
+        if(!self.inUpdate) {
+            
+            self.inUpdate = YES;
+            
+            NSLog(@"in update for state: %@.", [currentState name]);
+            
+            [self doUpdate];
+            
+            NSLog(@"finished update. Now in state: %@.", [currentState name]);
+            
+            self.inUpdate = NO;
+            
+            if(FURTHER_UPDATES_REQUESTED) {
+                requestedUpdates--;
+                NSLog(@"executing requested update in state: %@ (%d remaining).", 
+                      [currentState name], requestedUpdates);
+                [self update];
             }
-        }
-        
-        if (switched && transition) {
-            [self enterState:transition.targetState];
+        } else {
+            NSLog(@"further update requested in state: %@.", [currentState name]);
+            self.requestedUpdates++;
+            return;
         }
     } else {
         NSLog(@"ERROR: MOBStateMachine cannot update .. in final state.");
+    }
+}
+
+- (void) doUpdate {
+    BOOL switched = NO;
+    
+    NSEnumerator *enumerator  = [[currentState outgoingTransitions] objectEnumerator];
+    MOBTransition *transition = nil;
+    
+    while (!switched && (transition = [enumerator nextObject]) ) {
+        if ([self evaluateGuardSelector:transition.guardSelectorName]) {
+            switched = [self switchTransitionInternal:transition];
+        }
+    }
+    
+    if (switched && transition) {
+        [self enterState:transition.targetState];
     }
 }
 
@@ -99,6 +136,7 @@
  * 2. execute transition's action selector
  */
 - (BOOL) switchTransitionInternal:(MOBTransition*) transition {
+    NSLog(@"switching transition with guard: %@", transition.guardSelectorName);
     [self executeSelector:[currentState exitSelectorName]];
     [self executeSelector:transition.actionSelectorName];
     return YES;
@@ -106,6 +144,9 @@
 
 - (void) enterState:(MOBAbstractState*) newState {
     currentState = newState;
+    
+    NSLog(@"entered state: %@", [currentState name]);
+    
     [self executeSelector:[currentState entrySelectorName]];
     
     if ([currentState isKindOfClass:[MOBState class]]) 

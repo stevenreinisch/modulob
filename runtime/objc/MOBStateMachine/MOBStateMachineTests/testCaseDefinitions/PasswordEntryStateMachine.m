@@ -30,7 +30,7 @@
         initial.exitSelectorName  = @"exit_initial";
         
         MOBState *empty = [[MOBState new] autorelease];
-        empty.name = @"name";
+        empty.name = @"empty";
         empty.ID = PasswordEntryState_EMPTY;
         empty.entrySelectorName = @"enter_empty";
         empty.exitSelectorName = @"exit_empty";

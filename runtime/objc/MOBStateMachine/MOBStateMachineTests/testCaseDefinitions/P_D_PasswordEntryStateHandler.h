@@ -118,7 +118,12 @@
  */
 - (void) action_locked_to_empty;
 
-#pragma mark transitions: guards (optional)
+#pragma mark -
+#pragma mark guards
+#pragma mark !! do not call [stateMachine update] in guards. This will trigger infinite loop!!
+#pragma mark -
+
+#pragma mark transitions: optional guards
 //Guards are optional if state has only one outgoing transition.
 
 /*
@@ -136,7 +141,7 @@
  */
 - (NSNumber*) guard_userauthenticated_to_final;
 
-#pragma mark transitions: guards (required)
+#pragma mark transitions: required guards
 
 @required
 
