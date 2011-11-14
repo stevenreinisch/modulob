@@ -1,6 +1,11 @@
 package de.dubmas.modulob.util.queries
 
-import de.dubmas.modulob.state.*
+import de.dubmas.modulob.state.FinalNode
+import de.dubmas.modulob.state.InitialNode
+import de.dubmas.modulob.state.Node
+import de.dubmas.modulob.state.State
+import de.dubmas.modulob.state.StateMachine
+import de.dubmas.modulob.state.StatePackage
 
 class StateMachineQueries {
 	

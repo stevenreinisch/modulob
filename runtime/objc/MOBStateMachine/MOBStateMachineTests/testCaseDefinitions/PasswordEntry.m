@@ -75,7 +75,7 @@
 
 #pragma mark guards
 
-- (NSNumber*) guard_partiallyFilled_to_empty {
+- (BOOL) guard_partiallyFilled_to_empty {
     BOOL result = NO;
     
     if ([pin count] == 0) {
@@ -84,10 +84,10 @@
     
     NSLog(@"evaluated guard_partiallyFilled_to_empty with result: %d", result);
     
-    return [NSNumber numberWithBool:result];
+    return result;
 }
 
-- (NSNumber*) guard_partiallyFilled_to_partiallyFilled {
+- (BOOL) guard_partiallyFilled_to_partiallyFilled {
     BOOL result = NO;
     
     if ([pin count] > 0 && [pin count] < MAX_PIN_DIGITS) {
@@ -96,10 +96,10 @@
     
     NSLog(@"evaluated guard_partiallyFilled_to_partiallyFilled with result: %d", result);
     
-    return [NSNumber numberWithBool:result];
+    return result;
 }
 
-- (NSNumber*) guard_partiallyFilled_to_completelyFilled {
+- (BOOL) guard_partiallyFilled_to_completelyFilled {
     BOOL result = NO;
     
     if ([pin count] == MAX_PIN_DIGITS) {
@@ -108,39 +108,39 @@
     
     NSLog(@"evaluated guard_partiallyFilled_to_completelyFilled with result: %d", result);
     
-    return [NSNumber numberWithBool:result];
+    return result;
 }
 
-- (NSNumber*) guard_completelyFilled_to_userAuthenticated {
+- (BOOL) guard_completelyFilled_to_userAuthenticated {
     BOOL result = pinCorrect;
     
     NSLog(@"evaluated guard_completelyFilled_to_userAuthenticated with result: %d", result);
     
-    return [NSNumber numberWithBool:result];
+    return result;
 }
 
-- (NSNumber*) guard_completelyFilled_to_userNotAuthenticated {
+- (BOOL) guard_completelyFilled_to_userNotAuthenticated {
     BOOL result = !pinCorrect;
     
     NSLog(@"evaluated guard_completelyFilled_to_userNotAuthenticated with result: %d", result);
     
-    return [NSNumber numberWithBool:result];
+    return result;
 }
 
-- (NSNumber*) guard_userNotAuthenticated_to_empty {
+- (BOOL) guard_userNotAuthenticated_to_empty {
     BOOL result = !lockAfterFailedAuthentication;
     
     NSLog(@"evaluated guard_userNotAuthenticated_to_empty with result: %d", result);
     
-    return [NSNumber numberWithBool:result];
+    return result;
 }
 
-- (NSNumber*) guard_userNotAuthenticated_to_locked {
+- (BOOL) guard_userNotAuthenticated_to_locked {
     BOOL result = lockAfterFailedAuthentication;
     
     NSLog(@"evaluated guard_userNotAuthenticated_to_locked with result: %d", result);
     
-    return [NSNumber numberWithBool:result];
+    return result;
 }
 
 @end

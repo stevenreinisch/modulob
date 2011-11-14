@@ -213,7 +213,8 @@
 	if (selectorName) {
         SEL selector = NSSelectorFromString(selectorName);
         if ([delegate respondsToSelector:selector]) {
-            return [[delegate performSelector:selector] boolValue];
+            //do this cast magic to get rid of the warning
+            return (int)((void*)[delegate performSelector:selector]);
         }
     }
 	return YES;

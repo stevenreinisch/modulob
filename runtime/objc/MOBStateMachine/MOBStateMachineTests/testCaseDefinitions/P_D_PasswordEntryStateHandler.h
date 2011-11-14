@@ -129,17 +129,17 @@
 /*
  * transition empty_to_partiallyFilled
  */
-- (NSNumber*) guard_empty_to_partiallyFilled;
+- (BOOL) guard_empty_to_partiallyFilled;
 
 /*
  * transition locked_to_empty
  */
-- (NSNumber*) guard_locked_to_empty;
+- (BOOL) guard_locked_to_empty;
 
 /*
  * transition userauthenticated_to_final
  */
-- (NSNumber*) guard_userauthenticated_to_final;
+- (BOOL) guard_userauthenticated_to_final;
 
 #pragma mark transitions: required guards
 
@@ -148,36 +148,36 @@
 /*
  * transition partiallyFilled_to_empty
  */
-- (NSNumber*) guard_partiallyFilled_to_empty;
+- (BOOL) guard_partiallyFilled_to_empty;
 
 /*
  * transition partiallyFilled_to_partiallyFilled
  */
-- (NSNumber*) guard_partiallyFilled_to_partiallyFilled;
+- (BOOL) guard_partiallyFilled_to_partiallyFilled;
 
 /*
  * transition partiallyFilled_to_completelyFilled
  */
-- (NSNumber*) guard_partiallyFilled_to_completelyFilled;
+- (BOOL) guard_partiallyFilled_to_completelyFilled;
 
 /*
  * transition completelyFilled_to_userAuthenticated
  */
-- (NSNumber*) guard_completelyFilled_to_userAuthenticated;
+- (BOOL) guard_completelyFilled_to_userAuthenticated;
 
 /*
  * transition completelyFilled_to_userNotAuthenticated
  */
-- (NSNumber*) guard_completelyFilled_to_userNotAuthenticated;
+- (BOOL) guard_completelyFilled_to_userNotAuthenticated;
 
 /*
  * transition userNotAuthenticated_to_empty
  */
-- (NSNumber*) guard_userNotAuthenticated_to_empty;
+- (BOOL) guard_userNotAuthenticated_to_empty;
 
 /*
  * transition userNotAuthenticated_to_locked
  */
-- (NSNumber*) guard_userNotAuthenticated_to_locked;
+- (BOOL) guard_userNotAuthenticated_to_locked;
 
 @end

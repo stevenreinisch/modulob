@@ -151,7 +151,7 @@ class Compiler implements IGenerator{
 		«in.name()».outgoingTransitions = [NSSet setWithObjects:
      		«FOR t: in.outgoing SEPARATOR ','»
      			«t.name()»
-     		«ENDFOR» nil];
+     		«ENDFOR», nil];
 	«ENDIF»
 	'''
 	
@@ -161,7 +161,7 @@ class Compiler implements IGenerator{
 		«fn.name()».incomingTransitions = [NSSet setWithObjects:
      		«FOR t: fn.incoming SEPARATOR ','»
      			«t.name()»
-     		«ENDFOR» nil];
+     		«ENDFOR», nil];
 	«ENDIF»
 	'''
 	
@@ -171,13 +171,13 @@ class Compiler implements IGenerator{
 		«s.name()».outgoingTransitions = [NSSet setWithObjects:
      		«FOR t: s.outgoing SEPARATOR ','»
      			«t.name()»
-     		«ENDFOR» nil];
+     		«ENDFOR», nil];
 	«ENDIF»
 	«IF s.incoming.size > 0»
 		«s.name()».incomingTransitions = [NSSet setWithObjects:
      		«FOR t: s.incoming SEPARATOR ','»
      			«t.name()»
-     		«ENDFOR» nil];
+     		«ENDFOR», nil];
 	«ENDIF»
 	'''
 	

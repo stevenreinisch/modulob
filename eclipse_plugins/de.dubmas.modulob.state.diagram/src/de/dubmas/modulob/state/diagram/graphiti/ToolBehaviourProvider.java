@@ -47,12 +47,12 @@ public class ToolBehaviourProvider extends DefaultToolBehaviorProvider {
                     .setMessage("Module not set. Open Properties View and set it!");
                 return new IDecorator[] { imageRenderingDecorator };
             } 
-            else if (queries.statesConnectedToInitialNode(stateMachine).size() != 1){
+            else if (queries.statesConnectedToInitialNode(stateMachine).size() < 1){
             	IDecorator imageRenderingDecorator =
                         new ImageDecorator(
                             IPlatformImageConstants.IMG_ECLIPSE_ERROR_TSK);
                     imageRenderingDecorator
-                        .setMessage("Exactly one State must be connected to one InitialNode!");
+                        .setMessage("At least one State must be connected to one InitialNode!");
                 return new IDecorator[] { imageRenderingDecorator };
             }
             else if (queries.danglingStates(stateMachine).size() > 0){
