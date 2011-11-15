@@ -12,6 +12,7 @@ import de.dubmas.modulob.ConfigOption;
 import de.dubmas.modulob.ConfigValue;
 import de.dubmas.modulob.Delegate;
 import de.dubmas.modulob.Entity;
+import de.dubmas.modulob.EnumLiteral;
 import de.dubmas.modulob.Feature;
 import de.dubmas.modulob.FloatValue;
 import de.dubmas.modulob.IntegerValue;
@@ -131,6 +132,20 @@ public class ModulobPackageImpl extends EPackageImpl implements ModulobPackage {
 	 * @generated
 	 */
 	private EClass adviceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass enumEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass enumLiteralEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -629,6 +644,42 @@ public class ModulobPackageImpl extends EPackageImpl implements ModulobPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getEnum() {
+		return enumEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEnum_Literals() {
+		return (EReference)enumEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEnumLiteral() {
+		return enumLiteralEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEnumLiteral_Name() {
+		return (EAttribute)enumLiteralEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getConfigOption() {
 		return configOptionEEnum;
 	}
@@ -729,6 +780,12 @@ public class ModulobPackageImpl extends EPackageImpl implements ModulobPackage {
 		adviceEClass = createEClass(ADVICE);
 		createEReference(adviceEClass, ADVICE__INTERCEPTORS);
 
+		enumEClass = createEClass(ENUM);
+		createEReference(enumEClass, ENUM__LITERALS);
+
+		enumLiteralEClass = createEClass(ENUM_LITERAL);
+		createEAttribute(enumLiteralEClass, ENUM_LITERAL__NAME);
+
 		// Create enums
 		configOptionEEnum = createEEnum(CONFIG_OPTION);
 		configValueEEnum = createEEnum(CONFIG_VALUE);
@@ -771,6 +828,7 @@ public class ModulobPackageImpl extends EPackageImpl implements ModulobPackage {
 		stringValueEClass.getESuperTypes().add(this.getValueObject());
 		integerValueEClass.getESuperTypes().add(this.getValueObject());
 		floatValueEClass.getESuperTypes().add(this.getValueObject());
+		enumEClass.getESuperTypes().add(theTypesPackage.getPrimitive());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(delegateEClass, Delegate.class, "Delegate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -831,6 +889,12 @@ public class ModulobPackageImpl extends EPackageImpl implements ModulobPackage {
 
 		initEClass(adviceEClass, Advice.class, "Advice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAdvice_Interceptors(), this.getMethod(), null, "interceptors", null, 0, -1, Advice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(enumEClass, de.dubmas.modulob.Enum.class, "Enum", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEnum_Literals(), this.getEnumLiteral(), null, "literals", null, 0, -1, de.dubmas.modulob.Enum.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(enumLiteralEClass, EnumLiteral.class, "EnumLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEnumLiteral_Name(), ecorePackage.getEString(), "name", null, 0, 1, EnumLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(configOptionEEnum, ConfigOption.class, "ConfigOption");

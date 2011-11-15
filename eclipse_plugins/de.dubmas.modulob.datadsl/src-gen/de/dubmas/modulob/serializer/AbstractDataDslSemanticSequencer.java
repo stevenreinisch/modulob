@@ -4,6 +4,7 @@ import com.google.inject.Inject;
 import com.google.inject.Provider;
 import de.dubmas.modulob.Annotation;
 import de.dubmas.modulob.Entity;
+import de.dubmas.modulob.EnumLiteral;
 import de.dubmas.modulob.Feature;
 import de.dubmas.modulob.FloatValue;
 import de.dubmas.modulob.IntegerValue;
@@ -20,12 +21,15 @@ import de.dubmas.modulob.types.TypeRef;
 import de.dubmas.modulob.types.TypesPackage;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
+import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
 import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
 import org.eclipse.xtext.serializer.sequencer.AbstractSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
+import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
 import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
+import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("restriction")
 public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer {
@@ -70,6 +74,18 @@ public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer 
 			case ModulobPackage.ENTITY:
 				if(context == grammarAccess.getEntityRule()) {
 					sequence_Entity(context, (Entity) semanticObject); 
+					return; 
+				}
+				else break;
+			case ModulobPackage.ENUM:
+				if(context == grammarAccess.getEnumRule()) {
+					sequence_Enum(context, (de.dubmas.modulob.Enum) semanticObject); 
+					return; 
+				}
+				else break;
+			case ModulobPackage.ENUM_LITERAL:
+				if(context == grammarAccess.getEnumLiteralRule()) {
+					sequence_EnumLiteral(context, (EnumLiteral) semanticObject); 
 					return; 
 				}
 				else break;
@@ -158,7 +174,7 @@ public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (current?='current'? module=[Module|QualifiedName] version=STRING entities+=Entity*)
+	 *     (current?='current'? module=[Module|QualifiedName] version=STRING entities+=Entity* enums+=Enum*)
 	 */
 	protected void sequence_EntityModel(EObject context, EntityModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -177,6 +193,31 @@ public class AbstractDataDslSemanticSequencer extends AbstractSemanticSequencer 
 	 *     )
 	 */
 	protected void sequence_Entity(EObject context, Entity semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_EnumLiteral(EObject context, EnumLiteral semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ModulobPackage.Literals.ENUM_LITERAL__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ModulobPackage.Literals.ENUM_LITERAL__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getEnumLiteralAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID literals+=EnumLiteral literals+=EnumLiteral*)
+	 */
+	protected void sequence_Enum(EObject context, de.dubmas.modulob.Enum semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

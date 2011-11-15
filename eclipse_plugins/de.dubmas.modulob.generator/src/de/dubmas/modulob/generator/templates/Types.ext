@@ -105,7 +105,13 @@ system::Module module(types::Type type):
 		}
 	)
 	:
+	(
+	Enum.isInstance(type)
+	?
+	((Module) type.eContainer.eContainer)
+	:
 	null
+	)
 ;
 
 /*
@@ -140,7 +146,12 @@ typeImplFilePath(types::Type type):
 
 typeName(types::Type type):
 	Primitive.isInstance(type) ? 
-		type.name.objectiveCType()
+		(
+			Enum.isInstance(type) ?
+			type.namespace() + type.name
+			:
+		  	type.name.objectiveCType()
+		)
 		:
 		type.namespace() + type.name
 ;

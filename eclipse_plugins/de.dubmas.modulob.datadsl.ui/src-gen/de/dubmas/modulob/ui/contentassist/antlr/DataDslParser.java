@@ -46,6 +46,8 @@ public class DataDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFeatureAccess().getGroup(), "rule__Feature__Group__0");
 					put(grammarAccess.getFeatureAccess().getGroup_5(), "rule__Feature__Group_5__0");
 					put(grammarAccess.getFeatureAccess().getGroup_6(), "rule__Feature__Group_6__0");
+					put(grammarAccess.getEnumAccess().getGroup(), "rule__Enum__Group__0");
+					put(grammarAccess.getEnumAccess().getGroup_4(), "rule__Enum__Group_4__0");
 					put(grammarAccess.getTypeLibAccess().getGroup(), "rule__TypeLib__Group__0");
 					put(grammarAccess.getPrimitiveAccess().getGroup(), "rule__Primitive__Group__0");
 					put(grammarAccess.getAnyAccess().getGroup(), "rule__Any__Group__0");
@@ -57,6 +59,7 @@ public class DataDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEntityModelAccess().getModuleAssignment_2(), "rule__EntityModel__ModuleAssignment_2");
 					put(grammarAccess.getEntityModelAccess().getVersionAssignment_4(), "rule__EntityModel__VersionAssignment_4");
 					put(grammarAccess.getEntityModelAccess().getEntitiesAssignment_5(), "rule__EntityModel__EntitiesAssignment_5");
+					put(grammarAccess.getEntityModelAccess().getEnumsAssignment_6(), "rule__EntityModel__EnumsAssignment_6");
 					put(grammarAccess.getEntityAccess().getCommentAssignment_0(), "rule__Entity__CommentAssignment_0");
 					put(grammarAccess.getEntityAccess().getAnnotationsAssignment_1(), "rule__Entity__AnnotationsAssignment_1");
 					put(grammarAccess.getEntityAccess().getIsAbstractAssignment_2(), "rule__Entity__IsAbstractAssignment_2");
@@ -72,6 +75,10 @@ public class DataDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFeatureAccess().getNameAssignment_4(), "rule__Feature__NameAssignment_4");
 					put(grammarAccess.getFeatureAccess().getDefaultValueAssignment_5_1(), "rule__Feature__DefaultValueAssignment_5_1");
 					put(grammarAccess.getFeatureAccess().getInverseAssignment_6_1(), "rule__Feature__InverseAssignment_6_1");
+					put(grammarAccess.getEnumAccess().getNameAssignment_1(), "rule__Enum__NameAssignment_1");
+					put(grammarAccess.getEnumAccess().getLiteralsAssignment_3(), "rule__Enum__LiteralsAssignment_3");
+					put(grammarAccess.getEnumAccess().getLiteralsAssignment_4_1(), "rule__Enum__LiteralsAssignment_4_1");
+					put(grammarAccess.getEnumLiteralAccess().getNameAssignment(), "rule__EnumLiteral__NameAssignment");
 					put(grammarAccess.getTypeLibAccess().getPrimitiveTypesAssignment_0(), "rule__TypeLib__PrimitiveTypesAssignment_0");
 					put(grammarAccess.getTypeLibAccess().getAnyTypeAssignment_1(), "rule__TypeLib__AnyTypeAssignment_1");
 					put(grammarAccess.getPrimitiveAccess().getNameAssignment_1(), "rule__Primitive__NameAssignment_1");

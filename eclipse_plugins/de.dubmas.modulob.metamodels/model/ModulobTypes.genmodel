@@ -10,7 +10,9 @@
     <genClasses image="false" ecoreClass="ModulobTypes.ecore#//Type">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModulobTypes.ecore#//Type/name"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="ModulobTypes.ecore#//UserDefined"/>
+    <genClasses image="false" ecoreClass="ModulobTypes.ecore#//UserDefined">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModulobTypes.ecore#//UserDefined/comment"/>
+    </genClasses>
     <genClasses ecoreClass="ModulobTypes.ecore#//Primitive"/>
     <genClasses ecoreClass="ModulobTypes.ecore#//Any"/>
     <genClasses ecoreClass="ModulobTypes.ecore#//TypeRef">
@@ -20,6 +22,12 @@
     <genClasses ecoreClass="ModulobTypes.ecore#//Lib">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModulobTypes.ecore#//Lib/primitiveTypes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModulobTypes.ecore#//Lib/anyType"/>
+    </genClasses>
+    <genClasses ecoreClass="ModulobTypes.ecore#//Enum">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModulobTypes.ecore#//Enum/literals"/>
+    </genClasses>
+    <genClasses ecoreClass="ModulobTypes.ecore#//EnumLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModulobTypes.ecore#//EnumLiteral/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

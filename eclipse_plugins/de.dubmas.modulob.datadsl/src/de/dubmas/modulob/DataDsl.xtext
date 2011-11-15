@@ -7,8 +7,9 @@ import 'platform:/resource/de.dubmas.modulob.metamodels/model/ModulobTypes.ecore
 EntityModel returns system::EntityModel:
 	(^current ?= 'current')? 'entities for module' 
 	module = [system::Module | QualifiedName]
-	'version' version = STRING 
+	'version' version = STRING
 	(entities += Entity)*
+	(enums += Enum)*
 ;
 
 Entity returns modulob::Entity:
@@ -39,3 +40,14 @@ Feature returns modulob::Feature:
 	('<->' inverse=[modulob::Feature | QualifiedName])?
 	';'
 ;
+
+Enum returns modulob::Enum:
+	'enum' name = ID '{'
+		literals += EnumLiteral (',' literals += EnumLiteral)*
+	'}'
+;
+
+EnumLiteral returns modulob::EnumLiteral:
+	name = ID
+;
+

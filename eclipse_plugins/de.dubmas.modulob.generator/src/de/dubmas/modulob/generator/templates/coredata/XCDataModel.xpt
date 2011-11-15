@@ -50,7 +50,7 @@
 «ENDDEFINE»
 
 «DEFINE attribute FOR Feature-»
-	<attribute attributeType="«this.type.referenced.name.xcDataPrimitiveType()»" 
+	<attribute attributeType="«this.type.referenced.name.xcDataPrimitiveType(this.type.referenced)»" 
 	«IF this.defaultValue != null»
 		defaultValueString="«EXPAND DefaultValue FOR this.defaultValue-»"
 	«ENDIF» 

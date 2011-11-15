@@ -217,7 +217,6 @@ public interface TypesPackage extends EPackage {
 	 */
 	int TYPE_REF_FEATURE_COUNT = 2;
 
-
 	/**
 	 * The meta object id for the '{@link de.dubmas.modulob.types.impl.LibImpl <em>Lib</em>}' class.
 	 * <!-- begin-user-doc -->

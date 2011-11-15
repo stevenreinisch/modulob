@@ -6,6 +6,24 @@
  */
 package de.dubmas.modulob.impl;
 
+import de.dubmas.modulob.Advice;
+import de.dubmas.modulob.Annotation;
+import de.dubmas.modulob.ConfigOption;
+import de.dubmas.modulob.ConfigValue;
+import de.dubmas.modulob.Delegate;
+import de.dubmas.modulob.Entity;
+import de.dubmas.modulob.EnumLiteral;
+import de.dubmas.modulob.Feature;
+import de.dubmas.modulob.FloatValue;
+import de.dubmas.modulob.IntegerValue;
+import de.dubmas.modulob.Interface;
+import de.dubmas.modulob.Method;
+import de.dubmas.modulob.ModulobFactory;
+import de.dubmas.modulob.ModulobPackage;
+import de.dubmas.modulob.Notification;
+import de.dubmas.modulob.Parameter;
+import de.dubmas.modulob.StringValue;
+import de.dubmas.modulob.ValueObject;
 import de.dubmas.modulob.*;
 
 import org.eclipse.emf.ecore.EClass;
@@ -74,6 +92,8 @@ public class ModulobFactoryImpl extends EFactoryImpl implements ModulobFactory {
 			case ModulobPackage.INTEGER_VALUE: return createIntegerValue();
 			case ModulobPackage.FLOAT_VALUE: return createFloatValue();
 			case ModulobPackage.ADVICE: return createAdvice();
+			case ModulobPackage.ENUM: return createEnum();
+			case ModulobPackage.ENUM_LITERAL: return createEnumLiteral();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -241,6 +261,26 @@ public class ModulobFactoryImpl extends EFactoryImpl implements ModulobFactory {
 	public Advice createAdvice() {
 		AdviceImpl advice = new AdviceImpl();
 		return advice;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public de.dubmas.modulob.Enum createEnum() {
+		EnumImpl enum_ = new EnumImpl();
+		return enum_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EnumLiteral createEnumLiteral() {
+		EnumLiteralImpl enumLiteral = new EnumLiteralImpl();
+		return enumLiteral;
 	}
 
 	/**

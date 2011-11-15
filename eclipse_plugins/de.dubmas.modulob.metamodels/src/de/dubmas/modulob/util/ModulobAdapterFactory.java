@@ -6,6 +6,22 @@
  */
 package de.dubmas.modulob.util;
 
+import de.dubmas.modulob.Advice;
+import de.dubmas.modulob.Annotation;
+import de.dubmas.modulob.Delegate;
+import de.dubmas.modulob.Entity;
+import de.dubmas.modulob.EnumLiteral;
+import de.dubmas.modulob.Feature;
+import de.dubmas.modulob.FloatValue;
+import de.dubmas.modulob.IntegerValue;
+import de.dubmas.modulob.Interface;
+import de.dubmas.modulob.Method;
+import de.dubmas.modulob.ModulobPackage;
+import de.dubmas.modulob.Notification;
+import de.dubmas.modulob.Parameter;
+import de.dubmas.modulob.StringValue;
+import de.dubmas.modulob.ValueObject;
+import de.dubmas.modulob.types.Primitive;
 import de.dubmas.modulob.*;
 
 import de.dubmas.modulob.types.Type;
@@ -127,12 +143,24 @@ public class ModulobAdapterFactory extends AdapterFactoryImpl {
 				return createAdviceAdapter();
 			}
 			@Override
+			public Adapter caseEnum(de.dubmas.modulob.Enum object) {
+				return createEnumAdapter();
+			}
+			@Override
+			public Adapter caseEnumLiteral(EnumLiteral object) {
+				return createEnumLiteralAdapter();
+			}
+			@Override
 			public Adapter caseType(Type object) {
 				return createTypeAdapter();
 			}
 			@Override
 			public Adapter caseUserDefined(UserDefined object) {
 				return createUserDefinedAdapter();
+			}
+			@Override
+			public Adapter casePrimitive(Primitive object) {
+				return createPrimitiveAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -337,6 +365,34 @@ public class ModulobAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link de.dubmas.modulob.Enum <em>Enum</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.dubmas.modulob.Enum
+	 * @generated
+	 */
+	public Adapter createEnumAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.dubmas.modulob.EnumLiteral <em>Enum Literal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.dubmas.modulob.EnumLiteral
+	 * @generated
+	 */
+	public Adapter createEnumLiteralAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link de.dubmas.modulob.types.Type <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -361,6 +417,20 @@ public class ModulobAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUserDefinedAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.dubmas.modulob.types.Primitive <em>Primitive</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.dubmas.modulob.types.Primitive
+	 * @generated
+	 */
+	public Adapter createPrimitiveAdapter() {
 		return null;
 	}
 

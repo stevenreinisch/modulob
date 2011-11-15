@@ -20,6 +20,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link de.dubmas.modulob.system.EntityModel#getModule <em>Module</em>}</li>
  *   <li>{@link de.dubmas.modulob.system.EntityModel#getEntities <em>Entities</em>}</li>
+ *   <li>{@link de.dubmas.modulob.system.EntityModel#getEnums <em>Enums</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +44,22 @@ public interface EntityModel extends VersionedElement {
 	 * @generated
 	 */
 	EList<Entity> getEntities();
+
+	/**
+	 * Returns the value of the '<em><b>Enums</b></em>' containment reference list.
+	 * The list contents are of type {@link de.dubmas.modulob.Enum}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Enums</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Enums</em>' containment reference list.
+	 * @see de.dubmas.modulob.system.SystemPackage#getEntityModel_Enums()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<de.dubmas.modulob.Enum> getEnums();
 
 	/**
 	 * Returns the value of the '<em><b>Module</b></em>' reference.

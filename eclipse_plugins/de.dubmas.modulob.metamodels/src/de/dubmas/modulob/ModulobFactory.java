@@ -143,6 +143,24 @@ public interface ModulobFactory extends EFactory {
 	Advice createAdvice();
 
 	/**
+	 * Returns a new object of class '<em>Enum</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Enum</em>'.
+	 * @generated
+	 */
+	Enum createEnum();
+
+	/**
+	 * Returns a new object of class '<em>Enum Literal</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Enum Literal</em>'.
+	 * @generated
+	 */
+	EnumLiteral createEnumLiteral();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

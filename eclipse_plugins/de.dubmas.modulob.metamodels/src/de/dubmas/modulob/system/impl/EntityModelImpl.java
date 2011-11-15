@@ -36,6 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link de.dubmas.modulob.system.impl.EntityModelImpl#getModule <em>Module</em>}</li>
  *   <li>{@link de.dubmas.modulob.system.impl.EntityModelImpl#getEntities <em>Entities</em>}</li>
+ *   <li>{@link de.dubmas.modulob.system.impl.EntityModelImpl#getEnums <em>Enums</em>}</li>
  * </ul>
  * </p>
  *
@@ -61,6 +62,16 @@ public class EntityModelImpl extends VersionedElementImpl implements EntityModel
 	 * @ordered
 	 */
 	protected EList<Entity> entities;
+
+	/**
+	 * The cached value of the '{@link #getEnums() <em>Enums</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnums()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<de.dubmas.modulob.Enum> enums;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,6 +109,18 @@ public class EntityModelImpl extends VersionedElementImpl implements EntityModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<de.dubmas.modulob.Enum> getEnums() {
+		if (enums == null) {
+			enums = new EObjectContainmentEList<de.dubmas.modulob.Enum>(de.dubmas.modulob.Enum.class, this, SystemPackage.ENTITY_MODEL__ENUMS);
+		}
+		return enums;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Module getModule() {
 		return module;
 	}
@@ -124,6 +147,8 @@ public class EntityModelImpl extends VersionedElementImpl implements EntityModel
 		switch (featureID) {
 			case SystemPackage.ENTITY_MODEL__ENTITIES:
 				return ((InternalEList<?>)getEntities()).basicRemove(otherEnd, msgs);
+			case SystemPackage.ENTITY_MODEL__ENUMS:
+				return ((InternalEList<?>)getEnums()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -140,6 +165,8 @@ public class EntityModelImpl extends VersionedElementImpl implements EntityModel
 				return getModule();
 			case SystemPackage.ENTITY_MODEL__ENTITIES:
 				return getEntities();
+			case SystemPackage.ENTITY_MODEL__ENUMS:
+				return getEnums();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -160,6 +187,10 @@ public class EntityModelImpl extends VersionedElementImpl implements EntityModel
 				getEntities().clear();
 				getEntities().addAll((Collection<? extends Entity>)newValue);
 				return;
+			case SystemPackage.ENTITY_MODEL__ENUMS:
+				getEnums().clear();
+				getEnums().addAll((Collection<? extends de.dubmas.modulob.Enum>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -178,6 +209,9 @@ public class EntityModelImpl extends VersionedElementImpl implements EntityModel
 			case SystemPackage.ENTITY_MODEL__ENTITIES:
 				getEntities().clear();
 				return;
+			case SystemPackage.ENTITY_MODEL__ENUMS:
+				getEnums().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -194,6 +228,8 @@ public class EntityModelImpl extends VersionedElementImpl implements EntityModel
 				return module != null;
 			case SystemPackage.ENTITY_MODEL__ENTITIES:
 				return entities != null && !entities.isEmpty();
+			case SystemPackage.ENTITY_MODEL__ENUMS:
+				return enums != null && !enums.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

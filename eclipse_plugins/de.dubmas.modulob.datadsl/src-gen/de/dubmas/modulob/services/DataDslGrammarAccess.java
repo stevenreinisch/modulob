@@ -31,14 +31,16 @@ public class DataDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cVersionSTRINGTerminalRuleCall_4_0 = (RuleCall)cVersionAssignment_4.eContents().get(0);
 		private final Assignment cEntitiesAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cEntitiesEntityParserRuleCall_5_0 = (RuleCall)cEntitiesAssignment_5.eContents().get(0);
+		private final Assignment cEnumsAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cEnumsEnumParserRuleCall_6_0 = (RuleCall)cEnumsAssignment_6.eContents().get(0);
 		
 		//EntityModel returns system::EntityModel:
 		//	^current?="current"? "entities for module" module=[system::Module|QualifiedName] "version" version=STRING
-		//	entities+=Entity*;
+		//	entities+=Entity* enums+=Enum*;
 		public ParserRule getRule() { return rule; }
 
 		//^current?="current"? "entities for module" module=[system::Module|QualifiedName] "version" version=STRING
-		//entities+=Entity*
+		//entities+=Entity* enums+=Enum*
 		public Group getGroup() { return cGroup; }
 
 		//^current?="current"?
@@ -73,6 +75,12 @@ public class DataDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Entity
 		public RuleCall getEntitiesEntityParserRuleCall_5_0() { return cEntitiesEntityParserRuleCall_5_0; }
+
+		//enums+=Enum*
+		public Assignment getEnumsAssignment_6() { return cEnumsAssignment_6; }
+
+		//Enum
+		public RuleCall getEnumsEnumParserRuleCall_6_0() { return cEnumsEnumParserRuleCall_6_0; }
 	}
 
 	public class EntityElements extends AbstractParserRuleElementFinder {
@@ -294,6 +302,78 @@ public class DataDslGrammarAccess extends AbstractGrammarElementFinder {
 		//";"
 		public Keyword getSemicolonKeyword_7() { return cSemicolonKeyword_7; }
 	}
+
+	public class EnumElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Enum");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cEnumKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cLiteralsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cLiteralsEnumLiteralParserRuleCall_3_0 = (RuleCall)cLiteralsAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cCommaKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cLiteralsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cLiteralsEnumLiteralParserRuleCall_4_1_0 = (RuleCall)cLiteralsAssignment_4_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//Enum returns modulob::Enum:
+		//	"enum" name=ID "{" literals+=EnumLiteral ("," literals+=EnumLiteral)* "}";
+		public ParserRule getRule() { return rule; }
+
+		//"enum" name=ID "{" literals+=EnumLiteral ("," literals+=EnumLiteral)* "}"
+		public Group getGroup() { return cGroup; }
+
+		//"enum"
+		public Keyword getEnumKeyword_0() { return cEnumKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+
+		//literals+=EnumLiteral
+		public Assignment getLiteralsAssignment_3() { return cLiteralsAssignment_3; }
+
+		//EnumLiteral
+		public RuleCall getLiteralsEnumLiteralParserRuleCall_3_0() { return cLiteralsEnumLiteralParserRuleCall_3_0; }
+
+		//("," literals+=EnumLiteral)*
+		public Group getGroup_4() { return cGroup_4; }
+
+		//","
+		public Keyword getCommaKeyword_4_0() { return cCommaKeyword_4_0; }
+
+		//literals+=EnumLiteral
+		public Assignment getLiteralsAssignment_4_1() { return cLiteralsAssignment_4_1; }
+
+		//EnumLiteral
+		public RuleCall getLiteralsEnumLiteralParserRuleCall_4_1_0() { return cLiteralsEnumLiteralParserRuleCall_4_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+	}
+
+	public class EnumLiteralElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EnumLiteral");
+		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		
+		//EnumLiteral returns modulob::EnumLiteral:
+		//	name=ID;
+		public ParserRule getRule() { return rule; }
+
+		//name=ID
+		public Assignment getNameAssignment() { return cNameAssignment; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
+	}
 	
 	
 	public class ConfigOptionElements extends AbstractEnumRuleElementFinder {
@@ -334,6 +414,8 @@ public class DataDslGrammarAccess extends AbstractGrammarElementFinder {
 	private ConfigOptionElements unknownRuleConfigOption;
 	private ConfigValueElements unknownRuleConfigValue;
 	private FeatureElements pFeature;
+	private EnumElements pEnum;
+	private EnumLiteralElements pEnumLiteral;
 	
 	private final GrammarProvider grammarProvider;
 
@@ -358,7 +440,7 @@ public class DataDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//EntityModel returns system::EntityModel:
 	//	^current?="current"? "entities for module" module=[system::Module|QualifiedName] "version" version=STRING
-	//	entities+=Entity*;
+	//	entities+=Entity* enums+=Enum*;
 	public EntityModelElements getEntityModelAccess() {
 		return (pEntityModel != null) ? pEntityModel : (pEntityModel = new EntityModelElements());
 	}
@@ -417,6 +499,26 @@ public class DataDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getFeatureRule() {
 		return getFeatureAccess().getRule();
+	}
+
+	//Enum returns modulob::Enum:
+	//	"enum" name=ID "{" literals+=EnumLiteral ("," literals+=EnumLiteral)* "}";
+	public EnumElements getEnumAccess() {
+		return (pEnum != null) ? pEnum : (pEnum = new EnumElements());
+	}
+	
+	public ParserRule getEnumRule() {
+		return getEnumAccess().getRule();
+	}
+
+	//EnumLiteral returns modulob::EnumLiteral:
+	//	name=ID;
+	public EnumLiteralElements getEnumLiteralAccess() {
+		return (pEnumLiteral != null) ? pEnumLiteral : (pEnumLiteral = new EnumLiteralElements());
+	}
+	
+	public ParserRule getEnumLiteralRule() {
+		return getEnumLiteralAccess().getRule();
 	}
 
 	//TypeLib returns types::Lib:

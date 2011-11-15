@@ -25,6 +25,5 @@ Export-Package: de.dubmas.modulob,
  de.dubmas.modulob.types,
  de.dubmas.modulob.types.impl,
  de.dubmas.modulob.types.util,
- de.dubmas.modulob.types.validation,
  de.dubmas.modulob.util,
  de.dubmas.modulob.validation

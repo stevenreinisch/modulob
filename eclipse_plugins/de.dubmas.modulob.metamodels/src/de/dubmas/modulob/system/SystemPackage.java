@@ -417,13 +417,22 @@ public interface SystemPackage extends EPackage {
 	int ENTITY_MODEL__ENTITIES = VERSIONED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Enums</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_MODEL__ENUMS = VERSIONED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Entity Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_MODEL_FEATURE_COUNT = VERSIONED_ELEMENT_FEATURE_COUNT + 2;
+	int ENTITY_MODEL_FEATURE_COUNT = VERSIONED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link de.dubmas.modulob.system.impl.NotificationModelImpl <em>Notification Model</em>}' class.
@@ -712,6 +721,17 @@ public interface SystemPackage extends EPackage {
 	EReference getEntityModel_Entities();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link de.dubmas.modulob.system.EntityModel#getEnums <em>Enums</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Enums</em>'.
+	 * @see de.dubmas.modulob.system.EntityModel#getEnums()
+	 * @see #getEntityModel()
+	 * @generated
+	 */
+	EReference getEntityModel_Enums();
+
+	/**
 	 * Returns the meta object for the reference '{@link de.dubmas.modulob.system.EntityModel#getModule <em>Module</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -983,6 +1003,14 @@ public interface SystemPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ENTITY_MODEL__ENTITIES = eINSTANCE.getEntityModel_Entities();
+
+		/**
+		 * The meta object literal for the '<em><b>Enums</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY_MODEL__ENUMS = eINSTANCE.getEntityModel_Enums();
 
 		/**
 		 * The meta object literal for the '<em><b>Module</b></em>' reference feature.

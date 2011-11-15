@@ -661,6 +661,71 @@ public interface ModulobPackage extends EPackage {
 	int ADVICE_FEATURE_COUNT = 1;
 
 	/**
+	 * The meta object id for the '{@link de.dubmas.modulob.impl.EnumImpl <em>Enum</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dubmas.modulob.impl.EnumImpl
+	 * @see de.dubmas.modulob.impl.ModulobPackageImpl#getEnum()
+	 * @generated
+	 */
+	int ENUM = 13;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUM__NAME = TypesPackage.PRIMITIVE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Literals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUM__LITERALS = TypesPackage.PRIMITIVE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Enum</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUM_FEATURE_COUNT = TypesPackage.PRIMITIVE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link de.dubmas.modulob.impl.EnumLiteralImpl <em>Enum Literal</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dubmas.modulob.impl.EnumLiteralImpl
+	 * @see de.dubmas.modulob.impl.ModulobPackageImpl#getEnumLiteral()
+	 * @generated
+	 */
+	int ENUM_LITERAL = 14;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUM_LITERAL__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Enum Literal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUM_LITERAL_FEATURE_COUNT = 1;
+
+	/**
 	 * The meta object id for the '{@link de.dubmas.modulob.ConfigOption <em>Config Option</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -668,7 +733,7 @@ public interface ModulobPackage extends EPackage {
 	 * @see de.dubmas.modulob.impl.ModulobPackageImpl#getConfigOption()
 	 * @generated
 	 */
-	int CONFIG_OPTION = 13;
+	int CONFIG_OPTION = 15;
 
 	/**
 	 * The meta object id for the '{@link de.dubmas.modulob.ConfigValue <em>Config Value</em>}' enum.
@@ -678,7 +743,7 @@ public interface ModulobPackage extends EPackage {
 	 * @see de.dubmas.modulob.impl.ModulobPackageImpl#getConfigValue()
 	 * @generated
 	 */
-	int CONFIG_VALUE = 14;
+	int CONFIG_VALUE = 16;
 
 
 	/**
@@ -1175,6 +1240,48 @@ public interface ModulobPackage extends EPackage {
 	EReference getAdvice_Interceptors();
 
 	/**
+	 * Returns the meta object for class '{@link de.dubmas.modulob.Enum <em>Enum</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Enum</em>'.
+	 * @see de.dubmas.modulob.Enum
+	 * @generated
+	 */
+	EClass getEnum();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.dubmas.modulob.Enum#getLiterals <em>Literals</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Literals</em>'.
+	 * @see de.dubmas.modulob.Enum#getLiterals()
+	 * @see #getEnum()
+	 * @generated
+	 */
+	EReference getEnum_Literals();
+
+	/**
+	 * Returns the meta object for class '{@link de.dubmas.modulob.EnumLiteral <em>Enum Literal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Enum Literal</em>'.
+	 * @see de.dubmas.modulob.EnumLiteral
+	 * @generated
+	 */
+	EClass getEnumLiteral();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dubmas.modulob.EnumLiteral#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see de.dubmas.modulob.EnumLiteral#getName()
+	 * @see #getEnumLiteral()
+	 * @generated
+	 */
+	EAttribute getEnumLiteral_Name();
+
+	/**
 	 * Returns the meta object for enum '{@link de.dubmas.modulob.ConfigOption <em>Config Option</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1609,6 +1716,42 @@ public interface ModulobPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ADVICE__INTERCEPTORS = eINSTANCE.getAdvice_Interceptors();
+
+		/**
+		 * The meta object literal for the '{@link de.dubmas.modulob.impl.EnumImpl <em>Enum</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dubmas.modulob.impl.EnumImpl
+		 * @see de.dubmas.modulob.impl.ModulobPackageImpl#getEnum()
+		 * @generated
+		 */
+		EClass ENUM = eINSTANCE.getEnum();
+
+		/**
+		 * The meta object literal for the '<em><b>Literals</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENUM__LITERALS = eINSTANCE.getEnum_Literals();
+
+		/**
+		 * The meta object literal for the '{@link de.dubmas.modulob.impl.EnumLiteralImpl <em>Enum Literal</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dubmas.modulob.impl.EnumLiteralImpl
+		 * @see de.dubmas.modulob.impl.ModulobPackageImpl#getEnumLiteral()
+		 * @generated
+		 */
+		EClass ENUM_LITERAL = eINSTANCE.getEnumLiteral();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENUM_LITERAL__NAME = eINSTANCE.getEnumLiteral_Name();
 
 		/**
 		 * The meta object literal for the '{@link de.dubmas.modulob.ConfigOption <em>Config Option</em>}' enum.

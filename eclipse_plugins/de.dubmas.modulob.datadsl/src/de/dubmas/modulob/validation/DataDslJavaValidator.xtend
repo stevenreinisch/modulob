@@ -328,6 +328,21 @@ class DataDslJavaValidator extends AbstractDataDslJavaValidator {
 	}
 	
 	@Check
+	def checkIfFeatureCanBeEnum(Feature f){
+		var e = (f.eContainer as Entity)
+		if(e.isCoreDataPersistent){
+			if(ModulobPackage::eINSTANCE.enum.isInstance(f.type.referenced))
+			{
+				error ("Enum type not allowed if entity is Core Data persistent" ,
+					   ModulobPackage::eINSTANCE.feature_Type, 
+					   0 ,
+					   ValidationIssueCodes::FEATURE_ENUM_TYPE_CODE,
+					   null )
+			}
+		}
+	}
+	
+	@Check
 	def checkIfFeatureDefinedInSuperHierarchy(Feature f){
 		if(f.existInSuperHierarchy((f.eContainer as Entity))){
 			error ("Feature is already defined in entity's super hierarchy.",

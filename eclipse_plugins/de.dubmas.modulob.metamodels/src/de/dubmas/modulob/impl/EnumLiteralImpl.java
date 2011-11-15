@@ -4,57 +4,58 @@
  *
  * $Id$
  */
-package de.dubmas.modulob.types.impl;
+package de.dubmas.modulob.impl;
 
-import de.dubmas.modulob.types.TypesPackage;
-import de.dubmas.modulob.types.UserDefined;
+import de.dubmas.modulob.EnumLiteral;
+import de.dubmas.modulob.ModulobPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>User Defined</b></em>'.
+ * An implementation of the model object '<em><b>Enum Literal</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.dubmas.modulob.types.impl.UserDefinedImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link de.dubmas.modulob.impl.EnumLiteralImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class UserDefinedImpl extends TypeImpl implements UserDefined {
+public class EnumLiteralImpl extends EObjectImpl implements EnumLiteral {
 	/**
-	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getComment()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String COMMENT_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getComment()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String comment = COMMENT_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected UserDefinedImpl() {
+	protected EnumLiteralImpl() {
 		super();
 	}
 
@@ -65,7 +66,7 @@ public abstract class UserDefinedImpl extends TypeImpl implements UserDefined {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TypesPackage.Literals.USER_DEFINED;
+		return ModulobPackage.Literals.ENUM_LITERAL;
 	}
 
 	/**
@@ -73,8 +74,8 @@ public abstract class UserDefinedImpl extends TypeImpl implements UserDefined {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getComment() {
-		return comment;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -82,11 +83,11 @@ public abstract class UserDefinedImpl extends TypeImpl implements UserDefined {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setComment(String newComment) {
-		String oldComment = comment;
-		comment = newComment;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TypesPackage.USER_DEFINED__COMMENT, oldComment, comment));
+			eNotify(new ENotificationImpl(this, Notification.SET, ModulobPackage.ENUM_LITERAL__NAME, oldName, name));
 	}
 
 	/**
@@ -97,8 +98,8 @@ public abstract class UserDefinedImpl extends TypeImpl implements UserDefined {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TypesPackage.USER_DEFINED__COMMENT:
-				return getComment();
+			case ModulobPackage.ENUM_LITERAL__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -111,8 +112,8 @@ public abstract class UserDefinedImpl extends TypeImpl implements UserDefined {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TypesPackage.USER_DEFINED__COMMENT:
-				setComment((String)newValue);
+			case ModulobPackage.ENUM_LITERAL__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,8 +127,8 @@ public abstract class UserDefinedImpl extends TypeImpl implements UserDefined {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TypesPackage.USER_DEFINED__COMMENT:
-				setComment(COMMENT_EDEFAULT);
+			case ModulobPackage.ENUM_LITERAL__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -141,8 +142,8 @@ public abstract class UserDefinedImpl extends TypeImpl implements UserDefined {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TypesPackage.USER_DEFINED__COMMENT:
-				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
+			case ModulobPackage.ENUM_LITERAL__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -157,10 +158,10 @@ public abstract class UserDefinedImpl extends TypeImpl implements UserDefined {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (comment: ");
-		result.append(comment);
+		result.append(" (name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}
 
-} //UserDefinedImpl
+} //EnumLiteralImpl

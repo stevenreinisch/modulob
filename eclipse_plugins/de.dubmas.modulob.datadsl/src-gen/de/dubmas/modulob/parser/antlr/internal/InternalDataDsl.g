@@ -152,6 +152,24 @@ ruleEntityModel returns [EObject current=null]
 	    }
 
 )
+)*(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getEntityModelAccess().getEnumsEnumParserRuleCall_6_0()); 
+	    }
+		lv_enums_6_0=ruleEnum		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getEntityModelRule());
+	        }
+       		add(
+       			$current, 
+       			"enums",
+        		lv_enums_6_0, 
+        		"Enum");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
 )*)
 ;
 
@@ -506,6 +524,136 @@ ruleFeature returns [EObject current=null]
     {
     	newLeafNode(otherlv_9, grammarAccess.getFeatureAccess().getSemicolonKeyword_7());
     }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleEnum
+entryRuleEnum returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getEnumRule()); }
+	 iv_ruleEnum=ruleEnum 
+	 { $current=$iv_ruleEnum.current; } 
+	 EOF 
+;
+
+// Rule Enum
+ruleEnum returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='enum' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getEnumAccess().getEnumKeyword_0());
+    }
+(
+(
+		lv_name_1_0=RULE_ID
+		{
+			newLeafNode(lv_name_1_0, grammarAccess.getEnumAccess().getNameIDTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getEnumRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_1_0, 
+        		"ID");
+	    }
+
+)
+)	otherlv_2='{' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getEnumAccess().getLeftCurlyBracketKeyword_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getEnumAccess().getLiteralsEnumLiteralParserRuleCall_3_0()); 
+	    }
+		lv_literals_3_0=ruleEnumLiteral		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getEnumRule());
+	        }
+       		add(
+       			$current, 
+       			"literals",
+        		lv_literals_3_0, 
+        		"EnumLiteral");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_4=',' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getEnumAccess().getCommaKeyword_4_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getEnumAccess().getLiteralsEnumLiteralParserRuleCall_4_1_0()); 
+	    }
+		lv_literals_5_0=ruleEnumLiteral		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getEnumRule());
+	        }
+       		add(
+       			$current, 
+       			"literals",
+        		lv_literals_5_0, 
+        		"EnumLiteral");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*	otherlv_6='}' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getEnumAccess().getRightCurlyBracketKeyword_5());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleEnumLiteral
+entryRuleEnumLiteral returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getEnumLiteralRule()); }
+	 iv_ruleEnumLiteral=ruleEnumLiteral 
+	 { $current=$iv_ruleEnumLiteral.current; } 
+	 EOF 
+;
+
+// Rule EnumLiteral
+ruleEnumLiteral returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+(
+		lv_name_0_0=RULE_ID
+		{
+			newLeafNode(lv_name_0_0, grammarAccess.getEnumLiteralAccess().getNameIDTerminalRuleCall_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getEnumLiteralRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_0_0, 
+        		"ID");
+	    }
+
+)
 )
 ;
 

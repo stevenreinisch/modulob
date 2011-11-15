@@ -24,7 +24,6 @@ package de.dubmas.modulob.types;
  * @generated
  */
 public interface UserDefined extends Type {
-
 	/**
 	 * Returns the value of the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -50,4 +49,5 @@ public interface UserDefined extends Type {
 	 * @generated
 	 */
 	void setComment(String value);
+
 } // UserDefined

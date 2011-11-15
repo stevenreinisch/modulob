@@ -10,30 +10,42 @@ persistentEntities(List[Entity] entities):
 	entities.select(e|e.isPersistent())
 ;
 
-coreDataPrimitiveType(String ptName):
-	switch(ptName){
-		case "String"   : "NSStringAttributeType"
-		case "Integer16": "NSInteger16AttributeType"
-		case "Integer32": "NSInteger32AttributeType"
-		case "Integer64": "NSInteger64AttributeType"
-		case "Decimal"  : "NSDecimalAttributeType"
-		case "Bool"     : "NSBooleanAttributeType"
-		case "Timestamp": "NSDateAttributeType"
-		default         : "NSUndefinedAttributeType"
-	}
+coreDataPrimitiveType(String ptName, types::Type type):
+	type.metaType.name == Enum.name
+	?
+	"NSInteger16AttributeType"
+	:
+	(
+		switch(ptName){
+			case "String"   : "NSStringAttributeType"
+			case "Integer16": "NSInteger16AttributeType"
+			case "Integer32": "NSInteger32AttributeType"
+			case "Integer64": "NSInteger64AttributeType"
+			case "Decimal"  : "NSDecimalAttributeType"
+			case "Bool"     : "NSBooleanAttributeType"
+			case "Timestamp": "NSDateAttributeType"
+			default         : "NSUndefinedAttributeType"
+		}
+	)
 ;	
 
-xcDataPrimitiveType(String ptName):
-	switch(ptName){
-		case "String"   : "String"
-		case "Integer16": "Integer 16"
-		case "Integer32": "Integer 32"
-		case "Integer64": "Integer 64"
-		case "Decimal"  : "Decimal"
-		case "Bool"     : "Boolean"
-		case "Timestamp": "Date"
-		default         : "Undefined"
-	}
+xcDataPrimitiveType(String ptName, types::Type type):
+	type.metaType.name == Enum.name
+	?
+	"Integer 16"
+	:
+	(
+		switch(ptName){
+			case "String"   : "String"
+			case "Integer16": "Integer 16"
+			case "Integer32": "Integer 32"
+			case "Integer64": "Integer 64"
+			case "Decimal"  : "Decimal"
+			case "Bool"     : "Boolean"
+			case "Timestamp": "Date"
+			default         : "Undefined"
+		}
+	)
 ;
 
 coreDataTypeName(types::Type type):

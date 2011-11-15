@@ -6,6 +6,22 @@
  */
 package de.dubmas.modulob.util;
 
+import de.dubmas.modulob.Advice;
+import de.dubmas.modulob.Annotation;
+import de.dubmas.modulob.Delegate;
+import de.dubmas.modulob.Entity;
+import de.dubmas.modulob.EnumLiteral;
+import de.dubmas.modulob.Feature;
+import de.dubmas.modulob.FloatValue;
+import de.dubmas.modulob.IntegerValue;
+import de.dubmas.modulob.Interface;
+import de.dubmas.modulob.Method;
+import de.dubmas.modulob.ModulobPackage;
+import de.dubmas.modulob.Notification;
+import de.dubmas.modulob.Parameter;
+import de.dubmas.modulob.StringValue;
+import de.dubmas.modulob.ValueObject;
+import de.dubmas.modulob.types.Primitive;
 import de.dubmas.modulob.*;
 
 import de.dubmas.modulob.types.Type;
@@ -159,6 +175,20 @@ public class ModulobSwitch<T> extends Switch<T> {
 			case ModulobPackage.ADVICE: {
 				Advice advice = (Advice)theEObject;
 				T result = caseAdvice(advice);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ModulobPackage.ENUM: {
+				de.dubmas.modulob.Enum enum_ = (de.dubmas.modulob.Enum)theEObject;
+				T result = caseEnum(enum_);
+				if (result == null) result = casePrimitive(enum_);
+				if (result == null) result = caseType(enum_);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ModulobPackage.ENUM_LITERAL: {
+				EnumLiteral enumLiteral = (EnumLiteral)theEObject;
+				T result = caseEnumLiteral(enumLiteral);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -362,6 +392,36 @@ public class ModulobSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Enum</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Enum</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEnum(de.dubmas.modulob.Enum object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Enum Literal</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Enum Literal</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEnumLiteral(EnumLiteral object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -388,6 +448,21 @@ public class ModulobSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseUserDefined(UserDefined object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Primitive</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Primitive</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePrimitive(Primitive object) {
 		return null;
 	}
 

@@ -270,6 +270,15 @@ public class SystemPackageImpl extends EPackageImpl implements SystemPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEntityModel_Module() {
+		return (EReference)entityModelEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getEntityModel_Entities() {
 		return (EReference)entityModelEClass.getEStructuralFeatures().get(1);
 	}
@@ -279,8 +288,8 @@ public class SystemPackageImpl extends EPackageImpl implements SystemPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntityModel_Module() {
-		return (EReference)entityModelEClass.getEStructuralFeatures().get(0);
+	public EReference getEntityModel_Enums() {
+		return (EReference)entityModelEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -436,6 +445,7 @@ public class SystemPackageImpl extends EPackageImpl implements SystemPackage {
 		entityModelEClass = createEClass(ENTITY_MODEL);
 		createEReference(entityModelEClass, ENTITY_MODEL__MODULE);
 		createEReference(entityModelEClass, ENTITY_MODEL__ENTITIES);
+		createEReference(entityModelEClass, ENTITY_MODEL__ENUMS);
 
 		notificationModelEClass = createEClass(NOTIFICATION_MODEL);
 		createEReference(notificationModelEClass, NOTIFICATION_MODEL__NOTIFICATIONS);
@@ -513,6 +523,7 @@ public class SystemPackageImpl extends EPackageImpl implements SystemPackage {
 		initEClass(entityModelEClass, EntityModel.class, "EntityModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEntityModel_Module(), this.getModule(), null, "module", null, 1, 1, EntityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityModel_Entities(), theModulobPackage.getEntity(), null, "entities", null, 0, -1, EntityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntityModel_Enums(), theModulobPackage.getEnum(), null, "enums", null, 0, -1, EntityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(notificationModelEClass, NotificationModel.class, "NotificationModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getNotificationModel_Notifications(), theModulobPackage.getNotification(), null, "notifications", null, 0, -1, NotificationModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
