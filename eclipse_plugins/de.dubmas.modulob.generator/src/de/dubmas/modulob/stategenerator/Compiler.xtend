@@ -79,6 +79,16 @@ class Compiler implements IGenerator{
 			  	
 			  «ENDFOR»
 			  
+			  /*
+			   * Build the transition index.
+			   */
+			   
+			   self.transitionIndex = [NSArray arrayWithObjects:
+                                «FOR t: sm.transitions SEPARATOR ','»
+                                	«t.name()»
+                                «ENDFOR»
+								,nil];
+			  
 				/*
 				 * Wire states and transitions.
 				 */
@@ -137,7 +147,11 @@ class Compiler implements IGenerator{
 	MOBState *«s.name()» = [[MOBState new] autorelease];
 	«s.name()».name = @"«s.name()»";
 	«s.name()».ID = «s.enumLiteral»;
-	«IF s.duration > new Double(0)»«s.name()».duration = «s.duration»;«ENDIF»
+	«IF s.duration > new Double(0)»
+		«s.name()».duration = «s.duration»;
+	«ELSEIF (s.duration == new Double(0))»
+		«s.name()».duration = MOBIMMEDIATE_STATE_EXIT;
+	«ENDIF»
 	«s.name()».entrySelectorName = @"«s.entrySelectorName»";
 	«s.name()».exitSelectorName = @"«s.exitSelectorName»";
 	'''
