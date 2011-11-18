@@ -13,7 +13,8 @@
 		F93105E8145162D0009ACCBC /* MOBInitialState.m in Sources */ = {isa = PBXBuildFile; fileRef = F93105E6145162D0009ACCBC /* MOBInitialState.m */; };
 		F93105EB145162DA009ACCBC /* MOBFinalState.h in Headers */ = {isa = PBXBuildFile; fileRef = F93105E9145162DA009ACCBC /* MOBFinalState.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F93105EC145162DA009ACCBC /* MOBFinalState.m in Sources */ = {isa = PBXBuildFile; fileRef = F93105EA145162DA009ACCBC /* MOBFinalState.m */; };
-		F9604D4E146D418D0046B49B /* MOBStateMachineConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = F9604D4D146D418D0046B49B /* MOBStateMachineConstants.h */; };
+		F95A258B14764C7D0082C689 /* TestCaseConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = F95A258A14764C7D0082C689 /* TestCaseConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9604D4E146D418D0046B49B /* MOBStateMachineConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = F9604D4D146D418D0046B49B /* MOBStateMachineConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F988A28A14487EA9002EC3AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F988A28914487EA9002EC3AD /* Foundation.framework */; };
 		F988A29014487EA9002EC3AD /* MOBStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = F988A28F14487EA9002EC3AD /* MOBStateMachine.m */; };
 		F988A29814487EA9002EC3AD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F988A29714487EA9002EC3AD /* SenTestingKit.framework */; };
@@ -50,6 +51,7 @@
 		F93105E6145162D0009ACCBC /* MOBInitialState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBInitialState.m; sourceTree = "<group>"; };
 		F93105E9145162DA009ACCBC /* MOBFinalState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBFinalState.h; sourceTree = "<group>"; };
 		F93105EA145162DA009ACCBC /* MOBFinalState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBFinalState.m; sourceTree = "<group>"; };
+		F95A258A14764C7D0082C689 /* TestCaseConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCaseConstants.h; sourceTree = "<group>"; };
 		F9604D4D146D418D0046B49B /* MOBStateMachineConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBStateMachineConstants.h; sourceTree = "<group>"; };
 		F988A28614487EA9002EC3AD /* libMOBStateMachine.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMOBStateMachine.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F988A28914487EA9002EC3AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -181,6 +183,7 @@
 				F988A2B614487F2F002EC3AD /* PasswordEntry.m */,
 				F988A2B714487F2F002EC3AD /* PasswordEntryStateMachine.h */,
 				F988A2B814487F2F002EC3AD /* PasswordEntryStateMachine.m */,
+				F95A258A14764C7D0082C689 /* TestCaseConstants.h */,
 			);
 			path = testCaseDefinitions;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				F93105E7145162D0009ACCBC /* MOBInitialState.h in Headers */,
 				F93105EB145162DA009ACCBC /* MOBFinalState.h in Headers */,
 				F9604D4E146D418D0046B49B /* MOBStateMachineConstants.h in Headers */,
+				F95A258B14764C7D0082C689 /* TestCaseConstants.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

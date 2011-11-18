@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "MOBStateMachineConstants.h"
+
 @interface MOBAbstractState : NSObject
 
 @property (nonatomic, retain) NSString *name;
@@ -22,7 +24,7 @@
  *  case ANOTHERSTATE: // do that;
  * }
  */
-@property (nonatomic, assign) NSInteger ID;
+@property (nonatomic, assign) MOBStateID ID;
 
 /*
  * If a state is entered, entrySelectorName != nil

@@ -10,6 +10,8 @@
 
 #import "PasswordEntryStateMachine.h"
 
+#import "TestCaseConstants.h"
+
 @implementation PasswordEntry
 
 @synthesize pin, correctUserPin, stateMachine, pinCorrect, lockAfterFailedAuthentication;
@@ -62,9 +64,15 @@
     
     if ([correctUserPin isEqualToString:enteredPin]) {
         pinCorrect = YES;
+
+        #if DEMONSTARTE_IMMEDIATE_STATE_EXIT==0 && DEMONSTARTE_EXTERNAL_TRANSITION_SWITCH==1
+        [stateMachine switchTransitionWithID:PasswordEntryTransition_COMPLETELYFILLED_USERAUTHENTICATED];
+        #endif
     }
     
-    [stateMachine update];
+    #if DEMONSTARTE_IMMEDIATE_STATE_EXIT==0 && DEMONSTARTE_EXTERNAL_TRANSITION_SWITCH==1
+    [stateMachine switchTransitionWithID:PasswordEntryTransition_COMPLETELYFILLED_USERNOTAUTHENTICATED];
+    #endif
 }
 
 - (void) enter_userNotAuthenticated {

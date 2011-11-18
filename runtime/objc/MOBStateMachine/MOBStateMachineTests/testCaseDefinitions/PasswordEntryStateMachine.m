@@ -12,6 +12,9 @@
 #import "MOBInitialState.h"
 #import "MOBFinalState.h"
 #import "MOBTransition.h"
+#import "MOBStateMachineConstants.h"
+
+#import "TestCaseConstants.h"
 
 @implementation PasswordEntryStateMachine
 
@@ -44,6 +47,11 @@
         MOBState *completelyFilled = [[MOBState new] autorelease];
         completelyFilled.name = @"completelyFilled";
         completelyFilled.ID = PasswordEntryState_COMPLETELYFILLED;
+        
+        #if DEMONSTARTE_IMMEDIATE_STATE_EXIT==1
+        completelyFilled.duration = MOBIMMEDIATE_STATE_EXIT;
+        #endif
+        
         completelyFilled.entrySelectorName = @"enter_completelyFilled";
         completelyFilled.exitSelectorName = @"exit_completelyFilled";
         
@@ -129,6 +137,22 @@
         userauthenticated_to_final.guardSelectorName = @"guard_userauthenticated_to_final";
         userauthenticated_to_final.actionSelectorName = @"action_userauthenticated_to_final";
         
+        /*
+         * Build the transition index.
+         */
+        
+        self.transitionIndex = [NSArray arrayWithObjects:
+                                initial_to_empty,
+                                empty_to_partiallyFilled,
+                                partiallyFilled_to_empty,
+                                partiallyFilled_to_completelyFilled,    
+                                completelyFilled_to_userAuthenticated,
+                                completelyFilled_to_userNotAuthenticated,
+                                userAuthenticated_final,
+                                userauthenticated_to_final,
+                                userNotAuthenticated_to_locked,
+                                locked_to_empty, 
+                                nil];
         
         /*
          * Wire states and transitions.

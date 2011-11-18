@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MOBStateMachineConstants.h"
 
 @class MOBAbstractState;
 
 @interface MOBTransition : NSObject
 
-@property (nonatomic, assign) NSInteger ID;
+@property (nonatomic, assign) MOBTransitionID ID;
 
 @property (nonatomic, retain) MOBAbstractState *sourceState;
 @property (nonatomic, retain) MOBAbstractState *targetState;

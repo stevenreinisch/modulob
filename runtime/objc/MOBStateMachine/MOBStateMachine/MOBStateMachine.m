@@ -29,7 +29,7 @@
 
 @implementation MOBStateMachine
 
-@synthesize delegate, states, transitions, inUpdate, requestedUpdates;
+@synthesize delegate, states, transitions, inUpdate, requestedUpdates, transitionIndex;
 
 #pragma mark -
 
@@ -103,6 +103,33 @@
     }
 }
 
+- (MOBAbstractState*) currentState {
+    if(!currentState){
+        currentState = [[[states filteredSetUsingPredicate:
+                               [NSPredicate predicateWithFormat:@"SELF isKindOfClass: %@", [MOBInitialState class]]] 
+                                allObjects] objectAtIndex:0];
+    }
+    return currentState;
+}
+
+- (BOOL) switchTransitionWithID:(MOBTransitionID) transitionID {
+    MOBTransition *t = [self.transitionIndex objectAtIndex:transitionID];
+    
+    NSAssert(t != nil, @"Could not find transition with ID: %d", transitionID);
+    
+    NSAssert(self.currentState == t.sourceState, 
+             @"Cannot switch transition with ID: %d because state machine's current state is not transition's source state");
+    
+    NSLog(@"forced to switch transition with ID: %d (guard: %@)", transitionID, t.guardSelectorName);
+    
+    BOOL switched = [self switchTransitionInternal:t];
+    
+    return switched;
+}
+
+#pragma mark -
+#pragma mark private
+
 - (void) doUpdate {
     BOOL switched = NO;
     
@@ -115,22 +142,10 @@
         }
     }
     
-    if (switched && transition) {
-        [self enterState:transition.targetState];
-    }
+//    if (switched && transition) {
+//        [self enterState:transition.targetState];
+//    }
 }
-
-- (MOBAbstractState*) currentState {
-    if(!currentState){
-        currentState = [[[states filteredSetUsingPredicate:
-                               [NSPredicate predicateWithFormat:@"SELF isKindOfClass: %@", [MOBInitialState class]]] 
-                                allObjects] objectAtIndex:0];
-    }
-    return currentState;
-}
-
-#pragma mark -
-#pragma mark private
 
 /*
  * 1. execute current state's exit selector
@@ -140,6 +155,7 @@
     NSLog(@"switching transition with guard: %@", transition.guardSelectorName);
     [self executeSelector:[currentState exitSelectorName]];
     [self executeSelector:transition.actionSelectorName];
+    [self enterState:transition.targetState];
     return YES;
 }
 
@@ -156,11 +172,24 @@
             NSLog(@"starting timer for state: %@ (ID: %d) with duration: %f",
                   [newState name], [newState ID], [(id)newState duration]);
             
-            [NSTimer scheduledTimerWithTimeInterval:[(id)newState duration] 
-                                             target:self 
-                                           selector:@selector(currentStateDurationEnded) 
-                                           userInfo:nil 
-                                            repeats:NO];
+            /*
+             * If the duration is 0, we do not need to start a timer but
+             * call the timer's selector immediately.
+             *
+             * This behaviour corresponds to the semantic that a state
+             * must be exited immediately after it has been entered
+             * without the need of a call to [ update] from outside the
+             * state machine.
+             */
+            if ([(id)newState duration] == 0) {
+                [self currentStateDurationEnded];
+            } else {
+                [NSTimer scheduledTimerWithTimeInterval:[(id)newState duration] 
+                                                 target:self 
+                                               selector:@selector(currentStateDurationEnded) 
+                                               userInfo:nil 
+                                                repeats:NO];
+            }
         }
     }
 }
