@@ -118,6 +118,21 @@
  */
 - (void) action_locked_to_empty;
 
+/*
+ * transition locked_to_userauthenticated
+ */
+- (void) action_locked_to_userauthenticated;
+
+/*
+ * transition locked_to_userauthenticated
+ */
+- (void) action_locked_to_userauthenticated;
+
+/*
+ * transition userauthenticated_to_empty
+ */
+- (void) action_userauthenticated_to_empty;
+
 #pragma mark -
 #pragma mark guards
 #pragma mark !! do not call [stateMachine update] in guards. This will trigger infinite loop!!
@@ -130,16 +145,6 @@
  * transition empty_to_partiallyFilled
  */
 - (BOOL) guard_empty_to_partiallyFilled;
-
-/*
- * transition locked_to_empty
- */
-- (BOOL) guard_locked_to_empty;
-
-/*
- * transition userauthenticated_to_final
- */
-- (BOOL) guard_userauthenticated_to_final;
 
 #pragma mark transitions: required guards
 
@@ -179,5 +184,24 @@
  * transition userNotAuthenticated_to_locked
  */
 - (BOOL) guard_userNotAuthenticated_to_locked;
+
+/*
+ * transition locked_to_empty .. no guards for timeoutTransitions
+ */
+
+/*
+ * transition userauthenticated_to_final
+ */
+- (BOOL) guard_userauthenticated_to_final;
+
+/*
+ * transition locked_to_userauthenticated
+ */
+- (BOOL) guard_locked_to_userauthenticated;
+
+/*
+ * transition userauthenticated_to_empty
+ */
+- (BOOL) guard_userauthenticated_to_empty;
 
 @end

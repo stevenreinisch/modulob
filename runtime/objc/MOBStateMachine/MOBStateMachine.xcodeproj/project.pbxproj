@@ -14,6 +14,8 @@
 		F93105EB145162DA009ACCBC /* MOBFinalState.h in Headers */ = {isa = PBXBuildFile; fileRef = F93105E9145162DA009ACCBC /* MOBFinalState.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F93105EC145162DA009ACCBC /* MOBFinalState.m in Sources */ = {isa = PBXBuildFile; fileRef = F93105EA145162DA009ACCBC /* MOBFinalState.m */; };
 		F95A258B14764C7D0082C689 /* TestCaseConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = F95A258A14764C7D0082C689 /* TestCaseConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F95A258F1476979A0082C689 /* MOBTimeoutTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = F95A258D1476979A0082C689 /* MOBTimeoutTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F95A25901476979A0082C689 /* MOBTimeoutTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F95A258E1476979A0082C689 /* MOBTimeoutTransition.m */; };
 		F9604D4E146D418D0046B49B /* MOBStateMachineConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = F9604D4D146D418D0046B49B /* MOBStateMachineConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F988A28A14487EA9002EC3AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F988A28914487EA9002EC3AD /* Foundation.framework */; };
 		F988A29014487EA9002EC3AD /* MOBStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = F988A28F14487EA9002EC3AD /* MOBStateMachine.m */; };
@@ -52,6 +54,8 @@
 		F93105E9145162DA009ACCBC /* MOBFinalState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBFinalState.h; sourceTree = "<group>"; };
 		F93105EA145162DA009ACCBC /* MOBFinalState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBFinalState.m; sourceTree = "<group>"; };
 		F95A258A14764C7D0082C689 /* TestCaseConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCaseConstants.h; sourceTree = "<group>"; };
+		F95A258D1476979A0082C689 /* MOBTimeoutTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBTimeoutTransition.h; sourceTree = "<group>"; };
+		F95A258E1476979A0082C689 /* MOBTimeoutTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBTimeoutTransition.m; sourceTree = "<group>"; };
 		F9604D4D146D418D0046B49B /* MOBStateMachineConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBStateMachineConstants.h; sourceTree = "<group>"; };
 		F988A28614487EA9002EC3AD /* libMOBStateMachine.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMOBStateMachine.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F988A28914487EA9002EC3AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -142,6 +146,7 @@
 				F93105EA145162DA009ACCBC /* MOBFinalState.m */,
 				F988A2BC14487F48002EC3AD /* MOBState.m */,
 				F988A2BE14487F48002EC3AD /* MOBTransition.m */,
+				F95A258E1476979A0082C689 /* MOBTimeoutTransition.m */,
 				F988A28C14487EA9002EC3AD /* Supporting Files */,
 			);
 			path = MOBStateMachine;
@@ -191,6 +196,7 @@
 		F988A2C314487F7F002EC3AD /* PublicHeaders */ = {
 			isa = PBXGroup;
 			children = (
+				F95A258D1476979A0082C689 /* MOBTimeoutTransition.h */,
 				F988A28E14487EA9002EC3AD /* MOBStateMachine.h */,
 				F93105E1145162C2009ACCBC /* MOBAbstractState.h */,
 				F988A2BB14487F48002EC3AD /* MOBState.h */,
@@ -216,6 +222,7 @@
 				F93105EB145162DA009ACCBC /* MOBFinalState.h in Headers */,
 				F9604D4E146D418D0046B49B /* MOBStateMachineConstants.h in Headers */,
 				F95A258B14764C7D0082C689 /* TestCaseConstants.h in Headers */,
+				F95A258F1476979A0082C689 /* MOBTimeoutTransition.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +327,7 @@
 				F93105E4145162C2009ACCBC /* MOBAbstractState.m in Sources */,
 				F93105E8145162D0009ACCBC /* MOBInitialState.m in Sources */,
 				F93105EC145162DA009ACCBC /* MOBFinalState.m in Sources */,
+				F95A25901476979A0082C689 /* MOBTimeoutTransition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

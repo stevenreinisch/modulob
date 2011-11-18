@@ -7,6 +7,7 @@
 //
 
 #import "MOBAbstractState.h"
+#import "MOBTimeoutTransition.h"
 
 @interface MOBState : MOBAbstractState
 
@@ -19,6 +20,11 @@
  * code: you can have a state "WaitingForReply" that is
  * automatically exited if a certain time interval has
  * elapsed.
+ *
+ * If duration < 0, the reference 'timeoutTransition'
+ * must not be nil.
+ * If the time interval specified by duration has elapsed,
+ * the 'timeoutTransition' is switched.
  */
 @property (nonatomic, assign) NSTimeInterval duration;
 
@@ -37,5 +43,10 @@
 
 @property (nonatomic, retain) NSSet *incomingTransitions;
 @property (nonatomic, retain) NSSet *outgoingTransitions;
+
+/*
+ * See comment for property 'duration'.
+ */
+@property (nonatomic, retain) MOBTimeoutTransition *timeoutTransition;
 
 @end

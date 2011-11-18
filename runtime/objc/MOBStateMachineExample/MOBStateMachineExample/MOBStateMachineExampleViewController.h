@@ -29,9 +29,11 @@
 @property (nonatomic, retain) IBOutlet UITextField *pin4;
 @property (nonatomic, retain) IBOutlet UIButton *clearButton;
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (retain, nonatomic) IBOutlet UIButton *unlockButton;
 
 - (IBAction)pinEntered:(id)sender;
 - (IBAction)clearButtonTapped:(id)sender;
+- (IBAction)unlockButtonTapped:(id)sender;
 
 
 @end

@@ -4,6 +4,7 @@ import de.dubmas.modulob.state.FinalNode
 import de.dubmas.modulob.state.InitialNode
 import de.dubmas.modulob.state.Node
 import de.dubmas.modulob.state.State
+import de.dubmas.modulob.state.Transition
 import de.dubmas.modulob.state.TimeoutTransition
 import de.dubmas.modulob.state.StateMachine
 import de.dubmas.modulob.state.StatePackage
@@ -42,5 +43,14 @@ class StateMachineQueries {
 	
 	def outgoingTimeoutTransitions(State s) {
 		s.outgoing.filter(typeof(TimeoutTransition)).toList 
+	}
+	
+	def hasDuplicateOutgoingTransitions(State s) {
+		s.outgoing.exists(t | t.transitionWithSameSourceAndTarget)
+	}
+	
+	def transitionWithSameSourceAndTarget(Transition t) {
+		var sm = t.eContainer as StateMachine
+		sm.transitions.exists(t_ | t_ != t && t_.source == t.source && t_.target == t.target)	
 	}
 }

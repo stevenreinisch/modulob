@@ -13,7 +13,7 @@
  * (see PasswordEntryStateMachine.m definition of
  *  state completelyFilled) 
  */
-#define DEMONSTARTE_IMMEDIATE_STATE_EXIT 0
+#define DEMONSTARTE_IMMEDIATE_STATE_EXIT 1
 
 /*
  * Set this macro to 1 if you want to demonstrate
@@ -21,4 +21,4 @@
  * switched from outside the state machine.
  * (See PasswordEntry.m #enter_completelyFilled)
  */
-#define DEMONSTARTE_EXTERNAL_TRANSITION_SWITCH 1
+#define DEMONSTARTE_EXTERNAL_TRANSITION_SWITCH 0

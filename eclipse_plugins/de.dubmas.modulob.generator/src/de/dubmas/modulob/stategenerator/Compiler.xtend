@@ -8,6 +8,7 @@ import de.dubmas.modulob.state.State
 import de.dubmas.modulob.state.StateMachine
 import de.dubmas.modulob.state.StatePackage
 import de.dubmas.modulob.state.Transition
+import de.dubmas.modulob.state.TimeoutTransition
 import de.dubmas.modulob.util.Indexed
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
@@ -72,11 +73,15 @@ class Compiler implements IGenerator{
 			  * Define transitions.
 			  */
 			  «FOR t: sm.transitions»
-			  	MOBTransition *«t.name()» = [[MOBTransition new] autorelease];
+			  	«t.transitionType» «t.name()» = [[MOBTransition new] autorelease];
 			  	«t.name()».ID = «t.enumLiteral»;
 			  	«t.name()».guardSelectorName = @"«t.guardSelectorName»";
 			  	«t.name()».actionSelectorName = @"«t.actionSelectorName»";
 			  	
+			  	«IF StatePackage::eINSTANCE.timeoutTransition.isInstance(t)»
+			  		«t.source.name()».timeoutTransition = «t.name()»;
+			  		
+			  	«ENDIF»
 			  «ENDFOR»
 			  
 			  /*
@@ -121,6 +126,12 @@ class Compiler implements IGenerator{
 	}
 	@end 
 	'''
+	
+	def dispatch transitionType(Transition t)
+	''' MOBTransition * '''
+	
+	def dispatch transitionType(TimeoutTransition t)
+	''' MOBTimeoutTransition * '''
 	
 	def dispatch stateDef(Node n)
 	''''''
@@ -221,8 +232,11 @@ class Compiler implements IGenerator{
 	«IF sm.deterministicExitStates().size > 0»
 		#pragma mark transitions: guards (optional)
 		//Guards are optional if state has only one outgoing transition.
+		//Guards for timeout transitions are not evaluated and thus neither optional nor required.
 		
-		«FOR t: sm.deterministicExitStates.map(s | s.outgoing).flatten»
+		«FOR t: sm.deterministicExitStates.map(s | s.outgoing).flatten.
+					filter(t | !StatePackage::eINSTANCE.timeoutTransition.isInstance(t))
+		»
 			«t.transitionGuard»
 			
 		«ENDFOR»	
@@ -230,10 +244,13 @@ class Compiler implements IGenerator{
 
 	«IF sm.nonDeterministicExitStates().size > 0»
 		#pragma mark transitions: guards (required)
+		//Guards for timeout transitions are not evaluated and thus neither optional nor required.
 
 		@required
 		
-		«FOR t: sm.nonDeterministicExitStates.map(s | s.outgoing).flatten»
+		«FOR t: sm.nonDeterministicExitStates.map(s | s.outgoing).flatten.
+					filter(t | !StatePackage::eINSTANCE.timeoutTransition.isInstance(t))
+		»
 			«t.transitionGuard»
 			
 		«ENDFOR»

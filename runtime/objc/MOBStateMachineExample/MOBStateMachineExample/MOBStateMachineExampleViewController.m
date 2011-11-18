@@ -51,6 +51,7 @@
 @synthesize pin4;
 @synthesize clearButton;
 @synthesize activityIndicator;
+@synthesize unlockButton;
 @synthesize pin, correctUserPin, pinCorrect, lockAfterFailedAuthentication, stateMachine;
 
 - (void)didReceiveMemoryWarning
@@ -94,6 +95,7 @@
     [self setActivityIndicator:nil];
     [self setStateMachine: nil];
     [self setStateLabel:nil];
+    [self setUnlockButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -115,6 +117,7 @@
     [stateMachine release];
     [pin release];
     [stateLabel release];
+    [unlockButton release];
     [super dealloc];
 }
 
@@ -141,6 +144,16 @@
     [self.pin removeLastObject];
     
     [self.stateMachine update];
+}
+
+- (IBAction)unlockButtonTapped:(id)sender {
+    /*
+     * Pressing the unlock button will switch to empty state
+     * although the timer for the locked state did not
+     * finish yet.
+     *
+     */
+    [self.stateMachine switchTransitionWithID:PasswordEntryTransition_LOCKED_USERAUTHENTICATED];
 }
 
 - (IBAction)pinEntered:(id)sender {
@@ -185,6 +198,7 @@
     [pin1 becomeFirstResponder];
     
     [clearButton setHidden:YES];
+    [unlockButton setHidden:YES];
     
     self.pin        = [[NSMutableArray new] autorelease];
     self.pinCorrect = NO;
@@ -225,8 +239,6 @@
     stateLabel.text = @"user not authenticated";
     
     //we could present the user a dialog here ..
-    
-    [stateMachine update];
 }
 
 - (void) enter_locked {
@@ -238,6 +250,7 @@
     [pin4 setEnabled:NO];
     
     [clearButton setHidden:YES];
+    [unlockButton setHidden:NO];
     
     [activityIndicator setHidden:NO];
     [activityIndicator startAnimating];
@@ -246,6 +259,7 @@
 - (void) exit_locked {
     [activityIndicator stopAnimating];
     [activityIndicator setHidden:YES];
+    [unlockButton setHidden:YES];
 }
 
 #pragma mark guards
@@ -314,6 +328,30 @@
     BOOL result = lockAfterFailedAuthentication;
     
     NSLog(@"evaluated guard_userNotAuthenticated_to_locked with result: %d", result);
+    
+    return result;
+}
+
+- (BOOL) guard_locked_to_userauthenticated {
+    BOOL result = YES;
+    
+    NSLog(@"evaluated guard_locked_to_userauthenticated with result: %d", result);
+    
+    return result;
+}
+
+- (BOOL) guard_userauthenticated_to_final {
+    BOOL result = NO;
+    
+    NSLog(@"evaluated guard_userauthenticated_to_final with result: %d", result);
+    
+    return result;
+}
+
+- (BOOL) guard_userauthenticated_to_empty {
+    BOOL result = YES;
+    
+    NSLog(@"evaluated guard_userauthenticated_to_empty with result: %d", result);
     
     return result;
 }

@@ -13,6 +13,7 @@ import org.eclipse.graphiti.tb.ImageDecorator;
 import de.dubmas.modulob.state.State;
 import de.dubmas.modulob.state.StateMachine;
 import de.dubmas.modulob.state.TimeoutTransition;
+import de.dubmas.modulob.state.Transition;
 import de.dubmas.modulob.util.queries.StateMachineQueries;
 
 public class ToolBehaviourProvider extends DefaultToolBehaviorProvider {
@@ -27,6 +28,7 @@ public class ToolBehaviourProvider extends DefaultToolBehaviorProvider {
     public IDecorator[] getDecorators(PictogramElement pe) {
         IFeatureProvider featureProvider = getFeatureProvider();
         Object bo = featureProvider.getBusinessObjectForPictogramElement(pe);
+        
         if (bo instanceof State) 
         {
         	State state = (State) bo;
@@ -71,6 +73,16 @@ public class ToolBehaviourProvider extends DefaultToolBehaviorProvider {
                     
                     return new IDecorator[] { imageRenderingDecorator };
             }
+            
+            
+			if (queries.hasDuplicateOutgoingTransitions(state)) {
+				 IDecorator imageRenderingDecorator =
+	                        new ImageDecorator(
+	                            IPlatformImageConstants.IMG_ECLIPSE_ERROR);
+	                    imageRenderingDecorator
+	                        .setMessage("Only one transition between two states allowed. Remove the other(s)!");
+	                return new IDecorator[] { imageRenderingDecorator };
+			 }
         } 
         else if(bo instanceof StateMachine)
         {
@@ -87,7 +99,7 @@ public class ToolBehaviourProvider extends DefaultToolBehaviorProvider {
             else if (queries.statesConnectedToInitialNode(stateMachine).size() < 1){
             	IDecorator imageRenderingDecorator =
                         new ImageDecorator(
-                            IPlatformImageConstants.IMG_ECLIPSE_ERROR_TSK);
+                            IPlatformImageConstants.IMG_ECLIPSE_ERROR);
                     imageRenderingDecorator
                         .setMessage("At least one State must be connected to one InitialNode!");
                 return new IDecorator[] { imageRenderingDecorator };
@@ -95,7 +107,7 @@ public class ToolBehaviourProvider extends DefaultToolBehaviorProvider {
             else if (queries.danglingStates(stateMachine).size() > 0){
             	IDecorator imageRenderingDecorator =
                         new ImageDecorator(
-                            IPlatformImageConstants.IMG_ECLIPSE_ERROR_TSK);
+                            IPlatformImageConstants.IMG_ECLIPSE_ERROR);
                     imageRenderingDecorator
                         .setMessage("Every state must have at least one incoming transition!");
                 return new IDecorator[] { imageRenderingDecorator };
@@ -103,12 +115,11 @@ public class ToolBehaviourProvider extends DefaultToolBehaviorProvider {
             else if (queries.finalStates(stateMachine).size() == 0){
             	IDecorator imageRenderingDecorator =
                         new ImageDecorator(
-                            IPlatformImageConstants.IMG_ECLIPSE_ERROR_TSK);
+                            IPlatformImageConstants.IMG_ECLIPSE_ERROR);
                     imageRenderingDecorator
                         .setMessage("State machine must have at least one final node!");
                 return new IDecorator[] { imageRenderingDecorator };
             }
-            
         }
  
         return super.getDecorators(pe);

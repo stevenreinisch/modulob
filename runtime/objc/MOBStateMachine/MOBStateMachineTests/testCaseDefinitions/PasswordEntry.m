@@ -77,8 +77,6 @@
 
 - (void) enter_userNotAuthenticated {
     //we could present the user a dialog here ..
-    
-    [stateMachine update];
 }
 
 #pragma mark guards
@@ -147,6 +145,30 @@
     BOOL result = lockAfterFailedAuthentication;
     
     NSLog(@"evaluated guard_userNotAuthenticated_to_locked with result: %d", result);
+    
+    return result;
+}
+
+- (BOOL) guard_locked_to_userauthenticated {
+    BOOL result = YES;
+    
+    NSLog(@"evaluated guard_locked_to_userauthenticated with result: %d", result);
+    
+    return result;
+}
+
+- (BOOL) guard_userauthenticated_to_final {
+    BOOL result = NO;
+    
+    NSLog(@"evaluated guard_userauthenticated_to_final with result: %d", result);
+    
+    return result;
+}
+
+- (BOOL) guard_userauthenticated_to_empty {
+    BOOL result = NO;
+    
+    NSLog(@"evaluated guard_userauthenticated_to_empty with result: %d", result);
     
     return result;
 }

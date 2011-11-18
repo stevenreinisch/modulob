@@ -14,7 +14,8 @@
 @synthesize duration,
             exitSelectorName,
             incomingTransitions,
-            outgoingTransitions;
+            outgoingTransitions,
+            timeoutTransition;
 
 - (id)init
 {
@@ -30,6 +31,7 @@
     self.exitSelectorName    = nil;
     self.incomingTransitions = nil;
     self.outgoingTransitions = nil;
+    self.timeoutTransition   = nil;
     
     [super dealloc];
 }

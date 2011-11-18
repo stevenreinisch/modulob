@@ -13,6 +13,7 @@
 #import "MOBFinalState.h"
 #import "MOBTransition.h"
 #import "MOBStateMachineConstants.h"
+#import "MOBTimeoutTransition.h"
 
 #import "TestCaseConstants.h"
 
@@ -58,12 +59,14 @@
         MOBState *userAuthenticated = [[MOBState new] autorelease];
         userAuthenticated.name = @"userAuthenticated";
         userAuthenticated.ID = PasswordEntryState_USERAUTHENTICATED;
+        userAuthenticated.duration = MOBIMMEDIATE_STATE_EXIT;
         userAuthenticated.entrySelectorName = @"enter_userAuthenticated";
         userAuthenticated.exitSelectorName = @"exit_userAuthenticated";
         
         MOBState *userNotAuthenticated = [[MOBState new] autorelease];
         userNotAuthenticated.name = @"userNotAuthenticated";
         userNotAuthenticated.ID = PasswordEntryState_USERNOTAUTHENTICATED;
+        userNotAuthenticated.duration = MOBIMMEDIATE_STATE_EXIT;
         userNotAuthenticated.entrySelectorName = @"enter_userNotAuthenticated";
         userNotAuthenticated.exitSelectorName = @"exit_userNotAuthenticated";
         
@@ -127,15 +130,27 @@
         userNotAuthenticated_to_locked.guardSelectorName = @"guard_userNotAuthenticated_to_locked";
         userNotAuthenticated_to_locked.actionSelectorName = @"action_userNotAuthenticated_to_locked";
         
-        MOBTransition * locked_to_empty = [[MOBTransition new] autorelease];
+        MOBTimeoutTransition * locked_to_empty = [[MOBTimeoutTransition new] autorelease];
         locked_to_empty.ID = PasswordEntryTransition_LOCKED_EMPTY;
         locked_to_empty.guardSelectorName = @"guard_locked_to_empty";
         locked_to_empty.actionSelectorName = @"action_locked_to_empty";
+        
+        locked.timeoutTransition = locked_to_empty;
+        
+        MOBTransition * locked_to_userauthenticated = [[MOBTransition new] autorelease];
+        locked_to_userauthenticated.ID = PasswordEntryTransition_LOCKED_USERAUTHENTICATED;
+        locked_to_userauthenticated.guardSelectorName = @"guard_locked_to_userauthenticated";
+        locked_to_userauthenticated.actionSelectorName = @"action_locked_to_userauthenticated";
         
         MOBTransition * userauthenticated_to_final = [[MOBTransition new] autorelease];
         userauthenticated_to_final.ID = PasswordEntryTransition_USERAUTHENTICATED_FINAL;
         userauthenticated_to_final.guardSelectorName = @"guard_userauthenticated_to_final";
         userauthenticated_to_final.actionSelectorName = @"action_userauthenticated_to_final";
+        
+        MOBTransition *userauthenticated_to_empty = [[MOBTransition new] autorelease];
+        userauthenticated_to_empty.ID = PasswordEntryTransition_USERAUTHENTICATED_EMPTY;
+        userauthenticated_to_empty.guardSelectorName = @"guard_userauthenticated_to_empty";
+        userauthenticated_to_empty.actionSelectorName = @"action_userauthenticated_to_empty";
         
         /*
          * Build the transition index.
@@ -151,7 +166,9 @@
                                 userAuthenticated_final,
                                 userauthenticated_to_final,
                                 userNotAuthenticated_to_locked,
-                                locked_to_empty, 
+                                locked_to_empty,
+                                locked_to_userauthenticated,
+                                userauthenticated_to_empty,
                                 nil];
         
         /*
@@ -162,7 +179,8 @@
         initial.outgoingTransitions = [NSSet setWithObjects:initial_to_empty, 
                                                             nil];
         
-        empty.incomingTransitions = [NSSet setWithObjects:initial_to_empty, 
+        empty.incomingTransitions = [NSSet setWithObjects:initial_to_empty,
+                                                          userauthenticated_to_empty,
                                                           nil];
         empty.outgoingTransitions = [NSSet setWithObjects:empty_to_partiallyFilled, 
                                                           nil];
@@ -180,10 +198,12 @@
                                                                      completelyFilled_to_userNotAuthenticated,
                                                                      nil];
         
-        userAuthenticated.incomingTransitions = [NSSet setWithObjects:completelyFilled_to_userAuthenticated, 
+        userAuthenticated.incomingTransitions = [NSSet setWithObjects:completelyFilled_to_userAuthenticated,
+                                                                      locked_to_userauthenticated,
                                                                       nil];
         
         userAuthenticated.outgoingTransitions = [NSSet setWithObjects:userauthenticated_to_final, 
+                                                                      userauthenticated_to_empty,
                                                                       nil];
         
         userNotAuthenticated.incomingTransitions = [NSSet setWithObjects:completelyFilled_to_userNotAuthenticated, 
@@ -195,6 +215,7 @@
         locked.incomingTransitions = [NSSet setWithObjects:userNotAuthenticated_to_locked, 
                                                            nil];
         locked.outgoingTransitions = [NSSet setWithObjects:locked_to_empty,
+                                                           locked_to_userauthenticated,
                                                            nil];
         
         //transitions -> states
@@ -231,6 +252,12 @@
         locked_to_empty.sourceState = locked;
         locked_to_empty.targetState = empty;
         
+        locked_to_userauthenticated.sourceState = locked;
+        locked_to_userauthenticated.targetState = userAuthenticated;
+        
+        userauthenticated_to_empty.sourceState = userAuthenticated;
+        userauthenticated_to_empty.targetState = empty;
+        
         /*
          * Add states and transitions to this state machine instance.
          */
@@ -254,6 +281,8 @@
         [self.transitions addObject:userNotAuthenticated_to_empty];
         [self.transitions addObject:userNotAuthenticated_to_locked];
         [self.transitions addObject:locked_to_empty];
+        [self.transitions addObject:locked_to_userauthenticated];
+        [self.transitions addObject:userauthenticated_to_empty];
         
     }
     

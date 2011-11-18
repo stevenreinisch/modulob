@@ -29,7 +29,9 @@ enum {
     PasswordEntryTransition_USERAUTHENTICATED_FINAL,
     PasswordEntryTransition_USERNOTAUTHENTICATED_EMPTY,
     PasswordEntryTransition_USERNOTAUTHENTICATED_LOCKED,
-    PasswordEntryTransition_LOCKED_EMPTY
+    PasswordEntryTransition_LOCKED_EMPTY,
+    PasswordEntryTransition_LOCKED_USERAUTHENTICATED,
+    PasswordEntryTransition_USERAUTHENTICATED_EMPTY
 };
 
 @interface PasswordEntryStateMachine : MOBStateMachine
