@@ -89,6 +89,15 @@ public interface StateFactory extends EFactory {
 	Condition createCondition();
 
 	/**
+	 * Returns a new object of class '<em>Timeout Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Timeout Transition</em>'.
+	 * @generated
+	 */
+	TimeoutTransition createTimeoutTransition();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

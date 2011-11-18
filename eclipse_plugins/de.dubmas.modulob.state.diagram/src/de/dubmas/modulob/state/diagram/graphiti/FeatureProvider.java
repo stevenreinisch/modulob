@@ -25,15 +25,18 @@ import de.dubmas.modulob.state.FinalNode;
 import de.dubmas.modulob.state.InitialNode;
 import de.dubmas.modulob.state.State;
 import de.dubmas.modulob.state.StateMachine;
+import de.dubmas.modulob.state.TimeoutTransition;
 import de.dubmas.modulob.state.Transition;
 import de.dubmas.modulob.state.diagram.graphiti.add.AddFinalNodeFeature;
 import de.dubmas.modulob.state.diagram.graphiti.add.AddInitialNodeFeature;
 import de.dubmas.modulob.state.diagram.graphiti.add.AddStateFeature;
 import de.dubmas.modulob.state.diagram.graphiti.add.AddStateMachineFeature;
+import de.dubmas.modulob.state.diagram.graphiti.add.AddTimeoutTransitionFeature;
 import de.dubmas.modulob.state.diagram.graphiti.add.AddTransitionFeature;
 import de.dubmas.modulob.state.diagram.graphiti.create.CreateFinalNodeFeature;
 import de.dubmas.modulob.state.diagram.graphiti.create.CreateInitialNodeFeature;
 import de.dubmas.modulob.state.diagram.graphiti.create.CreateStateFeature;
+import de.dubmas.modulob.state.diagram.graphiti.create.CreateTimeoutTransitionFeature;
 import de.dubmas.modulob.state.diagram.graphiti.create.CreateTransitionFeature;
 import de.dubmas.modulob.state.diagram.graphiti.delete.StateMachineDeleteFeature;
 import de.dubmas.modulob.state.diagram.graphiti.directedit.DirectEditState;
@@ -64,7 +67,9 @@ public class FeatureProvider extends DefaultFeatureProvider {
     @Override
     public ICreateConnectionFeature[] getCreateConnectionFeatures() {
         return new ICreateConnectionFeature[] {
-            new CreateTransitionFeature(this) };
+            new CreateTransitionFeature(this),
+            new CreateTimeoutTransitionFeature(this)
+        };
     }
     
     @Override
@@ -81,6 +86,8 @@ public class FeatureProvider extends DefaultFeatureProvider {
             return new AddInitialNodeFeature(this);
         } else if (context.getNewObject() instanceof State) {
             return new AddStateFeature(this);
+        } else if (context.getNewObject() instanceof TimeoutTransition) {
+            return new AddTimeoutTransitionFeature(this);
         } else if (context.getNewObject() instanceof Transition) {
             return new AddTransitionFeature(this);
         } else if (context.getNewObject() instanceof StateMachine) {

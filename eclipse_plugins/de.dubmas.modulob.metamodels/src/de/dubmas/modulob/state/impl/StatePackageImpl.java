@@ -15,6 +15,7 @@ import de.dubmas.modulob.state.State;
 import de.dubmas.modulob.state.StateFactory;
 import de.dubmas.modulob.state.StateMachine;
 import de.dubmas.modulob.state.StatePackage;
+import de.dubmas.modulob.state.TimeoutTransition;
 import de.dubmas.modulob.state.Transition;
 
 import de.dubmas.modulob.system.SystemPackage;
@@ -87,6 +88,13 @@ public class StatePackageImpl extends EPackageImpl implements StatePackage {
 	 * @generated
 	 */
 	private EClass conditionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass timeoutTransitionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -346,6 +354,15 @@ public class StatePackageImpl extends EPackageImpl implements StatePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getTimeoutTransition() {
+		return timeoutTransitionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public StateFactory getStateFactory() {
 		return (StateFactory)getEFactoryInstance();
 	}
@@ -397,6 +414,8 @@ public class StatePackageImpl extends EPackageImpl implements StatePackage {
 
 		conditionEClass = createEClass(CONDITION);
 		createEAttribute(conditionEClass, CONDITION__EXPRESSION);
+
+		timeoutTransitionEClass = createEClass(TIMEOUT_TRANSITION);
 	}
 
 	/**
@@ -434,6 +453,7 @@ public class StatePackageImpl extends EPackageImpl implements StatePackage {
 		finalNodeEClass.getESuperTypes().add(this.getNode());
 		conditionalNodeEClass.getESuperTypes().add(this.getNode());
 		stateEClass.getESuperTypes().add(this.getNode());
+		timeoutTransitionEClass.getESuperTypes().add(this.getTransition());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(nodeEClass, Node.class, "Node", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -464,6 +484,8 @@ public class StatePackageImpl extends EPackageImpl implements StatePackage {
 
 		initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCondition_Expression(), ecorePackage.getEString(), "expression", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(timeoutTransitionEClass, TimeoutTransition.class, "TimeoutTransition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

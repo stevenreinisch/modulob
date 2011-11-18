@@ -4,6 +4,7 @@ import de.dubmas.modulob.state.FinalNode
 import de.dubmas.modulob.state.InitialNode
 import de.dubmas.modulob.state.Node
 import de.dubmas.modulob.state.State
+import de.dubmas.modulob.state.TimeoutTransition
 import de.dubmas.modulob.state.StateMachine
 import de.dubmas.modulob.state.StatePackage
 
@@ -37,5 +38,9 @@ class StateMachineQueries {
 	
 	def transition(StateMachine sm, Node source, Node target){
 		sm.transitions.filter(t | t.source == source && t.target == target).head
+	}
+	
+	def outgoingTimeoutTransitions(State s) {
+		s.outgoing.filter(typeof(TimeoutTransition)).toList 
 	}
 }

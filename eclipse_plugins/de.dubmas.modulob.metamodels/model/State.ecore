@@ -36,4 +36,5 @@
   <eClassifiers xsi:type="ecore:EClass" name="Condition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="expression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeoutTransition" eSuperTypes="#//Transition"/>
 </ecore:EPackage>

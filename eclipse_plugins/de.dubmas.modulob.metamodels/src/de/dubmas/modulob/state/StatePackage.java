@@ -402,6 +402,53 @@ public interface StatePackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link de.dubmas.modulob.state.impl.TimeoutTransitionImpl <em>Timeout Transition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dubmas.modulob.state.impl.TimeoutTransitionImpl
+	 * @see de.dubmas.modulob.state.impl.StatePackageImpl#getTimeoutTransition()
+	 * @generated
+	 */
+	int TIMEOUT_TRANSITION = 8;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMEOUT_TRANSITION__SOURCE = TRANSITION__SOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMEOUT_TRANSITION__TARGET = TRANSITION__TARGET;
+
+	/**
+	 * The feature id for the '<em><b>Guard</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMEOUT_TRANSITION__GUARD = TRANSITION__GUARD;
+
+	/**
+	 * The number of structural features of the '<em>Timeout Transition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMEOUT_TRANSITION_FEATURE_COUNT = TRANSITION_FEATURE_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link de.dubmas.modulob.state.Node <em>Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -625,6 +672,16 @@ public interface StatePackage extends EPackage {
 	EAttribute getCondition_Expression();
 
 	/**
+	 * Returns the meta object for class '{@link de.dubmas.modulob.state.TimeoutTransition <em>Timeout Transition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Timeout Transition</em>'.
+	 * @see de.dubmas.modulob.state.TimeoutTransition
+	 * @generated
+	 */
+	EClass getTimeoutTransition();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -829,6 +886,16 @@ public interface StatePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONDITION__EXPRESSION = eINSTANCE.getCondition_Expression();
+
+		/**
+		 * The meta object literal for the '{@link de.dubmas.modulob.state.impl.TimeoutTransitionImpl <em>Timeout Transition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dubmas.modulob.state.impl.TimeoutTransitionImpl
+		 * @see de.dubmas.modulob.state.impl.StatePackageImpl#getTimeoutTransition()
+		 * @generated
+		 */
+		EClass TIMEOUT_TRANSITION = eINSTANCE.getTimeoutTransition();
 
 	}
 

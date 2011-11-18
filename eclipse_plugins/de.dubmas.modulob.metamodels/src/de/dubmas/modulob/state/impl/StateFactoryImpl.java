@@ -67,6 +67,7 @@ public class StateFactoryImpl extends EFactoryImpl implements StateFactory {
 			case StatePackage.STATE: return createState();
 			case StatePackage.STATE_MACHINE: return createStateMachine();
 			case StatePackage.CONDITION: return createCondition();
+			case StatePackage.TIMEOUT_TRANSITION: return createTimeoutTransition();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -140,6 +141,16 @@ public class StateFactoryImpl extends EFactoryImpl implements StateFactory {
 	public Condition createCondition() {
 		ConditionImpl condition = new ConditionImpl();
 		return condition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TimeoutTransition createTimeoutTransition() {
+		TimeoutTransitionImpl timeoutTransition = new TimeoutTransitionImpl();
+		return timeoutTransition;
 	}
 
 	/**
