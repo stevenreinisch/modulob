@@ -12,7 +12,6 @@ public class DataDslTransientValueService extends DefaultTransientValueService {
 	@Override
 	public boolean isTransient(EObject owner, EStructuralFeature feature, int index) {
 		if (owner instanceof Annotation && ModulobPackage.ANNOTATION__VALUE == feature.getFeatureID()) {
-			//return ((Annotation) owner).getValue() != null;
 			return false;
 		}
 		return super.isTransient(owner, feature, index);

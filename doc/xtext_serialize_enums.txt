@@ -1,0 +1,156 @@
+For the Xtext based modelling tool chain I am currently working on I needed to manipulate an Xtext model programmatically and serialize it back to disk.
+I did encounter some problems while serializing enums and want to share my experience in this post.
+
+Here is a snippet of the grammar I am using for the well known use case of entity modelling:
+
+EntityModel:
+    (entities += Entity)*
+;
+
+Entity:
+    (annotations+=Annotation)*
+    'entity' name=ID '{' '}'
+;
+
+Annotation:
+    '@' option=ConfigOption (':' value=ConfigValue)?
+;   
+
+enum ConfigOption:
+    persistency
+;   
+   
+enum ConfigValue:
+    CoreData | FMDB
+;
+
+So, entities can be annotated to determine with which technology they will be stored persistently.
+
+At first glance, serialization does not seem to be a hassle. Having an IResourceSetProvider, I can get the model from its XtextResource:
+
+@Inject
+private IResourceSetProvider provider;
+
+private EntityModel loadEntityModelFromFile(IFile file) {
+       
+    ResourceSet xrs   = provider.get(file.getProject());
+    URI uri           = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
+    Resource resource = xrs.getResource(uri, true);
+    EntityModel em    = (EntityModel)resource.getContents().get(0);
+   
+    return em;
+}
+
+Now I can programmatically change the model and then serialize it back to disk by saving it in a XtextResource:
+
+private void save(EntityModel em) {
+   
+    ResourceSet xrs  = provider.get(getProject());
+    XtextResource xr =
+        (XtextResource) xrs.getResource
+                (URI.createPlatformResourceURI(getModelPath(), true) , true);
+   
+    xr.getContents().set(0, em);
+               
+    Map<Object, Object> options = new HashMap<Object, Object>();
+    SaveOptions.defaultOptions().addTo(options);
+    xr.save(options);
+}
+
+Serializing this model:
+
+@persistency:CoreData
+entity Foo {}
+
+I get:
+
+@persistencyentity Foo {}
+
+The ConfigOption is missing! Hmmm, why? Xtext somehow assumes the ConfigOption to be transient (not serializable).
+
+The Xtext documentation says "The default transient value service considers a model element to be transient if it is unset or equals its default value." and
+"By default, EMF returns false for eIsSet(..) if the value equals the default value."
+
+Looking at the generated java code for the ecore meta model, the 'CoreData' literal is defined as the default:
+
+/*
+ * @generated
+ */
+public class AnnotationImpl extends EObjectImpl implements Annotation {
+    //...   
+   
+    protected static final ConfigValue VALUE_EDEFAULT = ConfigValue.CORE_DATA;
+    protected ConfigValue value                       = VALUE_EDEFAULT;
+   
+    //...
+}
+
+In order to tell Xtext which model elements can be considered as (non) transient, an instance of ITransientValueService has to be specified in your
+DSL's guice runtime module. This seems to be an easy task: Inherit from DefaultTransientValueService and overwrite isTransient(…) to yield the correct
+semantics:
+
+public class DataDslTransientValueService extends DefaultTransientValueService {
+   
+    @Override
+    public boolean isTransient(EObject owner, EStructuralFeature feature, int index) {
+        if (owner instanceof Annotation && DataDslPackage.ANNOTATION__VALUE == feature.getFeatureID()) {
+            return false;
+        }
+        return super.isTransient(owner, feature, index);
+    }
+}
+
+… and hook it into the guice module:
+
+public Class <? extends ITransientValueService> bindITransientValueService() {
+    return DataDslTransientValueService.class;
+}
+
+Damn! Still the same errorneous output:
+
+@persistencyentity Foo {}
+
+A little bit of code archeology and debugging reveals that Xtext has two distinct hierarchies of the ITransientValueService interface.
+One in the package org.eclipse.xtext.parsetree.reconstr and the other in the package org.eclipse.xtext.serializer.sequencer.
+
+My DataDslTransientValueService implemented org.eclipse.xtext.parsetree.reconstr.ITransientValueService. But this does not seem to be
+sufficient. Thus, I also implemented org.eclipse.xtext.serializer.sequencer.ITransientValueService:
+
+ 
+
+@SuppressWarnings("restriction")
+public class SequencerTransientValueService extends TransientValueService {
+   
+    public ValueTransient isValueTransient(EObject semanticObject, EStructuralFeature feature) {
+        if (semanticObject instanceof Annotation && DataDslPackage.ANNOTATION__VALUE == feature.getFeatureID()) {
+            return ValueTransient.NO;
+        }
+       
+        return super.isValueTransient(semanticObject, feature);
+    }
+}
+
+My DSL's guice runtime module contains these two bindings for ITransientValueService:
+
+public Class <? extends org.eclipse.xtext.parsetree.reconstr.ITransientValueService> bindITransientValueService() {
+    return DataDslTransientValueService.class;
+}
+   
+public Class<? extends org.eclipse.xtext.serializer.sequencer.ITransientValueService> bindITransientValueService2() {
+    return SequencerTransientValueService.class;
+}
+
+And finally the serialization yields the correct result!
+
+ 
+
+As you might have noticed I annotated the SequencerTransientValueService with @SuppressWarnings("restriction"). The class org.eclipse.xtext.serializer.sequencer.TransientValueService seems not be intended for public use. But obviously it is required to get the serialization to work correctly.
+
+ 
+
+At the time of writing this post, I also realized that my grammar's enum ConfigOption only has one literal that is defined as default and should thus not be serialized by default. But in my implementations of the two ITransientValueService interfaces I only specified ConfigValue to be non-transient. However, ConfigOption is serialized without adding the corresponding semantics to the implementations of the ITransientValueService. Maybe this is due to the Annotation's option attribute not being optional in the grammar as the value attribute is. And maybe I should study the Xtext documentation in more detail. Maybe ..
+
+Regards,
+
+steven
+

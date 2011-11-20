@@ -3,11 +3,8 @@
  */
 package de.dubmas.modulob;
 
-import org.eclipse.xtext.parsetree.reconstr.ITransientValueService;
 import org.eclipse.xtext.resource.IDefaultResourceDescriptionStrategy;
-import org.eclipse.xtext.serializer.tokens.ICrossReferenceSerializer;
 
-import de.dubmas.modulob.serializer.DataDslCrossReferenceSerializer;
 import de.dubmas.modulob.serializer.DataDslTransientValueService;
 import de.dubmas.modulob.serializer.SequencerTransientValueService;
 import de.dubmas.modulob.util.ModulobResourceDescriptionStrategy;
@@ -27,7 +24,7 @@ public class DataDslRuntimeModule extends de.dubmas.modulob.AbstractDataDslRunti
 		return ModulobResourceDescriptionStrategy.class;
 	}
 	
-	public Class <? extends ITransientValueService> bindITransientValueService() {
+	public Class <? extends org.eclipse.xtext.parsetree.reconstr.ITransientValueService> bindITransientValueService() {
 		return DataDslTransientValueService.class;
 	}
 	
@@ -35,7 +32,7 @@ public class DataDslRuntimeModule extends de.dubmas.modulob.AbstractDataDslRunti
 		return SequencerTransientValueService.class;
 	}
 
-	public Class<? extends ICrossReferenceSerializer> bindICrossReferenceSerializer(){
-		return DataDslCrossReferenceSerializer.class;
-	}
+//	public Class<? extends ICrossReferenceSerializer> bindICrossReferenceSerializer(){
+//		return DataDslCrossReferenceSerializer.class;
+//	}
 }

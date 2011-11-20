@@ -12,7 +12,6 @@ public class SequencerTransientValueService extends TransientValueService {
 	
 	public ValueTransient isValueTransient(EObject semanticObject, EStructuralFeature feature) {
 		if (semanticObject instanceof Annotation && ModulobPackage.ANNOTATION__VALUE == feature.getFeatureID()) {
-			//return ((Annotation) owner).getValue() == null;
 			return ValueTransient.NO;
 		}
 		
