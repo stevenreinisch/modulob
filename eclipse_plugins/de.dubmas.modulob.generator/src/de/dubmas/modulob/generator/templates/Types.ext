@@ -41,6 +41,10 @@ isPrimitive(types::Type type):
 	Primitive.isInstance(type)
 ;
 
+isEnum(types::Type type):
+	Enum.isInstance(type)
+;
+
 protocolFilePath(types::Type type):
 	type.headerFilePathPrefix() + protocolTypeName(type) + ".h" 
 ;

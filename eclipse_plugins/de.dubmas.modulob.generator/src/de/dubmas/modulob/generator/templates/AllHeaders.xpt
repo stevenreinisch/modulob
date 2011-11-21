@@ -23,7 +23,7 @@
 «FOREACH this.entityModel.enums AS e»
 	typedef enum {
 		«FOREACH e.literals AS l ITERATOR iter SEPARATOR ','»
-			«l.name» = «iter.counter0»
+			«this.name + l.name» = «iter.counter0»
 		«ENDFOREACH»
 	}«e.typeName()»;
 «ENDFOREACH»

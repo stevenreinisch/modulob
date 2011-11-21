@@ -116,10 +116,12 @@
 
 «DEFINE Property(Feature f) FOR Entity-»
 	«f.codeComment()»
-	«IF f.type.referenced.isPrimitive()-»
-		@property (retain) «f.type.typeRef()» «f.name»;
+	«IF f.type.referenced.isEnum()»
+		@property (nonatomic, assign) «f.type.typeRef()» «f.name»;
+	«ELSEIF f.type.referenced.isPrimitive()-»
+		@property (nonatomic, retain) «f.type.typeRef()» «f.name»;
 	«ELSE-»
-		@property (retain) «f.type.typeRef()» «f.name»;
+		@property (nonatomic, retain) «f.type.typeRef()» «f.name»;
 	«ENDIF»
 «ENDDEFINE»
 
