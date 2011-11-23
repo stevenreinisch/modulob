@@ -51,7 +51,7 @@
 
 «DEFINE attribute FOR Feature-»
 	<attribute attributeType="«this.type.referenced.name.xcDataPrimitiveType(this.type.referenced)»" 
-	«IF this.defaultValue != null»
+	«IF this.defaultValue != null-»
 		defaultValueString="«EXPAND DefaultValue FOR this.defaultValue-»"
 	«ENDIF» 
 	«IF this.isIndexed»
@@ -66,15 +66,15 @@
 «ENDDEFINE»
 
 «DEFINE DefaultValue FOR StringValue-»
-«this.value.trim()»
+«this.stringDefaultValue()-»
 «ENDDEFINE»
 
 «DEFINE DefaultValue FOR IntegerValue-»
-«this.value»
+«this.value-»
 «ENDDEFINE»
 
 «DEFINE DefaultValue FOR FloatValue-»
-«this.value»
+«this.value-»
 «ENDDEFINE»
 
 «DEFINE relationship FOR Feature»

@@ -116,3 +116,7 @@ String xcdataModelVersion(Module m):
 storeFileName(Module m):
 	m.name + "Store"
 ;
+
+stringDefaultValue(StringValue sv):
+	JAVA de.dubmas.modulob.generator.templates.Util.stringDefaultValue(de.dubmas.modulob.StringValue)
+;

@@ -3,6 +3,7 @@ package de.dubmas.modulob.generator.templates;
 import java.util.List;
 
 import de.dubmas.modulob.Method;
+import de.dubmas.modulob.StringValue;
 import de.dubmas.modulob.Parameter;
 import de.dubmas.modulob.types.Any;
 import de.dubmas.modulob.types.TypesFactory;
@@ -16,6 +17,10 @@ public class Util {
 	
 	static{
 		ANY_TYPE_INSTANCE.setName("id");
+	}
+	
+	public static String stringDefaultValue(StringValue sv) {
+		return sv.getValue().substring(1, sv.getValue().length() - 1);
 	}
 	
 	public static String selector(Method m){
