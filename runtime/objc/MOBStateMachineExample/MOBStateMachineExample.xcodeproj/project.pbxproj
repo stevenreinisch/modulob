@@ -61,7 +61,7 @@
 		F988A30F14488266002EC3AD /* P_D_PasswordEntryStateHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = P_D_PasswordEntryStateHandler.h; path = ../../MOBStateMachine/MOBStateMachineTests/testCaseDefinitions/P_D_PasswordEntryStateHandler.h; sourceTree = "<group>"; };
 		F988A31014488266002EC3AD /* PasswordEntryStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasswordEntryStateMachine.h; path = ../../MOBStateMachine/MOBStateMachineTests/testCaseDefinitions/PasswordEntryStateMachine.h; sourceTree = "<group>"; };
 		F988A31114488266002EC3AD /* PasswordEntryStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PasswordEntryStateMachine.m; path = ../../MOBStateMachine/MOBStateMachineTests/testCaseDefinitions/PasswordEntryStateMachine.m; sourceTree = "<group>"; };
-		F988A3131448829F002EC3AD /* libMOBStateMachine.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libMOBStateMachine.a; path = "../MOBStateMachine/build/Release-iphoneos/libMOBStateMachine.a"; sourceTree = "<group>"; };
+		F988A3131448829F002EC3AD /* libMOBStateMachine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMOBStateMachine.a; path = "../MOBStateMachine/build/Release-iphoneos/libMOBStateMachine.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -462,6 +462,7 @@
 				F988A30A144880A9002EC3AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F988A30B144880A9002EC3AD /* Build configuration list for PBXNativeTarget "MOBStateMachineExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +471,7 @@
 				F988A30D144880A9002EC3AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F9C52C04147C10A000F1987A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C52C03147C10A000F1987A /* UIKit.framework */; };
+		F9C52C06147C10A000F1987A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C52C05147C10A000F1987A /* Foundation.framework */; };
+		F9C52C08147C10A000F1987A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C52C07147C10A000F1987A /* CoreGraphics.framework */; };
+		F9C52C0E147C10A000F1987A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9C52C0C147C10A000F1987A /* InfoPlist.strings */; };
+		F9C52C10147C10A000F1987A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C52C0F147C10A000F1987A /* main.m */; };
+		F9C52C14147C10A000F1987A /* MOBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C52C13147C10A000F1987A /* MOBAppDelegate.m */; };
+		F9C52C17147C10A000F1987A /* MOBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C52C16147C10A000F1987A /* MOBViewController.m */; };
+		F9C52C1A147C10A000F1987A /* MOBViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C52C18147C10A000F1987A /* MOBViewController_iPhone.xib */; };
+		F9C52C1D147C10A000F1987A /* MOBViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C52C1B147C10A000F1987A /* MOBViewController_iPad.xib */; };
+		F9C52C25147C10A000F1987A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C52C24147C10A000F1987A /* SenTestingKit.framework */; };
+		F9C52C26147C10A000F1987A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C52C03147C10A000F1987A /* UIKit.framework */; };
+		F9C52C27147C10A000F1987A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C52C05147C10A000F1987A /* Foundation.framework */; };
+		F9C52C2F147C10A000F1987A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9C52C2D147C10A000F1987A /* InfoPlist.strings */; };
+		F9C52C32147C10A000F1987A /* TrafficLightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C52C31147C10A000F1987A /* TrafficLightTests.m */; };
+		F9C52C3F147C11FA00F1987A /* TrafficLightStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C52C3E147C11FA00F1987A /* TrafficLightStateMachine.m */; };
+		F9C52C41147C126A00F1987A /* libMOBStateMachine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C52C40147C126A00F1987A /* libMOBStateMachine.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F9C52C28147C10A000F1987A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9C52BF6147C10A000F1987A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F9C52BFE147C10A000F1987A;
+			remoteInfo = TrafficLight;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F9C52BFF147C10A000F1987A /* TrafficLight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrafficLight.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9C52C03147C10A000F1987A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F9C52C05147C10A000F1987A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F9C52C07147C10A000F1987A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F9C52C0B147C10A000F1987A /* TrafficLight-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TrafficLight-Info.plist"; sourceTree = "<group>"; };
+		F9C52C0D147C10A000F1987A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F9C52C0F147C10A000F1987A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F9C52C11147C10A000F1987A /* TrafficLight-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TrafficLight-Prefix.pch"; sourceTree = "<group>"; };
+		F9C52C12147C10A000F1987A /* MOBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MOBAppDelegate.h; sourceTree = "<group>"; };
+		F9C52C13147C10A000F1987A /* MOBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MOBAppDelegate.m; sourceTree = "<group>"; };
+		F9C52C15147C10A000F1987A /* MOBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MOBViewController.h; sourceTree = "<group>"; };
+		F9C52C16147C10A000F1987A /* MOBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MOBViewController.m; sourceTree = "<group>"; };
+		F9C52C19147C10A000F1987A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MOBViewController_iPhone.xib; sourceTree = "<group>"; };
+		F9C52C1C147C10A000F1987A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MOBViewController_iPad.xib; sourceTree = "<group>"; };
+		F9C52C23147C10A000F1987A /* TrafficLightTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrafficLightTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9C52C24147C10A000F1987A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		F9C52C2C147C10A000F1987A /* TrafficLightTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TrafficLightTests-Info.plist"; sourceTree = "<group>"; };
+		F9C52C2E147C10A000F1987A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F9C52C30147C10A000F1987A /* TrafficLightTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrafficLightTests.h; sourceTree = "<group>"; };
+		F9C52C31147C10A000F1987A /* TrafficLightTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrafficLightTests.m; sourceTree = "<group>"; };
+		F9C52C3C147C11FA00F1987A /* P_D_TrafficLightStateHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P_D_TrafficLightStateHandler.h; sourceTree = "<group>"; };
+		F9C52C3D147C11FA00F1987A /* TrafficLightStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrafficLightStateMachine.h; sourceTree = "<group>"; };
+		F9C52C3E147C11FA00F1987A /* TrafficLightStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficLightStateMachine.m; sourceTree = "<group>"; };
+		F9C52C40147C126A00F1987A /* libMOBStateMachine.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libMOBStateMachine.a; path = "../MOBStateMachine/build/Release-iphoneos/libMOBStateMachine.a"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F9C52BFC147C10A000F1987A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9C52C41147C126A00F1987A /* libMOBStateMachine.a in Frameworks */,
+				F9C52C04147C10A000F1987A /* UIKit.framework in Frameworks */,
+				F9C52C06147C10A000F1987A /* Foundation.framework in Frameworks */,
+				F9C52C08147C10A000F1987A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9C52C1F147C10A000F1987A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9C52C25147C10A000F1987A /* SenTestingKit.framework in Frameworks */,
+				F9C52C26147C10A000F1987A /* UIKit.framework in Frameworks */,
+				F9C52C27147C10A000F1987A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F9C52BF4147C10A000F1987A = {
+			isa = PBXGroup;
+			children = (
+				F9C52C40147C126A00F1987A /* libMOBStateMachine.a */,
+				F9C52C09147C10A000F1987A /* TrafficLight */,
+				F9C52C2A147C10A000F1987A /* TrafficLightTests */,
+				F9C52C02147C10A000F1987A /* Frameworks */,
+				F9C52C00147C10A000F1987A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F9C52C00147C10A000F1987A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F9C52BFF147C10A000F1987A /* TrafficLight.app */,
+				F9C52C23147C10A000F1987A /* TrafficLightTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F9C52C02147C10A000F1987A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F9C52C03147C10A000F1987A /* UIKit.framework */,
+				F9C52C05147C10A000F1987A /* Foundation.framework */,
+				F9C52C07147C10A000F1987A /* CoreGraphics.framework */,
+				F9C52C24147C10A000F1987A /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F9C52C09147C10A000F1987A /* TrafficLight */ = {
+			isa = PBXGroup;
+			children = (
+				F9C52C3B147C10C200F1987A /* src-gen */,
+				F9C52C12147C10A000F1987A /* MOBAppDelegate.h */,
+				F9C52C13147C10A000F1987A /* MOBAppDelegate.m */,
+				F9C52C15147C10A000F1987A /* MOBViewController.h */,
+				F9C52C16147C10A000F1987A /* MOBViewController.m */,
+				F9C52C18147C10A000F1987A /* MOBViewController_iPhone.xib */,
+				F9C52C1B147C10A000F1987A /* MOBViewController_iPad.xib */,
+				F9C52C0A147C10A000F1987A /* Supporting Files */,
+			);
+			path = TrafficLight;
+			sourceTree = "<group>";
+		};
+		F9C52C0A147C10A000F1987A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F9C52C0B147C10A000F1987A /* TrafficLight-Info.plist */,
+				F9C52C0C147C10A000F1987A /* InfoPlist.strings */,
+				F9C52C0F147C10A000F1987A /* main.m */,
+				F9C52C11147C10A000F1987A /* TrafficLight-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F9C52C2A147C10A000F1987A /* TrafficLightTests */ = {
+			isa = PBXGroup;
+			children = (
+				F9C52C30147C10A000F1987A /* TrafficLightTests.h */,
+				F9C52C31147C10A000F1987A /* TrafficLightTests.m */,
+				F9C52C2B147C10A000F1987A /* Supporting Files */,
+			);
+			path = TrafficLightTests;
+			sourceTree = "<group>";
+		};
+		F9C52C2B147C10A000F1987A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F9C52C2C147C10A000F1987A /* TrafficLightTests-Info.plist */,
+				F9C52C2D147C10A000F1987A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F9C52C3B147C10C200F1987A /* src-gen */ = {
+			isa = PBXGroup;
+			children = (
+				F9C52C3C147C11FA00F1987A /* P_D_TrafficLightStateHandler.h */,
+				F9C52C3D147C11FA00F1987A /* TrafficLightStateMachine.h */,
+				F9C52C3E147C11FA00F1987A /* TrafficLightStateMachine.m */,
+			);
+			path = "src-gen";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F9C52BFE147C10A000F1987A /* TrafficLight */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9C52C35147C10A000F1987A /* Build configuration list for PBXNativeTarget "TrafficLight" */;
+			buildPhases = (
+				F9C52BFB147C10A000F1987A /* Sources */,
+				F9C52BFC147C10A000F1987A /* Frameworks */,
+				F9C52BFD147C10A000F1987A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TrafficLight;
+			productName = TrafficLight;
+			productReference = F9C52BFF147C10A000F1987A /* TrafficLight.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F9C52C22147C10A000F1987A /* TrafficLightTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9C52C38147C10A000F1987A /* Build configuration list for PBXNativeTarget "TrafficLightTests" */;
+			buildPhases = (
+				F9C52C1E147C10A000F1987A /* Sources */,
+				F9C52C1F147C10A000F1987A /* Frameworks */,
+				F9C52C20147C10A000F1987A /* Resources */,
+				F9C52C21147C10A000F1987A /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F9C52C29147C10A000F1987A /* PBXTargetDependency */,
+			);
+			name = TrafficLightTests;
+			productName = TrafficLightTests;
+			productReference = F9C52C23147C10A000F1987A /* TrafficLightTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F9C52BF6147C10A000F1987A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = F9C52BF9147C10A000F1987A /* Build configuration list for PBXProject "TrafficLight" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F9C52BF4147C10A000F1987A;
+			productRefGroup = F9C52C00147C10A000F1987A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F9C52BFE147C10A000F1987A /* TrafficLight */,
+				F9C52C22147C10A000F1987A /* TrafficLightTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F9C52BFD147C10A000F1987A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9C52C0E147C10A000F1987A /* InfoPlist.strings in Resources */,
+				F9C52C1A147C10A000F1987A /* MOBViewController_iPhone.xib in Resources */,
+				F9C52C1D147C10A000F1987A /* MOBViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9C52C20147C10A000F1987A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9C52C2F147C10A000F1987A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F9C52C21147C10A000F1987A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F9C52BFB147C10A000F1987A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9C52C10147C10A000F1987A /* main.m in Sources */,
+				F9C52C14147C10A000F1987A /* MOBAppDelegate.m in Sources */,
+				F9C52C17147C10A000F1987A /* MOBViewController.m in Sources */,
+				F9C52C3F147C11FA00F1987A /* TrafficLightStateMachine.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9C52C1E147C10A000F1987A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9C52C32147C10A000F1987A /* TrafficLightTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F9C52C29147C10A000F1987A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F9C52BFE147C10A000F1987A /* TrafficLight */;
+			targetProxy = F9C52C28147C10A000F1987A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F9C52C0C147C10A000F1987A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9C52C0D147C10A000F1987A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F9C52C18147C10A000F1987A /* MOBViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9C52C19147C10A000F1987A /* en */,
+			);
+			name = MOBViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		F9C52C1B147C10A000F1987A /* MOBViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9C52C1C147C10A000F1987A /* en */,
+			);
+			name = MOBViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		F9C52C2D147C10A000F1987A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9C52C2E147C10A000F1987A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F9C52C33147C10A000F1987A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
+			};
+			name = Debug;
+		};
+		F9C52C34147C10A000F1987A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F9C52C36147C10A000F1987A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TrafficLight/TrafficLight-Prefix.pch";
+				INFOPLIST_FILE = "TrafficLight/TrafficLight-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F9C52C37147C10A000F1987A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TrafficLight/TrafficLight-Prefix.pch";
+				INFOPLIST_FILE = "TrafficLight/TrafficLight-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F9C52C39147C10A000F1987A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TrafficLight.app/TrafficLight";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TrafficLight/TrafficLight-Prefix.pch";
+				INFOPLIST_FILE = "TrafficLightTests/TrafficLightTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		F9C52C3A147C10A000F1987A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TrafficLight.app/TrafficLight";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TrafficLight/TrafficLight-Prefix.pch";
+				INFOPLIST_FILE = "TrafficLightTests/TrafficLightTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F9C52BF9147C10A000F1987A /* Build configuration list for PBXProject "TrafficLight" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9C52C33147C10A000F1987A /* Debug */,
+				F9C52C34147C10A000F1987A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9C52C35147C10A000F1987A /* Build configuration list for PBXNativeTarget "TrafficLight" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9C52C36147C10A000F1987A /* Debug */,
+				F9C52C37147C10A000F1987A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F9C52C38147C10A000F1987A /* Build configuration list for PBXNativeTarget "TrafficLightTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9C52C39147C10A000F1987A /* Debug */,
+				F9C52C3A147C10A000F1987A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F9C52BF6147C10A000F1987A /* Project object */;
+}

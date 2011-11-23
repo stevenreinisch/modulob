@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:TrafficLight/TrafficLight.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:MOBStateMachineExample/MOBStateMachineExample.xcodeproj">
    </FileRef>
    <FileRef
