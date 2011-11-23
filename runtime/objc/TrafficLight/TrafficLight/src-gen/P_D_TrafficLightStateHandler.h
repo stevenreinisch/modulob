@@ -1,9 +1,12 @@
-#import <Foundation/Foundation.h>
+#import "MOBStateMachine.h"
+#import "MOBStateMachineConstants.h"
 
-@protocol P_D_TrafficLightStateHandler <NSObject>
+@protocol P_D_TrafficLightStateHandler <P_D_MOBStateHandler>
+
 @optional
 
 #pragma mark states: entry and exit (optional)
+
 /*
  * state initial
  */
@@ -12,8 +15,8 @@
 /*
  * state Red
  */
-- (void) exit_Red;
 - (void) enter_Red;
+- (void) exit_Red;
 
 /*
  * state final0
@@ -23,23 +26,24 @@
 /*
  * state Yellow
  */
-- (void) exit_Yellow;
 - (void) enter_Yellow;
+- (void) exit_Yellow;
 
 /*
  * state Green
  */
-- (void) exit_Green;
 - (void) enter_Green;
+- (void) exit_Green;
 
 /*
  * state GreenYellow
  */
-- (void) exit_GreenYellow;
 - (void) enter_GreenYellow;
+- (void) exit_GreenYellow;
 
 #pragma mark -
 #pragma mark transitions: actions (optional)
+
 /*
  * transition initial_to_Red
  */

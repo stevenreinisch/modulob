@@ -9,6 +9,7 @@
 #import "MOBViewController.h"
 
 #import "TrafficLightStateMachine.h"
+#import "MOBStateMachineConstants.h"
 
 @interface MOBViewController ()
 
@@ -89,6 +90,17 @@
 
 #pragma mark -
 #pragma mark state handling
+
+- (void) handleStateMachineError:(MOBStateMachineError) error {
+    switch (error) {
+        case MOBStateMachineError_AlreadyInFinalState:
+            //handle it!
+            break;
+            
+        default:
+            break;
+    }
+}
 
 /*
  * state Red

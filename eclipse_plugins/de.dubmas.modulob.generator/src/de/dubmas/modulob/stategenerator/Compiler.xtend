@@ -73,7 +73,7 @@ class Compiler implements IGenerator{
 			  * Define transitions.
 			  */
 			  «FOR t: sm.transitions»
-			  	«t.transitionType» «t.name()» = [[MOBTransition new] autorelease];
+			  	«t.transitionDefinition»;
 			  	«t.name()».ID = «t.enumLiteral»;
 			  	«t.name()».guardSelectorName = @"«t.guardSelectorName»";
 			  	«t.name()».actionSelectorName = @"«t.actionSelectorName»";
@@ -127,11 +127,11 @@ class Compiler implements IGenerator{
 	@end 
 	'''
 	
-	def dispatch transitionType(Transition t)
-	''' MOBTransition * '''
+	def dispatch transitionDefinition(Transition t)
+	'''MOBTransition * «t.name()» = [[MOBTransition new] autorelease]'''
 	
-	def dispatch transitionType(TimeoutTransition t)
-	''' MOBTimeoutTransition * '''
+	def dispatch transitionDefinition(TimeoutTransition t)
+	'''MOBTimeoutTransition * «t.name()» = [[MOBTimeoutTransition new] autorelease]'''
 	
 	def dispatch stateDef(Node n)
 	''''''
@@ -208,12 +208,15 @@ class Compiler implements IGenerator{
 	
 	def stateHandler(StateMachine sm)
 	'''
-	#import <Foundation/Foundation.h>
+	#import "MOBStateMachine.h"
+	#import "MOBStateMachineConstants.h"
 
-	@protocol «sm.stateHandlerName» <NSObject>
+	@protocol «sm.stateHandlerName» <P_D_MOBStateHandler>
+	
 	@optional
 
 	#pragma mark states: entry and exit (optional)
+	
 	«FOR n: sm.nodes»
 		/*
 		 * state «n.name()»
@@ -224,6 +227,7 @@ class Compiler implements IGenerator{
 	
 	#pragma mark -
 	#pragma mark transitions: actions (optional)
+	
 	«FOR t: sm.transitions»
 		«t.transitionAction»
 		
@@ -272,8 +276,8 @@ class Compiler implements IGenerator{
 	
 	def dispatch entryExit(State s)
 	'''
-		- (void) «s.exitSelectorName()»;
 		- (void) «s.entrySelectorName()»;
+		- (void) «s.exitSelectorName()»;
 	'''
 	
 	def transitionAction(Transition t)

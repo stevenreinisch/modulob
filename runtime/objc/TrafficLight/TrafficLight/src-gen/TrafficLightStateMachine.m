@@ -19,7 +19,7 @@
 		MOBState *Red = [[MOBState new] autorelease];
 		Red.name = @"Red";
 		Red.ID = TrafficLightState_RED;
-		Red.duration = 4.0;
+		Red.duration = 3.0;
 		Red.entrySelectorName = @"enter_Red";
 		Red.exitSelectorName = @"exit_Red";
 
@@ -31,21 +31,21 @@
 		MOBState *Yellow = [[MOBState new] autorelease];
 		Yellow.name = @"Yellow";
 		Yellow.ID = TrafficLightState_YELLOW;
-		Yellow.duration = 2.0;
+		Yellow.duration = 1.0;
 		Yellow.entrySelectorName = @"enter_Yellow";
 		Yellow.exitSelectorName = @"exit_Yellow";
 
 		MOBState *Green = [[MOBState new] autorelease];
 		Green.name = @"Green";
 		Green.ID = TrafficLightState_GREEN;
-		Green.duration = 4.0;
+		Green.duration = 3.0;
 		Green.entrySelectorName = @"enter_Green";
 		Green.exitSelectorName = @"exit_Green";
 
 		MOBState *GreenYellow = [[MOBState new] autorelease];
 		GreenYellow.name = @"GreenYellow";
 		GreenYellow.ID = TrafficLightState_GREENYELLOW;
-		GreenYellow.duration = 2;
+		GreenYellow.duration = 1.5;
 		GreenYellow.entrySelectorName = @"enter_GreenYellow";
 		GreenYellow.exitSelectorName = @"exit_GreenYellow";
 
@@ -62,8 +62,6 @@
 		Red_to_final0.guardSelectorName = @"guard_Red_to_final0";
 		Red_to_final0.actionSelectorName = @"action_Red_to_final0";
 
-#warning compiler generated creation of normal MOBTransition instead of MOBTimeoutTransition
-        
 		MOBTimeoutTransition *Red_to_Yellow = [[MOBTimeoutTransition new] autorelease];
 		Red_to_Yellow.ID = TrafficLightTransition_RED_YELLOW;
 		Red_to_Yellow.guardSelectorName = @"guard_Red_to_Yellow";

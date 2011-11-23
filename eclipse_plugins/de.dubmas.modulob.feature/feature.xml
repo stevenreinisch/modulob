@@ -2,7 +2,7 @@
 <feature
       id="de.dubmas.modulob.feature"
       label="modulob Feature"
-      version="0.0.1.qualifier"
+      version="0.0.1"
       provider-name="dubmas"
       os="macosx"
       ws="cocoa"

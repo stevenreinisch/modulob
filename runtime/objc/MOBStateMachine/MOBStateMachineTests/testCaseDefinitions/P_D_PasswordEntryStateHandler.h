@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol P_D_PasswordEntryStateHandler <NSObject>
+#import "MOBStateMachine.h"
+
+@protocol P_D_PasswordEntryStateHandler <P_D_MOBStateHandler>
 @optional
 
 #pragma mark states: entry and exit (optional)

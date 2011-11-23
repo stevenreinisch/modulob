@@ -52,6 +52,25 @@
 #pragma mark -
 #pragma mark state handling
 
+- (void) handleStateMachineError:(MOBStateMachineError) error {
+    switch (error) {
+        case MOBStateMachineError_AlreadyInFinalState:
+            //handle it!
+            break;
+            
+        case MOBStateMachineError_TransitionUnknown:
+            //handle it
+            break;
+            
+        case MOBStateMachineError_NotInSourceStateOfSwitchedTransition:
+            //handle it
+            break;
+            
+        default:
+            break;
+    }
+}
+
 - (void) enter_empty {
     self.pin = [[NSMutableArray new] autorelease];
 }
