@@ -139,7 +139,6 @@
 			isa = PBXGroup;
 			children = (
 				F988A2C314487F7F002EC3AD /* PublicHeaders */,
-				F9604D4D146D418D0046B49B /* MOBStateMachineConstants.h */,
 				F988A28F14487EA9002EC3AD /* MOBStateMachine.m */,
 				F93105E2145162C2009ACCBC /* MOBAbstractState.m */,
 				F93105E6145162D0009ACCBC /* MOBInitialState.m */,
@@ -196,6 +195,7 @@
 		F988A2C314487F7F002EC3AD /* PublicHeaders */ = {
 			isa = PBXGroup;
 			children = (
+				F9604D4D146D418D0046B49B /* MOBStateMachineConstants.h */,
 				F95A258D1476979A0082C689 /* MOBTimeoutTransition.h */,
 				F988A28E14487EA9002EC3AD /* MOBStateMachine.h */,
 				F93105E1145162C2009ACCBC /* MOBAbstractState.h */,

@@ -102,6 +102,8 @@ NSString *const MOBTIMER_TIMEOUTTRANSITION_KEY = @"timeoutTransition";
         }
     } else {
         NSLog(@"ERROR: MOBStateMachine cannot update .. in final state.");
+        
+        [delegate handleStateMachineError:MOBStateMachineError_AlreadyInFinalState];
     }
 }
 
@@ -117,10 +119,16 @@ NSString *const MOBTIMER_TIMEOUTTRANSITION_KEY = @"timeoutTransition";
 - (BOOL) switchTransitionWithID:(MOBTransitionID) transitionID {
     MOBTransition *t = [self.transitionIndex objectAtIndex:transitionID];
     
-    NSAssert(t != nil, @"Could not find transition with ID: %d", transitionID);
+    //NSAssert(t != nil, @"Could not find transition with ID: %d", transitionID);
+    if (!t) {
+        [delegate handleStateMachineError:MOBStateMachineError_TransitionUnknown];
+    }
     
-    NSAssert(self.currentState == t.sourceState, 
-             @"Cannot switch transition with ID: %d because state machine's current state is not transition's source state");
+//    NSAssert(self.currentState == t.sourceState, 
+//             @"Cannot switch transition with ID: %d because state machine's current state is not transition's source state");
+    if (self.currentState != t.sourceState) {
+        [delegate handleStateMachineError:MOBStateMachineError_NotInSourceStateOfSwitchedTransition];
+    }
     
     NSLog(@"forced to switch transition with ID: %d (guard: %@)", transitionID, t.guardSelectorName);
     
@@ -233,7 +241,7 @@ NSString *const MOBTIMER_TIMEOUTTRANSITION_KEY = @"timeoutTransition";
     
     if ([delegate respondsToSelector:selector]) {
         
-        NSMethodSignature *sig = [delegate methodSignatureForSelector:selector];
+        NSMethodSignature *sig = [(id)delegate methodSignatureForSelector:selector];
         NSAssert(sig, @"no signature found in MOBStateMachine#executeSelector:");
         
         NSInvocation *invoc = [NSInvocation invocationWithMethodSignature:sig];

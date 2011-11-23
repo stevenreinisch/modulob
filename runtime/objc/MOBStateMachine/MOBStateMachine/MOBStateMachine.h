@@ -15,11 +15,13 @@
 #import  "MOBTransition.h"
 #import "MOBStateMachineConstants.h"
 
+@protocol P_D_MOBStateHandler;
+
 @interface MOBStateMachine : NSObject {
     id currentState;
 }
 
-@property (nonatomic, assign) id delegate;
+@property (nonatomic, assign) id<P_D_MOBStateHandler> delegate;
 
 @property (nonatomic, retain) NSMutableSet *states;
 @property (nonatomic, retain) NSMutableSet *transitions;
@@ -40,5 +42,14 @@
 - (MOBAbstractState*) currentState;
 
 - (BOOL) switchTransitionWithID:(MOBTransitionID) transitionID;
+
+@end
+
+#pragma mark -
+#pragma mark P_D_MOBStateHandler
+
+@protocol P_D_MOBStateHandler <NSObject>
+
+- (void) handleStateMachineError:(MOBStateMachineError) error;
 
 @end
