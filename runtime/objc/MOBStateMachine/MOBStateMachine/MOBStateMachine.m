@@ -53,6 +53,7 @@ NSString *const MOBTIMER_TIMEOUTTRANSITION_KEY = @"timeoutTransition";
     self.requestedUpdates = 0;
     self.states           = nil;
     self.transitions      = nil;
+    self.transitionIndex  = nil;
     
     currentState          = nil;
     
