@@ -33,6 +33,9 @@
  */
 @interface «this.daoName()»: CoreDataDAO
 {}
+
++ («this.daoName()» *) create;
+
 @end
 «ENDFILE»
 «ENDDEFINE»
@@ -60,51 +63,19 @@ static «this.daoName()» *«this.daoName().toFirstLower()» = nil;
 	return self;
 }
 
++ («this.daoName()» *) create {
+    return [[self alloc] initWith: @"«this.storeFileName()»"];
+}
+
 «EXPAND momGetter FOR this-»
 
-#pragma mark singleton methods
-//for singleton implementation see:
-//http://stackoverflow.com/questions/145154/what-does-your-objective-c-singleton-look-like
-
-+ (CoreDataDAO*)sharedDAO
-{
-	@synchronized(self) {
++ (CoreDataDAO *) sharedDAO {
+    @synchronized(self) {
 		if («this.daoName().toFirstLower()» == nil) {
-			[[self alloc] initWith:@"«this.storeFileName()»"]; // assignment not done here
+			«this.daoName().toFirstLower()» = [[self alloc] initWith: @"«this.storeFileName()»"];
 		}
 	}
 	return «this.daoName().toFirstLower()»;
-}
-
-+ (id)allocWithZone:(NSZone *)zone
-{
-	@synchronized(self) {
-		if («this.daoName().toFirstLower()» == nil) {
-			«this.daoName().toFirstLower()» = [super allocWithZone:zone];
-			return «this.daoName().toFirstLower()»;  // assignment and return on first allocation
-		}
-	}
-	return nil; //on subsequent allocation attempts return nil
-}
-
-- (id)copyWithZone:(NSZone *)zone
-{
-	return self;
-}
-
-- (id)retain
-{
-	return self;
-}
-
-- (unsigned)retainCount
-{
-	return UINT_MAX;  //denotes an object that cannot be released
-} 
-
-- (void)release
-{
-	//do nothing
 }
 
 @end

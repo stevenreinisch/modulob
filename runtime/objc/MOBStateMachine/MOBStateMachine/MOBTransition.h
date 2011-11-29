@@ -15,8 +15,8 @@
 
 @property (nonatomic, assign) MOBTransitionID ID;
 
-@property (nonatomic, retain) MOBAbstractState *sourceState;
-@property (nonatomic, retain) MOBAbstractState *targetState;
+@property (nonatomic, assign) MOBAbstractState *sourceState;
+@property (nonatomic, assign) MOBAbstractState *targetState;
 
 /*
  * The selector that is executed on a state machine's

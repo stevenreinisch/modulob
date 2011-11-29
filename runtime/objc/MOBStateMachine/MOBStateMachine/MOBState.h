@@ -47,6 +47,6 @@
 /*
  * See comment for property 'duration'.
  */
-@property (nonatomic, retain) MOBTimeoutTransition *timeoutTransition;
+@property (nonatomic, assign) MOBTimeoutTransition *timeoutTransition;
 
 @end
