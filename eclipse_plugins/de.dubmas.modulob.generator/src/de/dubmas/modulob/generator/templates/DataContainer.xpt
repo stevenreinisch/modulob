@@ -16,8 +16,12 @@
 	
 	«EXPAND additionalImports FOR this»
 	
-	«FOREACH this.dependentTypes() AS type»
+	«FOREACH this.dependentTypes() AS type-»
+		«IF Enum.isInstance(type)-»
+		#import "«this.module().enumHeaderFileName()».h"
+		«ELSE-»
 		@class «type.typeName()»;
+		«ENDIF»
 	«ENDFOREACH»
 
 	«this.codeComment()»

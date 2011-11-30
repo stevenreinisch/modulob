@@ -20,7 +20,10 @@
 
 	@interface «this.factoryName("Entity")»: NSObject{}
 	«FOREACH this.entityModel.entities.select(e|!e.isAbstract) AS e»
-		+(«e.typeRef()»)«e.factoryMethodName()»;
+		+ («e.typeRef()») «e.factoryMethodName()»;
+		«IF e.isPersistent()»
+			+ («e.typeRef()») «e.factoryMethodName()»InDAO:(CoreDataDAO*) dao;
+		«ENDIF»
 	«ENDFOREACH»
 	@end
 
@@ -44,9 +47,9 @@
 	@implementation «this.factoryName("Entity")»
 
 	«FOREACH this.entityModel.entities.select(e|!e.isAbstract) AS e»
-		+(«e.typeRef()»)«e.factoryMethodName()»
-		{
-			«IF e.isPersistent()»
+		«IF e.isPersistent()»
+			+(«e.typeRef()»)«e.factoryMethodName()»
+			{
 				«e.typeRef()» object = [[«this.daoName()» sharedDAO] createEntity:@"«e.entityName()»"];
 				@try {
 					NSString *uuid = [[«this.daoName()» sharedDAO] uuid];
@@ -57,12 +60,29 @@
 					exit(-1);
 				}
 				return object;
-			«ELSE»
+			}
+			
+			+(«e.typeRef()»)«e.factoryMethodName()»InDAO:(CoreDataDAO*) dao;
+			{
+				«e.typeRef()» object = [dao createEntity:@"«e.entityName()»"];
+				@try {
+					NSString *uuid = [dao uuid];
+					[(NSManagedObject*)object setValue:uuid forKey:@"uuid"];
+				}
+				@catch (NSException * e) {
+					NSLog(@"ERROR: managedObject has no property named uuid!!");
+					exit(-1);
+				}
+				return object;
+			}
+		«ELSE»
+			+(«e.typeRef()»)«e.factoryMethodName()»
+			{
 				«e.typeRef()» instance = [[«e.typeName()» new] autorelease];
 				instance.uuid = [[«this.daoName()» sharedDAO] uuid];
             	return instance;
-			«ENDIF»
-		}
+			}
+		«ENDIF»
 	«ENDFOREACH»
 
 	@end

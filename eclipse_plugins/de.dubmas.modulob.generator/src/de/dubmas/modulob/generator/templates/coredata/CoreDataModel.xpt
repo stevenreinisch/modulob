@@ -34,7 +34,7 @@
 @interface «this.daoName()»: CoreDataDAO
 {}
 
-+ («this.daoName()» *) create;
++ («this.daoName()» *) newDAO;
 
 @end
 «ENDFILE»
@@ -63,7 +63,7 @@ static «this.daoName()» *«this.daoName().toFirstLower()» = nil;
 	return self;
 }
 
-+ («this.daoName()» *) create {
++ («this.daoName()» *) newDAO {
     return [[self alloc] initWith: @"«this.storeFileName()»"];
 }
 

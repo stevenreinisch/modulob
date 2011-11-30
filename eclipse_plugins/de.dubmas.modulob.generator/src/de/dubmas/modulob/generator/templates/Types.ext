@@ -16,17 +16,17 @@ List[types::Type] dependentTypes(types::Type type):
 		case Interface.name : 
 			((Interface)type).methods.parameters.type.referenced
 				.addAll(((Interface)type).methods.type.referenced)
-					.select(t | !Primitive.isInstance(t))
+					.select(t | Enum.isInstance(t) || !Primitive.isInstance(t))
 						.addAll(((Interface)type).requiredInterfaces)
 							.addAll(((Interface)type).delegates.dependentTypes()).toSet()//toSet() to remove duplicates
 					
 		case Delegate.name  : 
 			((Delegate)type).methods.parameters.type.referenced.
-					select(t | !Primitive.isInstance(t)).toSet()
+					select(t | Enum.isInstance(t) || !Primitive.isInstance(t)).toSet()
 					
 		case Entity.name    : 
-			((Entity)type).entityFeatures().type.referenced.
-					select(t | !Primitive.isInstance(t)).toSet()
+			((Entity)type).entityFeatures().type.referenced
+					.addAll(((Entity)type).primitiveTypeFeatures().type.referenced.select(t | Enum.isInstance(t))).toSet()
 		default: {}
 	}	
 ;
@@ -191,6 +191,10 @@ voidType(List[types::Primitive] primitiveTypes):
  
 String namespace(types::Type type):
 	type.module().name
+;
+
+enumHeaderFileName(Module m):
+	m.name + "Enums"
 ;
 
 /*

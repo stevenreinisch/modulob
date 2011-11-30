@@ -9,17 +9,19 @@
 «DEFINE main FOR Module»
 	«EXPAND allEntitiesHeader     FOR this.entityModel»
 	«EXPAND allInterfaceHeaders   FOR this.interfaceModel»
+	«EXPAND EnumHeader 			  FOR this»
 	«EXPAND moduleHeader          FOR this»
 «ENDDEFINE»
 
 «DEFINE moduleHeader FOR Module»
 «FILE this.name + "/public/" + this.name + "Headers.h"-»
 	«EXPAND moduleHeaderImports FOR this»
-	«EXPAND enumDefs            FOR this»
 «ENDFILE»
 «ENDDEFINE»
 
-«DEFINE enumDefs FOR Module»
+«DEFINE EnumHeader FOR Module»
+«IF this.entityModel.enums.size > 0»
+«FILE this.name + "/public/" + this.enumHeaderFileName() + ".h"-»
 «FOREACH this.entityModel.enums AS e»
 	typedef enum {
 		«FOREACH e.literals AS l ITERATOR iter SEPARATOR ','»
@@ -27,11 +29,16 @@
 		«ENDFOREACH»
 	}«e.typeName()»;
 «ENDFOREACH»
+«ENDFILE»
+«ENDIF»
 «ENDDEFINE»
 
 «DEFINE moduleHeaderImports FOR Module»
 #import "«this.name»AllInterfaces.h"
 #import "«this.name»AllEntities.h"
+«IF this.entityModel.enums.size > 0»
+#import "«this.enumHeaderFileName()».h"
+«ENDIF»
 «ENDDEFINE»
 
 «DEFINE allInterfaceHeaders FOR InterfaceModel»

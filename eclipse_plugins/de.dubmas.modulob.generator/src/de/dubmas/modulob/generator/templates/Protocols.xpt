@@ -52,6 +52,10 @@
 «DEFINE typeForwardDecl FOR Type»
 «ENDDEFINE»
 
+«DEFINE typeForwardDecl FOR Enum»
+#import "«this.module().enumHeaderFileName()».h"
+«ENDDEFINE»
+
 «DEFINE typeForwardDecl FOR Entity-»
 	@class «this.typeName()»;
 «ENDDEFINE»

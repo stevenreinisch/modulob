@@ -33,7 +33,7 @@
 	 *        array[1] := name of the method that must be called on the factory to actually
 	 *                    create an instance of the specified entity
 	 */
-	-(NSDictionary*)newEntityFactoryConfig
+	-(NSDictionary*)entityFactoryConfig
 	{
 		NSMutableDictionary *factoryMap = [NSMutableDictionary new];
 		
