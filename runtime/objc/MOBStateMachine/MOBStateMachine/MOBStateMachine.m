@@ -9,29 +9,34 @@
 #import "MOBStateMachine.h"
 #import "MOBStateMachineConstants.h"
 
-NSString *const MOBTIMER_TIMEOUTTRANSITION_KEY = @"timeoutTransition";
+#define NO_EVENT NSUIntegerMax
+#define EVENT_CURRENTLY_HANDLED [self.eventFIFO count] > 1
 
-#define FURTHER_UPDATES_REQUESTED (requestedUpdates > 0)
+NSString *const MOBTIMER_TIMEOUTTRANSITION_KEY = @"timeoutTransition";
 
 @interface MOBStateMachine ()
 
+@property (nonatomic, retain) NSMutableArray *eventFIFO;
+
 - (void) checkConsistencyAtStartUp;
-- (void) doUpdate;
+//- (void) doUpdate;
 - (BOOL) switchTransitionInternal:(MOBTransition*) transition;
 - (void) enterState:(MOBAbstractState*) newState;
 - (void) executeSelector:(NSString*) selectorName;
-- (BOOL) evaluateGuardSelector:(NSString*) selectorName;
 
-- (void) currentStateDurationEnded:(NSTimer*)theTimer;
+- (void) currentStateDurationEnded:(id)timerOrTimeoutTransition;
 
-@property (nonatomic, assign) BOOL inUpdate;
-@property (nonatomic, assign) NSUInteger requestedUpdates;
+- (void) dispatchEvent:(MOBEvent) event;
+
+- (void) enqueueEvent:(MOBEvent) event;
+- (MOBEvent) nextEvent;
+- (MOBEvent) dequeEvent;
 
 @end
 
 @implementation MOBStateMachine
 
-@synthesize delegate, states, transitions, inUpdate, requestedUpdates, transitionIndex;
+@synthesize delegate, states, transitions, finished, transitionIndex, eventFIFO;
 
 #pragma mark -
 
@@ -39,21 +44,21 @@ NSString *const MOBTIMER_TIMEOUTTRANSITION_KEY = @"timeoutTransition";
 {
     self = [super init];
     if (self) {
-        self.inUpdate         = NO;
-        self.requestedUpdates = 0;
-        self.states           = [[NSMutableSet new] autorelease];
-        self.transitions      = [[NSMutableSet new] autorelease];
+        self.finished         = NO;
+        self.states           = [NSMutableSet set];
+        self.transitions      = [NSMutableSet set];
+        self.eventFIFO        = [NSMutableArray arrayWithCapacity:5];
     }
     
     return self;
 }
 
 - (void) dealloc {
-    self.inUpdate         = NO;
-    self.requestedUpdates = 0;
+    self.finished         = NO;
     self.states           = nil;
     self.transitions      = nil;
     self.transitionIndex  = nil;
+    self.eventFIFO        = nil;
     
     currentState          = nil;
     
@@ -66,48 +71,55 @@ NSString *const MOBTIMER_TIMEOUTTRANSITION_KEY = @"timeoutTransition";
     [self currentState];
     [self checkConsistencyAtStartUp];
     
-    [self update];
-}
-
-/*
- * Loop through the current state's outgoing transitions.
- * If a transition's guard selector is evaluated to true,
- * this transition is switched.
- */
-- (void) update {
+    /*
+     * Switch one of the initial state's outgoing transitions
+     */
     
-    if (![currentState isKindOfClass:[MOBFinalState class]]) {
+    BOOL switched = NO;
         
-        if(!self.inUpdate) {
-            
-            self.inUpdate = YES;
-            
-            NSLog(@"in update for state: %@.", [currentState name]);
-            
-            [self doUpdate];
-            
-            NSLog(@"finished update. Now in state: %@.", [currentState name]);
-            
-            self.inUpdate = NO;
-            
-            if(FURTHER_UPDATES_REQUESTED) {
-                requestedUpdates--;
-                NSLog(@"executing requested update in state: %@ (%d remaining).", 
-                      [currentState name], requestedUpdates);
-                [self update];
-            }
-        } else {
-            NSLog(@"further update requested in state: %@.", [currentState name]);
-            self.requestedUpdates++;
-            return;
+    NSEnumerator *enumerator  = [[currentState outgoingTransitions] objectEnumerator];
+    MOBTransition *transition = nil;
+
+    while (!switched && (transition = [enumerator nextObject]) ) {
+        if ([self evaluateGuardSelector:transition.guardSelectorName]) {
+            switched = [self switchTransitionInternal:transition];
         }
-    } else {
-        NSLog(@"ERROR: MOBStateMachine cannot update .. in final state.");
-        
-        [delegate handleStateMachineError:MOBStateMachineError_AlreadyInFinalState];
     }
 }
 
+- (void) handleEvent:(MOBEvent) event {
+    
+    [self enqueueEvent:event];
+    
+    if (EVENT_CURRENTLY_HANDLED) {
+        return;
+    } else {
+        
+        while ([self.eventFIFO count] > 0) {
+            
+            MOBEvent nextEvent = [self nextEvent];
+            if (nextEvent != NO_EVENT) {
+                [self dispatchEvent:nextEvent];
+            }
+            
+            [self dequeEvent];
+        }
+        
+        if ([currentState isKindOfClass:[MOBFinalState class]]) {
+            
+            self.finished = YES;
+            
+            if ([self.delegate respondsToSelector:@selector(finishedProcessing)]) {
+                [self.delegate finishedProcessing];
+            }
+        }
+    }
+}
+
+- (void) dispatchEvent:(MOBEvent) event {
+    [NSException raise:@"Abstract Mehtod" format:@"Implement dispatchEvent: in a subclass"];
+}
+    
 - (MOBAbstractState*) currentState {
     if(!currentState){
         currentState = [[[states filteredSetUsingPredicate:
@@ -118,22 +130,32 @@ NSString *const MOBTIMER_TIMEOUTTRANSITION_KEY = @"timeoutTransition";
 }
 
 - (BOOL) switchTransitionWithID:(MOBTransitionID) transitionID {
+    
     MOBTransition *t = [self.transitionIndex objectAtIndex:transitionID];
     
-    //NSAssert(t != nil, @"Could not find transition with ID: %d", transitionID);
     if (!t) {
         [delegate handleStateMachineError:MOBStateMachineError_TransitionUnknown];
+        
+        self.finished = YES;
+        
+        return NO;
     }
     
-//    NSAssert(self.currentState == t.sourceState, 
-//             @"Cannot switch transition with ID: %d because state machine's current state is not transition's source state");
     if (self.currentState != t.sourceState) {
         [delegate handleStateMachineError:MOBStateMachineError_NotInSourceStateOfSwitchedTransition];
+        
+        self.finished = YES;
+        
+        return NO;
     }
     
-    NSLog(@"forced to switch transition with ID: %d (guard: %@)", transitionID, t.guardSelectorName);
+    BOOL switched = NO;
     
-    BOOL switched = [self switchTransitionInternal:t];
+    /*
+     * The transition's guard should have been evaluated in dispatchEvent:
+     */
+    [self switchTransitionInternal:t];
+
     
     return switched;
 }
@@ -141,17 +163,29 @@ NSString *const MOBTIMER_TIMEOUTTRANSITION_KEY = @"timeoutTransition";
 #pragma mark -
 #pragma mark private
 
-- (void) doUpdate {
-    BOOL switched = NO;
+- (void) enqueueEvent:(MOBEvent) event {
+    [self.eventFIFO addObject:[NSNumber numberWithUnsignedInteger:event]];
+}
+
+- (MOBEvent) dequeEvent {
+    MOBEvent event = NO_EVENT;
     
-    NSEnumerator *enumerator  = [[currentState outgoingTransitions] objectEnumerator];
-    MOBTransition *transition = nil;
-    
-    while (!switched && (transition = [enumerator nextObject]) ) {
-        if ([self evaluateGuardSelector:transition.guardSelectorName]) {
-            switched = [self switchTransitionInternal:transition];
-        }
+    if ([self.eventFIFO count] > 0) {
+        event = [[self.eventFIFO objectAtIndex:0] unsignedIntValue];
+        [self.eventFIFO removeObjectAtIndex:0];
     }
+    
+    return event;
+}
+
+- (MOBEvent) nextEvent {
+    MOBEvent event = NO_EVENT;
+    
+    if ([self.eventFIFO count] > 0) {    
+        event = [[self.eventFIFO objectAtIndex:0] unsignedIntValue];
+    }
+    
+    return event;
 }
 
 /*
@@ -160,25 +194,30 @@ NSString *const MOBTIMER_TIMEOUTTRANSITION_KEY = @"timeoutTransition";
  * 3. enter transition's target state
  */
 - (BOOL) switchTransitionInternal:(MOBTransition*) transition {
-    NSLog(@"switching transition with guard: %@", transition.guardSelectorName);
+    NSLog(@"MOBStateMachine:: switching transition with guard: %@", transition.guardSelectorName);
+    
     [self executeSelector:[currentState exitSelectorName]];
     [self executeSelector:transition.actionSelectorName];
     [self enterState:transition.targetState];
+    
     return YES;
 }
 
 - (void) enterState:(MOBAbstractState*) newState {
     currentState = newState;
     
-    NSLog(@"entered state: %@", [currentState name]);
+    NSLog(@"MOBStateMachine:: entered state: %@", [currentState name]);
     
     [self executeSelector:[currentState entrySelectorName]];
     
     if ([currentState isKindOfClass:[MOBState class]]) 
     {
         if (MOBSTATEMACHINE_DEFINED([(id)newState duration])) {
-            NSLog(@"starting timer for state: %@ (ID: %d) with duration: %f",
+            
+            NSLog(@"MOBStateMachine:: starting timer for state: %@ (ID: %d) with duration: %f",
                   [newState name], [newState ID], [(id)newState duration]);
+            
+            MOBTimeoutTransition *tot = ((MOBState*)newState).timeoutTransition;
             
             /*
              * If the duration is 0, we do not need to start a timer but
@@ -190,9 +229,8 @@ NSString *const MOBTIMER_TIMEOUTTRANSITION_KEY = @"timeoutTransition";
              * state machine.
              */
             if ([(id)newState duration] == MOBIMMEDIATE_STATE_EXIT) {
-                [self currentStateDurationEnded:nil];
+                [self currentStateDurationEnded:tot];
             } else {
-                MOBTimeoutTransition *tot = ((MOBState*)newState).timeoutTransition;
                 
                 NSAssert(tot != nil, 
                          @"if duration > 0, a timeoutTransition must be set on state: %d", newState.ID);
@@ -268,36 +306,32 @@ NSString *const MOBTIMER_TIMEOUTTRANSITION_KEY = @"timeoutTransition";
 	return YES;
 }
 
-/*
- * If the current state's duration has ended,
- * the state machine leaves the current state
- * by updating itself.
- */
-- (void) currentStateDurationEnded:(NSTimer*)theTimer {
+- (void) currentStateDurationEnded:(id)timerOrTimeoutTransition {
     
-    if (theTimer) {
-        MOBTimeoutTransition *tot = 
-            [[theTimer userInfo] objectForKey:MOBTIMER_TIMEOUTTRANSITION_KEY];
+    MOBTimeoutTransition *tot = nil;
+    
+    if ([timerOrTimeoutTransition isKindOfClass:[NSTimer class]]) {
         
-        /*
-         * Is the state machine still in the same state
-         * when the timer was started?
-         */
-        if (tot.sourceState == self.currentState) {
-            
-            NSLog(@"switching timeoutTransition for state: %@", [currentState name]);
-            
-            [self switchTransitionWithID:tot.ID];
-        } else {
-            NSLog(@"wanted to switch timeoutTransition for state: %@ but state machine already switched to state: %@. Doing nothing.",
-                  tot.sourceState.name, [self.currentState name]);
-        }
-    } else {//called with no timer => currentState is exited immediately
-        
-        NSLog(@"immediately exiting current state: %@", [currentState name]);
-        
-        [self update];
+        tot = [[timerOrTimeoutTransition userInfo] 
+               objectForKey:MOBTIMER_TIMEOUTTRANSITION_KEY];
+    } else {
+        tot = (MOBTimeoutTransition*)timerOrTimeoutTransition;
     }
+    
+    /*
+     * Is the state machine still in the same state
+     * when the timer was started?
+     */
+    if (tot.sourceState == self.currentState) {
+        
+        NSLog(@"MOBStateMachine:: switching timeoutTransition for state: %@", [currentState name]);
+        
+        [self switchTransitionWithID:tot.ID];
+    } else {
+        NSLog(@"MOBStateMachine:: wanted to switch timeoutTransition for state: %@ but state machine already switched to state: %@. Doing nothing.",
+              tot.sourceState.name, [self.currentState name]);
+    }
+    
 }
 
 @end

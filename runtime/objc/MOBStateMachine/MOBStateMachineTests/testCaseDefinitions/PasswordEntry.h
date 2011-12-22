@@ -25,6 +25,8 @@
 
 @property (nonatomic, assign) BOOL pinCorrect;
 
+@property (nonatomic, assign) BOOL lastDigitDeleted;
+
 @property (nonatomic, assign) BOOL lockAfterFailedAuthentication;
 
 /*

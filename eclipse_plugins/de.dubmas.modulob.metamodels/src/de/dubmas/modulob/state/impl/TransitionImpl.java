@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link de.dubmas.modulob.state.impl.TransitionImpl#getSource <em>Source</em>}</li>
  *   <li>{@link de.dubmas.modulob.state.impl.TransitionImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link de.dubmas.modulob.state.impl.TransitionImpl#getGuard <em>Guard</em>}</li>
+ *   <li>{@link de.dubmas.modulob.state.impl.TransitionImpl#getTriggerEventName <em>Trigger Event Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -65,6 +66,26 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	 * @ordered
 	 */
 	protected Condition guard;
+
+	/**
+	 * The default value of the '{@link #getTriggerEventName() <em>Trigger Event Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTriggerEventName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TRIGGER_EVENT_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTriggerEventName() <em>Trigger Event Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTriggerEventName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String triggerEventName = TRIGGER_EVENT_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,6 +230,27 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getTriggerEventName() {
+		return triggerEventName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTriggerEventName(String newTriggerEventName) {
+		String oldTriggerEventName = triggerEventName;
+		triggerEventName = newTriggerEventName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StatePackage.TRANSITION__TRIGGER_EVENT_NAME, oldTriggerEventName, triggerEventName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -234,6 +276,8 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 				return basicGetTarget();
 			case StatePackage.TRANSITION__GUARD:
 				return getGuard();
+			case StatePackage.TRANSITION__TRIGGER_EVENT_NAME:
+				return getTriggerEventName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -254,6 +298,9 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 				return;
 			case StatePackage.TRANSITION__GUARD:
 				setGuard((Condition)newValue);
+				return;
+			case StatePackage.TRANSITION__TRIGGER_EVENT_NAME:
+				setTriggerEventName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -276,6 +323,9 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 			case StatePackage.TRANSITION__GUARD:
 				setGuard((Condition)null);
 				return;
+			case StatePackage.TRANSITION__TRIGGER_EVENT_NAME:
+				setTriggerEventName(TRIGGER_EVENT_NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -294,8 +344,26 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 				return target != null;
 			case StatePackage.TRANSITION__GUARD:
 				return guard != null;
+			case StatePackage.TRANSITION__TRIGGER_EVENT_NAME:
+				return TRIGGER_EVENT_NAME_EDEFAULT == null ? triggerEventName != null : !TRIGGER_EVENT_NAME_EDEFAULT.equals(triggerEventName);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (triggerEventName: ");
+		result.append(triggerEventName);
+		result.append(')');
+		return result.toString();
 	}
 
 } //TransitionImpl

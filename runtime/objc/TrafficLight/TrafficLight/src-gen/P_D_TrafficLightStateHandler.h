@@ -87,8 +87,6 @@
 #pragma mark transitions: guards (required)
 //Guards for timeout transitions are not evaluated and thus neither optional nor required.
 
-@required
-
 /*
  * transition Red_to_final0
  *

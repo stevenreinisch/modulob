@@ -18,6 +18,7 @@
 @protocol P_D_MOBStateHandler;
 
 @interface MOBStateMachine : NSObject {
+    @private
     id currentState;
 }
 
@@ -36,11 +37,21 @@
  */
 @property (nonatomic, retain) NSArray *transitionIndex;
 
+@property (nonatomic, assign) BOOL finished;
+
 - (void) start;
-- (void) update;
+
+- (void) handleEvent:(MOBEvent) event;
+
+//- (void) update;
 
 - (MOBAbstractState*) currentState;
 
+
+#pragma mark -
+#pragma mark protected
+
+- (BOOL) evaluateGuardSelector:(NSString*) selectorName;
 - (BOOL) switchTransitionWithID:(MOBTransitionID) transitionID;
 
 @end
@@ -51,5 +62,12 @@
 @protocol P_D_MOBStateHandler <NSObject>
 
 - (void) handleStateMachineError:(MOBStateMachineError) error;
+
+/*
+ * This method is called if the state machine has finished its
+ * last update cycle. The entry method of a final state has already
+ * been called at this point.
+ */
+- (void) finishedProcessing;
 
 @end

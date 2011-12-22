@@ -14,7 +14,7 @@
 
 @implementation PasswordEntry
 
-@synthesize pin, correctUserPin, stateMachine, pinCorrect, lockAfterFailedAuthentication;
+@synthesize pin, lastDigitDeleted, correctUserPin, stateMachine, pinCorrect, lockAfterFailedAuthentication;
 
 - (id)init
 {
@@ -26,6 +26,7 @@
         
         self.pinCorrect = NO;
         self.lockAfterFailedAuthentication = NO;
+        self.lastDigitDeleted = NO;
     }
     
     return self;
@@ -41,16 +42,22 @@
 
 - (void) keyStroke:(NSString*) enteredChar {
     [self.pin addObject:enteredChar];
-    [self.stateMachine update];
+    self.lastDigitDeleted = NO;
+    [self.stateMachine handleEvent:PasswordEntry_Event_DIGITENTERED];
 }
 
 - (void) deleteChar {
     [self.pin removeLastObject];
-    [self.stateMachine update];
+    self.lastDigitDeleted = YES;
+    [self.stateMachine handleEvent:PasswordEntry_Event_DIGITDELETED];
 }
 
 #pragma mark -
 #pragma mark state handling
+
+- (void) finishedProcessing {
+    
+}
 
 - (void) handleStateMachineError:(MOBStateMachineError) error {
     switch (error) {
@@ -71,11 +78,11 @@
     }
 }
 
-- (void) enter_empty {
+- (void) enter_Empty {
     self.pin = [[NSMutableArray new] autorelease];
 }
 
-- (void) enter_completelyFilled {
+- (void) enter_CompletelyFilled {
     NSMutableString *enteredPin = [NSMutableString stringWithCapacity:MAX_PIN_DIGITS];
     for (NSString *digit in pin){
         [enteredPin appendString:digit];
@@ -84,110 +91,95 @@
     if ([correctUserPin isEqualToString:enteredPin]) {
         pinCorrect = YES;
 
-        #if DEMONSTARTE_IMMEDIATE_STATE_EXIT==0 && DEMONSTARTE_EXTERNAL_TRANSITION_SWITCH==1
-        [stateMachine switchTransitionWithID:PasswordEntryTransition_COMPLETELYFILLED_USERAUTHENTICATED];
-        #endif
+        [self.stateMachine handleEvent:PasswordEntry_Event_USERAUTHENTICATED];
+    } else {
+        pinCorrect = NO;
+        
+        [self.stateMachine handleEvent:PasswordEntry_Event_USERNOTAUTHENTICATED];
     }
-    
-    #if DEMONSTARTE_IMMEDIATE_STATE_EXIT==0 && DEMONSTARTE_EXTERNAL_TRANSITION_SWITCH==1
-    [stateMachine switchTransitionWithID:PasswordEntryTransition_COMPLETELYFILLED_USERNOTAUTHENTICATED];
-    #endif
-}
-
-- (void) enter_userNotAuthenticated {
-    //we could present the user a dialog here ..
 }
 
 #pragma mark guards
 
-- (BOOL) guard_partiallyFilled_to_empty {
+- (BOOL) guard_PartiallyFilled_to_Empty {
     BOOL result = NO;
     
     if ([pin count] == 0) {
         result = YES;
     }
     
-    NSLog(@"evaluated guard_partiallyFilled_to_empty with result: %d", result);
+    NSLog(@"evaluated guard_PartiallyFilled_to_Empty with result: %d", result);
     
     return result;
 }
 
-- (BOOL) guard_partiallyFilled_to_partiallyFilled {
+- (BOOL) guard_PartiallyFilled_to_PartiallyFilled_DigitEntered {
     BOOL result = NO;
     
-    if ([pin count] > 0 && [pin count] < MAX_PIN_DIGITS) {
+    if ([pin count] > 0 
+        && 
+        [pin count] < MAX_PIN_DIGITS
+        &&
+        !self.lastDigitDeleted)
+    {
         result = YES;
     }
     
-    NSLog(@"evaluated guard_partiallyFilled_to_partiallyFilled with result: %d", result);
+    NSLog(@"evaluated guard_PartiallyFilled_to_PartiallyFilled_DigitEntered with result: %d", result);
     
     return result;
 }
 
-- (BOOL) guard_partiallyFilled_to_completelyFilled {
+- (BOOL) guard_PartiallyFilled_to_PartiallyFilled_DigitDeleted {
+    BOOL result = NO;
+    
+    if ([pin count] > 0 
+        && 
+        [pin count] < MAX_PIN_DIGITS
+        &&
+        self.lastDigitDeleted)
+    {
+        result = YES;
+    }
+
+    
+    NSLog(@"evaluated guard_PartiallyFilled_to_PartiallyFilled_DigitDeleted with result: %d", result);
+    
+    return result;
+}
+
+- (BOOL) guard_PartiallyFilled_to_CompletelyFilled {
     BOOL result = NO;
     
     if ([pin count] == MAX_PIN_DIGITS) {
         result = YES;
     }
     
-    NSLog(@"evaluated guard_partiallyFilled_to_completelyFilled with result: %d", result);
+    NSLog(@"evaluated guard_PartiallyFilled_to_CompletelyFilled with result: %d", result);
     
     return result;
 }
 
-- (BOOL) guard_completelyFilled_to_userAuthenticated {
+- (BOOL) guard_CompletelyFilled_to_final0 {
     BOOL result = pinCorrect;
     
-    NSLog(@"evaluated guard_completelyFilled_to_userAuthenticated with result: %d", result);
+    NSLog(@"evaluated guard_CompletelyFilled_to_final0 with result: %d", result);
     
     return result;
 }
 
-- (BOOL) guard_completelyFilled_to_userNotAuthenticated {
-    BOOL result = !pinCorrect;
+- (BOOL) guard_CompletelyFilled_to_Locked {
+    BOOL result = !pinCorrect && lockAfterFailedAuthentication;
     
-    NSLog(@"evaluated guard_completelyFilled_to_userNotAuthenticated with result: %d", result);
-    
-    return result;
-}
-
-- (BOOL) guard_userNotAuthenticated_to_empty {
-    BOOL result = !lockAfterFailedAuthentication;
-    
-    NSLog(@"evaluated guard_userNotAuthenticated_to_empty with result: %d", result);
+    NSLog(@"evaluated guard_CompletelyFilled_to_Locked with result: %d", result);
     
     return result;
 }
 
-- (BOOL) guard_userNotAuthenticated_to_locked {
-    BOOL result = lockAfterFailedAuthentication;
+- (BOOL) guard_CompletelyFilled_to_Empty {
+    BOOL result = !pinCorrect && !lockAfterFailedAuthentication;
     
-    NSLog(@"evaluated guard_userNotAuthenticated_to_locked with result: %d", result);
-    
-    return result;
-}
-
-- (BOOL) guard_locked_to_userauthenticated {
-    BOOL result = YES;
-    
-    NSLog(@"evaluated guard_locked_to_userauthenticated with result: %d", result);
-    
-    return result;
-}
-
-- (BOOL) guard_userauthenticated_to_final {
-    BOOL result = NO;
-    
-    NSLog(@"evaluated guard_userauthenticated_to_final with result: %d", result);
-    
-    return result;
-}
-
-- (BOOL) guard_userauthenticated_to_empty {
-    BOOL result = NO;
-    
-    NSLog(@"evaluated guard_userauthenticated_to_empty with result: %d", result);
+    NSLog(@"evaluated guard_CompletelyFilled_to_Empty with result: %d", result);
     
     return result;
 }

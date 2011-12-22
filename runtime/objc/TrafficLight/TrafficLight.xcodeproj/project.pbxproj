@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F944556214A374F7009CAC2C /* TrafficLightStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = F944556114A374F7009CAC2C /* TrafficLightStateMachine.m */; };
 		F9C52C04147C10A000F1987A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C52C03147C10A000F1987A /* UIKit.framework */; };
 		F9C52C06147C10A000F1987A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C52C05147C10A000F1987A /* Foundation.framework */; };
 		F9C52C08147C10A000F1987A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C52C07147C10A000F1987A /* CoreGraphics.framework */; };
@@ -21,7 +22,6 @@
 		F9C52C27147C10A000F1987A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C52C05147C10A000F1987A /* Foundation.framework */; };
 		F9C52C2F147C10A000F1987A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9C52C2D147C10A000F1987A /* InfoPlist.strings */; };
 		F9C52C32147C10A000F1987A /* TrafficLightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C52C31147C10A000F1987A /* TrafficLightTests.m */; };
-		F9C52C3F147C11FA00F1987A /* TrafficLightStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C52C3E147C11FA00F1987A /* TrafficLightStateMachine.m */; };
 		F9C52C41147C126A00F1987A /* libMOBStateMachine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C52C40147C126A00F1987A /* libMOBStateMachine.a */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F944555F14A374F7009CAC2C /* P_D_TrafficLightStateHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P_D_TrafficLightStateHandler.h; sourceTree = "<group>"; };
+		F944556014A374F7009CAC2C /* TrafficLightStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrafficLightStateMachine.h; sourceTree = "<group>"; };
+		F944556114A374F7009CAC2C /* TrafficLightStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficLightStateMachine.m; sourceTree = "<group>"; };
 		F9C52BFF147C10A000F1987A /* TrafficLight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrafficLight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C52C03147C10A000F1987A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F9C52C05147C10A000F1987A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -56,10 +59,7 @@
 		F9C52C2E147C10A000F1987A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F9C52C30147C10A000F1987A /* TrafficLightTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrafficLightTests.h; sourceTree = "<group>"; };
 		F9C52C31147C10A000F1987A /* TrafficLightTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrafficLightTests.m; sourceTree = "<group>"; };
-		F9C52C3C147C11FA00F1987A /* P_D_TrafficLightStateHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P_D_TrafficLightStateHandler.h; sourceTree = "<group>"; };
-		F9C52C3D147C11FA00F1987A /* TrafficLightStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrafficLightStateMachine.h; sourceTree = "<group>"; };
-		F9C52C3E147C11FA00F1987A /* TrafficLightStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficLightStateMachine.m; sourceTree = "<group>"; };
-		F9C52C40147C126A00F1987A /* libMOBStateMachine.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libMOBStateMachine.a; path = "../MOBStateMachine/build/Release-iphoneos/libMOBStateMachine.a"; sourceTree = "<group>"; };
+		F9C52C40147C126A00F1987A /* libMOBStateMachine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMOBStateMachine.a; path = "../MOBStateMachine/build/Release-iphoneos/libMOBStateMachine.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,9 +166,9 @@
 		F9C52C3B147C10C200F1987A /* src-gen */ = {
 			isa = PBXGroup;
 			children = (
-				F9C52C3C147C11FA00F1987A /* P_D_TrafficLightStateHandler.h */,
-				F9C52C3D147C11FA00F1987A /* TrafficLightStateMachine.h */,
-				F9C52C3E147C11FA00F1987A /* TrafficLightStateMachine.m */,
+				F944555F14A374F7009CAC2C /* P_D_TrafficLightStateHandler.h */,
+				F944556014A374F7009CAC2C /* TrafficLightStateMachine.h */,
+				F944556114A374F7009CAC2C /* TrafficLightStateMachine.m */,
 			);
 			path = "src-gen";
 			sourceTree = "<group>";
@@ -283,7 +283,7 @@
 				F9C52C10147C10A000F1987A /* main.m in Sources */,
 				F9C52C14147C10A000F1987A /* MOBAppDelegate.m in Sources */,
 				F9C52C17147C10A000F1987A /* MOBViewController.m in Sources */,
-				F9C52C3F147C11FA00F1987A /* TrafficLightStateMachine.m in Sources */,
+				F944556214A374F7009CAC2C /* TrafficLightStateMachine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +463,7 @@
 				F9C52C37147C10A000F1987A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F9C52C38147C10A000F1987A /* Build configuration list for PBXNativeTarget "TrafficLightTests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +472,7 @@
 				F9C52C3A147C10A000F1987A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

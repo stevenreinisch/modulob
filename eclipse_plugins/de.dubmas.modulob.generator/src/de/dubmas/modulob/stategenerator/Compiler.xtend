@@ -27,72 +27,90 @@ class Compiler implements IGenerator{
 	
 	def header(StateMachine sm)
 	'''
-	#import "MOBStateMachine.h"
-
-	enum {
-		«sm.nodes.filter(typeof(InitialNode)).head.enumLiteral» = 0,
-		«FOR s: sm.nodes.filter(n | StatePackage::eINSTANCE.state.isInstance(n) 
-									|| 
-									StatePackage::eINSTANCE.finalNode.isInstance(n)) SEPARATOR ','»
-			«s.enumLiteral»
-		«ENDFOR»
-	};
+		#import "MOBStateMachine.h"
 	
-	enum {
-		«FOR t: Indexed::indexed(sm.transitions) SEPARATOR ','»
-			«t.value.enumLiteral()» «IF t.index0 == 0»= 0«ENDIF»
-		«ENDFOR»
-	};
+		/*
+	 	 * State IDs
+	 	 */
+		enum {
+			«sm.nodes.filter(typeof(InitialNode)).head.enumLiteral» = 0,
+			«FOR s: sm.nodes.filter(n | StatePackage::eINSTANCE.state.isInstance(n) 
+										|| 
+										StatePackage::eINSTANCE.finalNode.isInstance(n)) SEPARATOR ','»
+				«s.enumLiteral»
+			«ENDFOR»
+		};
 	
-	@interface «sm.className» : MOBStateMachine
+		/*
+	 	 * Transition IDs
+	 	 */
+		enum {
+			«FOR t: Indexed::indexed(sm.transitions) SEPARATOR ','»
+				«t.value.enumLiteral()» «IF t.index0 == 0»= 0«ENDIF»
+			«ENDFOR»
+		};
+	
+		«IF sm.transitionsReactingToEvents.size > 0»
+		/*
+		 * Transition Trigger Event IDs 
+		 * (without TimeoutTransitions and transitions from initial node)
+		 */
+		 enum {
+	 		«FOR t: Indexed::indexed(sm.eventConstants) SEPARATOR ','»
+				«t.value» «IF t.index0 == 0»= 0«ENDIF»
+			«ENDFOR»
+		};
+		«ENDIF»
+	
+		@interface «sm.className» : MOBStateMachine
 
-	@end
+		@end
 	'''
 	
 	def impl(StateMachine sm)
 	'''
-	#import "«sm.className».h"
+		#import "«sm.className».h"
 
-	#import "MOBStateMachine.h"
+		#import "MOBStateMachine.h"
 
-	@implementation «sm.className»
+		@implementation «sm.className»
 
-	- (id)init
-	{
-		self = [super init];
-		if (self) {
-			/*
-			 * Define the states.
-			 */
-			 «FOR n: sm.nodes»
-			 	«n.stateDef»
-			 	
-			 «ENDFOR»
+		- (id)init
+		{
+			self = [super init];
+			if (self) {
+				/*
+			 	 * Define the states.
+			 	 */
+			 	«FOR n: sm.nodes»
+			 		«n.stateDef»
+			 		
+			 	«ENDFOR»
 			 
-			 /*
-			  * Define transitions.
-			  */
-			  «FOR t: sm.transitions»
-			  	«t.transitionDefinition»;
-			  	«t.name()».ID = «t.enumLiteral»;
-			  	«t.name()».guardSelectorName = @"«t.guardSelectorName»";
-			  	«t.name()».actionSelectorName = @"«t.actionSelectorName»";
-			  	
-			  	«IF StatePackage::eINSTANCE.timeoutTransition.isInstance(t)»
-			  		«t.source.name()».timeoutTransition = «t.name()»;
+			 	/*
+			     * Define transitions.
+			     */
+			  	«FOR t: sm.transitions»
+			  		«t.transitionDefinition»;
+			  		«t.name()».ID = «t.enumLiteral»;
+			  		«t.name()».guardSelectorName = @"«t.guardSelectorName»";
+			  		«t.name()».actionSelectorName = @"«t.actionSelectorName»";
 			  		
-			  	«ENDIF»
-			  «ENDFOR»
+			  		«IF StatePackage::eINSTANCE.timeoutTransition.isInstance(t)»
+			  			«t.source.name()».timeoutTransition = «t.name()»;
+			  			
+			  		«ENDIF»
+			  	«ENDFOR»
 			  
-			  /*
-			   * Build the transition index.
-			   */
+			  	/*
+			     * Build the transition index.
+			     */
 			   
-			   self.transitionIndex = [NSArray arrayWithObjects:
-                                «FOR t: sm.transitions SEPARATOR ','»
-                                	«t.name()»
-                                «ENDFOR»
-								,nil];
+			   	self.transitionIndex = [NSArray arrayWithObjects:
+                	                «FOR t: sm.transitions SEPARATOR ','»
+                    	            	«t.name()»
+                        	        «ENDFOR»
+									,nil];
 			  
 				/*
 				 * Wire states and transitions.
@@ -121,9 +139,52 @@ class Compiler implements IGenerator{
 				 «FOR t: sm.transitions»
 				 	[self.transitions addObject:«t.name()»];
 				 «ENDFOR»
-		}
-		return self;
+			}
+			return self;
 	}
+	
+	- (void) dispatchEvent:(MOBEvent) event {
+		«IF sm.transitionsReactingToEvents.size > 0»
+		switch (event) {
+			«FOR eventConstant: sm.eventConstants»
+				case «eventConstant»:
+				{
+					switch ([self.currentState ID]) 
+					{
+						«FOR state: sm.stateNodes.filter(s | s.outgoing.exists(t | t.triggerEventConstant == eventConstant))»
+							case «state.enumLiteral»:
+							{
+								«FOR t: Indexed::indexed(state.outgoing.filter(t | t.triggerEventConstant == eventConstant))»
+									«IF t.index0 > 0»else «ENDIF»if ([self evaluateGuardSelector:@"«t.value.guardSelectorName»"])
+									{
+										[self switchTransitionWithID:«t.value.enumLiteral»];
+									} 
+								«ENDFOR»
+								else 
+								{
+									NSLog(@"MOBStateMachine::No guard permits transition in state: %@ for event: %d.", [self.currentState name], event);
+								}
+								break;
+							}
+						«ENDFOR»
+						default:
+						{
+							NSLog(@"MOBStateMachine::Warning: state: %@ not designated to react to event: %d.", [self.currentState name], event);
+							break;
+						}
+					}
+					break;	
+				}
+			«ENDFOR»
+			default:
+			{
+				NSLog(@"MOBStateMachine::Error: Cannot handle event: %d", event);
+				[self.delegate handleStateMachineError:MOBStateMachineError_UnknownEvent];
+			}
+		}
+		«ENDIF»
+	}
+	
 	@end 
 	'''
 	
@@ -250,8 +311,6 @@ class Compiler implements IGenerator{
 		#pragma mark transitions: guards (required)
 		//Guards for timeout transitions are not evaluated and thus neither optional nor required.
 
-		@required
-		
 		«FOR t: sm.nonDeterministicExitStates.map(s | s.outgoing).flatten.
 					filter(t | !StatePackage::eINSTANCE.timeoutTransition.isInstance(t))
 		»

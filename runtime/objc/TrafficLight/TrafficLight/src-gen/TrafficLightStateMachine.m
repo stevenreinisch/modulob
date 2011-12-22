@@ -1,6 +1,6 @@
-#import "TrafficLightStateMachine.h"
+	#import "TrafficLightStateMachine.h"
 
-#import "MOBStateMachine.h"
+	#import "MOBStateMachine.h"
 
 @implementation TrafficLightStateMachine
 
@@ -12,39 +12,39 @@
 		 */
 		MOBInitialState *initial = [[MOBInitialState new] autorelease];
 		initial.name = @"initial";
-		initial.ID   = TrafficLightState_INITIAL;
+		initial.ID   = TrafficLight_State_INITIAL;
 		initial.entrySelectorName = @"enter_initial";
 		initial.exitSelectorName  = @"exit_initial";
 
 		MOBState *Red = [[MOBState new] autorelease];
 		Red.name = @"Red";
-		Red.ID = TrafficLightState_RED;
+		Red.ID = TrafficLight_State_RED;
 		Red.duration = 3.0;
 		Red.entrySelectorName = @"enter_Red";
 		Red.exitSelectorName = @"exit_Red";
 
 		MOBFinalState *final0 = [[MOBFinalState new] autorelease];
 		final0.name = @"final0";
-		final0.ID   = TrafficLightState_FINAL0;
+		final0.ID   = TrafficLight_State_FINAL0;
 		final0.entrySelectorName = @"enter_final0";
 
 		MOBState *Yellow = [[MOBState new] autorelease];
 		Yellow.name = @"Yellow";
-		Yellow.ID = TrafficLightState_YELLOW;
+		Yellow.ID = TrafficLight_State_YELLOW;
 		Yellow.duration = 1.0;
 		Yellow.entrySelectorName = @"enter_Yellow";
 		Yellow.exitSelectorName = @"exit_Yellow";
 
 		MOBState *Green = [[MOBState new] autorelease];
 		Green.name = @"Green";
-		Green.ID = TrafficLightState_GREEN;
+		Green.ID = TrafficLight_State_GREEN;
 		Green.duration = 3.0;
 		Green.entrySelectorName = @"enter_Green";
 		Green.exitSelectorName = @"exit_Green";
 
 		MOBState *GreenYellow = [[MOBState new] autorelease];
 		GreenYellow.name = @"GreenYellow";
-		GreenYellow.ID = TrafficLightState_GREENYELLOW;
+		GreenYellow.ID = TrafficLight_State_GREENYELLOW;
 		GreenYellow.duration = 1.5;
 		GreenYellow.entrySelectorName = @"enter_GreenYellow";
 		GreenYellow.exitSelectorName = @"exit_GreenYellow";
@@ -53,38 +53,38 @@
 		 * Define transitions.
 		 */
 		MOBTransition *initial_to_Red = [[MOBTransition new] autorelease];
-		initial_to_Red.ID = TrafficLightTransition_INITIAL_RED;
+		initial_to_Red.ID = TrafficLight_Transition_INITIAL_RED;
 		initial_to_Red.guardSelectorName = @"guard_initial_to_Red";
 		initial_to_Red.actionSelectorName = @"action_initial_to_Red";
 
 		MOBTransition *Red_to_final0 = [[MOBTransition new] autorelease];
-		Red_to_final0.ID = TrafficLightTransition_RED_FINAL0;
+		Red_to_final0.ID = TrafficLight_Transition_RED_FINAL0;
 		Red_to_final0.guardSelectorName = @"guard_Red_to_final0";
 		Red_to_final0.actionSelectorName = @"action_Red_to_final0";
 
 		MOBTimeoutTransition *Red_to_Yellow = [[MOBTimeoutTransition new] autorelease];
-		Red_to_Yellow.ID = TrafficLightTransition_RED_YELLOW;
+		Red_to_Yellow.ID = TrafficLight_Transition_RED_YELLOW;
 		Red_to_Yellow.guardSelectorName = @"guard_Red_to_Yellow";
 		Red_to_Yellow.actionSelectorName = @"action_Red_to_Yellow";
 
 		Red.timeoutTransition = Red_to_Yellow;
 
 		MOBTimeoutTransition *Yellow_to_Green = [[MOBTimeoutTransition new] autorelease];
-		Yellow_to_Green.ID = TrafficLightTransition_YELLOW_GREEN;
+		Yellow_to_Green.ID = TrafficLight_Transition_YELLOW_GREEN;
 		Yellow_to_Green.guardSelectorName = @"guard_Yellow_to_Green";
 		Yellow_to_Green.actionSelectorName = @"action_Yellow_to_Green";
 
 		Yellow.timeoutTransition = Yellow_to_Green;
 
 		MOBTimeoutTransition *Green_to_GreenYellow = [[MOBTimeoutTransition new] autorelease];
-		Green_to_GreenYellow.ID = TrafficLightTransition_GREEN_GREENYELLOW;
+		Green_to_GreenYellow.ID = TrafficLight_Transition_GREEN_GREENYELLOW;
 		Green_to_GreenYellow.guardSelectorName = @"guard_Green_to_GreenYellow";
 		Green_to_GreenYellow.actionSelectorName = @"action_Green_to_GreenYellow";
 
 		Green.timeoutTransition = Green_to_GreenYellow;
 
 		MOBTimeoutTransition *GreenYellow_to_Red = [[MOBTimeoutTransition new] autorelease];
-		GreenYellow_to_Red.ID = TrafficLightTransition_GREENYELLOW_RED;
+		GreenYellow_to_Red.ID = TrafficLight_Transition_GREENYELLOW_RED;
 		GreenYellow_to_Red.guardSelectorName = @"guard_GreenYellow_to_Red";
 		GreenYellow_to_Red.actionSelectorName = @"action_GreenYellow_to_Red";
 
@@ -183,6 +183,9 @@
 		[self.transitions addObject: GreenYellow_to_Red];
 	}
 	return self;
+}
+
+- (void) dispatchEvent: (MOBEvent) event {
 }
 
 @end

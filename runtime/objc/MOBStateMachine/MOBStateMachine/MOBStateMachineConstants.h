@@ -20,9 +20,11 @@
 
 typedef NSUInteger MOBTransitionID;
 typedef NSUInteger MOBStateID;
+typedef NSUInteger MOBEvent;
 
 typedef enum{
     MOBStateMachineError_AlreadyInFinalState = 0,
     MOBStateMachineError_TransitionUnknown,
-    MOBStateMachineError_NotInSourceStateOfSwitchedTransition
+    MOBStateMachineError_NotInSourceStateOfSwitchedTransition,
+    MOBStateMachineError_UnknownEvent
 } MOBStateMachineError;

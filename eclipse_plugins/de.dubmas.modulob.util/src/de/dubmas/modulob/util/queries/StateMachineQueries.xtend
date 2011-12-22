@@ -8,6 +8,7 @@ import de.dubmas.modulob.state.Transition
 import de.dubmas.modulob.state.TimeoutTransition
 import de.dubmas.modulob.state.StateMachine
 import de.dubmas.modulob.state.StatePackage
+import de.dubmas.modulob.util.CheckUtil
 
 class StateMachineQueries {
 	
@@ -52,5 +53,9 @@ class StateMachineQueries {
 	def transitionWithSameSourceAndTarget(Transition t) {
 		var sm = t.eContainer as StateMachine
 		sm.transitions.exists(t_ | t_ != t && t_.source == t.source && t_.target == t.target)	
+	}
+	
+	def eventIsUnique(Transition t) {
+		!(t.eContainer as StateMachine).transitions.exists(t_ | t_.triggerEventName == t.triggerEventName)
 	}
 }

@@ -27,13 +27,39 @@ class Extensions {
 	}
 	
 	def enumLiteral(Node n){
-		(n.eContainer as StateMachine).name + 'State_' + n.name.toUpperCase()
+		(n.eContainer as StateMachine).name + '_State_' + n.name.toUpperCase()
 	}
 	
 	def enumLiteral(Transition t){
-		(t.eContainer as StateMachine).name + 'Transition_' +
-		t.source.name().toUpperCase() + '_' +
-		t.target.name().toUpperCase()
+		var literal = (t.eContainer as StateMachine).name + '_Transition_' +
+					  t.source.name().toUpperCase() + '_' +
+					  t.target.name().toUpperCase()
+		/*
+		 * If another transition with same source and target state
+		 * exists, append the name of the trigger event
+		 */
+		if((t.eContainer as StateMachine).
+				transitionsReactingToEvents.
+					exists(t_ | t_ != t && t_.source == t.source && t_.target == t.target)
+		)
+		{
+			literal = literal + '_' + t.triggerEventName.toUpperCase
+		}	
+					  
+		literal			  
+	}
+	
+	def transitionsWithoutTimeout (StateMachine sm) {
+		sm.transitions.filter(t | !StatePackage::eINSTANCE.timeoutTransition.isInstance(t))
+	}
+	
+	def transitionsWithoutTimeoutAndInitial (StateMachine sm) {
+		sm.transitions.filter(t | !StatePackage::eINSTANCE.timeoutTransition.isInstance(t))
+			.filter(t | !StatePackage::eINSTANCE.initialNode.isInstance(t.source))
+	}
+	
+	def transitionsReactingToEvents (StateMachine sm) {
+		sm.transitionsWithoutTimeoutAndInitial.filter(t | t.triggerEventName != null && t.triggerEventName != "")
 	}
 	
 	def headerFilePath(StateMachine sm){
@@ -57,7 +83,21 @@ class Extensions {
 	}
 	
 	def name(Transition t){
-		t.source.name() + '_to_' + t.target.name()
+		var name = t.source.name() + '_to_' + t.target.name()
+		
+		/*
+		 * If another transition with same source and target state
+		 * exists, append the name of the trigger event
+		 */
+		if((t.eContainer as StateMachine).
+				transitionsReactingToEvents.
+					exists(t_ | t_ != t && t_.source == t.source && t_.target == t.target)
+		)
+		{
+			name = name + '_' + t.triggerEventName
+		}
+		
+		name
 	}
 	
 	def guardSelectorName(Transition t){
@@ -66,6 +106,13 @@ class Extensions {
 
 	def actionSelectorName(Transition t){
 		'action_' + t.name()	
+	}
+	
+	def triggerEventConstant(Transition t) {
+		if (StatePackage::eINSTANCE.timeoutTransition.isInstance(t)){
+			return ''
+		}
+		(t.eContainer as StateMachine).name + '_Event_' + t.triggerEventName.toUpperCase
 	}
 	
 	def stateHandlerName(StateMachine sm){
@@ -80,5 +127,13 @@ class Extensions {
 		var nodes = sm.nodes 
 		nodes.removeAll(sm.deterministicExitStates().toSet)
 		nodes
+	}
+	
+	def eventConstants(StateMachine sm) {
+		sm.transitionsReactingToEvents.map(t | t.triggerEventConstant).toSet
+	}
+	
+	def stateNodes(StateMachine sm) {
+		sm.nodes.filter(n | StatePackage::eINSTANCE.state.isInstance(n))
 	}
 }

@@ -1,21 +1,27 @@
-#import "MOBStateMachine.h"
+	#import "MOBStateMachine.h"
 
+/*
+ * State IDs
+ */
 enum {
-	TrafficLightState_INITIAL = 0,
-	TrafficLightState_RED,
-	TrafficLightState_FINAL0,
-	TrafficLightState_YELLOW,
-	TrafficLightState_GREEN,
-	TrafficLightState_GREENYELLOW
+	TrafficLight_State_INITIAL = 0,
+	TrafficLight_State_RED,
+	TrafficLight_State_FINAL0,
+	TrafficLight_State_YELLOW,
+	TrafficLight_State_GREEN,
+	TrafficLight_State_GREENYELLOW
 };
 
+/*
+ * Transition IDs
+ */
 enum {
-	TrafficLightTransition_INITIAL_RED = 0,
-	TrafficLightTransition_RED_FINAL0,
-	TrafficLightTransition_RED_YELLOW,
-	TrafficLightTransition_YELLOW_GREEN,
-	TrafficLightTransition_GREEN_GREENYELLOW,
-	TrafficLightTransition_GREENYELLOW_RED
+	TrafficLight_Transition_INITIAL_RED = 0,
+	TrafficLight_Transition_RED_FINAL0,
+	TrafficLight_Transition_RED_YELLOW,
+	TrafficLight_Transition_YELLOW_GREEN,
+	TrafficLight_Transition_GREEN_GREENYELLOW,
+	TrafficLight_Transition_GREENYELLOW_RED
 };
 
 @interface TrafficLightStateMachine : MOBStateMachine

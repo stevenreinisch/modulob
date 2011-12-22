@@ -17,6 +17,7 @@
 		F95A258F1476979A0082C689 /* MOBTimeoutTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = F95A258D1476979A0082C689 /* MOBTimeoutTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F95A25901476979A0082C689 /* MOBTimeoutTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F95A258E1476979A0082C689 /* MOBTimeoutTransition.m */; };
 		F9604D4E146D418D0046B49B /* MOBStateMachineConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = F9604D4D146D418D0046B49B /* MOBStateMachineConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F96EA06914A39F0100684E84 /* PasswordEntryStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = F944556714A38416009CAC2C /* PasswordEntryStateMachine.m */; };
 		F988A28A14487EA9002EC3AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F988A28914487EA9002EC3AD /* Foundation.framework */; };
 		F988A29014487EA9002EC3AD /* MOBStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = F988A28F14487EA9002EC3AD /* MOBStateMachine.m */; };
 		F988A29814487EA9002EC3AD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F988A29714487EA9002EC3AD /* SenTestingKit.framework */; };
@@ -28,12 +29,12 @@
 		F988A2A814487EA9002EC3AD /* MOBStateMachineTests.h in Resources */ = {isa = PBXBuildFile; fileRef = F988A2A714487EA9002EC3AD /* MOBStateMachineTests.h */; };
 		F988A2AA14487EA9002EC3AD /* MOBStateMachineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F988A2A914487EA9002EC3AD /* MOBStateMachineTests.m */; };
 		F988A2B914487F2F002EC3AD /* PasswordEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = F988A2B614487F2F002EC3AD /* PasswordEntry.m */; };
-		F988A2BA14487F2F002EC3AD /* PasswordEntryStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = F988A2B814487F2F002EC3AD /* PasswordEntryStateMachine.m */; };
 		F988A2BF14487F48002EC3AD /* MOBState.h in Headers */ = {isa = PBXBuildFile; fileRef = F988A2BB14487F48002EC3AD /* MOBState.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F988A2C014487F48002EC3AD /* MOBState.m in Sources */ = {isa = PBXBuildFile; fileRef = F988A2BC14487F48002EC3AD /* MOBState.m */; };
 		F988A2C114487F48002EC3AD /* MOBTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = F988A2BD14487F48002EC3AD /* MOBTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F988A2C214487F48002EC3AD /* MOBTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F988A2BE14487F48002EC3AD /* MOBTransition.m */; };
 		F988A2C414487FA0002EC3AD /* MOBStateMachine.h in Headers */ = {isa = PBXBuildFile; fileRef = F988A28E14487EA9002EC3AD /* MOBStateMachine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F98F666914A20DBF004E7F01 /* PasswordEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = F988A2B514487F2F002EC3AD /* PasswordEntry.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,9 @@
 		F93105E6145162D0009ACCBC /* MOBInitialState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBInitialState.m; sourceTree = "<group>"; };
 		F93105E9145162DA009ACCBC /* MOBFinalState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBFinalState.h; sourceTree = "<group>"; };
 		F93105EA145162DA009ACCBC /* MOBFinalState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBFinalState.m; sourceTree = "<group>"; };
+		F944556514A38416009CAC2C /* P_D_PasswordEntryStateHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = P_D_PasswordEntryStateHandler.h; sourceTree = "<group>"; };
+		F944556614A38416009CAC2C /* PasswordEntryStateMachine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordEntryStateMachine.h; sourceTree = "<group>"; };
+		F944556714A38416009CAC2C /* PasswordEntryStateMachine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordEntryStateMachine.m; sourceTree = "<group>"; };
 		F95A258A14764C7D0082C689 /* TestCaseConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCaseConstants.h; sourceTree = "<group>"; };
 		F95A258D1476979A0082C689 /* MOBTimeoutTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBTimeoutTransition.h; sourceTree = "<group>"; };
 		F95A258E1476979A0082C689 /* MOBTimeoutTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBTimeoutTransition.m; sourceTree = "<group>"; };
@@ -105,6 +109,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F944556314A38403009CAC2C /* src-gen */ = {
+			isa = PBXGroup;
+			children = (
+				F944556514A38416009CAC2C /* P_D_PasswordEntryStateHandler.h */,
+				F944556614A38416009CAC2C /* PasswordEntryStateMachine.h */,
+				F944556714A38416009CAC2C /* PasswordEntryStateMachine.m */,
+			);
+			path = "src-gen";
+			sourceTree = "<group>";
+		};
 		F988A27B14487EA9002EC3AD = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +196,7 @@
 		F988A2B314487F2F002EC3AD /* testCaseDefinitions */ = {
 			isa = PBXGroup;
 			children = (
+				F944556314A38403009CAC2C /* src-gen */,
 				F988A2B414487F2F002EC3AD /* P_D_PasswordEntryStateHandler.h */,
 				F988A2B514487F2F002EC3AD /* PasswordEntry.h */,
 				F988A2B614487F2F002EC3AD /* PasswordEntry.m */,
@@ -223,6 +238,7 @@
 				F9604D4E146D418D0046B49B /* MOBStateMachineConstants.h in Headers */,
 				F95A258B14764C7D0082C689 /* TestCaseConstants.h in Headers */,
 				F95A258F1476979A0082C689 /* MOBTimeoutTransition.h in Headers */,
+				F98F666914A20DBF004E7F01 /* PasswordEntry.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,7 +353,7 @@
 			files = (
 				F988A2AA14487EA9002EC3AD /* MOBStateMachineTests.m in Sources */,
 				F988A2B914487F2F002EC3AD /* PasswordEntry.m in Sources */,
-				F988A2BA14487F2F002EC3AD /* PasswordEntryStateMachine.m in Sources */,
+				F96EA06914A39F0100684E84 /* PasswordEntryStateMachine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

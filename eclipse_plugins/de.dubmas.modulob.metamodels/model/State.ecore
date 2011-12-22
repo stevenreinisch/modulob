@@ -14,6 +14,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Node"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="#//Condition"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="triggerEventName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InitialNode" eSuperTypes="#//Node"/>
   <eClassifiers xsi:type="ecore:EClass" name="FinalNode" eSuperTypes="#//Node"/>

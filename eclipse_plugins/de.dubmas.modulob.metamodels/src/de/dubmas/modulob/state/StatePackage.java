@@ -134,13 +134,22 @@ public interface StatePackage extends EPackage {
 	int TRANSITION__GUARD = 2;
 
 	/**
+	 * The feature id for the '<em><b>Trigger Event Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__TRIGGER_EVENT_NAME = 3;
+
+	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = 3;
+	int TRANSITION_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link de.dubmas.modulob.state.impl.InitialNodeImpl <em>Initial Node</em>}' class.
@@ -439,6 +448,15 @@ public interface StatePackage extends EPackage {
 	int TIMEOUT_TRANSITION__GUARD = TRANSITION__GUARD;
 
 	/**
+	 * The feature id for the '<em><b>Trigger Event Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMEOUT_TRANSITION__TRIGGER_EVENT_NAME = TRANSITION__TRIGGER_EVENT_NAME;
+
+	/**
 	 * The number of structural features of the '<em>Timeout Transition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -522,6 +540,17 @@ public interface StatePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTransition_Guard();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dubmas.modulob.state.Transition#getTriggerEventName <em>Trigger Event Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Trigger Event Name</em>'.
+	 * @see de.dubmas.modulob.state.Transition#getTriggerEventName()
+	 * @see #getTransition()
+	 * @generated
+	 */
+	EAttribute getTransition_TriggerEventName();
 
 	/**
 	 * Returns the meta object for class '{@link de.dubmas.modulob.state.InitialNode <em>Initial Node</em>}'.
@@ -762,6 +791,14 @@ public interface StatePackage extends EPackage {
 		 * @generated
 		 */
 		EReference TRANSITION__GUARD = eINSTANCE.getTransition_Guard();
+
+		/**
+		 * The meta object literal for the '<em><b>Trigger Event Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRANSITION__TRIGGER_EVENT_NAME = eINSTANCE.getTransition_TriggerEventName();
 
 		/**
 		 * The meta object literal for the '{@link de.dubmas.modulob.state.impl.InitialNodeImpl <em>Initial Node</em>}' class.

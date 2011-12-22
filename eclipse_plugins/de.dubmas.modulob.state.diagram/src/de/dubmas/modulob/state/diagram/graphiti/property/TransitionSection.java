@@ -25,6 +25,7 @@ public class TransitionSection extends GFPropertySection implements
 ITabbedPropertyConstants {
 	
 	private Text guardField;
+	private Text eventField;
 	private Transition transition;
 	private IDiagramTypeProvider diagramTypeProvider;
 	 
@@ -33,19 +34,40 @@ ITabbedPropertyConstants {
 		@Override
 		public void modifyText(ModifyEvent e) {
 			try {
-				String guard = ((Text)e.getSource()).getText();
-					
-				if(guard != null && !guard.equals("")){
-						
-					EditingDomain editingDomain =
-							diagramTypeProvider.getDiagramEditor().getEditingDomain();
-						
-					if(editingDomain != null){
-						editingDomain.getCommandStack().
-								execute(SetCommand.create(editingDomain, 
-														  transition.getGuard(), 
-														  StatePackage.eINSTANCE.getCondition_Expression(), 
-														  guard));
+				Object source = e.getSource();
+				
+				if (source == guardField) {
+				
+					String guard = ((Text) source).getText();
+
+					if (guard != null && !guard.equals("")) {
+
+						EditingDomain editingDomain = diagramTypeProvider
+								.getDiagramEditor().getEditingDomain();
+
+						if (editingDomain != null) {
+							editingDomain.getCommandStack().execute(
+									SetCommand.create(editingDomain, transition
+											.getGuard(), StatePackage.eINSTANCE
+											.getCondition_Expression(), guard));
+						}
+					}
+				} else if (source == eventField) {
+				
+					String triggerEvent = ((Text) source).getText();
+
+					if (triggerEvent != null && !triggerEvent.equals("")) {
+
+						EditingDomain editingDomain = diagramTypeProvider
+								.getDiagramEditor().getEditingDomain();
+
+						if (editingDomain != null) {
+							editingDomain.getCommandStack().execute(
+									SetCommand.create(editingDomain, 
+											transition, 
+											StatePackage.eINSTANCE.getTransition_TriggerEventName(), 
+											triggerEvent));
+						}
 					}
 				}
 			} catch (Exception ex){
@@ -71,7 +93,7 @@ ITabbedPropertyConstants {
         data.top = new FormAttachment(0, VSPACE);
         guardField.setLayoutData(data);
  
-        CLabel valueLabel = factory.createCLabel(composite, "Guard (Describe why transition switches.):");
+        CLabel valueLabel = factory.createCLabel(composite, "Guard:");
         data = new FormData();
         data.left = new FormAttachment(0, 0);
         data.right = new FormAttachment(guardField, -HSPACE);
@@ -79,6 +101,24 @@ ITabbedPropertyConstants {
         valueLabel.setLayoutData(data);
         
         guardField.addModifyListener(listener);
+        
+        composite = factory.createFlatFormComposite(parent);
+        
+        eventField = factory.createText(composite, "switches if this and that is true");
+        data = new FormData();
+        data.left = new FormAttachment(0, STANDARD_LABEL_WIDTH);
+        data.right = new FormAttachment(100, 0);
+        data.top = new FormAttachment(0, VSPACE);
+        eventField.setLayoutData(data);
+ 
+        valueLabel = factory.createCLabel(composite, "Trigger event:");
+        data = new FormData();
+        data.left = new FormAttachment(0, 0);
+        data.right = new FormAttachment(eventField, -HSPACE);
+        data.top = new FormAttachment(eventField, 0, SWT.CENTER);
+        valueLabel.setLayoutData(data);
+        
+        eventField.addModifyListener(listener);
     }
  
     @Override
@@ -98,6 +138,9 @@ ITabbedPropertyConstants {
             
             String guard = transition.getGuard().getExpression();
             guardField.setText(guard == null ? "" : guard);
+            
+            String triggerEvent = transition.getTriggerEventName();
+            eventField.setText(triggerEvent == null ? "" : triggerEvent);
         }
     }
 }

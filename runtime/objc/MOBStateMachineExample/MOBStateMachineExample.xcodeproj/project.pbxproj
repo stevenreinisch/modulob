@@ -23,8 +23,8 @@
 		F988A301144880A9002EC3AD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F988A2FF144880A9002EC3AD /* InfoPlist.strings */; };
 		F988A303144880A9002EC3AD /* MOBStateMachineExampleTests.h in Resources */ = {isa = PBXBuildFile; fileRef = F988A302144880A9002EC3AD /* MOBStateMachineExampleTests.h */; };
 		F988A305144880A9002EC3AD /* MOBStateMachineExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F988A304144880A9002EC3AD /* MOBStateMachineExampleTests.m */; };
-		F988A31214488266002EC3AD /* PasswordEntryStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = F988A31114488266002EC3AD /* PasswordEntryStateMachine.m */; };
 		F988A3141448829F002EC3AD /* libMOBStateMachine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F988A3131448829F002EC3AD /* libMOBStateMachine.a */; };
+		F98F666E14A20E02004E7F01 /* PasswordEntryStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = F98F666D14A20E02004E7F01 /* PasswordEntryStateMachine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,10 +58,10 @@
 		F988A300144880A9002EC3AD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F988A302144880A9002EC3AD /* MOBStateMachineExampleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MOBStateMachineExampleTests.h; sourceTree = "<group>"; };
 		F988A304144880A9002EC3AD /* MOBStateMachineExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MOBStateMachineExampleTests.m; sourceTree = "<group>"; };
-		F988A30F14488266002EC3AD /* P_D_PasswordEntryStateHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = P_D_PasswordEntryStateHandler.h; path = ../../MOBStateMachine/MOBStateMachineTests/testCaseDefinitions/P_D_PasswordEntryStateHandler.h; sourceTree = "<group>"; };
-		F988A31014488266002EC3AD /* PasswordEntryStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasswordEntryStateMachine.h; path = ../../MOBStateMachine/MOBStateMachineTests/testCaseDefinitions/PasswordEntryStateMachine.h; sourceTree = "<group>"; };
-		F988A31114488266002EC3AD /* PasswordEntryStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PasswordEntryStateMachine.m; path = ../../MOBStateMachine/MOBStateMachineTests/testCaseDefinitions/PasswordEntryStateMachine.m; sourceTree = "<group>"; };
 		F988A3131448829F002EC3AD /* libMOBStateMachine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMOBStateMachine.a; path = "../MOBStateMachine/build/Release-iphoneos/libMOBStateMachine.a"; sourceTree = "<group>"; };
+		F98F666B14A20E02004E7F01 /* P_D_PasswordEntryStateHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = P_D_PasswordEntryStateHandler.h; path = ../../MOBStateMachine/MOBStateMachineTests/testCaseDefinitions/P_D_PasswordEntryStateHandler.h; sourceTree = "<group>"; };
+		F98F666C14A20E02004E7F01 /* PasswordEntryStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasswordEntryStateMachine.h; path = ../../MOBStateMachine/MOBStateMachineTests/testCaseDefinitions/PasswordEntryStateMachine.h; sourceTree = "<group>"; };
+		F98F666D14A20E02004E7F01 /* PasswordEntryStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PasswordEntryStateMachine.m; path = ../../MOBStateMachine/MOBStateMachineTests/testCaseDefinitions/PasswordEntryStateMachine.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +124,7 @@
 		F988A2DA144880A9002EC3AD /* MOBStateMachineExample */ = {
 			isa = PBXGroup;
 			children = (
-				F988A30E14488248002EC3AD /* StateMachine */,
+				F98F666A14A20DD9004E7F01 /* statemachine */,
 				F988A2E3144880A9002EC3AD /* MOBStateMachineExampleAppDelegate.h */,
 				F988A2E4144880A9002EC3AD /* MOBStateMachineExampleAppDelegate.m */,
 				F988A2E6144880A9002EC3AD /* MainWindow.xib */,
@@ -166,14 +166,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		F988A30E14488248002EC3AD /* StateMachine */ = {
+		F98F666A14A20DD9004E7F01 /* statemachine */ = {
 			isa = PBXGroup;
 			children = (
-				F988A30F14488266002EC3AD /* P_D_PasswordEntryStateHandler.h */,
-				F988A31014488266002EC3AD /* PasswordEntryStateMachine.h */,
-				F988A31114488266002EC3AD /* PasswordEntryStateMachine.m */,
+				F98F666B14A20E02004E7F01 /* P_D_PasswordEntryStateHandler.h */,
+				F98F666C14A20E02004E7F01 /* PasswordEntryStateMachine.h */,
+				F98F666D14A20E02004E7F01 /* PasswordEntryStateMachine.m */,
 			);
-			name = StateMachine;
+			name = statemachine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,7 +284,7 @@
 				F988A2E1144880A9002EC3AD /* main.m in Sources */,
 				F988A2E5144880A9002EC3AD /* MOBStateMachineExampleAppDelegate.m in Sources */,
 				F988A2EB144880A9002EC3AD /* MOBStateMachineExampleViewController.m in Sources */,
-				F988A31214488266002EC3AD /* PasswordEntryStateMachine.m in Sources */,
+				F98F666E14A20E02004E7F01 /* PasswordEntryStateMachine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

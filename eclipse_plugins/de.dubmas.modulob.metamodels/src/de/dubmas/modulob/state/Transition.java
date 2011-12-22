@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.dubmas.modulob.state.Transition#getSource <em>Source</em>}</li>
  *   <li>{@link de.dubmas.modulob.state.Transition#getTarget <em>Target</em>}</li>
  *   <li>{@link de.dubmas.modulob.state.Transition#getGuard <em>Guard</em>}</li>
+ *   <li>{@link de.dubmas.modulob.state.Transition#getTriggerEventName <em>Trigger Event Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -104,5 +105,31 @@ public interface Transition extends EObject {
 	 * @generated
 	 */
 	void setGuard(Condition value);
+
+	/**
+	 * Returns the value of the '<em><b>Trigger Event Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Trigger Event Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Trigger Event Name</em>' attribute.
+	 * @see #setTriggerEventName(String)
+	 * @see de.dubmas.modulob.state.StatePackage#getTransition_TriggerEventName()
+	 * @model
+	 * @generated
+	 */
+	String getTriggerEventName();
+
+	/**
+	 * Sets the value of the '{@link de.dubmas.modulob.state.Transition#getTriggerEventName <em>Trigger Event Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Trigger Event Name</em>' attribute.
+	 * @see #getTriggerEventName()
+	 * @generated
+	 */
+	void setTriggerEventName(String value);
 
 } // Transition
