@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F935E7691918D893004A6E48 /* libMOBStateMachine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F935E7681918D893004A6E48 /* libMOBStateMachine.a */; };
 		F944556214A374F7009CAC2C /* TrafficLightStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = F944556114A374F7009CAC2C /* TrafficLightStateMachine.m */; };
 		F9C52C04147C10A000F1987A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C52C03147C10A000F1987A /* UIKit.framework */; };
 		F9C52C06147C10A000F1987A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C52C05147C10A000F1987A /* Foundation.framework */; };
@@ -22,7 +23,6 @@
 		F9C52C27147C10A000F1987A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C52C05147C10A000F1987A /* Foundation.framework */; };
 		F9C52C2F147C10A000F1987A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9C52C2D147C10A000F1987A /* InfoPlist.strings */; };
 		F9C52C32147C10A000F1987A /* TrafficLightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C52C31147C10A000F1987A /* TrafficLightTests.m */; };
-		F9C52C41147C126A00F1987A /* libMOBStateMachine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C52C40147C126A00F1987A /* libMOBStateMachine.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F935E7681918D893004A6E48 /* libMOBStateMachine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMOBStateMachine.a; path = "../MOBStateMachine/build/Debug-iphoneos/libMOBStateMachine.a"; sourceTree = "<group>"; };
 		F944555F14A374F7009CAC2C /* P_D_TrafficLightStateHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P_D_TrafficLightStateHandler.h; sourceTree = "<group>"; };
 		F944556014A374F7009CAC2C /* TrafficLightStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrafficLightStateMachine.h; sourceTree = "<group>"; };
 		F944556114A374F7009CAC2C /* TrafficLightStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficLightStateMachine.m; sourceTree = "<group>"; };
@@ -59,7 +60,6 @@
 		F9C52C2E147C10A000F1987A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F9C52C30147C10A000F1987A /* TrafficLightTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrafficLightTests.h; sourceTree = "<group>"; };
 		F9C52C31147C10A000F1987A /* TrafficLightTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrafficLightTests.m; sourceTree = "<group>"; };
-		F9C52C40147C126A00F1987A /* libMOBStateMachine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMOBStateMachine.a; path = "../MOBStateMachine/build/Release-iphoneos/libMOBStateMachine.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9C52C41147C126A00F1987A /* libMOBStateMachine.a in Frameworks */,
+				F935E7691918D893004A6E48 /* libMOBStateMachine.a in Frameworks */,
 				F9C52C04147C10A000F1987A /* UIKit.framework in Frameworks */,
 				F9C52C06147C10A000F1987A /* Foundation.framework in Frameworks */,
 				F9C52C08147C10A000F1987A /* CoreGraphics.framework in Frameworks */,
@@ -90,7 +90,6 @@
 		F9C52BF4147C10A000F1987A = {
 			isa = PBXGroup;
 			children = (
-				F9C52C40147C126A00F1987A /* libMOBStateMachine.a */,
 				F9C52C09147C10A000F1987A /* TrafficLight */,
 				F9C52C2A147C10A000F1987A /* TrafficLightTests */,
 				F9C52C02147C10A000F1987A /* Frameworks */,
@@ -110,6 +109,7 @@
 		F9C52C02147C10A000F1987A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F935E7681918D893004A6E48 /* libMOBStateMachine.a */,
 				F9C52C03147C10A000F1987A /* UIKit.framework */,
 				F9C52C05147C10A000F1987A /* Foundation.framework */,
 				F9C52C07147C10A000F1987A /* CoreGraphics.framework */,
@@ -394,6 +394,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrafficLight/TrafficLight-Prefix.pch";
 				INFOPLIST_FILE = "TrafficLight/TrafficLight-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/steffen/tmp/modulob/runtime/objc/MOBStateMachine/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -405,6 +409,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrafficLight/TrafficLight-Prefix.pch";
 				INFOPLIST_FILE = "TrafficLight/TrafficLight-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/steffen/tmp/modulob/runtime/objc/MOBStateMachine/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

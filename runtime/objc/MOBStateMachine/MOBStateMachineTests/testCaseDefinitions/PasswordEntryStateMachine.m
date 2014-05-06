@@ -255,7 +255,7 @@
                     } 
                     else 
                     {
-                        NSLog(@"MOBStateMachine::No guard permits transition in state: %@ for event: %d.", [self.currentState name], event);
+                        NSLog(@"MOBStateMachine::No guard permits transition in state: %@ for event: %lu.", [self.currentState name], (unsigned long)event);
                     }
                     break;
                 }
@@ -271,13 +271,13 @@
                     }
                     else
                     {
-                        NSLog(@"MOBStateMachine::No guard permits transition in state: %@ for event: %d.", [self.currentState name], event);
+                        NSLog(@"MOBStateMachine::No guard permits transition in state: %@ for event: %lu.", [self.currentState name], (unsigned long)event);
                     }
                     break;
                 }
                 default:
                 {
-                    NSLog(@"MOBStateMachine::Warning: state: %@ not designated to react to event: %d.", [self.currentState name], event);
+                    NSLog(@"MOBStateMachine::Warning: state: %@ not designated to react to event: %lu.", [self.currentState name], (unsigned long)event);
                     break;
                 }
             }
@@ -299,13 +299,13 @@
                     }
                     else
                     {
-                        NSLog(@"MOBStateMachine::No guard permits transition in state: %@ for event: %d.", [self.currentState name], event);
+                        NSLog(@"MOBStateMachine::No guard permits transition in state: %@ for event: %lu.", [self.currentState name], (unsigned long)event);
                     }
                     break;
                 }
                 default:
                 {
-                    NSLog(@"MOBStateMachine::Warning: state: %@ not designated to react to event: %d.", [self.currentState name], event);
+                    NSLog(@"MOBStateMachine::Warning: state: %@ not designated to react to event: %lu.", [self.currentState name], (unsigned long)event);
                     break;
                 }
             }
@@ -323,13 +323,13 @@
                     }
                     else
                     {
-                        NSLog(@"MOBStateMachine::No guard permits transition in state: %@ for event: %d.", [self.currentState name], event);
+                        NSLog(@"MOBStateMachine::No guard permits transition in state: %@ for event: %lu.", [self.currentState name], (unsigned long)event);
                     }
                     break;
                 }
                 default:
                 {
-                    NSLog(@"MOBStateMachine::Warning: state: %@ not designated to react to event: %d.", [self.currentState name], event);
+                    NSLog(@"MOBStateMachine::Warning: state: %@ not designated to react to event: %lu.", [self.currentState name], (unsigned long)event);
                     break;
                 }
             }
@@ -351,13 +351,13 @@
                     }
                     else
                     {
-                        NSLog(@"MOBStateMachine::No guard permits transition in state: %@ for event: %d.", [self.currentState name], event);
+                        NSLog(@"MOBStateMachine::No guard permits transition in state: %@ for event: %lu.", [self.currentState name], (unsigned long)event);
                     }
                     break;
                 }
                 default:
                 {
-                    NSLog(@"MOBStateMachine::Warning: state: %@ not designated to react to event: %d.", [self.currentState name], event);
+                    NSLog(@"MOBStateMachine::Warning: state: %@ not designated to react to event: %lu.", [self.currentState name], (unsigned long)event);
                     break;
                 }
             }
@@ -365,7 +365,7 @@
         }
         default:
         {
-            NSLog(@"MOBStateMachine::Error: Cannot handle event: %d", event);
+            NSLog(@"MOBStateMachine::Error: Cannot handle event: %lu", (unsigned long)event);
 
             [self.delegate handleStateMachineError:MOBStateMachineError_UnknownEvent];
         }

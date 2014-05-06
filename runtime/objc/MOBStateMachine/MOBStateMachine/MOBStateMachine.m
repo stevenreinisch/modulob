@@ -214,8 +214,8 @@ NSString *const MOBTIMER_TIMEOUTTRANSITION_KEY = @"timeoutTransition";
     {
         if (MOBSTATEMACHINE_DEFINED([(id)newState duration])) {
             
-            NSLog(@"MOBStateMachine:: starting timer for state: %@ (ID: %d) with duration: %f",
-                  [newState name], [newState ID], [(id)newState duration]);
+            NSLog(@"MOBStateMachine:: starting timer for state: %@ (ID: %lu) with duration: %f",
+                  [newState name], (unsigned long)[newState ID], [(id)newState duration]);
             
             MOBTimeoutTransition *tot = ((MOBState*)newState).timeoutTransition;
             
@@ -233,7 +233,7 @@ NSString *const MOBTIMER_TIMEOUTTRANSITION_KEY = @"timeoutTransition";
             } else {
                 
                 NSAssert(tot != nil, 
-                         @"if duration > 0, a timeoutTransition must be set on state: %d", newState.ID);
+                         @"if duration > 0, a timeoutTransition must be set on state: %lu", (unsigned long)newState.ID);
                 
                 NSDictionary *userInfo = 
                     [NSDictionary dictionaryWithObjectsAndKeys: 
@@ -264,8 +264,8 @@ NSString *const MOBTIMER_TIMEOUTTRANSITION_KEY = @"timeoutTransition";
     MOBInitialState *initialState = [initialStates objectAtIndex:0];
     
     NSAssert(currentState == initialState, 
-             @"current state: %@ (ID: %d) must be the same as %@ (ID: %d)",
-             [currentState name], [currentState ID], [initialState name], [initialState ID]);
+             @"current state: %@ (ID: %lu) must be the same as %@ (ID: %lu)",
+             [currentState name], (unsigned long)[currentState ID], [initialState name], (unsigned long)[initialState ID]);
     
     NSArray *finalStates = [[states filteredSetUsingPredicate:
                                [NSPredicate predicateWithFormat:@"SELF isKindOfClass: %@", [MOBFinalState class]]] 

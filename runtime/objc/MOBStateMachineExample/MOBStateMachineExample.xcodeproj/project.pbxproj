@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F935E7671918D870004A6E48 /* libMOBStateMachine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F935E7661918D870004A6E48 /* libMOBStateMachine.a */; };
 		F988A2D5144880A9002EC3AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F988A2D4144880A9002EC3AD /* UIKit.framework */; };
 		F988A2D7144880A9002EC3AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F988A2D6144880A9002EC3AD /* Foundation.framework */; };
 		F988A2D9144880A9002EC3AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F988A2D8144880A9002EC3AD /* CoreGraphics.framework */; };
@@ -23,7 +24,6 @@
 		F988A301144880A9002EC3AD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F988A2FF144880A9002EC3AD /* InfoPlist.strings */; };
 		F988A303144880A9002EC3AD /* MOBStateMachineExampleTests.h in Resources */ = {isa = PBXBuildFile; fileRef = F988A302144880A9002EC3AD /* MOBStateMachineExampleTests.h */; };
 		F988A305144880A9002EC3AD /* MOBStateMachineExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F988A304144880A9002EC3AD /* MOBStateMachineExampleTests.m */; };
-		F988A3141448829F002EC3AD /* libMOBStateMachine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F988A3131448829F002EC3AD /* libMOBStateMachine.a */; };
 		F98F666E14A20E02004E7F01 /* PasswordEntryStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = F98F666D14A20E02004E7F01 /* PasswordEntryStateMachine.m */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F935E7661918D870004A6E48 /* libMOBStateMachine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMOBStateMachine.a; path = "../MOBStateMachine/build/Debug-iphoneos/libMOBStateMachine.a"; sourceTree = "<group>"; };
 		F988A2D0144880A9002EC3AD /* MOBStateMachineExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOBStateMachineExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F988A2D4144880A9002EC3AD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F988A2D6144880A9002EC3AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -58,7 +59,6 @@
 		F988A300144880A9002EC3AD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F988A302144880A9002EC3AD /* MOBStateMachineExampleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MOBStateMachineExampleTests.h; sourceTree = "<group>"; };
 		F988A304144880A9002EC3AD /* MOBStateMachineExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MOBStateMachineExampleTests.m; sourceTree = "<group>"; };
-		F988A3131448829F002EC3AD /* libMOBStateMachine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMOBStateMachine.a; path = "../MOBStateMachine/build/Release-iphoneos/libMOBStateMachine.a"; sourceTree = "<group>"; };
 		F98F666B14A20E02004E7F01 /* P_D_PasswordEntryStateHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = P_D_PasswordEntryStateHandler.h; path = ../../MOBStateMachine/MOBStateMachineTests/testCaseDefinitions/P_D_PasswordEntryStateHandler.h; sourceTree = "<group>"; };
 		F98F666C14A20E02004E7F01 /* PasswordEntryStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasswordEntryStateMachine.h; path = ../../MOBStateMachine/MOBStateMachineTests/testCaseDefinitions/PasswordEntryStateMachine.h; sourceTree = "<group>"; };
 		F98F666D14A20E02004E7F01 /* PasswordEntryStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PasswordEntryStateMachine.m; path = ../../MOBStateMachine/MOBStateMachineTests/testCaseDefinitions/PasswordEntryStateMachine.m; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F988A3141448829F002EC3AD /* libMOBStateMachine.a in Frameworks */,
+				F935E7671918D870004A6E48 /* libMOBStateMachine.a in Frameworks */,
 				F988A2D5144880A9002EC3AD /* UIKit.framework in Frameworks */,
 				F988A2D7144880A9002EC3AD /* Foundation.framework in Frameworks */,
 				F988A2D9144880A9002EC3AD /* CoreGraphics.framework in Frameworks */,
@@ -93,7 +93,6 @@
 		F988A2C5144880A9002EC3AD = {
 			isa = PBXGroup;
 			children = (
-				F988A3131448829F002EC3AD /* libMOBStateMachine.a */,
 				F988A2DA144880A9002EC3AD /* MOBStateMachineExample */,
 				F988A2FC144880A9002EC3AD /* MOBStateMachineExampleTests */,
 				F988A2D3144880A9002EC3AD /* Frameworks */,
@@ -113,6 +112,7 @@
 		F988A2D3144880A9002EC3AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F935E7661918D870004A6E48 /* libMOBStateMachine.a */,
 				F988A2D4144880A9002EC3AD /* UIKit.framework */,
 				F988A2D6144880A9002EC3AD /* Foundation.framework */,
 				F988A2D8144880A9002EC3AD /* CoreGraphics.framework */,
@@ -220,6 +220,8 @@
 /* Begin PBXProject section */
 		F988A2C7144880A9002EC3AD /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = F988A2CA144880A9002EC3AD /* Build configuration list for PBXProject "MOBStateMachineExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -346,7 +348,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -357,10 +359,15 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(BUILT_PRODUCTS_DIR)/**",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				SDKROOT = iphoneos;
 			};
@@ -370,14 +377,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(BUILT_PRODUCTS_DIR)/**",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
@@ -391,6 +403,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MOBStateMachineExample/MOBStateMachineExample-Prefix.pch";
 				INFOPLIST_FILE = "MOBStateMachineExample/MOBStateMachineExample-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/steffen/tmp/modulob/runtime/objc/MOBStateMachine/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 				WRAPPER_EXTENSION = app;
@@ -403,6 +419,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MOBStateMachineExample/MOBStateMachineExample-Prefix.pch";
 				INFOPLIST_FILE = "MOBStateMachineExample/MOBStateMachineExample-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/steffen/tmp/modulob/runtime/objc/MOBStateMachine/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 				WRAPPER_EXTENSION = app;
